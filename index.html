@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipo PIIP - AGROIDEAS</title>
+    <meta name="description" content="Herramienta Prototipo PIIP - AGROIDEAS - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta property="og:title" content="Prototipo PIIP - AGROIDEAS">
+    <meta property="og:description" content="Herramienta Prototipo PIIP - AGROIDEAS - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <!-- Script de Inyección de Layout -->
+    <script src="js/layout.js"></script>
+</head>
+<body class="bg-slate-100 flex h-screen overflow-hidden text-slate-800">
+
+    <!-- Contenido Principal (El Sidebar se inserta antes de este elemento en flexbox) -->
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <!-- Vista del Dashboard (Portafolio Institucional) -->
+        <div id="view-dashboard" class="block">
+            <header class="mb-8 flex items-center justify-between flex-wrap gap-4">
+            <div>
+                <h2 class="text-2xl font-bold text-slate-800">Portafolio Institucional de Innovación (PIIP)</h2>
+                <p class="text-slate-600">Listado consolidado de iniciativas y proyectos de innovación.</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <button id="btn-create-project" class="btn btn-primary text-xs flex items-center gap-1.5 font-bold" title="Registrar un nuevo proyecto">
+                    <i data-lucide="plus-circle" class="w-4 h-4"></i> Registrar Nueva Iniciativa
+                </button>
+                <button id="btn-reset-db" class="btn btn-secondary text-xs flex items-center gap-1.5 border border-amber-300 text-amber-800 hover:bg-amber-50" title="Reinicia los datos semilla para pruebas">
+                    <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Recargar Datos Semilla (QA)
+                </button>
+            </div>
+        </header>
+            
+            <div class="card">
+                <table id="projectsTable" class="w-full text-left border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Código</th>
+                            <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Título del Proyecto</th>
+                            <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Trazabilidad de Fase (Doble Diamante)</th>
+                            <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Responsable</th>
+                            <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Fecha Registro</th>
+                            <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Datos cargados vía DataTables -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal de Ficha Técnica Consolidada (Doble Diamante) -->
+    <div id="projectModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded shadow-2xl max-w-5xl w-full max-h-[85vh] flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            <!-- Header del Modal -->
+            <div class="px-6 py-4 bg-slate-900 text-white flex items-center justify-between">
+                <div>
+                    <h3 id="modalProjectTitle" class="text-lg font-bold">Ficha Consolidada del Proyecto</h3>
+                    <p id="modalProjectCode" class="text-xs text-slate-400 font-semibold"></p>
+                </div>
+                <button id="modalCloseBtn" class="text-slate-400 hover:text-white transition-colors" title="Cerrar modal">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            
+            <!-- Barra de Pestañas (Tabs) -->
+            <div class="bg-slate-50 border-b border-slate-200 flex overflow-x-auto">
+                <button class="modal-tab active border-b-2 border-emerald-600 text-emerald-700 px-5 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 whitespace-nowrap" data-tab="general">
+                    <i data-lucide="file-text" class="w-3.5 h-3.5"></i> General
+                </button>
+                <button class="modal-tab text-slate-600 hover:text-slate-800 px-5 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 whitespace-nowrap" data-tab="fase1">
+                    <i data-lucide="search" class="w-3.5 h-3.5"></i> Fase 1: Descubrir
+                </button>
+                <button class="modal-tab text-slate-600 hover:text-slate-800 px-5 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 whitespace-nowrap" data-tab="fase2">
+                    <i data-lucide="target" class="w-3.5 h-3.5"></i> Fase 2: Definir
+                </button>
+                <button class="modal-tab text-slate-600 hover:text-slate-800 px-5 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 whitespace-nowrap" data-tab="fase3">
+                    <i data-lucide="lightbulb" class="w-3.5 h-3.5"></i> Fase 3: Idear
+                </button>
+                <button class="modal-tab text-slate-600 hover:text-slate-800 px-5 py-3 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 whitespace-nowrap" data-tab="fase4">
+                    <i data-lucide="check-circle" class="w-3.5 h-3.5"></i> Fase 4: Entregar
+                </button>
+            </div>
+            
+            <!-- Contenido de las Pestañas (Scrollable) -->
+            <div class="p-6 overflow-y-auto flex-1 text-sm text-slate-700 bg-slate-50/30">
+                <!-- Tab: General -->
+                <div id="tabContent-general" class="modal-tab-content block space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Unidad Responsable</h4>
+                                <p id="modalInfoResponsible" class="text-sm font-semibold text-slate-800"></p>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Contacto / Especialistas</h4>
+                                <p id="modalInfoContact" class="text-sm font-semibold text-slate-800"></p>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Fecha de Registro</h4>
+                                <p id="modalInfoDate" class="text-sm font-semibold text-slate-800"></p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Estado Actual Metodológico</h4>
+                                <p id="modalInfoStatus" class="text-sm font-semibold text-slate-800"></p>
+                            </div>
+                            <div>
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Progreso del Doble Diamante</h4>
+                                <div id="modalInfoPhasesProgress" class="mt-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab: Fase 1 -->
+                <div id="tabContent-fase1" class="modal-tab-content hidden space-y-6">
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-800 border-b pb-2 flex items-center gap-1.5 uppercase">
+                            <i data-lucide="eye" class="w-4 h-4 text-emerald-600"></i> Observaciones de Campo (AEIOU)
+                        </h4>
+                        <div id="modalAEIOUContainer" class="mt-3 space-y-3"></div>
+                    </div>
+                    <div class="pt-2">
+                        <h4 class="text-xs font-bold text-slate-800 border-b pb-2 flex items-center gap-1.5 uppercase">
+                            <i data-lucide="smile" class="w-4 h-4 text-emerald-600"></i> Mapa de Empatía (Entendimiento de Usuarios)
+                        </h4>
+                        <div id="modalEmpathyContainer" class="mt-3"></div>
+                    </div>
+                </div>
+                
+                <!-- Tab: Fase 2 -->
+                <div id="tabContent-fase2" class="modal-tab-content hidden space-y-6">
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-800 border-b pb-2 flex items-center gap-1.5 uppercase">
+                            <i data-lucide="users" class="w-4 h-4 text-emerald-600"></i> Ficha de Persona (Arquetipo)
+                        </h4>
+                        <div id="modalPersonaContainer" class="mt-3 space-y-3"></div>
+                    </div>
+                    <div class="pt-2">
+                        <h4 class="text-xs font-bold text-slate-800 border-b pb-2 flex items-center gap-1.5 uppercase">
+                            <i data-lucide="help-circle" class="w-4 h-4 text-emerald-600"></i> Desafíos de Innovación ("¿Cómo Podríamos...?")
+                        </h4>
+                        <div id="modalDesafiosContainer" class="mt-3 space-y-3"></div>
+                    </div>
+                </div>
+                
+                <!-- Tab: Fase 3 -->
+                <div id="tabContent-fase3" class="modal-tab-content hidden space-y-6">
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-800 border-b pb-2 flex items-center gap-1.5 uppercase">
+                            <i data-lucide="lightbulb" class="w-4 h-4 text-emerald-600"></i> Lluvia de Ideas y Priorización
+                        </h4>
+                        <div id="modalIdeasContainer" class="mt-3 space-y-3"></div>
+                    </div>
+                    <div class="pt-2">
+                        <h4 class="text-xs font-bold text-slate-800 border-b pb-2 flex items-center gap-1.5 uppercase">
+                            <i data-lucide="image" class="w-4 h-4 text-emerald-600"></i> Bocetos y Storyboarding de Prototipo
+                        </h4>
+                        <div id="modalPrototiposContainer" class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                    </div>
+                </div>
+                
+                <!-- Tab: Fase 4 -->
+                <div id="tabContent-fase4" class="modal-tab-content hidden space-y-6">
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-800 border-b pb-2 flex items-center gap-1.5 uppercase">
+                            <i data-lucide="calendar" class="w-4 h-4 text-emerald-600"></i> Hoja de Ruta (Plan de Acción)
+                        </h4>
+                        <div id="modalActionPlanContainer" class="mt-3 overflow-x-auto"></div>
+                    </div>
+                    <div class="pt-2">
+                        <h4 class="text-xs font-bold text-slate-800 border-b pb-2 flex items-center gap-1.5 uppercase">
+                            <i data-lucide="shield-alert" class="w-4 h-4 text-emerald-600"></i> Matriz de Gestión de Riesgos
+                        </h4>
+                        <div id="modalRisksContainer" class="mt-3 overflow-x-auto"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer del Modal -->
+            <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end">
+                <button id="modalCloseFooterBtn" class="btn btn-secondary px-5 py-2 text-xs font-bold uppercase tracking-wider">
+                    Cerrar Ficha
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Registro/Edición de Proyecto -->
+    <div id="projectFormModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded shadow-2xl max-w-2xl w-full flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            <!-- Header -->
+            <div class="px-6 py-4 bg-slate-900 text-white flex items-center justify-between">
+                <h3 id="formModalTitle" class="text-lg font-bold">Registrar Proyecto de Innovación</h3>
+                <button id="formModalCloseBtn" class="text-slate-400 hover:text-white transition-colors" title="Cerrar modal">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <!-- Form Body -->
+            <form id="form-project" class="p-6 space-y-4 overflow-y-auto max-h-[75vh]">
+                <div class="form__group">
+                    <label class="form__label font-bold text-slate-700" for="proj-title">Título del Proyecto</label>
+                    <input type="text" id="proj-title" class="form__input text-xs" placeholder="Ej. Plataforma Digital de..." required>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="form__group">
+                        <label class="form__label font-bold text-slate-700" for="proj-code">Código de Ficha</label>
+                        <input type="text" id="proj-code" class="form__input text-xs" placeholder="Ej. PIIP-2026-IN0013" required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label font-bold text-slate-700" for="proj-date">Fecha de Registro</label>
+                        <input type="date" id="proj-date" class="form__input text-xs" required>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="form__group">
+                        <label class="form__label font-bold text-slate-700" for="proj-responsible">Unidad Responsable</label>
+                        <select id="proj-responsible" class="form__input text-xs" required>
+                            <option value="Unidad de Promoción y Desarrollo de Capacidades (UPDC)">UPDC</option>
+                            <option value="Unidad de Negocios - AGROIDEAS">Unidad de Negocios (UN)</option>
+                            <option value="Unidad de Planeamiento y Presupuesto (UPP)">UPP</option>
+                            <option value="Unidad de Asesoría Jurídica (UAJ)">UAJ</option>
+                            <option value="Dirección Ejecutiva - Coordinación Técnica Regional">Coordinación Regional (CTR)</option>
+                            <option value="Unidad de Administración - AGROIDEAS">Administración (UA)</option>
+                            <option value="Unidad de Administración - Recursos Humanos">Recursos Humanos (UA-RRHH)</option>
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label font-bold text-slate-700" for="proj-contact">Contacto / Líder</label>
+                        <input type="text" id="proj-contact" class="form__input text-xs" placeholder="Ej. Juan Pérez - UPDC" required>
+                    </div>
+                </div>
+
+                <!-- Estados de las Fases del Doble Diamante -->
+                <div class="border-t border-slate-200 pt-4">
+                    <h4 class="text-xs font-bold text-emerald-800 uppercase tracking-wider mb-3">Trazabilidad de Fases (Doble Diamante)</h4>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        <div class="form__group">
+                            <label class="form__label text-2xs font-semibold text-slate-600" for="phase-descubrir">1. Descubrir</label>
+                            <select id="phase-descubrir" class="form__input text-xs" required>
+                                <option value="pending">Pendiente</option>
+                                <option value="active">En Curso</option>
+                                <option value="completed">Completado</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label text-2xs font-semibold text-slate-600" for="phase-definir">2. Definir</label>
+                            <select id="phase-definir" class="form__input text-xs" required>
+                                <option value="pending">Pendiente</option>
+                                <option value="active">En Curso</option>
+                                <option value="completed">Completado</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label text-2xs font-semibold text-slate-600" for="phase-idear">3. Idear</label>
+                            <select id="phase-idear" class="form__input text-xs" required>
+                                <option value="pending">Pendiente</option>
+                                <option value="active">En Curso</option>
+                                <option value="completed">Completado</option>
+                            </select>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label text-2xs font-semibold text-slate-600" for="phase-entregar">4. Entregar</label>
+                            <select id="phase-entregar" class="form__input text-xs" required>
+                                <option value="pending">Pendiente</option>
+                                <option value="active">En Curso</option>
+                                <option value="completed">Completado</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-end gap-3 border-t border-slate-200 pt-4">
+                    <button type="button" id="formModalCancelBtn" class="btn btn-secondary px-5 py-2 text-xs font-bold uppercase tracking-wider">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn btn-primary px-5 py-2 text-xs font-bold uppercase tracking-wider">
+                        Guardar Proyecto
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lógica de Datos y Controladores de Página -->
+    <script src="data/seed.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+

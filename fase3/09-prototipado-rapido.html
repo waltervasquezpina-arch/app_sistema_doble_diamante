@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09. Prototipado Rápido - AGROIDEAS PIIP</title>
+    <meta name="description" content="Herramienta 09. Prototipado Rápido - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta property="og:title" content="09. Prototipado Rápido - AGROIDEAS PIIP">
+    <meta property="og:description" content="Herramienta 09. Prototipado Rápido - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <!-- Script de Inyección de Layout -->
+    <script src="../js/layout.js"></script>
+</head>
+<body class="bg-slate-100 flex h-screen overflow-hidden text-slate-800">
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <header class="mb-8">
+            <h2 class="text-2xl font-bold text-slate-800">Fase 3: Idear</h2>
+            <p class="text-slate-600">Herramienta: Prototipado Rápido (Storyboarding y Maquetación Conceptual)</p>
+
+            <!-- Descripciones Metodológicas -->
+            <div class="mt-6 bg-white border border-slate-200 p-5 rounded-lg shadow-sm">
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-emerald-600"></i> 1. Objetivo</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Visualizar y materializar rápidamente la idea priorizada a través de bocetos secuenciales, simulando el funcionamiento conceptual de la solución.</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> 2. Finalidad</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Permitir el testeo temprano y la iteración rápida de las interfaces o flujos de servicio antes de incurrir en mayores costos de desarrollo (Fail Fast).</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-blue-600"></i> 3. Flujo de trabajo</h3>
+                    <ol class="list-decimal list-inside text-sm text-slate-600 mt-1 pl-6 space-y-1">
+                        <li>Selecciona la Idea Ganadora que pasará a la etapa de prototipado.</li>
+                        <li>Registra la descripción del paso a paso (Storyboard) y el Tipo de Prototipo (Papel, Baja/Alta Fidelidad).</li>
+                        <li>Inserta el enlace externo al recurso visual (Figma, Canva, imagen) para que el prototipo quede vinculado al portafolio institucional.</li>
+                    </ol>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Formulario Registro de Prototipo -->
+            <div class="card col-span-1">
+                <h3 class="card__title">Registrar Paso de Storyboard</h3>
+                <form id="form-prototype">
+                    <div class="form__group">
+                        <label class="form__label" for="proto-name">Título del Escenario / Paso</label>
+                        <input type="text" id="proto-name" class="form__input" placeholder="Ej. Paso 1: Recepción de Alerta" required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="proto-image">URL Imagen de la Maqueta / Boceto</label>
+                        <input type="url" id="proto-image" class="form__input" placeholder="https://images.unsplash.com/..." required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="proto-desc">Descripción de la Interacción</label>
+                        <textarea id="proto-desc" class="form__input" rows="4" placeholder="Explicar qué hace el productor en este paso..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-full">
+                        Guardar Escenario
+                    </button>
+                </form>
+            </div>
+
+            <!-- Galería de Storyboards -->
+            <div class="col-span-1 lg:col-span-2">
+                <h3 class="text-xl font-semibold mb-4 text-slate-700">Galería de Storyboard Conceptual</h3>
+                <div id="prototypes-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Cards de Storyboards inyectadas por app.js -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Asistente de IA para Co-creación de Prototipos -->
+        <div class="card mt-8 border border-emerald-150 bg-gradient-to-br from-white to-emerald-50/10 max-w-7xl mx-auto">
+            <div class="flex items-center gap-2 mb-4 border-b border-slate-150 pb-3">
+                <i data-lucide="sparkles" class="w-6 h-6 text-emerald-600 animate-pulse"></i>
+                <div>
+                    <h3 class="text-lg font-bold text-slate-800">Asistente de IA para Co-creación de Prototipos</h3>
+                    <p class="text-xs text-slate-500">Optimice y evalúe la viabilidad de sus maquetas basándose en los datos reales del proyecto.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Configuración del Asistente -->
+                <div class="space-y-4 col-span-1">
+                    <div class="form__group">
+                        <label class="form__label flex items-center justify-between" for="gemini-key">
+                            <span>Gemini API Key</span>
+                            <a href="https://aistudio.google.com/app/apikey" target="_blank" class="text-3xs text-emerald-700 font-bold hover:underline">Obtener Key</a>
+                        </label>
+                        <div class="flex gap-2">
+                            <input type="password" id="gemini-key" class="form__input text-xs" placeholder="AIzaSy...">
+                            <button id="btn-save-key" class="btn btn-secondary text-xs px-3 py-2 flex items-center gap-1 border border-slate-300" title="Guardar clave localmente">
+                                <i data-lucide="save" class="w-3.5 h-3.5"></i>
+                            </button>
+                            <button id="btn-delete-key" class="btn btn-secondary text-xs px-3 py-2 flex items-center gap-1 border border-red-300 text-red-700 hover:bg-red-50 hidden" title="Borrar clave guardada">
+                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                        <p id="key-status" class="text-3xs text-slate-400 mt-1">La clave se almacena localmente en su navegador.</p>
+                    </div>
+
+                    <div class="form__group">
+                        <label class="form__label" for="ai-role">Rol del Consultor de IA</label>
+                        <select id="ai-role" class="form__input text-xs">
+                            <option value="Especialista en Innovación Pública (UPP)">Especialista en Innovación Pública (UPP)</option>
+                            <option value="Diseñador de Experiencia de Usuario (UX)">Diseñador de Experiencia de Usuario (UX)</option>
+                            <option value="Productor Agrícola Cooperativista">Productor Agrícola Cooperativista</option>
+                            <option value="Evaluador de Proyectos de Negocio (UN)">Evaluador de Proyectos de Negocio (UN)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Input del Prompt y Área de Chat -->
+                <div class="lg:col-span-2 flex flex-col gap-4">
+                    <div class="form__group flex-1">
+                        <label class="form__label" for="ai-prompt">¿Qué desea consultarle al Asistente sobre el prototipo?</label>
+                        <textarea id="ai-prompt" class="form__input text-xs h-20" placeholder="Ej. Evalúa si el flujo del prototipo de app offline responde correctamente al dolor de la falta de señal 2G en Ancash. ¿Qué mejoras mecánicas propones?"></textarea>
+                    </div>
+                    
+                    <button id="btn-submit-ai" class="btn btn-primary w-full flex items-center justify-center gap-2 font-bold py-2.5">
+                        <i data-lucide="cpu" class="w-4 h-4"></i> Analizar Prototipo con Gemini
+                    </button>
+
+                    <!-- Área de Visualización de Respuesta -->
+                    <div id="ai-response-container" class="hidden border border-emerald-100 bg-emerald-50/20 rounded p-4 text-xs space-y-2 max-h-60 overflow-y-auto">
+                        <div class="flex items-center gap-1.5 font-bold text-emerald-800 border-b border-emerald-100 pb-1.5 mb-1.5">
+                            <i data-lucide="terminal" class="w-4 h-4"></i> Recomendaciones del Consultor de IA
+                        </div>
+                        <p id="ai-response-text" class="text-slate-700 leading-relaxed whitespace-pre-wrap"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Lógica de Datos y Controladores de Página -->
+    <script src="../data/seed.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
+

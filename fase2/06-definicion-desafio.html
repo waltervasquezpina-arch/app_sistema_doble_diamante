@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06. Definición del Desafío HMW - AGROIDEAS PIIP</title>
+    <meta name="description" content="Herramienta 06. Definición del Desafío HMW - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta property="og:title" content="06. Definición del Desafío HMW - AGROIDEAS PIIP">
+    <meta property="og:description" content="Herramienta 06. Definición del Desafío HMW - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <!-- Script de Inyección de Layout -->
+    <script src="../js/layout.js"></script>
+</head>
+<body class="bg-slate-100 flex h-screen overflow-hidden text-slate-800">
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <header class="mb-8">
+            <h2 class="text-2xl font-bold text-slate-800">Fase 2: Definir</h2>
+            <p class="text-slate-600">Herramienta: Definición del Desafío de Innovación (Método How Might We / ¿Cómo podríamos?)</p>
+
+            <!-- Descripciones Metodológicas -->
+            <div class="mt-6 bg-white border border-slate-200 p-5 rounded-lg shadow-sm">
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-emerald-600"></i> 1. Objetivo</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Formular el problema exacto a resolver mediante una pregunta detonadora que guiará el proceso de ideación.</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> 2. Finalidad</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Transformar las frustraciones e insights descubiertos en oportunidades de diseño accionables enfocadas en crear soluciones.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-blue-600"></i> 3. Flujo de trabajo</h3>
+                    <ol class="list-decimal list-inside text-sm text-slate-600 mt-1 pl-6 space-y-1">
+                        <li>Selecciona del menú desplegable un Insight previamente validado.</li>
+                        <li>Redacta el desafío utilizando la estructura autocompletable obligatoria (¿Cómo podríamos + Acción + Objeto + para + Usuario?).</li>
+                        <li>Registra la pregunta detonadora para iniciar formalmente la Fase de Ideación en el sistema.</li>
+                    </ol>
+                </div>
+            </div>
+        </header>
+
+        <div class="space-y-6">
+            <!-- Formulario HMW -->
+            <div class="card max-w-3xl mx-auto">
+                <h3 class="card__title">Formular Desafío HMW</h3>
+                <form id="form-desafio">
+                    <div class="form__group">
+                        <label class="form__label" for="des-insight-select">Seleccionar Insight Sostén</label>
+                        <select id="des-insight-select" class="form__input" required>
+                            <!-- Rellenado dinámicamente con insights de la base de datos -->
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="des-question">Pregunta Desafío (Debe empezar con "¿Cómo podríamos...?")</label>
+                        <input type="text" id="des-question" class="form__input" value="¿Cómo podríamos " required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-full">
+                        Registrar Desafío Metodológico
+                    </button>
+                </form>
+            </div>
+
+            <!-- Tabla de Desafíos Activos -->
+            <div class="card">
+                <h3 class="card__title">Preguntas Detonadoras (HMW) Registradas</h3>
+                <div class="overflow-x-auto">
+                    <table id="desafiosTable" class="w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Código</th>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Insight Vinculado</th>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Pregunta Detonadora (HMW)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Carga dinámica -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Lógica de Datos y Controladores de Página -->
+    <script src="../data/seed.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
+

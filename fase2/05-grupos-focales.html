@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05. Muro de Hallazgos - AGROIDEAS PIIP</title>
+    <meta name="description" content="Herramienta 05. Muro de Hallazgos - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta property="og:title" content="05. Muro de Hallazgos - AGROIDEAS PIIP">
+    <meta property="og:description" content="Herramienta 05. Muro de Hallazgos - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <!-- Script de Inyección de Layout -->
+    <script src="../js/layout.js"></script>
+</head>
+<body class="bg-slate-100 flex h-screen overflow-hidden text-slate-800">
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <header class="mb-8">
+            <h2 class="text-2xl font-bold text-slate-800">Fase 2: Definir</h2>
+            <p class="text-slate-600">Herramienta: Muro de Hallazgos y Síntesis de Insights</p>
+            
+            <!-- Descripciones Metodológicas -->
+            <div class="mt-6 bg-white border border-slate-200 p-5 rounded-lg shadow-sm">
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-emerald-600"></i> 1. Objetivo</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Sistematizar los datos cualitativos profundos extraídos de las sesiones con los ciudadanos para transformarlos en revelaciones claras (Insights).</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> 2. Finalidad</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Encontrar la raíz del dolor del usuario mediante la organización visual de hallazgos para fundamentar el diseño de la solución.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-blue-600"></i> 3. Flujo de trabajo</h3>
+                    <ol class="list-decimal list-inside text-sm text-slate-600 mt-1 pl-6 space-y-1">
+                        <li>Agrupa y registra los hallazgos o comentarios clave detectados en las investigaciones.</li>
+                        <li>Documenta formalmente el Insight completando los campos obligatorios, incluyendo una "Cita Textual" real del ciudadano.</li>
+                        <li>Utiliza estos insights validados para alimentar la definición del desafío en la siguiente herramienta.</li>
+                    </ol>
+                </div>
+            </div>
+        </header>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Formulario Nuevo Insight -->
+            <div class="card col-span-1">
+                <h3 class="card__title">Registrar Nuevo Insight</h3>
+                <form id="form-insight">
+                    <div class="form__group">
+                        <label class="form__label" for="insight-title">Título del Insight</label>
+                        <input type="text" id="insight-title" class="form__input" placeholder="Ej. El usuario necesita..." required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="insight-text">Texto (Descripción)</label>
+                        <textarea id="insight-text" class="form__input" rows="3" placeholder="Explicación del hallazgo y por qué es relevante" required></textarea>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="insight-quote">Cita Textual Obligatoria</label>
+                        <input type="text" id="insight-quote" class="form__input" placeholder="&quot;Lo que dijo o hizo el usuario de forma exacta&quot;" required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="insight-image">URL Imagen de Evidencia (Opcional)</label>
+                        <input type="url" id="insight-image" class="form__input" placeholder="https://...">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full">
+                        Guardar Insight en el Muro
+                    </button>
+                </form>
+            </div>
+
+            <!-- Muro de Hallazgos (Grid) -->
+            <div class="col-span-1 lg:col-span-2">
+                <h3 class="text-xl font-semibold mb-4 text-slate-700">Muro Interactivo (Post-its)</h3>
+                <div id="insights-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Las tarjetas de insights (sticky-notes) se renderizarán aquí -->
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Lógica de Datos y Controladores de Página -->
+    <script src="../data/seed.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
+

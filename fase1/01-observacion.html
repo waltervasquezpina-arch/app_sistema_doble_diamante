@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01. Observación AEIOU - AGROIDEAS PIIP</title>
+    <meta name="description" content="Herramienta 01. Observación AEIOU - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta property="og:title" content="01. Observación AEIOU - AGROIDEAS PIIP">
+    <meta property="og:description" content="Herramienta 01. Observación AEIOU - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <!-- Script de Inyección de Layout -->
+    <script src="../js/layout.js"></script>
+</head>
+<body class="bg-slate-100 flex h-screen overflow-hidden text-slate-800">
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <header class="mb-8">
+            <h2 class="text-2xl font-bold text-slate-800">Fase 1: Descubrir</h2>
+            <p class="text-slate-600">Herramienta: Observación (Método AEIOU)</p>
+            
+            <!-- Descripciones Metodológicas -->
+            <div class="mt-6 bg-white border border-slate-200 p-5 rounded-lg shadow-sm">
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-emerald-600"></i> 1. Objetivo</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Estructurar ágilmente la recopilación de datos de campo, permitiendo a los investigadores registrar lo que sucede en el entorno del servicio público interactuando con los usuarios.</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> 2. Finalidad</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Sistematizar la divergencia inicial, explorando a profundidad el problema público y planificando la recolección de datos en campo para empatizar con los usuarios.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-blue-600"></i> 3. Flujo de trabajo</h3>
+                    <ol class="list-decimal list-inside text-sm text-slate-600 mt-1 pl-6 space-y-1">
+                        <li>Ingresa los datos base y completa los campos de texto estructurado del Método AEIOU.</li>
+                        <li>Adjunta las evidencias multimedia pertinentes capturadas en campo.</li>
+                        <li>Guarda el registro para que la IA (si está habilitada) asista en la transcripción y síntesis.</li>
+                    </ol>
+                </div>
+            </div>
+        </header>
+
+        <div class="card max-w-4xl mx-auto">
+            <!-- Banner Metodológico de Guía -->
+            <div class="bg-emerald-50 border border-emerald-100 rounded p-4 mb-6">
+                <h4 class="text-sm font-bold text-emerald-800 mb-1 flex items-center gap-1.5">
+                    <i data-lucide="info" class="w-4 h-4"></i> Guía Metodológica: Marco AEIOU
+                </h4>
+                <p class="text-xs text-emerald-950 leading-relaxed">
+                    El método AEIOU es una técnica de observación etnográfica que ayuda a clasificar de manera estructurada los hallazgos en campo. Complete cada sección registrando información objetiva obtenida a través de la inmersión con las organizaciones agrarias.
+                </p>
+            </div>
+
+            <h3 class="card__title">Registro de Observación en Campo</h3>
+            <form id="form-aeiou">
+                <div class="form__group">
+                    <label class="form__label mb-1" for="aeiou-a">Actividades (Activities)</label>
+                    <p class="text-2xs text-slate-500 mb-1.5">¿Qué acciones, tareas o comportamientos específicos están realizando los productores u operadores observados?</p>
+                    <textarea id="aeiou-a" class="form__input" rows="2" placeholder="Ej. Llenado manual de fichas de supervisión de cultivos en el campo..." required></textarea>
+                </div>
+                <div class="form__group">
+                    <label class="form__label mb-1" for="aeiou-e">Entorno (Environments)</label>
+                    <p class="text-2xs text-slate-500 mb-1.5">¿Cómo es el espacio físico, digital o social donde se desenvuelven? (Conectividad, iluminación, clima, etc.)</p>
+                    <textarea id="aeiou-e" class="form__input" rows="2" placeholder="Ej. Parcela agraria sin cobertura móvil, temperatura de 22°C con viento moderado..." required></textarea>
+                </div>
+                <div class="form__group">
+                    <label class="form__label mb-1" for="aeiou-i">Interacciones (Interactions)</label>
+                    <p class="text-2xs text-slate-500 mb-1.5">¿Cómo se relacionan entre sí los usuarios, o cómo interactúan con los sistemas de soporte, jefaturas o terceros?</p>
+                    <textarea id="aeiou-i" class="form__input" rows="2" placeholder="Ej. Intercambio verbal de información de cosecha entre el productor y el supervisor técnico..." required></textarea>
+                </div>
+                <div class="form__group">
+                    <label class="form__label mb-1" for="aeiou-o">Objetos (Objects)</label>
+                    <p class="text-2xs text-slate-500 mb-1.5">¿Qué dispositivos físicos, formatos en papel, herramientas o software se están utilizando en la actividad?</p>
+                    <textarea id="aeiou-o" class="form__input" rows="2" placeholder="Ej. Planilla impresa en papel bond, lapicero azul, cámara de celular personal..." required></textarea>
+                </div>
+                <div class="form__group">
+                    <label class="form__label mb-1" for="aeiou-u">Usuarios (Users)</label>
+                    <p class="text-2xs text-slate-500 mb-1.5">¿Quiénes participan de la experiencia? Detalle sus perfiles, actitudes de uso, temores o roles institucionales.</p>
+                    <textarea id="aeiou-u" class="form__input" rows="2" placeholder="Ej. Productor de café de 48 años (usuario directo) y Técnico Agrícola Evaluador de la UR (observador)..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-full md:w-auto mt-2">
+                    Guardar Hallazgo
+                </button>
+            </form>
+        </div>
+
+    </main>
+
+    <!-- Lógica de Datos y Controladores de Página -->
+    <script src="../data/seed.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
+

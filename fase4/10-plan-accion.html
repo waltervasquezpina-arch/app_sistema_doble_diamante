@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10. Plan de Acción - AGROIDEAS PIIP</title>
+    <meta name="description" content="Herramienta 10. Plan de Acción - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta property="og:title" content="10. Plan de Acción - AGROIDEAS PIIP">
+    <meta property="og:description" content="Herramienta 10. Plan de Acción - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <!-- Script de Inyección de Layout -->
+    <script src="../js/layout.js"></script>
+</head>
+<body class="bg-slate-100 flex h-screen overflow-hidden text-slate-800">
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <header class="mb-8">
+            <h2 class="text-2xl font-bold text-slate-800">Fase 4: Entregar</h2>
+            <p class="text-slate-600">Herramienta: Plan de Acción y Hoja de Ruta (Roadmap de Implementación)</p>
+
+            <!-- Descripciones Metodológicas -->
+            <div class="mt-6 bg-white border border-slate-200 p-5 rounded-lg shadow-sm">
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-emerald-600"></i> 1. Objetivo</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Estructurar la hoja de ruta operativa para materializar el prototipo validado, definiendo recursos, tiempos y responsables.</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> 2. Finalidad</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Transicionar de un prototipo validado a un proyecto ejecutable, asegurando que la solución sea técnica e institucionalmente viable a corto y mediano plazo.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-blue-600"></i> 3. Flujo de trabajo</h3>
+                    <ol class="list-decimal list-inside text-sm text-slate-600 mt-1 pl-6 space-y-1">
+                        <li>Selecciona el prototipo validado y describe las actividades clave o hitos a realizar.</li>
+                        <li>Asigna un presupuesto estimado, un responsable y una fecha límite para cada hito de implementación.</li>
+                        <li>Registra la actividad para consolidarla en la tabla de seguimiento y monitorear el avance hacia el lanzamiento.</li>
+                    </ol>
+                </div>
+            </div>
+        </header>
+
+        <div class="space-y-6">
+            <!-- Formulario Tarea -->
+            <div class="card max-w-3xl mx-auto">
+                <h3 class="card__title">Registrar Actividad del Roadmap</h3>
+                <form id="form-action-plan">
+                    <div class="form__group">
+                        <label class="form__label" for="ap-phase">Fase de Despliegue</label>
+                        <select id="ap-phase" class="form__input" required>
+                            <option value="Piloto Mínimo">Piloto Mínimo</option>
+                            <option value="Evaluación">Evaluación</option>
+                            <option value="Ajustes">Ajustes</option>
+                            <option value="Despliegue Total">Despliegue Total</option>
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="ap-activity">Actividad / Tarea</label>
+                        <textarea id="ap-activity" class="form__input" rows="2" placeholder="Ej. Realizar inducción del bot con presidentes..." required></textarea>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="ap-leader">Líder Responsable</label>
+                        <select id="ap-leader" class="form__input" required>
+                            <option value="Líder de Proyecto">Líder de Proyecto</option>
+                            <option value="Miembro Equipo">Miembro Equipo</option>
+                            <option value="Admin UPP">Admin UPP</option>
+                        </select>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="form__group">
+                            <label class="form__label" for="ap-start">F. Inicio</label>
+                            <input type="date" id="ap-start" class="form__input" required>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label" for="ap-end">F. Fin</label>
+                            <input type="date" id="ap-end" class="form__input" required>
+                        </div>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="ap-status">Estado</label>
+                        <select id="ap-status" class="form__input" required>
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="En Proceso">En Proceso</option>
+                            <option value="Completada">Completada</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-full">
+                        Guardar Actividad
+                    </button>
+                </form>
+            </div>
+
+            <!-- Tabla de Tareas del Roadmap -->
+            <div class="card">
+                <h3 class="card__title">Hoja de Ruta y Cronograma de Actividades</h3>
+                <div class="overflow-x-auto">
+                    <table id="actionPlansTable" class="w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Fase</th>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Actividad</th>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Responsable</th>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Inicio</th>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Fin</th>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Estado</th>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Carga dinámica por DataTable -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Lógica de Datos y Controladores de Página -->
+    <script src="../data/seed.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
+

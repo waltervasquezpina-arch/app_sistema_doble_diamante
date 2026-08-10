@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02. Mapa de Empatía - AGROIDEAS PIIP</title>
+    <meta name="description" content="Herramienta 02. Mapa de Empatía - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta property="og:title" content="02. Mapa de Empatía - AGROIDEAS PIIP">
+    <meta property="og:description" content="Herramienta 02. Mapa de Empatía - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <!-- Script de Inyección de Layout -->
+    <script src="../js/layout.js"></script>
+</head>
+<body class="bg-slate-100 flex h-screen overflow-hidden text-slate-800">
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <header class="mb-8">
+            <h2 class="text-2xl font-bold text-slate-800">Fase 1: Descubrir</h2>
+            <p class="text-slate-600">Herramienta: Mapa de Empatía (Entendimiento Profundo del Usuario)</p>
+
+            <!-- Descripciones Metodológicas -->
+            <div class="mt-6 bg-white border border-slate-200 p-5 rounded-lg shadow-sm">
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-emerald-600"></i> 1. Objetivo</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Permitir al equipo comprender a profundidad las emociones, pensamientos y necesidades de los ciudadanos respecto de los servicios o productos que brinda la entidad.</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> 2. Finalidad</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Sistematizar los hallazgos para encontrar patrones e identificar los verdaderos puntos de dolor (frustraciones) y expectativas del usuario.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-blue-600"></i> 3. Flujo de trabajo</h3>
+                    <ol class="list-decimal list-inside text-sm text-slate-600 mt-1 pl-6 space-y-1">
+                        <li>Selecciona el tipo de perfil al que se dirige el mapa (Usuario Promedio o Extremo).</li>
+                        <li>Completa los cuadrantes superiores respondiendo a las preguntas clave desde la perspectiva del usuario.</li>
+                        <li>Documenta obligatoriamente las frustraciones y resultados esperados para habilitar el guardado del mapa.</li>
+                    </ol>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Formulario de Edición -->
+            <div class="card col-span-1">
+                <h3 class="card__title">Definir Perfil de Usuario</h3>
+                <form id="form-empathy">
+                    <div class="form__group">
+                        <label class="form__label mb-1" for="emp-profile">Perfil Arquetipo</label>
+                        <p class="text-2xs text-slate-500 mb-1.5">Describa de forma general quién es el usuario clave o arquetipo.</p>
+                        <textarea id="emp-profile" class="form__input" rows="2" placeholder="Ej. Presidente de Cooperativa Agraria y productor de papa nativa en la sierra centro..." required></textarea>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label mb-1" for="emp-think">¿Qué piensa y siente?</label>
+                        <p class="text-2xs text-slate-500 mb-1.5">¿Qué le importa realmente? Sus miedos ocultos, valores, aspiraciones y motivaciones profundas.</p>
+                        <textarea id="emp-think" class="form__input" rows="2" placeholder="Ej. Le preocupa perder la campaña por exceso de trámites y burocracia..." required></textarea>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label mb-1" for="emp-hear">¿Qué oye?</label>
+                        <p class="text-2xs text-slate-500 mb-1.5">¿Qué dicen sus vecinos, otros dirigentes, la radio, su familia o personas de influencia en su entorno?</p>
+                        <textarea id="emp-hear" class="form__input" rows="2" placeholder="Ej. Sus colegas dicen que los fondos de incentivos de AGROIDEAS suelen llegar a destiempo..." required></textarea>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label mb-1" for="emp-see">¿Qué ve?</label>
+                        <p class="text-2xs text-slate-500 mb-1.5">¿Cuál es su realidad cotidiana? Su entorno físico, las herramientas que observa y qué hace su competencia.</p>
+                        <textarea id="emp-see" class="form__input" rows="2" placeholder="Ej. Ve que la mayoría de productores de su zona no cuentan con acceso a internet móvil..." required></textarea>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label mb-1" for="emp-say">¿Qué dice y hace?</label>
+                        <p class="text-2xs text-slate-500 mb-1.5">¿Cómo se comporta en público? Qué expresa verbalmente frente a sus acciones de trabajo reales.</p>
+                        <textarea id="emp-say" class="form__input" rows="2" placeholder="Ej. Dice que apoya la tecnología pero viaja constantemente a la ciudad para consultar el estado en papel..." required></textarea>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label mb-1" for="emp-pain">Esfuerzos / Dolores (Pains)</label>
+                        <p class="text-2xs text-slate-500 mb-1.5">¿Cuáles son sus frustraciones, obstáculos, riesgos financieros, temores o barreras tecnológicas?</p>
+                        <textarea id="emp-pain" class="form__input" rows="2" placeholder="Ej. Frustración por demoras en rendiciones de cuentas e inseguridad al usar computadoras..." required></textarea>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label mb-1" for="emp-gain">Resultados / Necesidades (Gains)</label>
+                        <p class="text-2xs text-slate-500 mb-1.5">¿Cuáles son sus deseos de éxito, necesidades de desarrollo o qué significaría un beneficio real?</p>
+                        <textarea id="emp-gain" class="form__input" rows="2" placeholder="Ej. Lograr la aprobación rápida del incentivo y acceder al estado del trámite en quechua..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-full">
+                        Actualizar Lienzo
+                    </button>
+                </form>
+            </div>
+
+            <!-- Canvas/Lienzo Visual -->
+            <div class="col-span-1 lg:col-span-2 flex flex-col gap-6">
+                <h3 class="text-xl font-semibold text-slate-700">Lienzo del Mapa de Empatía</h3>
+                
+                <!-- Cuadrantes Superiores -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[140px] flex flex-col">
+                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-2 flex items-center gap-1.5">
+                            <i data-lucide="brain" class="w-3.5 h-3.5"></i> ¿Qué piensa y siente?
+                        </span>
+                        <p id="canvas-think" class="text-xs text-slate-700 italic flex-1">Cargando...</p>
+                    </div>
+                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[140px] flex flex-col">
+                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-2 flex items-center gap-1.5">
+                            <i data-lucide="ear" class="w-3.5 h-3.5"></i> ¿Qué oye?
+                        </span>
+                        <p id="canvas-hear" class="text-xs text-slate-700 italic flex-1">Cargando...</p>
+                    </div>
+                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[140px] flex flex-col">
+                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-2 flex items-center gap-1.5">
+                            <i data-lucide="eye" class="w-3.5 h-3.5"></i> ¿Qué ve?
+                        </span>
+                        <p id="canvas-see" class="text-xs text-slate-700 italic flex-1">Cargando...</p>
+                    </div>
+                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[140px] flex flex-col">
+                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-2 flex items-center gap-1.5">
+                            <i data-lucide="message-square" class="w-3.5 h-3.5"></i> ¿Qué dice y hace?
+                        </span>
+                        <p id="canvas-say" class="text-xs text-slate-700 italic flex-1">Cargando...</p>
+                    </div>
+                </div>
+
+                <!-- Cuadrantes Inferiores (Esfuerzos y Resultados) -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="card bg-amber-50/50 border-amber-100 min-h-[140px] flex flex-col">
+                        <span class="text-2xs font-bold text-amber-800 uppercase mb-2 flex items-center gap-1.5">
+                            <i data-lucide="trending-down" class="w-3.5 h-3.5"></i> Esfuerzos / Dolores (Pains)
+                        </span>
+                        <p id="canvas-pain" class="text-xs text-amber-950 italic flex-1">Cargando...</p>
+                    </div>
+                    <div class="card bg-emerald-50/70 border-emerald-200 min-h-[140px] flex flex-col">
+                        <span class="text-2xs font-bold text-emerald-900 uppercase mb-2 flex items-center gap-1.5">
+                            <i data-lucide="trending-up" class="w-3.5 h-3.5"></i> Resultados / Necesidades (Gains)
+                        </span>
+                        <p id="canvas-gain" class="text-xs text-emerald-950 italic flex-1">Cargando...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Lógica de Datos y Controladores de Página -->
+    <script src="../data/seed.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
+

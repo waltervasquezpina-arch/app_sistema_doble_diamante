@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07. Lluvia de Ideas - AGROIDEAS PIIP</title>
+    <meta name="description" content="Herramienta 07. Lluvia de Ideas - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta property="og:title" content="07. Lluvia de Ideas - AGROIDEAS PIIP">
+    <meta property="og:description" content="Herramienta 07. Lluvia de Ideas - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <!-- Script de Inyección de Layout -->
+    <script src="../js/layout.js"></script>
+</head>
+<body class="bg-slate-100 flex h-screen overflow-hidden text-slate-800">
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <header class="mb-8">
+            <h2 class="text-2xl font-bold text-slate-800">Fase 3: Idear</h2>
+            <p class="text-slate-600">Herramienta: Lluvia de Ideas (Brainstorming de Soluciones)</p>
+            
+            <!-- Descripciones Metodológicas -->
+            <div class="mt-6 bg-white border border-slate-200 p-5 rounded-lg shadow-sm">
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-emerald-600"></i> 1. Objetivo</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Proporcionar un espacio estructurado que permita al equipo organizar ideas a través de la representación de conceptos interrelacionados que parten de un tema central.</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> 2. Finalidad</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Facilitar la lluvia de ideas espontánea y la divergencia estructurada del pensamiento para generar múltiples alternativas de solución frente al desafío (HMW) planteado.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-blue-600"></i> 3. Flujo de trabajo</h3>
+                    <ol class="list-decimal list-inside text-sm text-slate-600 mt-1 pl-6 space-y-1">
+                        <li>Selecciona el Desafío de Innovación (HMW) que guiará la ideación.</li>
+                        <li>Ingresa múltiples propuestas o ideas y clasifícalas obligatoriamente en una Categoría (Tecnológica, Física, Procesos, Normativa).</li>
+                        <li>Las ideas se distribuirán automáticamente en el Tablero de Cocreación para su posterior evaluación.</li>
+                    </ol>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <!-- Formulario Lluvia de Ideas -->
+            <div class="card col-span-1 lg:col-span-1">
+                <h3 class="card__title">Proponer Solución</h3>
+                <form id="form-brainstorming">
+                    <div class="form__group">
+                        <label class="form__label" for="brain-desafio-select">Seleccionar Desafío HMW</label>
+                        <select id="brain-desafio-select" class="form__input" required>
+                            <!-- Rellenado dinámicamente con desafíos HMW -->
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="brain-idea">Propuesta / Idea</label>
+                        <textarea id="brain-idea" class="form__input" rows="3" placeholder="Ej. Un canal interactivo de respuesta rápida..." required></textarea>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="brain-category">Categoría de la Idea</label>
+                        <select id="brain-category" class="form__input" required>
+                            <option value="Tecnológica">Tecnológica</option>
+                            <option value="Física/Canales">Física / Canales</option>
+                            <option value="Procesos">Procesos</option>
+                            <option value="Normativa">Normativa</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-full">
+                        Proponer Idea
+                    </button>
+                </form>
+            </div>
+
+            <!-- Tablero de Ideas por Categoría -->
+            <div class="col-span-1 lg:col-span-3 flex flex-col gap-6">
+                <h3 class="text-xl font-semibold text-slate-700">Tablero de Cocreación (Categorías)</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <!-- Columna: Tecnológica -->
+                    <div class="card bg-slate-50 border-slate-200 p-4">
+                        <h4 class="text-xs font-bold text-slate-700 uppercase border-b border-slate-200 pb-2 mb-3 flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 bg-blue-500 rounded-none"></span> Tecnológica
+                        </h4>
+                        <div id="col-tecnológica" class="space-y-3 min-h-[200px]">
+                            <!-- Cartas de ideas inyectadas -->
+                        </div>
+                    </div>
+                    
+                    <!-- Columna: Física/Canales -->
+                    <div class="card bg-slate-50 border-slate-200 p-4">
+                        <h4 class="text-xs font-bold text-slate-700 uppercase border-b border-slate-200 pb-2 mb-3 flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 bg-emerald-500 rounded-none"></span> Física / Canales
+                        </h4>
+                        <div id="col-física-canales" class="space-y-3 min-h-[200px]">
+                            <!-- Cartas de ideas inyectadas -->
+                        </div>
+                    </div>
+                    
+                    <!-- Columna: Procesos -->
+                    <div class="card bg-slate-50 border-slate-200 p-4">
+                        <h4 class="text-xs font-bold text-slate-700 uppercase border-b border-slate-200 pb-2 mb-3 flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 bg-amber-500 rounded-none"></span> Procesos
+                        </h4>
+                        <div id="col-procesos" class="space-y-3 min-h-[200px]">
+                            <!-- Cartas de ideas inyectadas -->
+                        </div>
+                    </div>
+                    
+                    <!-- Columna: Normativa -->
+                    <div class="card bg-slate-50 border-slate-200 p-4">
+                        <h4 class="text-xs font-bold text-slate-700 uppercase border-b border-slate-200 pb-2 mb-3 flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 bg-red-500 rounded-none"></span> Normativa
+                        </h4>
+                        <div id="col-normativa" class="space-y-3 min-h-[200px]">
+                            <!-- Cartas de ideas inyectadas -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Lógica de Datos y Controladores de Página -->
+    <script src="../data/seed.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
+

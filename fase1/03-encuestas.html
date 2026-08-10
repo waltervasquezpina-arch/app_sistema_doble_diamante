@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03. Encuestas - AGROIDEAS PIIP</title>
+    <meta name="description" content="Herramienta 03. Encuestas - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta property="og:title" content="03. Encuestas - AGROIDEAS PIIP">
+    <meta property="og:description" content="Herramienta 03. Encuestas - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <!-- Script de Inyección de Layout -->
+    <script src="../js/layout.js"></script>
+</head>
+<body class="bg-slate-100 flex h-screen overflow-hidden text-slate-800">
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <header class="mb-8">
+            <h2 class="text-2xl font-bold text-slate-800">Fase 1: Descubrir</h2>
+            <p class="text-slate-600">Herramienta: Encuestas de Campo (Muestreo Cualitativo y Análisis de Sentimiento)</p>
+            
+            <!-- Descripciones Metodológicas -->
+            <div class="mt-6 bg-white border border-slate-200 p-5 rounded-lg shadow-sm">
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-emerald-600"></i> 1. Objetivo</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Generar y sistematizar datos estadísticos y cuantitativos que resumen las necesidades, experiencia y demandas de la población objetivo frente a un problema público.</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> 2. Finalidad</h3>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Respaldar con datos empíricos las observaciones cualitativas, tabulando en tiempo real las percepciones ciudadanas para la toma de decisiones informada.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-blue-600"></i> 3. Flujo de trabajo</h3>
+                    <ol class="list-decimal list-inside text-sm text-slate-600 mt-1 pl-6 space-y-1">
+                        <li>Configura el cuestionario utilizando plantillas predefinidas o carga las respuestas obtenidas.</li>
+                        <li>Captura las respuestas en campo, asegurando el llenado de los niveles de satisfacción.</li>
+                        <li>Visualiza el análisis cuantitativo tabulado automáticamente en el tablero de control.</li>
+                    </ol>
+                </div>
+            </div>
+        </header>
+
+        <div class="space-y-6">
+            <!-- Formulario Registro Encuesta -->
+            <div class="card max-w-3xl mx-auto">
+                <h3 class="card__title">Registrar Respuesta de Campo</h3>
+                <form id="form-survey">
+                    <div class="form__group">
+                        <label class="form__label" for="srv-respondent">Información del Encuestado (Nombre / Cooperativa)</label>
+                        <input type="text" id="srv-respondent" class="form__input" placeholder="Ej. Roberto Quispe" required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="srv-satisfaction">Nivel de Satisfacción (1-5)</label>
+                        <select id="srv-satisfaction" class="form__input" required>
+                            <option value="1">1 - Muy Insatisfecho</option>
+                            <option value="2">2 - Insatisfecho</option>
+                            <option value="3">3 - Neutro</option>
+                            <option value="4">4 - Satisfecho</option>
+                            <option value="5">5 - Muy Satisfecho</option>
+                        </select>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="srv-comments">Comentario / Feedback Textual</label>
+                        <textarea id="srv-comments" class="form__input" rows="4" placeholder="Ej. El trámite demora mucho y el analista no nos responde a tiempo..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary w-full">
+                        Guardar Encuesta
+                    </button>
+                </form>
+            </div>
+
+            <!-- Tabla de Respuestas -->
+            <div class="card">
+                <h3 class="card__title">Consolidado de Encuestas de Campo</h3>
+                <div class="overflow-x-auto">
+                    <table id="surveysTable" class="w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Encuestado</th>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Satisfacción</th>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Comentarios</th>
+                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Análisis de Sentimiento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Carga dinámica por DataTable -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Lógica de Datos y Controladores de Página -->
+    <script src="../data/seed.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/app.js"></script>
+</body>
+</html>
+
