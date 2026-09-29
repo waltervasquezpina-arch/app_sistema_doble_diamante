@@ -101,79 +101,95 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-            <!-- Formulario Lluvia de Ideas -->
-            <div class="card col-span-1 lg:col-span-1">
-                <div class="flex items-center justify-between mb-4 border-b border-slate-200 pb-2">
-                    <h3 class="card__title text-sm font-bold flex items-center gap-2">
-                        <i data-lucide="plus-circle" class="w-4 h-4 text-emerald-600"></i>
+        <div class="space-y-6">
+            <!-- Formulario Lluvia de Ideas: Proponer Solución (Ancho Completo Superior) -->
+            <div class="card">
+                <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+                    <h3 class="card__title mb-0 flex items-center gap-2">
+                        <i data-lucide="plus-circle" class="w-4 h-4 text-emerald-700"></i>
                         <span>Proponer Solución</span>
                     </h3>
+                    <span class="text-2xs text-slate-400 italic">Esquema metodológico H07</span>
                 </div>
+
                 <form id="form-brainstorming" class="space-y-4">
-                    <div class="form__group">
-                        <label class="form__label text-xs font-semibold text-slate-700" for="brain-desafio-select">
-                            Desafío HMW Rector <span class="text-red-500">*</span>
-                        </label>
-                        <select id="brain-desafio-select" class="form__input text-xs" required>
-                            <!-- Rellenado dinámicamente con desafíos HMW de H06 -->
-                        </select>
-                        <p class="text-3xs text-slate-400 mt-1">Pregunta detonadora formulada en la Fase 2.</p>
-                    </div>
-                    
-                    <div class="form__group">
-                        <label class="form__label text-xs font-semibold text-slate-700" for="brain-idea-title">
-                            Título de la Idea <span class="text-red-500">*</span>
-                        </label>
-                        <input type="text" id="brain-idea-title" class="form__input text-xs" placeholder="Ej. Bot Educativo asincrónico por WhatsApp..." required>
+                    <!-- Fila 1: Desafío HMW Rector y Título de la Idea (2 columnas) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form__group mb-0">
+                            <label class="form__label font-bold text-slate-700 mb-1" for="brain-desafio-select">
+                                Desafío HMW Rector <span class="text-red-500">*</span>
+                            </label>
+                            <select id="brain-desafio-select" class="form__input text-xs" required>
+                                <!-- Rellenado dinámicamente con desafíos HMW de H06 -->
+                            </select>
+                            <p class="text-3xs text-slate-400 mt-1">Pregunta detonadora formulada en la Fase 2.</p>
+                        </div>
+                        
+                        <div class="form__group mb-0">
+                            <label class="form__label font-bold text-slate-700 mb-1" for="brain-idea-title">
+                                Título de la Idea <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" id="brain-idea-title" class="form__input text-xs" placeholder="Ej. Bot Educativo asincrónico por WhatsApp..." required>
+                            <p class="text-3xs text-slate-400 mt-1">Concepto central o nombre innovador de la propuesta.</p>
+                        </div>
                     </div>
 
-                    <div class="form__group">
-                        <label class="form__label text-xs font-semibold text-slate-700" for="brain-idea-desc">
+                    <!-- Fila 2: Descripción Breve del Concepto -->
+                    <div class="form__group mb-0">
+                        <label class="form__label font-semibold text-slate-700 mb-1" for="brain-idea-desc">
                             Descripción Breve del Concepto <span class="text-red-500">*</span>
                         </label>
-                        <textarea id="brain-idea-desc" class="form__input text-xs" rows="3" placeholder="Explica cómo funciona la idea, quién la usa y qué valor entrega..." required></textarea>
+                        <textarea id="brain-idea-desc" class="form__input text-xs" rows="2" placeholder="Explica cómo funciona la idea, quién la usa y qué valor entrega..." required></textarea>
                     </div>
 
-                    <div class="form__group">
-                        <label class="form__label text-xs font-semibold text-slate-700" for="brain-category">
-                            Categoría de la Solución <span class="text-red-500">*</span>
-                        </label>
-                        <select id="brain-category" class="form__input text-xs" required>
-                            <option value="Tecnológica">Tecnológica</option>
-                            <option value="Procesos / Gestión">Procesos / Gestión</option>
-                            <option value="Normativa">Normativa</option>
-                            <option value="Capacitación">Capacitación</option>
-                        </select>
-                    </div>
+                    <!-- Fila 3: Categoría y Rol del Autor (2 columnas) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form__group mb-0">
+                            <label class="form__label font-semibold text-slate-700 mb-1" for="brain-category">
+                                Categoría de la Solución <span class="text-red-500">*</span>
+                            </label>
+                            <select id="brain-category" class="form__input text-xs" required>
+                                <option value="Tecnológica">Tecnológica</option>
+                                <option value="Procesos / Gestión">Procesos / Gestión</option>
+                                <option value="Normativa">Normativa</option>
+                                <option value="Capacitación">Capacitación</option>
+                            </select>
+                        </div>
 
-                    <div class="form__group">
-                        <label class="form__label text-xs font-semibold text-slate-700" for="brain-author-role">
-                            Autor / Rol en el Equipo <span class="text-red-500">*</span>
-                        </label>
-                        <input type="text" id="brain-author-role" class="form__input text-xs" placeholder="Ej. Especialista UPDC, Evaluador Zonal..." required value="Especialista de Innovación">
+                        <div class="form__group mb-0">
+                            <label class="form__label font-semibold text-slate-700 mb-1" for="brain-author-role">
+                                Autor / Rol en el Equipo <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" id="brain-author-role" class="form__input text-xs" placeholder="Ej. Especialista UPDC, Evaluador Zonal..." required value="Especialista de Innovación">
+                        </div>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary w-full flex items-center justify-center gap-1.5 font-bold py-2 text-xs">
-                        <i data-lucide="send" class="w-4 h-4"></i>
-                        <span>Incorporar al Tablero</span>
-                    </button>
+                    <!-- Botón de Envío -->
+                    <div class="flex items-center justify-end pt-3 border-t border-slate-100">
+                        <button type="submit" class="btn btn-primary text-xs px-5 py-2 flex items-center gap-2 font-bold shadow-xs">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            <span>Incorporar al Tablero</span>
+                        </button>
+                    </div>
                 </form>
             </div>
 
-            <!-- Tablero de Ideas por Categoría (Kanban 4 Columnas) -->
-            <div class="col-span-1 lg:col-span-3 flex flex-col gap-4">
-                <div class="flex items-center justify-between">
+            <!-- Tablero de Cocreación (Categorías) (Inmediatamente después en la parte inferior) -->
+            <div class="card space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
                     <div>
-                        <h3 class="text-lg font-bold text-slate-800">Tablero de Cocreación (Categorías)</h3>
-                        <p class="text-2xs text-slate-500">Distribución de ideas por tipología institucional con mecanismo de votación silenciosa.</p>
+                        <h3 class="card__title mb-0 text-base font-bold text-slate-800 flex items-center gap-2">
+                            <i data-lucide="layout-grid" class="w-4 h-4 text-emerald-700"></i>
+                            <span>Tablero de Cocreación (Categorías)</span>
+                        </h3>
+                        <p class="text-2xs text-slate-500">Distribución de ideas por tipología institucional con mecanismo de votación silenciosa</p>
                     </div>
-                    <div class="text-2xs text-slate-400 italic">
-                        Haz clic en <strong class="text-slate-600">+1 Voto</strong> para priorizar alternativas
+                    <div class="text-2xs text-slate-500 bg-slate-50 px-3 py-1.5 rounded border border-slate-200">
+                        Haz clic en <strong class="text-amber-800 font-bold">+1 Voto</strong> para priorizar alternativas
                     </div>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <!-- Columna: Tecnológica -->
                     <div class="card bg-blue-50/20 border-blue-200 p-3 flex flex-col">
                         <h4 class="text-xs font-bold text-blue-900 uppercase border-b border-blue-200 pb-2 mb-3 flex items-center justify-between">
