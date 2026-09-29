@@ -2432,31 +2432,104 @@ Por favor, genera tus recomendaciones detalladas y viables ahora:`;
     let editingApId = null;
 
     if (actionPlansTableEl && typeof $ !== 'undefined') {
+        const activeProj = typeof obtenerProyectoActivo === 'function' ? obtenerProyectoActivo() : null;
+
+        // Banner de Contexto de Iniciativa Activa
+        const titleEl = document.getElementById('active-project-title-h10');
+        const codeEl = document.getElementById('active-project-code-h10');
+        const unitEl = document.getElementById('active-project-unit-h10');
+        if (activeProj) {
+            if (titleEl) titleEl.textContent = activeProj.title;
+            if (codeEl) codeEl.textContent = activeProj.code;
+            if (unitEl) unitEl.textContent = activeProj.responsible || 'Unidad Orgánica / Equipo de Innovación';
+        }
+
+        // Banner de Enlace con Prototipo de Fase 3 (H09)
+        const protoTitleEl = document.getElementById('h10-prototype-title');
+        if (protoTitleEl) {
+            const protos = typeof obtenerPrototipos === 'function' ? obtenerPrototipos('active') : [];
+            if (protos.length > 0) {
+                const p = protos[0];
+                protoTitleEl.textContent = `${p.prototypeTitle || p.name} (${p.prototypeType || 'Digital PWA'})`;
+            } else if (activeProj) {
+                protoTitleEl.textContent = `Prototipo Funcional PWA para ${activeProj.title.split(' ')[0]} (Listo para Roadmap)`;
+            } else {
+                protoTitleEl.textContent = 'Solución validada en Fase 3 lista para implementación operativa.';
+            }
+        }
+
+        function actualizarContadoresH10() {
+            const plans = typeof obtenerPlanesAccion === 'function' ? obtenerPlanesAccion('active') : [];
+            const completed = plans.filter(p => p.status === 'Completado' || p.status === 'Completada').length;
+            const compEl = document.getElementById('h10-completed-counter');
+            const totEl = document.getElementById('h10-total-counter');
+            if (compEl) compEl.textContent = completed;
+            if (totEl) totEl.textContent = plans.length;
+        }
+
         const actionPlansTable = $('#actionPlansTable').DataTable({
-            data: obtenerPlanesAccion().filter(ap => ap.projectId === obtenerProyectoActivoId()),
+            data: typeof obtenerPlanesAccion === 'function' ? obtenerPlanesAccion('active') : [],
+            responsive: true,
             columns: [
-                { data: 'phase' },
-                { data: 'activity' },
-                { data: 'leader' },
-                { data: 'startDate' },
-                { data: 'endDate' },
+                { 
+                    data: 'taskName',
+                    render: function(data, type, row) {
+                        const name = data || row.task || 'Sin nombre';
+                        return `<div class="font-bold text-slate-800">${name}</div>`;
+                    }
+                },
+                { 
+                    data: 'responsibleUnit',
+                    render: function(data, type, row) {
+                        const unit = data || row.responsible || 'Sin asignar';
+                        return `<span class="text-2xs text-slate-600 bg-slate-100 px-2 py-0.5 rounded font-medium">${unit}</span>`;
+                    }
+                },
+                { 
+                    data: 'deliverable',
+                    render: function(data) {
+                        return `<span class="text-2xs font-semibold text-emerald-850 flex items-center gap-1"><i data-lucide="file-check" class="w-3 h-3 text-emerald-600 shrink-0"></i> ${data || 'Entregable formal'}</span>`;
+                    }
+                },
+                { 
+                    data: 'startDate',
+                    render: function(data, type, row) {
+                        const start = data || '2026-03-01';
+                        const end = row.endDate || row.deadline || '2026-04-30';
+                        return `<div class="text-2xs text-slate-600 whitespace-nowrap"><span class="font-semibold">${start}</span> al <span class="font-semibold text-slate-800">${end}</span></div>`;
+                    }
+                },
                 { 
                     data: 'status',
-                    render: function (data) {
-                        let colorClass = 'bg-slate-100 text-slate-800';
-                        if (data === 'Completada') colorClass = 'bg-emerald-100 text-emerald-800';
-                        else if (data === 'En Proceso') colorClass = 'bg-amber-100 text-amber-800 font-semibold';
-                        return `<span class="px-2 py-0.5 text-2xs uppercase ${colorClass}">${data}</span>`;
+                    className: 'text-center',
+                    render: function (data, type, row) {
+                        const st = data || 'Pendiente';
+                        let colorClass = 'bg-slate-100 text-slate-700 border-slate-300';
+                        if (st === 'Completado' || st === 'Completada') {
+                            colorClass = 'bg-emerald-100 text-emerald-800 border-emerald-300 font-bold';
+                        } else if (st === 'En Proceso') {
+                            colorClass = 'bg-amber-100 text-amber-800 border-amber-300 font-semibold';
+                        }
+                        return `
+                            <button type="button" class="btn-toggle-ap-status px-2 py-1 text-3xs uppercase tracking-wider rounded border ${colorClass} hover:opacity-80 transition-all cursor-pointer" data-id="${row.id}" data-current="${st}" title="Clic para alternar estado">
+                                ${st}
+                            </button>
+                        `;
                     }
                 },
                 {
                     data: null,
                     orderable: false,
+                    className: 'text-center',
                     render: function (data, type, row) {
                         return `
-                            <div class="flex gap-1 px-1">
-                                <button class="btn-edit-ap bg-amber-500 hover:bg-amber-600 text-white px-2 py-1 text-2xs rounded font-bold transition-colors" data-id="${row.id}">Editar</button>
-                                <button class="btn-delete-ap bg-red-600 hover:bg-red-700 text-white px-2 py-1 text-2xs rounded font-bold transition-colors" data-id="${row.id}">Eliminar</button>
+                            <div class="flex items-center justify-center gap-1">
+                                <button class="btn-edit-ap bg-amber-500 hover:bg-amber-600 text-white px-2 py-1 text-2xs rounded font-bold transition-colors cursor-pointer" data-id="${row.id}" title="Editar">
+                                    <i data-lucide="edit-2" class="w-3 h-3 inline"></i>
+                                </button>
+                                <button class="btn-delete-ap bg-red-600 hover:bg-red-700 text-white px-2 py-1 text-2xs rounded font-bold transition-colors cursor-pointer" data-id="${row.id}" title="Eliminar">
+                                    <i data-lucide="trash-2" class="w-3 h-3 inline"></i>
+                                </button>
                             </div>
                         `;
                     }
@@ -2464,26 +2537,52 @@ Por favor, genera tus recomendaciones detalladas y viables ahora:`;
             ],
             language: {
                 url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+            },
+            drawCallback: function() {
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+                actualizarContadoresH10();
             }
+        });
+
+        // Toggle rápido de estado al hacer clic en el badge
+        $('#actionPlansTable').on('click', '.btn-toggle-ap-status', function() {
+            const id = parseInt($(this).attr('data-id'));
+            const current = $(this).attr('data-current');
+            let next = 'En Proceso';
+            if (current === 'Pendiente') next = 'En Proceso';
+            else if (current === 'En Proceso') next = 'Completado';
+            else next = 'Pendiente';
+
+            actualizarEstadoPlanAccion(id, next);
+            actionPlansTable.clear().rows.add(obtenerPlanesAccion('active')).draw();
         });
 
         // Eventos Editar y Eliminar
         $('#actionPlansTable').on('click', '.btn-edit-ap', function() {
             const id = parseInt($(this).attr('data-id'));
-            const record = obtenerPlanesAccion().find(ap => ap.id === id);
+            const record = obtenerPlanesAccion('active').find(ap => ap.id === id);
             if (record) {
                 editingApId = id;
-                document.getElementById('ap-phase').value = record.phase;
-                document.getElementById('ap-activity').value = record.activity;
-                document.getElementById('ap-leader').value = record.leader;
-                document.getElementById('ap-start').value = record.startDate;
-                document.getElementById('ap-end').value = record.endDate;
-                document.getElementById('ap-status').value = record.status;
+                document.getElementById('ap-activity').value = record.taskName || record.task || '';
+                document.getElementById('ap-leader').value = record.responsibleUnit || record.responsible || '';
+                document.getElementById('ap-deliverable').value = record.deliverable || '';
+                document.getElementById('ap-start').value = record.startDate || '';
+                document.getElementById('ap-end').value = record.endDate || record.deadline || '';
+                document.getElementById('ap-status').value = record.status || 'Pendiente';
                 
-                const submitBtn = formActionPlan.querySelector('button[type="submit"]');
-                submitBtn.textContent = 'Actualizar Actividad';
-                submitBtn.classList.remove('btn-primary');
-                submitBtn.classList.add('bg-amber-600', 'text-white', 'hover:bg-amber-700');
+                const formTitle = document.getElementById('form-h10-title');
+                if (formTitle) formTitle.textContent = 'Editar Actividad del Roadmap';
+
+                const submitBtn = document.getElementById('btn-submit-action-plan');
+                if (submitBtn) {
+                    submitBtn.innerHTML = '<i data-lucide="check" class="w-4 h-4 inline-block mr-1"></i> Actualizar Actividad';
+                    submitBtn.classList.remove('btn-primary');
+                    submitBtn.classList.add('bg-amber-600', 'text-white', 'hover:bg-amber-700');
+                }
+                const cancelBtn = document.getElementById('btn-cancel-action-plan');
+                if (cancelBtn) cancelBtn.classList.remove('hidden');
+
+                if (typeof lucide !== 'undefined') lucide.createIcons();
             }
         });
 
@@ -2491,7 +2590,7 @@ Por favor, genera tus recomendaciones detalladas y viables ahora:`;
             const id = parseInt($(this).attr('data-id'));
             if (confirm('¿Está seguro de que desea eliminar esta actividad de la hoja de ruta?')) {
                 eliminarPlanAccion(id);
-                actionPlansTable.clear().rows.add(obtenerPlanesAccion().filter(ap => ap.projectId === obtenerProyectoActivoId())).draw();
+                actionPlansTable.clear().rows.add(obtenerPlanesAccion('active')).draw();
             }
         });
 
@@ -2499,12 +2598,14 @@ Por favor, genera tus recomendaciones detalladas y viables ahora:`;
             formActionPlan.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const planData = {
-                    projectId: obtenerProyectoActivoId(),
-                    phase: document.getElementById('ap-phase').value,
-                    activity: document.getElementById('ap-activity').value,
-                    leader: document.getElementById('ap-leader').value,
+                    taskName: document.getElementById('ap-activity').value.trim(),
+                    task: document.getElementById('ap-activity').value.trim(),
+                    responsibleUnit: document.getElementById('ap-leader').value.trim(),
+                    responsible: document.getElementById('ap-leader').value.trim(),
+                    deliverable: document.getElementById('ap-deliverable').value.trim(),
                     startDate: document.getElementById('ap-start').value,
                     endDate: document.getElementById('ap-end').value,
+                    deadline: document.getElementById('ap-end').value,
                     status: document.getElementById('ap-status').value
                 };
                 
@@ -2512,61 +2613,160 @@ Por favor, genera tus recomendaciones detalladas y viables ahora:`;
                     actualizarPlanAccion(editingApId, planData);
                     alert('Actividad actualizada en la hoja de ruta.');
                     editingApId = null;
-                    const submitBtn = formActionPlan.querySelector('button[type="submit"]');
-                    submitBtn.textContent = 'Guardar Actividad';
-                    submitBtn.className = 'btn btn-primary w-full';
                 } else {
                     guardarPlanAccion(planData);
-                    alert('Actividad incorporada a la hoja de ruta.');
+                    alert('Actividad incorporada con éxito a la hoja de ruta.');
                 }
                 
-                actionPlansTable.clear().rows.add(obtenerPlanesAccion().filter(ap => ap.projectId === obtenerProyectoActivoId())).draw();
-                formActionPlan.reset();
+                resetActionPlanForm();
+                actionPlansTable.clear().rows.add(obtenerPlanesAccion('active')).draw();
             });
 
-            formActionPlan.addEventListener('reset', () => {
+            const cancelBtn = document.getElementById('btn-cancel-action-plan');
+            if (cancelBtn) {
+                cancelBtn.addEventListener('click', () => {
+                    resetActionPlanForm();
+                });
+            }
+
+            function resetActionPlanForm() {
                 editingApId = null;
-                const submitBtn = formActionPlan.querySelector('button[type="submit"]');
-                submitBtn.textContent = 'Guardar Actividad';
-                submitBtn.className = 'btn btn-primary w-full';
+                formActionPlan.reset();
+                const formTitle = document.getElementById('form-h10-title');
+                if (formTitle) formTitle.textContent = 'Registrar Actividad del Roadmap';
+                const submitBtn = document.getElementById('btn-submit-action-plan');
+                if (submitBtn) {
+                    submitBtn.innerHTML = '<i data-lucide="plus" class="w-4 h-4 inline-block mr-1"></i> Guardar Actividad';
+                    submitBtn.className = 'btn btn-primary w-full text-xs font-bold py-2.5';
+                }
+                if (cancelBtn) cancelBtn.classList.add('hidden');
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            }
+        }
+
+        // Botón Precargar Ejemplo Metodológico (H10)
+        const btnPreloadH10 = document.getElementById('btn-preload-example-h10');
+        if (btnPreloadH10) {
+            btnPreloadH10.addEventListener('click', () => {
+                const res = precargarEjemploPlanAccion('active');
+                if (res) {
+                    actionPlansTable.clear().rows.add(obtenerPlanesAccion('active')).draw();
+                    alert(`Se ha precargado la actividad de roadmap: "${res.taskName}"`);
+                }
             });
         }
     }
 
     // -------------------------------------------------------------
-    // FASE 4 - HERRAMIENTA 11: Matriz de Riesgos (CRUD completo)
+    // FASE 4 - HERRAMIENTA 11: Matriz de Gestión de Riesgos y Testeo (CRUD completo)
     // -------------------------------------------------------------
     const formRisk = document.getElementById('form-risk');
     const risksTableEl = document.getElementById('risksTable');
     let editingRiskId = null;
 
     if (risksTableEl && typeof $ !== 'undefined') {
+        const activeProj = typeof obtenerProyectoActivo === 'function' ? obtenerProyectoActivo() : null;
+
+        // Banner de Contexto de Iniciativa Activa
+        const titleEl = document.getElementById('active-project-title-h11');
+        const codeEl = document.getElementById('active-project-code-h11');
+        const unitEl = document.getElementById('active-project-unit-h11');
+        if (activeProj) {
+            if (titleEl) titleEl.textContent = activeProj.title;
+            if (codeEl) codeEl.textContent = activeProj.code;
+            if (unitEl) unitEl.textContent = activeProj.responsible || 'Unidad Orgánica / Equipo de Innovación';
+        }
+
+        function actualizarContadoresH11() {
+            const risks = typeof obtenerRiesgos === 'function' ? obtenerRiesgos('active') : [];
+            let cAlto = 0, cMedio = 0, cBajo = 0;
+            risks.forEach(r => {
+                const lvl = r.level || calcularNivelRiesgo(r.probability, r.impact);
+                if (lvl === 'Alto') cAlto++;
+                else if (lvl === 'Medio') cMedio++;
+                else cBajo++;
+            });
+
+            const elAlto = document.getElementById('counter-risk-alto');
+            const elMedio = document.getElementById('counter-risk-medio');
+            const elBajo = document.getElementById('counter-risk-bajo');
+            if (elAlto) elAlto.textContent = cAlto;
+            if (elMedio) elMedio.textContent = cMedio;
+            if (elBajo) elBajo.textContent = cBajo;
+        }
+
         const risksTable = $('#risksTable').DataTable({
-            data: obtenerRiesgos().filter(r => r.projectId === obtenerProyectoActivoId()),
+            data: typeof obtenerRiesgos === 'function' ? obtenerRiesgos('active') : [],
+            responsive: true,
             columns: [
-                { data: 'description' },
-                { data: 'probability' },
-                { data: 'impact' },
                 { 
-                    data: 'level',
+                    data: 'riskType',
                     render: function(data) {
-                        let colorClass = 'bg-slate-100 text-slate-800';
-                        if (data === 'Alto') colorClass = 'bg-red-100 text-red-800 font-bold';
-                        else if (data === 'Medio') colorClass = 'bg-amber-100 text-amber-800 font-semibold';
-                        else if (data === 'Bajo') colorClass = 'bg-emerald-100 text-emerald-800';
-                        
-                        return `<span class="px-2 py-0.5 text-2xs font-semibold uppercase ${colorClass}">${data}</span>`;
+                        const type = data || 'Operativo';
+                        let badgeClass = 'bg-slate-100 text-slate-700';
+                        if (type.includes('Tecno')) badgeClass = 'bg-sky-100 text-sky-800 border-sky-200';
+                        else if (type.includes('Legal')) badgeClass = 'bg-slate-200 text-slate-800 border-slate-300';
+                        else if (type.includes('Presu')) badgeClass = 'bg-emerald-100 text-emerald-800 border-emerald-200';
+                        else badgeClass = 'bg-amber-100 text-amber-800 border-amber-200';
+
+                        return `<span class="px-2 py-0.5 rounded text-3xs font-bold border uppercase ${badgeClass}">${type}</span>`;
                     }
                 },
-                { data: 'mitigation' },
+                { 
+                    data: 'riskDescription',
+                    render: function(data, type, row) {
+                        const desc = data || row.description || 'Sin descripción';
+                        return `<div class="font-bold text-slate-800 text-xs">${desc}</div>`;
+                    }
+                },
+                { 
+                    data: 'probability',
+                    className: 'text-center',
+                    render: function(data, type, row) {
+                        const prob = data || 'Media';
+                        const imp = row.impact || 'Medio';
+                        return `<span class="text-3xs font-semibold text-slate-600">${prob} / ${imp}</span>`;
+                    }
+                },
+                { 
+                    data: 'level',
+                    className: 'text-center',
+                    render: function(data, type, row) {
+                        const lvl = data || calcularNivelRiesgo(row.probability, row.impact);
+                        let colorClass = 'bg-slate-100 text-slate-800';
+                        if (lvl === 'Alto') colorClass = 'bg-red-100 text-red-800 border-red-300 font-bold';
+                        else if (lvl === 'Medio') colorClass = 'bg-amber-100 text-amber-800 border-amber-300 font-semibold';
+                        else if (lvl === 'Bajo') colorClass = 'bg-emerald-100 text-emerald-800 border-emerald-300 font-semibold';
+                        
+                        return `<span class="px-2.5 py-0.5 text-2xs uppercase rounded border ${colorClass}">${lvl}</span>`;
+                    }
+                },
+                { 
+                    data: 'mitigationStrategy',
+                    render: function(data, type, row) {
+                        const mit = data || row.mitigation || 'Sin plan de mitigación';
+                        return `<p class="text-2xs text-slate-600 leading-snug">${mit}</p>`;
+                    }
+                },
+                { 
+                    data: 'testResult',
+                    render: function(data) {
+                        return `<div class="text-2xs text-emerald-900 bg-emerald-50/70 p-1.5 rounded border border-emerald-150 leading-tight"><i data-lucide="check" class="w-3 h-3 text-emerald-600 inline mr-0.5"></i> ${data || 'Pendiente de prueba'}</div>`;
+                    }
+                },
                 {
                     data: null,
                     orderable: false,
+                    className: 'text-center',
                     render: function (data, type, row) {
                         return `
-                            <div class="flex gap-1 px-1 font-sans">
-                                <button class="btn-edit-risk bg-amber-500 hover:bg-amber-600 text-white px-2 py-1 text-2xs rounded font-bold transition-colors" data-id="${row.id}">Editar</button>
-                                <button class="btn-delete-risk bg-red-600 hover:bg-red-700 text-white px-2 py-1 text-2xs rounded font-bold transition-colors" data-id="${row.id}">Eliminar</button>
+                            <div class="flex items-center justify-center gap-1">
+                                <button class="btn-edit-risk bg-amber-500 hover:bg-amber-600 text-white px-2 py-1 text-2xs rounded font-bold transition-colors cursor-pointer" data-id="${row.id}" title="Editar">
+                                    <i data-lucide="edit-2" class="w-3 h-3 inline"></i>
+                                </button>
+                                <button class="btn-delete-risk bg-red-600 hover:bg-red-700 text-white px-2 py-1 text-2xs rounded font-bold transition-colors cursor-pointer" data-id="${row.id}" title="Eliminar">
+                                    <i data-lucide="trash-2" class="w-3 h-3 inline"></i>
+                                </button>
                             </div>
                         `;
                     }
@@ -2574,24 +2774,65 @@ Por favor, genera tus recomendaciones detalladas y viables ahora:`;
             ],
             language: {
                 url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+            },
+            drawCallback: function() {
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+                actualizarContadoresH11();
             }
         });
+
+        // Actualizador dinámico del Semáforo en el formulario
+        function updateLiveSemáforo() {
+            const prob = document.getElementById('risk-prob')?.value || 'Media';
+            const imp = document.getElementById('risk-impact')?.value || 'Medio';
+            const lvl = calcularNivelRiesgo(prob, imp);
+            const badge = document.getElementById('risk-level-badge');
+            if (badge) {
+                badge.textContent = lvl;
+                badge.className = 'px-3 py-1 rounded text-xs font-bold uppercase tracking-wider border transition-all';
+                if (lvl === 'Alto') {
+                    badge.classList.add('bg-red-100', 'text-red-800', 'border-red-300');
+                } else if (lvl === 'Medio') {
+                    badge.classList.add('bg-amber-100', 'text-amber-800', 'border-amber-300');
+                } else {
+                    badge.classList.add('bg-emerald-100', 'text-emerald-800', 'border-emerald-300');
+                }
+            }
+        }
+
+        const probSelect = document.getElementById('risk-prob');
+        const impactSelect = document.getElementById('risk-impact');
+        if (probSelect) probSelect.addEventListener('change', updateLiveSemáforo);
+        if (impactSelect) impactSelect.addEventListener('change', updateLiveSemáforo);
 
         // Eventos Editar y Eliminar
         $('#risksTable').on('click', '.btn-edit-risk', function() {
             const id = parseInt($(this).attr('data-id'));
-            const record = obtenerRiesgos().find(r => r.id === id);
+            const record = obtenerRiesgos('active').find(r => r.id === id);
             if (record) {
                 editingRiskId = id;
-                document.getElementById('risk-desc').value = record.description;
-                document.getElementById('risk-prob').value = record.probability;
-                document.getElementById('risk-impact').value = record.impact;
-                document.getElementById('risk-mitigation').value = record.mitigation;
+                document.getElementById('risk-desc').value = record.riskDescription || record.description || '';
+                document.getElementById('risk-type').value = record.riskType || 'Operativo';
+                document.getElementById('risk-prob').value = record.probability || 'Media';
+                document.getElementById('risk-impact').value = record.impact || 'Medio';
+                document.getElementById('risk-mitigation').value = record.mitigationStrategy || record.mitigation || '';
+                document.getElementById('risk-test-result').value = record.testResult || '';
                 
-                const submitBtn = formRisk.querySelector('button[type="submit"]');
-                submitBtn.textContent = 'Actualizar Riesgo';
-                submitBtn.classList.remove('btn-danger');
-                submitBtn.classList.add('bg-amber-600', 'text-white', 'hover:bg-amber-700');
+                updateLiveSemáforo();
+
+                const formTitle = document.getElementById('form-h11-title');
+                if (formTitle) formTitle.textContent = 'Editar Evaluación de Riesgo';
+
+                const submitBtn = document.getElementById('btn-submit-risk');
+                if (submitBtn) {
+                    submitBtn.innerHTML = '<i data-lucide="check" class="w-4 h-4 inline-block mr-1"></i> Actualizar Riesgo';
+                    submitBtn.classList.remove('btn-primary');
+                    submitBtn.classList.add('bg-amber-600', 'text-white', 'hover:bg-amber-700');
+                }
+                const cancelBtn = document.getElementById('btn-cancel-risk');
+                if (cancelBtn) cancelBtn.classList.remove('hidden');
+
+                if (typeof lucide !== 'undefined') lucide.createIcons();
             }
         });
 
@@ -2599,7 +2840,7 @@ Por favor, genera tus recomendaciones detalladas y viables ahora:`;
             const id = parseInt($(this).attr('data-id'));
             if (confirm('¿Está seguro de que desea eliminar este riesgo de la matriz?')) {
                 eliminarRiesgo(id);
-                risksTable.clear().rows.add(obtenerRiesgos().filter(r => r.projectId === obtenerProyectoActivoId())).draw();
+                risksTable.clear().rows.add(obtenerRiesgos('active')).draw();
             }
         });
 
@@ -2608,44 +2849,84 @@ Por favor, genera tus recomendaciones detalladas y viables ahora:`;
                 e.preventDefault();
                 const prob = document.getElementById('risk-prob').value;
                 const imp = document.getElementById('risk-impact').value;
-                
-                let level = 'Bajo';
-                if (prob === 'Alta' && imp === 'Alto') level = 'Alto';
-                else if (prob === 'Alta' && imp === 'Medio') level = 'Alto';
-                else if (prob === 'Media' && imp === 'Alto') level = 'Alto';
-                else if (prob === 'Baja' && imp === 'Bajo') level = 'Bajo';
-                else level = 'Medio';
+                const level = calcularNivelRiesgo(prob, imp);
 
                 const riskData = {
-                    projectId: obtenerProyectoActivoId(),
-                    description: document.getElementById('risk-desc').value,
+                    riskDescription: document.getElementById('risk-desc').value.trim(),
+                    description: document.getElementById('risk-desc').value.trim(),
+                    riskType: document.getElementById('risk-type').value,
                     probability: prob,
                     impact: imp,
                     level: level,
-                    mitigation: document.getElementById('risk-mitigation').value
+                    mitigationStrategy: document.getElementById('risk-mitigation').value.trim(),
+                    mitigation: document.getElementById('risk-mitigation').value.trim(),
+                    testResult: document.getElementById('risk-test-result').value.trim()
                 };
                 
                 if (editingRiskId !== null) {
                     actualizarRiesgo(editingRiskId, riskData);
                     alert('Riesgo actualizado en la matriz.');
                     editingRiskId = null;
-                    const submitBtn = formRisk.querySelector('button[type="submit"]');
-                    submitBtn.textContent = 'Registrar Riesgo';
-                    submitBtn.className = 'btn btn-danger w-full';
                 } else {
                     guardarRiesgo(riskData);
-                    alert('Riesgo evaluado e incorporado a la matriz.');
+                    alert('Riesgo evaluado e incorporado a la matriz con éxito.');
                 }
                 
-                risksTable.clear().rows.add(obtenerRiesgos().filter(r => r.projectId === obtenerProyectoActivoId())).draw();
-                formRisk.reset();
+                resetRiskForm();
+                risksTable.clear().rows.add(obtenerRiesgos('active')).draw();
             });
 
-            formRisk.addEventListener('reset', () => {
+            const cancelBtn = document.getElementById('btn-cancel-risk');
+            if (cancelBtn) {
+                cancelBtn.addEventListener('click', () => {
+                    resetRiskForm();
+                });
+            }
+
+            function resetRiskForm() {
                 editingRiskId = null;
-                const submitBtn = formRisk.querySelector('button[type="submit"]');
-                submitBtn.textContent = 'Registrar Riesgo';
-                submitBtn.className = 'btn btn-danger w-full';
+                formRisk.reset();
+                updateLiveSemáforo();
+                const formTitle = document.getElementById('form-h11-title');
+                if (formTitle) formTitle.textContent = 'Registrar y Evaluar Riesgo';
+                const submitBtn = document.getElementById('btn-submit-risk');
+                if (submitBtn) {
+                    submitBtn.innerHTML = '<i data-lucide="shield" class="w-4 h-4 inline-block mr-1"></i> Registrar Riesgo';
+                    submitBtn.className = 'btn btn-primary w-full text-xs font-bold py-2.5';
+                }
+                if (cancelBtn) cancelBtn.classList.add('hidden');
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            }
+        }
+
+        // Botón Precargar Ejemplo Metodológico (H11)
+        const btnPreloadH11 = document.getElementById('btn-preload-example-h11');
+        if (btnPreloadH11) {
+            btnPreloadH11.addEventListener('click', () => {
+                const res = precargarEjemploRiesgo('active');
+                if (res) {
+                    risksTable.clear().rows.add(obtenerRiesgos('active')).draw();
+                    alert(`Se ha precargado el riesgo: "${res.riskDescription}"`);
+                }
+            });
+        }
+
+        // Botón Certificar y Marcar como Completado el Doble Diamante
+        const btnCertify = document.getElementById('btn-certify-phase4');
+        if (btnCertify) {
+            btnCertify.addEventListener('click', () => {
+                if (activeProj) {
+                    const newPhases = {
+                        ...(activeProj.phases || {}),
+                        descubrir: 'completed',
+                        definir: 'completed',
+                        idear: 'completed',
+                        entregar: 'completed'
+                    };
+                    actualizarFasesProyecto(activeProj.id, newPhases);
+                    alert(`¡Felicitaciones! La iniciativa [${activeProj.code}] "${activeProj.title}" ha completado formalmente el ciclo completo del Doble Diamante (Fases 1, 2, 3 y 4).\n\nRedirigiendo al Portafolio General...`);
+                    window.location.href = '../index.html';
+                }
             });
         }
     }
@@ -2824,23 +3105,31 @@ function mostrarFichaProyecto(projectId) {
             <table class="w-full text-left border-collapse text-xs">
                 <thead>
                     <tr class="bg-slate-100">
-                        <th class="border-b border-slate-200 p-2 font-bold">Fase</th>
-                        <th class="border-b border-slate-200 p-2 font-bold">Actividad</th>
+                        <th class="border-b border-slate-200 p-2 font-bold">Actividad / Tarea</th>
                         <th class="border-b border-slate-200 p-2 font-bold">Responsable</th>
-                        <th class="border-b border-slate-200 p-2 font-bold">Inicio / Fin</th>
+                        <th class="border-b border-slate-200 p-2 font-bold">Entregable Verificable</th>
+                        <th class="border-b border-slate-200 p-2 font-bold">Plazo</th>
                         <th class="border-b border-slate-200 p-2 font-bold">Estado</th>
                     </tr>
                 </thead>
                 <tbody>
         `;
         actionPlan.forEach(ap => {
+            const taskText = ap.taskName || ap.task || ap.activity || 'Actividad';
+            const respText = ap.responsibleUnit || ap.responsible || ap.leader || 'Unidad';
+            const delivText = ap.deliverable || 'Entregable formal';
+            const startText = ap.startDate || '-';
+            const endText = ap.endDate || ap.deadline || '-';
+            const st = ap.status || 'Pendiente';
+            const stColor = (st === 'Completado' || st === 'Completada') ? 'bg-emerald-100 text-emerald-800' : (st === 'En Proceso' ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-600');
+
             apHtml += `
                 <tr>
-                    <td class="border-b border-slate-100 p-2">${ap.phase}</td>
-                    <td class="border-b border-slate-100 p-2 font-semibold text-slate-800">${ap.activity}</td>
-                    <td class="border-b border-slate-100 p-2">${ap.leader}</td>
-                    <td class="border-b border-slate-100 p-2 whitespace-nowrap">${ap.startDate} a ${ap.endDate}</td>
-                    <td class="border-b border-slate-100 p-2"><span class="px-2 py-0.5 rounded-full text-2xs font-semibold ${ap.status === 'Completada' ? 'bg-emerald-100 text-emerald-800' : ap.status === 'En Proceso' ? 'bg-amber-100 text-amber-800' : 'bg-slate-100 text-slate-600'}">${ap.status}</span></td>
+                    <td class="border-b border-slate-100 p-2 font-semibold text-slate-800">${taskText}</td>
+                    <td class="border-b border-slate-100 p-2 text-slate-600">${respText}</td>
+                    <td class="border-b border-slate-100 p-2 text-emerald-900 font-medium">${delivText}</td>
+                    <td class="border-b border-slate-100 p-2 whitespace-nowrap">${startText} a ${endText}</td>
+                    <td class="border-b border-slate-100 p-2"><span class="px-2 py-0.5 rounded-full text-2xs font-semibold ${stColor}">${st}</span></td>
                 </tr>
             `;
         });
@@ -2857,24 +3146,34 @@ function mostrarFichaProyecto(projectId) {
             <table class="w-full text-left border-collapse text-xs">
                 <thead>
                     <tr class="bg-slate-100">
-                        <th class="border-b border-slate-200 p-2 font-bold">Riesgo</th>
-                        <th class="border-b border-slate-200 p-2 font-bold">Probabilidad</th>
-                        <th class="border-b border-slate-200 p-2 font-bold">Impacto</th>
-                        <th class="border-b border-slate-200 p-2 font-bold">Nivel</th>
-                        <th class="border-b border-slate-200 p-2 font-bold">Mitigación</th>
+                        <th class="border-b border-slate-200 p-2 font-bold">Tipo</th>
+                        <th class="border-b border-slate-200 p-2 font-bold">Riesgo / Amenaza</th>
+                        <th class="border-b border-slate-200 p-2 font-bold text-center">P / I</th>
+                        <th class="border-b border-slate-200 p-2 font-bold text-center">Nivel</th>
+                        <th class="border-b border-slate-200 p-2 font-bold">Plan de Mitigación</th>
+                        <th class="border-b border-slate-200 p-2 font-bold">Evidencia / Testeo</th>
                     </tr>
                 </thead>
                 <tbody>
         `;
         risks.forEach(r => {
-            const levelClass = r.level === 'Alto' ? 'bg-red-100 text-red-800 border-red-200' : r.level === 'Medio' ? 'bg-amber-100 text-amber-800 border-amber-200' : 'bg-green-100 text-green-800 border-green-200';
+            const desc = r.riskDescription || r.description || '-';
+            const type = r.riskType || 'Operativo';
+            const prob = r.probability || 'Media';
+            const imp = r.impact || 'Medio';
+            const lvl = r.level || calcularNivelRiesgo(prob, imp);
+            const mit = r.mitigationStrategy || r.mitigation || '-';
+            const test = r.testResult || 'Sin evidencia consignada';
+
+            const levelClass = lvl === 'Alto' ? 'bg-red-100 text-red-800 border-red-200' : lvl === 'Medio' ? 'bg-amber-100 text-amber-800 border-amber-200' : 'bg-green-100 text-green-800 border-green-200';
             risksHtml += `
                 <tr>
-                    <td class="border-b border-slate-100 p-2 font-semibold text-slate-800">${r.description}</td>
-                    <td class="border-b border-slate-100 p-2">${r.probability}</td>
-                    <td class="border-b border-slate-100 p-2">${r.impact}</td>
-                    <td class="border-b border-slate-100 p-2"><span class="px-2 py-0.5 rounded border text-2xs font-bold ${levelClass}">${r.level}</span></td>
-                    <td class="border-b border-slate-100 p-2 text-slate-600">${r.mitigation}</td>
+                    <td class="border-b border-slate-100 p-2"><span class="px-1.5 py-0.5 rounded text-3xs font-semibold bg-slate-100 text-slate-700">${type}</span></td>
+                    <td class="border-b border-slate-100 p-2 font-semibold text-slate-800">${desc}</td>
+                    <td class="border-b border-slate-100 p-2 text-center text-3xs">${prob} / ${imp}</td>
+                    <td class="border-b border-slate-100 p-2 text-center"><span class="px-2 py-0.5 rounded border text-2xs font-bold ${levelClass}">${lvl}</span></td>
+                    <td class="border-b border-slate-100 p-2 text-slate-600">${mit}</td>
+                    <td class="border-b border-slate-100 p-2 text-emerald-900 text-2xs font-medium">${test}</td>
                 </tr>
             `;
         });

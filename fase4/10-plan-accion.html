@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>10. Plan de Acción - AGROIDEAS PIIP</title>
-    <meta name="description" content="Herramienta 10. Plan de Acción - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <title>10. Plan de Acción y Hoja de Ruta - AGROIDEAS PIIP</title>
+    <meta name="description" content="Herramienta 10. Plan de Acción y Hoja de Ruta - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
     <meta property="og:title" content="10. Plan de Acción - AGROIDEAS PIIP">
     <meta property="og:description" content="Herramienta 10. Plan de Acción - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
     <!-- Script de Inyección de Layout -->
@@ -15,105 +15,192 @@
     <!-- Contenido Principal -->
     <main class="flex-1 overflow-y-auto p-8">
         
-        <header class="mb-8">
-            <h2 class="text-2xl font-bold text-slate-800">Fase 4: Entregar</h2>
-            <p class="text-slate-600">Herramienta: Plan de Acción y Hoja de Ruta (Roadmap de Implementación)</p>
+        <header class="mb-6">
+            <div class="flex items-center gap-2 text-2xs font-bold uppercase tracking-wider text-emerald-800 mb-1">
+                <span>Doble Diamante</span>
+                <span>/</span>
+                <span>Fase 4: Entregar (Deliver)</span>
+            </div>
+            <h2 class="text-2xl font-bold text-slate-800">10. Plan de Acción y Hoja de Ruta (Roadmap)</h2>
+            <p class="text-slate-600 text-sm">Estructura operativa para materializar el prototipo validado, definiendo hitos, recursos, responsables y entregables verificables.</p>
 
             <!-- Descripciones Metodológicas -->
-            <div class="mt-6 bg-white border border-slate-200 p-5 rounded-lg shadow-sm">
-                <div class="mb-4">
-                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-emerald-600"></i> 1. Objetivo</h3>
-                    <p class="text-sm text-slate-600 mt-1 pl-6">Estructurar la hoja de ruta operativa para materializar el prototipo validado, definiendo recursos, tiempos y responsables.</p>
-                </div>
-                <div class="mb-4">
-                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> 2. Finalidad</h3>
-                    <p class="text-sm text-slate-600 mt-1 pl-6">Transicionar de un prototipo validado a un proyecto ejecutable, asegurando que la solución sea técnica e institucionalmente viable a corto y mediano plazo.</p>
-                </div>
-                <div>
-                    <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-blue-600"></i> 3. Flujo de trabajo</h3>
-                    <ol class="list-decimal list-inside text-sm text-slate-600 mt-1 pl-6 space-y-1">
-                        <li>Selecciona el prototipo validado y describe las actividades clave o hitos a realizar.</li>
-                        <li>Asigna un presupuesto estimado, un responsable y una fecha límite para cada hito de implementación.</li>
-                        <li>Registra la actividad para consolidarla en la tabla de seguimiento y monitorear el avance hacia el lanzamiento.</li>
-                    </ol>
+            <div class="mt-4 bg-white border border-slate-200 p-4 rounded-lg shadow-2xs">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                    <div>
+                        <h3 class="font-bold text-slate-800 flex items-center gap-1.5"><i data-lucide="target" class="w-4 h-4 text-emerald-600"></i> 1. Objetivo</h3>
+                        <p class="text-slate-600 mt-1">Estructurar el cronograma táctico de actividades y entregables verificables para desplegar el prototipo validado en campo.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 flex items-center gap-1.5"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> 2. Finalidad</h3>
+                        <p class="text-slate-600 mt-1">Garantizar que la solución transicione de un concepto de laboratorio a una implementación institucional sostenible.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 flex items-center gap-1.5"><i data-lucide="git-branch" class="w-4 h-4 text-blue-600"></i> 3. Flujo de Trabajo</h3>
+                        <p class="text-slate-600 mt-1">Definir la actividad, unidad responsable, fecha de inicio/fin, entregable clave y cambiar interactivamente su estado.</p>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <div class="space-y-6">
-            <!-- Formulario Tarea -->
-            <div class="card max-w-3xl mx-auto">
-                <h3 class="card__title">Registrar Actividad del Roadmap</h3>
-                <form id="form-action-plan">
-                    <div class="form__group">
-                        <label class="form__label" for="ap-phase">Fase de Despliegue</label>
-                        <select id="ap-phase" class="form__input" required>
-                            <option value="Piloto Mínimo">Piloto Mínimo</option>
-                            <option value="Evaluación">Evaluación</option>
-                            <option value="Ajustes">Ajustes</option>
-                            <option value="Despliegue Total">Despliegue Total</option>
-                        </select>
+        <!-- Barra de Contexto de Iniciativa Activa -->
+        <div class="bg-white border border-slate-200 rounded-lg p-4 mb-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-800 font-bold">
+                    <i data-lucide="calendar-range" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="text-3xs uppercase tracking-wider text-slate-500 font-semibold block">Iniciativa Activa</span>
+                    <h3 id="active-project-title-h10" class="text-sm font-bold text-slate-800 leading-tight">Cargando iniciativa...</h3>
+                    <div class="flex items-center gap-2 mt-0.5">
+                        <span id="active-project-code-h10" class="text-2xs font-mono font-semibold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-150">PIIP-2026-IN0001</span>
+                        <span id="active-project-unit-h10" class="text-2xs text-slate-500">Unidad Orgánica</span>
                     </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap">
+                <div class="text-right mr-2 hidden sm:block">
+                    <span class="text-3xs uppercase tracking-wider text-slate-400 font-semibold block">Avance del Plan</span>
+                    <span class="text-xs font-bold text-slate-700">
+                        <span id="h10-completed-counter" class="text-emerald-700">0</span> / <span id="h10-total-counter">0</span> completadas
+                    </span>
+                </div>
+                <button id="btn-preload-example-h10" class="btn btn-secondary text-xs px-3 py-2 flex items-center gap-1.5 border border-slate-300 hover:bg-slate-50" title="Cargar tarea grounded de la iniciativa activa">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i>
+                    <span>Cargar Ejemplo Metodológico</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Banner de Enlace con Prototipo de Fase 3 (H09) -->
+        <div id="h10-prototype-banner" class="bg-gradient-to-r from-emerald-50 via-teal-50 to-white border border-emerald-200 rounded-lg p-3.5 mb-6 shadow-2xs flex items-center justify-between gap-3">
+            <div class="flex items-center gap-2.5">
+                <i data-lucide="box" class="w-5 h-5 text-emerald-700 shrink-0"></i>
+                <div>
+                    <span class="text-3xs font-extrabold text-emerald-800 uppercase tracking-wider">Prototipo Validado en Fase 3:</span>
+                    <p id="h10-prototype-title" class="text-xs font-bold text-slate-800">Cargando prototipo vinculado...</p>
+                </div>
+            </div>
+            <a href="../fase3/09-prototipado-rapido.html" class="text-3xs font-bold text-emerald-800 hover:underline shrink-0 flex items-center gap-1">
+                <span>Ver Prototipo H09</span>
+                <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Formulario Tarea / Hito -->
+            <div class="card col-span-1 h-fit">
+                <div class="flex items-center justify-between mb-4 border-b border-slate-200 pb-2">
+                    <h3 class="card__title text-sm" id="form-h10-title">Registrar Actividad del Roadmap</h3>
+                    <span class="text-3xs font-bold text-slate-500 uppercase tracking-wider">H10 Plan</span>
+                </div>
+
+                <form id="form-action-plan" class="space-y-4 text-xs">
                     <div class="form__group">
-                        <label class="form__label" for="ap-activity">Actividad / Tarea</label>
-                        <textarea id="ap-activity" class="form__input" rows="2" placeholder="Ej. Realizar inducción del bot con presidentes..." required></textarea>
+                        <label class="form__label font-bold text-slate-700" for="ap-activity">Actividad / Tarea Operativa *</label>
+                        <textarea id="ap-activity" class="form__input text-xs" rows="2" placeholder="Ej. Realizar inducción y marcha blanca del sistema con especialistas zonales..." required></textarea>
+                        <span class="text-3xs text-slate-500">Definir con verbo de acción y alcance preciso.</span>
                     </div>
+
                     <div class="form__group">
-                        <label class="form__label" for="ap-leader">Líder Responsable</label>
-                        <select id="ap-leader" class="form__input" required>
-                            <option value="Líder de Proyecto">Líder de Proyecto</option>
-                            <option value="Miembro Equipo">Miembro Equipo</option>
-                            <option value="Admin UPP">Admin UPP</option>
-                        </select>
+                        <label class="form__label font-bold text-slate-700" for="ap-leader">Unidad / Responsable Directo *</label>
+                        <input type="text" id="ap-leader" class="form__input text-xs" list="agroideas-units-list" placeholder="Ej. Unidad de Planeamiento y Presupuesto / TI" required>
+                        <datalist id="agroideas-units-list">
+                            <option value="Unidad de Planeamiento y Presupuesto (UPP)">
+                            <option value="Unidad de Tecnología e Informática (TI)">
+                            <option value="Unidad de Gestión del Conocimiento y Comunicación">
+                            <option value="Unidades Zonales (Coordinación de Campo)">
+                            <option value="Dirección Ejecutiva">
+                            <option value="Equipo Multidisciplinario de Innovación">
+                        </datalist>
                     </div>
-                    <div class="grid grid-cols-2 gap-4">
+
+                    <div class="form__group">
+                        <label class="form__label font-bold text-slate-700" for="ap-deliverable">Entregable Verificable *</label>
+                        <input type="text" id="ap-deliverable" class="form__input text-xs" placeholder="Ej. Informe técnico de validación y acta de conformidad" required>
+                        <span class="text-3xs text-slate-500">Producto concreto que evidencie el cumplimiento de la actividad.</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
                         <div class="form__group">
-                            <label class="form__label" for="ap-start">F. Inicio</label>
-                            <input type="date" id="ap-start" class="form__input" required>
+                            <label class="form__label font-bold text-slate-700" for="ap-start">Fecha de Inicio *</label>
+                            <input type="date" id="ap-start" class="form__input text-xs" required>
                         </div>
                         <div class="form__group">
-                            <label class="form__label" for="ap-end">F. Fin</label>
-                            <input type="date" id="ap-end" class="form__input" required>
+                            <label class="form__label font-bold text-slate-700" for="ap-end">Fecha de Término *</label>
+                            <input type="date" id="ap-end" class="form__input text-xs" required>
                         </div>
                     </div>
+
                     <div class="form__group">
-                        <label class="form__label" for="ap-status">Estado</label>
-                        <select id="ap-status" class="form__input" required>
+                        <label class="form__label font-bold text-slate-700" for="ap-status">Estado de Ejecución</label>
+                        <select id="ap-status" class="form__input text-xs" required>
                             <option value="Pendiente">Pendiente</option>
                             <option value="En Proceso">En Proceso</option>
-                            <option value="Completada">Completada</option>
+                            <option value="Completado">Completado</option>
                         </select>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary w-full">
-                        Guardar Actividad
-                    </button>
+                    <div class="pt-2 flex gap-2">
+                        <button type="submit" id="btn-submit-action-plan" class="btn btn-primary w-full text-xs font-bold py-2.5">
+                            <i data-lucide="plus" class="w-4 h-4 inline-block mr-1"></i>
+                            <span>Guardar Actividad</span>
+                        </button>
+                        <button type="reset" id="btn-cancel-action-plan" class="btn btn-secondary text-xs px-3 py-2.5 hidden">
+                            Cancelar
+                        </button>
+                    </div>
                 </form>
             </div>
 
             <!-- Tabla de Tareas del Roadmap -->
-            <div class="card">
-                <h3 class="card__title">Hoja de Ruta y Cronograma de Actividades</h3>
+            <div class="card col-span-1 lg:col-span-2">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 border-b border-slate-200 pb-2">
+                    <div>
+                        <h3 class="card__title text-sm">Cronograma de Actividades y Hoja de Ruta</h3>
+                        <p class="text-2xs text-slate-500">Listado interactivo de hitos clave con trazabilidad de entregables y cambio ágil de estado.</p>
+                    </div>
+                    <div class="flex items-center gap-1.5 text-3xs font-semibold text-slate-600 bg-slate-100 px-2 py-1 rounded">
+                        <i data-lucide="info" class="w-3.5 h-3.5 text-blue-600"></i>
+                        <span>Clic en el estado para cambiarlo directamente</span>
+                    </div>
+                </div>
+
                 <div class="overflow-x-auto">
-                    <table id="actionPlansTable" class="w-full text-left border-collapse">
+                    <table id="actionPlansTable" class="w-full text-left border-collapse text-xs">
                         <thead>
-                            <tr>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Fase</th>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Actividad</th>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Responsable</th>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Inicio</th>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Fin</th>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Estado</th>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Acciones</th>
+                            <tr class="bg-slate-50 text-slate-700">
+                                <th class="border-b border-slate-200 py-2.5 px-3 font-bold">Actividad / Tarea</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 font-bold">Unidad Responsable</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 font-bold">Entregable Verificable</th>
+                                <th class="border-b border-slate-200 py-2.5 px-2 font-bold whitespace-nowrap">Plazo</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 font-bold text-center">Estado</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 font-bold text-center">Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="divide-y divide-slate-100">
                             <!-- Carga dinámica por DataTable -->
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+
+        <!-- Navegación Secuencial Metodológica -->
+        <footer class="mt-8 border-t border-slate-200 pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+            <a href="../fase3/09-prototipado-rapido.html" class="flex items-center gap-1.5 font-bold text-slate-600 hover:text-slate-900 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Fase 3: H09 Prototipado Rápido</span>
+            </a>
+            <div class="flex items-center gap-1 text-2xs text-slate-400">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>Fase 4: Entregar (10 de 11)</span>
+            </div>
+            <a href="11-matriz-riesgos.html" class="flex items-center gap-1.5 font-bold text-emerald-800 hover:text-emerald-950 transition-colors">
+                <span>Herramienta 11: Matriz de Riesgos</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </footer>
 
     </main>
 
@@ -123,4 +210,3 @@
     <script src="../js/app.js"></script>
 </body>
 </html>
-

@@ -21,9 +21,22 @@ const initialState = PIIP_SEED_DATA;
 
 
 
+// Helper: Cálculo de severidad de riesgo (Semáforo de Gestión de Riesgos)
+function calcularNivelRiesgo(prob, imp) {
+    const p = String(prob || '').toLowerCase().trim();
+    const i = String(imp || '').toLowerCase().trim();
+    if ((p === 'alta' && (i === 'alto' || i === 'medio')) || (p === 'media' && i === 'alto')) {
+        return 'Alto';
+    }
+    if ((p === 'baja' && (i === 'bajo' || i === 'medio')) || (p === 'media' && i === 'bajo')) {
+        return 'Bajo';
+    }
+    return 'Medio';
+}
+
 // Inicializar base de datos (con migración de esquema inteligente + preservación de datos)
 // Al actualizar seed.js, incrementar SCHEMA_VERSION para aplicar los 13 proyectos y nuevos contratos.
-const SCHEMA_VERSION = PIIP_SEED_DATA._schemaVersion || 6;
+const SCHEMA_VERSION = PIIP_SEED_DATA._schemaVersion || 9;
 
 function initDatabase() {
     const existing = localStorage.getItem(DB_KEY);
@@ -246,6 +259,61 @@ function initDatabase() {
             });
         }
 
+        // 11. Normalizar colecciones de Fase 4: Entregar (H10: actionPlans, H11: risks)
+        if (!Array.isArray(db.actionPlans) || db.actionPlans.length === 0) {
+            db.actionPlans = JSON.parse(JSON.stringify(initialState.actionPlans || []));
+        } else {
+            if (initialState.actionPlans) {
+                initialState.actionPlans.forEach(seedPlan => {
+                    const exists = db.actionPlans.some(p => p.id === seedPlan.id);
+                    if (!exists) db.actionPlans.push(seedPlan);
+                });
+            }
+            db.actionPlans.forEach(p => {
+                if (!p.projectCode && p.projectId) {
+                    const proj = db.projects.find(pr => pr.id === p.projectId);
+                    if (proj) p.projectCode = proj.code;
+                }
+                if (!p.taskName && p.task) p.taskName = p.task;
+                if (!p.task && p.taskName) p.task = p.taskName;
+                if (!p.responsibleUnit && p.responsible) p.responsibleUnit = p.responsible;
+                if (!p.responsible && p.responsibleUnit) p.responsible = p.responsibleUnit;
+                if (!p.deliverable) p.deliverable = 'Entregable formal verificado';
+                if (!p.startDate) p.startDate = '2026-03-01';
+                if (!p.endDate && p.deadline) p.endDate = p.deadline;
+                if (!p.deadline && p.endDate) p.deadline = p.endDate;
+                if (!p.status) p.status = 'Pendiente';
+            });
+        }
+
+        if (!Array.isArray(db.risks) || db.risks.length === 0) {
+            db.risks = JSON.parse(JSON.stringify(initialState.risks || []));
+        } else {
+            if (initialState.risks) {
+                initialState.risks.forEach(seedRisk => {
+                    const exists = db.risks.some(r => r.id === seedRisk.id);
+                    if (!exists) db.risks.push(seedRisk);
+                });
+            }
+            db.risks.forEach(r => {
+                if (!r.projectCode && r.projectId) {
+                    const proj = db.projects.find(pr => pr.id === r.projectId);
+                    if (proj) r.projectCode = proj.code;
+                }
+                if (!r.riskDescription && r.description) r.riskDescription = r.description;
+                if (!r.description && r.riskDescription) r.description = r.riskDescription;
+                if (!r.riskType) r.riskType = 'Operativo';
+                if (!r.probability) r.probability = 'Media';
+                if (!r.impact) r.impact = 'Medio';
+                if (!r.level) {
+                    r.level = calcularNivelRiesgo(r.probability, r.impact);
+                }
+                if (!r.mitigationStrategy && r.mitigation) r.mitigationStrategy = r.mitigation;
+                if (!r.mitigation && r.mitigationStrategy) r.mitigation = r.mitigationStrategy;
+                if (!r.testResult) r.testResult = 'Validación preliminar satisfactoria con usuarios piloto.';
+            });
+        }
+
         db._schemaVersion = SCHEMA_VERSION;
         localStorage.setItem(DB_KEY, JSON.stringify(db));
         console.log(`[PIIP DB] Actualización a v${SCHEMA_VERSION} completada con éxito. Registros de usuario conservados.`);
@@ -355,8 +423,13 @@ function obtenerProyectoPorId(id) {
 }
 
 function obtenerProyectoPorCodigo(code) {
+    if (!code) return null;
+    const clean = String(code).trim().toUpperCase();
     const projects = obtenerProyectos();
-    return projects.find(p => p.code === code) || null;
+    return projects.find(p => {
+        const pCode = (p.code || '').toUpperCase();
+        return pCode === clean || pCode.endsWith(clean) || clean.endsWith(pCode);
+    }) || null;
 }
 
 function obtenerProyectoActivo() {
@@ -1467,67 +1540,230 @@ function precargarEjemploPrototipos(projectIdentifier = 'active') {
     return guardarPrototipo(ejemplo);
 }
 
-// H10: Plan de Acción
+// ==========================================================================
+// H10: Plan de Acción y Hoja de Ruta (Roadmap Operativo)
+// ==========================================================================
+
+// Helper: Comparación flexible de códigos de proyecto (PIIP-2026-IN0001 vs IN0001)
+function projectCodesMatch(codeA, codeB) {
+    if (!codeA || !codeB) return false;
+    const a = String(codeA).trim().toUpperCase();
+    const b = String(codeB).trim().toUpperCase();
+    return a === b || a.endsWith(b) || b.endsWith(a);
+}
+
+function obtenerPlanesAccion(projectFilter = 'active') {
+    const db = getDB();
+    const plans = db.actionPlans || [];
+    if (!projectFilter || projectFilter === 'all') return plans;
+
+    let proj = null;
+    if (projectFilter === 'active') proj = obtenerProyectoActivo();
+    else if (typeof projectFilter === 'number') proj = obtenerProyectoPorId(projectFilter);
+    else proj = obtenerProyectoPorCodigo(projectFilter);
+
+    if (!proj) {
+        return plans.filter(p => projectCodesMatch(p.projectCode, projectFilter));
+    }
+    return plans.filter(p => projectCodesMatch(p.projectCode, proj.code) || p.projectId === proj.id);
+}
+
 function guardarPlanAccion(tarea) {
     const db = getDB();
-    const newId = db.actionPlans.length ? db.actionPlans[db.actionPlans.length - 1].id + 1 : 1;
-    const newTarea = { id: newId, ...tarea };
+    if (!db.actionPlans) db.actionPlans = [];
+    const newId = db.actionPlans.length ? Math.max(...db.actionPlans.map(p => p.id || 0)) + 1 : 1;
+    const activeProj = obtenerProyectoActivo();
+
+    const newTarea = {
+        id: newId,
+        projectId: tarea.projectId || (activeProj ? activeProj.id : 1),
+        projectCode: tarea.projectCode || (activeProj ? activeProj.code : 'IN0001'),
+        taskName: tarea.taskName || tarea.task || '',
+        task: tarea.taskName || tarea.task || '',
+        responsibleUnit: tarea.responsibleUnit || tarea.responsible || '',
+        responsible: tarea.responsibleUnit || tarea.responsible || '',
+        startDate: tarea.startDate || new Date().toISOString().split('T')[0],
+        endDate: tarea.endDate || tarea.deadline || '',
+        deadline: tarea.endDate || tarea.deadline || '',
+        deliverable: tarea.deliverable || '',
+        status: tarea.status || 'Pendiente'
+    };
+
     db.actionPlans.push(newTarea);
     saveDB(db);
     return newTarea;
 }
 
-function obtenerPlanesAccion() {
-    return getDB().actionPlans;
-}
-
-// H11: Matriz de Riesgos
-function guardarRiesgo(riesgo) {
-    const db = getDB();
-    const newId = db.risks.length ? db.risks[db.risks.length - 1].id + 1 : 1;
-    const newRiesgo = { id: newId, ...riesgo };
-    db.risks.push(newRiesgo);
-    saveDB(db);
-    return newRiesgo;
-}
-
-function obtenerRiesgos() {
-    return getDB().risks;
-}
-
-// Métodos CRUD adicionales para Modificar y Eliminar en Fase 4
-function eliminarPlanAccion(id) {
-    const db = getDB();
-    db.actionPlans = db.actionPlans.filter(ap => ap.id !== parseInt(id));
-    saveDB(db);
-}
-
 function actualizarPlanAccion(id, tarea) {
     const db = getDB();
-    const idx = db.actionPlans.findIndex(ap => ap.id === parseInt(id));
+    const idx = (db.actionPlans || []).findIndex(ap => ap.id === parseInt(id));
     if (idx !== -1) {
-        db.actionPlans[idx] = { ...db.actionPlans[idx], ...tarea };
+        db.actionPlans[idx] = { 
+            ...db.actionPlans[idx], 
+            ...tarea,
+            task: tarea.taskName || tarea.task || db.actionPlans[idx].task,
+            taskName: tarea.taskName || tarea.task || db.actionPlans[idx].taskName,
+            responsible: tarea.responsibleUnit || tarea.responsible || db.actionPlans[idx].responsible,
+            responsibleUnit: tarea.responsibleUnit || tarea.responsible || db.actionPlans[idx].responsibleUnit,
+            deadline: tarea.endDate || tarea.deadline || db.actionPlans[idx].deadline,
+            endDate: tarea.endDate || tarea.deadline || db.actionPlans[idx].endDate
+        };
         saveDB(db);
         return db.actionPlans[idx];
     }
     return null;
 }
 
-function eliminarRiesgo(id) {
+function actualizarEstadoPlanAccion(id, nuevoEstado) {
     const db = getDB();
-    db.risks = db.risks.filter(r => r.id !== parseInt(id));
+    const idx = (db.actionPlans || []).findIndex(ap => ap.id === parseInt(id));
+    if (idx !== -1) {
+        db.actionPlans[idx].status = nuevoEstado;
+        saveDB(db);
+        return db.actionPlans[idx];
+    }
+    return null;
+}
+
+function eliminarPlanAccion(id) {
+    const db = getDB();
+    if (!db.actionPlans) return;
+    db.actionPlans = db.actionPlans.filter(ap => ap.id !== parseInt(id));
     saveDB(db);
+}
+
+function precargarEjemploPlanAccion(projectIdentifier = 'active') {
+    let proj = null;
+    if (projectIdentifier === 'active') proj = obtenerProyectoActivo();
+    else if (typeof projectIdentifier === 'number') proj = obtenerProyectoPorId(projectIdentifier);
+    else proj = obtenerProyectoPorCodigo(projectIdentifier);
+
+    if (!proj) return null;
+
+    const grounded = (initialState.actionPlans || []).find(p => projectCodesMatch(p.projectCode, proj.code) || p.projectId === proj.id);
+
+    const ejemplo = {
+        projectId: proj.id,
+        projectCode: proj.code,
+        taskName: grounded ? (grounded.taskName || grounded.task) : `Despliegue y marcha blanca para ${proj.title.split(' ')[0]}`,
+        responsibleUnit: grounded ? (grounded.responsibleUnit || grounded.responsible) : 'Unidad de Planeamiento y Presupuesto / TI',
+        startDate: grounded ? grounded.startDate : '2026-04-01',
+        endDate: grounded ? (grounded.endDate || grounded.deadline) : '2026-05-30',
+        deliverable: grounded ? grounded.deliverable : 'Informe técnico y acta de puesta en producción',
+        status: grounded ? grounded.status : 'Pendiente'
+    };
+
+    return guardarPlanAccion(ejemplo);
+}
+
+// ==========================================================================
+// H11: Matriz de Gestión de Riesgos y Testeo
+// ==========================================================================
+
+function obtenerRiesgos(projectFilter = 'active') {
+    const db = getDB();
+    const risks = db.risks || [];
+    if (!projectFilter || projectFilter === 'all') return risks;
+
+    let proj = null;
+    if (projectFilter === 'active') proj = obtenerProyectoActivo();
+    else if (typeof projectFilter === 'number') proj = obtenerProyectoPorId(projectFilter);
+    else proj = obtenerProyectoPorCodigo(projectFilter);
+
+    if (!proj) {
+        return risks.filter(r => projectCodesMatch(r.projectCode, projectFilter));
+    }
+    return risks.filter(r => projectCodesMatch(r.projectCode, proj.code) || r.projectId === proj.id);
+}
+
+function guardarRiesgo(riesgo) {
+    const db = getDB();
+    if (!db.risks) db.risks = [];
+    const newId = db.risks.length ? Math.max(...db.risks.map(r => r.id || 0)) + 1 : 1;
+    const activeProj = obtenerProyectoActivo();
+
+    const prob = riesgo.probability || 'Media';
+    const imp = riesgo.impact || 'Medio';
+    const lvl = riesgo.level || calcularNivelRiesgo(prob, imp);
+
+    const newRiesgo = {
+        id: newId,
+        projectId: riesgo.projectId || (activeProj ? activeProj.id : 1),
+        projectCode: riesgo.projectCode || (activeProj ? activeProj.code : 'IN0001'),
+        riskDescription: riesgo.riskDescription || riesgo.description || '',
+        description: riesgo.riskDescription || riesgo.description || '',
+        riskType: riesgo.riskType || 'Operativo',
+        probability: prob,
+        impact: imp,
+        level: lvl,
+        mitigationStrategy: riesgo.mitigationStrategy || riesgo.mitigation || '',
+        mitigation: riesgo.mitigationStrategy || riesgo.mitigation || '',
+        testResult: riesgo.testResult || 'En proceso de validación con actores de campo.'
+    };
+
+    db.risks.push(newRiesgo);
+    saveDB(db);
+    return newRiesgo;
 }
 
 function actualizarRiesgo(id, riesgo) {
     const db = getDB();
-    const idx = db.risks.findIndex(r => r.id === parseInt(id));
+    const idx = (db.risks || []).findIndex(r => r.id === parseInt(id));
     if (idx !== -1) {
-        db.risks[idx] = { ...db.risks[idx], ...riesgo };
+        const prob = riesgo.probability || db.risks[idx].probability || 'Media';
+        const imp = riesgo.impact || db.risks[idx].impact || 'Medio';
+        const lvl = riesgo.level || calcularNivelRiesgo(prob, imp);
+
+        db.risks[idx] = { 
+            ...db.risks[idx], 
+            ...riesgo,
+            riskDescription: riesgo.riskDescription || riesgo.description || db.risks[idx].riskDescription,
+            description: riesgo.riskDescription || riesgo.description || db.risks[idx].description,
+            probability: prob,
+            impact: imp,
+            level: lvl,
+            mitigationStrategy: riesgo.mitigationStrategy || riesgo.mitigation || db.risks[idx].mitigationStrategy,
+            mitigation: riesgo.mitigationStrategy || riesgo.mitigation || db.risks[idx].mitigation
+        };
         saveDB(db);
         return db.risks[idx];
     }
     return null;
+}
+
+function eliminarRiesgo(id) {
+    const db = getDB();
+    if (!db.risks) return;
+    db.risks = db.risks.filter(r => r.id !== parseInt(id));
+    saveDB(db);
+}
+
+function precargarEjemploRiesgo(projectIdentifier = 'active') {
+    let proj = null;
+    if (projectIdentifier === 'active') proj = obtenerProyectoActivo();
+    else if (typeof projectIdentifier === 'number') proj = obtenerProyectoPorId(projectIdentifier);
+    else proj = obtenerProyectoPorCodigo(projectIdentifier);
+
+    if (!proj) return null;
+
+    const grounded = (initialState.risks || []).find(r => projectCodesMatch(r.projectCode, proj.code) || r.projectId === proj.id);
+
+    const prob = grounded ? grounded.probability : 'Media';
+    const imp = grounded ? grounded.impact : 'Alto';
+
+    const ejemplo = {
+        projectId: proj.id,
+        projectCode: proj.code,
+        riskDescription: grounded ? (grounded.riskDescription || grounded.description) : `Resistencia inicial o brecha digital en usuarios de ${proj.title.split(' ')[0]}`,
+        riskType: grounded ? grounded.riskType : 'Operativo',
+        probability: prob,
+        impact: imp,
+        level: grounded ? (grounded.level || calcularNivelRiesgo(prob, imp)) : calcularNivelRiesgo(prob, imp),
+        mitigationStrategy: grounded ? (grounded.mitigationStrategy || grounded.mitigation) : 'Plan intensivo de alfabetización digital y acompañamiento presencial en campo.',
+        testResult: grounded ? grounded.testResult : 'Prueba de usabilidad con 10 productores evidenció curva de aprendizaje menor a 3 días.'
+    };
+
+    return guardarRiesgo(ejemplo);
 }
 
 // Inicializar al importar
