@@ -1512,67 +1512,34 @@ function initApp() {
     // -------------------------------------------------------------
     // FASE 3 - HERRAMIENTA 7: Lluvia de Ideas
     // -------------------------------------------------------------
+    // -------------------------------------------------------------
+    // FASE 3 - HERRAMIENTA 7: Lluvia de Ideas y Crazy 8's
+    // -------------------------------------------------------------
     const formBrainstorming = document.getElementById('form-brainstorming');
     const brainDesafioSelect = document.getElementById('brain-desafio-select');
+    const h07BannerTitle = document.getElementById('active-project-title-h07');
     
-    function renderBrainstormingBoard() {
-        // Encontrar las 4 columnas del tablero
-        const colTech = document.getElementById('col-tecnológica');
-        const colFisica = document.getElementById('col-física-canales');
-        const colProc = document.getElementById('col-procesos');
-        const colNorm = document.getElementById('col-normativa');
-
-        if (!colTech) return; // Si no está en el DOM
-
-        colTech.innerHTML = '';
-        colFisica.innerHTML = '';
-        colProc.innerHTML = '';
-        colNorm.innerHTML = '';
-
-        const ideas = obtenerBrainstormings().filter(b => b.projectId === obtenerProyectoActivoId());
-        const desafiosList = obtenerDesafios();
-
-        ideas.forEach(item => {
-            const card = document.createElement('div');
-            card.className = 'bg-white p-3 border border-slate-200 shadow-2xs relative hover:shadow-xs transition-shadow';
-            
-            const desObj = desafiosList.find(d => d.id === parseInt(item.desafioId));
-            const desText = desObj ? desObj.question : `Desafío ID ${item.desafioId}`;
-            
-            card.innerHTML = `
-                <p class="text-xs text-slate-800 font-medium mb-2 leading-relaxed">${item.idea}</p>
-                <div class="border-t border-slate-100 pt-1.5 mt-2 flex flex-col gap-0.5">
-                    <span class="text-[9px] text-slate-400 font-semibold uppercase">Desafío Relacionado:</span>
-                    <span class="text-[10px] text-emerald-800 italic truncate" title="${desText}">${desText}</span>
-                </div>
-            `;
-
-            // Mapear según categoría
-            if (item.category === 'Tecnológica') colTech.appendChild(card);
-            else if (item.category === 'Física/Canales') colFisica.appendChild(card);
-            else if (item.category === 'Procesos') colProc.appendChild(card);
-            else if (item.category === 'Normativa') colNorm.appendChild(card);
-        });
-
-        // Validar columnas vacías
-        const cols = [colTech, colFisica, colProc, colNorm];
-        cols.forEach(col => {
-            if (col.children.length === 0) {
-                col.innerHTML = '<p class="text-slate-400 text-2xs italic text-center py-4">Sin propuestas</p>';
+    if (formBrainstorming || h07BannerTitle) {
+        function updateH07Banner() {
+            const activeProj = typeof obtenerProyectoActivo === 'function' ? obtenerProyectoActivo() : null;
+            if (activeProj) {
+                if (h07BannerTitle) h07BannerTitle.textContent = activeProj.title;
+                const codeEl = document.getElementById('active-project-code-h07');
+                if (codeEl) codeEl.textContent = activeProj.code;
+                const unitEl = document.getElementById('active-project-unit-h07');
+                if (unitEl) unitEl.textContent = activeProj.unit;
             }
-        });
-    }
+        }
 
-    if (brainDesafioSelect) {
-        // Cargar desafíos en el dropdown
         function populateDesafiosDropdown() {
+            if (!brainDesafioSelect) return;
             brainDesafioSelect.innerHTML = '';
-            const list = obtenerDesafios().filter(d => d.projectId === obtenerProyectoActivoId());
+            const list = typeof obtenerDesafios === 'function' ? obtenerDesafios('active') : [];
             
             if (list.length === 0) {
                 const opt = document.createElement('option');
                 opt.value = "";
-                opt.textContent = "Ningún Desafío Registrado para este proyecto (Ir a H6)";
+                opt.textContent = "Ningún Desafío HMW Registrado (Ir a Fase 2 - H06)";
                 brainDesafioSelect.appendChild(opt);
                 return;
             }
@@ -1580,127 +1547,730 @@ function initApp() {
             list.forEach(des => {
                 const opt = document.createElement('option');
                 opt.value = des.id;
-                opt.textContent = des.hmwStatement || des.question || `Desafío HMW-${des.id}`;
+                opt.textContent = `${des.hmwStatement || des.question || ('Desafío HMW-' + des.id)} [${des.status || 'Borrador'}]`;
                 brainDesafioSelect.appendChild(opt);
             });
         }
 
-        populateDesafiosDropdown();
-        renderBrainstormingBoard();
+        function renderBrainstormingBoard() {
+            const colTech = document.getElementById('col-tecnológica');
+            const colProc = document.getElementById('col-procesos');
+            const colNorm = document.getElementById('col-normativa');
+            const colCap = document.getElementById('col-capacitación');
 
+            if (!colTech || !colProc || !colNorm || !colCap) return;
+
+            colTech.innerHTML = '';
+            colProc.innerHTML = '';
+            colNorm.innerHTML = '';
+            colCap.innerHTML = '';
+
+            const ideas = typeof obtenerBrainstormings === 'function' ? obtenerBrainstormings('active') : [];
+            const desafiosList = typeof obtenerDesafios === 'function' ? obtenerDesafios('all') : [];
+
+            let countTech = 0, countProc = 0, countNorm = 0, countCap = 0;
+            let totalVotes = 0;
+
+            ideas.forEach(item => {
+                totalVotes += (item.votesCount || 0);
+
+                const card = document.createElement('div');
+                card.className = 'bg-white p-3.5 border border-slate-200 shadow-2xs relative hover:shadow-xs transition-all flex flex-col justify-between group';
+                
+                const desObj = desafiosList.find(d => d.id === parseInt(item.desafioId));
+                const desText = desObj ? (desObj.hmwStatement || desObj.question) : (item.desafioId ? `Desafío HMW-${item.desafioId}` : 'Sin desafío vinculado');
+                const titleText = item.ideaTitle || item.idea || 'Idea sin título';
+                const descText = item.description || item.idea || '';
+                const roleText = item.authorRole || 'Especialista de Innovación';
+                const votes = item.votesCount || 0;
+
+                card.innerHTML = `
+                    <div class="flex items-start justify-between gap-2 mb-1.5">
+                        <h5 class="text-xs font-bold text-slate-800 leading-snug">${titleText}</h5>
+                        <button type="button" class="btn-delete-brain text-slate-300 hover:text-red-500 transition-colors p-1" data-id="${item.id}" title="Eliminar idea">
+                            <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                    <p class="text-2xs text-slate-600 leading-relaxed mb-3">${descText}</p>
+                    <div class="border-t border-slate-100 pt-2 flex flex-col gap-1.5 text-3xs text-slate-500">
+                        <div class="flex items-center justify-between">
+                            <span class="font-semibold text-slate-600 flex items-center gap-1">
+                                <i data-lucide="user" class="w-2.5 h-2.5 text-slate-400"></i> ${roleText}
+                            </span>
+                            <button type="button" class="btn-vote-brain flex items-center gap-1 font-bold text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2 py-0.5 rounded transition-all cursor-pointer" data-id="${item.id}" title="Votar (+1 Voto)">
+                                <i data-lucide="thumbs-up" class="w-3 h-3 text-amber-500"></i>
+                                <span class="vote-num font-mono font-bold">${votes}</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-1 text-emerald-800 italic truncate" title="${desText}">
+                            <i data-lucide="help-circle" class="w-2.5 h-2.5 shrink-0 text-emerald-600"></i>
+                            <span class="truncate">${desText}</span>
+                        </div>
+                    </div>
+                `;
+
+                // Mapear según categoría normalizada
+                const cat = (item.category || '').toLowerCase();
+                if (cat.includes('tecno')) {
+                    colTech.appendChild(card);
+                    countTech++;
+                } else if (cat.includes('proceso') || cat.includes('gesti')) {
+                    colProc.appendChild(card);
+                    countProc++;
+                } else if (cat.includes('normat')) {
+                    colNorm.appendChild(card);
+                    countNorm++;
+                } else {
+                    colCap.appendChild(card);
+                    countCap++;
+                }
+            });
+
+            // Actualizar contadores
+            const cTechEl = document.getElementById('counter-tecnologica');
+            if (cTechEl) cTechEl.textContent = countTech;
+            const cProcEl = document.getElementById('counter-procesos');
+            if (cProcEl) cProcEl.textContent = countProc;
+            const cNormEl = document.getElementById('counter-normativa');
+            if (cNormEl) cNormEl.textContent = countNorm;
+            const cCapEl = document.getElementById('counter-capacitacion');
+            if (cCapEl) cCapEl.textContent = countCap;
+
+            const ideasCountEl = document.getElementById('h07-ideas-counter');
+            if (ideasCountEl) ideasCountEl.textContent = ideas.length;
+            const votesCountEl = document.getElementById('h07-votes-counter');
+            if (votesCountEl) votesCountEl.textContent = totalVotes;
+
+            // Empty states para columnas sin tarjetas
+            const cols = [
+                { el: colTech, count: countTech, cat: 'Tecnológica' },
+                { el: colProc, count: countProc, cat: 'Procesos / Gestión' },
+                { el: colNorm, count: countNorm, cat: 'Normativa' },
+                { el: colCap, count: countCap, cat: 'Capacitación' }
+            ];
+            cols.forEach(c => {
+                if (c.count === 0) {
+                    c.el.innerHTML = `
+                        <div class="border border-dashed border-slate-200 rounded p-4 text-center text-slate-400 text-3xs italic flex flex-col items-center justify-center gap-1 min-h-[140px]">
+                            <i data-lucide="lightbulb-off" class="w-4 h-4 text-slate-300"></i>
+                            <span>Sin ideas en ${c.cat}</span>
+                        </div>
+                    `;
+                }
+            });
+
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons();
+            }
+        }
+
+        // Delegación de eventos para Dot-Voting y Eliminación
+        document.addEventListener('click', function(e) {
+            const voteBtn = e.target.closest('.btn-vote-brain');
+            if (voteBtn) {
+                e.preventDefault();
+                const id = parseInt(voteBtn.getAttribute('data-id'));
+                if (typeof votarBrainstorming === 'function') {
+                    votarBrainstorming(id);
+                    renderBrainstormingBoard();
+                }
+                return;
+            }
+
+            const delBtn = e.target.closest('.btn-delete-brain');
+            if (delBtn) {
+                e.preventDefault();
+                const id = parseInt(delBtn.getAttribute('data-id'));
+                if (confirm('¿Desea eliminar esta idea de solución?')) {
+                    if (typeof eliminarBrainstorming === 'function') {
+                        eliminarBrainstorming(id);
+                        renderBrainstormingBoard();
+                    }
+                }
+                return;
+            }
+        });
+
+        // Botón Precargar Ejemplo Metodológico H07
+        const btnPreloadH07 = document.getElementById('btn-preload-example-h07');
+        if (btnPreloadH07) {
+            btnPreloadH07.addEventListener('click', () => {
+                if (typeof precargarEjemploBrainstorming === 'function') {
+                    const res = precargarEjemploBrainstorming('active');
+                    if (res) {
+                        renderBrainstormingBoard();
+                        alert('Ejemplo metodológico de idea incorporado al tablero.');
+                    } else {
+                        alert('No se pudo precargar el ejemplo para la iniciativa activa.');
+                    }
+                }
+            });
+        }
+
+        // Temporizador Crazy 8's
+        const timerDisplay = document.getElementById('timer-display');
+        const btnTimerStart = document.getElementById('btn-timer-start');
+        const btnTimerPause = document.getElementById('btn-timer-pause');
+        const btnTimerReset = document.getElementById('btn-timer-reset');
+
+        if (timerDisplay && btnTimerStart) {
+            let timerSeconds = 480; // 8 minutos
+            let timerInterval = null;
+
+            function formatTime(s) {
+                const mins = Math.floor(s / 60);
+                const secs = s % 60;
+                return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+            }
+
+            btnTimerStart.addEventListener('click', () => {
+                if (timerInterval) return;
+                btnTimerStart.classList.add('hidden');
+                btnTimerPause.classList.remove('hidden');
+
+                timerInterval = setInterval(() => {
+                    if (timerSeconds > 0) {
+                        timerSeconds--;
+                        timerDisplay.textContent = formatTime(timerSeconds);
+                    } else {
+                        clearInterval(timerInterval);
+                        timerInterval = null;
+                        btnTimerStart.classList.remove('hidden');
+                        btnTimerPause.classList.add('hidden');
+                        alert('¡Tiempo de Crazy 8\'s completado! Es momento de revisar y votar las ideas.');
+                    }
+                }, 1000);
+            });
+
+            btnTimerPause.addEventListener('click', () => {
+                if (timerInterval) {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                }
+                btnTimerPause.classList.add('hidden');
+                btnTimerStart.classList.remove('hidden');
+            });
+
+            btnTimerReset.addEventListener('click', () => {
+                if (timerInterval) {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                }
+                timerSeconds = 480;
+                timerDisplay.textContent = '08:00';
+                btnTimerPause.classList.add('hidden');
+                btnTimerStart.classList.remove('hidden');
+            });
+        }
+
+        // Formulario de Envío
         if (formBrainstorming) {
             formBrainstorming.addEventListener('submit', (e) => {
                 e.preventDefault();
-                const dId = brainDesafioSelect.value;
-                if (!dId) {
-                    alert('Debe registrar y seleccionar un Desafío HMW primero.');
+                const dId = brainDesafioSelect ? brainDesafioSelect.value : null;
+                const titleInput = document.getElementById('brain-idea-title') || document.getElementById('brain-idea');
+                const descInput = document.getElementById('brain-idea-desc');
+                const catInput = document.getElementById('brain-category');
+                const roleInput = document.getElementById('brain-author-role');
+
+                const titleVal = titleInput ? titleInput.value.trim() : '';
+                const descVal = descInput ? descInput.value.trim() : titleVal;
+                const catVal = catInput ? catInput.value : 'Tecnológica';
+                const roleVal = roleInput ? roleInput.value.trim() : 'Especialista de Innovación';
+
+                if (!titleVal) {
+                    alert('Por favor, ingrese un título para la propuesta.');
                     return;
                 }
 
                 const newIdea = {
-                    projectId: obtenerProyectoActivoId(),
-                    desafioId: parseInt(dId),
-                    idea: document.getElementById('brain-idea').value,
-                    category: document.getElementById('brain-category').value
+                    desafioId: dId ? parseInt(dId) : null,
+                    ideaTitle: titleVal,
+                    idea: titleVal,
+                    description: descVal,
+                    category: catVal,
+                    authorRole: roleVal,
+                    votesCount: 0
                 };
-                guardarBrainstorming(newIdea);
-                renderBrainstormingBoard();
-                alert('Idea de solución incorporada al tablero.');
-                document.getElementById('brain-idea').value = '';
+
+                if (typeof guardarBrainstorming === 'function') {
+                    guardarBrainstorming(newIdea);
+                    renderBrainstormingBoard();
+                    alert('Idea de solución incorporada al tablero.');
+                    if (titleInput) titleInput.value = '';
+                    if (descInput) descInput.value = '';
+                }
             });
         }
+
+        // Inicialización de la vista
+        updateH07Banner();
+        populateDesafiosDropdown();
+        renderBrainstormingBoard();
     }
 
     // -------------------------------------------------------------
-    // FASE 3 - HERRAMIENTA 8: Matriz de Priorización
+    // FASE 3 - HERRAMIENTA 8: Matriz de Priorización de Ideas
     // -------------------------------------------------------------
     const formIdea = document.getElementById('form-idea');
     const ideasTableEl = document.getElementById('ideasTable');
-    if (ideasTableEl && typeof $ !== 'undefined' && !document.getElementById('surveysTable')) { // Evitar choques
-        const ideasTable = $('#ideasTable').DataTable({
-            data: obtenerIdeas().filter(i => i.projectId === obtenerProyectoActivoId()),
-            columns: [
-                { data: 'title' },
-                { data: 'impact' },
-                { data: 'viability' },
-                { data: 'feasibility' },
-                { data: 'innovation' },
-                { data: 'totalScore' }
-            ],
-            order: [[5, 'desc']],
-            language: {
-                url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+    const h08BannerTitle = document.getElementById('active-project-title-h08');
+
+    if (formIdea || ideasTableEl || h08BannerTitle) {
+        let dtIdeasInstance = null;
+
+        function updateH08Banner() {
+            const activeProj = typeof obtenerProyectoActivo === 'function' ? obtenerProyectoActivo() : null;
+            if (activeProj) {
+                if (h08BannerTitle) h08BannerTitle.textContent = activeProj.title;
+                const codeEl = document.getElementById('active-project-code-h08');
+                if (codeEl) codeEl.textContent = activeProj.code;
+                const unitEl = document.getElementById('active-project-unit-h08');
+                if (unitEl) unitEl.textContent = activeProj.unit;
+            }
+        }
+
+        function populateIdeasSourceDropdown() {
+            const sourceSelect = document.getElementById('idea-select-source');
+            if (!sourceSelect) return;
+
+            sourceSelect.innerHTML = '<option value="">-- Cargar desde Lluvia de Ideas o ingresar abajo --</option>';
+            const h07List = typeof obtenerBrainstormings === 'function' ? obtenerBrainstormings('active') : [];
+
+            h07List.forEach(item => {
+                const opt = document.createElement('option');
+                opt.value = item.id;
+                opt.textContent = `${item.ideaTitle || item.idea} (${item.category || 'Idea'}) [${item.votesCount || 0} votos]`;
+                opt.setAttribute('data-title', item.ideaTitle || item.idea);
+                sourceSelect.appendChild(opt);
+            });
+
+            sourceSelect.addEventListener('change', function() {
+                const selectedOpt = sourceSelect.options[sourceSelect.selectedIndex];
+                const titleVal = selectedOpt ? selectedOpt.getAttribute('data-title') : '';
+                const titleInput = document.getElementById('idea-title');
+                if (titleVal && titleInput) {
+                    titleInput.value = titleVal;
+                }
+            });
+        }
+
+        function updatePodioGanadora() {
+            const podioContainer = document.getElementById('podio-ganadora-container');
+            const podioTitle = document.getElementById('podio-title');
+            const podioScoreBadge = document.getElementById('podio-score-badge');
+
+            if (!podioContainer) return;
+
+            const list = typeof obtenerIdeas === 'function' ? obtenerIdeas('active') : [];
+            const winner = list.find(i => i.isWinningIdea);
+
+            if (winner) {
+                podioContainer.classList.remove('hidden');
+                if (podioTitle) podioTitle.textContent = winner.ideaTitle || winner.title;
+                if (podioScoreBadge) podioScoreBadge.textContent = `${winner.totalScore} / 20 Pts`;
+            } else {
+                podioContainer.classList.add('hidden');
+            }
+
+            const counterEl = document.getElementById('h08-ideas-counter');
+            if (counterEl) counterEl.textContent = list.length;
+        }
+
+        function updateLiveScore() {
+            const desInput = document.getElementById('idea-desirability');
+            const feasInput = document.getElementById('idea-feasibility');
+            const viabInput = document.getElementById('idea-viability');
+            const impInput = document.getElementById('idea-impact');
+
+            if (!desInput || !feasInput || !viabInput || !impInput) return;
+
+            const des = parseInt(desInput.value) || 4;
+            const feas = parseInt(feasInput.value) || 4;
+            const viab = parseInt(viabInput.value) || 4;
+            const imp = parseInt(impInput.value) || 4;
+
+            const valDes = document.getElementById('val-desirability');
+            if (valDes) valDes.textContent = `${des} / 5`;
+            const valFeas = document.getElementById('val-feasibility');
+            if (valFeas) valFeas.textContent = `${feas} / 5`;
+            const valViab = document.getElementById('val-viability');
+            if (valViab) valViab.textContent = `${viab} / 5`;
+            const valImp = document.getElementById('val-impact');
+            if (valImp) valImp.textContent = `${imp} / 5`;
+
+            const total = des + feas + viab + imp;
+            const totalScoreLive = document.getElementById('total-score-live');
+            if (totalScoreLive) totalScoreLive.textContent = total;
+
+            const labelEl = document.getElementById('score-category-label');
+            if (labelEl) {
+                if (total >= 16) {
+                    labelEl.textContent = 'Prioridad Alta (Excelente alternativa)';
+                    labelEl.className = 'text-2xs font-bold text-emerald-700';
+                } else if (total >= 11) {
+                    labelEl.textContent = 'Prioridad Media (Requiere ajustes)';
+                    labelEl.className = 'text-2xs font-semibold text-amber-700';
+                } else {
+                    labelEl.textContent = 'Prioridad Baja (Descartar o replantear)';
+                    labelEl.className = 'text-2xs font-semibold text-slate-500';
+                }
+            }
+        }
+
+        // Event listeners para sliders
+        ['idea-desirability', 'idea-feasibility', 'idea-viability', 'idea-impact'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('input', updateLiveScore);
+        });
+
+        function renderIdeasTable() {
+            if (!ideasTableEl) return;
+
+            const list = typeof obtenerIdeas === 'function' ? obtenerIdeas('active') : [];
+
+            if ($.fn.DataTable.isDataTable('#ideasTable')) {
+                $('#ideasTable').DataTable().destroy();
+            }
+
+            const tbody = ideasTableEl.querySelector('tbody');
+            if (tbody) tbody.innerHTML = '';
+
+            list.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.className = 'hover:bg-slate-50/80 transition-colors border-b border-slate-100';
+
+                const titleText = item.ideaTitle || item.title || 'Idea sin título';
+                const isWinner = !!item.isWinningIdea;
+                const winnerBadge = isWinner 
+                    ? `<span class="inline-flex items-center gap-1 font-bold text-3xs bg-emerald-100 text-emerald-800 border border-emerald-300 px-1.5 py-0.5 rounded ml-1.5"><i data-lucide="crown" class="w-2.5 h-2.5 text-amber-500"></i> Ganadora</span>`
+                    : '';
+
+                const scoreColor = item.totalScore >= 16 ? 'text-emerald-700 bg-emerald-50' : (item.totalScore >= 11 ? 'text-amber-700 bg-amber-50' : 'text-slate-600 bg-slate-50');
+
+                tr.innerHTML = `
+                    <td class="py-2.5 px-3">
+                        <span class="font-bold text-slate-800 text-xs">${titleText}</span>
+                        ${winnerBadge}
+                    </td>
+                    <td class="py-2.5 px-2 text-center font-mono font-semibold text-blue-700 text-xs">${item.desirability || 4}</td>
+                    <td class="py-2.5 px-2 text-center font-mono font-semibold text-emerald-700 text-xs">${item.feasibility || 4}</td>
+                    <td class="py-2.5 px-2 text-center font-mono font-semibold text-amber-700 text-xs">${item.viability || 4}</td>
+                    <td class="py-2.5 px-2 text-center font-mono font-semibold text-sky-700 text-xs">${item.impact || 4}</td>
+                    <td class="py-2.5 px-2 text-center font-mono font-extrabold text-sm ${scoreColor}">${item.totalScore || 16}</td>
+                    <td class="py-2.5 px-2 text-center">
+                        ${isWinner 
+                            ? `<span class="text-3xs font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">Ganadora</span>` 
+                            : `<button type="button" class="btn-mark-winner text-3xs font-semibold text-slate-600 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200 px-2 py-0.5 rounded transition-all" data-id="${item.id}">Hacer Ganadora</button>`}
+                    </td>
+                    <td class="py-2.5 px-2 text-right">
+                        <button type="button" class="btn-delete-idea text-slate-300 hover:text-red-500 transition-colors p-1" data-id="${item.id}" title="Eliminar evaluación">
+                            <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </td>
+                `;
+
+                if (tbody) tbody.appendChild(tr);
+            });
+
+            dtIdeasInstance = $('#ideasTable').DataTable({
+                order: [[5, 'desc']], // Ordenar por Total Score descendente
+                language: {
+                    url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+                },
+                pageLength: 10,
+                autoWidth: false
+            });
+
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons();
+            }
+
+            updatePodioGanadora();
+        }
+
+        // Delegación de eventos en tabla
+        $(ideasTableEl).on('click', '.btn-mark-winner', function() {
+            const id = parseInt($(this).attr('data-id'));
+            if (typeof marcarIdeaGanadora === 'function') {
+                marcarIdeaGanadora(id);
+                renderIdeasTable();
             }
         });
 
+        $(ideasTableEl).on('click', '.btn-delete-idea', function() {
+            const id = parseInt($(this).attr('data-id'));
+            if (confirm('¿Desea eliminar la evaluación de esta idea?')) {
+                if (typeof eliminarIdea === 'function') {
+                    eliminarIdea(id);
+                    renderIdeasTable();
+                }
+            }
+        });
+
+        // Botón Precargar Ejemplo H08
+        const btnPreloadH08 = document.getElementById('btn-preload-example-h08');
+        if (btnPreloadH08) {
+            btnPreloadH08.addEventListener('click', () => {
+                if (typeof precargarEjemploMatriz === 'function') {
+                    const res = precargarEjemploMatriz('active');
+                    if (res) {
+                        renderIdeasTable();
+                        alert('Evaluación metodológica de ejemplo incorporada.');
+                    } else {
+                        alert('No se pudo precargar el ejemplo para la iniciativa activa.');
+                    }
+                }
+            });
+        }
+
+        // Envío del Formulario
         if (formIdea) {
             formIdea.addEventListener('submit', (e) => {
                 e.preventDefault();
+                const sourceSelect = document.getElementById('idea-select-source');
+                const titleInput = document.getElementById('idea-title');
+                const desInput = document.getElementById('idea-desirability');
+                const feasInput = document.getElementById('idea-feasibility');
+                const viabInput = document.getElementById('idea-viability');
+                const impInput = document.getElementById('idea-impact');
+                const winInput = document.getElementById('idea-is-winning');
+
+                const titleVal = titleInput ? titleInput.value.trim() : '';
+                if (!titleVal) {
+                    alert('Por favor, ingrese un título para la propuesta.');
+                    return;
+                }
+
                 const idea = {
-                    projectId: obtenerProyectoActivoId(),
-                    title: document.getElementById('idea-title').value,
-                    impact: parseInt(document.getElementById('idea-impact').value),
-                    viability: parseInt(document.getElementById('idea-viability').value),
-                    feasibility: parseInt(document.getElementById('idea-feasibility').value),
-                    innovation: parseInt(document.getElementById('idea-innovation').value)
+                    ideaId: sourceSelect && sourceSelect.value ? parseInt(sourceSelect.value) : null,
+                    ideaTitle: titleVal,
+                    title: titleVal,
+                    desirability: desInput ? parseInt(desInput.value) : 4,
+                    feasibility: feasInput ? parseInt(feasInput.value) : 4,
+                    viability: viabInput ? parseInt(viabInput.value) : 4,
+                    impact: impInput ? parseInt(impInput.value) : 4,
+                    isWinningIdea: winInput ? winInput.checked : false
                 };
-                const savedIdea = guardarIdea(idea);
-                ideasTable.row.add(savedIdea).draw(false);
-                alert('Idea calificada y ordenada exitosamente.');
-                formIdea.reset();
+
+                if (typeof guardarIdea === 'function') {
+                    guardarIdea(idea);
+                    renderIdeasTable();
+                    alert('Idea ponderada y registrada en el ranking.');
+                    formIdea.reset();
+                    updateLiveScore();
+                }
             });
         }
+
+        // Inicialización de la vista
+        updateH08Banner();
+        populateIdeasSourceDropdown();
+        updateLiveScore();
+        renderIdeasTable();
     }
 
     // -------------------------------------------------------------
-    // FASE 3 - HERRAMIENTA 9: Prototipado Rápido
+    // FASE 3 - HERRAMIENTA 9: Prototipado Rápido y Storyboard
     // -------------------------------------------------------------
     const formPrototype = document.getElementById('form-prototype');
     const prototypesContainer = document.getElementById('prototypes-container');
+    const h09BannerTitle = document.getElementById('active-project-title-h09');
 
-    function renderPrototypes() {
-        if (!prototypesContainer) return;
-        prototypesContainer.innerHTML = '';
-        const list = obtenerPrototipos().filter(p => p.projectId === obtenerProyectoActivoId());
+    if (formPrototype || prototypesContainer || h09BannerTitle) {
+        function updateH09Banner() {
+            const activeProj = typeof obtenerProyectoActivo === 'function' ? obtenerProyectoActivo() : null;
+            if (activeProj) {
+                if (h09BannerTitle) h09BannerTitle.textContent = activeProj.title;
+                const codeEl = document.getElementById('active-project-code-h09');
+                if (codeEl) codeEl.textContent = activeProj.code;
+                const unitEl = document.getElementById('active-project-unit-h09');
+                if (unitEl) unitEl.textContent = activeProj.unit;
+            }
 
-        if (list.length === 0) {
-            prototypesContainer.innerHTML = '<p class="text-slate-500 text-sm col-span-2">Aún no hay prototipos conceptuales registrados para este proyecto.</p>';
-            return;
+            // Actualizar banner de Solución Ganadora (H08)
+            const winningTitleEl = document.getElementById('h09-winning-title');
+            if (winningTitleEl) {
+                const ideas = typeof obtenerIdeas === 'function' ? obtenerIdeas('active') : [];
+                const winner = ideas.find(i => i.isWinningIdea);
+                if (winner) {
+                    winningTitleEl.textContent = `${winner.ideaTitle || winner.title} (${winner.totalScore}/20 Pts)`;
+                    winningTitleEl.className = 'text-xs font-bold text-emerald-900';
+                } else {
+                    winningTitleEl.textContent = 'Sin idea ganadora seleccionada en H08 (Haga clic para evaluar en la Matriz de Priorización)';
+                    winningTitleEl.className = 'text-xs font-medium text-amber-700 italic';
+                }
+            }
         }
 
-        list.forEach(proto => {
-            const card = document.createElement('div');
-            card.className = 'card border-slate-200 p-0 overflow-hidden flex flex-col';
-            card.innerHTML = `
-                <img src="${proto.imageUrl}" alt="${proto.name}" class="w-full h-48 object-cover border-b border-slate-200">
-                <div class="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h4 class="font-bold text-slate-800 text-sm mb-1">${proto.name}</h4>
-                        <p class="text-xs text-slate-600 leading-relaxed">${proto.description}</p>
+        function renderPrototypes() {
+            if (!prototypesContainer) return;
+            prototypesContainer.innerHTML = '';
+            const list = typeof obtenerPrototipos === 'function' ? obtenerPrototipos('active') : [];
+
+            const counterEl = document.getElementById('h09-protos-counter');
+            if (counterEl) counterEl.textContent = list.length;
+
+            if (list.length === 0) {
+                prototypesContainer.innerHTML = `
+                    <div class="col-span-1 md:col-span-2 border-2 border-dashed border-slate-200 rounded-lg p-8 text-center text-slate-400 bg-white shadow-2xs flex flex-col items-center justify-center">
+                        <i data-lucide="layers" class="w-10 h-10 text-slate-300 mb-2"></i>
+                        <h4 class="text-sm font-bold text-slate-700">Sin Prototipos Registrados</h4>
+                        <p class="text-xs text-slate-500 max-w-md mt-1">Materialice la solución ganadora seleccionada en H08 mediante una maqueta PWA, storyboard o simulación de servicio.</p>
                     </div>
-                    <span class="text-[9px] bg-blue-100 text-blue-800 px-2 py-0.5 mt-3 self-start font-bold uppercase">Prototipo V1.0</span>
-                </div>
-            `;
-            prototypesContainer.appendChild(card);
-        });
-    }
+                `;
+                if (typeof lucide !== 'undefined' && lucide.createIcons) lucide.createIcons();
+                return;
+            }
 
-    if (formPrototype) {
+            list.forEach(proto => {
+                const card = document.createElement('div');
+                card.className = 'card border-slate-200 p-0 overflow-hidden flex flex-col shadow-2xs hover:shadow-xs transition-shadow bg-white';
+                
+                const titleText = proto.prototypeTitle || proto.name || 'Prototipo Conceptual';
+                const pType = proto.prototypeType || 'Digital PWA';
+                const imgUrl = proto.artifactUrlOrImage || proto.imageUrl || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500';
+                const descText = proto.description || '';
+                const testingGoalText = proto.testingGoal || 'Validar adopción y facilidad de uso por parte del usuario final.';
+
+                // Color del badge según tipo
+                let badgeClass = 'bg-blue-100 text-blue-800 border-blue-200';
+                if (pType.includes('Papel') || pType.includes('Físico')) {
+                    badgeClass = 'bg-emerald-100 text-emerald-800 border-emerald-200';
+                } else if (pType.includes('Storyboard') || pType.includes('Guion')) {
+                    badgeClass = 'bg-amber-100 text-amber-800 border-amber-200';
+                } else if (pType.includes('Servicio')) {
+                    badgeClass = 'bg-sky-100 text-sky-800 border-sky-200';
+                }
+
+                // Renderizar tags de características
+                let featuresHtml = '';
+                if (Array.isArray(proto.keyFeatures) && proto.keyFeatures.length > 0) {
+                    featuresHtml = `
+                        <div class="flex flex-wrap gap-1 mt-2 mb-2">
+                            ${proto.keyFeatures.map(f => `<span class="text-3xs bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-medium border border-slate-200">#${f}</span>`).join('')}
+                        </div>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <div class="relative bg-slate-100 border-b border-slate-200">
+                        <img src="${imgUrl}" alt="${titleText}" class="w-full h-44 object-cover" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500';">
+                        <div class="absolute top-2 left-2">
+                            <span class="text-3xs font-extrabold px-2 py-0.5 rounded uppercase border shadow-2xs ${badgeClass}">
+                                ${pType}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between gap-2 mb-1">
+                                <h4 class="font-bold text-slate-800 text-sm leading-snug">${titleText}</h4>
+                                <button type="button" class="btn-delete-proto text-slate-300 hover:text-red-500 transition-colors p-1" data-id="${proto.id}" title="Eliminar prototipo">
+                                    <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                                </button>
+                            </div>
+                            <p class="text-xs text-slate-600 leading-relaxed">${descText}</p>
+                            ${featuresHtml}
+                        </div>
+
+                        <!-- Criterio de Éxito del Testeo -->
+                        <div class="bg-emerald-50/70 border border-emerald-200 rounded p-2.5 mt-3">
+                            <span class="text-3xs uppercase tracking-wider font-extrabold text-emerald-800 flex items-center gap-1">
+                                <i data-lucide="target" class="w-3 h-3 text-emerald-600"></i>
+                                <span>Criterio de Éxito del Testeo:</span>
+                            </span>
+                            <p class="text-2xs text-slate-700 mt-0.5 italic leading-relaxed">${testingGoalText}</p>
+                        </div>
+
+                        <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-3xs text-slate-400 font-mono">ID #${proto.id}</span>
+                            <a href="${imgUrl}" target="_blank" class="btn btn-secondary text-2xs px-2.5 py-1 flex items-center gap-1 font-semibold text-slate-700 hover:text-emerald-800">
+                                <span>Ver Maqueta / Enlace</span>
+                                <i data-lucide="external-link" class="w-3 h-3"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                prototypesContainer.appendChild(card);
+            });
+
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+                lucide.createIcons();
+            }
+        }
+
+        // Delegación de eventos para eliminación
+        document.addEventListener('click', function(e) {
+            const delBtn = e.target.closest('.btn-delete-proto');
+            if (delBtn) {
+                e.preventDefault();
+                const id = parseInt(delBtn.getAttribute('data-id'));
+                if (confirm('¿Desea eliminar este artefacto de prototipo?')) {
+                    if (typeof eliminarPrototipo === 'function') {
+                        eliminarPrototipo(id);
+                        renderPrototypes();
+                    }
+                }
+            }
+        });
+
+        // Botón Precargar Ejemplo H09
+        const btnPreloadH09 = document.getElementById('btn-preload-example-h09');
+        if (btnPreloadH09) {
+            btnPreloadH09.addEventListener('click', () => {
+                if (typeof precargarEjemploPrototipos === 'function') {
+                    const res = precargarEjemploPrototipos('active');
+                    if (res) {
+                        renderPrototypes();
+                        alert('Prototipo conceptual de ejemplo incorporado a la galería.');
+                    } else {
+                        alert('No se pudo precargar el prototipo para la iniciativa activa.');
+                    }
+                }
+            });
+        }
+
+        // Formulario de Registro
+        if (formPrototype) {
+            formPrototype.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const titleInput = document.getElementById('proto-title') || document.getElementById('proto-name');
+                const typeInput = document.getElementById('proto-type');
+                const featInput = document.getElementById('proto-features');
+                const imgInput = document.getElementById('proto-image');
+                const descInput = document.getElementById('proto-desc');
+                const goalInput = document.getElementById('proto-testing-goal');
+
+                const titleVal = titleInput ? titleInput.value.trim() : '';
+                if (!titleVal) {
+                    alert('Por favor, ingrese el nombre del prototipo.');
+                    return;
+                }
+
+                const proto = {
+                    prototypeTitle: titleVal,
+                    name: titleVal,
+                    prototypeType: typeInput ? typeInput.value : 'Digital PWA',
+                    keyFeatures: featInput ? featInput.value : '',
+                    artifactUrlOrImage: imgInput ? imgInput.value.trim() : '',
+                    imageUrl: imgInput ? imgInput.value.trim() : '',
+                    description: descInput ? descInput.value.trim() : '',
+                    testingGoal: goalInput ? goalInput.value.trim() : ''
+                };
+
+                if (typeof guardarPrototipo === 'function') {
+                    guardarPrototipo(proto);
+                    renderPrototypes();
+                    alert('Prototipo conceptual guardado en la galería.');
+                    formPrototype.reset();
+                }
+            });
+        }
+
+        // Inicialización de la vista
+        updateH09Banner();
         renderPrototypes();
-
-        formPrototype.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const proto = {
-                projectId: obtenerProyectoActivoId(),
-                name: document.getElementById('proto-name').value,
-                imageUrl: document.getElementById('proto-image').value,
-                description: document.getElementById('proto-desc').value
-            };
-            guardarPrototipo(proto);
-            renderPrototypes();
-            alert('Escenario de prototipo guardado en la galería.');
-            formPrototype.reset();
-        });
     }
 
     // -------------------------------------------------------------

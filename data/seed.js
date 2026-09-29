@@ -17,7 +17,7 @@
  */
 
 const PIIP_SEED_DATA = {
-  "_schemaVersion": 7,
+  "_schemaVersion": 8,
   "_source": "Fichas de Iniciativa de Innovación Pública AGROIDEAS IN0001-IN0013 (2026)",
   "_generated": "2026-09-29",
   "users": [
@@ -621,126 +621,216 @@ const PIIP_SEED_DATA = {
     {
       "id": 1,
       "projectId": 1,
+      "projectCode": "PIIP-2026-IN0001",
       "desafioId": 1,
-      "idea": "Asistente de voz en WhatsApp que explica los módulos de capacitación en español y quechua mediante notas de audio.",
-      "category": "Tecnológica"
+      "ideaTitle": "Bot Educativo asincrónico por WhatsApp con micro-videos offline",
+      "idea": "Bot Educativo asincrónico por WhatsApp con micro-videos offline",
+      "description": "Plataforma que envía lecciones de 3 minutos comprimidas por WhatsApp y permite evaluaciones automáticas por texto.",
+      "category": "Tecnológica",
+      "authorRole": "Especialista UPDC",
+      "votesCount": 8
     },
     {
       "id": 2,
       "projectId": 1,
+      "projectCode": "PIIP-2026-IN0001",
       "desafioId": 1,
-      "idea": "Módulos educativos descargables en modo offline para ser vistos sin internet (videos MP4 en USB o tarjeta SD).",
-      "category": "Física/Canales"
+      "ideaTitle": "Kits de capacitación en memorias USB / Tarjetas SD precargadas",
+      "idea": "Kits de capacitación en memorias USB / Tarjetas SD precargadas",
+      "description": "Entrega de material multimedia educativo descargado previamente para reproducción en TV o tablets sin red.",
+      "category": "Capacitación",
+      "authorRole": "Especialista Zonal Junín",
+      "votesCount": 5
     },
     {
       "id": 3,
       "projectId": 1,
+      "projectCode": "PIIP-2026-IN0001",
       "desafioId": 1,
-      "idea": "Gestores agrarios itinerantes con tablets que recorren las ferias semanales de las comunidades impartiendo micro-capacitaciones presenciales asistidas por IA.",
-      "category": "Procesos"
+      "ideaTitle": "Gestores agrarios itinerantes con tablets en ferias comunales",
+      "idea": "Gestores agrarios itinerantes con tablets en ferias comunales",
+      "description": "Recorrido de ferias semanales de las comunidades impartiendo micro-capacitaciones presenciales asistidas por IA.",
+      "category": "Procesos / Gestión",
+      "authorRole": "Promotor Comunal",
+      "votesCount": 4
     },
     {
       "id": 4,
       "projectId": 2,
+      "projectCode": "PIIP-2026-IN0002",
       "desafioId": 2,
-      "idea": "Dashboard centralizado con semáforo de riesgo por proyecto (verde/amarillo/rojo) basado en hitos contractuales y reportes de campo.",
-      "category": "Tecnológica"
+      "ideaTitle": "Dashboard centralizado con semáforo de riesgo por proyecto",
+      "idea": "Dashboard centralizado con semáforo de riesgo por proyecto",
+      "description": "Semáforo verde/amarillo/rojo basado en hitos contractuales y reportes de campo para seguimiento proactivo.",
+      "category": "Tecnológica",
+      "authorRole": "Especialista de Monitoreo",
+      "votesCount": 9
     },
     {
       "id": 5,
       "projectId": 2,
+      "projectCode": "PIIP-2026-IN0002",
       "desafioId": 2,
-      "idea": "Alertas automáticas por SMS/WhatsApp al especialista de campo cuando un plan de negocio supere el 20% de retraso en sus hitos.",
-      "category": "Tecnológica"
+      "ideaTitle": "Alertas automáticas por SMS/WhatsApp al especialista de campo",
+      "idea": "Alertas automáticas por SMS/WhatsApp al especialista de campo",
+      "description": "Disparo automático de mensajes cuando un plan de negocio supere el 20% de retraso en sus hitos.",
+      "category": "Tecnológica",
+      "authorRole": "Líder Técnico OTI",
+      "votesCount": 6
     },
     {
       "id": 6,
       "projectId": 7,
+      "projectCode": "PIIP-2026-IN0007",
       "desafioId": 3,
-      "idea": "App móvil offline con captura de foto en tiempo real (bloqueando la galería), sellado automático de coordenadas GPS y hora en los metadatos.",
-      "category": "Tecnológica"
+      "ideaTitle": "App móvil offline con captura fotográfica y georreferenciación obligatoria",
+      "idea": "App móvil offline con captura fotográfica y georreferenciación obligatoria",
+      "description": "Captura de fotos en tiempo real (bloqueando galería) con sellado de coordenadas GPS y timestamp UTC anti-adulteración.",
+      "category": "Tecnológica",
+      "authorRole": "Evaluador Zonal",
+      "votesCount": 11
     },
     {
       "id": 7,
       "projectId": 7,
+      "projectCode": "PIIP-2026-IN0007",
       "desafioId": 3,
-      "idea": "Integración con el Padrón Nacional de Productores Agrarios del MIDAGRI para validar identidad del beneficiario en campo sin internet.",
-      "category": "Interoperabilidad"
+      "ideaTitle": "Integración con el Padrón Nacional de Productores Agrarios (PPA)",
+      "idea": "Integración con el Padrón Nacional de Productores Agrarios (PPA)",
+      "description": "Validación de identidad y parcelas del beneficiario en campo sincronizada con la base de datos nacional del MIDAGRI.",
+      "category": "Normativa",
+      "authorRole": "Asesor Legal UAJ",
+      "votesCount": 7
     }
   ],
   "ideas": [
     {
       "id": 1,
       "projectId": 1,
-      "title": "Asistente de Voz Multilingüe en WhatsApp (Chamilo + IA)",
+      "projectCode": "PIIP-2026-IN0001",
+      "ideaId": 1,
+      "ideaTitle": "Bot Educativo asincrónico por WhatsApp con micro-videos offline",
+      "title": "Bot Educativo asincrónico por WhatsApp con micro-videos offline",
+      "desirability": 5,
+      "feasibility": 4,
+      "viability": 5,
       "impact": 5,
-      "viability": 4,
-      "feasibility": 3,
       "innovation": 5,
-      "totalScore": 17
+      "totalScore": 19,
+      "isWinningIdea": true
     },
     {
       "id": 2,
       "projectId": 1,
-      "title": "Módulos Offline en USB/SD para Zonas sin Internet",
-      "impact": 4,
-      "viability": 5,
-      "feasibility": 5,
+      "projectCode": "PIIP-2026-IN0001",
+      "ideaId": 2,
+      "ideaTitle": "Kits de capacitación en memorias USB / Tarjetas SD precargadas",
+      "title": "Kits de capacitación en memorias USB / Tarjetas SD precargadas",
+      "desirability": 4,
+      "feasibility": 3,
+      "viability": 4,
+      "impact": 3,
       "innovation": 3,
-      "totalScore": 17
+      "totalScore": 14,
+      "isWinningIdea": false
     },
     {
       "id": 3,
       "projectId": 2,
-      "title": "Dashboard de Semáforo de Riesgo en Tiempo Real",
-      "impact": 5,
-      "viability": 4,
+      "projectCode": "PIIP-2026-IN0002",
+      "ideaId": 4,
+      "ideaTitle": "Dashboard centralizado con semáforo de riesgo por proyecto",
+      "title": "Dashboard centralizado con semáforo de riesgo por proyecto",
+      "desirability": 5,
       "feasibility": 4,
+      "viability": 4,
+      "impact": 5,
       "innovation": 4,
-      "totalScore": 17
+      "totalScore": 18,
+      "isWinningIdea": true
     },
     {
       "id": 4,
       "projectId": 7,
+      "projectCode": "PIIP-2026-IN0007",
+      "ideaId": 6,
+      "ideaTitle": "App Móvil Offline con GPS Obligatorio y Anti-Adulteración",
       "title": "App Móvil Offline con GPS Obligatorio y Anti-Adulteración",
+      "desirability": 5,
+      "feasibility": 4,
+      "viability": 4,
       "impact": 5,
-      "viability": 3,
-      "feasibility": 3,
       "innovation": 5,
-      "totalScore": 16
+      "totalScore": 18,
+      "isWinningIdea": true
     },
     {
       "id": 5,
       "projectId": 3,
+      "projectCode": "PIIP-2026-IN0003",
+      "ideaId": 7,
+      "ideaTitle": "Wiki Legal Dinámica con Notificaciones Automáticas a Regiones",
       "title": "Wiki Legal Dinámica con Notificaciones Automáticas a Regiones",
-      "impact": 4,
-      "viability": 5,
+      "desirability": 4,
       "feasibility": 5,
+      "viability": 5,
+      "impact": 4,
       "innovation": 3,
-      "totalScore": 17
+      "totalScore": 18,
+      "isWinningIdea": true
     }
   ],
   "prototypes": [
     {
       "id": 1,
       "projectId": 1,
-      "name": "Storyboard: Flujo de Capacitación vía Bot de WhatsApp",
+      "projectCode": "PIIP-2026-IN0001",
+      "prototypeTitle": "Simulador Web PWA de la Plataforma Blended Learning",
+      "name": "Simulador Web PWA de la Plataforma Blended Learning",
+      "prototypeType": "Digital PWA",
+      "keyFeatures": [
+        "Modo offline de lecciones",
+        "Certificación automática al terminar micro-módulos",
+        "Insignias de progreso y audio en quechua"
+      ],
+      "artifactUrlOrImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500",
       "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500",
-      "description": "El productor Don Roberto recibe un mensaje de WhatsApp. Responde con una nota de voz en quechua. El bot transcribe, responde con un video corto y registra su avance en Chamilo automáticamente."
+      "description": "El productor Don Roberto recibe un mensaje de WhatsApp. Responde con una nota de voz en quechua. El bot transcribe, responde con un video corto y registra su avance en Chamilo automáticamente.",
+      "testingGoal": "El 80% de los usuarios de prueba debe completar un micro-módulo de 3 minutos sin requerir asistencia externa."
     },
     {
       "id": 2,
       "projectId": 7,
-      "name": "Wireframe: App Evaluación de Campo con GPS Obligatorio",
+      "projectCode": "PIIP-2026-IN0007",
+      "prototypeTitle": "Maqueta Interactiva de App Móvil de Campo Anti-Fraude",
+      "name": "Maqueta Interactiva de App Móvil de Campo Anti-Fraude",
+      "prototypeType": "Digital PWA",
+      "keyFeatures": [
+        "Captura de foto con cámara bloqueada",
+        "Sello automático de GPS y timestamp UTC",
+        "Sincronización diferida offline-first"
+      ],
+      "artifactUrlOrImage": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500",
       "imageUrl": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500",
-      "description": "La evaluadora Ing. Salazar abre el app en su tablet. Selecciona el expediente, toma la foto (la galería está bloqueada), el sistema sella coordenadas GPS + timestamp y guarda offline para sincronizar después."
+      "description": "La evaluadora Ing. Salazar abre el app en su tablet. Selecciona el expediente, toma la foto (la galería está bloqueada), el sistema sella coordenadas GPS + timestamp y guarda offline para sincronizar después.",
+      "testingGoal": "Cero expedientes cargados con metadatos alterados en un lote simulado de 30 inspecciones."
     },
     {
       "id": 3,
       "projectId": 2,
-      "name": "Mockup: Dashboard de Monitoreo de Planes de Negocio",
+      "projectCode": "PIIP-2026-IN0002",
+      "prototypeTitle": "Dashboard Interactivo de Semáforo de Riesgo y Alertas",
+      "name": "Dashboard Interactivo de Semáforo de Riesgo y Alertas",
+      "prototypeType": "Digital PWA",
+      "keyFeatures": [
+        "Visualización de 4,290 planes con semáforo",
+        "Filtro por unidad regional y cadena productiva",
+        "Disparo de alertas automáticas vía SMS/WhatsApp"
+      ],
+      "artifactUrlOrImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500",
       "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500",
-      "description": "Tablero con vista de 4,290 proyectos ordenados por semáforo de riesgo. El especialista puede filtrar por región, fase del plan y nivel de alerta. Click en un proyecto abre el historial completo de hitos."
+      "description": "Tablero con vista de 4,290 proyectos ordenados por semáforo de riesgo. El especialista puede filtrar por región, fase del plan y nivel de alerta. Click en un proyecto abre el historial completo de hitos.",
+      "testingGoal": "Reducción de 5 días a 10 minutos en la identificación de planes de negocio con riesgo de incumplimiento contractual."
     }
   ],
   "actionPlans": [

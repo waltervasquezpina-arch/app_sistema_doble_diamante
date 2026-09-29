@@ -188,6 +188,64 @@ function initDatabase() {
             }
         }
 
+        // 10. Normalizar colecciones de Fase 3: Idear (H07, H08, H09)
+        if (!Array.isArray(db.brainstorming) || db.brainstorming.length === 0) {
+            db.brainstorming = JSON.parse(JSON.stringify(initialState.brainstorming || []));
+        } else {
+            db.brainstorming.forEach(b => {
+                if (!b.projectCode && b.projectId) {
+                    const proj = db.projects.find(p => p.id === b.projectId);
+                    if (proj) b.projectCode = proj.code;
+                }
+                if (!b.ideaTitle && b.idea) b.ideaTitle = b.idea;
+                if (!b.idea && b.ideaTitle) b.idea = b.ideaTitle;
+                if (!b.description) b.description = b.idea || '';
+                if (!b.category) b.category = 'Tecnológica';
+                if (!b.authorRole) b.authorRole = 'Especialista de Innovación';
+                if (typeof b.votesCount !== 'number') b.votesCount = 0;
+            });
+        }
+
+        if (!Array.isArray(db.ideas) || db.ideas.length === 0) {
+            db.ideas = JSON.parse(JSON.stringify(initialState.ideas || []));
+        } else {
+            db.ideas.forEach(i => {
+                if (!i.projectCode && i.projectId) {
+                    const proj = db.projects.find(p => p.id === i.projectId);
+                    if (proj) i.projectCode = proj.code;
+                }
+                if (!i.ideaTitle && i.title) i.ideaTitle = i.title;
+                if (!i.title && i.ideaTitle) i.title = i.ideaTitle;
+                if (typeof i.desirability !== 'number') i.desirability = 4;
+                if (typeof i.feasibility !== 'number') i.feasibility = 4;
+                if (typeof i.viability !== 'number') i.viability = 4;
+                if (typeof i.impact !== 'number') i.impact = 4;
+                if (typeof i.totalScore !== 'number') {
+                    i.totalScore = i.desirability + i.feasibility + i.viability + i.impact;
+                }
+                if (typeof i.isWinningIdea !== 'boolean') i.isWinningIdea = false;
+            });
+        }
+
+        if (!Array.isArray(db.prototypes) || db.prototypes.length === 0) {
+            db.prototypes = JSON.parse(JSON.stringify(initialState.prototypes || []));
+        } else {
+            db.prototypes.forEach(p => {
+                if (!p.projectCode && p.projectId) {
+                    const proj = db.projects.find(pr => pr.id === p.projectId);
+                    if (proj) p.projectCode = proj.code;
+                }
+                if (!p.prototypeTitle && p.name) p.prototypeTitle = p.name;
+                if (!p.name && p.prototypeTitle) p.name = p.prototypeTitle;
+                if (!p.prototypeType) p.prototypeType = 'Digital PWA';
+                if (!Array.isArray(p.keyFeatures)) p.keyFeatures = ['Flujo conceptual', 'Validación de usuario'];
+                if (!p.artifactUrlOrImage && p.imageUrl) p.artifactUrlOrImage = p.imageUrl;
+                if (!p.imageUrl && p.artifactUrlOrImage) p.imageUrl = p.artifactUrlOrImage;
+                if (!p.description) p.description = '';
+                if (!p.testingGoal) p.testingGoal = 'Validar adopción y facilidad de uso por parte del usuario final.';
+            });
+        }
+
         db._schemaVersion = SCHEMA_VERSION;
         localStorage.setItem(DB_KEY, JSON.stringify(db));
         console.log(`[PIIP DB] Actualización a v${SCHEMA_VERSION} completada con éxito. Registros de usuario conservados.`);
@@ -1042,47 +1100,371 @@ function precargarEjemploDesafio(projectIdentifier = 'active') {
     return guardarDesafio(ejemplo);
 }
 
-// H7: Lluvia de Ideas (Brainstorming)
+// ==========================================================================
+// H07: Lluvia de Ideas y Crazy 8's (Brainstorming)
+// ==========================================================================
+function obtenerBrainstormings(projectFilter = 'active') {
+    const db = getDB();
+    const all = db.brainstorming || [];
+    
+    if (projectFilter === 'all') return all;
+    
+    let targetCode = null;
+    let targetId = null;
+    
+    if (projectFilter === 'active') {
+        const active = obtenerProyectoActivo();
+        if (active) {
+            targetCode = active.code;
+            targetId = active.id;
+        }
+    } else if (typeof projectFilter === 'number') {
+        targetId = projectFilter;
+        const proj = obtenerProyectoPorId(projectFilter);
+        if (proj) targetCode = proj.code;
+    } else if (typeof projectFilter === 'string') {
+        targetCode = projectFilter;
+        const proj = obtenerProyectoPorCodigo(projectFilter);
+        if (proj) targetId = proj.id;
+    }
+    
+    if (!targetCode && !targetId) return all;
+    
+    return all.filter(b => {
+        if (targetCode && b.projectCode === targetCode) return true;
+        if (targetId && b.projectId === targetId) return true;
+        return false;
+    });
+}
+
 function guardarBrainstorming(idea) {
     const db = getDB();
-    const newId = db.brainstorming.length ? db.brainstorming[db.brainstorming.length - 1].id + 1 : 1;
-    const newIdea = { id: newId, ...idea };
+    if (!db.brainstorming) db.brainstorming = [];
+    
+    const active = obtenerProyectoActivo();
+    const newId = db.brainstorming.length ? Math.max(...db.brainstorming.map(b => b.id || 0)) + 1 : 1;
+    
+    const newIdea = {
+        id: newId,
+        projectId: idea.projectId || (active ? active.id : 1),
+        projectCode: idea.projectCode || (active ? active.code : 'PIIP-2026-IN0001'),
+        desafioId: idea.desafioId ? parseInt(idea.desafioId) : null,
+        ideaTitle: idea.ideaTitle || idea.idea || 'Idea sin título',
+        idea: idea.idea || idea.ideaTitle || 'Idea sin título',
+        description: idea.description || idea.idea || '',
+        category: idea.category || 'Tecnológica',
+        authorRole: idea.authorRole || 'Especialista de Innovación',
+        votesCount: typeof idea.votesCount === 'number' ? idea.votesCount : 0
+    };
+    
     db.brainstorming.push(newIdea);
     saveDB(db);
     return newIdea;
 }
 
-function obtenerBrainstormings() {
-    return getDB().brainstorming;
+function votarBrainstorming(id) {
+    const db = getDB();
+    const item = (db.brainstorming || []).find(b => b.id === parseInt(id));
+    if (item) {
+        item.votesCount = (item.votesCount || 0) + 1;
+        saveDB(db);
+        return item;
+    }
+    return null;
 }
 
-// H8: Matriz de Priorización (Carga e ideas evaluadas)
+function eliminarBrainstorming(id) {
+    const db = getDB();
+    const initialLen = (db.brainstorming || []).length;
+    db.brainstorming = (db.brainstorming || []).filter(b => b.id !== parseInt(id));
+    if (db.brainstorming.length !== initialLen) {
+        saveDB(db);
+        return true;
+    }
+    return false;
+}
+
+function precargarEjemploBrainstorming(projectIdentifier = 'active') {
+    let proj = null;
+    if (projectIdentifier === 'active') proj = obtenerProyectoActivo();
+    else if (typeof projectIdentifier === 'number') proj = obtenerProyectoPorId(projectIdentifier);
+    else proj = obtenerProyectoPorCodigo(projectIdentifier);
+
+    if (!proj) return null;
+
+    const desafios = obtenerDesafios(proj.code);
+    const desafioId = desafios.length ? desafios[0].id : null;
+
+    const grounded = (initialState.brainstorming || []).find(b => b.projectCode === proj.code || b.projectId === proj.id);
+
+    const ejemplo = {
+        projectId: proj.id,
+        projectCode: proj.code,
+        desafioId: desafioId,
+        ideaTitle: grounded ? grounded.ideaTitle : `Canal digital interactivo y asistido por IA para ${proj.title.split(' ')[0]}`,
+        idea: grounded ? grounded.idea : `Canal digital interactivo y asistido por IA para ${proj.title.split(' ')[0]}`,
+        description: grounded ? grounded.description : `Plataforma modular con soporte offline y micro-lecciones adaptadas a la realidad de las 12 Unidades Regionales.`,
+        category: grounded ? grounded.category : 'Tecnológica',
+        authorRole: grounded ? grounded.authorRole : 'Especialista en Innovación UPP',
+        votesCount: grounded ? grounded.votesCount : 5
+    };
+
+    return guardarBrainstorming(ejemplo);
+}
+
+// ==========================================================================
+// H08: Matriz de Priorización de Ideas
+// ==========================================================================
+function obtenerIdeas(projectFilter = 'active') {
+    const db = getDB();
+    const all = db.ideas || [];
+    
+    if (projectFilter === 'all') return all;
+    
+    let targetCode = null;
+    let targetId = null;
+    
+    if (projectFilter === 'active') {
+        const active = obtenerProyectoActivo();
+        if (active) {
+            targetCode = active.code;
+            targetId = active.id;
+        }
+    } else if (typeof projectFilter === 'number') {
+        targetId = projectFilter;
+        const proj = obtenerProyectoPorId(projectFilter);
+        if (proj) targetCode = proj.code;
+    } else if (typeof projectFilter === 'string') {
+        targetCode = projectFilter;
+        const proj = obtenerProyectoPorCodigo(projectFilter);
+        if (proj) targetId = proj.id;
+    }
+    
+    if (!targetCode && !targetId) return all;
+    
+    return all.filter(i => {
+        if (targetCode && i.projectCode === targetCode) return true;
+        if (targetId && i.projectId === targetId) return true;
+        return false;
+    });
+}
+
 function guardarIdea(idea) {
     const db = getDB();
-    const newId = db.ideas.length ? db.ideas[db.ideas.length - 1].id + 1 : 1;
-    const totalScore = parseInt(idea.impact) + parseInt(idea.viability) + parseInt(idea.feasibility) + parseInt(idea.innovation);
-    const newIdea = { id: newId, ...idea, totalScore };
+    if (!db.ideas) db.ideas = [];
+    
+    const active = obtenerProyectoActivo();
+    const newId = db.ideas.length ? Math.max(...db.ideas.map(i => i.id || 0)) + 1 : 1;
+    
+    const desirability = parseInt(idea.desirability || 4);
+    const feasibility = parseInt(idea.feasibility || 4);
+    const viability = parseInt(idea.viability || 4);
+    const impact = parseInt(idea.impact || 4);
+    const innovation = idea.innovation ? parseInt(idea.innovation) : 4;
+    const totalScore = desirability + feasibility + viability + impact;
+    
+    const pCode = idea.projectCode || (active ? active.code : 'PIIP-2026-IN0001');
+    const pId = idea.projectId || (active ? active.id : 1);
+    const isWinning = !!idea.isWinningIdea;
+
+    // Si se marca como ganadora, desmarcar otras del mismo proyecto
+    if (isWinning) {
+        db.ideas.forEach(i => {
+            if (i.projectCode === pCode || i.projectId === pId) {
+                i.isWinningIdea = false;
+            }
+        });
+    }
+
+    const newIdea = {
+        id: newId,
+        projectId: pId,
+        projectCode: pCode,
+        ideaId: idea.ideaId ? parseInt(idea.ideaId) : null,
+        ideaTitle: idea.ideaTitle || idea.title || 'Idea de Solución Priorizada',
+        title: idea.title || idea.ideaTitle || 'Idea de Solución Priorizada',
+        desirability: desirability,
+        feasibility: feasibility,
+        viability: viability,
+        impact: impact,
+        innovation: innovation,
+        totalScore: totalScore,
+        isWinningIdea: isWinning
+    };
+    
     db.ideas.push(newIdea);
     saveDB(db);
     return newIdea;
 }
 
-function obtenerIdeas() {
-    return getDB().ideas;
+function marcarIdeaGanadora(id) {
+    const db = getDB();
+    const target = (db.ideas || []).find(i => i.id === parseInt(id));
+    if (!target) return null;
+
+    db.ideas.forEach(i => {
+        if (i.projectCode === target.projectCode || i.projectId === target.projectId) {
+            i.isWinningIdea = (i.id === target.id);
+        }
+    });
+
+    saveDB(db);
+    return target;
 }
 
-// H9: Prototipado Rápido
+function eliminarIdea(id) {
+    const db = getDB();
+    const initialLen = (db.ideas || []).length;
+    db.ideas = (db.ideas || []).filter(i => i.id !== parseInt(id));
+    if (db.ideas.length !== initialLen) {
+        saveDB(db);
+        return true;
+    }
+    return false;
+}
+
+function precargarEjemploMatriz(projectIdentifier = 'active') {
+    let proj = null;
+    if (projectIdentifier === 'active') proj = obtenerProyectoActivo();
+    else if (typeof projectIdentifier === 'number') proj = obtenerProyectoPorId(projectIdentifier);
+    else proj = obtenerProyectoPorCodigo(projectIdentifier);
+
+    if (!proj) return null;
+
+    const ideasH07 = obtenerBrainstormings(proj.code);
+    const ideaRef = ideasH07.length ? ideasH07[0] : null;
+
+    const grounded = (initialState.ideas || []).find(i => i.projectCode === proj.code || i.projectId === proj.id);
+
+    const ejemplo = {
+        projectId: proj.id,
+        projectCode: proj.code,
+        ideaId: ideaRef ? ideaRef.id : (grounded ? grounded.ideaId : null),
+        ideaTitle: grounded ? grounded.ideaTitle : (ideaRef ? ideaRef.ideaTitle : `Solución integral de automatización para ${proj.title.split(' ')[0]}`),
+        title: grounded ? grounded.title : (ideaRef ? ideaRef.ideaTitle : `Solución integral de automatización para ${proj.title.split(' ')[0]}`),
+        desirability: grounded ? grounded.desirability : 5,
+        feasibility: grounded ? grounded.feasibility : 4,
+        viability: grounded ? grounded.viability : 5,
+        impact: grounded ? grounded.impact : 5,
+        innovation: grounded ? grounded.innovation : 4,
+        isWinningIdea: true
+    };
+
+    return guardarIdea(ejemplo);
+}
+
+// ==========================================================================
+// H09: Prototipado Rápido y Storyboard
+// ==========================================================================
+function obtenerPrototipos(projectFilter = 'active') {
+    const db = getDB();
+    const all = db.prototypes || [];
+    
+    if (projectFilter === 'all') return all;
+    
+    let targetCode = null;
+    let targetId = null;
+    
+    if (projectFilter === 'active') {
+        const active = obtenerProyectoActivo();
+        if (active) {
+            targetCode = active.code;
+            targetId = active.id;
+        }
+    } else if (typeof projectFilter === 'number') {
+        targetId = projectFilter;
+        const proj = obtenerProyectoPorId(projectFilter);
+        if (proj) targetCode = proj.code;
+    } else if (typeof projectFilter === 'string') {
+        targetCode = projectFilter;
+        const proj = obtenerProyectoPorCodigo(projectFilter);
+        if (proj) targetId = proj.id;
+    }
+    
+    if (!targetCode && !targetId) return all;
+    
+    return all.filter(p => {
+        if (targetCode && p.projectCode === targetCode) return true;
+        if (targetId && p.projectId === targetId) return true;
+        return false;
+    });
+}
+
 function guardarPrototipo(prototipo) {
     const db = getDB();
-    const newId = db.prototypes.length ? db.prototypes[db.prototypes.length - 1].id + 1 : 1;
-    const newPrototipo = { id: newId, ...prototipo };
+    if (!db.prototypes) db.prototypes = [];
+    
+    const active = obtenerProyectoActivo();
+    const newId = db.prototypes.length ? Math.max(...db.prototypes.map(p => p.id || 0)) + 1 : 1;
+    
+    // Normalizar keyFeatures
+    let features = [];
+    if (Array.isArray(prototipo.keyFeatures)) {
+        features = prototipo.keyFeatures.map(f => String(f).trim()).filter(Boolean);
+    } else if (typeof prototipo.keyFeatures === 'string') {
+        features = prototipo.keyFeatures.split(',').map(f => f.trim()).filter(Boolean);
+    }
+    if (features.length === 0) {
+        features = ['Interacción clave', 'Flujo de usuario validado'];
+    }
+
+    const title = prototipo.prototypeTitle || prototipo.name || 'Prototipo Conceptual';
+    const imgUrl = prototipo.artifactUrlOrImage || prototipo.imageUrl || 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500';
+
+    const newPrototipo = {
+        id: newId,
+        projectId: prototipo.projectId || (active ? active.id : 1),
+        projectCode: prototipo.projectCode || (active ? active.code : 'PIIP-2026-IN0001'),
+        prototypeTitle: title,
+        name: title,
+        prototypeType: prototipo.prototypeType || 'Digital PWA',
+        keyFeatures: features,
+        artifactUrlOrImage: imgUrl,
+        imageUrl: imgUrl,
+        description: prototipo.description || '',
+        testingGoal: prototipo.testingGoal || 'El 80% de los usuarios de prueba debe completar la interacción sin asistencia externa.'
+    };
+    
     db.prototypes.push(newPrototipo);
     saveDB(db);
     return newPrototipo;
 }
 
-function obtenerPrototipos() {
-    return getDB().prototypes;
+function eliminarPrototipo(id) {
+    const db = getDB();
+    const initialLen = (db.prototypes || []).length;
+    db.prototypes = (db.prototypes || []).filter(p => p.id !== parseInt(id));
+    if (db.prototypes.length !== initialLen) {
+        saveDB(db);
+        return true;
+    }
+    return false;
+}
+
+function precargarEjemploPrototipos(projectIdentifier = 'active') {
+    let proj = null;
+    if (projectIdentifier === 'active') proj = obtenerProyectoActivo();
+    else if (typeof projectIdentifier === 'number') proj = obtenerProyectoPorId(projectIdentifier);
+    else proj = obtenerProyectoPorCodigo(projectIdentifier);
+
+    if (!proj) return null;
+
+    const grounded = (initialState.prototypes || []).find(p => p.projectCode === proj.code || p.projectId === proj.id);
+
+    const ejemplo = {
+        projectId: proj.id,
+        projectCode: proj.code,
+        prototypeTitle: grounded ? grounded.prototypeTitle : `Prototipo Funcional / PWA para ${proj.title.split(' ')[0]}`,
+        name: grounded ? grounded.name : `Prototipo Funcional / PWA para ${proj.title.split(' ')[0]}`,
+        prototypeType: grounded ? grounded.prototypeType : 'Digital PWA',
+        keyFeatures: grounded ? grounded.keyFeatures : ['Modo offline-first', 'Notificaciones de alerta', 'Sincronización automática'],
+        artifactUrlOrImage: grounded ? grounded.artifactUrlOrImage : 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500',
+        imageUrl: grounded ? grounded.imageUrl : 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500',
+        description: grounded ? grounded.description : `Maqueta de alta fidelidad que simula la interacción del usuario final y el flujo de trabajo descentralizado.`,
+        testingGoal: grounded ? grounded.testingGoal : 'El 85% de los evaluadores zonales debe registrar y validar una acción en menos de 2 minutos.'
+    };
+
+    return guardarPrototipo(ejemplo);
 }
 
 // H10: Plan de Acción
