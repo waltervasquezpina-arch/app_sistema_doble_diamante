@@ -822,133 +822,416 @@ function initApp() {
     }
 
     // -------------------------------------------------------------
-    // FASE 2 - HERRAMIENTA 4: Ficha de Persona
+    // FASE 2 - HERRAMIENTA 4: Ficha de Persona (Arquetipos)
     // -------------------------------------------------------------
     const formPersona = document.getElementById('form-persona');
     const personasContainer = document.getElementById('personas-container');
+    const activeProjectTitleH04 = document.getElementById('active-project-title-h04');
+
+    function initFichaPersonaView() {
+        if (!personasContainer) return;
+        const activeProj = typeof obtenerProyectoActivo === 'function' ? obtenerProyectoActivo() : null;
+
+        if (activeProjectTitleH04 && activeProj) {
+            activeProjectTitleH04.textContent = activeProj.title;
+            const codeEl = document.getElementById('active-project-code-h04');
+            const unitEl = document.getElementById('active-project-unit-h04');
+            if (codeEl) codeEl.textContent = activeProj.code;
+            if (unitEl) unitEl.textContent = activeProj.responsible || 'AGROIDEAS';
+        }
+
+        renderPersonas();
+    }
 
     function renderPersonas() {
         if (!personasContainer) return;
         personasContainer.innerHTML = '';
-        const list = obtenerPersonas().filter(p => p.projectId === obtenerProyectoActivoId());
+        const list = typeof obtenerPersonas === 'function' ? obtenerPersonas('active') : [];
+
+        const countEl = document.getElementById('count-personas');
+        if (countEl) {
+            countEl.textContent = `${list.length} ${list.length === 1 ? 'arquetipo' : 'arquetipos'}`;
+        }
 
         if (list.length === 0) {
-            personasContainer.innerHTML = '<p class="text-slate-500 text-sm col-span-2">Aún no hay arquetipos de usuario registrados para este proyecto.</p>';
+            personasContainer.innerHTML = `
+                <div class="col-span-1 md:col-span-2 bg-white border border-dashed border-slate-300 rounded-lg p-8 text-center">
+                    <div class="w-12 h-12 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto mb-3 text-slate-400">
+                        <i data-lucide="user-x" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-slate-700">Sin arquetipos registrados</h4>
+                    <p class="text-xs text-slate-500 mt-1 max-w-md mx-auto">No hay fichas de persona formuladas aún para esta iniciativa. Puedes registrar una desde el formulario o cargar un ejemplo metodológico institucional.</p>
+                    <button type="button" id="btn-empty-preload-persona" class="btn btn-secondary text-xs mt-4 inline-flex items-center gap-1.5 py-1.5 px-3">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i>
+                        <span>Cargar Ejemplo Metodológico</span>
+                    </button>
+                </div>
+            `;
+            const emptyBtn = document.getElementById('btn-empty-preload-persona');
+            if (emptyBtn) {
+                emptyBtn.addEventListener('click', handlePreloadPersona);
+            }
+            if (typeof lucide !== 'undefined') lucide.createIcons();
             return;
         }
 
         list.forEach(per => {
             const card = document.createElement('div');
-            card.className = 'card border-slate-200 relative';
+            card.className = 'card border-slate-200 relative hover:border-emerald-300 transition-all flex flex-col justify-between';
+
+            const nameStr = per.archetypeName || per.name || 'Arquetipo';
+            const initial = nameStr.trim().charAt(0).toUpperCase();
+
+            // Metas list
+            const goalsList = Array.isArray(per.goals) ? per.goals : (per.goals ? per.goals.split('\n').filter(Boolean) : (per.motivation ? [per.motivation] : []));
+            const frustList = Array.isArray(per.frustrations) ? per.frustrations : (per.frustrations ? per.frustrations.split('\n').filter(Boolean) : (per.frustration ? [per.frustration] : []));
+
+            const goalsHtml = goalsList.map(g => `<li class="flex items-start gap-1.5 text-2xs text-slate-700"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i><span>${g}</span></li>`).join('');
+            const frustHtml = frustList.map(f => `<li class="flex items-start gap-1.5 text-2xs text-slate-700"><i data-lucide="alert-circle" class="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5"></i><span>${f}</span></li>`).join('');
+
             card.innerHTML = `
-                <div class="flex items-center gap-4 mb-4 pb-3 border-b border-slate-100">
-                    <div class="w-12 h-12 bg-emerald-700 text-white font-bold flex items-center justify-center text-lg">
-                        ${per.name[0]}
+                <div>
+                    <div class="flex items-start justify-between gap-3 mb-3 pb-3 border-b border-slate-100">
+                        <div class="flex items-center gap-3">
+                            <div class="w-11 h-11 bg-emerald-800 text-white font-bold flex items-center justify-center text-base rounded shadow-xs shrink-0">
+                                ${initial}
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm leading-tight">${nameStr}</h4>
+                                <p class="text-xs text-slate-500">${per.role || 'Productor'}</p>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-delete-persona text-slate-400 hover:text-red-600 p-1 hover:bg-red-50 rounded transition-colors" data-id="${per.id}" title="Eliminar arquetipo">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
                     </div>
-                    <div>
-                        <h4 class="font-bold text-slate-800 text-base">${per.name}</h4>
-                        <p class="text-xs text-slate-500">${per.role} (Edad: ${per.age} años)</p>
+
+                    <!-- Badges Demografía y Competencia Digital -->
+                    <div class="flex flex-wrap gap-1.5 mb-3">
+                        <span class="text-3xs bg-slate-100 text-slate-700 font-semibold px-2 py-0.5 rounded border border-slate-200 flex items-center gap-1">
+                            <i data-lucide="map-pin" class="w-3 h-3 text-slate-400"></i> ${per.demographics || 'Demografía no especificada'}
+                        </span>
+                        <span class="text-3xs bg-blue-50 text-blue-800 font-semibold px-2 py-0.5 rounded border border-blue-200 flex items-center gap-1">
+                            <i data-lucide="smartphone" class="w-3 h-3 text-blue-500"></i> ${per.techTechSavviness || 'Medio'}
+                        </span>
                     </div>
-                </div>
-                <blockquote class="italic text-xs text-slate-600 pl-3 border-l-2 border-emerald-600 mb-4 bg-slate-50 py-1.5 pr-2">
-                    "${per.quote}"
-                </blockquote>
-                <div class="space-y-2 text-xs">
-                    <div>
-                        <strong class="text-slate-700 block mb-0.5">Motivaciones:</strong>
-                        <p class="text-slate-600">${per.motivation}</p>
-                    </div>
-                    <div>
-                        <strong class="text-slate-700 block mb-0.5">Frustraciones y Dolores:</strong>
-                        <p class="text-slate-600">${per.frustration}</p>
+
+                    <!-- Cita Destacada -->
+                    <blockquote class="italic text-xs text-slate-700 pl-3 border-l-2 border-emerald-600 mb-3 bg-emerald-50/40 py-1.5 pr-2">
+                        "${per.quote || 'Sin lema registrado.'}"
+                    </blockquote>
+
+                    <!-- Biografía -->
+                    ${per.bio ? `<p class="text-2xs text-slate-600 mb-3 leading-relaxed">${per.bio}</p>` : ''}
+
+                    <!-- Grid Metas y Frustraciones -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 border-t border-slate-100">
+                        <div>
+                            <span class="text-3xs uppercase tracking-wider text-emerald-800 font-bold block mb-1.5 flex items-center gap-1">
+                                <i data-lucide="target" class="w-3 h-3 text-emerald-600"></i> Objetivos y Metas
+                            </span>
+                            <ul class="space-y-1">
+                                ${goalsHtml || '<li class="text-3xs text-slate-400 italic">Sin objetivos</li>'}
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="text-3xs uppercase tracking-wider text-amber-800 font-bold block mb-1.5 flex items-center gap-1">
+                                <i data-lucide="shield-alert" class="w-3 h-3 text-amber-600"></i> Frustraciones y Dolores
+                            </span>
+                            <ul class="space-y-1">
+                                ${frustHtml || '<li class="text-3xs text-slate-400 italic">Sin frustraciones</li>'}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             `;
             personasContainer.appendChild(card);
         });
+
+        // Event listener para eliminar
+        personasContainer.querySelectorAll('.btn-delete-persona').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const id = parseInt(btn.getAttribute('data-id'));
+                if (confirm('¿Desea eliminar esta ficha de arquetipo?')) {
+                    if (typeof eliminarPersona === 'function') {
+                        eliminarPersona(id);
+                        renderPersonas();
+                    }
+                }
+            });
+        });
+
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function handlePreloadPersona() {
+        if (typeof precargarEjemploPersona === 'function') {
+            precargarEjemploPersona('active');
+            renderPersonas();
+            alert('Ejemplo metodológico de arquetipo cargado para esta iniciativa.');
+        }
     }
 
     if (formPersona) {
-        renderPersonas();
+        initFichaPersonaView();
 
         formPersona.addEventListener('submit', (e) => {
             e.preventDefault();
+            const goalsText = document.getElementById('per-goals').value;
+            const frustText = document.getElementById('per-frustrations').value;
+
             const persona = {
-                projectId: obtenerProyectoActivoId(),
-                name: document.getElementById('per-name').value,
+                archetypeName: document.getElementById('per-archetype').value,
+                name: document.getElementById('per-archetype').value,
                 role: document.getElementById('per-role').value,
-                age: parseInt(document.getElementById('per-age').value),
+                demographics: document.getElementById('per-demographics').value,
+                techTechSavviness: document.getElementById('per-tech').value,
                 quote: document.getElementById('per-quote').value,
-                motivation: document.getElementById('per-motivation').value,
-                frustration: document.getElementById('per-frustration').value
+                bio: document.getElementById('per-bio').value,
+                goals: goalsText.split('\n').map(g => g.trim()).filter(Boolean),
+                frustrations: frustText.split('\n').map(f => f.trim()).filter(Boolean)
             };
+
             guardarPersona(persona);
             renderPersonas();
-            alert('Arquetipo guardado en el sistema.');
+            alert('Ficha de Arquetipo guardada exitosamente.');
             formPersona.reset();
         });
+
+        const btnClearPersona = document.getElementById('btn-clear-persona');
+        if (btnClearPersona) {
+            btnClearPersona.addEventListener('click', () => {
+                formPersona.reset();
+            });
+        }
+
+        const btnPreloadPersona = document.getElementById('btn-preload-persona');
+        if (btnPreloadPersona) {
+            btnPreloadPersona.addEventListener('click', handlePreloadPersona);
+        }
     }
 
     // -------------------------------------------------------------
-    // FASE 2 - HERRAMIENTA 5: Muro de Hallazgos
+    // FASE 2 - HERRAMIENTA 5: Muro de Hallazgos (Research Wall)
     // -------------------------------------------------------------
     const formInsight = document.getElementById('form-insight');
     const insightsGrid = document.getElementById('insights-grid');
+    const activeProjectTitleH05 = document.getElementById('active-project-title-h05');
+    const filterClusterSelect = document.getElementById('filter-cluster');
+
+    function initMuroHallazgosView() {
+        if (!insightsGrid) return;
+        const activeProj = typeof obtenerProyectoActivo === 'function' ? obtenerProyectoActivo() : null;
+
+        if (activeProjectTitleH05 && activeProj) {
+            activeProjectTitleH05.textContent = activeProj.title;
+            const codeEl = document.getElementById('active-project-code-h05');
+            const unitEl = document.getElementById('active-project-unit-h05');
+            if (codeEl) codeEl.textContent = activeProj.code;
+            if (unitEl) unitEl.textContent = activeProj.responsible || 'AGROIDEAS';
+        }
+
+        populateClusterFilter();
+        renderInsightsGrid();
+    }
+
+    function populateClusterFilter() {
+        if (!filterClusterSelect) return;
+        const currentVal = filterClusterSelect.value || 'ALL';
+        filterClusterSelect.innerHTML = '<option value="ALL">Todos los Clústeres</option>';
+
+        const allInsights = typeof obtenerInsights === 'function' ? obtenerInsights('active') : [];
+        const clusters = [...new Set(allInsights.map(i => i.clusterCategory || 'General').filter(Boolean))];
+
+        clusters.forEach(c => {
+            const opt = document.createElement('option');
+            opt.value = c;
+            opt.textContent = c;
+            filterClusterSelect.appendChild(opt);
+        });
+
+        if (clusters.includes(currentVal)) {
+            filterClusterSelect.value = currentVal;
+        } else {
+            filterClusterSelect.value = 'ALL';
+        }
+    }
 
     function renderInsightsGrid() {
         if (!insightsGrid) return;
         insightsGrid.innerHTML = '';
-        const insights = obtenerInsights();
-        const wallInsights = insights.filter(i => i.type === 'Muro' && i.title && i.projectId === obtenerProyectoActivoId());
-        
-        if (wallInsights.length === 0) {
-            insightsGrid.innerHTML = '<p class="text-slate-500 text-sm col-span-2">Aún no hay insights registrados para este proyecto.</p>';
+        const allInsights = typeof obtenerInsights === 'function' ? obtenerInsights('active') : [];
+
+        const countEl = document.getElementById('count-insights');
+        if (countEl) {
+            countEl.textContent = `${allInsights.length} ${allInsights.length === 1 ? 'nota' : 'notas'}`;
+        }
+
+        const selectedCluster = filterClusterSelect ? filterClusterSelect.value : 'ALL';
+        const filtered = selectedCluster === 'ALL' 
+            ? allInsights 
+            : allInsights.filter(i => (i.clusterCategory || 'General') === selectedCluster);
+
+        if (filtered.length === 0) {
+            insightsGrid.innerHTML = `
+                <div class="col-span-1 md:col-span-2 bg-white border border-dashed border-slate-300 rounded-lg p-8 text-center">
+                    <div class="w-12 h-12 rounded-full bg-slate-100 border border-slate-200 flex items-center justify-center mx-auto mb-3 text-slate-400">
+                        <i data-lucide="sticky-note" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-slate-700">Sin hallazgos en este filtro</h4>
+                    <p class="text-xs text-slate-500 mt-1 max-w-md mx-auto">No hay insights documentados para el criterio seleccionado. Registra una nueva revelación o carga el ejemplo metodológico.</p>
+                    <button type="button" id="btn-empty-preload-insight" class="btn btn-secondary text-xs mt-4 inline-flex items-center gap-1.5 py-1.5 px-3">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i>
+                        <span>Cargar Ejemplo Metodológico</span>
+                    </button>
+                </div>
+            `;
+            const emptyBtn = document.getElementById('btn-empty-preload-insight');
+            if (emptyBtn) {
+                emptyBtn.addEventListener('click', handlePreloadInsight);
+            }
+            if (typeof lucide !== 'undefined') lucide.createIcons();
             return;
         }
 
-        wallInsights.forEach(insight => {
+        filtered.forEach(insight => {
             const card = document.createElement('div');
-            card.className = 'sticky-note';
-            
+            card.className = 'sticky-note relative flex flex-col justify-between hover:shadow-md transition-shadow';
+
+            // Priority badge styling
+            let priorityClass = 'bg-slate-200 text-slate-700 border-slate-300';
+            const prio = (insight.priority || 'Alta').toLowerCase();
+            if (prio.includes('alta')) priorityClass = 'bg-red-100 text-red-800 border-red-200';
+            else if (prio.includes('media')) priorityClass = 'bg-amber-200 text-amber-900 border-amber-300';
+            else if (prio.includes('baja')) priorityClass = 'bg-slate-200 text-slate-700 border-slate-300';
+
+            const titleStr = insight.findingTitle || insight.title || 'Hallazgo';
+            const textStr = insight.evidenceText || insight.text || '';
+            const clusterStr = insight.clusterCategory || 'General';
+            const sourceStr = insight.sourceTool || 'Investigación';
+            const imgUrl = insight.image || insight.imageUrl || '';
+
             let imageHtml = '';
-            if (insight.image) {
-                imageHtml = `<img src="${insight.image}" alt="Evidencia" class="mt-3 w-full h-32 object-cover border border-[#fcd34d]">`;
+            if (imgUrl) {
+                imageHtml = `<img src="${imgUrl}" alt="Evidencia" class="mt-2.5 w-full h-32 object-cover border border-[#fcd34d] rounded-xs">`;
             }
 
             card.innerHTML = `
-                <div class="flex justify-between items-start mb-2">
-                    <h4 class="sticky-note__title text-sm">${insight.title}</h4>
-                    <span class="text-[9px] bg-amber-200 text-amber-900 px-1.5 py-0.5 font-bold uppercase">Insight</span>
+                <div>
+                    <!-- Encabezado de la nota -->
+                    <div class="flex justify-between items-start gap-2 mb-2">
+                        <span class="text-3xs uppercase tracking-wider font-bold bg-amber-200/90 text-amber-950 px-1.5 py-0.5 rounded border border-amber-300/80">
+                            ${clusterStr}
+                        </span>
+                        <div class="flex items-center gap-1">
+                            <span class="text-3xs uppercase font-bold px-1.5 py-0.5 rounded border ${priorityClass}">
+                                ${insight.priority || 'Alta'}
+                            </span>
+                            <button type="button" class="btn-delete-insight text-amber-900/60 hover:text-red-700 p-0.5 rounded transition-colors" data-id="${insight.id}" title="Eliminar insight">
+                                <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Título -->
+                    <h4 class="sticky-note__title text-sm font-bold leading-tight mb-2 text-amber-950">
+                        ${titleStr}
+                    </h4>
+
+                    <!-- Texto evidencia -->
+                    <p class="text-xs text-amber-950/90 mb-3 leading-relaxed">
+                        ${textStr}
+                    </p>
+
+                    <!-- Cita textual -->
+                    ${insight.quote ? `
+                    <blockquote class="sticky-note__quote text-2xs italic text-amber-950/80 mb-2">
+                        "${insight.quote}"
+                    </blockquote>
+                    ` : ''}
+
+                    ${imageHtml}
                 </div>
-                <p class="text-xs text-amber-950 mb-3 leading-relaxed">${insight.text}</p>
-                <blockquote class="sticky-note__quote">
-                    "${insight.quote}"
-                </blockquote>
-                ${imageHtml}
+
+                <!-- Footer de la nota: Herramienta origen y fecha -->
+                <div class="mt-3 pt-2 border-t border-[#fcd34d]/60 flex items-center justify-between text-3xs text-amber-950/70 font-mono">
+                    <span class="truncate max-w-[150px]" title="Origen: ${sourceStr}">
+                        <i data-lucide="compass" class="w-3 h-3 inline mr-0.5 text-amber-900"></i> ${sourceStr}
+                    </span>
+                    <span>${insight.date || '2026-09-29'}</span>
+                </div>
             `;
             insightsGrid.appendChild(card);
         });
+
+        // Event listener para eliminar insights
+        insightsGrid.querySelectorAll('.btn-delete-insight').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const id = parseInt(btn.getAttribute('data-id'));
+                if (confirm('¿Desea retirar esta nota del muro de hallazgos?')) {
+                    if (typeof eliminarInsight === 'function') {
+                        eliminarInsight(id);
+                        populateClusterFilter();
+                        renderInsightsGrid();
+                    }
+                }
+            });
+        });
+
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function handlePreloadInsight() {
+        if (typeof precargarEjemploInsight === 'function') {
+            precargarEjemploInsight('active');
+            populateClusterFilter();
+            renderInsightsGrid();
+            alert('Ejemplo metodológico fijado en el muro para esta iniciativa.');
+        }
     }
 
     if (formInsight) {
-        renderInsightsGrid();
+        initMuroHallazgosView();
+
+        if (filterClusterSelect) {
+            filterClusterSelect.addEventListener('change', () => {
+                renderInsightsGrid();
+            });
+        }
 
         formInsight.addEventListener('submit', (e) => {
             e.preventDefault();
-            const insight = {
-                projectId: obtenerProyectoActivoId(),
-                type: 'Muro',
+            const newInsight = {
+                clusterCategory: document.getElementById('insight-cluster').value,
+                findingTitle: document.getElementById('insight-title').value,
                 title: document.getElementById('insight-title').value,
+                sourceTool: document.getElementById('insight-source').value,
+                priority: document.getElementById('insight-priority').value,
+                evidenceText: document.getElementById('insight-text').value,
                 text: document.getElementById('insight-text').value,
                 quote: document.getElementById('insight-quote').value,
                 image: document.getElementById('insight-image').value,
                 date: new Date().toISOString().split('T')[0]
             };
-            guardarInsight(insight);
+
+            guardarInsight(newInsight);
+            populateClusterFilter();
             renderInsightsGrid();
-            alert('Insight agregado exitosamente.');
+            alert('Insight fijado en el muro exitosamente.');
             formInsight.reset();
         });
+
+        const btnClearInsight = document.getElementById('btn-clear-insight');
+        if (btnClearInsight) {
+            btnClearInsight.addEventListener('click', () => {
+                formInsight.reset();
+            });
+        }
+
+        const btnPreloadInsight = document.getElementById('btn-preload-insight');
+        if (btnPreloadInsight) {
+            btnPreloadInsight.addEventListener('click', handlePreloadInsight);
+        }
     }
 
     // -------------------------------------------------------------
@@ -957,81 +1240,271 @@ function initApp() {
     const formDesafio = document.getElementById('form-desafio');
     const desInsightSelect = document.getElementById('des-insight-select');
     const desafiosTableEl = document.getElementById('desafiosTable');
-    if (desafiosTableEl && typeof $ !== 'undefined') {
-        const desafiosTable = $('#desafiosTable').DataTable({
-            data: obtenerDesafios().filter(d => d.projectId === obtenerProyectoActivoId()),
+    const activeProjectTitleH06 = document.getElementById('active-project-title-h06');
+    let desafiosDataTable = null;
+
+    function initDefinicionDesafioView() {
+        if (!desafiosTableEl) return;
+        const activeProj = typeof obtenerProyectoActivo === 'function' ? obtenerProyectoActivo() : null;
+
+        if (activeProjectTitleH06 && activeProj) {
+            activeProjectTitleH06.textContent = activeProj.title;
+            const codeEl = document.getElementById('active-project-code-h06');
+            const unitEl = document.getElementById('active-project-unit-h06');
+            if (codeEl) codeEl.textContent = activeProj.code;
+            if (unitEl) unitEl.textContent = activeProj.responsible || 'AGROIDEAS';
+        }
+
+        populateInsightSelect();
+        renderDesafiosTable();
+        initMadLibsAssistant();
+    }
+
+    function populateInsightSelect() {
+        if (!desInsightSelect) return;
+        desInsightSelect.innerHTML = '';
+        const list = typeof obtenerInsights === 'function' ? obtenerInsights('active') : [];
+
+        if (list.length === 0) {
+            const opt = document.createElement('option');
+            opt.value = "";
+            opt.textContent = "Ningún Insight registrado para esta iniciativa (Revisa H05 Muro de Hallazgos)";
+            desInsightSelect.appendChild(opt);
+            return;
+        }
+
+        const defaultOpt = document.createElement('option');
+        defaultOpt.value = "";
+        defaultOpt.textContent = "-- Selecciona un Insight validado en H05 --";
+        desInsightSelect.appendChild(defaultOpt);
+
+        list.forEach(ins => {
+            const opt = document.createElement('option');
+            opt.value = ins.id;
+            const titleStr = ins.findingTitle || ins.title || 'Hallazgo';
+            const clusterStr = ins.clusterCategory || 'General';
+            opt.textContent = `[${clusterStr}] ${titleStr}`;
+            desInsightSelect.appendChild(opt);
+        });
+    }
+
+    function initMadLibsAssistant() {
+        const targetUserEl = document.getElementById('des-target-user');
+        const actionGoalEl = document.getElementById('des-action-goal');
+        const constraintEl = document.getElementById('des-constraint');
+        const previewEl = document.getElementById('hmw-preview-text');
+        const questionEl = document.getElementById('des-question');
+
+        if (!targetUserEl || !actionGoalEl || !constraintEl || !previewEl || !questionEl) return;
+
+        let userTouchedQuestion = false;
+        questionEl.addEventListener('input', () => {
+            userTouchedQuestion = true;
+        });
+
+        function updatePreview() {
+            const user = targetUserEl.value.trim();
+            const goal = actionGoalEl.value.trim();
+            const pain = constraintEl.value.trim();
+
+            const userDisplay = user || '[Usuario Objetivo]';
+            const goalDisplay = goal || '[Acción de Mejora]';
+            const painDisplay = pain || '[Obstáculo a Superar]';
+
+            previewEl.innerHTML = `"¿Cómo podríamos <span class="text-emerald-700 underline">${goalDisplay}</span> para <span class="text-blue-700 underline">${userDisplay}</span> a pesar de <span class="text-amber-700 underline">${painDisplay}</span>?"`;
+
+            if (!userTouchedQuestion) {
+                if (user || goal || pain) {
+                    questionEl.value = `¿Cómo podríamos ${goal || '...'} para ${user || '...'} a pesar de ${pain || '...'}?`;
+                } else {
+                    questionEl.value = '¿Cómo podríamos ';
+                }
+            }
+        }
+
+        targetUserEl.addEventListener('input', updatePreview);
+        actionGoalEl.addEventListener('input', updatePreview);
+        constraintEl.addEventListener('input', updatePreview);
+    }
+
+    function renderDesafiosTable() {
+        if (!desafiosTableEl || typeof $ === 'undefined') return;
+
+        const currentData = typeof obtenerDesafios === 'function' ? obtenerDesafios('active') : [];
+
+        const countEl = document.getElementById('count-desafios');
+        if (countEl) {
+            countEl.textContent = `${currentData.length} ${currentData.length === 1 ? 'desafío' : 'desafíos'}`;
+        }
+
+        if ($.fn.DataTable.isDataTable('#desafiosTable')) {
+            $('#desafiosTable').DataTable().destroy();
+        }
+
+        desafiosDataTable = $('#desafiosTable').DataTable({
+            data: currentData,
             columns: [
                 { 
                     data: 'id',
-                    render: (data) => `HMW-${String(data).padStart(3, '0')}`
+                    render: (data) => `<span class="font-mono text-2xs font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">HMW-${String(data).padStart(3, '0')}</span>`
                 },
                 { 
                     data: 'insightId',
                     render: function (data) {
-                        const insightObj = obtenerInsights().find(i => i.id === parseInt(data));
-                        return insightObj ? insightObj.title : `Insight ID ${data}`;
+                        const allInsights = typeof obtenerInsights === 'function' ? obtenerInsights('ALL') : [];
+                        const insightObj = allInsights.find(i => i.id === parseInt(data));
+                        if (insightObj) {
+                            const titleStr = insightObj.findingTitle || insightObj.title || 'Insight';
+                            const clusterStr = insightObj.clusterCategory || 'General';
+                            return `
+                                <div>
+                                    <span class="text-3xs uppercase text-slate-500 font-semibold block">${clusterStr}</span>
+                                    <span class="text-xs font-medium text-slate-800">${titleStr}</span>
+                                </div>
+                            `;
+                        }
+                        return `<span class="text-xs text-slate-500">Insight #${data || 'General'}</span>`;
                     }
                 },
-                { data: 'question' }
+                { 
+                    data: null,
+                    render: function(data, type, row) {
+                        const hmwStr = row.hmwStatement || row.question || '-';
+                        return `
+                            <div>
+                                <p class="text-xs font-semibold text-slate-800 leading-snug">${hmwStr}</p>
+                                ${row.targetUser ? `<span class="text-3xs text-slate-500 mt-1 block">Para: ${row.targetUser}</span>` : ''}
+                            </div>
+                        `;
+                    }
+                },
+                {
+                    data: 'status',
+                    render: function (data) {
+                        const statusVal = data || 'Borrador';
+                        let colorClass = 'bg-slate-100 text-slate-700 border-slate-200';
+                        if (statusVal === 'Aprobado UPP') colorClass = 'bg-emerald-100 text-emerald-800 border-emerald-300 font-bold';
+                        else if (statusVal === 'Validado por Equipo') colorClass = 'bg-blue-100 text-blue-800 border-blue-300 font-semibold';
+                        return `<span class="px-2 py-0.5 text-3xs uppercase rounded border ${colorClass}">${statusVal}</span>`;
+                    }
+                },
+                {
+                    data: null,
+                    orderable: false,
+                    className: 'text-right',
+                    render: function(data, type, row) {
+                        return `
+                            <div class="flex items-center justify-end gap-1.5">
+                                <button type="button" class="btn-toggle-status text-emerald-700 hover:text-emerald-900 p-1 hover:bg-emerald-50 rounded" data-id="${row.id}" data-status="${row.status || 'Borrador'}" title="Avanzar estado institucional">
+                                    <i data-lucide="check-circle" class="w-4 h-4 inline"></i>
+                                </button>
+                                <button type="button" class="btn-delete-desafio text-slate-400 hover:text-red-700 p-1 hover:bg-red-50 rounded" data-id="${row.id}" title="Eliminar desafío">
+                                    <i data-lucide="trash-2" class="w-4 h-4 inline"></i>
+                                </button>
+                            </div>
+                        `;
+                    }
+                }
             ],
+            drawCallback: function() {
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            },
             language: {
                 url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
             }
         });
+    }
 
-        // Poblado del selector de Insights
-        function populateInsightSelect() {
-            if (!desInsightSelect) return;
-            desInsightSelect.innerHTML = '';
-            const list = obtenerInsights().filter(i => i.type === 'Muro' && i.projectId === obtenerProyectoActivoId());
+    function handlePreloadDesafio() {
+        if (typeof precargarEjemploDesafio === 'function') {
+            precargarEjemploDesafio('active');
+            renderDesafiosTable();
+            alert('Ejemplo metodológico de desafío HMW formulado y aprobado para esta iniciativa.');
+        }
+    }
+
+    if (formDesafio) {
+        initDefinicionDesafioView();
+
+        formDesafio.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const questionVal = document.getElementById('des-question').value.trim();
             
-            if (list.length === 0) {
-                const opt = document.createElement('option');
-                opt.value = "";
-                opt.textContent = "Ningún Insight Registrado para este proyecto (Ir a H5)";
-                desInsightSelect.appendChild(opt);
+            // Forzar estructura metodológica
+            if (!questionVal.toLowerCase().startsWith('¿cómo podríamos')) {
+                alert('Por regla metodológica del Doble Diamante, la pregunta DEBE comenzar con "¿Cómo podríamos...?"');
                 return;
             }
 
-            list.forEach(ins => {
-                const opt = document.createElement('option');
-                opt.value = ins.id;
-                opt.textContent = ins.title;
-                desInsightSelect.appendChild(opt);
+            const insId = desInsightSelect.value;
+            if (!insId) {
+                alert('Debe vincular un Insight sostén proveniente de la investigación de campo.');
+                return;
+            }
+
+            const newDes = {
+                insightId: parseInt(insId),
+                targetUser: document.getElementById('des-target-user').value.trim(),
+                actionGoal: document.getElementById('des-action-goal').value.trim(),
+                constraintOrPain: document.getElementById('des-constraint').value.trim(),
+                hmwStatement: questionVal,
+                question: questionVal,
+                status: document.getElementById('des-status').value
+            };
+
+            guardarDesafio(newDes);
+            renderDesafiosTable();
+            alert('Desafío de Innovación (HMW) registrado y vinculado a la Fase 2.');
+            
+            formDesafio.reset();
+            document.getElementById('des-question').value = '¿Cómo podríamos ';
+            const previewEl = document.getElementById('hmw-preview-text');
+            if (previewEl) {
+                previewEl.innerHTML = '"¿Cómo podríamos <span class="text-emerald-700 underline">[Acción]</span> para <span class="text-blue-700 underline">[Usuario Objetivo]</span> a pesar de <span class="text-amber-700 underline">[Obstáculo]</span>?"';
+            }
+        });
+
+        const btnClearDesafio = document.getElementById('btn-clear-desafio');
+        if (btnClearDesafio) {
+            btnClearDesafio.addEventListener('click', () => {
+                formDesafio.reset();
+                document.getElementById('des-question').value = '¿Cómo podríamos ';
+                const previewEl = document.getElementById('hmw-preview-text');
+                if (previewEl) {
+                    previewEl.innerHTML = '"¿Cómo podríamos <span class="text-emerald-700 underline">[Acción]</span> para <span class="text-blue-700 underline">[Usuario Objetivo]</span> a pesar de <span class="text-amber-700 underline">[Obstáculo]</span>?"';
+                }
             });
         }
 
-        populateInsightSelect();
+        const btnPreloadDesafio = document.getElementById('btn-preload-desafio');
+        if (btnPreloadDesafio) {
+            btnPreloadDesafio.addEventListener('click', handlePreloadDesafio);
+        }
 
-        if (formDesafio) {
-            formDesafio.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const questionVal = document.getElementById('des-question').value.trim();
-                
-                // Forzar estructura metodológica
-                if (!questionVal.toLowerCase().startsWith('¿cómo podríamos')) {
-                    alert('Por regla metodológica, la pregunta DEBE comenzar con "¿Cómo podríamos...?"');
-                    return;
+        // Delegación de eventos en la tabla para cambiar estado y eliminar
+        if (desafiosTableEl) {
+            $(desafiosTableEl).on('click', '.btn-toggle-status', function() {
+                const id = parseInt($(this).attr('data-id'));
+                const currentStatus = $(this).attr('data-status');
+                let nextStatus = 'Aprobado UPP';
+                if (currentStatus === 'Borrador') nextStatus = 'Validado por Equipo';
+                else if (currentStatus === 'Validado por Equipo') nextStatus = 'Aprobado UPP';
+                else nextStatus = 'Borrador';
+
+                if (typeof actualizarEstadoDesafio === 'function') {
+                    actualizarEstadoDesafio(id, nextStatus);
+                    renderDesafiosTable();
                 }
+            });
 
-                const insId = desInsightSelect.value;
-                if (!insId) {
-                    alert('Debe seleccionar un Insight válido.');
-                    return;
+            $(desafiosTableEl).on('click', '.btn-delete-desafio', function() {
+                const id = parseInt($(this).attr('data-id'));
+                if (confirm('¿Desea eliminar este desafío metodológico?')) {
+                    if (typeof eliminarDesafio === 'function') {
+                        eliminarDesafio(id);
+                        renderDesafiosTable();
+                    }
                 }
-
-                const newDes = {
-                    projectId: obtenerProyectoActivoId(),
-                    insightId: parseInt(insId),
-                    question: questionVal
-                };
-
-                const saved = guardarDesafio(newDes);
-                desafiosTable.row.add(saved).draw(false);
-                alert('Desafío registrado exitosamente.');
-                
-                // Resetear con prefijo forzado
-                document.getElementById('des-question').value = '¿Cómo podríamos ';
             });
         }
     }
@@ -1107,7 +1580,7 @@ function initApp() {
             list.forEach(des => {
                 const opt = document.createElement('option');
                 opt.value = des.id;
-                opt.textContent = des.question;
+                opt.textContent = des.hmwStatement || des.question || `Desafío HMW-${des.id}`;
                 brainDesafioSelect.appendChild(opt);
             });
         }

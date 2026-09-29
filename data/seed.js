@@ -17,7 +17,7 @@
  */
 
 const PIIP_SEED_DATA = {
-  "_schemaVersion": 6,
+  "_schemaVersion": 7,
   "_source": "Fichas de Iniciativa de Innovación Pública AGROIDEAS IN0001-IN0013 (2026)",
   "_generated": "2026-09-29",
   "users": [
@@ -429,32 +429,65 @@ const PIIP_SEED_DATA = {
     {
       "id": 1,
       "projectId": 1,
-      "name": "Don Roberto Mamani Condori",
-      "role": "Presidente de Cooperativa Agraria y Productor de Papa Nativa",
+      "projectCode": "PIIP-2026-IN0001",
+      "archetypeName": "Mateo Quispe - El Líder Agrario Innovador",
+      "name": "Don Roberto Mamani / Mateo Quispe",
+      "role": "Presidente de Asociación de Productores de Palto y Papa Nativa",
+      "demographics": "54 años, Pichanaki (Junín) y Altiplano (Puno), Secundaria Completa",
       "age": 54,
-      "quote": "Quiero que mi asociación progrese sin perder meses enteros en papeles. Que el estado nos ayude con herramientas que entendamos.",
-      "motivation": "Llegar a la agroexportación directa y mejorar los ingresos de 45 familias productoras de su comunidad en Puno.",
-      "frustration": "La falta de conocimiento en tecnologías digitales complejas, el alto costo de los traslados a la ciudad y la barrera idiomática (habla quechua como primera lengua)."
+      "bio": "Lleva más de 20 años dedicado a la agricultura familiar asociativa. Lidera a 45 socios en su comunidad y busca que accedan a mejores mercados y fondos no reembolsables de AGROIDEAS.",
+      "goals": [
+        "Capacitar a su junta directiva en costos y contabilidad asociativa",
+        "Acceder a fondos de reconversión y adopción tecnológica de AGROIDEAS sin tramitadores"
+      ],
+      "frustrations": [
+        "Trámites burocráticos lentos y expedientes en papel que se retrasan meses",
+        "Falta de conectividad estable para capacitarse en plataformas virtuales complejas"
+      ],
+      "techTechSavviness": "Medio (Maneja smartphone, llamadas por WhatsApp y banca móvil básica)",
+      "quote": "Quiero que mi asociación progrese sin perder meses enteros en papeles. Que el estado nos ayude con herramientas que entendamos."
     },
     {
       "id": 2,
       "projectId": 7,
+      "projectCode": "PIIP-2026-IN0007",
+      "archetypeName": "Ing. Carmen Salazar Huanca - La Evaluadora de Campo",
       "name": "Ing. Carmen Salazar Huanca",
       "role": "Especialista Evaluadora - Unidad Regional Ancash",
+      "demographics": "38 años, Huaraz (Ancash), Ingeniera Agrónoma Colegiada",
       "age": 38,
-      "quote": "Necesito herramientas que funcionen sin internet. No puedo depender de la señal para hacer mi trabajo en campo.",
-      "motivation": "Hacer evaluaciones de campo justas, rápidas y verificables para que los incentivos lleguen a los productores reales.",
-      "frustration": "Llenar actas en papel bajo el sol, sin poder verificar en tiempo real si el productor cumple los criterios. Riesgo de que sus fotos sin GPS sean cuestionadas."
+      "bio": "Recorre comunidades campesinas altoandinas evaluando la viabilidad técnica y social de expedientes para la calificación del EEMRI.",
+      "goals": [
+        "Realizar evaluaciones de campo justas, rápidas y verificables",
+        "Respaldar sus informes técnicos con evidencias georreferenciadas inalterables"
+      ],
+      "frustrations": [
+        "Llenar actas físicas en papel bajo la lluvia o sol sin verificar datos previos en tiempo real",
+        "Riesgo de que sus fotografías de campo sean cuestionadas por falta de sello GPS y timestamp"
+      ],
+      "techTechSavviness": "Medio-Alto (Uso intensivo de tablet, GPS y aplicativos de campo)",
+      "quote": "Necesito herramientas que funcionen sin internet. No puedo depender de la señal para hacer mi trabajo en campo."
     },
     {
       "id": 3,
       "projectId": 2,
+      "projectCode": "PIIP-2026-IN0002",
+      "archetypeName": "Lic. Fernando Loayza Choque - El Analista de Datos",
       "name": "Lic. Fernando Loayza Choque",
       "role": "Especialista de Seguimiento - Unidad de Negocios",
+      "demographics": "42 años, Lima (Sede Central MIDAGRI), Economista Agrario",
       "age": 42,
-      "quote": "Paso más tiempo consolidando reportes en Excel que analizando si los planes de negocio van bien.",
-      "motivation": "Monitorear en tiempo real el avance de las 4,290 organizaciones agrarias y detectar problemas antes de que sea tarde.",
-      "frustration": "La información está dispersa en correos, Excel y visitas de campo. No hay un tablero central que muestre el estado real de los proyectos."
+      "bio": "Responsable de monitorear la ejecución física y financiera de más de 4,200 planes de negocio a nivel nacional.",
+      "goals": [
+        "Monitorear en tiempo real el avance de las 4,290 organizaciones agrarias",
+        "Detectar oportunamente cuellos de botella y desvíos presupuestales antes de que venzan las campañas"
+      ],
+      "frustrations": [
+        "Información dispersa en decenas de archivos Excel no estandarizados y correos zonales",
+        "Desfase de información de hasta 45 días para consolidar el estado de las inversiones"
+      ],
+      "techTechSavviness": "Avanzado (Dominio de ERPs, bases de datos y analítica en tableros)",
+      "quote": "Paso más tiempo consolidando hojas de cálculo que analizando el impacto real de las inversiones en el campo."
     }
   ],
   "insights": [
@@ -462,45 +495,75 @@ const PIIP_SEED_DATA = {
       "id": 1,
       "type": "Muro",
       "projectId": 1,
+      "projectCode": "PIIP-2026-IN0001",
+      "clusterCategory": "Accesibilidad y Alfabetización Digital",
+      "findingTitle": "Brecha de Alfabetización Digital en Productores Rurales",
       "title": "Brecha de Alfabetización Digital en Productores Rurales",
+      "evidenceText": "Los productores rurales se sienten intimidados ante plataformas web complejas y optan por procesos presenciales, pagando hasta S/. 120 de pasaje por visita.",
       "text": "Los productores rurales se sienten intimidados ante plataformas web complejas y optan por procesos presenciales, pagando hasta S/. 120 de pasaje por visita.",
-      "quote": "\"Prefiero viajar y hablar con un especialista de carne y hueso antes que llenar formularios en una computadora.\"",
+      "sourceTool": "Encuestas de Campo + AEIOU",
+      "priority": "Alta",
+      "quote": "Prefiero viajar y hablar con un especialista de carne y hueso antes que llenar formularios en una computadora.",
       "date": "2026-01-25"
     },
     {
       "id": 2,
       "type": "Muro",
       "projectId": 1,
+      "projectCode": "PIIP-2026-IN0001",
+      "clusterCategory": "Infraestructura y Conectividad",
+      "findingTitle": "Barrera de Conectividad en Zonas Rurales",
       "title": "Barrera de Conectividad en Zonas Rurales",
+      "evidenceText": "El 68% de las comunidades beneficiarias tiene acceso a internet 2G o nulo. La plataforma Chamilo requiere conexión estable para reproducir videos educativos.",
       "text": "El 68% de las comunidades beneficiarias tiene acceso a internet 2G o nulo. La plataforma Chamilo requiere conexión estable para reproducir videos educativos.",
-      "quote": "\"La plataforma es muy lenta cuando no tenemos buena señal. Es frustrante.\"",
+      "sourceTool": "AEIOU + Mapa de Empatía",
+      "priority": "Alta",
+      "quote": "La plataforma es muy lenta cuando no tenemos buena señal. Es frustrante.",
       "date": "2026-01-28"
     },
     {
       "id": 3,
       "type": "Muro",
       "projectId": 2,
+      "projectCode": "PIIP-2026-IN0002",
+      "clusterCategory": "Gestión de la Información",
+      "findingTitle": "Fragmentación de la Información de Seguimiento",
       "title": "Fragmentación de la Información de Seguimiento",
+      "evidenceText": "Los datos de avance de los planes de negocio viven en silos: correos, Excel individuales, actas físicas y sistemas separados. No existe una vista consolidada en tiempo real.",
       "text": "Los datos de avance de los planes de negocio viven en silos: correos, Excel individuales, actas físicas y sistemas separados. No existe una vista consolidada en tiempo real.",
-      "quote": "\"Paso más tiempo armando reportes en Excel que analizando si los proyectos van bien.\"",
+      "sourceTool": "Entrevistas en Profundidad",
+      "priority": "Alta",
+      "quote": "Paso más tiempo armando reportes en Excel que analizando si los proyectos van bien.",
       "date": "2026-02-12"
     },
     {
       "id": 4,
       "type": "Muro",
       "projectId": 7,
+      "projectCode": "PIIP-2026-IN0007",
+      "clusterCategory": "Trazabilidad e Integridad",
+      "findingTitle": "Vulnerabilidad de las Evidencias de Campo",
       "title": "Vulnerabilidad de las Evidencias de Campo",
+      "evidenceText": "Las fotos tomadas con celulares personales no tienen GPS ni marca de tiempo protegida. Existe riesgo real de manipulación de evidencias de las visitas de campo.",
       "text": "Las fotos tomadas con celulares personales no tienen GPS ni marca de tiempo protegida. Existe riesgo real de manipulación de evidencias de las visitas de campo.",
-      "quote": "\"¿Cómo demuestro que estuve en esa parcela si mi foto no tiene coordenadas verificadas?\"",
+      "sourceTool": "Observación de Campo AEIOU",
+      "priority": "Alta",
+      "quote": "¿Cómo demuestro que estuve en esa parcela si mi foto no tiene coordenadas verificadas?",
       "date": "2026-03-08"
     },
     {
       "id": 5,
       "type": "Muro",
       "projectId": 3,
+      "projectCode": "PIIP-2026-IN0003",
+      "clusterCategory": "Marco Legal y Normativo",
+      "findingTitle": "Inconsistencia Jurídica entre Unidades Regionales",
       "title": "Inconsistencia Jurídica entre Unidades Regionales",
+      "evidenceText": "El mismo expediente puede ser aprobado en una región y observado en otra, dependiendo del criterio del especialista. No hay una fuente única de verdad legal.",
       "text": "El mismo expediente puede ser aprobado en una región y observado en otra, dependiendo del criterio del especialista. No hay una fuente única de verdad legal.",
-      "quote": "\"Cada región interpreta las normas a su manera. Necesitamos una base de criterios centralizada y accesible.\"",
+      "sourceTool": "Focus Group Legal",
+      "priority": "Media",
+      "quote": "Cada región interpreta las normas a su manera. Necesitamos una base de criterios centralizada y accesible.",
       "date": "2026-02-15"
     }
   ],
@@ -508,26 +571,50 @@ const PIIP_SEED_DATA = {
     {
       "id": 1,
       "projectId": 1,
+      "projectCode": "PIIP-2026-IN0001",
       "insightId": 1,
-      "question": "¿Cómo podríamos facilitar el aprendizaje continuo de productores rurales con baja conectividad y alfabetización digital, sin que tengan que viajar a la ciudad?"
+      "targetUser": "los directivos y socios de organizaciones agrarias beneficiarias de AGROIDEAS",
+      "actionGoal": "brindarles una capacitación formativa continua y certificada en gestión empresarial",
+      "constraintOrPain": "las barreras de distancia geográfica y la baja conectividad a internet en sus parcelas",
+      "hmwStatement": "¿Cómo podríamos brindar una capacitación formativa continua y certificada a los directivos de organizaciones agrarias a pesar de las barreras de distancia y la conectividad inestable?",
+      "question": "¿Cómo podríamos facilitar el aprendizaje continuo de productores rurales con baja conectividad y alfabetización digital, sin que tengan que viajar a la ciudad?",
+      "status": "Aprobado UPP"
     },
     {
       "id": 2,
       "projectId": 2,
+      "projectCode": "PIIP-2026-IN0002",
       "insightId": 3,
-      "question": "¿Cómo podríamos centralizar en tiempo real el seguimiento de 4,290 planes de negocio para detectar riesgos antes de que se conviertan en incumplimientos?"
+      "targetUser": "los especialistas de seguimiento y directivos de la Unidad de Negocios",
+      "actionGoal": "centralizar y visualizar en tiempo real el avance físico y financiero de los planes de negocio",
+      "constraintOrPain": "la dispersión de reportes en hojas de cálculo y la falta de interoperabilidad",
+      "hmwStatement": "¿Cómo podríamos centralizar en tiempo real el seguimiento de 4,290 planes de negocio para detectar riesgos antes de que se conviertan en incumplimientos?",
+      "question": "¿Cómo podríamos centralizar en tiempo real el seguimiento de 4,290 planes de negocio para detectar riesgos antes de que se conviertan en incumplimientos?",
+      "status": "Aprobado UPP"
     },
     {
       "id": 3,
       "projectId": 7,
+      "projectCode": "PIIP-2026-IN0007",
       "insightId": 4,
-      "question": "¿Cómo podríamos garantizar la integridad y trazabilidad de las evaluaciones de campo en zonas sin internet, evitando la manipulación de evidencias?"
+      "targetUser": "los evaluadores zonales y comités de elegibilidad de AGROIDEAS",
+      "actionGoal": "garantizar la integridad, validez jurídica y trazabilidad de las evaluaciones de campo",
+      "constraintOrPain": "la carencia de conectividad a internet en zonas rurales y el riesgo de fotos sin georreferenciación",
+      "hmwStatement": "¿Cómo podríamos garantizar la integridad y trazabilidad de las evaluaciones de campo en zonas sin internet, evitando la manipulación de evidencias?",
+      "question": "¿Cómo podríamos garantizar la integridad y trazabilidad de las evaluaciones de campo en zonas sin internet, evitando la manipulación de evidencias?",
+      "status": "Validado por Equipo"
     },
     {
       "id": 4,
       "projectId": 3,
+      "projectCode": "PIIP-2026-IN0003",
       "insightId": 5,
-      "question": "¿Cómo podríamos eliminar la incertidumbre jurídica entre las 12 Unidades Regionales mediante acceso inmediato a criterios legales vinculantes y actualizados?"
+      "targetUser": "los asesores legales y evaluadores técnicos de las 12 Unidades Regionales",
+      "actionGoal": "estandarizar la aplicación de criterios normativos y jurisprudencia administrativa",
+      "constraintOrPain": "la disparidad de interpretaciones jurídicas regionales",
+      "hmwStatement": "¿Cómo podríamos eliminar la incertidumbre jurídica entre las 12 Unidades Regionales mediante acceso inmediato a criterios legales vinculantes y actualizados?",
+      "question": "¿Cómo podríamos eliminar la incertidumbre jurídica entre las 12 Unidades Regionales mediante acceso inmediato a criterios legales vinculantes y actualizados?",
+      "status": "Borrador"
     }
   ],
   "brainstorming": [

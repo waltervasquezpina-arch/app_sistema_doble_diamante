@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>05. Muro de Hallazgos - AGROIDEAS PIIP</title>
-    <meta name="description" content="Herramienta 05. Muro de Hallazgos - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta name="description" content="Herramienta 05. Muro de Hallazgos y Síntesis de Insights - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
     <meta property="og:title" content="05. Muro de Hallazgos - AGROIDEAS PIIP">
-    <meta property="og:description" content="Herramienta 05. Muro de Hallazgos - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta property="og:description" content="Herramienta 05. Muro de Hallazgos y Síntesis de Insights - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
     <!-- Script de Inyección de Layout -->
     <script src="../js/layout.js"></script>
 </head>
@@ -17,63 +17,163 @@
         
         <header class="mb-8">
             <h2 class="text-2xl font-bold text-slate-800">Fase 2: Definir</h2>
-            <p class="text-slate-600">Herramienta: Muro de Hallazgos y Síntesis de Insights</p>
+            <p class="text-slate-600">Herramienta: Muro de Hallazgos y Síntesis de Insights (Research Wall)</p>
             
             <!-- Descripciones Metodológicas -->
             <div class="mt-6 bg-white border border-slate-200 p-5 rounded-lg shadow-sm">
                 <div class="mb-4">
                     <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-emerald-600"></i> 1. Objetivo</h3>
-                    <p class="text-sm text-slate-600 mt-1 pl-6">Sistematizar los datos cualitativos profundos extraídos de las sesiones con los ciudadanos para transformarlos en revelaciones claras (Insights).</p>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Sistematizar los datos cualitativos y cuantitativos profundos extraídos en la Fase de Descubrimiento (AEIOU, empatía, encuestas) para transformarlos en revelaciones accionables (Insights).</p>
                 </div>
                 <div class="mb-4">
                     <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> 2. Finalidad</h3>
-                    <p class="text-sm text-slate-600 mt-1 pl-6">Encontrar la raíz del dolor del usuario mediante la organización visual de hallazgos para fundamentar el diseño de la solución.</p>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Agrupar por afinidad temática (Clústeres) y priorizar la causa raíz de las dificultades que enfrentan los usuarios para fundamentar la formulación de los desafíos HMW.</p>
                 </div>
                 <div>
                     <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-blue-600"></i> 3. Flujo de trabajo</h3>
                     <ol class="list-decimal list-inside text-sm text-slate-600 mt-1 pl-6 space-y-1">
-                        <li>Agrupa y registra los hallazgos o comentarios clave detectados en las investigaciones.</li>
-                        <li>Documenta formalmente el Insight completando los campos obligatorios, incluyendo una "Cita Textual" real del ciudadano.</li>
-                        <li>Utiliza estos insights validados para alimentar la definición del desafío en la siguiente herramienta.</li>
+                        <li>Define el título del hallazgo y clasifícalo en un clúster temático estratégico.</li>
+                        <li>Indica la herramienta de origen y describe la evidencia cualitativa o cita textual de campo.</li>
+                        <li>Establece el nivel de prioridad (<span class="font-semibold text-emerald-800">Alta</span>, <span class="font-semibold text-amber-800">Media</span> o <span class="font-semibold text-slate-600">Baja</span>) y publica el post-it en el muro.</li>
                     </ol>
                 </div>
             </div>
         </header>
+
+        <!-- Barra de Contexto de Iniciativa Activa -->
+        <div class="bg-white border border-slate-200 rounded-lg p-4 mb-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-800 font-bold">
+                    <i data-lucide="kanban" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="text-3xs uppercase tracking-wider text-slate-500 font-semibold block">Iniciativa Activa</span>
+                    <h3 id="active-project-title-h05" class="text-sm font-bold text-slate-800 leading-tight">Cargando iniciativa...</h3>
+                    <div class="flex items-center gap-2 mt-0.5">
+                        <span id="active-project-code-h05" class="text-2xs font-mono font-semibold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-150">PIIP-2026-IN0001</span>
+                        <span id="active-project-unit-h05" class="text-2xs text-slate-500">Unidad Orgánica</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="text-right mr-2 hidden sm:block">
+                    <span class="text-3xs uppercase tracking-wider text-slate-400 font-semibold block">Insights H05</span>
+                    <span id="count-insights" class="text-sm font-bold text-slate-700">0 notas</span>
+                </div>
+                <button type="button" id="btn-preload-insight" class="btn btn-secondary text-xs flex items-center gap-1.5 py-1.5 px-3">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i>
+                    <span>Cargar Ejemplo Metodológico</span>
+                </button>
+            </div>
+        </div>
         
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- Formulario Nuevo Insight -->
             <div class="card col-span-1">
-                <h3 class="card__title">Registrar Nuevo Insight</h3>
-                <form id="form-insight">
+                <h3 class="card__title flex items-center gap-2">
+                    <i data-lucide="sticky-note" class="w-4 h-4 text-emerald-600"></i>
+                    <span>Registrar Nuevo Insight</span>
+                </h3>
+                <form id="form-insight" class="space-y-3 mt-4">
                     <div class="form__group">
-                        <label class="form__label" for="insight-title">Título del Insight</label>
-                        <input type="text" id="insight-title" class="form__input" placeholder="Ej. El usuario necesita..." required>
+                        <label class="form__label" for="insight-title">Título del Hallazgo / Insight <span class="text-red-500">*</span></label>
+                        <input type="text" id="insight-title" class="form__input" placeholder="Ej. Alta preferencia por formatos offline descargables" required>
                     </div>
+
                     <div class="form__group">
-                        <label class="form__label" for="insight-text">Texto (Descripción)</label>
-                        <textarea id="insight-text" class="form__input" rows="3" placeholder="Explicación del hallazgo y por qué es relevante" required></textarea>
+                        <label class="form__label" for="insight-cluster">Categoría / Clúster Temático <span class="text-red-500">*</span></label>
+                        <select id="insight-cluster" class="form__input" required>
+                            <option value="Accesibilidad y Conectividad" selected>Accesibilidad y Conectividad</option>
+                            <option value="Alfabetización Digital y Capacitación">Alfabetización Digital y Capacitación</option>
+                            <option value="Gestión Comercial y Planes de Negocio">Gestión Comercial y Planes de Negocio</option>
+                            <option value="Procesos Administrativos y Burocracia">Procesos Administrativos y Burocracia</option>
+                            <option value="Trazabilidad, Monitoreo y Auditoría">Trazabilidad, Monitoreo y Auditoría</option>
+                            <option value="Marco Normativo y Legal">Marco Normativo y Legal</option>
+                            <option value="Infraestructura y Logística Rural">Infraestructura y Logística Rural</option>
+                        </select>
                     </div>
+
                     <div class="form__group">
-                        <label class="form__label" for="insight-quote">Cita Textual Obligatoria</label>
-                        <input type="text" id="insight-quote" class="form__input" placeholder="&quot;Lo que dijo o hizo el usuario de forma exacta&quot;" required>
+                        <label class="form__label" for="insight-source">Herramienta de Origen <span class="text-red-500">*</span></label>
+                        <select id="insight-source" class="form__input" required>
+                            <option value="Encuestas de Campo + AEIOU" selected>Encuestas de Campo + AEIOU</option>
+                            <option value="AEIOU (Observación de Campo)">AEIOU (Observación de Campo)</option>
+                            <option value="Mapa de Empatía">Mapa de Empatía</option>
+                            <option value="Focus Group / Grupos Focales">Focus Group / Grupos Focales</option>
+                            <option value="Entrevistas a Profundidad">Entrevistas a Profundidad</option>
+                        </select>
                     </div>
+
                     <div class="form__group">
-                        <label class="form__label" for="insight-image">URL Imagen de Evidencia (Opcional)</label>
+                        <label class="form__label" for="insight-priority">Nivel de Prioridad <span class="text-red-500">*</span></label>
+                        <select id="insight-priority" class="form__input" required>
+                            <option value="Alta" selected>Alta (Impacto crítico en la experiencia)</option>
+                            <option value="Media">Media (Afecta la satisfacción o agilidad)</option>
+                            <option value="Baja">Baja (Oportunidad secundaria de mejora)</option>
+                        </select>
+                    </div>
+
+                    <div class="form__group">
+                        <label class="form__label" for="insight-text">Evidencia Cualitativa / Descripción <span class="text-red-500">*</span></label>
+                        <textarea id="insight-text" class="form__input" rows="3" placeholder="Explicación detallada del hallazgo y por qué es relevante para el problema público..." required></textarea>
+                    </div>
+
+                    <div class="form__group">
+                        <label class="form__label" for="insight-quote">Cita Textual de Campo <span class="text-red-500">*</span></label>
+                        <input type="text" id="insight-quote" class="form__input" placeholder='&quot;Lo que dijo el usuario de forma textual&quot;' required>
+                    </div>
+
+                    <div class="form__group">
+                        <label class="form__label" for="insight-image">URL de Fotografía / Evidencia (Opcional)</label>
                         <input type="url" id="insight-image" class="form__input" placeholder="https://...">
                     </div>
-                    <button type="submit" class="btn btn-primary w-full">
-                        Guardar Insight en el Muro
-                    </button>
+
+                    <div class="flex gap-2 pt-2">
+                        <button type="submit" class="btn btn-primary flex-1">
+                            Fijar en el Muro
+                        </button>
+                        <button type="button" id="btn-clear-insight" class="btn btn-secondary text-xs px-3" title="Limpiar formulario">
+                            Limpiar
+                        </button>
+                    </div>
                 </form>
             </div>
 
             <!-- Muro de Hallazgos (Grid) -->
             <div class="col-span-1 lg:col-span-2">
-                <h3 class="text-xl font-semibold mb-4 text-slate-700">Muro Interactivo (Post-its)</h3>
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                    <h3 class="text-base font-bold text-slate-700 flex items-center gap-2">
+                        <i data-lucide="grid" class="w-4 h-4 text-emerald-600"></i>
+                        <span>Muro de Síntesis (Post-its Clasificados)</span>
+                    </h3>
+                    <!-- Filtro por Clúster -->
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xs text-slate-500 font-semibold">Filtrar:</span>
+                        <select id="filter-cluster" class="form__input text-2xs py-1 px-2 h-8 w-auto">
+                            <option value="ALL">Todos los Clústeres</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div id="insights-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Las tarjetas de insights (sticky-notes) se renderizarán aquí -->
                 </div>
             </div>
+        </div>
+
+        <!-- Navegación Secuencial Metodológica -->
+        <div class="mt-8 border-t border-slate-200 pt-4 flex items-center justify-between text-xs text-slate-500">
+            <a href="04-ficha-persona.html" class="flex items-center gap-1.5 text-slate-600 hover:text-emerald-800 font-semibold p-2 rounded hover:bg-slate-200 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Anterior: 04. Ficha de Persona</span>
+            </a>
+            <div class="flex items-center gap-2">
+                <span class="font-medium text-slate-400">Paso 5 de 11 (Fase 2: Definir)</span>
+            </div>
+            <a href="06-definicion-desafio.html" class="flex items-center gap-1.5 text-emerald-800 hover:text-emerald-900 font-bold bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 p-2 rounded transition-colors shadow-2xs">
+                <span>Siguiente: 06. Desafío (HMW)</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
         </div>
 
     </main>
@@ -84,4 +184,3 @@
     <script src="../js/app.js"></script>
 </body>
 </html>
-

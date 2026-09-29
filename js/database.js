@@ -114,8 +114,74 @@ function initDatabase() {
             }
         });
 
-        // 6. Asegurar otras colecciones metodológicas
-        const otherCollections = ['personas', 'desafios', 'brainstorming', 'prototypes', 'actionPlans'];
+        // 6. Normalizar colección H04: Personas / Arquetipos
+        if (!db.personas) db.personas = [];
+        if (initialState.personas) {
+            initialState.personas.forEach(seedPer => {
+                const exists = db.personas.some(p => p.id === seedPer.id);
+                if (!exists) db.personas.push(seedPer);
+            });
+        }
+        db.personas.forEach(p => {
+            if (!p.projectCode && p.projectId) {
+                const proj = db.projects.find(pr => pr.id === p.projectId);
+                if (proj) p.projectCode = proj.code;
+            }
+            if (!p.archetypeName && p.name) p.archetypeName = p.name;
+            if (!p.name && p.archetypeName) p.name = p.archetypeName;
+            if (!p.demographics && p.age) p.demographics = `${p.age} años`;
+            if (!p.bio) p.bio = p.motivation || 'Sin biografía registrada';
+            if (!p.goals) p.goals = p.motivation ? [p.motivation] : [];
+            if (!p.frustrations) p.frustrations = p.frustration ? [p.frustration] : [];
+            if (!p.techTechSavviness) p.techTechSavviness = 'Medio';
+        });
+
+        // 7. Normalizar colección H05: Insights / Muro de Hallazgos
+        if (!db.insights) db.insights = [];
+        if (initialState.insights) {
+            initialState.insights.forEach(seedIns => {
+                const exists = db.insights.some(i => i.id === seedIns.id);
+                if (!exists) db.insights.push(seedIns);
+            });
+        }
+        db.insights.forEach(i => {
+            if (!i.projectCode && i.projectId) {
+                const proj = db.projects.find(pr => pr.id === i.projectId);
+                if (proj) i.projectCode = proj.code;
+            }
+            if (!i.clusterCategory) i.clusterCategory = 'General';
+            if (!i.findingTitle && i.title) i.findingTitle = i.title;
+            if (!i.title && i.findingTitle) i.title = i.findingTitle;
+            if (!i.evidenceText && i.text) i.evidenceText = i.text;
+            if (!i.text && i.evidenceText) i.text = i.evidenceText;
+            if (!i.sourceTool) i.sourceTool = 'Investigación de Campo';
+            if (!i.priority) i.priority = 'Alta';
+            if (!i.type) i.type = 'Muro';
+        });
+
+        // 8. Normalizar colección H06: Desafíos HMW
+        if (!db.desafios) db.desafios = [];
+        if (initialState.desafios) {
+            initialState.desafios.forEach(seedDes => {
+                const exists = db.desafios.some(d => d.id === seedDes.id);
+                if (!exists) db.desafios.push(seedDes);
+            });
+        }
+        db.desafios.forEach(d => {
+            if (!d.projectCode && d.projectId) {
+                const proj = db.projects.find(pr => pr.id === d.projectId);
+                if (proj) d.projectCode = proj.code;
+            }
+            if (!d.targetUser) d.targetUser = 'los productores y directivos agrarios';
+            if (!d.actionGoal) d.actionGoal = 'mejorar la gestión de sus procesos';
+            if (!d.constraintOrPain) d.constraintOrPain = 'las limitaciones de conectividad y distancia';
+            if (!d.hmwStatement && d.question) d.hmwStatement = d.question;
+            if (!d.question && d.hmwStatement) d.question = d.hmwStatement;
+            if (!d.status) d.status = 'Aprobado UPP';
+        });
+
+        // 9. Asegurar otras colecciones metodológicas
+        const otherCollections = ['brainstorming', 'ideas', 'prototypes', 'actionPlans', 'risks'];
         for (const key of otherCollections) {
             if (db[key] === undefined || db[key] === null) {
                 db[key] = initialState[key] || [];
@@ -261,19 +327,6 @@ function actualizarFasesProyecto(projectId, phases) {
 // ==========================================================================
 // H01: Observación (Método AEIOU)
 // ==========================================================================
-function guardarInsight(insight) {
-    const db = getDB();
-    const newId = db.insights.length ? db.insights[db.insights.length - 1].id + 1 : 1;
-    const newInsight = { id: newId, ...insight };
-    db.insights.push(newInsight);
-    saveDB(db);
-    return newInsight;
-}
-
-function obtenerInsights() {
-    return getDB().insights;
-}
-
 // Obtener observaciones AEIOU con filtrado por proyecto
 // projectFilter: 'active' (default), 'ALL' (todas), o id numérico / código string
 function obtenerObservacionesAEIOU(projectFilter = 'active') {
@@ -643,32 +696,350 @@ function precargarEjemploEncuesta(projectIdentifier = 'active') {
     return obtenerEncuestas(proj.code);
 }
 
-// H4: Ficha de Persona
+// ==========================================================================
+// H04: Ficha de Persona (Arquetipos)
+// ==========================================================================
+function obtenerPersonas(projectFilter = 'active') {
+    const db = getDB();
+    const personasList = db.personas || [];
+
+    if (projectFilter === 'ALL' || projectFilter === null) {
+        return personasList;
+    }
+
+    let targetId = null;
+    let targetCode = null;
+
+    if (projectFilter === 'active') {
+        const activeProj = obtenerProyectoActivo();
+        if (activeProj) {
+            targetId = activeProj.id;
+            targetCode = activeProj.code;
+        }
+    } else if (typeof projectFilter === 'number') {
+        targetId = projectFilter;
+        const proj = obtenerProyectoPorId(projectFilter);
+        if (proj) targetCode = proj.code;
+    } else if (typeof projectFilter === 'string') {
+        targetCode = projectFilter;
+        const proj = obtenerProyectoPorCodigo(projectFilter);
+        if (proj) targetId = proj.id;
+    }
+
+    return personasList.filter(item => {
+        if (targetCode && item.projectCode && item.projectCode === targetCode) return true;
+        if (targetId && item.projectId && item.projectId === targetId) return true;
+        return false;
+    });
+}
+
 function guardarPersona(persona) {
     const db = getDB();
-    const newId = db.personas.length ? db.personas[db.personas.length - 1].id + 1 : 1;
-    const newPersona = { id: newId, ...persona };
+    if (!db.personas) db.personas = [];
+
+    const activeProj = obtenerProyectoActivo();
+    const projectId = persona.projectId || (activeProj ? activeProj.id : 1);
+    const projectCode = persona.projectCode || (activeProj ? activeProj.code : 'PIIP-2026-IN0001');
+
+    const newId = db.personas.length ? Math.max(...db.personas.map(p => p.id || 0)) + 1 : 1;
+
+    let goalsArr = Array.isArray(persona.goals) ? persona.goals : (persona.goals ? persona.goals.split('\n').map(g => g.trim()).filter(Boolean) : []);
+    let frustArr = Array.isArray(persona.frustrations) ? persona.frustrations : (persona.frustrations ? persona.frustrations.split('\n').map(f => f.trim()).filter(Boolean) : []);
+
+    const newPersona = {
+        id: newId,
+        projectId: projectId,
+        projectCode: projectCode,
+        archetypeName: persona.archetypeName || persona.name || 'Arquetipo Representativo',
+        name: persona.archetypeName || persona.name || 'Arquetipo Representativo',
+        role: persona.role || 'Productor Agrario',
+        demographics: persona.demographics || (persona.age ? `${persona.age} años` : 'Ámbito rural'),
+        age: parseInt(persona.age) || null,
+        bio: persona.bio || persona.motivation || '',
+        goals: goalsArr.length ? goalsArr : (persona.motivation ? [persona.motivation] : []),
+        frustrations: frustArr.length ? frustArr : (persona.frustration ? [persona.frustration] : []),
+        motivation: persona.motivation || goalsArr.join('. '),
+        frustration: persona.frustration || frustArr.join('. '),
+        techTechSavviness: persona.techTechSavviness || 'Medio',
+        quote: persona.quote || 'Trabajamos por el desarrollo agropecuario de nuestra comunidad.',
+        createdAt: new Date().toISOString()
+    };
+
     db.personas.push(newPersona);
     saveDB(db);
     return newPersona;
 }
 
-function obtenerPersonas() {
-    return getDB().personas;
+function eliminarPersona(personaId) {
+    const db = getDB();
+    const initialLen = (db.personas || []).length;
+    db.personas = (db.personas || []).filter(p => p.id !== parseInt(personaId));
+    if (db.personas.length !== initialLen) {
+        saveDB(db);
+        return true;
+    }
+    return false;
 }
 
-// H6: Desafío de Innovación (HMW)
+function precargarEjemploPersona(projectIdentifier = 'active') {
+    let proj = null;
+    if (projectIdentifier === 'active') proj = obtenerProyectoActivo();
+    else if (typeof projectIdentifier === 'number') proj = obtenerProyectoPorId(projectIdentifier);
+    else proj = obtenerProyectoPorCodigo(projectIdentifier);
+
+    if (!proj) return null;
+
+    const ejemplo = {
+        projectId: proj.id,
+        projectCode: proj.code,
+        archetypeName: `Mateo Quispe - Líder Agrario de "${proj.title.split(' ')[0]}"`,
+        role: 'Presidente de Asociación de Productores',
+        demographics: '48 años, ámbito rural, secundaria completa',
+        age: 48,
+        bio: `Productor agrario con 18 años de experiencia campesina. Lidera su organización comunitaria vinculada a la iniciativa "${proj.title}".`,
+        goals: [
+            'Acceder a incentivos de adopción tecnológica y reconversión de AGROIDEAS',
+            'Mejorar la comercialización directa y rendimientos productivos de sus socios'
+        ],
+        frustrations: [
+            'Trámites engorrosos en papel y demoras en visitas de evaluación',
+            'Baja cobertura de internet para reportes y capacitaciones virtuales'
+        ],
+        techTechSavviness: 'Medio (Maneja WhatsApp para coordinaciones y consultas bancarias básicas)',
+        quote: 'Queremos progresar con herramientas claras y apoyo real del Estado en nuestras parcelas.'
+    };
+
+    return guardarPersona(ejemplo);
+}
+
+// ==========================================================================
+// H05: Muro de Hallazgos (Research Wall / Insights)
+// ==========================================================================
+function obtenerInsights(projectFilter = 'active') {
+    const db = getDB();
+    const insightsList = db.insights || [];
+
+    if (projectFilter === 'ALL' || projectFilter === null) {
+        return insightsList;
+    }
+
+    let targetId = null;
+    let targetCode = null;
+
+    if (projectFilter === 'active') {
+        const activeProj = obtenerProyectoActivo();
+        if (activeProj) {
+            targetId = activeProj.id;
+            targetCode = activeProj.code;
+        }
+    } else if (typeof projectFilter === 'number') {
+        targetId = projectFilter;
+        const proj = obtenerProyectoPorId(projectFilter);
+        if (proj) targetCode = proj.code;
+    } else if (typeof projectFilter === 'string') {
+        targetCode = projectFilter;
+        const proj = obtenerProyectoPorCodigo(projectFilter);
+        if (proj) targetId = proj.id;
+    }
+
+    return insightsList.filter(item => {
+        if (targetCode && item.projectCode && item.projectCode === targetCode) return true;
+        if (targetId && item.projectId && item.projectId === targetId) return true;
+        return false;
+    });
+}
+
+function guardarInsight(insight) {
+    const db = getDB();
+    if (!db.insights) db.insights = [];
+
+    const activeProj = obtenerProyectoActivo();
+    const projectId = insight.projectId || (activeProj ? activeProj.id : 1);
+    const projectCode = insight.projectCode || (activeProj ? activeProj.code : 'PIIP-2026-IN0001');
+
+    const newId = db.insights.length ? Math.max(...db.insights.map(i => i.id || 0)) + 1 : 1;
+
+    const newInsight = {
+        id: newId,
+        type: 'Muro',
+        projectId: projectId,
+        projectCode: projectCode,
+        clusterCategory: insight.clusterCategory || 'General',
+        findingTitle: insight.findingTitle || insight.title || 'Hallazgo Relevante',
+        title: insight.findingTitle || insight.title || 'Hallazgo Relevante',
+        evidenceText: insight.evidenceText || insight.text || '',
+        text: insight.evidenceText || insight.text || '',
+        sourceTool: insight.sourceTool || 'Encuestas + AEIOU',
+        priority: insight.priority || 'Alta',
+        quote: insight.quote || '',
+        image: insight.image || '',
+        imageUrl: insight.image || insight.imageUrl || '',
+        date: insight.date || new Date().toISOString().split('T')[0],
+        createdAt: new Date().toISOString()
+    };
+
+    db.insights.push(newInsight);
+    saveDB(db);
+    return newInsight;
+}
+
+function eliminarInsight(insightId) {
+    const db = getDB();
+    const initialLen = (db.insights || []).length;
+    db.insights = (db.insights || []).filter(i => i.id !== parseInt(insightId));
+    if (db.insights.length !== initialLen) {
+        saveDB(db);
+        return true;
+    }
+    return false;
+}
+
+function precargarEjemploInsight(projectIdentifier = 'active') {
+    let proj = null;
+    if (projectIdentifier === 'active') proj = obtenerProyectoActivo();
+    else if (typeof projectIdentifier === 'number') proj = obtenerProyectoPorId(projectIdentifier);
+    else proj = obtenerProyectoPorCodigo(projectIdentifier);
+
+    if (!proj) return null;
+
+    const ejemplo = {
+        projectId: proj.id,
+        projectCode: proj.code,
+        clusterCategory: 'Accesibilidad y Conectividad',
+        findingTitle: `Preferencia por formatos descargables offline en "${proj.title.split(' ')[0]}"`,
+        evidenceText: 'Los beneficiarios descargan materiales técnicos cuando bajan a la capital distrital y los revisan sin señal en su caserío.',
+        sourceTool: 'Encuestas de Campo + AEIOU',
+        priority: 'Alta',
+        quote: 'Cuando hay wifi en el pueblo guardamos los videos en el celular para verlos en la chacra.',
+        date: new Date().toISOString().split('T')[0]
+    };
+
+    return guardarInsight(ejemplo);
+}
+
+// ==========================================================================
+// H06: Definición del Desafío (How Might We - HMW)
+// ==========================================================================
+function obtenerDesafios(projectFilter = 'active') {
+    const db = getDB();
+    const desafiosList = db.desafios || [];
+
+    if (projectFilter === 'ALL' || projectFilter === null) {
+        return desafiosList;
+    }
+
+    let targetId = null;
+    let targetCode = null;
+
+    if (projectFilter === 'active') {
+        const activeProj = obtenerProyectoActivo();
+        if (activeProj) {
+            targetId = activeProj.id;
+            targetCode = activeProj.code;
+        }
+    } else if (typeof projectFilter === 'number') {
+        targetId = projectFilter;
+        const proj = obtenerProyectoPorId(projectFilter);
+        if (proj) targetCode = proj.code;
+    } else if (typeof projectFilter === 'string') {
+        targetCode = projectFilter;
+        const proj = obtenerProyectoPorCodigo(projectFilter);
+        if (proj) targetId = proj.id;
+    }
+
+    return desafiosList.filter(item => {
+        if (targetCode && item.projectCode && item.projectCode === targetCode) return true;
+        if (targetId && item.projectId && item.projectId === targetId) return true;
+        return false;
+    });
+}
+
 function guardarDesafio(desafio) {
     const db = getDB();
-    const newId = db.desafios.length ? db.desafios[db.desafios.length - 1].id + 1 : 1;
-    const newDesafio = { id: newId, ...desafio };
+    if (!db.desafios) db.desafios = [];
+
+    const activeProj = obtenerProyectoActivo();
+    const projectId = desafio.projectId || (activeProj ? activeProj.id : 1);
+    const projectCode = desafio.projectCode || (activeProj ? activeProj.code : 'PIIP-2026-IN0001');
+
+    const newId = db.desafios.length ? Math.max(...db.desafios.map(d => d.id || 0)) + 1 : 1;
+
+    let hmwText = (desafio.hmwStatement || desafio.question || '').trim();
+    if (hmwText && !hmwText.toLowerCase().startsWith('¿cómo podríamos')) {
+        hmwText = `¿Cómo podríamos ${hmwText}`;
+    }
+
+    const newDesafio = {
+        id: newId,
+        projectId: projectId,
+        projectCode: projectCode,
+        insightId: parseInt(desafio.insightId) || null,
+        targetUser: desafio.targetUser || 'los productores y dirigentes de organizaciones agrarias',
+        actionGoal: desafio.actionGoal || 'brindarles asistencia técnica y capacitación oportuna',
+        constraintOrPain: desafio.constraintOrPain || 'las limitaciones de conectividad y distancia geográfica',
+        hmwStatement: hmwText,
+        question: hmwText,
+        status: desafio.status || 'Borrador',
+        createdAt: new Date().toISOString()
+    };
+
     db.desafios.push(newDesafio);
     saveDB(db);
     return newDesafio;
 }
 
-function obtenerDesafios() {
-    return getDB().desafios;
+function actualizarEstadoDesafio(desafioId, nuevoEstado) {
+    const db = getDB();
+    const idx = (db.desafios || []).findIndex(d => d.id === parseInt(desafioId));
+    if (idx !== -1) {
+        db.desafios[idx].status = nuevoEstado;
+        db.desafios[idx].updatedAt = new Date().toISOString();
+        saveDB(db);
+        return db.desafios[idx];
+    }
+    return null;
+}
+
+function eliminarDesafio(desafioId) {
+    const db = getDB();
+    const initialLen = (db.desafios || []).length;
+    db.desafios = (db.desafios || []).filter(d => d.id !== parseInt(desafioId));
+    if (db.desafios.length !== initialLen) {
+        saveDB(db);
+        return true;
+    }
+    return false;
+}
+
+function precargarEjemploDesafio(projectIdentifier = 'active') {
+    let proj = null;
+    if (projectIdentifier === 'active') proj = obtenerProyectoActivo();
+    else if (typeof projectIdentifier === 'number') proj = obtenerProyectoPorId(projectIdentifier);
+    else proj = obtenerProyectoPorCodigo(projectIdentifier);
+
+    if (!proj) return null;
+
+    const insights = obtenerInsights(proj.code);
+    const relatedInsightId = insights.length ? insights[0].id : 1;
+
+    const targetUser = 'los directivos y comités técnicos de organizaciones agrarias';
+    const actionGoal = `agilizar la implementación de "${proj.title.split(' ')[0]}" de forma descentralizada`;
+    const constraintOrPain = 'las limitaciones de conectividad y barreras geográficas en campo';
+    const hmw = `¿Cómo podríamos ${actionGoal} para ${targetUser} a pesar de ${constraintOrPain}?`;
+
+    const ejemplo = {
+        projectId: proj.id,
+        projectCode: proj.code,
+        insightId: relatedInsightId,
+        targetUser: targetUser,
+        actionGoal: actionGoal,
+        constraintOrPain: constraintOrPain,
+        hmwStatement: hmw,
+        question: hmw,
+        status: 'Aprobado UPP'
+    };
+
+    return guardarDesafio(ejemplo);
 }
 
 // H7: Lluvia de Ideas (Brainstorming)

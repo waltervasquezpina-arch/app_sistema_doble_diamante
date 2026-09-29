@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>06. Definición del Desafío HMW - AGROIDEAS PIIP</title>
-    <meta name="description" content="Herramienta 06. Definición del Desafío HMW - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta name="description" content="Herramienta 06. Definición del Desafío de Innovación HMW - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
     <meta property="og:title" content="06. Definición del Desafío HMW - AGROIDEAS PIIP">
-    <meta property="og:description" content="Herramienta 06. Definición del Desafío HMW - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta property="og:description" content="Herramienta 06. Definición del Desafío de Innovación HMW - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
     <!-- Script de Inyección de Layout -->
     <script src="../js/layout.js"></script>
 </head>
@@ -23,63 +23,175 @@
             <div class="mt-6 bg-white border border-slate-200 p-5 rounded-lg shadow-sm">
                 <div class="mb-4">
                     <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-emerald-600"></i> 1. Objetivo</h3>
-                    <p class="text-sm text-slate-600 mt-1 pl-6">Formular el problema exacto a resolver mediante una pregunta detonadora que guiará el proceso de ideación.</p>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Formular el problema exacto a resolver mediante preguntas detonadoras que transformen las frustraciones descubiertas en oportunidades de diseño accionables.</p>
                 </div>
                 <div class="mb-4">
                     <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> 2. Finalidad</h3>
-                    <p class="text-sm text-slate-600 mt-1 pl-6">Transformar las frustraciones e insights descubiertos en oportunidades de diseño accionables enfocadas en crear soluciones.</p>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Articular la convergencia de la Fase 2, vinculando los Insights empíricos con un marco de solución abierto, ambicioso pero viable para el proceso de ideación.</p>
                 </div>
                 <div>
                     <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-blue-600"></i> 3. Flujo de trabajo</h3>
                     <ol class="list-decimal list-inside text-sm text-slate-600 mt-1 pl-6 space-y-1">
-                        <li>Selecciona del menú desplegable un Insight previamente validado.</li>
-                        <li>Redacta el desafío utilizando la estructura autocompletable obligatoria (¿Cómo podríamos + Acción + Objeto + para + Usuario?).</li>
-                        <li>Registra la pregunta detonadora para iniciar formalmente la Fase de Ideación en el sistema.</li>
+                        <li>Selecciona del menú desplegable el Insight validado en el Muro de Hallazgos (H05).</li>
+                        <li>Descompón la fórmula asistida: <span class="font-semibold text-blue-800">Usuario Objetivo</span> + <span class="font-semibold text-emerald-800">Acción de Mejora</span> + <span class="font-semibold text-amber-800">Obstáculo a Superar</span>.</li>
+                        <li>Revisa la pregunta HMW resultante, asígnale su estado institucional (<span class="font-semibold">Borrador</span>, <span class="font-semibold">Validado por Equipo</span> o <span class="font-semibold text-emerald-800">Aprobado UPP</span>) y regístrala para habilitar la Fase 3: Idear.</li>
                     </ol>
                 </div>
             </div>
         </header>
 
-        <div class="space-y-6">
-            <!-- Formulario HMW -->
-            <div class="card max-w-3xl mx-auto">
-                <h3 class="card__title">Formular Desafío HMW</h3>
-                <form id="form-desafio">
-                    <div class="form__group">
-                        <label class="form__label" for="des-insight-select">Seleccionar Insight Sostén</label>
-                        <select id="des-insight-select" class="form__input" required>
-                            <!-- Rellenado dinámicamente con insights de la base de datos -->
-                        </select>
+        <!-- Barra de Contexto de Iniciativa Activa -->
+        <div class="bg-white border border-slate-200 rounded-lg p-4 mb-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-800 font-bold">
+                    <i data-lucide="help-circle" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="text-3xs uppercase tracking-wider text-slate-500 font-semibold block">Iniciativa Activa</span>
+                    <h3 id="active-project-title-h06" class="text-sm font-bold text-slate-800 leading-tight">Cargando iniciativa...</h3>
+                    <div class="flex items-center gap-2 mt-0.5">
+                        <span id="active-project-code-h06" class="text-2xs font-mono font-semibold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-150">PIIP-2026-IN0001</span>
+                        <span id="active-project-unit-h06" class="text-2xs text-slate-500">Unidad Orgánica</span>
                     </div>
-                    <div class="form__group">
-                        <label class="form__label" for="des-question">Pregunta Desafío (Debe empezar con "¿Cómo podríamos...?")</label>
-                        <input type="text" id="des-question" class="form__input" value="¿Cómo podríamos " required>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="text-right mr-2 hidden sm:block">
+                    <span class="text-3xs uppercase tracking-wider text-slate-400 font-semibold block">Desafíos H06</span>
+                    <span id="count-desafios" class="text-sm font-bold text-slate-700">0 formulados</span>
+                </div>
+                <button type="button" id="btn-preload-desafio" class="btn btn-secondary text-xs flex items-center gap-1.5 py-1.5 px-3">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i>
+                    <span>Cargar Ejemplo Metodológico</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Formulario Asistido HMW (Mad-libs) -->
+            <div class="card max-w-4xl mx-auto border-slate-200 shadow-sm">
+                <h3 class="card__title flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-emerald-600"></i>
+                    <span>Formular Desafío de Innovación (Estructura HMW)</span>
+                </h3>
+                
+                <form id="form-desafio" class="space-y-4 mt-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Insight Sostén -->
+                        <div class="form__group md:col-span-2">
+                            <label class="form__label" for="des-insight-select">Insight Sostén Vinculado (de H05 Muro de Hallazgos) <span class="text-red-500">*</span></label>
+                            <select id="des-insight-select" class="form__input" required>
+                                <option value="">Cargando insights validados...</option>
+                            </select>
+                            <span class="text-3xs text-slate-500">Selecciona el hallazgo que respalda la necesidad de formular esta pregunta detonadora.</span>
+                        </div>
+
+                        <!-- Componente 1: Usuario Objetivo -->
+                        <div class="form__group">
+                            <label class="form__label" for="des-target-user">1. Usuario Objetivo (¿Para quién?) <span class="text-red-500">*</span></label>
+                            <input type="text" id="des-target-user" class="form__input" placeholder="Ej. los directivos y socios de organizaciones agrarias" required>
+                            <span class="text-3xs text-slate-500">Perfil específico de ciudadano o servidor público beneficiado.</span>
+                        </div>
+
+                        <!-- Componente 2: Acción u Objetivo de Mejora -->
+                        <div class="form__group">
+                            <label class="form__label" for="des-action-goal">2. Acción de Mejora (¿Qué queremos lograr?) <span class="text-red-500">*</span></label>
+                            <input type="text" id="des-action-goal" class="form__input" placeholder="Ej. brindar capacitación continua y certificada en gestión" required>
+                            <span class="text-3xs text-slate-500">El resultado deseado expresado en verbo de acción formativa o técnica.</span>
+                        </div>
+
+                        <!-- Componente 3: Dolor / Obstáculo a Superar -->
+                        <div class="form__group md:col-span-2">
+                            <label class="form__label" for="des-constraint">3. Obstáculo / Dolor a Superar (¿A pesar de qué barrera?) <span class="text-red-500">*</span></label>
+                            <input type="text" id="des-constraint" class="form__input" placeholder="Ej. las barreras de distancia geográfica y la baja conectividad en sus parcelas" required>
+                            <span class="text-3xs text-slate-500">La restricción real encontrada durante la investigación de campo.</span>
+                        </div>
+                    </div>
+
+                    <!-- Cuadro Interactivo Mad-libs / Vista Previa en Vivo -->
+                    <div class="bg-emerald-50/60 border border-emerald-200 p-4 rounded-lg">
+                        <span class="text-3xs uppercase tracking-wider text-emerald-800 font-bold block mb-1.5 flex items-center gap-1">
+                            <i data-lucide="eye" class="w-3.5 h-3.5 text-emerald-700"></i> Vista Previa de la Pregunta Detonadora Formativa:
+                        </span>
+                        <p id="hmw-preview-text" class="text-xs md:text-sm font-semibold text-slate-800 italic leading-relaxed">
+                            "¿Cómo podríamos <span class="text-emerald-700 underline">[Acción]</span> para <span class="text-blue-700 underline">[Usuario Objetivo]</span> a pesar de <span class="text-amber-700 underline">[Obstáculo]</span>?"
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+                        <!-- Campo Pregunta Consolidada -->
+                        <div class="form__group md:col-span-2">
+                            <label class="form__label" for="des-question">Redacción Consolidada de la Pregunta HMW <span class="text-red-500">*</span></label>
+                            <input type="text" id="des-question" class="form__input font-medium text-slate-800" value="¿Cómo podríamos " required>
+                            <span class="text-3xs text-slate-500">Asegúrate de que inicie con "¿Cómo podríamos...?" respetando la convención metodológica.</span>
+                        </div>
+
+                        <!-- Estado Institucional UPP -->
+                        <div class="form__group">
+                            <label class="form__label" for="des-status">Estado del Desafío <span class="text-red-500">*</span></label>
+                            <select id="des-status" class="form__input" required>
+                                <option value="Borrador">Borrador (En formulación)</option>
+                                <option value="Validado por Equipo">Validado por Equipo</option>
+                                <option value="Aprobado UPP" selected>Aprobado UPP (Listo para Ideación)</option>
+                            </select>
+                        </div>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary w-full">
-                        Registrar Desafío Metodológico
-                    </button>
+                    <div class="flex gap-2 pt-2">
+                        <button type="submit" class="btn btn-primary flex-1">
+                            Registrar Desafío Metodológico
+                        </button>
+                        <button type="button" id="btn-clear-desafio" class="btn btn-secondary text-xs px-3" title="Limpiar formulario">
+                            Limpiar
+                        </button>
+                    </div>
                 </form>
             </div>
 
             <!-- Tabla de Desafíos Activos -->
-            <div class="card">
-                <h3 class="card__title">Preguntas Detonadoras (HMW) Registradas</h3>
+            <div class="card border-slate-200 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+                    <div>
+                        <h3 class="card__title flex items-center gap-2">
+                            <i data-lucide="list-checks" class="w-4 h-4 text-emerald-600"></i>
+                            <span>Preguntas Detonadoras (HMW) Registradas</span>
+                        </h3>
+                        <p class="text-xs text-slate-500">Desafíos formulados para la iniciativa activa. Los aprobados pasarán a la Fase 3: Idear.</p>
+                    </div>
+                </div>
+
                 <div class="overflow-x-auto">
                     <table id="desafiosTable" class="w-full text-left border-collapse">
                         <thead>
-                            <tr>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Código</th>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Insight Vinculado</th>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Pregunta Detonadora (HMW)</th>
+                            <tr class="bg-slate-50 text-slate-700">
+                                <th class="border-b border-slate-200 py-2.5 px-3 text-2xs font-bold uppercase">Código</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 text-2xs font-bold uppercase">Insight Sostén</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 text-2xs font-bold uppercase">Pregunta Detonadora (HMW)</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 text-2xs font-bold uppercase">Estado</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 text-2xs font-bold uppercase text-right">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Carga dinámica -->
+                            <!-- Carga dinámica por DataTables -->
                         </tbody>
                     </table>
                 </div>
             </div>
+        </div>
+
+        <!-- Navegación Secuencial Metodológica hacia Fase 3 -->
+        <div class="mt-8 border-t border-slate-200 pt-4 flex items-center justify-between text-xs text-slate-500">
+            <a href="05-grupos-focales.html" class="flex items-center gap-1.5 text-slate-600 hover:text-emerald-800 font-semibold p-2 rounded hover:bg-slate-200 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Anterior: 05. Muro de Hallazgos</span>
+            </a>
+            <div class="flex items-center gap-2">
+                <span class="font-medium text-slate-400">Paso 6 de 11 (Cierre de Fase 2: Definir)</span>
+            </div>
+            <a href="../fase3/07-lluvia-ideas.html" class="flex items-center gap-1.5 text-emerald-800 hover:text-emerald-900 font-bold bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 p-2 rounded transition-colors shadow-2xs">
+                <span>Avanzar a Fase 3: Idear (07. Lluvia de Ideas)</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
         </div>
 
     </main>
@@ -90,4 +202,3 @@
     <script src="../js/app.js"></script>
 </body>
 </html>
-

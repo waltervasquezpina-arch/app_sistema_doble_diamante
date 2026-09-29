@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>04. Ficha de Persona - AGROIDEAS PIIP</title>
-    <meta name="description" content="Herramienta 04. Ficha de Persona - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta name="description" content="Herramienta 04. Ficha de Persona (Arquetipos) - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
     <meta property="og:title" content="04. Ficha de Persona - AGROIDEAS PIIP">
-    <meta property="og:description" content="Herramienta 04. Ficha de Persona - AGROIDEAS PIIP - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
+    <meta property="og:description" content="Herramienta 04. Ficha de Persona (Arquetipos) - Portafolio Institucional de Innovación Pública (PIIP) de AGROIDEAS.">
     <!-- Script de Inyección de Layout -->
     <script src="../js/layout.js"></script>
 </head>
@@ -23,66 +23,144 @@
             <div class="mt-6 bg-white border border-slate-200 p-5 rounded-lg shadow-sm">
                 <div class="mb-4">
                     <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-emerald-600"></i> 1. Objetivo</h3>
-                    <p class="text-sm text-slate-600 mt-1 pl-6">Caracterizar al usuario promedio o extremo para enfocar las soluciones en problemas reales y específicos.</p>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Caracterizar al usuario representativo (productor agrario, dirigente u operador técnico) identificando sus objetivos y frustraciones frente a la intervención pública.</p>
                 </div>
                 <div class="mb-4">
                     <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i> 2. Finalidad</h3>
-                    <p class="text-sm text-slate-600 mt-1 pl-6">Construir el arquetipo (frustraciones, alegrías, motivaciones) basado en datos empíricos, pasando de atender a "todos los ciudadanos" a un perfil objetivo claro.</p>
+                    <p class="text-sm text-slate-600 mt-1 pl-6">Construir arquetipos vivos basados en datos de campo (AEIOU, encuestas y empatía) para pasar de diseñar para un "usuario genérico" a resolver necesidades concretas.</p>
                 </div>
                 <div>
                     <h3 class="text-sm font-bold text-slate-800 flex items-center gap-2"><i data-lucide="git-branch" class="w-4 h-4 text-blue-600"></i> 3. Flujo de trabajo</h3>
                     <ol class="list-decimal list-inside text-sm text-slate-600 mt-1 pl-6 space-y-1">
-                        <li>Ingresa los datos demográficos y el rol o la ocupación del ciudadano.</li>
-                        <li>Registra sus motivaciones (qué busca lograr) y frustraciones (qué le impide lograrlo).</li>
-                        <li>Guarda la ficha para generar un arquetipo visual que servirá de guía en las etapas posteriores.</li>
+                        <li>Ingresa los datos demográficos y el rol representativo del perfil de usuario.</li>
+                        <li>Detalla su biografía, metas prioritarias (<span class="font-semibold text-emerald-800">goals</span>) y dolores o barreras clave (<span class="font-semibold text-amber-800">frustrations</span>).</li>
+                        <li>Especifica su nivel de competencia digital y guarda el arquetipo para alimentar la definición de desafíos.</li>
                     </ol>
                 </div>
             </div>
         </header>
 
+        <!-- Barra de Contexto de Iniciativa Activa -->
+        <div class="bg-white border border-slate-200 rounded-lg p-4 mb-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-emerald-100 border border-emerald-200 flex items-center justify-center text-emerald-800 font-bold">
+                    <i data-lucide="user-check" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="text-3xs uppercase tracking-wider text-slate-500 font-semibold block">Iniciativa Activa</span>
+                    <h3 id="active-project-title-h04" class="text-sm font-bold text-slate-800 leading-tight">Cargando iniciativa...</h3>
+                    <div class="flex items-center gap-2 mt-0.5">
+                        <span id="active-project-code-h04" class="text-2xs font-mono font-semibold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-150">PIIP-2026-IN0001</span>
+                        <span id="active-project-unit-h04" class="text-2xs text-slate-500">Unidad Orgánica</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="text-right mr-2 hidden sm:block">
+                    <span class="text-3xs uppercase tracking-wider text-slate-400 font-semibold block">Arquetipos H04</span>
+                    <span id="count-personas" class="text-sm font-bold text-slate-700">0 registros</span>
+                </div>
+                <button type="button" id="btn-preload-persona" class="btn btn-secondary text-xs flex items-center gap-1.5 py-1.5 px-3">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i>
+                    <span>Cargar Ejemplo Metodológico</span>
+                </button>
+            </div>
+        </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- Formulario Persona -->
             <div class="card col-span-1">
-                <h3 class="card__title">Registrar Perfil Arquetipo</h3>
-                <form id="form-persona">
+                <h3 class="card__title flex items-center gap-2">
+                    <i data-lucide="user-plus" class="w-4 h-4 text-emerald-600"></i>
+                    <span>Registrar Ficha de Arquetipo</span>
+                </h3>
+                <form id="form-persona" class="space-y-3 mt-4">
                     <div class="form__group">
-                        <label class="form__label" for="per-name">Nombre Representativo</label>
-                        <input type="text" id="per-name" class="form__input" placeholder="Ej. Roberto Mamani" required>
+                        <label class="form__label" for="per-archetype">Nombre del Arquetipo <span class="text-red-500">*</span></label>
+                        <input type="text" id="per-archetype" class="form__input" placeholder="Ej. Mateo Quispe - El Líder Agrario Innovador" required>
                     </div>
+
                     <div class="form__group">
-                        <label class="form__label" for="per-role">Rol / Ocupación</label>
-                        <input type="text" id="per-role" class="form__input" placeholder="Ej. Presidente de Asociación de Papas" required>
+                        <label class="form__label" for="per-role">Rol / Ocupación <span class="text-red-500">*</span></label>
+                        <input type="text" id="per-role" class="form__input" placeholder="Ej. Presidente de Asociación de Productores de Palto" required>
                     </div>
+
                     <div class="form__group">
-                        <label class="form__label" for="per-age">Edad</label>
-                        <input type="number" id="per-age" class="form__input" placeholder="Ej. 54" required>
+                        <label class="form__label" for="per-demographics">Datos Demográficos <span class="text-red-500">*</span></label>
+                        <input type="text" id="per-demographics" class="form__input" placeholder="Ej. 48 años, Pichanaki (Junín), Secundaria Completa" required>
                     </div>
+
                     <div class="form__group">
-                        <label class="form__label" for="per-quote">Frase Célebre</label>
-                        <input type="text" id="per-quote" class="form__input" placeholder="Ej. &quot;Quiero avanzar rápido...&quot;" required>
+                        <label class="form__label" for="per-tech">Nivel de Competencia Digital <span class="text-red-500">*</span></label>
+                        <select id="per-tech" class="form__input" required>
+                            <option value="Bajo (Voz y llamadas tradicionales, sin uso de banca móvil)">Bajo (Voz y llamadas tradicionales, sin uso de banca móvil)</option>
+                            <option value="Medio (Maneja smartphone, llamadas por WhatsApp y banca móvil básica)" selected>Medio (Maneja smartphone, llamadas por WhatsApp y banca móvil básica)</option>
+                            <option value="Medio-Alto (Uso intensivo de tablet, GPS y aplicativos de campo)">Medio-Alto (Uso intensivo de tablet, GPS y aplicativos de campo)</option>
+                            <option value="Avanzado (Dominio de ERPs, bases de datos y analítica en tableros)">Avanzado (Dominio de ERPs, bases de datos y analítica en tableros)</option>
+                        </select>
                     </div>
+
                     <div class="form__group">
-                        <label class="form__label" for="per-motivation">Principales Motivaciones</label>
-                        <textarea id="per-motivation" class="form__input" rows="2" placeholder="Qué busca lograr..." required></textarea>
+                        <label class="form__label" for="per-quote">Frase Representativa / Lema <span class="text-red-500">*</span></label>
+                        <input type="text" id="per-quote" class="form__input" placeholder='Ej. "Queremos progresar con herramientas que entendamos."' required>
                     </div>
+
                     <div class="form__group">
-                        <label class="form__label" for="per-frustration">Frustraciones / Dolores</label>
-                        <textarea id="per-frustration" class="form__input" rows="2" placeholder="Qué le impide lograrlo..." required></textarea>
+                        <label class="form__label" for="per-bio">Biografía / Contexto Personal <span class="text-red-500">*</span></label>
+                        <textarea id="per-bio" class="form__input" rows="2" placeholder="Lleva más de 20 años dedicado al agro. Lidera a su comunidad y busca..." required></textarea>
+                    </div>
+
+                    <div class="form__group">
+                        <label class="form__label" for="per-goals">Objetivos y Metas Clave <span class="text-red-500">*</span></label>
+                        <textarea id="per-goals" class="form__input" rows="2" placeholder="Capacitar a su junta directiva en costos; acceder a incentivos sin intermediarios..." required></textarea>
+                        <span class="text-3xs text-slate-500">Puedes separar múltiples metas con saltos de línea.</span>
+                    </div>
+
+                    <div class="form__group">
+                        <label class="form__label" for="per-frustrations">Frustraciones y Dolores <span class="text-red-500">*</span></label>
+                        <textarea id="per-frustrations" class="form__input" rows="2" placeholder="Trámites burocráticos lentos; plataformas complejas; baja conectividad..." required></textarea>
+                        <span class="text-3xs text-slate-500">Puedes separar múltiples frustraciones con saltos de línea.</span>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary w-full">
-                        Guardar Ficha
-                    </button>
+                    <div class="flex gap-2 pt-2">
+                        <button type="submit" class="btn btn-primary flex-1">
+                            Guardar Ficha
+                        </button>
+                        <button type="button" id="btn-clear-persona" class="btn btn-secondary text-xs px-3" title="Limpiar formulario">
+                            Limpiar
+                        </button>
+                    </div>
                 </form>
             </div>
 
             <!-- Panel de Visualización de Arquetipos -->
             <div class="col-span-1 lg:col-span-2">
-                <h3 class="text-xl font-semibold mb-4 text-slate-700">Fichas de Arquetipos Registradas</h3>
-                <div id="personas-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-base font-bold text-slate-700 flex items-center gap-2">
+                        <i data-lucide="users" class="w-4 h-4 text-emerald-600"></i>
+                        <span>Fichas de Arquetipos Registradas</span>
+                    </h3>
+                </div>
+                
+                <div id="personas-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <!-- Fichas inyectadas por app.js -->
                 </div>
             </div>
+        </div>
+
+        <!-- Navegación Secuencial Metodológica -->
+        <div class="mt-8 border-t border-slate-200 pt-4 flex items-center justify-between text-xs text-slate-500">
+            <a href="../fase1/03-encuestas.html" class="flex items-center gap-1.5 text-slate-600 hover:text-emerald-800 font-semibold p-2 rounded hover:bg-slate-200 transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Anterior: 03. Encuestas de Campo</span>
+            </a>
+            <div class="flex items-center gap-2">
+                <span class="font-medium text-slate-400">Paso 4 de 11 (Fase 2: Definir)</span>
+            </div>
+            <a href="05-grupos-focales.html" class="flex items-center gap-1.5 text-emerald-800 hover:text-emerald-900 font-bold bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 p-2 rounded transition-colors shadow-2xs">
+                <span>Siguiente: 05. Muro de Hallazgos</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
         </div>
 
     </main>
@@ -93,4 +171,3 @@
     <script src="../js/app.js"></script>
 </body>
 </html>
-
