@@ -62,9 +62,9 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <!-- Formulario de Edición -->
-            <div class="card lg:col-span-5">
+        <div class="space-y-6">
+            <!-- Formulario de Edición: Definir Perfil de Usuario -->
+            <div class="card">
                 <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
                     <h3 class="card__title mb-0 flex items-center gap-2">
                         <i data-lucide="user-check" class="w-4 h-4 text-emerald-700"></i> Definir Perfil de Usuario
@@ -72,114 +72,118 @@
                     <span class="text-2xs text-slate-400 italic">Esquema far-piip-v3</span>
                 </div>
 
-                <form id="form-empathy" class="space-y-3.5">
+                <form id="form-empathy" class="space-y-4">
                     <div class="form__group">
-                        <label class="form__label mb-1" for="emp-profile">Perfil Arquetipo del Usuario</label>
-                        <p class="text-2xs text-slate-500 mb-1">Identifique al actor clave (ej. Productor agrario de sierra, evaluador CTR, dirigente comunal).</p>
-                        <input type="text" id="emp-profile" class="form__input" placeholder="Ej. Presidente de Cooperativa Agraria (productor de papa nativa, sierra centro)" required>
+                        <label class="form__label mb-1 font-bold text-slate-700" for="emp-profile">Perfil Arquetipo del Usuario</label>
+                        <p class="text-2xs text-slate-500 mb-1.5">Identifique al actor clave (ej. Productor agrario de sierra, evaluador CTR, dirigente comunal).</p>
+                        <input type="text" id="emp-profile" class="form__input text-xs" placeholder="Ej. Presidente de Cooperativa Agraria (productor de papa nativa, sierra centro)" required>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div class="form__group">
-                            <label class="form__label mb-1" for="emp-think">¿Qué piensa?</label>
+                    <!-- Bloques Sensoriales y Cognitivos (2 columnas de pares) -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1 font-semibold text-slate-700" for="emp-think">¿Qué piensa?</label>
                             <p class="text-2xs text-slate-500 mb-1">Creencias, prioridades e ideas.</p>
-                            <textarea id="emp-think" class="form__input" rows="2" placeholder="Ej. Cree que el sistema es muy complejo y desconfía de la seguridad de sus datos..." required></textarea>
+                            <textarea id="emp-think" class="form__input text-xs" rows="2" placeholder="Ej. Cree que el sistema es muy complejo y desconfía de la seguridad de sus datos..." required></textarea>
                         </div>
-                        <div class="form__group">
-                            <label class="form__label mb-1" for="emp-feel">¿Qué siente?</label>
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1 font-semibold text-slate-700" for="emp-feel">¿Qué siente?</label>
                             <p class="text-2xs text-slate-500 mb-1">Emociones, miedos y anhelos.</p>
-                            <textarea id="emp-feel" class="form__input" rows="2" placeholder="Ej. Angustia por demoras institucionales y miedo a perder la campaña agrícola..." required></textarea>
+                            <textarea id="emp-feel" class="form__input text-xs" rows="2" placeholder="Ej. Angustia por demoras institucionales y miedo a perder la campaña agrícola..." required></textarea>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div class="form__group">
-                            <label class="form__label mb-1" for="emp-hear">¿Qué oye?</label>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1 font-semibold text-slate-700" for="emp-hear">¿Qué oye?</label>
                             <p class="text-2xs text-slate-500 mb-1">Comentarios de colegas, radio y entorno.</p>
-                            <textarea id="emp-hear" class="form__input" rows="2" placeholder="Ej. Sus vecinos dicen que los incentivos llegan a destiempo con las siembras..." required></textarea>
+                            <textarea id="emp-hear" class="form__input text-xs" rows="2" placeholder="Ej. Sus vecinos dicen que los incentivos llegan a destiempo con las siembras..." required></textarea>
                         </div>
-                        <div class="form__group">
-                            <label class="form__label mb-1" for="emp-see">¿Qué ve?</label>
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1 font-semibold text-slate-700" for="emp-see">¿Qué ve?</label>
                             <p class="text-2xs text-slate-500 mb-1">Entorno físico, mercado y herramientas.</p>
-                            <textarea id="emp-see" class="form__input" rows="2" placeholder="Ej. Expedientes en papel acumulados en oficinas y parcelas sin internet..." required></textarea>
+                            <textarea id="emp-see" class="form__input text-xs" rows="2" placeholder="Ej. Expedientes en papel acumulados en oficinas y parcelas sin internet..." required></textarea>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div class="form__group">
-                            <label class="form__label mb-1" for="emp-say">¿Qué dice?</label>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1 font-semibold text-slate-700" for="emp-say">¿Qué dice?</label>
                             <p class="text-2xs text-slate-500 mb-1">Declaraciones verbales en público.</p>
-                            <textarea id="emp-say" class="form__input" rows="2" placeholder="Ej. 'Queremos modernizarnos, pero que las capacitaciones sean en nuestro territorio'..." required></textarea>
+                            <textarea id="emp-say" class="form__input text-xs" rows="2" placeholder="Ej. 'Queremos modernizarnos, pero que las capacitaciones sean en nuestro territorio'..." required></textarea>
                         </div>
-                        <div class="form__group">
-                            <label class="form__label mb-1" for="emp-do">¿Qué hace?</label>
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1 font-semibold text-slate-700" for="emp-do">¿Qué hace?</label>
                             <p class="text-2xs text-slate-500 mb-1">Comportamientos y acciones reales.</p>
-                            <textarea id="emp-do" class="form__input" rows="2" placeholder="Ej. Viaja cada dos semanas a la ciudad para consultar el avance de su expediente..." required></textarea>
+                            <textarea id="emp-do" class="form__input text-xs" rows="2" placeholder="Ej. Viaja cada dos semanas a la ciudad para consultar el avance de su expediente..." required></textarea>
                         </div>
                     </div>
 
-                    <div class="form__group">
-                        <label class="form__label mb-1 text-amber-800" for="emp-pain">Frustraciones y Dolores (Pains)</label>
-                        <p class="text-2xs text-slate-500 mb-1">Obstáculos, riesgos financieros, costos de traslado o barreras de acceso.</p>
-                        <textarea id="emp-pain" class="form__input border-amber-200 focus:border-amber-500" rows="2" placeholder="Ej. Pérdida económica por trámites lentos, costo de pasajes a la ciudad (S/. 100 por viaje)..." required></textarea>
-                    </div>
+                    <!-- Dolores vs Ganancias -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1 text-amber-800 font-bold" for="emp-pain">Frustraciones y Dolores (Pains)</label>
+                            <p class="text-2xs text-slate-500 mb-1">Obstáculos, riesgos financieros, costos de traslado o barreras de acceso.</p>
+                            <textarea id="emp-pain" class="form__input text-xs border-amber-200 focus:border-amber-500" rows="2" placeholder="Ej. Pérdida económica por trámites lentos, costo de pasajes a la ciudad (S/. 100 por viaje)..." required></textarea>
+                        </div>
 
-                    <div class="form__group">
-                        <label class="form__label mb-1 text-emerald-800" for="emp-gain">Necesidades y Resultados Deseados (Gains)</label>
-                        <p class="text-2xs text-slate-500 mb-1">Motivaciones de éxito, aspiraciones y qué valor real espera recibir.</p>
-                        <textarea id="emp-gain" class="form__input border-emerald-200 focus:border-emerald-500" rows="2" placeholder="Ej. Conocer el estado del trámite desde el celular y recibir asistencia técnica continua..." required></textarea>
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1 text-emerald-800 font-bold" for="emp-gain">Necesidades y Resultados Deseados (Gains)</label>
+                            <p class="text-2xs text-slate-500 mb-1">Motivaciones de éxito, aspiraciones y qué valor real espera recibir.</p>
+                            <textarea id="emp-gain" class="form__input text-xs border-emerald-200 focus:border-emerald-500" rows="2" placeholder="Ej. Conocer el estado del trámite desde el celular y recibir asistencia técnica continua..." required></textarea>
+                        </div>
                     </div>
                     
-                    <div class="pt-2 flex items-center gap-2">
-                        <button type="submit" class="btn btn-primary w-full flex items-center justify-center gap-2 py-2.5">
+                    <div class="pt-2">
+                        <button type="submit" class="btn btn-primary w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold">
                             <i data-lucide="save" class="w-4 h-4"></i> Guardar y Actualizar Lienzo
                         </button>
                     </div>
                 </form>
             </div>
 
-            <!-- Canvas/Lienzo Visual -->
-            <div class="lg:col-span-7 flex flex-col gap-4">
-                <div class="flex items-center justify-between">
+            <!-- Canvas/Lienzo Visual de Empatía (Ubicado en la parte inferior inmediatamente después) -->
+            <div class="card space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
                     <div>
-                        <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                        <h3 class="card__title mb-0 text-base font-bold text-slate-800 flex items-center gap-2">
                             <i data-lucide="layout-grid" class="w-4 h-4 text-emerald-700"></i> Lienzo Etnográfico de Empatía
                         </h3>
                         <p class="text-2xs text-slate-500">Visualización de los 6 cuadrantes metodológicos en tiempo real</p>
                     </div>
-                    <span id="canvas-profile-badge" class="text-2xs font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded max-w-xs truncate">
-                        Usuario: General
+                    <span id="canvas-profile-badge" class="text-2xs font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded max-w-md truncate border border-slate-200">
+                        Arquetipo: General
                     </span>
                 </div>
                 
                 <!-- Cuadrantes Superiores (Sensoriales y Cognitivos) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[130px] flex flex-col">
-                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-1.5 flex items-center gap-1.5">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[140px] flex flex-col p-4">
+                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-2 flex items-center gap-1.5">
                             <i data-lucide="brain" class="w-3.5 h-3.5"></i> ¿Qué piensa y siente?
                         </span>
-                        <div class="text-xs text-slate-700 flex-1 space-y-1">
+                        <div class="text-xs text-slate-700 flex-1 space-y-1.5">
                             <p><strong class="text-emerald-950 font-semibold">Piensa:</strong> <span id="canvas-think" class="italic">Sin registrar</span></p>
                             <p><strong class="text-emerald-950 font-semibold">Siente:</strong> <span id="canvas-feel" class="italic">Sin registrar</span></p>
                         </div>
                     </div>
-                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[130px] flex flex-col">
-                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-1.5 flex items-center gap-1.5">
+                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[140px] flex flex-col p-4">
+                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-2 flex items-center gap-1.5">
                             <i data-lucide="ear" class="w-3.5 h-3.5"></i> ¿Qué oye?
                         </span>
                         <p id="canvas-hear" class="text-xs text-slate-700 italic flex-1">Sin registrar</p>
                     </div>
-                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[130px] flex flex-col">
-                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-1.5 flex items-center gap-1.5">
+                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[140px] flex flex-col p-4">
+                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-2 flex items-center gap-1.5">
                             <i data-lucide="eye" class="w-3.5 h-3.5"></i> ¿Qué ve?
                         </span>
                         <p id="canvas-see" class="text-xs text-slate-700 italic flex-1">Sin registrar</p>
                     </div>
-                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[130px] flex flex-col">
-                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-1.5 flex items-center gap-1.5">
+                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[140px] flex flex-col p-4">
+                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-2 flex items-center gap-1.5">
                             <i data-lucide="message-square" class="w-3.5 h-3.5"></i> ¿Qué dice y hace?
                         </span>
-                        <div class="text-xs text-slate-700 flex-1 space-y-1">
+                        <div class="text-xs text-slate-700 flex-1 space-y-1.5">
                             <p><strong class="text-emerald-950 font-semibold">Dice:</strong> <span id="canvas-say" class="italic">Sin registrar</span></p>
                             <p><strong class="text-emerald-950 font-semibold">Hace:</strong> <span id="canvas-do" class="italic">Sin registrar</span></p>
                         </div>
@@ -187,31 +191,35 @@
                 </div>
 
                 <!-- Cuadrantes Inferiores (Dolores vs. Ganancias) -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div class="card bg-amber-50/60 border-amber-200 min-h-[140px] flex flex-col">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div class="card bg-amber-50/60 border-amber-200 min-h-[130px] flex flex-col p-4">
                         <span class="text-2xs font-bold text-amber-900 uppercase mb-2 flex items-center gap-1.5">
                             <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-amber-700"></i> Frustraciones / Dolores (Pains)
                         </span>
                         <p id="canvas-pain" class="text-xs text-amber-950 italic flex-1 leading-relaxed">Sin registrar</p>
                     </div>
-                    <div class="card bg-emerald-50/80 border-emerald-250 min-h-[140px] flex flex-col">
+                    <div class="card bg-emerald-50/80 border-emerald-250 min-h-[130px] flex flex-col p-4">
                         <span class="text-2xs font-bold text-emerald-950 uppercase mb-2 flex items-center gap-1.5">
                             <i data-lucide="trending-up" class="w-3.5 h-3.5 text-emerald-700"></i> Resultados / Ganancias (Gains)
                         </span>
                         <p id="canvas-gain" class="text-xs text-emerald-950 italic flex-1 leading-relaxed">Sin registrar</p>
                     </div>
                 </div>
-
-                <!-- Controles de Navegación Secuencial del Doble Diamante -->
-                <div class="flex items-center justify-between pt-4 mt-auto border-t border-slate-200">
-                    <a href="01-observacion.html" class="btn btn-secondary text-xs flex items-center gap-1.5">
-                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Anterior: 01. Observación AEIOU
-                    </a>
-                    <a href="03-encuestas.html" class="btn btn-primary text-xs flex items-center gap-1.5">
-                        Siguiente: 03. Encuestas de Campo <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
             </div>
+
+            <!-- Controles de Navegación Secuencial del Doble Diamante -->
+            <footer class="mt-8 border-t border-slate-200 pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                <a href="01-observacion.html" class="btn btn-secondary text-xs flex items-center gap-1.5">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Anterior: 01. Observación AEIOU
+                </a>
+                <div class="flex items-center gap-1 text-2xs text-slate-400">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    <span>Fase 1: Descubrir (02 de 11)</span>
+                </div>
+                <a href="03-encuestas.html" class="btn btn-primary text-xs flex items-center gap-1.5">
+                    Siguiente: 03. Encuestas de Campo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </footer>
         </div>
 
     </main>
