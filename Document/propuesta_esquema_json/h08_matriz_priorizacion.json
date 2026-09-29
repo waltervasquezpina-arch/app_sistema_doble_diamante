@@ -1,0 +1,110 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0001",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 3,
+      "FaseNombre": "Fase 3: Idear",
+      "HerramientaNumero": 8,
+      "HerramientaCodigo": "H08",
+      "HerramientaNombre": "Matriz de Priorización de Ideas",
+      "VistaCodigo": "V08.1",
+      "VistaTitulo": "Herramienta H08: Matriz de Priorización de Ideas",
+      "VistaUrl": "08-matriz-priorizacion.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 8,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 8 de 11 (Fase 3: Idear)",
+      "PasoAnterior": "07-lluvia-ideas.html",
+      "PasoSiguiente": "09-prototipado-rapido.html"
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:00:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "ContratoEsquemaDatos": {
+    "HerramientaCodigo": "H08",
+    "HerramientaNombre": "Matriz de Priorización de Ideas",
+    "CamposModelo": {
+      "ideaId": {
+        "type": "Integer",
+        "label": "ID de la Idea Evaluada (H07)",
+        "required": true
+      },
+      "ideaTitle": {
+        "type": "String",
+        "label": "Título de la Idea",
+        "required": true
+      },
+      "desirability": {
+        "type": "Integer",
+        "min": 1,
+        "max": 5,
+        "label": "Deseabilidad (Usuarios)",
+        "required": true
+      },
+      "feasibility": {
+        "type": "Integer",
+        "min": 1,
+        "max": 5,
+        "label": "Factibilidad Técnica (OTI)",
+        "required": true
+      },
+      "viability": {
+        "type": "Integer",
+        "min": 1,
+        "max": 5,
+        "label": "Viabilidad Legal/Presupuestal (UAJ/UPP)",
+        "required": true
+      },
+      "impact": {
+        "type": "Integer",
+        "min": 1,
+        "max": 5,
+        "label": "Impacto en Valor Público",
+        "required": true
+      },
+      "totalScore": {
+        "type": "Integer",
+        "label": "Puntaje Total Calculado (Suma o Ponderado)",
+        "required": true
+      },
+      "isWinningIdea": {
+        "type": "Boolean",
+        "label": "¿Es la Idea Ganadora Seleccionada?",
+        "required": true
+      }
+    }
+  },
+  "RegistrosEjemploGrounded": [
+    {
+      "id": 801,
+      "projectCode": "PIIP-2026-IN0001",
+      "ideaId": 701,
+      "ideaTitle": "Bot Educativo asincrónico por WhatsApp con micro-videos offline",
+      "desirability": 5,
+      "feasibility": 4,
+      "viability": 5,
+      "impact": 5,
+      "totalScore": 19,
+      "isWinningIdea": true
+    },
+    {
+      "id": 802,
+      "projectCode": "PIIP-2026-IN0001",
+      "ideaId": 702,
+      "ideaTitle": "Kits de capacitación en memorias USB / Tarjetas SD precargadas",
+      "desirability": 4,
+      "feasibility": 3,
+      "viability": 4,
+      "impact": 3,
+      "totalScore": 14,
+      "isWinningIdea": false
+    }
+  ]
+}

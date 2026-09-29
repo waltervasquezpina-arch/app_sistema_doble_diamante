@@ -40,99 +40,176 @@
             </div>
         </header>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Barra de Contexto de Iniciativa Activa -->
+        <div class="bg-white border border-slate-200 rounded-lg p-4 mb-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-emerald-150 border border-emerald-250 flex items-center justify-center text-emerald-800 font-bold">
+                    <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="text-3xs uppercase tracking-wider text-slate-500 font-semibold block">Iniciativa Activa</span>
+                    <h3 id="active-project-title-h02" class="text-sm font-bold text-slate-800 leading-tight">Cargando iniciativa...</h3>
+                    <div class="flex items-center gap-2 mt-0.5">
+                        <span id="active-project-code-h02" class="text-2xs font-mono font-semibold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-150">PIIP-2026-IN0001</span>
+                        <span id="active-project-unit-h02" class="text-2xs text-slate-500">Unidad Orgánica</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button type="button" id="btn-preload-empathy" class="btn btn-secondary text-xs flex items-center gap-1.5 py-1.5 px-3">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-600"></i> Precargar Ejemplo
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
             <!-- Formulario de Edición -->
-            <div class="card col-span-1">
-                <h3 class="card__title">Definir Perfil de Usuario</h3>
-                <form id="form-empathy">
+            <div class="card lg:col-span-5">
+                <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+                    <h3 class="card__title mb-0 flex items-center gap-2">
+                        <i data-lucide="user-check" class="w-4 h-4 text-emerald-700"></i> Definir Perfil de Usuario
+                    </h3>
+                    <span class="text-2xs text-slate-400 italic">Esquema far-piip-v3</span>
+                </div>
+
+                <form id="form-empathy" class="space-y-3.5">
                     <div class="form__group">
-                        <label class="form__label mb-1" for="emp-profile">Perfil Arquetipo</label>
-                        <p class="text-2xs text-slate-500 mb-1.5">Describa de forma general quién es el usuario clave o arquetipo.</p>
-                        <textarea id="emp-profile" class="form__input" rows="2" placeholder="Ej. Presidente de Cooperativa Agraria y productor de papa nativa en la sierra centro..." required></textarea>
+                        <label class="form__label mb-1" for="emp-profile">Perfil Arquetipo del Usuario</label>
+                        <p class="text-2xs text-slate-500 mb-1">Identifique al actor clave (ej. Productor agrario de sierra, evaluador CTR, dirigente comunal).</p>
+                        <input type="text" id="emp-profile" class="form__input" placeholder="Ej. Presidente de Cooperativa Agraria (productor de papa nativa, sierra centro)" required>
                     </div>
-                    <div class="form__group">
-                        <label class="form__label mb-1" for="emp-think">¿Qué piensa y siente?</label>
-                        <p class="text-2xs text-slate-500 mb-1.5">¿Qué le importa realmente? Sus miedos ocultos, valores, aspiraciones y motivaciones profundas.</p>
-                        <textarea id="emp-think" class="form__input" rows="2" placeholder="Ej. Le preocupa perder la campaña por exceso de trámites y burocracia..." required></textarea>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="form__group">
+                            <label class="form__label mb-1" for="emp-think">¿Qué piensa?</label>
+                            <p class="text-2xs text-slate-500 mb-1">Creencias, prioridades e ideas.</p>
+                            <textarea id="emp-think" class="form__input" rows="2" placeholder="Ej. Cree que el sistema es muy complejo y desconfía de la seguridad de sus datos..." required></textarea>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label mb-1" for="emp-feel">¿Qué siente?</label>
+                            <p class="text-2xs text-slate-500 mb-1">Emociones, miedos y anhelos.</p>
+                            <textarea id="emp-feel" class="form__input" rows="2" placeholder="Ej. Angustia por demoras institucionales y miedo a perder la campaña agrícola..." required></textarea>
+                        </div>
                     </div>
-                    <div class="form__group">
-                        <label class="form__label mb-1" for="emp-hear">¿Qué oye?</label>
-                        <p class="text-2xs text-slate-500 mb-1.5">¿Qué dicen sus vecinos, otros dirigentes, la radio, su familia o personas de influencia en su entorno?</p>
-                        <textarea id="emp-hear" class="form__input" rows="2" placeholder="Ej. Sus colegas dicen que los fondos de incentivos de AGROIDEAS suelen llegar a destiempo..." required></textarea>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="form__group">
+                            <label class="form__label mb-1" for="emp-hear">¿Qué oye?</label>
+                            <p class="text-2xs text-slate-500 mb-1">Comentarios de colegas, radio y entorno.</p>
+                            <textarea id="emp-hear" class="form__input" rows="2" placeholder="Ej. Sus vecinos dicen que los incentivos llegan a destiempo con las siembras..." required></textarea>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label mb-1" for="emp-see">¿Qué ve?</label>
+                            <p class="text-2xs text-slate-500 mb-1">Entorno físico, mercado y herramientas.</p>
+                            <textarea id="emp-see" class="form__input" rows="2" placeholder="Ej. Expedientes en papel acumulados en oficinas y parcelas sin internet..." required></textarea>
+                        </div>
                     </div>
-                    <div class="form__group">
-                        <label class="form__label mb-1" for="emp-see">¿Qué ve?</label>
-                        <p class="text-2xs text-slate-500 mb-1.5">¿Cuál es su realidad cotidiana? Su entorno físico, las herramientas que observa y qué hace su competencia.</p>
-                        <textarea id="emp-see" class="form__input" rows="2" placeholder="Ej. Ve que la mayoría de productores de su zona no cuentan con acceso a internet móvil..." required></textarea>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="form__group">
+                            <label class="form__label mb-1" for="emp-say">¿Qué dice?</label>
+                            <p class="text-2xs text-slate-500 mb-1">Declaraciones verbales en público.</p>
+                            <textarea id="emp-say" class="form__input" rows="2" placeholder="Ej. 'Queremos modernizarnos, pero que las capacitaciones sean en nuestro territorio'..." required></textarea>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label mb-1" for="emp-do">¿Qué hace?</label>
+                            <p class="text-2xs text-slate-500 mb-1">Comportamientos y acciones reales.</p>
+                            <textarea id="emp-do" class="form__input" rows="2" placeholder="Ej. Viaja cada dos semanas a la ciudad para consultar el avance de su expediente..." required></textarea>
+                        </div>
                     </div>
+
                     <div class="form__group">
-                        <label class="form__label mb-1" for="emp-say">¿Qué dice y hace?</label>
-                        <p class="text-2xs text-slate-500 mb-1.5">¿Cómo se comporta en público? Qué expresa verbalmente frente a sus acciones de trabajo reales.</p>
-                        <textarea id="emp-say" class="form__input" rows="2" placeholder="Ej. Dice que apoya la tecnología pero viaja constantemente a la ciudad para consultar el estado en papel..." required></textarea>
+                        <label class="form__label mb-1 text-amber-800" for="emp-pain">Frustraciones y Dolores (Pains)</label>
+                        <p class="text-2xs text-slate-500 mb-1">Obstáculos, riesgos financieros, costos de traslado o barreras de acceso.</p>
+                        <textarea id="emp-pain" class="form__input border-amber-200 focus:border-amber-500" rows="2" placeholder="Ej. Pérdida económica por trámites lentos, costo de pasajes a la ciudad (S/. 100 por viaje)..." required></textarea>
                     </div>
+
                     <div class="form__group">
-                        <label class="form__label mb-1" for="emp-pain">Esfuerzos / Dolores (Pains)</label>
-                        <p class="text-2xs text-slate-500 mb-1.5">¿Cuáles son sus frustraciones, obstáculos, riesgos financieros, temores o barreras tecnológicas?</p>
-                        <textarea id="emp-pain" class="form__input" rows="2" placeholder="Ej. Frustración por demoras en rendiciones de cuentas e inseguridad al usar computadoras..." required></textarea>
-                    </div>
-                    <div class="form__group">
-                        <label class="form__label mb-1" for="emp-gain">Resultados / Necesidades (Gains)</label>
-                        <p class="text-2xs text-slate-500 mb-1.5">¿Cuáles son sus deseos de éxito, necesidades de desarrollo o qué significaría un beneficio real?</p>
-                        <textarea id="emp-gain" class="form__input" rows="2" placeholder="Ej. Lograr la aprobación rápida del incentivo y acceder al estado del trámite en quechua..." required></textarea>
+                        <label class="form__label mb-1 text-emerald-800" for="emp-gain">Necesidades y Resultados Deseados (Gains)</label>
+                        <p class="text-2xs text-slate-500 mb-1">Motivaciones de éxito, aspiraciones y qué valor real espera recibir.</p>
+                        <textarea id="emp-gain" class="form__input border-emerald-200 focus:border-emerald-500" rows="2" placeholder="Ej. Conocer el estado del trámite desde el celular y recibir asistencia técnica continua..." required></textarea>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary w-full">
-                        Actualizar Lienzo
-                    </button>
+                    <div class="pt-2 flex items-center gap-2">
+                        <button type="submit" class="btn btn-primary w-full flex items-center justify-center gap-2 py-2.5">
+                            <i data-lucide="save" class="w-4 h-4"></i> Guardar y Actualizar Lienzo
+                        </button>
+                    </div>
                 </form>
             </div>
 
             <!-- Canvas/Lienzo Visual -->
-            <div class="col-span-1 lg:col-span-2 flex flex-col gap-6">
-                <h3 class="text-xl font-semibold text-slate-700">Lienzo del Mapa de Empatía</h3>
+            <div class="lg:col-span-7 flex flex-col gap-4">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
+                            <i data-lucide="layout-grid" class="w-4 h-4 text-emerald-700"></i> Lienzo Etnográfico de Empatía
+                        </h3>
+                        <p class="text-2xs text-slate-500">Visualización de los 6 cuadrantes metodológicos en tiempo real</p>
+                    </div>
+                    <span id="canvas-profile-badge" class="text-2xs font-semibold bg-slate-100 text-slate-700 px-2.5 py-1 rounded max-w-xs truncate">
+                        Usuario: General
+                    </span>
+                </div>
                 
-                <!-- Cuadrantes Superiores -->
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[140px] flex flex-col">
-                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-2 flex items-center gap-1.5">
+                <!-- Cuadrantes Superiores (Sensoriales y Cognitivos) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[130px] flex flex-col">
+                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-1.5 flex items-center gap-1.5">
                             <i data-lucide="brain" class="w-3.5 h-3.5"></i> ¿Qué piensa y siente?
                         </span>
-                        <p id="canvas-think" class="text-xs text-slate-700 italic flex-1">Cargando...</p>
+                        <div class="text-xs text-slate-700 flex-1 space-y-1">
+                            <p><strong class="text-emerald-950 font-semibold">Piensa:</strong> <span id="canvas-think" class="italic">Sin registrar</span></p>
+                            <p><strong class="text-emerald-950 font-semibold">Siente:</strong> <span id="canvas-feel" class="italic">Sin registrar</span></p>
+                        </div>
                     </div>
-                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[140px] flex flex-col">
-                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-2 flex items-center gap-1.5">
+                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[130px] flex flex-col">
+                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-1.5 flex items-center gap-1.5">
                             <i data-lucide="ear" class="w-3.5 h-3.5"></i> ¿Qué oye?
                         </span>
-                        <p id="canvas-hear" class="text-xs text-slate-700 italic flex-1">Cargando...</p>
+                        <p id="canvas-hear" class="text-xs text-slate-700 italic flex-1">Sin registrar</p>
                     </div>
-                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[140px] flex flex-col">
-                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-2 flex items-center gap-1.5">
+                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[130px] flex flex-col">
+                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-1.5 flex items-center gap-1.5">
                             <i data-lucide="eye" class="w-3.5 h-3.5"></i> ¿Qué ve?
                         </span>
-                        <p id="canvas-see" class="text-xs text-slate-700 italic flex-1">Cargando...</p>
+                        <p id="canvas-see" class="text-xs text-slate-700 italic flex-1">Sin registrar</p>
                     </div>
-                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[140px] flex flex-col">
-                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-2 flex items-center gap-1.5">
+                    <div class="card bg-emerald-50/50 border-emerald-100 min-h-[130px] flex flex-col">
+                        <span class="text-2xs font-bold text-emerald-800 uppercase mb-1.5 flex items-center gap-1.5">
                             <i data-lucide="message-square" class="w-3.5 h-3.5"></i> ¿Qué dice y hace?
                         </span>
-                        <p id="canvas-say" class="text-xs text-slate-700 italic flex-1">Cargando...</p>
+                        <div class="text-xs text-slate-700 flex-1 space-y-1">
+                            <p><strong class="text-emerald-950 font-semibold">Dice:</strong> <span id="canvas-say" class="italic">Sin registrar</span></p>
+                            <p><strong class="text-emerald-950 font-semibold">Hace:</strong> <span id="canvas-do" class="italic">Sin registrar</span></p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Cuadrantes Inferiores (Esfuerzos y Resultados) -->
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="card bg-amber-50/50 border-amber-100 min-h-[140px] flex flex-col">
-                        <span class="text-2xs font-bold text-amber-800 uppercase mb-2 flex items-center gap-1.5">
-                            <i data-lucide="trending-down" class="w-3.5 h-3.5"></i> Esfuerzos / Dolores (Pains)
+                <!-- Cuadrantes Inferiores (Dolores vs. Ganancias) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="card bg-amber-50/60 border-amber-200 min-h-[140px] flex flex-col">
+                        <span class="text-2xs font-bold text-amber-900 uppercase mb-2 flex items-center gap-1.5">
+                            <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-amber-700"></i> Frustraciones / Dolores (Pains)
                         </span>
-                        <p id="canvas-pain" class="text-xs text-amber-950 italic flex-1">Cargando...</p>
+                        <p id="canvas-pain" class="text-xs text-amber-950 italic flex-1 leading-relaxed">Sin registrar</p>
                     </div>
-                    <div class="card bg-emerald-50/70 border-emerald-200 min-h-[140px] flex flex-col">
-                        <span class="text-2xs font-bold text-emerald-900 uppercase mb-2 flex items-center gap-1.5">
-                            <i data-lucide="trending-up" class="w-3.5 h-3.5"></i> Resultados / Necesidades (Gains)
+                    <div class="card bg-emerald-50/80 border-emerald-250 min-h-[140px] flex flex-col">
+                        <span class="text-2xs font-bold text-emerald-950 uppercase mb-2 flex items-center gap-1.5">
+                            <i data-lucide="trending-up" class="w-3.5 h-3.5 text-emerald-700"></i> Resultados / Ganancias (Gains)
                         </span>
-                        <p id="canvas-gain" class="text-xs text-emerald-950 italic flex-1">Cargando...</p>
+                        <p id="canvas-gain" class="text-xs text-emerald-950 italic flex-1 leading-relaxed">Sin registrar</p>
                     </div>
+                </div>
+
+                <!-- Controles de Navegación Secuencial del Doble Diamante -->
+                <div class="flex items-center justify-between pt-4 mt-auto border-t border-slate-200">
+                    <a href="01-observacion.html" class="btn btn-secondary text-xs flex items-center gap-1.5">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i> Anterior: 01. Observación AEIOU
+                    </a>
+                    <a href="03-encuestas.html" class="btn btn-primary text-xs flex items-center gap-1.5">
+                        Siguiente: 03. Encuestas de Campo <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
                 </div>
             </div>
         </div>

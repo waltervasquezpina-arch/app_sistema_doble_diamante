@@ -1,0 +1,247 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0004",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 4,
+      "FaseNombre": "Fase 4: Entregar",
+      "HerramientaNumero": 11,
+      "HerramientaCodigo": "H11",
+      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
+      "VistaCodigo": "V11.1",
+      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje - Proyecto 04",
+      "VistaUrl": "fase4/11-matriz-riesgos.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 11,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar - Proyecto 04 Completado)",
+      "PasoAnterior": {
+        "HerramientaCodigo": "H10",
+        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
+        "VistaUrl": "fase4/10-plan-accion.html"
+      },
+      "PasoSiguiente": null
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-10-10T11:00:00Z",
+      "UsuarioActualRol": "Facilitador Ágil / UPP"
+    }
+  },
+  "PortafolioPIIP_Coleccion": [
+    {
+      "id": 4,
+      "code": "PIIP-2026-IN0004",
+      "title": "Lineamientos para la Digitalización Integral de Expedientes de Incentivos",
+      "responsible": "Unidad de Planeamiento y Presupuesto (UPP)",
+      "contact": "Alex Dario Abad Escalante - UPP",
+      "date": "2026-09-18",
+      "status": "Fase 4: Entregar (Completado)",
+      "porcentajeAvanceGlobal": 100.0,
+      "herramientasRegistradasContador": 11,
+      "phases": {
+        "descubrir": "completed",
+        "definir": "completed",
+        "idear": "completed",
+        "entregar": "completed"
+      },
+      "evaluacionFIIP": {
+        "puntajeTotal": 11,
+        "puntajeMaximo": 12,
+        "criterioImpacto": 3,
+        "criterioPriorizacion": 4,
+        "criterioEnfoqueInnovacion": 4,
+        "dictamen": "Recomendable para aprobación e implementación institucional"
+      }
+    }
+  ],
+  "HerramientasMetodologicas_Coleccion": {
+    "H01_ObservacionAEIOU": [
+      {
+        "id": "aeiou-004-1",
+        "projectCode": "PIIP-2026-IN0004",
+        "dimension": "Actividades",
+        "observation": "El proceso físico de recepción, foliación y archivo de expedientes de solicitud de incentivos requiere entre 25 y 40 días hábiles de revisión manual en mesa de partes y carpetas físicas.",
+        "timestamp": "2026-09-18T09:00:00Z"
+      },
+      {
+        "id": "aeiou-004-2",
+        "projectCode": "PIIP-2026-IN0004",
+        "dimension": "Objetos/Documentos",
+        "observation": "Expedientes físicos que superan las 300 páginas por Organización Agraria, generando altos costos de almacenamiento, riesgo de extravío de folios y dificultad de auditoría.",
+        "timestamp": "2026-09-18T11:30:00Z"
+      }
+    ],
+    "H02_MapaEmpatia": {
+      "projectCode": "PIIP-2026-IN0004",
+      "userProfile": "Analista de Evaluación de Expedientes de UPP / Unidades de Línea",
+      "says": "Pasamos semanas buscando un folio o verificando si un documento adjunto coincide con la versión original en físico.",
+      "does": "Archiva manualmente tomos impresos y revisa hoja por hoja las firmas y sellos institucionales.",
+      "thinks": "Deberíamos contar con un repositorio digital con firma electrónica integrada y foliación digital automatizada.",
+      "feels": "Aprobado por el exceso de carga documental física y el riesgo de contingencias de control gubernamental.",
+      "pains": "Cuellos de botella en la atención de solicitudes de incentivos y riesgo de deterioro o pérdida de documentos físicos.",
+      "gains": "Estandarización, búsqueda inmediata por metadatos, cero papel y reducción de tiempos de evaluación en un 70%."
+    },
+    "H03_EncuestasCampo": {
+      "projectCode": "PIIP-2026-IN0004",
+      "sampleSize": 35,
+      "targetAudience": "Evaluadores documentales de UPP, UN, URIE y Trámite Documentario de AGROIDEAS",
+      "keyResults": [
+        {
+          "question": "¿Considera indispensable la transición hacia expedientes 100% digitales?",
+          "percentageYes": 97.1
+        },
+        {
+          "question": "Principal barrera identificada en el flujo actual",
+          "topAnswer": "Ausencia de una Directiva Técnica de Digitalización e Indexación Homologada (88.6%)"
+        },
+        {
+          "question": "Requisito técnico más valorado",
+          "topAnswer": "Foliación digital automática con sello de tiempo y valor legal (91.4%)"
+        }
+      ]
+    },
+    "H04_FichaPersona": {
+      "projectCode": "PIIP-2026-IN0004",
+      "archetypeCode": "PERS-IN0004-01",
+      "name": "Alex Dario Abad Escalante",
+      "role": "Especialista en Modernización de la Gestión Pública - UPP",
+      "age": 39,
+      "digitalLiteracy": "Avanzado (Gestión documental electrónica, diseño de procesos e interoperabilidad)",
+      "primaryGoal": "Establecer la directiva y repositorio web para la cero papelización de expedientes de incentivos en AGROIDEAS."
+    },
+    "H05_MuroHallazgos": [
+      {
+        "id": "hallazgo-004-1",
+        "projectCode": "PIIP-2026-IN0004",
+        "clusterId": "CLUST-IN0004-01",
+        "clusterName": "Fragmentación Documental e Ineficiencia Operativa",
+        "insight": "El 60% del tiempo de evaluación de incentivos se consume en la verificación física y ordenamiento de folios duplicados.",
+        "priority": "ALTA"
+      },
+      {
+        "id": "hallazgo-004-2",
+        "projectCode": "PIIP-2026-IN0004",
+        "clusterId": "CLUST-IN0004-02",
+        "clusterName": "Validez Legal y Firma Digital",
+        "insight": "Es urgente normar el uso de expediente electrónico con metadatos estructurados compatibles con el Modelo de Digitalización del Estado.",
+        "priority": "ALTA"
+      }
+    ],
+    "H06_DefinicionDesafioHMW": {
+      "projectCode": "PIIP-2026-IN0004",
+      "hmwCode": "HMW-IN0004",
+      "action": "establecer lineamientos y un módulo web de digitalización integral de expedientes con indexación por metadatos",
+      "targetUser": "los evaluadores documentales y las organizaciones agrarias postulantes",
+      "benefit": "reducir los tiempos de calificación, garantizar la trazabilidad inmutable y eliminar el uso de papel",
+      "constraint": "el elevado volumen histórico de expedientes impresos y la necesidad de mantener el valor probatorio legal",
+      "finalHMWStatement": "¿Cómo podríamos establecer lineamientos y un módulo web de digitalización integral de expedientes con indexación por metadatos para que los evaluadores y organizaciones agrarias reduzcan los tiempos de calificación y garanticen trazabilidad inmutable a pesar del elevado volumen histórico físico y la exigencia de validez legal?"
+    },
+    "H07_LluviaIdeasCrazy8s": [
+      {
+        "ideaId": "IDEA-IN0004-01",
+        "projectCode": "PIIP-2026-IN0004",
+        "title": "Módulo Web de Digitalización de Expedientes con OCR, Indexación por Metadatos y Foliación Digital (AGROIDEAS-DIGITAL)",
+        "author": "Alex Dario Abad Escalante - UPP",
+        "votes": 14
+      },
+      {
+        "ideaId": "IDEA-IN0004-02",
+        "projectCode": "PIIP-2026-IN0004",
+        "title": "Escaneo centralizado con tercerización de custodia de archivos impresos",
+        "author": "Analista de Archivo - UA",
+        "votes": 5
+      }
+    ],
+    "H08_MatrizPriorizacion": {
+      "projectCode": "PIIP-2026-IN0004",
+      "evaluationDate": "2026-09-27T11:00:00Z",
+      "ideasEvaluadas": [
+        {
+          "ideaId": "IDEA-IN0004-01",
+          "title": "Módulo Web de Digitalización con OCR e Indexación por Metadatos (AGROIDEAS-DIGITAL)",
+          "deseabilidad": 5,
+          "factibilidad": 4,
+          "viabilidad": 5,
+          "impacto": 5,
+          "scoreTotal": 19,
+          "isWinningIdea": true
+        },
+        {
+          "ideaId": "IDEA-IN0004-02",
+          "title": "Escaneo centralizado con custodia externa",
+          "deseabilidad": 3,
+          "factibilidad": 3,
+          "viabilidad": 3,
+          "impacto": 3,
+          "scoreTotal": 12,
+          "isWinningIdea": false
+        }
+      ],
+      "winningIdeaSummary": {
+        "title": "AGROIDEAS-DIGITAL: Módulo Web de Digitalización e Indexación de Expedientes",
+        "rationale": "Obtuvo el máximo puntaje de priorización (19/20). Resuelve estructuralmente el problema documental asegurando compatibilidad con el estándar de Gobierno Digital y costo presupuestal de desarrollo S/. 0.00."
+      }
+    },
+    "H09_PrototipadoRapido": {
+      "projectCode": "PIIP-2026-IN0004",
+      "prototypeType": "Aplicación Web Local-First para Carga, Visor OCR e Indexación de Expedientes",
+      "features": [
+        "Visor PDF multifeature con foliador digital automático en marca de agua",
+        "Extractor de metadatos (RUC Organización, Nombre Plan, Región, Tipo Incentivo)",
+        "Controlador LocalStorage con respaldo en JSON exportable"
+      ],
+      "validationCriteria": "Tiempo de procesamiento e indexación de un expediente de 100 páginas en menos de 3 segundos"
+    },
+    "H10_PlanAccion": {
+      "projectCode": "PIIP-2026-IN0004",
+      "roadmap": [
+        {
+          "sprint": "Sprint 1 (3 Semanas)",
+          "objective": "Aprobación de Directiva Técnica de Digitalización e Indexación Documental",
+          "leadUnit": "UPP / UAJ"
+        },
+        {
+          "sprint": "Sprint 2 (3 Semanas)",
+          "objective": "Desarrollo del Módulo Web Visor de Expedientes y Foliación Digital en PWA",
+          "leadUnit": "UA-TI / UPP"
+        },
+        {
+          "sprint": "Sprint 3 (3 Semanas)",
+          "objective": "Piloto de digitalización con 50 expedientes de incentivos de Adopción de Tecnología",
+          "leadUnit": "UPP / UN / URIE"
+        }
+      ]
+    },
+    "H11_MatrizRiesgosTesteo": {
+      "projectCode": "PIIP-2026-IN0004",
+      "risksEvaluated": [
+        {
+          "riskId": "RISK-004-01",
+          "category": "Técnico/Almacenamiento",
+          "description": "Exceso de peso de archivos PDF escaneados a alta resolución",
+          "mitigation": "Algoritmo de compresión PDF cliente en JavaScript antes del guardado",
+          "severity": "MEDIA"
+        },
+        {
+          "riskId": "RISK-004-02",
+          "category": "Legal",
+          "description": "Observaciones de la CGR por validez de copia digitalizada",
+          "mitigation": "Protocolo de cotejo posterior con el documento original y sello digital",
+          "severity": "ALTA"
+        }
+      ],
+      "testCards": [
+        {
+          "cardId": "TEST-IN0004-01",
+          "hypothesis": "Los evaluadores reducirán en más de un 60% el tiempo de calificación documental al usar indexación por metadatos.",
+          "result": "Confirmado: El tiempo promedio de evaluación bajó de 35 días a 4 días hábiles (88.5% de reducción).",
+          "kanbanStatus": "Pase a Producción e Institucionalización en Portafolio"
+        }
+      ]
+    }
+  }
+}

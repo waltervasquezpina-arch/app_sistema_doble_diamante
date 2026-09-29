@@ -1,0 +1,77 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0001",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 2,
+      "FaseNombre": "Fase 2: Definir",
+      "HerramientaNumero": 5,
+      "HerramientaCodigo": "H05",
+      "HerramientaNombre": "Muro de Hallazgos (Research Wall)",
+      "VistaCodigo": "V05.1",
+      "VistaTitulo": "Herramienta H05: Muro de Hallazgos (Research Wall)",
+      "VistaUrl": "05-muro-hallazgos.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 5,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 5 de 11 (Fase 2: Definir)",
+      "PasoAnterior": "04-ficha-persona.html",
+      "PasoSiguiente": "06-definicion-desafio.html"
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:00:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "ContratoEsquemaDatos": {
+    "HerramientaCodigo": "H05",
+    "HerramientaNombre": "Muro de Hallazgos (Research Wall)",
+    "CamposModelo": {
+      "clusterCategory": {
+        "type": "String",
+        "label": "Categoría / Custer del Hallazgo",
+        "required": true
+      },
+      "findingTitle": {
+        "type": "String",
+        "label": "Título del Hallazgo / Insight",
+        "required": true
+      },
+      "evidenceText": {
+        "type": "String",
+        "label": "Evidencia Cualitativa / Cita de Campo",
+        "required": true
+      },
+      "sourceTool": {
+        "type": "String",
+        "label": "Herramienta Origen (AEIOU / Encuestas / Empatía)",
+        "required": true
+      },
+      "priority": {
+        "type": "Enum",
+        "values": [
+          "Alta",
+          "Media",
+          "Baja"
+        ],
+        "label": "Prioridad del Insight",
+        "required": true
+      }
+    }
+  },
+  "RegistrosEjemploGrounded": [
+    {
+      "id": 501,
+      "projectCode": "PIIP-2026-IN0001",
+      "clusterCategory": "Accesibilidad y Conectividad",
+      "findingTitle": "Alta preferencia por contenidos asincrónicos descargables",
+      "evidenceText": "Los productores prefieren descargar videos cortos y audios cuando visitan la ciudad con señal wifi para revisarlos en su parcela.",
+      "sourceTool": "Encuestas de Campo + AEIOU",
+      "priority": "Alta"
+    }
+  ]
+}

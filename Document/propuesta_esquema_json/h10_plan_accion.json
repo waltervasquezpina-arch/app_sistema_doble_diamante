@@ -1,0 +1,83 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0001",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 4,
+      "FaseNombre": "Fase 4: Entregar",
+      "HerramientaNumero": 10,
+      "HerramientaCodigo": "H10",
+      "HerramientaNombre": "Plan de Acción (Hoja de Ruta)",
+      "VistaCodigo": "V10.1",
+      "VistaTitulo": "Herramienta H10: Plan de Acción (Hoja de Ruta)",
+      "VistaUrl": "10-plan-accion.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 10,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 10 de 11 (Fase 4: Entregar)",
+      "PasoAnterior": "09-prototipado-rapido.html",
+      "PasoSiguiente": "11-matriz-riesgos.html"
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:00:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "ContratoEsquemaDatos": {
+    "HerramientaCodigo": "H10",
+    "HerramientaNombre": "Plan de Acción (Hoja de Ruta)",
+    "CamposModelo": {
+      "taskName": {
+        "type": "String",
+        "label": "Nombre de la Tarea / Actividad",
+        "required": true
+      },
+      "responsibleUnit": {
+        "type": "String",
+        "label": "Unidad Orgánica Responsable",
+        "required": true
+      },
+      "startDate": {
+        "type": "DateString",
+        "label": "Fecha de Inicio",
+        "required": true
+      },
+      "endDate": {
+        "type": "DateString",
+        "label": "Fecha de Término",
+        "required": true
+      },
+      "deliverable": {
+        "type": "String",
+        "label": "Entregable Esperado",
+        "required": true
+      },
+      "status": {
+        "type": "Enum",
+        "values": [
+          "Pendiente",
+          "En Proceso",
+          "Completado"
+        ],
+        "label": "Estado de la Tarea",
+        "required": true
+      }
+    }
+  },
+  "RegistrosEjemploGrounded": [
+    {
+      "id": 1001,
+      "projectCode": "PIIP-2026-IN0001",
+      "taskName": "Desarrollo del módulo de contenidos digitales offline",
+      "responsibleUnit": "UPDC / UA-TI",
+      "startDate": "2026-10-01",
+      "endDate": "2026-10-20",
+      "deliverable": "Módulo PWA empaquetado para distribución en Unidades Regionales",
+      "status": "En Proceso"
+    }
+  ]
+}

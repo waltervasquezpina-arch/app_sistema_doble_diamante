@@ -40,49 +40,160 @@
             </div>
         </header>
 
-        <div class="card max-w-4xl mx-auto">
-            <!-- Banner Metodológico de Guía -->
-            <div class="bg-emerald-50 border border-emerald-100 rounded p-4 mb-6">
-                <h4 class="text-sm font-bold text-emerald-800 mb-1 flex items-center gap-1.5">
-                    <i data-lucide="info" class="w-4 h-4"></i> Guía Metodológica: Marco AEIOU
-                </h4>
-                <p class="text-xs text-emerald-950 leading-relaxed">
-                    El método AEIOU es una técnica de observación etnográfica que ayuda a clasificar de manera estructurada los hallazgos en campo. Complete cada sección registrando información objetiva obtenida a través de la inmersión con las organizaciones agrarias.
-                </p>
+        <!-- Barra de Contexto de Iniciativa Activa -->
+        <div class="bg-white border border-slate-200 rounded-lg p-4 mb-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-emerald-150 border border-emerald-250 flex items-center justify-center text-emerald-800 font-bold">
+                    <i data-lucide="folder-kanban" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="text-3xs uppercase tracking-wider text-slate-500 font-semibold block">Iniciativa Activa</span>
+                    <h3 id="active-project-title-h01" class="text-sm font-bold text-slate-800 leading-tight">Cargando iniciativa...</h3>
+                    <div class="flex items-center gap-2 mt-0.5">
+                        <span id="active-project-code-h01" class="text-2xs font-mono font-semibold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-150">PIIP-2026-IN0001</span>
+                        <span id="active-project-unit-h01" class="text-2xs text-slate-500">Unidad Orgánica</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="text-right mr-2 hidden sm:block">
+                    <span class="text-3xs uppercase tracking-wider text-slate-400 font-semibold block">Registros H01</span>
+                    <span id="aeiou-counter-badge" class="text-xs font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full">0 hallazgos</span>
+                </div>
+                <button type="button" id="btn-preload-aeiou" class="btn btn-secondary text-xs flex items-center gap-1.5 py-1.5 px-3">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-600"></i> Precargar Ejemplo
+                </button>
+            </div>
+        </div>
+
+        <div class="space-y-6 max-w-5xl mx-auto">
+            <!-- Formulario de Registro AEIOU -->
+            <div class="card">
+                <!-- Banner Metodológico de Guía -->
+                <div class="bg-emerald-50 border border-emerald-100 rounded p-4 mb-6">
+                    <h4 class="text-sm font-bold text-emerald-800 mb-1 flex items-center gap-1.5">
+                        <i data-lucide="info" class="w-4 h-4"></i> Guía Metodológica: Marco AEIOU (Norma Técnica N.° 003-2025-PCM/SGP)
+                    </h4>
+                    <p class="text-xs text-emerald-950 leading-relaxed">
+                        El método AEIOU es una técnica de observación etnográfica que ayuda a clasificar de manera estructurada los hallazgos en campo. Complete cada sección registrando información objetiva obtenida a través de la inmersión con las organizaciones agrarias.
+                    </p>
+                </div>
+
+                <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+                    <h3 class="card__title mb-0 flex items-center gap-2">
+                        <i data-lucide="pen-tool" class="w-4 h-4 text-emerald-700"></i> Registro de Observación en Campo
+                    </h3>
+                    <span class="text-2xs text-slate-400 italic">* Todos los campos son obligatorios</span>
+                </div>
+
+                <form id="form-aeiou">
+                    <!-- Metadatos de la Observación -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4 bg-slate-50 p-3 rounded-lg border border-slate-150">
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1" for="aeiou-observer">Observador / Evaluador Responsable</label>
+                            <input type="text" id="aeiou-observer" class="form__input" placeholder="Ej. Especialista en Capacitación UPDC / Evaluador CTR" required>
+                        </div>
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1" for="aeiou-date">Fecha de la Observación de Campo</label>
+                            <input type="date" id="aeiou-date" class="form__input" required>
+                        </div>
+                    </div>
+
+                    <!-- Dimensiones AEIOU -->
+                    <div class="space-y-4">
+                        <div class="form__group">
+                            <label class="form__label mb-1 flex items-center gap-1.5" for="aeiou-a">
+                                <span class="w-5 h-5 rounded bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">A</span>
+                                Actividades (Activities)
+                            </label>
+                            <p class="text-2xs text-slate-500 mb-1.5">¿Qué acciones, tareas o comportamientos específicos están realizando los productores u operadores observados?</p>
+                            <textarea id="aeiou-a" class="form__input" rows="2" placeholder="Ej. Llenado manual de fichas de supervisión de cultivos en el campo..." required></textarea>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label mb-1 flex items-center gap-1.5" for="aeiou-e">
+                                <span class="w-5 h-5 rounded bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">E</span>
+                                Entorno (Environments)
+                            </label>
+                            <p class="text-2xs text-slate-500 mb-1.5">¿Cómo es el espacio físico, digital o social donde se desenvuelven? (Conectividad, iluminación, clima, etc.)</p>
+                            <textarea id="aeiou-e" class="form__input" rows="2" placeholder="Ej. Parcela agraria sin cobertura móvil, temperatura de 22°C con viento moderado..." required></textarea>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label mb-1 flex items-center gap-1.5" for="aeiou-i">
+                                <span class="w-5 h-5 rounded bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">I</span>
+                                Interacciones (Interactions)
+                            </label>
+                            <p class="text-2xs text-slate-500 mb-1.5">¿Cómo se relacionan entre sí los usuarios, o cómo interactúan con los sistemas de soporte, jefaturas o terceros?</p>
+                            <textarea id="aeiou-i" class="form__input" rows="2" placeholder="Ej. Intercambio verbal de información de cosecha entre el productor y el supervisor técnico..." required></textarea>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label mb-1 flex items-center gap-1.5" for="aeiou-o">
+                                <span class="w-5 h-5 rounded bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">O</span>
+                                Objetos (Objects)
+                            </label>
+                            <p class="text-2xs text-slate-500 mb-1.5">¿Qué dispositivos físicos, formatos en papel, herramientas o software se están utilizando en la actividad?</p>
+                            <textarea id="aeiou-o" class="form__input" rows="2" placeholder="Ej. Planilla impresa en papel bond, lapicero azul, cámara de celular personal..." required></textarea>
+                        </div>
+                        <div class="form__group">
+                            <label class="form__label mb-1 flex items-center gap-1.5" for="aeiou-u">
+                                <span class="w-5 h-5 rounded bg-emerald-100 text-emerald-800 font-bold flex items-center justify-center text-xs">U</span>
+                                Usuarios (Users)
+                            </label>
+                            <p class="text-2xs text-slate-500 mb-1.5">¿Quiénes participan de la experiencia? Detalle sus perfiles, actitudes de uso, temores o roles institucionales.</p>
+                            <textarea id="aeiou-u" class="form__input" rows="2" placeholder="Ej. Productor de café de 48 años (usuario directo) y Técnico Agrícola Evaluador de la UR (observador)..." required></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mt-6 pt-4 border-t border-slate-150">
+                        <button type="button" id="btn-clear-aeiou" class="btn btn-secondary w-full sm:w-auto text-xs py-2 px-4 order-2 sm:order-1">
+                            Limpiar Formulario
+                        </button>
+                        <button type="submit" class="btn btn-primary w-full sm:w-auto flex items-center justify-center gap-2 py-2 px-6 order-1 sm:order-2">
+                            <i data-lucide="save" class="w-4 h-4"></i> Guardar Observación AEIOU
+                        </button>
+                    </div>
+                </form>
             </div>
 
-            <h3 class="card__title">Registro de Observación en Campo</h3>
-            <form id="form-aeiou">
-                <div class="form__group">
-                    <label class="form__label mb-1" for="aeiou-a">Actividades (Activities)</label>
-                    <p class="text-2xs text-slate-500 mb-1.5">¿Qué acciones, tareas o comportamientos específicos están realizando los productores u operadores observados?</p>
-                    <textarea id="aeiou-a" class="form__input" rows="2" placeholder="Ej. Llenado manual de fichas de supervisión de cultivos en el campo..." required></textarea>
+            <!-- Listado Dinámico de Observaciones Históricas -->
+            <div class="card">
+                <div class="flex items-center justify-between mb-4 border-b border-slate-150 pb-3">
+                    <div>
+                        <h3 class="card__title mb-0 flex items-center gap-2">
+                            <i data-lucide="clipboard-list" class="w-4 h-4 text-emerald-700"></i> Observaciones Registradas para esta Iniciativa
+                        </h3>
+                        <p class="text-2xs text-slate-500 mt-0.5">Evidencia etnográfica persistida localmente (Local-First)</p>
+                    </div>
                 </div>
-                <div class="form__group">
-                    <label class="form__label mb-1" for="aeiou-e">Entorno (Environments)</label>
-                    <p class="text-2xs text-slate-500 mb-1.5">¿Cómo es el espacio físico, digital o social donde se desenvuelven? (Conectividad, iluminación, clima, etc.)</p>
-                    <textarea id="aeiou-e" class="form__input" rows="2" placeholder="Ej. Parcela agraria sin cobertura móvil, temperatura de 22°C con viento moderado..." required></textarea>
+
+                <!-- Estado Vacío (Empty State) -->
+                <div id="aeiou-empty-state" class="hidden text-center py-10 px-4 bg-slate-50 rounded-lg border-2 border-dashed border-slate-200">
+                    <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="eye-off" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-slate-800">No hay observaciones registradas para esta iniciativa</h4>
+                    <p class="text-xs text-slate-500 max-w-md mx-auto mt-1 mb-4">
+                        Aún no se han documentado hallazgos de campo con la matriz AEIOU para este proyecto. Puedes registrar uno nuevo con el formulario superior o cargar un ejemplo guiado.
+                    </p>
+                    <button type="button" id="btn-empty-preload-aeiou" class="btn btn-primary text-xs inline-flex items-center gap-1.5">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Cargar Ejemplo Metodológico
+                    </button>
                 </div>
-                <div class="form__group">
-                    <label class="form__label mb-1" for="aeiou-i">Interacciones (Interactions)</label>
-                    <p class="text-2xs text-slate-500 mb-1.5">¿Cómo se relacionan entre sí los usuarios, o cómo interactúan con los sistemas de soporte, jefaturas o terceros?</p>
-                    <textarea id="aeiou-i" class="form__input" rows="2" placeholder="Ej. Intercambio verbal de información de cosecha entre el productor y el supervisor técnico..." required></textarea>
+
+                <!-- Contenedor de Registros AEIOU -->
+                <div id="aeiou-records-container" class="space-y-4">
+                    <!-- Se puebla dinámicamente desde app.js -->
                 </div>
-                <div class="form__group">
-                    <label class="form__label mb-1" for="aeiou-o">Objetos (Objects)</label>
-                    <p class="text-2xs text-slate-500 mb-1.5">¿Qué dispositivos físicos, formatos en papel, herramientas o software se están utilizando en la actividad?</p>
-                    <textarea id="aeiou-o" class="form__input" rows="2" placeholder="Ej. Planilla impresa en papel bond, lapicero azul, cámara de celular personal..." required></textarea>
-                </div>
-                <div class="form__group">
-                    <label class="form__label mb-1" for="aeiou-u">Usuarios (Users)</label>
-                    <p class="text-2xs text-slate-500 mb-1.5">¿Quiénes participan de la experiencia? Detalle sus perfiles, actitudes de uso, temores o roles institucionales.</p>
-                    <textarea id="aeiou-u" class="form__input" rows="2" placeholder="Ej. Productor de café de 48 años (usuario directo) y Técnico Agrícola Evaluador de la UR (observador)..." required></textarea>
-                </div>
-                
-                <button type="submit" class="btn btn-primary w-full md:w-auto mt-2">
-                    Guardar Hallazgo
-                </button>
-            </form>
+            </div>
+
+            <!-- Controles de Navegación Secuencial del Doble Diamante -->
+            <div class="flex items-center justify-between py-4">
+                <a href="../index.html" class="btn btn-secondary text-xs flex items-center gap-1.5">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver al Portafolio
+                </a>
+                <a href="02-mapa-empatia.html" class="btn btn-primary text-xs flex items-center gap-1.5">
+                    Siguiente: 02. Mapa de Empatía <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
         </div>
 
     </main>

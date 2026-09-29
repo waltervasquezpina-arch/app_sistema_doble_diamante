@@ -17,9 +17,9 @@
  */
 
 const PIIP_SEED_DATA = {
-  "_schemaVersion": 5,
-  "_source": "Fichas de Iniciativa de Innovación Pública AGROIDEAS IN0001-IN0012 (2026)",
-  "_generated": "2026-06-14",
+  "_schemaVersion": 6,
+  "_source": "Fichas de Iniciativa de Innovación Pública AGROIDEAS IN0001-IN0013 (2026)",
+  "_generated": "2026-09-29",
   "users": [
     {
       "id": 1,
@@ -237,46 +237,121 @@ const PIIP_SEED_DATA = {
         "idear": "pending",
         "entregar": "pending"
       }
+    },
+    {
+      "id": 13,
+      "code": "PIIP-2026-IN0013",
+      "title": "Innovación en la ejecución y acceso a la Estrategia de Emprendimiento de la Mujer Rural e Indígena (EEMRI)",
+      "status": "Fase 2: Definir",
+      "responsible": "Dirección Ejecutiva / URIE / UPDC",
+      "contact": "Jorge Augusto Amaya Castillo - Director Ejecutivo",
+      "date": "2026-09-27",
+      "phases": {
+        "descubrir": "completed",
+        "definir": "active",
+        "idear": "pending",
+        "entregar": "pending"
+      }
     }
   ],
   "aeiou": [
     {
       "id": 1,
       "projectId": 1,
+      "projectCode": "PIIP-2026-IN0001",
       "activity": "Sesiones de capacitación sincrónica remota a Organizaciones Agrarias (OAs) sobre Agronegocios mediante plataforma virtual Chamilo LMS.",
       "environment": "Oficina UPDC Lima, con conexión a productores en zonas rurales de Ayacucho, Junín y Puno vía Zoom.",
       "interaction": "Facilitador UPDC ↔ Presidentes de OAs. Alta tasa de abandono a la mitad de la sesión por problemas de conectividad.",
+      "object": "Laptop, proyector, plataforma Chamilo, apuntes en papel, fichas de pre-test impresas.",
       "objects": "Laptop, proyector, plataforma Chamilo, apuntes en papel, fichas de pre-test impresas.",
+      "user": "4,290 agricultores organizados a nivel nacional; personal UPDC, UN, URIE y Unidades Regionales.",
       "users": "4,290 agricultores organizados a nivel nacional; personal UPDC, UN, URIE y Unidades Regionales.",
+      "observer": "Especialista en Capacitación UPDC",
+      "observationDate": "2026-01-20",
       "date": "2026-01-20"
     },
     {
       "id": 2,
-      "projectId": 2,
-      "activity": "Supervisión presencial y llenado de reportes de avance en campo sobre ejecución de planes de negocio.",
-      "environment": "Parcelas agrícolas del distrito de Majes, Arequipa. Sin señal móvil estable.",
-      "interaction": "Especialista de campo AGROIDEAS ↔ Directivo de cooperativa. Intercambio de actas en papel.",
-      "objects": "Cuadernos de campo, fichas físicas de monitoreo, cámara fotográfica, GPS portátil.",
-      "users": "Coordinadores de planes de negocio, especialistas de Unidades Regionales, presidentes de cooperativas.",
-      "date": "2026-02-10"
+      "projectId": 1,
+      "projectCode": "PIIP-2026-IN0001",
+      "activity": "Taller presencial de gestión empresarial para la Cooperativa Agraria Junín.",
+      "environment": "Local comunal de la organización agraria con conectividad móvil inestable.",
+      "interaction": "El capacitador explica diapositivas; los productores hacen preguntas sobre registro contable.",
+      "object": "Cuadernos de notas, proyector portátil, teléfonos móviles con WhatsApp.",
+      "objects": "Cuadernos de notas, proyector portátil, teléfonos móviles con WhatsApp.",
+      "user": "Socios de organizaciones agrarias, líderes comunitarios y especialistas de UPDC.",
+      "users": "Socios de organizaciones agrarias, líderes comunitarios y especialistas de UPDC.",
+      "observer": "Facilitador de Campo UPDC",
+      "observationDate": "2026-09-10",
+      "date": "2026-09-10"
     },
     {
       "id": 3,
+      "projectId": 2,
+      "projectCode": "PIIP-2026-IN0002",
+      "activity": "Supervisión presencial y llenado de reportes de avance en campo sobre ejecución de planes de negocio.",
+      "environment": "Parcelas agrícolas del distrito de Majes, Arequipa. Sin señal móvil estable.",
+      "interaction": "Especialista de campo AGROIDEAS ↔ Directivo de cooperativa. Intercambio de actas en papel.",
+      "object": "Cuadernos de campo, fichas físicas de monitoreo, cámara fotográfica, GPS portátil.",
+      "objects": "Cuadernos de campo, fichas físicas de monitoreo, cámara fotográfica, GPS portátil.",
+      "user": "Coordinadores de planes de negocio, especialistas de Unidades Regionales, presidentes de cooperativas.",
+      "users": "Coordinadores de planes de negocio, especialistas de Unidades Regionales, presidentes de cooperativas.",
+      "observer": "Fernando Ademir Loayza Choque - UN",
+      "observationDate": "2026-02-10",
+      "date": "2026-02-10"
+    },
+    {
+      "id": 4,
       "projectId": 7,
+      "projectCode": "PIIP-2026-IN0007",
       "activity": "Evaluación de elegibilidad documental y de campo para calificar expedientes de nuevas OAs postulantes al EEMRI.",
       "environment": "Comunidades campesinas de la sierra de Ancash. Acceso por trocha carrozable. Sin internet.",
       "interaction": "Evaluador AGROIDEAS ↔ Productor agrario ↔ Directivo OA. El evaluador llena actas en papel y toma fotos con su celular personal.",
-      "objects": "Actas de campo, fotocopias de DNI, titularidad de tierras, cámara del celular. Sin marcado GPS en fotos.",
+      "object": "Actas de campo, fotocopias de DNI, titularidad de tierras, cámara del celular.",
+      "objects": "Actas de campo, fotocopias de DNI, titularidad de tierras, cámara del celular.",
+      "user": "Evaluadores de Unidades Regionales, productores agrarios postulantes, Coordinación Técnica Regional (CTR).",
       "users": "Evaluadores de Unidades Regionales, productores agrarios postulantes, Coordinación Técnica Regional (CTR).",
+      "observer": "José Fernando Barturen Torres - CTR",
+      "observationDate": "2026-03-05",
       "date": "2026-03-05"
+    }
+  ],
+  "empathyMaps": [
+    {
+      "projectId": 1,
+      "projectCode": "PIIP-2026-IN0001",
+      "userProfile": "Presidente de Cooperativa Agraria (productor de papa nativa, sierra centro)",
+      "says": "\"El trámite del plan de negocios demora demasiado y corremos el riesgo de perder la campaña agrícola. La plataforma web es muy complicada para nosotros.\"",
+      "does": "Viaja cada 2 semanas a la oficina zonal para preguntar el estado de su expediente. Llama por celular al especialista de campo con frecuencia.",
+      "thinks": "Cree que el sistema está diseñado para gente con estudios universitarios. Desconfía de que sus datos estén seguros en internet.",
+      "feels": "Inseguridad frente a sistemas en línea y angustia por los tiempos de aprobación institucional.",
+      "hears": "Otros dirigentes le dicen que los fondos AGROIDEAS llegan tarde, a destiempo con la campaña. Escucha en radio que el gobierno impulsa digitalización.",
+      "sees": "Carpetas de papel acumuladas en la oficina zonal. Sus vecinos que no tienen acceso a internet aunque tienen celular básico.",
+      "pains": "Pérdida económica por no recibir el incentivo a tiempo. Costo de viaje hasta la ciudad (S/. 80-120 por visita). Vergüenza de no saber usar la computadora.",
+      "gains": "Quiere saber el estado de su expediente desde su celular. Desea capacitarse en su idioma (quechua) y a su ritmo sin salir de su comunidad."
+    },
+    {
+      "projectId": 2,
+      "projectCode": "PIIP-2026-IN0002",
+      "userProfile": "Especialista Evaluador de Planes de Negocio - Unidad de Negocios",
+      "says": "\"Pasamos más tiempo consolidando hojas de cálculo que analizando el impacto real de las inversiones en el campo.\"",
+      "does": "Revisa correos electrónicos, llama a coordinadores zonales y contrasta reportes físicos contra el sistema central.",
+      "thinks": "Deberíamos contar con alertas automáticas de desvío presupuestal y semaforización de cumplimiento de metas.",
+      "feels": "Sobrecarga operativa y frustración por demoras en rendiciones de cuentas de las cooperativas.",
+      "hears": "Demandas de las Unidades Regionales por agilizar la validación de desembolsos.",
+      "sees": "Multiplicidad de formatos de Excel no estandarizados y desfase de información de hasta 45 días.",
+      "pains": "Riesgo de inconsistencias en auditorías y falta de trazabilidad histórica en planes multianuales.",
+      "gains": "Un tablero centralizado en tiempo real con datos georreferenciados y trazabilidad inmutable."
     }
   ],
   "empathyMap": {
     "projectId": 1,
+    "projectCode": "PIIP-2026-IN0001",
     "userProfile": "Presidente de Cooperativa Agraria (productor de papa nativa, sierra centro)",
     "says": "\"El trámite del plan de negocios demora demasiado y corremos el riesgo de perder la campaña agrícola. La plataforma web es muy complicada para nosotros.\"",
     "does": "Viaja cada 2 semanas a la oficina zonal para preguntar el estado de su expediente. Llama por celular al especialista de campo con frecuencia.",
     "thinks": "Cree que el sistema está diseñado para gente con estudios universitarios. Desconfía de que sus datos estén seguros en internet.",
+    "feels": "Inseguridad frente a sistemas en línea y angustia por los tiempos de aprobación institucional.",
     "hears": "Otros dirigentes le dicen que los fondos AGROIDEAS llegan tarde, a destiempo con la campaña. Escucha en radio que el gobierno impulsa digitalización.",
     "sees": "Carpetas de papel acumuladas en la oficina zonal. Sus vecinos que no tienen acceso a internet aunque tienen celular básico.",
     "pains": "Pérdida económica por no recibir el incentivo a tiempo. Costo de viaje hasta la ciudad (S/. 80-120 por visita). Vergüenza de no saber usar la computadora.",
@@ -286,50 +361,68 @@ const PIIP_SEED_DATA = {
     {
       "id": 1,
       "projectId": 1,
-      "respondent": "Juan Ticona Apaza (Cooperativa Agraria Altiplano - Puno)",
+      "projectCode": "PIIP-2026-IN0001",
+      "respondent": "Juan Ticona Apaza",
+      "cooperative": "Cooperativa Agraria Altiplano - Puno",
       "satisfaction": 2,
       "comments": "La plataforma Chamilo es muy lenta cuando no tenemos buena señal. Prefiero aprender en persona.",
-      "sentiment": "Negativo"
+      "sentiment": "Negativo",
+      "date": "2026-01-22"
     },
     {
       "id": 2,
       "projectId": 1,
-      "respondent": "María Condori Quispe (Asoc. Agropecuaria Los Andes - Cusco)",
+      "projectCode": "PIIP-2026-IN0001",
+      "respondent": "María Condori Quispe",
+      "cooperative": "Asoc. Agropecuaria Los Andes - Cusco",
       "satisfaction": 4,
       "comments": "El personal de UPDC es amable y ayuda mucho. Pero el sistema web es difícil de navegar.",
-      "sentiment": "Neutro"
+      "sentiment": "Neutro",
+      "date": "2026-01-24"
     },
     {
       "id": 3,
       "projectId": 2,
-      "respondent": "Roberto Huamán Flores (Cooperativa Agroindustrial del Vraem)",
+      "projectCode": "PIIP-2026-IN0002",
+      "respondent": "Roberto Huamán Flores",
+      "cooperative": "Cooperativa Agroindustrial del Vraem",
       "satisfaction": 3,
       "comments": "Los reportes de avance son muy burocráticos. Se pierde mucho tiempo en papeleo.",
-      "sentiment": "Negativo"
+      "sentiment": "Negativo",
+      "date": "2026-02-14"
     },
     {
       "id": 4,
       "projectId": 7,
+      "projectCode": "PIIP-2026-IN0007",
       "respondent": "Especialista Evaluador UR Ancash",
+      "cooperative": "Unidad Regional Ancash",
       "satisfaction": 2,
       "comments": "Sin internet no podemos subir la información de campo. Tenemos que esperar días para sincronizar. El proceso es muy lento.",
-      "sentiment": "Negativo"
+      "sentiment": "Negativo",
+      "date": "2026-03-08"
     },
     {
       "id": 5,
       "projectId": 8,
+      "projectCode": "PIIP-2026-IN0008",
       "respondent": "Especialista Unidad de Negocios - Sede Central",
+      "cooperative": "Sede Central - MIDAGRI",
       "satisfaction": 1,
       "comments": "El SEL v2 se cae durante las convocatorias EEMRI. Es un problema grave para los plazos.",
-      "sentiment": "Negativo"
+      "sentiment": "Negativo",
+      "date": "2026-03-12"
     },
     {
       "id": 6,
       "projectId": 10,
-      "respondent": "Directivo OA San Martín de Porres (Lambayeque)",
+      "projectCode": "PIIP-2026-IN0010",
+      "respondent": "Directivo OA San Martín de Porres",
+      "cooperative": "OA San Martín de Porres (Lambayeque)",
       "satisfaction": 3,
       "comments": "Las notificaciones llegan tarde por correo postal. A veces no llegan. Necesitamos algo más rápido.",
-      "sentiment": "Neutro"
+      "sentiment": "Neutro",
+      "date": "2026-03-22"
     }
   ],
   "personas": [

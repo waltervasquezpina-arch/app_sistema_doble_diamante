@@ -1,0 +1,82 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0001",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 4,
+      "FaseNombre": "Fase 4: Entregar",
+      "HerramientaNumero": 9,
+      "HerramientaCodigo": "H09",
+      "HerramientaNombre": "Prototipado Rápido (Storyboarding)",
+      "VistaCodigo": "V09.1",
+      "VistaTitulo": "Herramienta H09: Prototipado Rápido (Storyboarding)",
+      "VistaUrl": "09-prototipado-rapido.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 9,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 9 de 11 (Fase 4: Entregar)",
+      "PasoAnterior": "08-matriz-priorizacion.html",
+      "PasoSiguiente": "10-plan-accion.html"
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:00:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "ContratoEsquemaDatos": {
+    "HerramientaCodigo": "H09",
+    "HerramientaNombre": "Prototipado Rápido (Storyboarding)",
+    "CamposModelo": {
+      "prototypeTitle": {
+        "type": "String",
+        "label": "Nombre del Prototipo",
+        "required": true
+      },
+      "prototypeType": {
+        "type": "Enum",
+        "values": [
+          "Digital PWA",
+          "Físico / Papel",
+          "Guion / Storyboard",
+          "Simulación de Servicio"
+        ],
+        "label": "Tipo de Prototipo",
+        "required": true
+      },
+      "keyFeatures": {
+        "type": "ArrayString",
+        "label": "Características Principales a Probar",
+        "required": true
+      },
+      "artifactUrlOrImage": {
+        "type": "String",
+        "label": "URL de la Maqueta / Imagen del Prototipo",
+        "required": true
+      },
+      "testingGoal": {
+        "type": "String",
+        "label": "Métrica o Criterio de Éxito del Testeo",
+        "required": true
+      }
+    }
+  },
+  "RegistrosEjemploGrounded": [
+    {
+      "id": 901,
+      "projectCode": "PIIP-2026-IN0001",
+      "prototypeTitle": "Simulador Web PWA de la Plataforma Blended Learning",
+      "prototypeType": "Digital PWA",
+      "keyFeatures": [
+        "Modo offline de lecciones",
+        "Certificación automática al terminar micro-módulos",
+        "Insignias de progreso"
+      ],
+      "artifactUrlOrImage": "https://waltervasquezpina-arch.github.io/app_sistema_doble_diamante/prototipos/pwa-in0001.png",
+      "testingGoal": "El 80% de los usuarios de prueba debe completar un micro-módulo de 3 minutos sin requerir asistencia externa."
+    }
+  ]
+}

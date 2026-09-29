@@ -1,0 +1,87 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0001",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 3,
+      "FaseNombre": "Fase 3: Idear",
+      "HerramientaNumero": 7,
+      "HerramientaCodigo": "H07",
+      "HerramientaNombre": "Lluvia de Ideas y Crazy 8's",
+      "VistaCodigo": "V07.1",
+      "VistaTitulo": "Herramienta H07: Lluvia de Ideas y Crazy 8's",
+      "VistaUrl": "07-lluvia-ideas.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 7,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 7 de 11 (Fase 3: Idear)",
+      "PasoAnterior": "06-definicion-desafio.html",
+      "PasoSiguiente": "08-matriz-priorizacion.html"
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:00:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "ContratoEsquemaDatos": {
+    "HerramientaCodigo": "H07",
+    "HerramientaNombre": "Lluvia de Ideas y Crazy 8's",
+    "CamposModelo": {
+      "ideaTitle": {
+        "type": "String",
+        "label": "Título de la Idea",
+        "required": true
+      },
+      "description": {
+        "type": "String",
+        "label": "Descripción Breve del Concepto",
+        "required": true
+      },
+      "category": {
+        "type": "Enum",
+        "values": [
+          "Tecnológica",
+          "Procesos / Gestión",
+          "Normativa",
+          "Capacitación"
+        ],
+        "label": "Categoría de la Idea",
+        "required": true
+      },
+      "authorRole": {
+        "type": "String",
+        "label": "Autor / Rol en el Equipo",
+        "required": true
+      },
+      "votesCount": {
+        "type": "Integer",
+        "label": "Votos Recibidos en Votación Silenciosa",
+        "required": true
+      }
+    }
+  },
+  "RegistrosEjemploGrounded": [
+    {
+      "id": 701,
+      "projectCode": "PIIP-2026-IN0001",
+      "ideaTitle": "Bot Educativo asincrónico por WhatsApp con micro-videos offline",
+      "description": "Plataforma que envía lecciones de 3 minutos comprimidas por WhatsApp y permite evaluaciones automáticas por texto.",
+      "category": "Tecnológica",
+      "authorRole": "Especialista UPDC",
+      "votesCount": 8
+    },
+    {
+      "id": 702,
+      "projectCode": "PIIP-2026-IN0001",
+      "ideaTitle": "Kits de capacitación en memorias USB / Tarjetas SD precargadas",
+      "description": "Entrega de material multimedia educativo descargado previamente para reproducción en TV o tablets sin red.",
+      "category": "Capacitación",
+      "authorRole": "Especialista Zonal Junín",
+      "votesCount": 5
+    }
+  ]
+}

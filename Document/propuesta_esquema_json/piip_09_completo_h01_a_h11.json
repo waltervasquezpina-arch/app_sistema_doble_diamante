@@ -1,0 +1,287 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0009",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 4,
+      "FaseNombre": "Fase 4: Entregar",
+      "HerramientaNumero": 11,
+      "HerramientaCodigo": "H11",
+      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
+      "VistaCodigo": "V11.1",
+      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje (VAC-DIGITAL)",
+      "VistaUrl": "fase4/11-matriz-riesgos.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 11,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar - Cierre de Proyecto)",
+      "PasoAnterior": {
+        "HerramientaCodigo": "H10",
+        "HerramientaNombre": "Plan de Acción y Hoja de Ruta",
+        "VistaUrl": "fase4/10-plan-accion.html"
+      },
+      "PasoSiguiente": null
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-10-02T16:30:00Z",
+      "UsuarioActualRol": "Líder de Proyecto RRHH / Facilitador Ágil"
+    }
+  },
+  "ProyectoIdentificacion": {
+    "id": 9,
+    "code": "PIIP-2026-IN0009",
+    "title": "Plataforma Digital de Gestión y Programación de Vacaciones del Personal (VAC-DIGITAL)",
+    "responsible": "Unidad de Administración - Recursos Humanos (UA-RRHH)",
+    "contact": "Especialista en Gestión de Recursos Humanos - UA",
+    "date": "2026-03-15",
+    "opinionTecnicaSummary": {
+      "informeNumero": "INFORME TÉCNICO N.º 009-2026-AGROIDEAS/UPP-MODERNIZACIÓN",
+      "puntajeTotal": 10,
+      "impactoUsuarios": "Nivel 4 (4 ptos) - Resuelve incertidumbre de saldos en tiempo real para el cliente interno",
+      "priorizacionEstrategica": "Nivel 3 (3 ptos) - Alineado a la Política Nacional de Modernización y eficiencia en el back-office",
+      "enfoqueInnovacion": "Nivel 3 (3 ptos) - Digitalización centrada en el usuario con adaptación a regímenes CAS, 728, 276 y 30057",
+      "rangoDecision": "Recomendable para aprobación (10-12 pts)",
+      "condicionamientoTecnico": "Ejecutar ciclo de co-creación y prototipado rápido para asegurar interfaz intuitiva e interoperabilidad con asistencia"
+    },
+    "phases": {
+      "descubrir": "completed",
+      "definir": "completed",
+      "idear": "completed",
+      "entregar": "completed"
+    },
+    "porcentajeAvanceGlobal": 100.0
+  },
+  "HerramientasMetodologicas_Coleccion": {
+    "H01_ObservacionAEIOU": [
+      {
+        "id": "aeiou-009-01",
+        "projectCode": "PIIP-2026-IN0009",
+        "dimension": "Actividades",
+        "observation": "Solicitudes físicas en papel (fichas impresas) y correos dispersos enviados por los servidores para programar descanso vacacional, generando demoras de hasta 15 días en la aprobación por jefaturas y Recursos Humanos.",
+        "timestamp": "2026-03-16T09:00:00Z"
+      },
+      {
+        "id": "aeiou-009-02",
+        "projectCode": "PIIP-2026-IN0009",
+        "dimension": "Entorno",
+        "observation": "Oficinas de Recursos Humanos en sede central y Unidades Regionales con acumulados de memorándums físicos e incertidumbre de saldos acumulados por coexistencia de 4 regímenes laborales (CAS D.Leg. 1057, 728, 276 y Ley 30057).",
+        "timestamp": "2026-03-16T11:30:00Z"
+      },
+      {
+        "id": "aeiou-009-03",
+        "projectCode": "PIIP-2026-IN0009",
+        "dimension": "Interacciones",
+        "observation": "Servidor ↔ Jefatura Inmediata ↔ Especialista RRHH. Constantes llamadas y correos de consulta ('¿cuántos días me quedan?') por falta de visibilidad del saldo en tiempo real.",
+        "timestamp": "2026-03-16T14:15:00Z"
+      },
+      {
+        "id": "aeiou-009-04",
+        "projectCode": "PIIP-2026-IN0009",
+        "dimension": "Objetos",
+        "observation": "Formatos físicos en PDF/Excel no estandarizados, legajos de personal en físico, planillas manuales de asistencia.",
+        "timestamp": "2026-03-16T16:00:00Z"
+      },
+      {
+        "id": "aeiou-009-05",
+        "projectCode": "PIIP-2026-IN0009",
+        "dimension": "Usuarios",
+        "observation": "Más de 280 servidores civiles de AGROIDEAS a nivel nacional (Sede Central y 25 Unidades Regionales).",
+        "timestamp": "2026-03-16T17:00:00Z"
+      }
+    ],
+    "H02_MapaEmpatia": {
+      "projectCode": "PIIP-2026-IN0009",
+      "userProfile": "Servidor Civil y Jefatura Inmediata de AGROIDEAS",
+      "says": "\"El trámite de vacaciones en papel es lento y nunca sé con certeza exacta cuántos días acumulados me quedan según mi régimen laboral.\"",
+      "does": "Imprime fichas físicas, busca la firma manuscrita de su jefe directo y la entrega personalmente o por trámite documentario a Recursos Humanos.",
+      "thinks": "Considera que un trámite tan cotidiano como pedir vacaciones no debería tomar dos semanas ni requerir firmas en papel.",
+      "feels": "Frustrado por la carga burocrática innecesaria e incertidumbre al planificar su descanso familiar.",
+      "pains": "Riesgo de pérdida de solicitudes físicas, demoras en aprobación que chocan con viajes programados, errores en la contabilización de días por régimen laboral.",
+      "gains": "Transparencia absoluta en saldos vacacionales, solicitud en 2 clics desde celular o laptop, y aprobaciones instantáneas con notificaciones automáticas."
+    },
+    "H03_EncuestasCampo": {
+      "projectCode": "PIIP-2026-IN0009",
+      "sampleSize": 124,
+      "targetAudience": "Servidores Civiles y Jefes de Unidad de AGROIDEAS (Lima y Regiones)",
+      "keyResults": [
+        {
+          "question": "¿Ha experimentado demoras en la respuesta a su solicitud de vacaciones?",
+          "percentageYes": 89.5
+        },
+        {
+          "question": "¿Conoce con precisión su saldo de días vacacionales actualizados?",
+          "percentageNo": 77.4
+        },
+        {
+          "question": "¿Considera necesario un portal digital autónomo de autoservicio vacacional?",
+          "percentageYes": 98.4
+        }
+      ]
+    },
+    "H04_FichaPersona": {
+      "projectCode": "PIIP-2026-IN0009",
+      "archetypeCode": "PERS-IN0009-01",
+      "name": "Dra. Carmen Rosa Gutiérrez",
+      "role": "Especialista Zonal de Evaluación (Régimen CAS D.Leg. 1057) - Unidad Regional Junín",
+      "age": 38,
+      "digitalLiteracy": "Alto (Maneja plataformas web institucionales, smartphone y correo institucional)",
+      "primaryGoal": "Programar sus vacaciones fraccionadas de forma ágil desde su celular sin tener que enviar papeles por currier a Lima.",
+      "mainPainPoint": "Falta de un canal digital de autoservicio que le muestre sus días disponibles y notifique a su jefe directo inmediatamente."
+    },
+    "H05_MuroHallazgos": [
+      {
+        "projectCode": "PIIP-2026-IN0009",
+        "clusterId": "CLUST-09-A",
+        "clusterName": "Burocracia y Uso Excesivo de Papel en Gestión Interna",
+        "insight": "El 85% del tiempo del proceso de vacaciones se gasta en el traslado físico o correo de documentos firmados. Un autoservicio digital elimina el 100% del papel.",
+        "priority": "ALTA"
+      },
+      {
+        "projectCode": "PIIP-2026-IN0009",
+        "clusterId": "CLUST-09-B",
+        "clusterName": "Complejidad Multirégimen Laboral (1057, 728, 276, 30057)",
+        "insight": "El motor del sistema debe calcular los períodos vacacionales respetando las reglas de fraccionamiento legal específicas de cada régimen laboral sin requerir cálculo manual por RRHH.",
+        "priority": "ALTA"
+      }
+    ],
+    "H06_DefinicionDesafioHMW": {
+      "projectCode": "PIIP-2026-IN0009",
+      "hmwCode": "HMW-IN0009",
+      "action": "implementar una plataforma digital de autoservicio y seguimiento de vacaciones (VAC-DIGITAL) con motor de reglas multirégimen",
+      "targetUser": "los servidores civiles y jefaturas de AGROIDEAS",
+      "benefit": "garantizar transparencia en saldos en tiempo real, agilizar aprobaciones e independizar el trámite de solicitudes impresas",
+      "constraint": "la diversidad de regímenes laborales (CAS, 728, 276, 30057) y la necesidad de interoperar con el sistema de asistencia",
+      "finalHMWStatement": "¿Cómo podríamos implementar una plataforma digital de autoservicio y seguimiento vacacional (VAC-DIGITAL) con motor de reglas multirégimen para que los servidores civiles y jefaturas gestionen el descanso vacacional de manera transparente e inmediata a pesar de la coexistencia de múltiples regímenes laborales y sin sobrecargar al equipo de Recursos Humanos?"
+    },
+    "H07_LluviaIdeasCrazy8s": [
+      {
+        "projectCode": "PIIP-2026-IN0009",
+        "ideaId": "IDEA-09-01",
+        "title": "Portal Web PWA VAC-DIGITAL con Autoservicio del Servidor, Semáforo de Saldos y Aprobación en 1-Click por Jefatura",
+        "author": "Especialista RRHH / UA-TI",
+        "votes": 14
+      },
+      {
+        "projectCode": "PIIP-2026-IN0009",
+        "ideaId": "IDEA-09-02",
+        "title": "Módulo de solicitudes de vacaciones por correo electrónico con botones de aprobación incrustados",
+        "author": "Analista de Procesos UPP",
+        "votes": 6
+      },
+      {
+        "projectCode": "PIIP-2026-IN0009",
+        "ideaId": "IDEA-09-03",
+        "title": "Chatbot en Teams/WhatsApp para consulta de saldos vacacionales",
+        "author": "Desarrollador TI",
+        "votes": 8
+      }
+    ],
+    "H08_MatrizPriorizacion": {
+      "projectCode": "PIIP-2026-IN0009",
+      "evaluationDate": "2026-09-27T11:00:00Z",
+      "ideasEvaluadas": [
+        {
+          "ideaId": "IDEA-09-01",
+          "title": "Portal Web PWA VAC-DIGITAL con Autoservicio del Servidor, Semáforo de Saldos y Aprobación en 1-Click",
+          "deseabilidad": 5,
+          "factibilidad": 5,
+          "viabilidad": 4,
+          "impacto": 5,
+          "scoreTotal": 19,
+          "isWinningIdea": true
+        },
+        {
+          "ideaId": "IDEA-09-03",
+          "title": "Chatbot en Teams/WhatsApp para consulta de saldos vacacionales",
+          "deseabilidad": 4,
+          "factibilidad": 3,
+          "viabilidad": 4,
+          "impacto": 3,
+          "scoreTotal": 14,
+          "isWinningIdea": false
+        }
+      ],
+      "winningIdeaSummary": {
+        "title": "VAC-DIGITAL: Plataforma Web PWA de Autoservicio Vacacional con Motor Multirégimen y Notificaciones Instantáneas",
+        "rationale": "Alcanzó el puntaje más alto (19/20). Resuelve integralmente la gestión vacacional con cero uso de papel, validación automatizada por régimen laboral y alta deseabilidad en los servidores civiles."
+      }
+    },
+    "H09_PrototipadoRapido": {
+      "projectCode": "PIIP-2026-IN0009",
+      "prototypeType": "Progressive Web App (PWA) Responsive Local-First",
+      "prototypeName": "VAC-DIGITAL: Portal de Autoservicio del Servidor Civil",
+      "modules": [
+        {
+          "name": "Dashboard 'Mis Vacaciones'",
+          "description": "Visualizador de días disponibles, gozados, trunca y programados con desglose por período vacacional y régimen laboral."
+        },
+        {
+          "name": "Solicitud Interactiva con Calendario",
+          "description": "Selector intuitivo de fechas con validación automática de días hábiles/calendario según D.Leg. 1057 / 728 / 276 / 30057."
+        },
+        {
+          "name": "Bandeja de Aprobaciones para Jefaturas",
+          "description": "Panel donde los Jefes de Unidad aceptan o reprograman solicitudes en 1 clic con notificación instantánea al trabajador."
+        },
+        {
+          "name": "Módulo de Administración de RRHH",
+          "description": "Generador automático de papeletas de vacaciones en PDF con firma digital e integración con el legajo personal."
+        }
+      ],
+      "validationSuccessMetrics": "Tiempo de solicitud < 1 minuto; Tiempo de respuesta de jefatura < 24 horas; 100% de eliminación de carpetas físicas impresas."
+    },
+    "H10_PlanAccion": {
+      "projectCode": "PIIP-2026-IN0009",
+      "roadmapSprints": [
+        {
+          "sprintNumber": 1,
+          "duration": "3 semanas",
+          "focus": "Mapeo de reglas de negocio por régimen laboral (CAS, 728, 276, 30057) y diseño UI/UX centrado en el usuario.",
+          "responsibleUnit": "UA-RRHH / UPP-Modernización"
+        },
+        {
+          "sprintNumber": 2,
+          "duration": "3 semanas",
+          "focus": "Desarrollo del Frontend PWA, motor de cálculo de días vacacionales e integración con la base de datos de asistencia.",
+          "responsibleUnit": "UA-TI / UA-RRHH"
+        },
+        {
+          "sprintNumber": 3,
+          "duration": "3 semanas",
+          "focus": "Piloto controlado con 60 servidores de Sede Central y Unidades Regionales de Junín y Arequipa, ajuste fino y despliegue nacional.",
+          "responsibleUnit": "UA-RRHH / UPP / UA-TI"
+        }
+      ]
+    },
+    "H11_MatrizRiesgosTesteo": {
+      "projectCode": "PIIP-2026-IN0009",
+      "riskMatrix": [
+        {
+          "riskId": "RIESGO-09-01",
+          "category": "Operativo / Reglas de Negocio",
+          "description": "Inconsistencias en saldos históricos migrados manualmente desde planillas Excel antiguas.",
+          "severity": "MEDIO",
+          "mitigationStrategy": "Fase previa de conciliación de saldo inicial firmado por cada servidor en el primer login al sistema (Verificación de Conformidad)."
+        },
+        {
+          "riskId": "RIESGO-09-02",
+          "category": "Tecnológico / Interoperabilidad",
+          "description": "Desconexión con el sistema de marcas de asistencia de personal.",
+          "severity": "BAJO",
+          "mitigationStrategy": "Desarrollo de API REST interna de sincronización diaria entre VAC-DIGITAL y el marcador de asistencia."
+        }
+      ],
+      "learningCard": {
+        "testCode": "TEST-IN0009-01",
+        "hypothesis": "Los servidores y jefaturas completarán el flujo de solicitud y aprobación de vacaciones en menos de 24 horas a través de la PWA.",
+        "sample": "60 servidores civiles de Sede Central, Junín y Arequipa durante 2 semanas de prueba piloto.",
+        "results": "El 96.7% de las solicitudes se procesaron y aprobaron en menos de 3 horas desde el celular o laptop. Se logró 0% de uso de papel.",
+        "status": "VALIDADO - Aprobado para despliegue institucional masivo en el Portafolio PIIP (Anexo 5)."
+      }
+    }
+  }
+}

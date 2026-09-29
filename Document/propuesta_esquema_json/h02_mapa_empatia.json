@@ -1,0 +1,90 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0001",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 1,
+      "FaseNombre": "Fase 1: Descubrir",
+      "HerramientaNumero": 2,
+      "HerramientaCodigo": "H02",
+      "HerramientaNombre": "Mapa de Empatía",
+      "VistaCodigo": "V02.1",
+      "VistaTitulo": "Herramienta H02: Mapa de Empatía",
+      "VistaUrl": "02-mapa-empatia.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 2,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 2 de 11 (Fase 1: Descubrir)",
+      "PasoAnterior": "01-observacion.html",
+      "PasoSiguiente": "03-encuestas.html"
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:00:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "ContratoEsquemaDatos": {
+    "HerramientaCodigo": "H02",
+    "HerramientaNombre": "Mapa de Empatía",
+    "CamposModelo": {
+      "userProfile": {
+        "type": "String",
+        "label": "Perfil del Usuario / Arquetipo",
+        "required": true
+      },
+      "says": {
+        "type": "String",
+        "label": "¿Qué dice? (Frases entrecomilladas)",
+        "required": true
+      },
+      "does": {
+        "type": "String",
+        "label": "¿Qué hace? (Comportamientos observados)",
+        "required": true
+      },
+      "thinks": {
+        "type": "String",
+        "label": "¿Qué piensa? (Creencias y motivaciones)",
+        "required": true
+      },
+      "feels": {
+        "type": "String",
+        "label": "¿Qué siente? (Emociones y preocupaciones)",
+        "required": true
+      },
+      "pains": {
+        "type": "ArrayString",
+        "label": "Dolores / Frustraciones (Pains)",
+        "required": true
+      },
+      "gains": {
+        "type": "ArrayString",
+        "label": "Necesidades / Deseos de Éxito (Gains)",
+        "required": true
+      }
+    }
+  },
+  "RegistrosEjemploGrounded": [
+    {
+      "id": 201,
+      "projectCode": "PIIP-2026-IN0001",
+      "userProfile": "Directivo de Organización Agraria de Café",
+      "says": "'Queremos capacitarnos pero no podemos viajar 4 horas hasta la sede regional todos los meses.'",
+      "does": "Utiliza WhatsApp activamente para coordinar ventas y buscar precios de insumos.",
+      "thinks": "La capacitación presencial es valiosa pero costosa en tiempo y pasajes.",
+      "feels": "Frustrado por la falta de asistencia técnica continua cerca de su parcela.",
+      "pains": [
+        "Pérdida de jornadas de trabajo por viajes",
+        "Cursos teóricos poco adaptados a su realidad"
+      ],
+      "gains": [
+        "Aprender a su propio ritmo",
+        "Obtener certificación reconocida por MIDAGRI"
+      ]
+    }
+  ]
+}

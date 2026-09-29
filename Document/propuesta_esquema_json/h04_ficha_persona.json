@@ -1,0 +1,90 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0001",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 1,
+      "FaseNombre": "Fase 1: Descubrir",
+      "HerramientaNumero": 4,
+      "HerramientaCodigo": "H04",
+      "HerramientaNombre": "Ficha de Persona (Arquetipo)",
+      "VistaCodigo": "V04.1",
+      "VistaTitulo": "Herramienta H04: Ficha de Persona (Arquetipo)",
+      "VistaUrl": "04-ficha-persona.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 4,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 4 de 11 (Fase 1: Descubrir)",
+      "PasoAnterior": "03-encuestas.html",
+      "PasoSiguiente": "05-muro-hallazgos.html"
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:00:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "ContratoEsquemaDatos": {
+    "HerramientaCodigo": "H04",
+    "HerramientaNombre": "Ficha de Persona (Arquetipo)",
+    "CamposModelo": {
+      "archetypeName": {
+        "type": "String",
+        "label": "Nombre del Arquetipo",
+        "required": true
+      },
+      "role": {
+        "type": "String",
+        "label": "Rol / Ocupación",
+        "required": true
+      },
+      "demographics": {
+        "type": "String",
+        "label": "Datos Demográficos (Edad, Ubicación, Nivel Educativo)",
+        "required": true
+      },
+      "bio": {
+        "type": "String",
+        "label": "Biografía / Contexto Personal",
+        "required": true
+      },
+      "goals": {
+        "type": "ArrayString",
+        "label": "Objetivos y Metas",
+        "required": true
+      },
+      "frustrations": {
+        "type": "ArrayString",
+        "label": "Frustraciones Clave",
+        "required": true
+      },
+      "techTechSavviness": {
+        "type": "String",
+        "label": "Nivel de Competencia Digital",
+        "required": true
+      }
+    }
+  },
+  "RegistrosEjemploGrounded": [
+    {
+      "id": 401,
+      "projectCode": "PIIP-2026-IN0001",
+      "archetypeName": "Mateo Quispe - El Líder Agrario Innovador",
+      "role": "Presidente de Asociación de Productores de Palto",
+      "demographics": "42 años, Pichanaki (Junín), Secundaria Completa",
+      "bio": "Lleva 15 años dedicado al cultivo de palto. Desea mejorar la comercialización conjunta de su asociación.",
+      "goals": [
+        "Capacitar a su junta directiva en costos y contabilidad",
+        "Acceder a fondos de reconversión de AGROIDEAS"
+      ],
+      "frustrations": [
+        "Trámites burocráticos lentos",
+        "Falta de tiempo para asistir a capacitaciones presenciales en Lima/Junín"
+      ],
+      "techTechSavviness": "Medio (Maneja smartphone, WhatsApp, Facebook y aplicaciones bancarias básicas)"
+    }
+  ]
+}

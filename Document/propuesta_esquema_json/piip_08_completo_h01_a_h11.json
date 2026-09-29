@@ -1,0 +1,280 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0008",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 4,
+      "FaseNombre": "Fase 4: Entregar",
+      "HerramientaNumero": 11,
+      "HerramientaCodigo": "H11",
+      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
+      "VistaCodigo": "V11.1",
+      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje",
+      "VistaUrl": "fase4/11-matriz-riesgos.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 11,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
+      "PasoAnterior": {
+        "HerramientaCodigo": "H10",
+        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
+        "VistaUrl": "fase4/10-plan-accion.html"
+      },
+      "PasoSiguiente": null
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:50:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "PortafolioPIIP_Ficha": {
+    "id": 8,
+    "code": "PIIP-2026-IN0008",
+    "title": "Nueva Arquitectura e Infraestructura del Sistema en Línea SEL v2.0",
+    "responsible": "Unidad de Administración (UA) - TI / Sistemas e Informática",
+    "contact": "Ing. Víctor Hugo Morales - Arquitecto de Software Senior UA-TI",
+    "date": "2026-09-22",
+    "porcentajeAvanceGlobal": 100.0,
+    "phases": {
+      "descubrir": "completed",
+      "definir": "completed",
+      "idear": "completed",
+      "entregar": "completed"
+    },
+    "evaluacionOpinionTecnica": {
+      "informeRef": "FIIP N° IN0008 - REPORTE DE EVALUACIÓN",
+      "puntajeTotal": 11,
+      "puntajeMaximo": 12,
+      "criterios": {
+        "impacto": 4,
+        "priorizacionEstrategica": 4,
+        "enfoqueInnovacion": 3
+      },
+      "dictamen": "RECOMENDABLE PARA APROBACIÓN E INSTITUCIONALIZACIÓN"
+    }
+  },
+  "HerramientasMetodologicas": {
+    "FASE_1_DESCUBRIR": {
+      "H01_ObservacionAEIOU": [
+        {
+          "id": "aeiou-008-1",
+          "dimension": "Actividades",
+          "observation": "El Sistema en Línea SEL v1.0 sufre caídas recurrentes y lentitud severa durante las semanas de cierre de convocatorias de Planes de Negocio, bloqueando el registro de Organizaciones Agrarias.",
+          "timestamp": "2026-09-22T08:30:00Z"
+        },
+        {
+          "id": "aeiou-008-2",
+          "dimension": "Entorno",
+          "observation": "Servidores monolíticos heredados con tiempos de respuesta superiores a 14 segundos por página cuando concurren más de 50 usuarios simultáneos.",
+          "timestamp": "2026-09-22T10:15:00Z"
+        },
+        {
+          "id": "aeiou-008-3",
+          "dimension": "Interacciones",
+          "observation": "Los usuarios de las Organizaciones Agrarias pierden el avance de sus formularios de postulación si la conexión falla antes de presionar el botón de guardado centralizado.",
+          "timestamp": "2026-09-22T14:00:00Z"
+        }
+      ],
+      "H02_MapaEmpatia": {
+        "userProfile": "Arquitecto de Software / Especialista TI (UA-TI)",
+        "says": "El código monolítico heredado de SEL v1.0 es inestable y cualquier cambio en un módulo genera errores en cascada en todo el sistema.",
+        "does": "Atiende llamadas de emergencia fuera de horario para reiniciar servicios e intentar recuperar formularios incompletos corruptos en base de datos.",
+        "thinks": "Debemos migrar a una arquitectura moderna, escalable, con componentes desacoplados y capacidad de almacenamiento local en el navegador.",
+        "feels": "Frustrado por dedicar tiempo a apagar incendios de infraestructura en lugar de innovar en servicios digitales para el agro.",
+        "pains": "Pérdida de credibilidad institucional, sobrecarga operativa en fechas límite y falta de redundancia ante fallos.",
+        "gains": "Contar con un sistema robusto, con disponibilidad 99.9%, capaz de procesar miles de solicitudes simultáneas sin latencia."
+      },
+      "H03_EncuestasCampo": {
+        "sampleSize": 30,
+        "targetAudience": "Especialistas de TI, Evaluadores Regionales y Usuarios de Organizaciones Agrarias registrados en SEL",
+        "keyResults": [
+          {
+            "question": "¿Ha experimentado caídas o congelamiento del sistema SEL v1.0 durante convocatorias?",
+            "percentageYes": 93.3
+          },
+          {
+            "question": "¿Cuál es la principal característica requerida para la nueva versión SEL v2.0?",
+            "preferredOption": "Guardado automático borrador offline en navegador y carga rápida (< 1 segundo) (86.7%)"
+          },
+          {
+            "question": "Módulos críticos con mayor latencia",
+            "topFormats": [
+              "Carga de Requisitos y Anexos PDF",
+              "Formulario de Presupuesto del Plan de Negocio",
+              "Consulta de Estado de Expediente"
+            ]
+          }
+        ]
+      },
+      "H04_FichaPersona": {
+        "archetypeCode": "PERS-IN0008-01",
+        "name": "Ing. Víctor Hugo Morales",
+        "role": "Arquitecto de Software Senior - UA-TI",
+        "age": 39,
+        "digitalLiteracy": "Avanzado / Experto en Infraestructura Cloud, Microservicios y Frontend PWA",
+        "primaryGoal": "Reestructurar SEL v2.0 bajo un paradigma Local-First desacoplado que garantice cero caídas de servidor y respuesta instantánea."
+      }
+    },
+    "FASE_2_DEFINIR": {
+      "H05_MuroHallazgos": [
+        {
+          "clusterId": "CLUST-008-01",
+          "clusterName": "Cuello de Botella Monolítico y Dependencia Centralizada",
+          "insight": "El servidor central no soporta la concurrencia masiva en cierres de convocatorias; la arquitectura debe desacoplar la captura en cliente del procesamiento en servidor.",
+          "priority": "ALTA"
+        },
+        {
+          "clusterId": "CLUST-008-02",
+          "clusterName": "Estrategia Local-First y PWA para Resiliencia",
+          "insight": "Permitir el llenado de solicitudes en el navegador con guardado en IndexedDB elimina la dependencia continua de internet y evita la pérdida de datos.",
+          "priority": "ALTA"
+        }
+      ],
+      "H06_DefinicionDesafioHMW": {
+        "hmwCode": "HMW-IN0008",
+        "action": "rediseñar e implementar la Nueva Arquitectura e Infraestructura del Sistema en Línea (SEL v2.0)",
+        "targetUser": "las Organizaciones Agrarias y especialistas evaluadores de AGROIDEAS",
+        "benefit": "registrar, consultar y calificar expedientes de incentivos de forma fluida e ininterrumpida con disponibilidad del 99.9%",
+        "constraint": "los picos masivos de concurrencia en convocatorias y la inestabilidad de conectividad en zonas rurales",
+        "finalHMWStatement": "¿Cómo podríamos rediseñar e implementar la Nueva Arquitectura e Infraestructura del Sistema en Línea (SEL v2.0) basada en microservicios, PWA y desacoplamiento Local-First para que las Organizaciones Agrarias y evaluadores registren y procesen solicitudes sin caídas del sistema a pesar de los picos masivos de tráfico en convocatorias?"
+      }
+    },
+    "FASE_3_IDEAR": {
+      "H07_LluviaIdeasCrazy8s": [
+        {
+          "ideaId": "IDEA-IN0008-01",
+          "title": "SEL v2.0: Arquitectura Modular de Microservicios + Frontend PWA Local-First con Sincronización Asíncrona y Redis Caching",
+          "author": "Arquitecto de Software UA-TI",
+          "votes": 14
+        },
+        {
+          "ideaId": "IDEA-IN0008-02",
+          "title": "Ampliación de capacidad física de servidores locales con mayor RAM y ancho de banda dedicado",
+          "author": "Soportista TI",
+          "votes": 5
+        },
+        {
+          "ideaId": "IDEA-IN0008-03",
+          "title": "Formulario simplificado en Google Forms para recepción provisional de expedientes",
+          "author": "Analista Operativo",
+          "votes": 2
+        }
+      ],
+      "H08_MatrizPriorizacion": {
+        "evaluationDate": "2026-09-22T16:00:00Z",
+        "ideasEvaluadas": [
+          {
+            "ideaId": "IDEA-IN0008-01",
+            "title": "SEL v2.0: Arquitectura Modular de Microservicios + Frontend PWA Local-First",
+            "deseabilidad": 5,
+            "factibilidad": 4,
+            "viability": 5,
+            "impacto": 5,
+            "scoreTotal": 19,
+            "isWinningIdea": true
+          },
+          {
+            "ideaId": "IDEA-IN0008-02",
+            "title": "Ampliación de capacidad física de servidores locales",
+            "deseabilidad": 3,
+            "factibilidad": 3,
+            "viability": 3,
+            "impacto": 3,
+            "scoreTotal": 12,
+            "isWinningIdea": false
+          }
+        ],
+        "winningIdeaSummary": {
+          "title": "Nueva Arquitectura SEL v2.0: Frontend PWA Local-First + Microservicios",
+          "rationale": "Obtuvo 19/20 puntos. Elimina las caídas por saturación al trasladar el guardado de borradores al navegador del usuario (IndexedDB/PWA) y sincronizar asíncronamente vía microservicios resilientes."
+        }
+      }
+    },
+    "FASE_4_ENTREGAR": {
+      "H09_PrototipadoRapido": {
+        "prototypeCode": "PROTO-IN0008-01",
+        "prototypeType": "Prototipo de Arquitectura de Software PWA + Dashboard de Control de Carga",
+        "techStack": "HTML5, Vanilla JS, TailwindCSS, Service Workers, IndexedDB, Microservicios REST/JSON",
+        "keyFeatures": [
+          "Módulo de Llenado Offline de Solicitud de Plan de Negocio con guardado automático cada 3 segundos",
+          "Visor de Estado de Sincronización (En Línea / Guardado Local / Pendiente de Envío)",
+          "Dashboard de Monitoreo de Concurrencia de Servidores y Tiempos de Respuesta (< 0.5 s)"
+        ],
+        "validationCriteria": [
+          "Tiempo de carga inicial del formulario < 1.0 segundo",
+          "Persistencia del 100% de borradores ante corte repentino de energía o conexión",
+          "Cero caídas bajo simulación de 500 usuarios concurrentes en prueba de estrés"
+        ]
+      },
+      "H10_PlanAccion": {
+        "roadmapCode": "PLAN-IN0008",
+        "sprints": [
+          {
+            "sprintNumber": 1,
+            "duration": "3 semanas",
+            "objective": "Diseño de la Arquitectura de Microservicios y Migración del Esquema de BBDD a PostgreSQL/Redis",
+            "leadUnit": "Unidad de Administración (UA) - TI",
+            "deliverables": [
+              "Especificación de APIs RESTful de SEL v2.0",
+              "Script de migración del catálogo de organizaciones y planes de negocio históricos"
+            ]
+          },
+          {
+            "sprintNumber": 2,
+            "duration": "3 semanas",
+            "objective": "Desarrollo del Frontend PWA Local-First con Service Worker y Caché IndexedDB",
+            "leadUnit": "UA-TI / UPP",
+            "deliverables": [
+              "Interfaz web adaptativa PWA del nuevo SEL v2.0",
+              "Motor de sincronización asíncrona background-sync"
+            ]
+          },
+          {
+            "sprintNumber": 3,
+            "duration": "3 semanas",
+            "objective": "Pruebas de Estrés, Pilotaje en 3 Unidades Regionales y Despliegue en Producción",
+            "leadUnit": "UA-TI / Unidades Regionales",
+            "deliverables": [
+              "Informe de Pruebas de Carga con 500 usuarios concurrentes simulados",
+              "Pase a producción de SEL v2.0 y plan de contingencia cero-downtime"
+            ]
+          }
+        ]
+      },
+      "H11_MatrizRiesgosYTesteo": {
+        "riskMatrix": [
+          {
+            "riskId": "RIESGO-008-01",
+            "category": "Tecnológico / Infraestructura",
+            "description": "Incompatibilidad de navegadores antiguos en computadoras de Organizaciones Agrarias remotas.",
+            "probability": "Media",
+            "impact": "Alto",
+            "mitigationStrategy": "Implementar polyfills y soporte progresivo para navegadores desde versiones legacy con aviso de actualización recomendada."
+          },
+          {
+            "riskId": "RIESGO-008-02",
+            "category": "Operativo / Resistencia al Cambio",
+            "description": "Desconfianza de los usuarios en el guardado local al no ver una respuesta inmediata del servidor central.",
+            "probability": "Baja",
+            "impact": "Medio",
+            "mitigationStrategy": "Incorporar un indicador visual claro de 'Borrador Guardado en Dispositivo' con sello de hora exacta y tilde verde de sincronización."
+          }
+        ],
+        "learningCards": [
+          {
+            "cardCode": "TEST-IN0008-01",
+            "hypothesis": "La nueva arquitectura PWA Local-First reducirá el tiempo de carga a menos de 1 segundo y eliminará las caídas del sistema bajo alta concurrencia.",
+            "testMethod": "Prueba de carga y estrés con 500 usuarios simulados enviando formularios simultáneamente durante 2 horas.",
+            "metrics": "Tiempo medio de respuesta (s), tasa de error (%), conservación de datos en borrador (%).",
+            "findings": "El tiempo de carga se redujo de 14.2 segundos a solo 0.45 segundos (>96.8% de optimización). Cero caídas registradas (disponibilidad 100%) y cero pérdidas de datos.",
+            "decision": "APROBADO PARA PRODUCCIÓN E INSTITUCIONALIZACIÓN EN EL PORTAFOLIO (ANEXO 5)"
+          }
+        ]
+      }
+    }
+  }
+}

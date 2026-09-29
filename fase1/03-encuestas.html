@@ -40,47 +40,150 @@
             </div>
         </header>
 
+        <!-- Barra de Contexto de Iniciativa Activa -->
+        <div class="bg-white border border-slate-200 rounded-lg p-4 mb-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-emerald-150 border border-emerald-250 flex items-center justify-center text-emerald-800 font-bold">
+                    <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="text-3xs uppercase tracking-wider text-slate-500 font-semibold block">Iniciativa Activa</span>
+                    <h3 id="active-project-title-h03" class="text-sm font-bold text-slate-800 leading-tight">Cargando iniciativa...</h3>
+                    <div class="flex items-center gap-2 mt-0.5">
+                        <span id="active-project-code-h03" class="text-2xs font-mono font-semibold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-150">PIIP-2026-IN0001</span>
+                        <span id="active-project-unit-h03" class="text-2xs text-slate-500">Unidad Orgánica</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button type="button" id="btn-preload-surveys" class="btn btn-secondary text-xs flex items-center gap-1.5 py-1.5 px-3">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-600"></i> Precargar Ejemplos
+                </button>
+            </div>
+        </div>
+
+        <!-- Métricas KPI de Muestreo Cuantitativo de Campo -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            <div class="card p-4 flex items-center gap-3 bg-white">
+                <div class="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+                    <i data-lucide="users" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="text-3xs uppercase tracking-wider text-slate-400 font-semibold">Muestra de Campo (SampleSize)</span>
+                    <h4 id="kpi-sample-size" class="text-lg font-bold text-slate-800">0 encuestas</h4>
+                </div>
+            </div>
+            <div class="card p-4 flex items-center gap-3 bg-white">
+                <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+                    <i data-lucide="star" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="text-3xs uppercase tracking-wider text-slate-400 font-semibold">Satisfacción Promedio</span>
+                    <h4 id="kpi-satisfaction-avg" class="text-lg font-bold text-slate-800">0.0 / 5.0</h4>
+                </div>
+            </div>
+            <div class="card p-4 flex items-center gap-3 bg-white">
+                <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-800 flex items-center justify-center font-bold">
+                    <i data-lucide="smile" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="text-3xs uppercase tracking-wider text-slate-400 font-semibold">Índice de Sentimiento</span>
+                    <h4 id="kpi-sentiment-ratio" class="text-lg font-bold text-slate-800">0% Positivo</h4>
+                </div>
+            </div>
+        </div>
+
         <div class="space-y-6">
             <!-- Formulario Registro Encuesta -->
-            <div class="card max-w-3xl mx-auto">
-                <h3 class="card__title">Registrar Respuesta de Campo</h3>
+            <div class="card max-w-4xl mx-auto">
+                <div class="flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+                    <h3 class="card__title mb-0 flex items-center gap-2">
+                        <i data-lucide="clipboard-edit" class="w-4 h-4 text-emerald-700"></i> Registrar Respuesta de Campo
+                    </h3>
+                    <span class="text-2xs text-slate-400 italic">Evidencia empírica cuantitativa</span>
+                </div>
+
                 <form id="form-survey">
-                    <div class="form__group">
-                        <label class="form__label" for="srv-respondent">Información del Encuestado (Nombre / Cooperativa)</label>
-                        <input type="text" id="srv-respondent" class="form__input" placeholder="Ej. Roberto Quispe" required>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1" for="srv-respondent">Informante / Productor Encuestado</label>
+                            <input type="text" id="srv-respondent" class="form__input" placeholder="Ej. Roberto Quispe Mamani (Dirigente)" required>
+                        </div>
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1" for="srv-cooperative">Organización Agraria / Cooperativa / Sede</label>
+                            <input type="text" id="srv-cooperative" class="form__input" placeholder="Ej. Cooperativa Agraria de Productores de Café" required>
+                        </div>
                     </div>
-                    <div class="form__group">
-                        <label class="form__label" for="srv-satisfaction">Nivel de Satisfacción (1-5)</label>
-                        <select id="srv-satisfaction" class="form__input" required>
-                            <option value="1">1 - Muy Insatisfecho</option>
-                            <option value="2">2 - Insatisfecho</option>
-                            <option value="3">3 - Neutro</option>
-                            <option value="4">4 - Satisfecho</option>
-                            <option value="5">5 - Muy Satisfecho</option>
-                        </select>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1" for="srv-satisfaction">Nivel de Satisfacción Percibido (1 al 5)</label>
+                            <select id="srv-satisfaction" class="form__input" required>
+                                <option value="1">1 - Muy Insatisfecho (Crítico)</option>
+                                <option value="2">2 - Insatisfecho (Con fricción)</option>
+                                <option value="3" selected>3 - Neutro (Aceptable)</option>
+                                <option value="4">4 - Satisfecho (Favorable)</option>
+                                <option value="5">5 - Muy Satisfecho (Excelente)</option>
+                            </select>
+                        </div>
+                        <div class="form__group mb-0">
+                            <label class="form__label mb-1" for="srv-date">Fecha de Levantamiento de Campo</label>
+                            <input type="date" id="srv-date" class="form__input" required>
+                        </div>
                     </div>
-                    <div class="form__group">
-                        <label class="form__label" for="srv-comments">Comentario / Feedback Textual</label>
-                        <textarea id="srv-comments" class="form__input" rows="4" placeholder="Ej. El trámite demora mucho y el analista no nos responde a tiempo..." required></textarea>
+
+                    <div class="form__group mb-4">
+                        <label class="form__label mb-1" for="srv-comments">Comentario / Testimonio Textual del Productor</label>
+                        <p class="text-2xs text-slate-500 mb-1.5">El sistema analizará automáticamente el sentimiento del texto (Positivo, Neutro o Negativo).</p>
+                        <textarea id="srv-comments" class="form__input" rows="3" placeholder="Ej. El trámite demora mucho y el analista no nos responde a tiempo. Necesitamos información más clara en campo..." required></textarea>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary w-full">
-                        Guardar Encuesta
-                    </button>
+                    <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-slate-150">
+                        <button type="button" id="btn-clear-survey" class="btn btn-secondary w-full sm:w-auto text-xs py-2 px-4 order-2 sm:order-1">
+                            Limpiar Formulario
+                        </button>
+                        <button type="submit" class="btn btn-primary w-full sm:w-auto flex items-center justify-center gap-2 py-2 px-6 order-1 sm:order-2">
+                            <i data-lucide="save" class="w-4 h-4"></i> Guardar Encuesta de Campo
+                        </button>
+                    </div>
                 </form>
             </div>
 
             <!-- Tabla de Respuestas -->
             <div class="card">
-                <h3 class="card__title">Consolidado de Encuestas de Campo</h3>
-                <div class="overflow-x-auto">
+                <div class="flex items-center justify-between mb-4 border-b border-slate-150 pb-3">
+                    <div>
+                        <h3 class="card__title mb-0 flex items-center gap-2">
+                            <i data-lucide="table" class="w-4 h-4 text-emerald-700"></i> Consolidado de Encuestas de Campo
+                        </h3>
+                        <p class="text-2xs text-slate-500 mt-0.5">Respuestas tabuladas y análisis de sentimiento automatizado</p>
+                    </div>
+                </div>
+
+                <!-- Estado Vacío (Empty State) -->
+                <div id="surveys-empty-state" class="hidden text-center py-10 px-4 bg-slate-50 rounded-lg border-2 border-dashed border-slate-200">
+                    <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="clipboard-x" class="w-6 h-6"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-slate-800">No hay encuestas registradas para esta iniciativa</h4>
+                    <p class="text-xs text-slate-500 max-w-md mx-auto mt-1 mb-4">
+                        Aún no se han capturado encuestas de satisfacción o feedback ciudadano para este proyecto. Puedes registrar una nueva con el formulario o precargar datos de muestra.
+                    </p>
+                    <button type="button" id="btn-empty-preload-surveys" class="btn btn-primary text-xs inline-flex items-center gap-1.5">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Cargar Muestra Metodológica
+                    </button>
+                </div>
+
+                <div id="surveys-table-container" class="overflow-x-auto">
                     <table id="surveysTable" class="w-full text-left border-collapse">
                         <thead>
                             <tr>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Encuestado</th>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Satisfacción</th>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Comentarios</th>
-                                <th class="border-b border-slate-200 py-2 px-2 text-sm font-semibold">Análisis de Sentimiento</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 text-xs font-semibold text-slate-700">Fecha</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 text-xs font-semibold text-slate-700">Encuestado / Cooperativa</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 text-xs font-semibold text-slate-700">Satisfacción</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 text-xs font-semibold text-slate-700">Comentarios</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 text-xs font-semibold text-slate-700">Sentimiento</th>
+                                <th class="border-b border-slate-200 py-2.5 px-3 text-xs font-semibold text-slate-700 text-right">Acción</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -88,6 +191,16 @@
                         </tbody>
                     </table>
                 </div>
+            </div>
+
+            <!-- Controles de Navegación Secuencial del Doble Diamante -->
+            <div class="flex items-center justify-between py-4">
+                <a href="02-mapa-empatia.html" class="btn btn-secondary text-xs flex items-center gap-1.5">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Anterior: 02. Mapa de Empatía
+                </a>
+                <a href="../fase2/04-ficha-persona.html" class="btn btn-primary text-xs flex items-center gap-1.5 bg-emerald-700 hover:bg-emerald-800">
+                    Completar Fase 1 e ir a Fase 2: Definir (04. Ficha de Persona) <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
             </div>
         </div>
 

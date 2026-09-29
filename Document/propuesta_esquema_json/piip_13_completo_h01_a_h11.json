@@ -1,0 +1,295 @@
+{
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0013",
+    "VistaActual": "fase4/11-matriz-riesgos.html",
+    "FaseActual": "FASE 4: ENTREGAR",
+    "PasoSecuencial": 11,
+    "TotalPasos": 11,
+    "IndicadorProgreso": {
+      "PorcentajeFase": 100.0,
+      "PorcentajeAvanceGlobal": 100.0,
+      "EstadoFase1": "completed",
+      "EstadoFase2": "completed",
+      "EstadoFase3": "completed",
+      "EstadoFase4": "completed"
+    },
+    "FichaInfoBarra": {
+      "CodigoIniciativa": "PIIP-2026-IN0013",
+      "TituloIniciativa": "Innovación en la ejecución y acceso a la Estrategia de Emprendimiento de la Mujer Rural e Indígena (EEMRI-DIGITAL)",
+      "UnidadOrganicaResponsable": "Dirección Ejecutiva (DE) / URIE / UPDC",
+      "LiderIniciativa": "Coordinadora Nacional EEMRI - DE/URIE"
+    }
+  },
+  "ProyectoInfoMaestra": {
+    "Codigo": "PIIP-2026-IN0013",
+    "Titulo": "Innovación en la ejecución y acceso a la Estrategia de Emprendimiento de la Mujer Rural e Indígena (EEMRI-DIGITAL)",
+    "UnidadOrganica": "Dirección Ejecutiva (DE) / URIE / UPDC",
+    "LiderProyecto": "Lic. Rosa María Quispe Valenzuela (Coordinadora Nacional EEMRI)",
+    "FechaRegistro": "2026-03-10",
+    "EstadoFases": {
+      "descubrir": "completed",
+      "definir": "completed",
+      "idear": "completed",
+      "entregar": "completed"
+    },
+    "PorcentajeAvanceGlobal": 100.0,
+    "EvaluacionMulticriterio": {
+      "PuntajeTotal": 11,
+      "PuntajeMaximo": 12,
+      "Clasificacion": "Aprobado - Prioridad Alta",
+      "OpinionTecnica": "Recomendable para aprobación e institucionalización en el Portafolio (Anexo 5)."
+    }
+  },
+  "HerramientasMetodologicas": {
+    "H01_ObservacionAEIOU": {
+      "HerramientaNombre": "Observación AEIOU",
+      "Fase": "FASE 1: DESCUBRIR",
+      "Registros": [
+        {
+          "id": "aeiou-013-1",
+          "dimension": "Actividades",
+          "observation": "Las emprendedoras rurales e indígenas deben llenar formularios impresos complejos y presentar requisitos notariales costosos para postular a los subvenciones de la estrategia EEMRI.",
+          "timestamp": "2026-03-15T09:30:00Z"
+        },
+        {
+          "id": "aeiou-013-2",
+          "dimension": "Entorno",
+          "observation": "Comunidades nativas y campesinas altoandinas y amazónicas con escaso acceso a internet fijo, donde la comunicación se realiza principalmente vía audio de WhatsApp y radios comunitarias.",
+          "timestamp": "2026-03-15T11:45:00Z"
+        },
+        {
+          "id": "aeiou-013-3",
+          "dimension": "Interacciones",
+          "observation": "Baja confianza en trámites digitales complejos y necesidad de acompañamiento presencial o guiado por voz en lenguas originarias (Quechua, Aymara, Awajún).",
+          "timestamp": "2026-03-15T14:20:00Z"
+        }
+      ]
+    },
+    "H02_MapaEmpatia": {
+      "HerramientaNombre": "Mapa de Empatía",
+      "Fase": "FASE 1: DESCUBRIR",
+      "Registro": {
+        "userProfile": "Líder de Organización de Mujeres Rurales e Indígenas",
+        "says": "Queremos trabajar y comercializar nuestros productos, pero los trámites de postulación son muy difíciles y quedan muy lejos de nuestra comunidad.",
+        "does": "Asiste a asambleas comunales, organiza la producción artesanal y agrícola familiar y busca ayuda en la agencia agraria local.",
+        "thinks": "Necesitamos un proceso de postulación sencillo, con lenguaje amigable y sin pedir documentos que no podemos conseguir en el campo.",
+        "feels": "Entusiasmada por emprender pero frustrada ante la excesiva burocracia y la falta de enfoque intercultural.",
+        "pains": "Gasto de transporte a la capital provincial, pérdida de documentos físicos y barreras idiomáticas/tecnológicas.",
+        "gains": "Acceso directo al financiamiento de la estrategia EEMRI, empoderamiento económico de las mujeres y mejora del ingreso familiar."
+      }
+    },
+    "H03_EncuestasCampo": {
+      "HerramientaNombre": "Encuestas de Campo",
+      "Fase": "FASE 1: DESCUBRIR",
+      "Registro": {
+        "sampleSize": 78,
+        "targetAudience": "Emprendedoras Rurales e Indígenas de Cusco, Ayacucho, Junín y San Martín",
+        "keyResults": [
+          {
+            "question": "¿Cuenta con celular inteligente o acceso a uno familiar?",
+            "percentageYes": 84.6
+          },
+          {
+            "question": "¿Qué canal prefiere para informarse y postular a la estrategia EEMRI?",
+            "preferredOption": "Asistente web simplificado por voz/audio en lenguaje amigable (79.5%)"
+          },
+          {
+            "question": "Principales barreras percibidas",
+            "topFormats": [
+              "Dificultad para elaborar el plan de emprendimiento en formato estándar",
+              "Exceso de requisitos de documentación formal",
+              "Costos y tiempos de traslado a sedes de AGROIDEAS"
+            ]
+          }
+        ]
+      }
+    },
+    "H04_FichaPersona": {
+      "HerramientaNombre": "Ficha de Persona",
+      "Fase": "FASE 1: DESCUBRIR",
+      "Registro": {
+        "archetypeCode": "PERS-IN0013-01",
+        "name": "Sonia Mamani Condori",
+        "role": "Presidenta de la Asociación de Mujeres Productoras de Quinua Orgánica de Espinar",
+        "age": 38,
+        "digitalLiteracy": "Básico (Uso habitual de WhatsApp de voz y llamadas, sin manejo de plataformas web complejas)",
+        "primaryGoal": "Obtener el cofinanciamiento de la Estrategia EEMRI para adquirir un módulo de procesamiento y empaque de quinua sin abandonar su comunidad."
+      }
+    },
+    "H05_MuroHallazgos": {
+      "HerramientaNombre": "Muro de Hallazgos (Research Wall)",
+      "Fase": "FASE 2: DEFINIR",
+      "Registros": [
+        {
+          "clusterId": "CLUST-013-01",
+          "clusterName": "Enfoque Intercultural y Lenguaje Amigable",
+          "insight": "La formulación de solicitudes de emprendimiento debe sustituir los formatos burocráticos por cuestionarios interactivos por voz y guiados paso a paso.",
+          "priority": "ALTA"
+        },
+        {
+          "clusterId": "CLUST-013-02",
+          "clusterName": "Simplificación Documental e Interoperabilidad",
+          "insight": "Casi el 80% de datos (DNI, RUC, Padrón de Comunidades) pueden verificarse automáticamente por interoperabilidad con RENIEC y SUNAT sin pedir copias impresas.",
+          "priority": "ALTA"
+        }
+      ]
+    },
+    "H06_DefinicionDesafioHMW": {
+      "HerramientaNombre": "Definición del Desafío HMW",
+      "Fase": "FASE 2: DEFINIR",
+      "Registro": {
+        "hmwCode": "HMW-IN0013",
+        "action": "implementar una plataforma digital de postulación simplificada y acompañamiento técnico (EEMRI-DIGITAL) con enfoque intercultural y soporte multimedia",
+        "targetUser": "las organizaciones de mujeres rurales e indígenas",
+        "benefit": "acceder al cofinanciamiento de sus emprendimientos agrarios de manera ágil y sin intermediarios",
+        "constraint": "las brechas de conectividad en campo, barreras idiomáticas y la complejidad tradicional de las bases de postulación",
+        "finalHMWStatement": "¿Cómo podríamos implementar una plataforma digital de postulación simplificada y acompañamiento técnico (EEMRI-DIGITAL) con enfoque intercultural para que las organizaciones de mujeres rurales e indígenas accedan al cofinanciamiento de sus emprendimientos de manera ágil a pesar de las brechas de conectividad y barreras idiomáticas?"
+      }
+    },
+    "H07_LluviaIdeasCrazy8s": {
+      "HerramientaNombre": "Lluvia de Ideas y Crazy 8's",
+      "Fase": "FASE 3: IDEAR",
+      "Registros": [
+        {
+          "ideaId": "IDEA-013-01",
+          "title": "Módulo Web PWA EEMRI-DIGITAL con Asistente Guiado por Voz, Formulario Simplificado e Interoperabilidad RENIEC/SUNAT",
+          "author": "Coordinación EEMRI - DE/URIE",
+          "votes": 14
+        },
+        {
+          "ideaId": "IDEA-013-02",
+          "title": "Unidad móvil itinerante con equipos satelitales para captura de postulaciones en comunidades nativas",
+          "author": "Especialista UPDC",
+          "votes": 8
+        },
+        {
+          "ideaId": "IDEA-013-03",
+          "title": "Bot de postulación únicamente por comandos de texto en WhatsApp",
+          "author": "Especialista UA-TI",
+          "votes": 5
+        }
+      ]
+    },
+    "H08_MatrizPriorizacion": {
+      "HerramientaNombre": "Matriz de Priorización de Ideas",
+      "Fase": "FASE 3: IDEAR",
+      "Registro": {
+        "evaluationDate": "2026-09-27T10:30:00Z",
+        "ideasEvaluadas": [
+          {
+            "ideaId": "IDEA-013-01",
+            "title": "Módulo Web PWA EEMRI-DIGITAL con Asistente Guiado y Formulario Simplificado",
+            "deseabilidad": 5,
+            "factibilidad": 4,
+            "viabilidad": 5,
+            "impacto": 5,
+            "scoreTotal": 19,
+            "isWinningIdea": true
+          },
+          {
+            "ideaId": "IDEA-013-02",
+            "title": "Unidad móvil itinerante con equipos satelitales",
+            "deseabilidad": 4,
+            "factibilidad": 3,
+            "viabilidad": 3,
+            "impacto": 4,
+            "scoreTotal": 14,
+            "isWinningIdea": false
+          }
+        ],
+        "winningIdeaSummary": {
+          "title": "Plataforma Web PWA EEMRI-DIGITAL de Postulación Simplificada y Acompañamiento Intercultural",
+          "rationale": "Logró la máxima puntuación (19/20). Elimina las barreras de entrada para las organizaciones de mujeres mediante un asistente web PWA Local-First con audios instructivos en lenguas originarias y llenado simplificado en 4 pasos."
+        }
+      }
+    },
+    "H09_PrototipadoRapido": {
+      "HerramientaNombre": "Prototipado Rápido",
+      "Fase": "FASE 4: ENTREGAR",
+      "Registro": {
+        "prototypeType": "Progressive Web App (PWA) de Postulación Simplificada Intercultural",
+        "technologies": "HTML5, TailwindCSS, JavaScript Vanilla Local-First, Web Speech API / Audios WebM",
+        "keyScreens": [
+          "Pantalla 1: Selector de Idioma/Audio (Castellano, Quechua, Aymara, Awajún)",
+          "Pantalla 2: Validación automática de DNI de integrantes con servicio RENIEC",
+          "Pantalla 3: Formulario simplificado de idea de emprendimiento mediante 5 preguntas guiadas por voz",
+          "Pantalla 4: Generador del Expediente Digital EEMRI con código QR de constancia de recepción"
+        ],
+        "validationChecklist": [
+          {
+            "criterion": "Tiempo de llenado de postulación < 20 minutos",
+            "status": "PASSED"
+          },
+          {
+            "criterion": "Soporte de funcionamiento offline para borrador",
+            "status": "PASSED"
+          },
+          {
+            "criterion": "Interoperabilidad con RENIEC y SUNAT activa",
+            "status": "PASSED"
+          }
+        ]
+      }
+    },
+    "H10_PlanAccion": {
+      "HerramientaNombre": "Plan de Acción y Hoja de Ruta",
+      "Fase": "FASE 4: ENTREGAR",
+      "Registro": {
+        "sprints": [
+          {
+            "sprintNumber": 1,
+            "durationWeeks": 3,
+            "objective": "Aprobación de la Directiva de Simplificación de Requisitos EEMRI e Integración RENIEC/SUNAT",
+            "responsible": "DE / URIE / UAJ / UPP"
+          },
+          {
+            "sprintNumber": 2,
+            "durationWeeks": 3,
+            "objective": "Desarrollo del Módulo Web PWA EEMRI-DIGITAL con audios de soporte y motor Local-First",
+            "responsible": "UA-TI / DE / UPDC"
+          },
+          {
+            "sprintNumber": 3,
+            "durationWeeks": 3,
+            "objective": "Pilotaje en campo con 20 organizaciones de mujeres en Cusco, Ayacucho y San Martín",
+            "responsible": "DE / URIE / UPDC / Unidades Regionales"
+          }
+        ]
+      }
+    },
+    "H11_MatrizRiesgosTesteo": {
+      "HerramientaNombre": "Matriz de Riesgos y Testeo",
+      "Fase": "FASE 4: ENTREGAR",
+      "Registro": {
+        "risks": [
+          {
+            "riskId": "RISK-013-01",
+            "category": "Tecnológico / Conectividad",
+            "description": "Falta de datos móviles en comunidades alejadas durante el envío final.",
+            "severity": "MEDIA",
+            "mitigation": "El aplicativo guarda el expediente completado en LocalStorage y realiza el envío de fondo tan pronto detecta señal."
+          },
+          {
+            "riskId": "RISK-013-02",
+            "category": "Social / Idiomático",
+            "description": "Comprensión inadecuada de los términos técnicos de la estrategia.",
+            "severity": "ALTA",
+            "mitigation": "Audios nativos grabados por promotoras locales en Quechua, Aymara y Awajún explicando cada campo."
+          }
+        ],
+        "testCard": {
+          "testCode": "TEST-IN0013-01",
+          "hypothesis": "Las organizaciones de mujeres rurales e indígenas completarán su postulación en menos de 20 minutos sin requerir tramitadores externos.",
+          "sampleTested": "20 Organizaciones de Mujeres en Cusco, Ayacucho y San Martín",
+          "results": "El 100% de las organizaciones logró registrar su postulación exitosamente; el tiempo promedio de registro disminuyó de 20 días calendario a solo 15 minutos, con 0% de rechazos por inconsistencias de DNI.",
+          "learning": "El acompañamiento con audio en lengua nativa y la validación en tiempo real con RENIEC elimina totalmente las barreras de entrada burocráticas.",
+          "status": "APPROVED_FOR_PRODUCTION"
+        },
+        "kanbanTicketStatus": {
+          "ticketId": "KANBAN-IN0013",
+          "status": "HECHO (PASE A PRODUCCIÓN E INCLUSIÓN EN PORTAFOLIO ANEXO 5)"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0001",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 1,
+      "FaseNombre": "Fase 1: Descubrir",
+      "HerramientaNumero": 3,
+      "HerramientaCodigo": "H03",
+      "HerramientaNombre": "Encuestas de Campo",
+      "VistaCodigo": "V03.1",
+      "VistaTitulo": "Herramienta H03: Encuestas de Campo",
+      "VistaUrl": "03-encuestas.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 3,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 3 de 11 (Fase 1: Descubrir)",
+      "PasoAnterior": "02-mapa-empatia.html",
+      "PasoSiguiente": "04-ficha-persona.html"
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:00:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "ContratoEsquemaDatos": {
+    "HerramientaCodigo": "H03",
+    "HerramientaNombre": "Encuestas de Campo",
+    "CamposModelo": {
+      "surveyTitle": {
+        "type": "String",
+        "label": "Título de la Encuesta",
+        "required": true
+      },
+      "targetAudience": {
+        "type": "String",
+        "label": "Público Objetivo Encuestado",
+        "required": true
+      },
+      "sampleSize": {
+        "type": "Integer",
+        "label": "Tamaño de Muestra (N)",
+        "required": true
+      },
+      "keyQuestions": {
+        "type": "ArrayObject",
+        "label": "Preguntas y Distribución de Respuestas",
+        "required": true
+      },
+      "summaryInsight": {
+        "type": "String",
+        "label": "Conclusión Principal / Insight",
+        "required": true
+      }
+    }
+  },
+  "RegistrosEjemploGrounded": [
+    {
+      "id": 301,
+      "projectCode": "PIIP-2026-IN0001",
+      "surveyTitle": "Encuesta de Adopción Digital en Cooperativas Agrarias",
+      "targetAudience": "Socios y directivos de organizaciones agrarias beneficiarias",
+      "sampleSize": 120,
+      "keyQuestions": [
+        {
+          "question": "¿Cuenta con smartphone con acceso a internet?",
+          "options": {
+            "Sí": 82,
+            "No": 38
+          }
+        },
+        {
+          "question": "¿Usa WhatsApp para temas de su organización?",
+          "options": {
+            "Diariamente": 95,
+            "Semanalmente": 18,
+            "Nunca": 7
+          }
+        }
+      ],
+      "summaryInsight": "El 88% de los encuestados usa smartphone y WhatsApp diariamente, lo que confirma que el canal móvil es la vía óptima para Blended Learning."
+    }
+  ]
+}

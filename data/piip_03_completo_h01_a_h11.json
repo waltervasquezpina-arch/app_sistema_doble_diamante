@@ -1,0 +1,238 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0003",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 4,
+      "FaseNombre": "Fase 4: Entregar",
+      "HerramientaNumero": 11,
+      "HerramientaCodigo": "H11",
+      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
+      "VistaCodigo": "V11.1",
+      "VistaTitulo": "Evaluación de Riesgos Legales y Tarjetas de Aprendizaje",
+      "VistaUrl": "fase4/11-matriz-riesgos.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 11,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar - Completado)",
+      "PasoAnterior": {
+        "HerramientaCodigo": "H10",
+        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
+        "VistaUrl": "fase4/10-plan-accion.html"
+      },
+      "PasoSiguiente": null
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-10-02T16:30:00Z",
+      "UsuarioActualRol": "Facilitador Ágil / Especialista UAJ"
+    }
+  },
+  "IniciativaMetadata": {
+    "id": 3,
+    "code": "PIIP-2026-IN0003",
+    "title": "Base de Datos Dinámica de Criterios Legales para Unidades Regionales",
+    "responsibleUnit": "Unidad de Asesoría Jurídica (UAJ)",
+    "leader": "Especialista Legal Senior - UAJ",
+    "registrationDate": "2026-09-17",
+    "opinionTecnica": {
+      "puntajeTotal": 11,
+      "maxPuntaje": 12,
+      "criterios": {
+        "impactoUsuarios": 4,
+        "priorizacionEstrategica": 4,
+        "enfoqueInnovacion": 3
+      },
+      "conclusion": "RECOMENDABLE PARA APROBACIÓN POR LA ALTA DIRECCIÓN"
+    },
+    "phasesStatus": {
+      "descubrir": "completed",
+      "definir": "completed",
+      "idear": "completed",
+      "entregar": "completed"
+    },
+    "porcentajeAvanceGlobal": 100.0
+  },
+  "HerramientasMetodologicas_Registros": {
+    "FASE_1_DESCUBRIR": {
+      "H01_ObservacionAEIOU": [
+        {
+          "id": "aeiou-003-1",
+          "dimension": "Actividades",
+          "observation": "Las Unidades Regionales (UR) emiten pronunciamientos sobre elegibilidad e impugnaciones aplicando criterios legales disímiles para casos análogos.",
+          "timestamp": "2026-09-17T09:00:00Z"
+        },
+        {
+          "id": "aeiou-003-2",
+          "dimension": "Objetos",
+          "observation": "Los informes legales y dictámenes se encuentran dispersos en archivos PDF locales, PDFs escaneados y correos electrónicos no indexados.",
+          "timestamp": "2026-09-17T11:30:00Z"
+        }
+      ],
+      "H02_MapaEmpatia": {
+        "userProfile": "Abogado Evaluador de Unidad Regional (UR)",
+        "says": "Tardo días buscando si la UAJ central ya opinó sobre la validez de ciertos documentos de personería jurídica agraria.",
+        "does": "Consulta por teléfono o WhatsApp a colegas de Lima para pedir copias de informes legales previos.",
+        "thinks": "Debería existir un buscador legal dinámico centralizado con jurisprudencia administrativa de AGROIDEAS.",
+        "feels": "Inseguro ante posibles observaciones del Órgano de Control Institucional (OCI) por disparidad de criterios.",
+        "pains": "Riesgo de nulidad de actos administrativos, demoras en la calificación de expedientes de planes de negocio.",
+        "gains": "Seguridad jurídica, estandarización nacional de criterios y reducción de tiempos de atención al usuario."
+      },
+      "H03_EncuestasCampo": {
+        "sampleSize": 38,
+        "targetAudience": "Abogados y Asesores Legales de las Unidades Regionales y Sede Central",
+        "keyResults": [
+          {
+            "question": "¿Ha encontrado contradicciones en criterios legales entre la Sede Central y Regiones?",
+            "percentageYes": 89.5
+          },
+          {
+            "question": "Tiempo promedio invertido en búsqueda de antecedentes legales",
+            "averageHours": "8.5 horas por expediente complejo"
+          },
+          {
+            "question": "Funcionalidad más requerida",
+            "topPreference": "Buscador semántico con filtros por materia legal, palabras clave y vigencia del criterio"
+          }
+        ]
+      },
+      "H04_FichaPersona": {
+        "archetypeCode": "PERS-IN0003-01",
+        "name": "Dra. Patricia Alva Morales",
+        "role": "Asesora Legal de la Unidad Regional Junín",
+        "age": 36,
+        "digitalLiteracy": "Avanzado en procesadores de texto y sistemas gubernamentales (SISO, SGD).",
+        "primaryGoal": "Resolver expedientes de impugnación con total certeza legal y alineamiento a la UAJ central."
+      }
+    },
+    "FASE_2_DEFINIR": {
+      "H05_MuroHallazgos": [
+        {
+          "clusterId": "CLUST-LEG-01",
+          "clusterName": "Descentralización sin Indexación Normativa",
+          "insight": "Las Unidades Regionales no carecen de capacidad técnica, sino de un repositorio estandarizado e indexado de la doctrina legal de AGROIDEAS.",
+          "priority": "ALTA"
+        },
+        {
+          "clusterId": "CLUST-LEG-02",
+          "clusterName": "Prevención de la Disparidad Criterial",
+          "insight": "Un criterio legal unificado reduce en más de un 60% la sobrecarga de apelaciones presentadas por las organizaciones agrarias.",
+          "priority": "ALTA"
+        }
+      ],
+      "H06_DefinicionDesafioHMW": {
+        "hmwCode": "HMW-IN0003",
+        "action": "implementar una base de datos dinámica y buscador semántico de criterios legales unificados",
+        "targetUser": "los abogados y evaluadores de las Unidades Regionales de AGROIDEAS",
+        "benefit": "estandarizar la interpretación normativa, acelerar la atención de expedientes y brindar seguridad jurídica a los beneficiarios",
+        "constraint": "la dispersión histórica de documentos y la falta de etiquetado temático de los informes legales",
+        "finalHMWStatement": "¿Cómo podríamos implementar una base de datos dinámica y buscador semántico de criterios legales unificados para que los abogados de las Unidades Regionales estandaricen sus dictámenes y aceleren la calificación de expedientes a pesar de la dispersión histórica de los informes legales?"
+      }
+    },
+    "FASE_3_IDEAR": {
+      "H07_LluviaIdeasCrazy8s": [
+        {
+          "ideaId": "IDEA-LEG-01",
+          "title": "Base de Datos Dinámica Web con Buscador Facetado y Etiquetado Temático de Criterios Legales (LEX-AGROIDEAS)",
+          "author": "Especialista UAJ",
+          "votes": 14
+        },
+        {
+          "ideaId": "IDEA-LEG-02",
+          "title": "Boletín mensual en PDF enviado por correo electrónico con los informes legales relevantes",
+          "author": "Asesor Jurídico",
+          "votes": 3
+        },
+        {
+          "ideaId": "IDEA-LEG-03",
+          "title": "Foro web interno de consultas legales asíncronas entre asesores de regiones",
+          "author": "Analista UPP",
+          "votes": 5
+        }
+      ],
+      "H08_MatrizPriorizacion": {
+        "evaluationDate": "2026-09-28T11:00:00Z",
+        "ideasEvaluadas": [
+          {
+            "ideaId": "IDEA-LEG-01",
+            "title": "Base de Datos Dinámica Web con Buscador Facetado (LEX-AGROIDEAS)",
+            "deseabilidad": 5,
+            "factibilidad": 4,
+            "viabilidad": 5,
+            "impacto": 5,
+            "scoreTotal": 19,
+            "isWinningIdea": true
+          },
+          {
+            "ideaId": "IDEA-LEG-03",
+            "title": "Foro web interno de consultas legales asíncronas",
+            "deseabilidad": 4,
+            "factibilidad": 4,
+            "viabilidad": 3,
+            "impacto": 3,
+            "scoreTotal": 14,
+            "isWinningIdea": false
+          }
+        ],
+        "winningIdeaSummary": {
+          "title": "LEX-AGROIDEAS: Base de Datos Dinámica de Criterios Legales",
+          "rationale": "Resuelve la fragmentación normativa mediante un motor web Local-First con indexación por descriptores legales, vigencia y filtros por materia."
+        }
+      }
+    },
+    "FASE_4_ENTREGAR": {
+      "H09_PrototipadoRapido": {
+        "prototypeType": "Aplicación Web Local-First con Motor de Búsqueda Facetada",
+        "designedViews": [
+          "Buscador Principal con autocomplete por descriptores legales (ej. 'Elegibilidad', 'Sucesión de Posición', 'Empatía Jurídica')",
+          "Ficha del Criterio Legal con texto sumillado, informe fuente adjunto en PDF y estado de vigencia (Vigente / Derogado / Modificado)",
+          "Módulo de Consulta Rápida y descarga de compendios temáticos"
+        ],
+        "validationCriteria": [
+          "Búsqueda de criterio específico en menos de 3 segundos",
+          "Visualización clara de la vigencia normativa y enlaces a informes sustentatorios"
+        ]
+      },
+      "H10_PlanAccion": {
+        "sprints": [
+          {
+            "sprintNumber": 1,
+            "duration": "3 semanas",
+            "objective": "Sistematización y digitación del compendio histórico de informes legales de la UAJ (2020-2026).",
+            "responsible": "Unidad de Asesoría Jurídica (UAJ)"
+          },
+          {
+            "sprintNumber": 2,
+            "duration": "3 semanas",
+            "objective": "Maquetación del buscador web facetado con DataTables.js y filtros dinámicos.",
+            "responsible": "Oficina de Tecnologías de la Información (UA-TI) / UAJ"
+          },
+          {
+            "sprintNumber": 3,
+            "duration": "3 semanas",
+            "objective": "Despliegue piloto con 5 Unidades Regionales y capacitación a asesores legales.",
+            "responsible": "UAJ / UPP"
+          }
+        ]
+      },
+      "H11_MatrizRiesgosYTesteo": {
+        "riskAssessment": [
+          {
+            "riskCategory": "Legal / Operativo",
+            "description": "Riesgo de obsolescencia de un criterio publicado tras cambios en la norma general (ej. Ley de Modernización).",
+            "mitigationStrategy": "Designar un Administrador Legal en UAJ con protocolo de actualización obligatoria inmediata tras emisión de nueva norma."
+          }
+        ],
+        "learningCard": {
+          "testCode": "TEST-IN0003-01",
+          "hypothesisTested": "El uso del repositorio LEX-AGROIDEAS reducirá el tiempo de atención de consultas legales complejas en las UR de 8 horas a menos de 30 minutos.",
+          "observedResult": "Durante el pilotaje con las UR de Junín y San Martín, el tiempo promedio de búsqueda y sustentación se redujo a 12 minutos (97.5% de ahorro de tiempo).",
+          "decision": "PASAR A PRODUCCIÓN E INSTITUCIONALIZACIÓN EN EL PORTAFOLIO (ANEXO 5)"
+        }
+      }
+    }
+  }
+}

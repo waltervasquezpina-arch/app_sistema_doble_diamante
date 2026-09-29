@@ -1,0 +1,234 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0010",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 4,
+      "FaseNombre": "Fase 4: Entregar",
+      "HerramientaNumero": 11,
+      "HerramientaCodigo": "H11",
+      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
+      "VistaCodigo": "V11.1",
+      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje",
+      "VistaUrl": "fase4/11-matriz-riesgos.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 11,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
+      "PasoAnterior": {
+        "HerramientaCodigo": "H10",
+        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
+        "VistaUrl": "fase4/10-plan-accion.html"
+      },
+      "PasoSiguiente": null
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:55:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "PortafolioPIIP_FichaMatriz": {
+    "id": 10,
+    "code": "PIIP-2026-IN0010",
+    "title": "Implementación de Casilla Electrónica para Notificaciones Institucionales (SINO-AGROIDEAS)",
+    "responsible": "Unidad de Planeamiento y Presupuesto (UPP) / Unidad de Administración (UA)",
+    "contact": "Especialista en Trámite Documentario y Notificaciones - UPP/UA",
+    "date": "2026-09-24",
+    "status": "Fase 4: Entregar",
+    "herramientasRegistradasContador": 11,
+    "opinionTecnica": {
+      "puntajeTotal": 11,
+      "maxPuntaje": 12,
+      "impacto": 4,
+      "priorizacion": 4,
+      "innovacion": 3,
+      "dictamen": "RECOMENDABLE PARA APROBACIÓN E INSTITUCIONALIZACIÓN"
+    },
+    "phases": {
+      "descubrir": "completed",
+      "definir": "completed",
+      "idear": "completed",
+      "entregar": "completed"
+    },
+    "porcentajeAvanceGlobal": 100.0
+  },
+  "HerramientasMetodologicas_Registros": {
+    "FASE_1_DESCUBRIR": {
+      "H01_ObservacionAEIOU": [
+        {
+          "id": "aeiou-010-1",
+          "projectCode": "PIIP-2026-IN0010",
+          "dimension": "Actividades",
+          "observation": "Envío masivo de notificaciones administrativas y resoluciones en papel mediante mensajería física a Organizaciones Agrarias (OA) en zonas alejadas.",
+          "timestamp": "2026-09-24T09:00:00Z"
+        },
+        {
+          "id": "aeiou-010-2",
+          "projectCode": "PIIP-2026-IN0010",
+          "dimension": "Entorno",
+          "observation": "Notificaciones devueltas por dirección inaccesible o no encontrada, generando validez diferida de actos administrativos por 30 a 60 días hábiles.",
+          "timestamp": "2026-09-24T11:30:00Z"
+        }
+      ],
+      "H02_MapaEmpatia": {
+        "userProfile": "Especialista de Trámite Documentario y Directivos de Organizaciones Agrarias",
+        "says": "Los mensajeros tardan semanas en traer el cargo físico devuelto y firmado, retrasando los desembolsos de los incentivos.",
+        "does": "Sigue enviando cartas notariales y encomiendas físicas para actos administrativos determinantes.",
+        "thinks": "Una Casilla Electrónica con alertas SMS o WhatsApp garantizaría validez legal inmediata y costo S/. 0 en mensajería.",
+        "feels": "Frustrado por la fragilidad jurídica de los cargos físicos y las prórrogas forzadas por notificaciones fallidas.",
+        "pains": "Gasto excesivo en courier, riesgo de caducidad de plazos administrativos y quejas de productores por falta de notificación.",
+        "gains": "Notificación legal con acuse de recibo inmutable en tiempo real, reducción a cero del uso de courier y agilización de trámites."
+      },
+      "H03_EncuestasCampo": {
+        "sampleSize": 54,
+        "targetAudience": "Servidores de Trámite Documentario, UAJ y Directivos Agrarios de 12 Unidades Regionales",
+        "keyResults": [
+          {
+            "question": "¿Considera indispensable sustituir el courier por Notificación Electrónica?",
+            "percentageYes": 96.3
+          },
+          {
+            "question": "¿Tiene acceso a smartphone o correo para recibir alertas de notificación?",
+            "percentageYes": 92.6
+          },
+          {
+            "question": "Tiempo promedio actual de recepción de cargo de notificación física",
+            "topAnswer": "Entre 18 y 35 días hábiles"
+          }
+        ]
+      },
+      "H04_FichaPersona": {
+        "archetypeCode": "PERS-IN0010-01",
+        "name": "Lic. Martín Sotomayor",
+        "role": "Encargado de Trámite Documentario y Archivo - AGROIDEAS",
+        "age": 41,
+        "digitalLiteracy": "Avanzado (Manejo de SGD, firma digital y bases de datos institucionales)",
+        "primaryGoal": "Lograr la notificación instantánea con valor legal de resoluciones y requerimientos a los beneficiarios."
+      }
+    },
+    "FASE_2_DEFINIR": {
+      "H05_MuroHallazgos": [
+        {
+          "clusterId": "CLUST-IN010-01",
+          "clusterName": "Costo Ineficiente y Lentitud en Courier Físico",
+          "insight": "El 82% del gasto operativo en mensajería se concentra en notificar observaciones que podrían resolverse el mismo día de manera digital.",
+          "priority": "ALTA"
+        },
+        {
+          "clusterId": "CLUST-IN010-02",
+          "clusterName": "Validez Legal y Certificación de Depósito Digital",
+          "insight": "La Ley de Procedimiento Administrativo General (LPAG) valida el depósito en casilla electrónica certificada como notificación personal válida.",
+          "priority": "ALTA"
+        }
+      ],
+      "H06_DefinicionDesafioHMW": {
+        "hmwCode": "HMW-IN0010",
+        "action": "implementar un Sistema de Casilla Electrónica Institucional (SINO-AGROIDEAS) con alertas SMS/WhatsApp y constancia de depósito digital",
+        "targetUser": "las Organizaciones Agrarias y administrados del Programa AGROIDEAS",
+        "benefit": "garantizar la validez legal e inmediatez de las notificaciones administrativas",
+        "constraint": "las brechas de conectividad en zonas rurales y la inercia del uso del documento en papel",
+        "finalHMWStatement": "¿Cómo podríamos implementar un Sistema de Casilla Electrónica Institucional (SINO-AGROIDEAS) con alertas SMS/WhatsApp y constancia de depósito digital para que las Organizaciones Agrarias y administrados reciban notificaciones con validez legal inmediata a pesar de las brechas de conectividad y la dependencia del papel?"
+      }
+    },
+    "FASE_3_IDEAR": {
+      "H07_LluviaIdeasCrazy8s": [
+        {
+          "ideaId": "IDEA-IN010-01",
+          "title": "Sistema Web PWA de Casilla Electrónica (SINO-AGROIDEAS) con autenticación DNIe/Clave SOL y alertas omnicanal",
+          "author": "Analista UPP",
+          "votes": 14
+        },
+        {
+          "ideaId": "IDEA-IN010-02",
+          "title": "Envío de PDFs adjuntos firmados por correo institucional masivo",
+          "author": "Especialista UA",
+          "votes": 4
+        }
+      ],
+      "H08_MatrizPriorizacion": {
+        "evaluationDate": "2026-09-24T16:00:00Z",
+        "ideasEvaluadas": [
+          {
+            "ideaId": "IDEA-IN010-01",
+            "title": "Sistema Web PWA de Casilla Electrónica (SINO-AGROIDEAS) con depósito certificado y alertas omnicanal",
+            "deseabilidad": 5,
+            "factibilidad": 5,
+            "viability": 5,
+            "impacto": 4,
+            "scoreTotal": 19,
+            "isWinningIdea": true
+          },
+          {
+            "ideaId": "IDEA-IN010-02",
+            "title": "Envío de PDFs adjuntos firmados por correo institucional masivo",
+            "deseabilidad": 3,
+            "factibilidad": 4,
+            "viability": 3,
+            "impacto": 3,
+            "scoreTotal": 13,
+            "isWinningIdea": false
+          }
+        ],
+        "winningIdeaSummary": {
+          "title": "SINO-AGROIDEAS: Plataforma Web PWA de Casilla Electrónica Institucional",
+          "rationale": "Obtuvo 19/20 puntos. Cumple estrictamente con el TUO de la Ley N.° 27444, garantizando fe pública del depósito y trazabilidad legal inmutable."
+        }
+      }
+    },
+    "FASE_4_ENTREGAR": {
+      "H09_PrototipadoRapido": {
+        "prototypeCode": "PROTO-IN010-PWA",
+        "prototypeName": "Módulo Web SINO-AGROIDEAS PWA",
+        "type": "Progressive Web App (PWA) Local-First + Certificador de Depósito",
+        "keyFeatures": [
+          "Bandeja de Entrada/Salida de Casilla Electrónica por RUC/DNI",
+          "Visor PDF incorporado con firma digital acreditada por INDECOPI/RENIEC",
+          "Generador de Cédula de Notificación y Constancia de Depósito Inmutable",
+          "Motor de Alertas automáticas vía SMS y WhatsApp API"
+        ],
+        "testCriteria": "Tiempo de generación de constancia de depósito < 1 segundo y notificación efectiva comprobada en < 5 minutos."
+      },
+      "H10_PlanAccion": {
+        "roadmapName": "Hoja de Ruta para Despliegue de Casilla Electrónica (SINO-AGROIDEAS)",
+        "sprints": [
+          {
+            "sprintNumber": 1,
+            "duration": "3 Semanas",
+            "objective": "Aprobación del Reglamento de Casilla Electrónica por UAJ/UPP e integración de firma digital",
+            "responsible": "UPP / UAJ"
+          },
+          {
+            "sprintNumber": 2,
+            "duration": "3 Semanas",
+            "objective": "Desarrollo del Frontend PWA SINO y API de envío de alertas SMS/WhatsApp",
+            "responsible": "UA-TI / UPP"
+          },
+          {
+            "sprintNumber": 3,
+            "duration": "3 Semanas",
+            "objective": "Pilotaje de notificación de 100 resoluciones con Organizaciones Agrarias en Junín y Arequipa",
+            "responsible": "UA-Trámite / UPP / Unidades Regionales"
+          }
+        ]
+      },
+      "H11_MatrizRiesgosTesteo": {
+        "testCode": "TEST-IN010-01",
+        "riskMitigation": [
+          {
+            "riskDescription": "Falta de lectura de la casilla por parte del administrado",
+            "mitigationStrategy": "Regla legal de surtimiento de efectos al 1er día hábil posterior al depósito y alertas duales por SMS/WhatsApp."
+          }
+        ],
+        "learningCard": {
+          "hypothesis": "Las notificaciones vía Casilla Electrónica reducen el ciclo de notificación de 25 días a menos de 10 minutos con 100% de validez jurídica.",
+          "results": "Se notificados 100 actos administrativos en piloto; tiempo promedio de notificación se redujo a 4 minutos con 0 impugnaciones por vicio de forma.",
+          "decision": "PASAR A PRODUCCIÓN E INSTITUCIONALIZAR EN EL PORTAFOLIO (ANEXO 5)"
+        }
+      }
+    }
+  }
+}

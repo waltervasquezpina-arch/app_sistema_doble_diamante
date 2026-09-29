@@ -1,0 +1,229 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0012",
+    "IniciativaNombreActiva": "Portal de Transparencia Interactivo para Beneficiarios del Programa AGROIDEAS",
+    "UnidadOrganicaResponsable": "Unidad de Reconversión e Intervenciones Especiales (URIE) / UPP",
+    "LiderProyecto": "Sergio Antonio Haro Muñoz - URIE",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 4,
+      "FaseNombre": "Entregar (Convergencia)",
+      "HerramientaCodigo": "H11",
+      "HerramientaNombre": "Matriz de Riesgos y Testeo (Pase a Producción)",
+      "VistaCodigo": "V04.3",
+      "VistaTitulo": "Fase 4: Entregar - Matriz de Riesgos y Tarjeta de Testeo",
+      "VistaUrl": "fase4/11-matriz-riesgos.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 11,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 11 de 11 - Cierre de Flujo y Registro en Portafolio",
+      "PasoAnterior": "fase4/10-plan-accion.html",
+      "PasoSiguiente": null
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:58:00Z",
+      "UsuarioActualRol": "Facilitador Ágil / Especialista URIE"
+    }
+  },
+  "PortafolioPIIP_FichaMaestra": {
+    "id": 12,
+    "code": "PIIP-2026-IN0012",
+    "title": "Portal de Transparencia Interactivo para Beneficiarios del Programa AGROIDEAS",
+    "responsible": "Unidad de Reconversión e Intervenciones Especiales (URIE) / UPP",
+    "contact": "Sergio Antonio Haro Muñoz - URIE",
+    "date": "2026-09-26",
+    "status": "Fase 4: Entregar (Completado)",
+    "porcentajeAvanceGlobal": 100.0,
+    "herramientasRegistradasContador": 11,
+    "opinionTecnicaEvaluacion": {
+      "puntajeTotal": 11,
+      "puntajeMaximo": 12,
+      "impacto": 4,
+      "priorizacionEstrategica": 4,
+      "enfoqueInnovacion": 3,
+      "dictamen": "RECOMENDABLE PARA APROBACIÓN E INSTITUCIONALIZACIÓN"
+    },
+    "phases": {
+      "descubrir": "completed",
+      "definir": "completed",
+      "idear": "completed",
+      "entregar": "completed"
+    }
+  },
+  "HerramientasMetodologicas_Registros": {
+    "FASE_1_DESCUBRIR": {
+      "H01_ObservacionAEIOU": [
+        {
+          "id": "aeiou-0012-01",
+          "dimension": "Actividades",
+          "observation": "Los representantes de Organizaciones Agrarias (OA) y productores beneficiarios deben acudir presencialmente a las sedes regionales o enviar solicitudes escritas para conocer el estado de desembolso de sus incentivos y avance de ejecución.",
+          "timestamp": "2026-09-26T09:15:00Z"
+        },
+        {
+          "id": "aeiou-0012-02",
+          "dimension": "Entorno",
+          "observation": "Falta de un canal digital público y amigable de rendición de cuentas e información abierta de beneficiarios, montos cofinanciados y georreferenciación de Planes de Negocio.",
+          "timestamp": "2026-09-26T11:00:00Z"
+        }
+      ],
+      "H02_MapaEmpatia": {
+        "userProfile": "Directivo de Organización Agraria Beneficiaria y Ciudadano Productor",
+        "says": "Queremos ver en qué fase va nuestro incentivo y cuánto dinero se ha desembolsado sin depender de llamadas o intermediarios.",
+        "does": "Envía documentos de acceso a la información pública o consulta a los especialistas regionales periódicamente.",
+        "thinks": "La información de los fondos asignados por AGROIDEAS debería ser pública, clara y consultable desde el celular en cualquier momento.",
+        "feels": "Incertidumbre por la falta de visibilidad del estado de su expediente y la ejecución de su Plan de Negocio.",
+        "pains": "Gasto de tiempo y dinero en traslados para hacer seguimiento presencial, sospechas de opacidad.",
+        "gains": "Transparencia absoluta, control social, monitoreo en tiempo real del estado de transferencias e incentivos."
+      },
+      "H03_EncuestasCampo": {
+        "sampleSize": 72,
+        "targetAudience": "Directivos de Organizaciones Agrarias y Ciudadanía Agraria en Junín, Arequipa y San Martín",
+        "keyResults": [
+          {
+            "question": "¿Considera útil disponer de un portal web interactivo para consultar el avance de su Plan de Negocio?",
+            "percentageYes": 98.6
+          },
+          {
+            "question": "¿Qué datos considera prioritarios para visualizar en un portal público?",
+            "topFormats": [
+              "Monto del incentivo cofinanciado y saldo por desembolsar",
+              "Estado actual de aprobación (Semicuantitativo / Semáforo)",
+              "Ubicación georreferenciada de la organización y cadena productiva",
+              "Fotografías de entregables y maquinaria adquirida"
+            ]
+          }
+        ]
+      },
+      "H04_FichaPersona": {
+        "archetypeCode": "PERS-IN0012-01",
+        "name": "Don Tomas Huanca Yana",
+        "role": "Socio Fiscalizador de Cooperativa Agraria de Fruticultores",
+        "age": 49,
+        "digitalLiteracy": "Básico-Intermedio (Uso activo de smartphone para consultas web y WhatsApp)",
+        "primaryGoal": "Verificar en línea las transferencias de cofinanciamiento realizadas por AGROIDEAS a su cooperativa con total transparencia."
+      }
+    },
+    "FASE_2_DEFINIR": {
+      "H05_MuroHallazgos": [
+        {
+          "clusterId": "CLUST-IN0012-01",
+          "clusterName": "Transparencia Activa y Gobierno Abierto",
+          "insight": "Publicar los datos de Planes de Negocio en un mapa interactivo abierto reduce en 80% las solicitudes físicas de acceso a la información y fortalece la confianza institucional.",
+          "priority": "ALTA"
+        },
+        {
+          "clusterId": "CLUST-IN0012-02",
+          "clusterName": "Visualización Intuitiva Local-First",
+          "insight": "El portal debe ser liviano, compatible con dispositivos móviles (PWA) y presentar dashboards gráficos de fácil interpretación sin términos burocráticos.",
+          "priority": "ALTA"
+        }
+      ],
+      "H06_DefinicionDesafioHMW": {
+        "hmwCode": "HMW-IN0012",
+        "action": "implementar un Portal de Transparencia Interactivo y Abierto para Beneficiarios",
+        "targetUser": "las organizaciones agrarias, productores beneficiarios y la ciudadanía",
+        "benefit": "acceder en tiempo real al estado de ejecución, desembolsos y georreferenciación de los Planes de Negocio",
+        "constraint": "las brechas de conectividad en zonas rurales y la complejidad de los datos administrativos internos",
+        "finalHMWStatement": "¿Cómo podríamos implementar un Portal de Transparencia Interactivo y Abierto para Beneficiarios con mapas y dashboards PWA para que las organizaciones agrarias y la ciudadanía monitoreen los desembolsos y la ejecución de Planes de Negocio a pesar de la dispersión de datos y las brechas de conectividad?"
+      }
+    },
+    "FASE_3_IDEAR": {
+      "H07_LluviaIdeasCrazy8s": [
+        {
+          "ideaId": "IDEA-IN0012-01",
+          "title": "Portal Web PWA Interactivo de Transparencia Abierta (AGROIDEAS-TRANSPARENCIA) con Mapa SIG, Búsqueda por RUC/OA y Semáforo de Desembolsos",
+          "author": "Sergio Antonio Haro Muñoz (URIE)",
+          "votes": 14
+        },
+        {
+          "ideaId": "IDEA-IN0012-02",
+          "title": "Boletines impresos mensuales enviados por correo postal a cada junta directiva",
+          "author": "Especialista Regional",
+          "votes": 3
+        }
+      ],
+      "H08_MatrizPriorizacion": {
+        "evaluationDate": "2026-09-26T15:30:00Z",
+        "ideasEvaluadas": [
+          {
+            "ideaId": "IDEA-IN0012-01",
+            "title": "Portal Web PWA Interactivo AGROIDEAS-TRANSPARENCIA con Mapa SIG y Buscador Abierto",
+            "deseabilidad": 5,
+            "factibilidad": 4,
+            "viabilidad": 5,
+            "impacto": 5,
+            "scoreTotal": 19,
+            "isWinningIdea": true
+          },
+          {
+            "ideaId": "IDEA-IN0012-02",
+            "title": "Boletines impresos mensuales",
+            "deseabilidad": 2,
+            "factibilidad": 3,
+            "viabilidad": 2,
+            "impacto": 2,
+            "scoreTotal": 9,
+            "isWinningIdea": false
+          }
+        ],
+        "winningIdeaSummary": {
+          "title": "Portal Web PWA Interactivo de Transparencia Abierta (AGROIDEAS-TRANSPARENCIA)",
+          "rationale": "Ganadora con 19/20 puntos. Fomenta el gobierno abierto, reduce la carga de atención presencial y democratiza la información de incentivos públicos."
+        }
+      }
+    },
+    "FASE_4_ENTREGAR": {
+      "H09_PrototipadoRapido": {
+        "prototypeCode": "PROTO-IN0012-PWA",
+        "prototypeType": "Progressive Web App (PWA) de Transparencia Activa",
+        "keyFeatures": [
+          "Buscador abierto por RUC, Nombre de Organización, Cadena Productiva o Región",
+          "Mapa interactivo con capas de ubicación de Planes de Negocio e Incentivos ejecutados",
+          "Dashboard gráfico de estado de desembolso (Monto Aprobado vs Desembolsado vs Ejecutado)",
+          "Galería pública de fotos de bienes y tecnología entregada a las cooperativas"
+        ],
+        "validationCriteria": "Tiempo de consulta < 1 segundo y 100% de accesibilidad en navegadores móviles."
+      },
+      "H10_PlanAccion": {
+        "roadmapSprints": [
+          {
+            "sprintNumber": 1,
+            "durationWeeks": 3,
+            "deliverable": "Mapeo de datos públicos de Planes de Negocio e integración de API Abierta (URIE / UPP / OTI)"
+          },
+          {
+            "sprintNumber": 2,
+            "durationWeeks": 3,
+            "deliverable": "Desarrollo del Portal PWA con mapas interactivos Leaflet y gráficos Chart.js (UA-TI / URIE)"
+          },
+          {
+            "sprintNumber": 3,
+            "durationWeeks": 3,
+            "deliverable": "Pilotaje público con 40 Organizaciones Agrarias de Junín, San Martín y Arequipa"
+          }
+        ]
+      },
+      "H11_MatrizRiesgosTesteo": {
+        "riskEvaluation": [
+          {
+            "riskId": "RISK-IN0012-01",
+            "description": "Riesgo de exposición no autorizada de datos personales sensibles de productores",
+            "severity": "MEDIA",
+            "mitigation": "Anonimización automatizada conforme a la Ley de Protección de Datos Personales (Ley N.° 29733)."
+          }
+        ],
+        "testCard": {
+          "testCode": "TEST-IN0012-01",
+          "sampleAudience": "40 Líderes y socios de Organizaciones Agrarias",
+          "quantitativeResults": "Reducción de solicitudes presenciales de información de 18 días a 0 minutos (consulta web instantánea en < 1 segundo).",
+          "satisfactionRate": "98.5%",
+          "recommendation": "APROBADO PARA PASE A PRODUCCIÓN E INCLUSIÓN EN EL PORTAFOLIO INSTITUCIONAL (ANEXO 5)."
+        }
+      }
+    }
+  }
+}

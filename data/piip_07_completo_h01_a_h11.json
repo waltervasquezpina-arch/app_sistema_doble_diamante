@@ -1,0 +1,236 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0007",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 4,
+      "FaseNombre": "Fase 4: Entregar",
+      "HerramientaNumero": 11,
+      "HerramientaCodigo": "H11",
+      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
+      "VistaCodigo": "V11.1",
+      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje",
+      "VistaUrl": "fase4/11-matriz-riesgos.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 11,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
+      "PasoAnterior": {
+        "HerramientaCodigo": "H10",
+        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
+        "VistaUrl": "fase4/10-plan-accion.html"
+      },
+      "PasoSiguiente": null
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:48:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "PortafolioPIIP_Coleccion": [
+    {
+      "id": 7,
+      "code": "PIIP-2026-IN0007",
+      "title": "Sistema Digital de Evaluación de Elegibilidad con Georreferenciación (SDEG)",
+      "responsible": "Dirección Ejecutiva - Coordinación Técnica Regional (CTR)",
+      "contact": "José Fernando Barturen Torres - CTR",
+      "date": "2026-09-21",
+      "status": "Fase 4: Entregar (Completado)",
+      "porcentajeAvanceGlobal": 100.0,
+      "phases": {
+        "descubrir": "completed",
+        "definir": "completed",
+        "idear": "completed",
+        "entregar": "completed"
+      }
+    }
+  ],
+  "HerramientasMetodologicas_Coleccion": {
+    "FASE_1_DESCUBRIR": {
+      "H01_ObservacionAEIOU": [
+        {
+          "id": "aeiou-007-1",
+          "projectCode": "PIIP-2026-IN0007",
+          "dimension": "Actividades",
+          "observation": "Los evaluadores técnicos de las Unidades Regionales deben trasladarse a las parcelas de las Organizaciones Agrarias (OA) para realizar mediciones físicas con GPS de mano no estandarizados, demorando semanas en contrastar la información con catastros oficiales.",
+          "timestamp": "2026-09-15T08:30:00Z"
+        },
+        {
+          "id": "aeiou-007-2",
+          "projectCode": "PIIP-2026-IN0007",
+          "dimension": "Objetos",
+          "observation": "Uso de planos en papel, mapas no georreferenciados y formatos dispersos que imposibilitan verificar cruces con áreas naturales protegidas o deforestadas.",
+          "timestamp": "2026-09-15T11:00:00Z"
+        }
+      ],
+      "H02_MapaEmpatia": {
+        "projectCode": "PIIP-2026-IN0007",
+        "userProfile": "Evaluador Técnico Regional de Elegibilidad - CTR / UR",
+        "says": "Comprobar si una parcela superpone un área protegida o zona deforestada nos toma semanas pidiendo informes a otras entidades.",
+        "does": "Dibuja polígonos aproximados a mano y revisa capas geográficas de SERNANP o Midagri en múltiples webs sin integración.",
+        "thinks": "Deberíamos poder capturar el polígono en campo con el celular y cruzarlo automáticamente con el mapa nacional.",
+        "feels": "Inseguro ante posibles observaciones de los órganos de control por superposición no detectada.",
+        "pains": "Reiteradas observaciones a expedientes de elegibilidad y demoras que superan los 30 días hábiles.",
+        "gains": "Emisión de informes técnicos de elegibilidad en menos de 48 horas con respaldo cartográfico inmutable."
+      },
+      "H03_EncuestasCampo": {
+        "projectCode": "PIIP-2026-IN0007",
+        "sampleSize": 36,
+        "targetAudience": "Especialistas Técnicos y Coordinadores de Unidades Regionales (CTR)",
+        "keyResults": [
+          {
+            "question": "¿Cuál es la principal causa de retraso en la emisión del informe de elegibilidad?",
+            "percentage": 86.1,
+            "detail": "Verificación cartográfica manual y falta de superposición georreferenciada automática."
+          },
+          {
+            "question": "¿Cuenta con dispositivo móvil para captura de polígonos GPS en campo?",
+            "percentage": 94.4,
+            "detail": "El 94.4% de los técnicos cuenta con smartphone capaz de correr PWA de mapeo offline."
+          }
+        ]
+      },
+      "H04_FichaPersona": {
+        "projectCode": "PIIP-2026-IN0007",
+        "archetypeCode": "PERS-IN0007-01",
+        "name": "Ing. José Fernando Barturen Torres",
+        "role": "Coordinador Técnico Regional - CTR",
+        "age": 41,
+        "digitalLiteracy": "Alto (Manejo de sistemas GIS, Google Earth y herramientas móviles)",
+        "primaryGoal": "Agilizar la calificación de elegibilidad geográfica de los planes de negocio garantizando cero superposición con áreas restringidas."
+      }
+    },
+    "FASE_2_DEFINIR": {
+      "H05_MuroHallazgos": [
+        {
+          "id": "hallazgo-007-1",
+          "projectCode": "PIIP-2026-IN0007",
+          "clusterId": "CLUST-GIS-01",
+          "clusterName": "Verificación Cartográfica Manual e Ineficiente",
+          "insight": "El 70% del tiempo de determinación de elegibilidad se pierde en el levantamiento y contraste manual de coordenadas con múltiples plataformas del Estado.",
+          "priority": "ALTA"
+        },
+        {
+          "id": "hallazgo-007-2",
+          "projectCode": "PIIP-2026-IN0007",
+          "clusterId": "CLUST-GIS-02",
+          "clusterName": "Captura Offline de Polígonos en Campo",
+          "insight": "La herramienta debe funcionar 100% offline en zonas de campo, almacenando polígonos GPS localmente para sincronizarse al detectar señal.",
+          "priority": "ALTA"
+        }
+      ],
+      "H06_DefinicionDesafioHMW": {
+        "projectCode": "PIIP-2026-IN0007",
+        "hmwCode": "HMW-IN0007",
+        "action": "implementar un Sistema Digital de Evaluación de Elegibilidad con Georreferenciación (SDEG) en PWA con captura de polígonos GPS y cruce automatizado de capas GIS",
+        "targetUser": "los evaluadores técnicos regionales y la Coordinación Técnica Regional (CTR)",
+        "benefit": "emitir dictámenes de elegibilidad geográfica inmediatos y con alta precisión cartográfica",
+        "constraint": "las zonas con nula conectividad a internet en campo y la dispersión de bases catastrales",
+        "finalHMWStatement": "¿Cómo podríamos implementar un Sistema Digital de Evaluación de Elegibilidad con Georreferenciación (SDEG) en PWA con captura de polígonos GPS y cruce automatizado de capas GIS para que los evaluadores técnicos regionales emitan dictámenes de elegibilidad precisos e inmediatos a pesar de la falta de conectividad en campo y la dispersión de bases catastrales?"
+      }
+    },
+    "FASE_3_IDEAR": {
+      "H07_LluviaIdeasCrazy8s": [
+        {
+          "ideaId": "IDEA-007-01",
+          "projectCode": "PIIP-2026-IN0007",
+          "title": "Aplicativo Web PWA SDEG con captura de polígonos GPS offline e interoperabilidad con capas geográficas (MIDAGRI-GEO, SERNANP, Geocatmin)",
+          "author": "José Fernando Barturen Torres - CTR",
+          "votes": 14
+        },
+        {
+          "ideaId": "IDEA-007-02",
+          "projectCode": "PIIP-2026-IN0007",
+          "title": "Uso de drones para fotogrametría en cada parcela evaluada",
+          "author": "Especialista Regional Junín",
+          "votes": 4
+        }
+      ],
+      "H08_MatrizPriorizacion": {
+        "projectCode": "PIIP-2026-IN0007",
+        "evaluationDate": "2026-09-27T10:15:00Z",
+        "ideasEvaluadas": [
+          {
+            "ideaId": "IDEA-007-01",
+            "title": "Aplicativo Web PWA SDEG con captura de polígonos GPS offline e interoperabilidad GIS",
+            "deseabilidad": 5,
+            "factibilidad": 5,
+            "viabilidad": 4,
+            "impacto": 5,
+            "scoreTotal": 19,
+            "isWinningIdea": true
+          },
+          {
+            "ideaId": "IDEA-007-02",
+            "title": "Uso de drones para fotogrametría",
+            "deseabilidad": 4,
+            "factibilidad": 2,
+            "viabilidad": 2,
+            "impacto": 4,
+            "scoreTotal": 12,
+            "isWinningIdea": false
+          }
+        ],
+        "winningIdeaSummary": {
+          "title": "Sistema Digital de Evaluación de Elegibilidad con Georreferenciación (SDEG)",
+          "score": "19/20 Puntos",
+          "rationale": "Resuelve la verificación de elegibilidad en tiempo récord mediante PWA ejecutable en móviles con GPS integrado, guardando datos en LocalStorage y validando superposiciones al conectar con el visor geográfico."
+        }
+      }
+    },
+    "FASE_4_ENTREGAR": {
+      "H09_PrototipadoRapido": {
+        "projectCode": "PIIP-2026-IN0007",
+        "prototypeName": "Prototipo SDEG - Visor Geográfico PWA Local-First",
+        "technologyStack": "HTML5 / JS Leaflet / Turf.js / LocalStorage PWA",
+        "keyFeatures": [
+          "Captura de puntos GPS y trazado de polígonos de parcelas offline",
+          "Cálculo automático de área (hectáreas) y perímetro mediante Turf.js",
+          "Cruce de capas simulado con áreas protegidas SERNANP y bosques de protección",
+          "Generación del Certificado de Elegibilidad Geográfica en PDF con código QR y coordenadas UTMS"
+        ]
+      },
+      "H10_PlanAccion": {
+        "projectCode": "PIIP-2026-IN0007",
+        "roadmap": [
+          {
+            "sprint": "Sprint 1 (Semanas 1-3)",
+            "objective": "Integración de reglas de elegibilidad geográfica y definición de capas cartográficas con CTR/UAJ.",
+            "responsible": "CTR / UPP / UAJ"
+          },
+          {
+            "sprint": "Sprint 2 (Semanas 4-6)",
+            "objective": "Desarrollo del visor web PWA SDEG con Leaflet.js y motor offline de captura de polígonos GPS.",
+            "responsible": "UA-TI / CTR"
+          },
+          {
+            "sprint": "Sprint 3 (Semanas 7-9)",
+            "objective": "Pilotaje en Unidades Regionales de Junín y San Martín evaluando 30 parcelas reales.",
+            "responsible": "CTR / Unidades Regionales"
+          }
+        ]
+      },
+      "H11_MatrizRiesgosTesteo": {
+        "projectCode": "PIIP-2026-IN0007",
+        "risks": [
+          {
+            "riskId": "RISK-IN0007-01",
+            "description": "Imprecisión de GPS en teléfonos móviles de gama baja bajo cobertura boscosa densa.",
+            "severity": "MEDIA",
+            "mitigation": "Incorporar algoritmo de promedio de precisión multiseñal y tolerancia paramétrica de error en metros."
+          }
+        ],
+        "testCard": {
+          "testCode": "TEST-IN0007-01",
+          "hypothesis": "El uso de SDEG reduce el tiempo de evaluación de elegibilidad geográfica a menos de 48 horas con precisión >95%.",
+          "result": "VALIDADO: El tiempo de calificación se redujo de 28 días calendario a 1.5 horas (reducción del 97.7%), detectando 2 casos de superposición parcial antes del desembolso.",
+          "status": "APROBADO PARA PRODUCCIÓN E INCLUSIÓN EN ANEXO 5"
+        }
+      }
+    }
+  }
+}

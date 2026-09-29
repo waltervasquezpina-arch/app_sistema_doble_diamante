@@ -1,0 +1,249 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0011",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 4,
+      "FaseNombre": "Fase 4: Entregar",
+      "HerramientaNumero": 11,
+      "HerramientaCodigo": "H11",
+      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
+      "VistaCodigo": "V11.1",
+      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje",
+      "VistaUrl": "fase4/11-matriz-riesgos.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 11,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
+      "PasoAnterior": {
+        "HerramientaCodigo": "H10",
+        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
+        "VistaUrl": "fase4/10-plan-accion.html"
+      },
+      "PasoSiguiente": null
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:58:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "PortafolioPIIP_Coleccion": [
+    {
+      "id": 11,
+      "code": "PIIP-2026-IN0011",
+      "title": "Automatización del Proceso de Rendición de Cuentas de Organizaciones Agrarias",
+      "responsible": "Unidad de Reconversión e Intervenciones Especiales (URIE)",
+      "contact": "Sergio Antonio Haro Muñoz - URIE",
+      "date": "2026-09-25",
+      "status": "Fase 4: Entregar (Completado)",
+      "herramientasRegistradasContador": 11,
+      "porcentajeAvanceGlobal": 100.0,
+      "phases": {
+        "descubrir": "completed",
+        "definir": "completed",
+        "idear": "completed",
+        "entregar": "completed"
+      }
+    }
+  ],
+  "HerramientasMetodologicas_Coleccion": {
+    "H01_ObservacionAEIOU": [
+      {
+        "id": "aeiou-011-1",
+        "projectCode": "PIIP-2026-IN0011",
+        "dimension": "Actividades",
+        "observation": "Las Organizaciones Agrarias (OA) presentan carpetas físicas con cientos de comprobantes de pago impresos (facturas, boletas, recibos por honorarios) para justificar los desembolsos de los incentivos.",
+        "timestamp": "2026-09-25T09:00:00Z"
+      },
+      {
+        "id": "aeiou-011-2",
+        "projectCode": "PIIP-2026-IN0011",
+        "dimension": "Interacciones",
+        "observation": "Los evaluadores contables de URIE realizan el cotejo manual comprobante por comprobante contra la SUNAT, sufriendo rechazos continuos por inconsistencias en RUC, fechas o montos no autorizados en el Plan de Negocio.",
+        "timestamp": "2026-09-25T11:30:00Z"
+      }
+    ],
+    "H02_MapaEmpatia": {
+      "projectCode": "PIIP-2026-IN0011",
+      "userProfile": "Sergio Antonio Haro Muñoz (Especialista en Rendición de Cuentas - URIE)",
+      "says": "Las organizaciones agrarias pierden semanas viajando a la sede regional para entregar carpetas contables que luego son observadas por errores formales en facturas.",
+      "does": "Revisa manualmente cada comprobante de pago físico, verifica el estado en la SUNAT e ingresa los datos uno a uno en hojas Excel.",
+      "thinks": "Debería existir un sistema digital que valide automáticamente las facturas electrónicas con la SUNAT y verifique la partida presupuestal aprobada.",
+      "feels": "Frustrado por la sobrecarga de trabajo operativo contable y la demora en los cierres de rendición de cuentas.",
+      "pains": "Elevada tasa de observaciones contables, riesgo de comprobantes duplicados o clonados, y mora en el cierre financiero de proyectos.",
+      "gains": "Validación contable en tiempo real, transparencia total, rendición de cuentas en 48 horas y liquidación financiera oportuna."
+    },
+    "H03_EncuestasCampo": {
+      "projectCode": "PIIP-2026-IN0011",
+      "sampleSize": 48,
+      "targetAudience": "Contadores y Tesoreros de Organizaciones Agrarias y Evaluadores de URIE",
+      "keyResults": [
+        {
+          "question": "¿Cuánto tiempo toma armar y revisar un expediente de rendición de cuentas en físico?",
+          "result": "Entre 30 y 60 días calendario por cada hito de desembolso (87.5%)."
+        },
+        {
+          "question": "¿Cuáles son las principales causas de observación en la rendición de cuentas?",
+          "result": "Errores de digitación en RUC/monto (64.6%), comprobantes emitidos fuera de fecha del hito (58.3%), y rubros no contemplados en el plan (41.7%)."
+        },
+        {
+          "question": "¿Estaría dispuesto a subir las facturas electrónicas (XML/PDF) mediante un portal web de rendición automática?",
+          "result": "El 95.8% está totalmente a favor."
+        }
+      ]
+    },
+    "H04_FichaPersona": {
+      "projectCode": "PIIP-2026-IN0011",
+      "archetypeCode": "PERS-IN0011-01",
+      "name": "Sergio Antonio Haro Muñoz",
+      "role": "Especialista en Gestión y Rendición de Cuentas - URIE",
+      "age": 39,
+      "digitalLiteracy": "Avanzado (Dominio de sistemas contables, Excel financiero y plataformas administrativas)",
+      "primaryGoal": "Automatizar la validación de comprobantes de pago de las organizaciones agrarias con la SUNAT y garantizar la correcta ejecución del presupuesto asignado."
+    },
+    "H05_MuroHallazgos": [
+      {
+        "id": "hallazgo-011-1",
+        "projectCode": "PIIP-2026-IN0011",
+        "clusterId": "CLUST-01",
+        "clusterName": "Validación Contable Manual y Lenta",
+        "insight": "El 70% de las observaciones en rendiciones se deben a errores formales en las facturas que un servicio de validación automática SUNAT (API) resolvería de forma instantánea.",
+        "priority": "ALTA"
+      },
+      {
+        "id": "hallazgo-011-2",
+        "projectCode": "PIIP-2026-IN0011",
+        "clusterId": "CLUST-02",
+        "clusterName": "Conciliación Presupuestal Automatizada",
+        "insight": "Vincular cada comprobante de pago al rubro específico del Plan de Negocio previene sobregiros presupuestales y desvíos de fondos antes del envío del expediente.",
+        "priority": "ALTA"
+      }
+    ],
+    "H06_DefinicionDesafioHMW": {
+      "projectCode": "PIIP-2026-IN0011",
+      "hmwCode": "HMW-IN0011",
+      "action": "implementar un Módulo Web de Rendición de Cuentas Automatizada (RENDICION-DIGITAL) con validación XML/SUNAT e imputación presupuestal en tiempo real",
+      "targetUser": "los tesoreros de las Organizaciones Agrarias y los especialistas contables de URIE",
+      "benefit": "eliminar las observaciones formales, acelerar la aprobación de rendiciones y garantizar la transparencia presupuestal",
+      "constraint": "la diversidad de regímenes tributarios de las cooperativas y la dispersión geográfica de las compras",
+      "finalHMWStatement": "¿Cómo podríamos implementar un Módulo Web de Rendición de Cuentas Automatizada (RENDICION-DIGITAL) con validación XML/SUNAT e imputación presupuestal en tiempo real para que los tesoreros de las organizaciones agrarias y especialistas de URIE liquiden los fondos en 48 horas a pesar de la dispersión de compras y la complejidad tributaria?"
+    },
+    "H07_LluviaIdeasCrazy8s": [
+      {
+        "id": "idea-011-1",
+        "projectCode": "PIIP-2026-IN0011",
+        "ideaId": "IDEA-011-A",
+        "title": "Módulo Web PWA RENDICION-DIGITAL con carga de XML/PDF de Facturas Electrónicas, consulta automática API SUNAT y concilidador presupuestal",
+        "author": "Sergio Antonio Haro Muñoz (URIE)",
+        "votes": 14
+      },
+      {
+        "id": "idea-011-2",
+        "projectCode": "PIIP-2026-IN0011",
+        "ideaId": "IDEA-011-B",
+        "title": "Escaneo de facturas físicas con IA/OCR desde aplicativo móvil de campo",
+        "author": "Analista de Sistemas UA-TI",
+        "votes": 8
+      }
+    ],
+    "H08_MatrizPriorizacion": {
+      "projectCode": "PIIP-2026-IN0011",
+      "evaluationDate": "2026-09-27T10:00:00Z",
+      "ideasEvaluadas": [
+        {
+          "ideaId": "IDEA-011-A",
+          "title": "Módulo Web PWA RENDICION-DIGITAL con consulta API SUNAT e imputación presupuestal",
+          "deseabilidad": 5,
+          "factibilidad": 5,
+          "viabilidad": 5,
+          "impacto": 4,
+          "scoreTotal": 19,
+          "isWinningIdea": true
+        },
+        {
+          "ideaId": "IDEA-011-B",
+          "title": "Escaneo de facturas físicas con IA/OCR",
+          "deseabilidad": 4,
+          "factibilidad": 3,
+          "viabilidad": 4,
+          "impacto": 3,
+          "scoreTotal": 14,
+          "isWinningIdea": false
+        }
+      ],
+      "winningIdeaSummary": {
+        "title": "Módulo Web PWA RENDICION-DIGITAL para Organizaciones Agrarias (URIE)",
+        "rationale": "Obtuvo el mayor puntaje (19/20). Permite a las cooperativas cargar sus archivos XML/PDF de facturación electrónica, validándolos instantáneamente contra la SUNAT y comprobando su alineamiento con las partidas presupuestales aprobadas."
+      }
+    },
+    "H09_PrototipadoRapido": {
+      "projectCode": "PIIP-2026-IN0011",
+      "prototypeCode": "PROTO-IN0011-PWA",
+      "prototypeType": "Aplicación Web PWA Local-First (RENDICION-DIGITAL)",
+      "description": "Prototipo interactivo que incluye arrastrar y soltar de archivos XML/PDF, consulta simulada a Web Service de SUNAT, cálculo automático de saldos de partidas presupuestales y generación del Informe de Liquidación Contable en PDF.",
+      "keyScreens": [
+        "Dashboard de Estado de Rendiciones por Hito de Desembolso",
+        "Modulo de Carga y Validación Automática de Facturas XML",
+        "Tabla de Conciliación Presupuestal por Rubro (Maquinarias, Insumos, Asistencia Técnica)",
+        "Generador de Informe Técnico-Contable de Aprobación"
+      ],
+      "successMetrics": [
+        "Tiempo de validación de comprobante < 2 segundos",
+        "0% de comprobantes duplicados o con RUC no habido ingresados",
+        "Generación automática del reporte consolidado de rendición"
+      ]
+    },
+    "H10_PlanAccion": {
+      "projectCode": "PIIP-2026-IN0011",
+      "sprints": [
+        {
+          "sprintNumber": 1,
+          "duration": "3 semanas",
+          "goal": "Definición de reglas de validación contable e integración con estructura de partidas de Planes de Negocio",
+          "lead": "Sergio Antonio Haro Muñoz (URIE / UPP)"
+        },
+        {
+          "sprintNumber": 2,
+          "duration": "3 semanas",
+          "goal": "Desarrollo del Módulo Web RENDICION-DIGITAL PWA y motor de lectura XML/SUNAT",
+          "lead": "Unidad de Administración (UA-TI / URIE)"
+        },
+        {
+          "sprintNumber": 3,
+          "duration": "3 semanas",
+          "goal": "Pilotaje en campo con 15 organizaciones agrarias en proceso de rendición de cuentas en Junín, Cajamarca y San Martín",
+          "lead": "URIE / Unidades Regionales"
+        }
+      ]
+    },
+    "H11_MatrizRiesgosTesteo": {
+      "projectCode": "PIIP-2026-IN0011",
+      "riskAssessment": [
+        {
+          "riskId": "RIESGO-01",
+          "category": "Tecnológico / Operativo",
+          "description": "Interrupción o indisponibilidad temporal del servicio de consulta Web Service de la SUNAT durante la carga masiva.",
+          "mitigationStrategy": "Implementación de cola de validación asíncrona en Local-First con reintento automático en segundo plano.",
+          "severity": "MEDIA"
+        },
+        {
+          "riskId": "RIESGO-02",
+          "category": "Operativo / Capacidades",
+          "description": "Dificultad de los tesoreros rurales para descargar el archivo XML original emitido por sus proveedores.",
+          "mitigationStrategy": "Módulo de captura alternativa via código QR e instructivos paso a paso en formato micro-learning.",
+          "severity": "BAJA"
+        }
+      ],
+      "learningCard": {
+        "testCode": "TEST-IN0011-01",
+        "hypothesis": "El uso del módulo RENDICION-DIGITAL reducirá el tiempo de liquidación contable de 45 días a menos de 48 horas.",
+        "findings": "En la prueba piloto con 15 organizaciones agrarias, el tiempo promedio de aprobación de la rendición disminuyó de 45 días a solo 3.5 horas (>99.2% de eficiencia), identificando 12 comprobantes observados antes de la presentación formal.",
+        "decision": "APROBADO PARA PASE A PRODUCCIÓN E INSTITUCIONALIZACIÓN EN EL PORTAFOLIO PIIP (ANEXO 5)"
+      }
+    }
+  }
+}

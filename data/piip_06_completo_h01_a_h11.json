@@ -1,0 +1,228 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0006",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 4,
+      "FaseNombre": "Fase 4: Entregar",
+      "HerramientaNumero": 11,
+      "HerramientaCodigo": "H11",
+      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
+      "VistaCodigo": "V11.1",
+      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje (PIIP-2026-IN0006)",
+      "VistaUrl": "fase4/11-matriz-riesgos.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 11,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
+      "PasoAnterior": {
+        "HerramientaCodigo": "H10",
+        "HerramientaNombre": "Plan de Acción (Hoja de Ruta)",
+        "VistaUrl": "fase4/10-plan-accion.html"
+      },
+      "PasoSiguiente": null
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-10-20T16:00:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "ProyectoIdentificacion": {
+    "id": 6,
+    "code": "PIIP-2026-IN0006",
+    "title": "Directiva para Fiscalización Posterior Basada en Riesgos",
+    "responsible": "Unidad de Planeamiento y Presupuesto (UPP)",
+    "contact": "Analista de Control y Fiscalización - UPP",
+    "date": "2026-09-20",
+    "opinionTecnicaPuntaje": "10/12 Puntos (Anexo 4 - Recomendable)",
+    "porcentajeAvanceGlobal": 100.0,
+    "phases": {
+      "descubrir": "completed",
+      "definir": "completed",
+      "idear": "completed",
+      "entregar": "completed"
+    }
+  },
+  "HerramientasMetodologicas": {
+    "FASE_1_DESCUBRIR": {
+      "H01_ObservacionAEIOU": [
+        {
+          "id": "aeiou-006-1",
+          "dimension": "Actividades",
+          "observation": "La fiscalización posterior de los incentivos liquidados se realiza de manera muestral aleatoria no ponderada (10% fijo), auditando expedientes de bajo riesgo y dejando fuera del control casos de alto presupuesto o sospecha de fraude.",
+          "timestamp": "2026-09-20T09:00:00Z"
+        },
+        {
+          "id": "aeiou-006-2",
+          "dimension": "Objetos",
+          "observation": "Los informes de fiscalización se redactan en formatos físicos heterogéneos sin matriz de evaluación de riesgos estandarizada.",
+          "timestamp": "2026-09-20T11:30:00Z"
+        }
+      ],
+      "H02_MapaEmpatia": {
+        "userProfile": "Analista de Control y Fiscalización (UPP)",
+        "says": "Invertimos el mismo esfuerzo auditando una compra de S/. 5,000 que un incentivo de Adopción de Tecnología de S/. 500,000.",
+        "does": "Muestra al azar expedientes archivados sin un scoring previo de riesgo.",
+        "thinks": "Debemos focalizar la fiscalización donde exista mayor probabilidad de desvío o falta de sustento.",
+        "feels": "Inseguro ante la posibilidad de no detectar irregularidades graves por muestreo aleatorio tradicional.",
+        "pains": "Carga administrativa alta en auditorías de bajo impacto y falta de criterios unificados de aleatoriedad ponderada.",
+        "gains": "Directiva aprobada, matriz de scoring automatizada e incrementos en la tasa de hallazgos relevantes de fiscalización."
+      },
+      "H03_EncuestasCampo": {
+        "sampleSize": 28,
+        "targetAudience": "Auditores y especialistas de control de UPP, UAJ y Unidades Regionales",
+        "keyResults": [
+          {
+            "question": "¿Considera eficiente el muestreo aleatorio plano del 10%?",
+            "percentageNo": 92.8
+          },
+          {
+            "question": "¿Cree conveniente implementar un modelo basado en matriz de riesgos?",
+            "percentageYes": 100.0
+          },
+          {
+            "question": "Criterios prioritarios de riesgo señalados",
+            "topOptions": [
+              "Monto del Incentivo (89%)",
+              "Historial de la Organización Agraria (82%)",
+              "Complejidad del Proveedor (75%)"
+            ]
+          }
+        ]
+      },
+      "H04_FichaPersona": {
+        "archetypeCode": "PERS-IN0006-01",
+        "name": "Abog. Carlos Mendoza Rivas",
+        "role": "Analista de Control y Fiscalización Posterior - UPP",
+        "age": 39,
+        "digitalLiteracy": "Avanzado (Dominio de hojas de cálculo, sistemas de auditoría y gestión documental)",
+        "primaryGoal": "Implementar un modelo predictivo de fiscalización basada en riesgos alineado al Sistema Nacional de Control."
+      }
+    },
+    "FASE_2_DEFINIR": {
+      "H05_MuroHallazgos": [
+        {
+          "clusterId": "CLUST-06-01",
+          "clusterName": "Ineficiencia del Muestreo Aleatorio Tradicional",
+          "insight": "El muestreo fijo del 10% dispersa la capacidad de auditoría; enfocar la muestra en el 20% de mayor riesgo financiero cubre el 80% del valor total de incentivos.",
+          "priority": "ALTA"
+        },
+        {
+          "clusterId": "CLUST-06-02",
+          "clusterName": "Directiva e Instrumentos Normativos de Fiscalización",
+          "insight": "Se requiere una Directiva Institucional aprobada por RDE que respalde legalmente la selección ponderada por riesgos.",
+          "priority": "ALTA"
+        }
+      ],
+      "H06_DefinicionDesafioHMW": {
+        "hmwCode": "HMW-IN0006",
+        "action": "aprobar una Directiva de Fiscalización Posterior Basada en Riesgos y desplegar un algoritmo de selección inteligente",
+        "targetUser": "los analistas de control de la UPP y auditores institucionales",
+        "benefit": "focalizar la fiscalización en expedientes de alto impacto financiero y elevar la efectividad en la detección de anomalías",
+        "constraint": "la resistencia al cambio frente al muestreo tradicional y las restricciones normativas del control gubernamental",
+        "finalHMWStatement": "¿Cómo podríamos aprobar una Directiva de Fiscalización Posterior Basada en Riesgos y desplegar un algoritmo de selección inteligente para que los analistas de control de la UPP focalicen las auditorías en expedientes de alto riesgo a pesar de la inercia del muestreo aleatorio tradicional?"
+      }
+    },
+    "FASE_3_IDEAR": {
+      "H07_LluviaIdeasCrazy8s": [
+        {
+          "ideaId": "IDEA-06-01",
+          "title": "Directiva Institucional con Módulo Web PWA de Scoring de Riesgo de Fiscalización (FISC-RISK)",
+          "author": "Analista de Control UPP",
+          "votes": 13
+        },
+        {
+          "ideaId": "IDEA-06-02",
+          "title": "Auditorías 100% presenciales para todas las organizaciones con incentivos mayores a 500 mil soles",
+          "author": "Especialista UAJ",
+          "votes": 5
+        }
+      ],
+      "H08_MatrizPriorizacion": {
+        "evaluationDate": "2026-10-05T11:00:00Z",
+        "ideasEvaluadas": [
+          {
+            "ideaId": "IDEA-06-01",
+            "title": "Directiva e Instrumento Web FISC-RISK para Fiscalización Basada en Riesgos",
+            "deseabilidad": 5,
+            "factibilidad": 4,
+            "viabilidad": 5,
+            "impacto": 5,
+            "scoreTotal": 19,
+            "isWinningIdea": true
+          },
+          {
+            "ideaId": "IDEA-06-02",
+            "title": "Auditorías presenciales masivas por tope de monto",
+            "deseabilidad": 3,
+            "factibilidad": 2,
+            "viabilidad": 3,
+            "impacto": 4,
+            "scoreTotal": 12,
+            "isWinningIdea": false
+          }
+        ],
+        "winningIdeaSummary": {
+          "title": "Directiva Institucional y Módulo Web FISC-RISK para Fiscalización Basada en Riesgos",
+          "rationale": "Ganadora con 19/20 puntos. Proporciona el marco legal (Directiva) y el motor tecnológico para clasificar expedientes por nivel de riesgo (Alto, Medio, Bajo) asegurando cobertura del 100% en casos críticos."
+        }
+      }
+    },
+    "FASE_4_ENTREGAR": {
+      "H09_PrototipadoRapido": {
+        "prototypeType": "Módulo Web PWA Local-First & Proyecto de Directiva de Fiscalización",
+        "keyFeatures": [
+          "Calculadora interactiva del Índice de Riesgo de Fiscalización (IRF) basada en 5 variables",
+          "Matriz de categorización automática (Riesgo Alto: Auditoría en 100% de casos; Riesgo Medio: 30%; Riesgo Bajo: 5%)",
+          "Generador automático de Actas de Fiscalización Posterior en PDF"
+        ],
+        "validationCriteria": "Aprobación técnica por UAJ/UPP y precisión del algoritmo > 90% en pruebas ciegas."
+      },
+      "H10_PlanAccion": {
+        "roadmapSprints": [
+          {
+            "sprintNumber": 1,
+            "durationWeeks": 3,
+            "objective": "Formulación del proyecto de Directiva de Fiscalización Basada en Riesgos y matriz de ponderación.",
+            "responsibleUnit": "UPP / UAJ"
+          },
+          {
+            "sprintNumber": 2,
+            "durationWeeks": 3,
+            "objective": "Desarrollo del módulo web PWA FISC-RISK e integración con la base de datos de incentivos.",
+            "responsibleUnit": "UA-TI / UPP"
+          },
+          {
+            "sprintNumber": 3,
+            "durationWeeks": 3,
+            "objective": "Prueba piloto de fiscalización en 40 expedientes cerrados en 2025 y elevación a Dirección Ejecutiva para aprobación formal.",
+            "responsibleUnit": "UPP / Alta Dirección"
+          }
+        ]
+      },
+      "H11_MatrizRiesgosYTesteo": {
+        "risksIdentified": [
+          {
+            "riskId": "RISK-06-01",
+            "category": "Legal",
+            "description": "Cuestionamiento de organizaciones agrarias fiscalizadas por cambio de metodología de muestreo.",
+            "mitigationStrategy": "Incluir en la Directiva la sustentación técnica de la NT-GIP y el principio de eficiencia del control posterior."
+          }
+        ],
+        "learningCards": [
+          {
+            "cardId": "TEST-IN0006-01",
+            "hypothesis": "El algoritmo FISC-RISK identificará un 300% más de inconsistencias reales que el muestreo aleatorio simple.",
+            "fieldTestResult": "En la muestra de 40 expedientes, FISC-RISK detectó 14 hallazgos relevantes vs. 3 hallazgos detectados previamente con muestreo plano (incremento del 366%).",
+            "decision": "Validado. Iniciar trámite de Resolución de Dirección Ejecutiva para la aprobación formal de la Directiva e inclusión en el Portafolio (Anexo 5)."
+          }
+        ],
+        "kanbanStatus": "Pase a Producción e Institucionalización en el Portafolio (Anexo 5) Aprobado"
+      }
+    }
+  }
+}

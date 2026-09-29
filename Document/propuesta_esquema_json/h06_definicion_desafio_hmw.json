@@ -1,0 +1,77 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0001",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 2,
+      "FaseNombre": "Fase 2: Definir",
+      "HerramientaNumero": 6,
+      "HerramientaCodigo": "H06",
+      "HerramientaNombre": "Definición del Desafío (How Might We - HMW)",
+      "VistaCodigo": "V06.1",
+      "VistaTitulo": "Herramienta H06: Definición del Desafío (How Might We - HMW)",
+      "VistaUrl": "06-definicion-desafio.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 6,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 6 de 11 (Fase 2: Definir)",
+      "PasoAnterior": "05-muro-hallazgos.html",
+      "PasoSiguiente": "07-lluvia-ideas.html"
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:00:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "ContratoEsquemaDatos": {
+    "HerramientaCodigo": "H06",
+    "HerramientaNombre": "Definición del Desafío (How Might We - HMW)",
+    "CamposModelo": {
+      "targetUser": {
+        "type": "String",
+        "label": "Usuario Objetivo (¿Para quién?)",
+        "required": true
+      },
+      "actionGoal": {
+        "type": "String",
+        "label": "Acción u Objetivo de Mejora (¿Qué queremos lograr?)",
+        "required": true
+      },
+      "constraintOrPain": {
+        "type": "String",
+        "label": "Obstáculo o Dolor a Superar (A pesar de...)",
+        "required": true
+      },
+      "hmwStatement": {
+        "type": "String",
+        "label": "Pregunta Estructurada HMW ('¿Cómo podríamos...?')",
+        "required": true
+      },
+      "status": {
+        "type": "Enum",
+        "values": [
+          "Borrador",
+          "Validado por Equipo",
+          "Aprobado UPP"
+        ],
+        "label": "Estado del Desafío",
+        "required": true
+      }
+    }
+  },
+  "RegistrosEjemploGrounded": [
+    {
+      "id": 601,
+      "projectCode": "PIIP-2026-IN0001",
+      "targetUser": "los directivos y socios de organizaciones agrarias beneficiarias de AGROIDEAS",
+      "actionGoal": "brindarles una capacitación formativa continua y certificada en gestión empresarial",
+      "constraintOrPain": "las barreras de distancia geográfica y la baja conectividad a internet en sus parcelas",
+      "hmwStatement": "¿Cómo podríamos brindar una capacitación formativa continua y certificada a los directivos de organizaciones agrarias a pesar de las barreras de distancia y la conectividad inestable?",
+      "status": "Aprobado UPP"
+    }
+  ]
+}

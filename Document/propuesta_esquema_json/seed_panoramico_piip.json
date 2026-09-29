@@ -1,0 +1,527 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0001",
+    "UbicacionActual": {
+      "TipoVista": "DASHBOARD",
+      "FaseNumero": 0,
+      "FaseNombre": "Vista General / Portafolio",
+      "HerramientaNumero": null,
+      "HerramientaCodigo": "DASHBOARD",
+      "HerramientaNombre": "Tablero Principal del Portafolio PIIP",
+      "VistaCodigo": "V00.0",
+      "VistaTitulo": "Portafolio Institucional de Innovación (PIIP) - AGROIDEAS",
+      "VistaUrl": "index.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 0,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Inicio / Control del Portafolio",
+      "PasoAnterior": null,
+      "PasoSiguiente": {
+        "HerramientaCodigo": "H01",
+        "HerramientaNombre": "Observación (Método AEIOU)",
+        "VistaUrl": "01-observacion.html"
+      }
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T10:00:00Z",
+      "UsuarioActualRol": "Administrador UPP"
+    }
+  },
+  "PortafolioPIIP_Coleccion": [
+    {
+      "id": 1,
+      "code": "PIIP-2026-IN0001",
+      "title": "Plataforma Formativa Blended Learning para Organizaciones Agrarias",
+      "responsible": "Unidad de Promoción y Desarrollo de Capacidades (UPDC)",
+      "contact": "Especialista en Capacitación Agraria - UPDC",
+      "date": "2026-09-15",
+      "status": "Fase 3: Idear",
+      "PorcentajeAvanceGlobal": 62.5,
+      "herramientasRegistradasContador": 5,
+      "phases": {
+        "descubrir": "completed",
+        "definir": "completed",
+        "idear": "active",
+        "entregar": "pending"
+      }
+    },
+    {
+      "id": 2,
+      "code": "PIIP-2026-IN0002",
+      "title": "Sistema Digital de Monitoreo de Planes de Negocio",
+      "responsible": "Unidad de Negocios (UN)",
+      "contact": "Fernando Ademir Loayza Choque - UN",
+      "date": "2026-09-16",
+      "status": "Fase 3: Idear",
+      "PorcentajeAvanceGlobal": 62.5,
+      "herramientasRegistradasContador": 7,
+      "phases": {
+        "descubrir": "completed",
+        "definir": "completed",
+        "idear": "active",
+        "entregar": "pending"
+      }
+    },
+    {
+      "id": 3,
+      "code": "PIIP-2026-IN0003",
+      "title": "Base de Datos Dinámica de Criterios Legales para Unidades Regionales",
+      "responsible": "Unidad de Asesoría Jurídica (UAJ)",
+      "contact": "Especialista Legal - UAJ",
+      "date": "2026-09-17",
+      "status": "Fase 2: Definir",
+      "PorcentajeAvanceGlobal": 37.5,
+      "herramientasRegistradasContador": 4,
+      "phases": {
+        "descubrir": "completed",
+        "definir": "active",
+        "idear": "pending",
+        "entregar": "pending"
+      }
+    },
+    {
+      "id": 4,
+      "code": "PIIP-2026-IN0004",
+      "title": "Lineamientos para la Digitalización Integral de Expedientes de Incentivos",
+      "responsible": "Unidad de Planeamiento y Presupuesto (UPP)",
+      "contact": "Alex Dario Abad Escalante - UPP",
+      "date": "2026-09-18",
+      "status": "Fase 2: Definir",
+      "PorcentajeAvanceGlobal": 37.5,
+      "herramientasRegistradasContador": 3,
+      "phases": {
+        "descubrir": "completed",
+        "definir": "active",
+        "idear": "pending",
+        "entregar": "pending"
+      }
+    },
+    {
+      "id": 5,
+      "code": "PIIP-2026-IN0005",
+      "title": "Sistema de Alerta Temprana para Riesgos en Ejecución de Incentivos",
+      "responsible": "Unidad de Planeamiento y Presupuesto (UPP) / USE",
+      "contact": "Especialista en Monitoreo - UPP",
+      "date": "2026-09-19",
+      "status": "Fase 3: Idear",
+      "PorcentajeAvanceGlobal": 62.5,
+      "herramientasRegistradasContador": 6,
+      "phases": {
+        "descubrir": "completed",
+        "definir": "completed",
+        "idear": "active",
+        "entregar": "pending"
+      }
+    },
+    {
+      "id": 6,
+      "code": "PIIP-2026-IN0006",
+      "title": "Directiva para Fiscalización Posterior Basada en Riesgos",
+      "responsible": "Unidad de Planeamiento y Presupuesto (UPP)",
+      "contact": "Analista de Control - UPP",
+      "date": "2026-09-20",
+      "status": "Fase 1: Descubrir",
+      "PorcentajeAvanceGlobal": 12.5,
+      "herramientasRegistradasContador": 2,
+      "phases": {
+        "descubrir": "active",
+        "definir": "pending",
+        "idear": "pending",
+        "entregar": "pending"
+      }
+    },
+    {
+      "id": 7,
+      "code": "PIIP-2026-IN0007",
+      "title": "Sistema Digital de Evaluación de Elegibilidad con Georreferenciación (SDEG)",
+      "responsible": "Dirección Ejecutiva - Coordinación Técnica Regional (CTR)",
+      "contact": "José Fernando Barturen Torres - CTR",
+      "date": "2026-09-21",
+      "status": "Fase 4: Entregar",
+      "PorcentajeAvanceGlobal": 87.5,
+      "herramientasRegistradasContador": 10,
+      "phases": {
+        "descubrir": "completed",
+        "definir": "completed",
+        "idear": "completed",
+        "entregar": "active"
+      }
+    },
+    {
+      "id": 8,
+      "code": "PIIP-2026-IN0008",
+      "title": "Nueva Arquitectura e Infraestructura del Sistema en Línea SEL v2.0",
+      "responsible": "Unidad de Administración (UA) - TI",
+      "contact": "Arquitecto de Software - TI",
+      "date": "2026-09-22",
+      "status": "Fase 3: Idear",
+      "PorcentajeAvanceGlobal": 62.5,
+      "herramientasRegistradasContador": 5,
+      "phases": {
+        "descubrir": "completed",
+        "definir": "completed",
+        "idear": "active",
+        "entregar": "pending"
+      }
+    },
+    {
+      "id": 9,
+      "code": "PIIP-2026-IN0009",
+      "title": "Plataforma Digital de Gestión y Programación de Vacaciones del Personal",
+      "responsible": "Unidad de Administración (UA) - Recursos Humanos",
+      "contact": "Especialista en RRHH - UA",
+      "date": "2026-09-23",
+      "status": "Fase 1: Descubrir",
+      "PorcentajeAvanceGlobal": 12.5,
+      "herramientasRegistradasContador": 1,
+      "phases": {
+        "descubrir": "active",
+        "definir": "pending",
+        "idear": "pending",
+        "entregar": "pending"
+      }
+    },
+    {
+      "id": 10,
+      "code": "PIIP-2026-IN0010",
+      "title": "Implementación de Casilla Electrónica para Notificaciones Institucionales",
+      "responsible": "Unidad de Planeamiento y Presupuesto (UPP) / UA",
+      "contact": "Especialista en Trámite Documentario - UPP",
+      "date": "2026-09-24",
+      "status": "Fase 2: Definir",
+      "PorcentajeAvanceGlobal": 37.5,
+      "herramientasRegistradasContador": 3,
+      "phases": {
+        "descubrir": "completed",
+        "definir": "active",
+        "idear": "pending",
+        "entregar": "pending"
+      }
+    },
+    {
+      "id": 11,
+      "code": "PIIP-2026-IN0011",
+      "title": "Automatización del Proceso de Rendición de Cuentas de Organizaciones Agrarias",
+      "responsible": "Unidad de Reconversión e Intervenciones Especiales (URIE)",
+      "contact": "Sergio Antonio Haro Muñoz - URIE",
+      "date": "2026-09-25",
+      "status": "Fase 3: Idear",
+      "PorcentajeAvanceGlobal": 62.5,
+      "herramientasRegistradasContador": 6,
+      "phases": {
+        "descubrir": "completed",
+        "definir": "completed",
+        "idear": "active",
+        "entregar": "pending"
+      }
+    },
+    {
+      "id": 12,
+      "code": "PIIP-2026-IN0012",
+      "title": "Portal de Transparencia Interactivo para Beneficiarios del Programa AGROIDEAS",
+      "responsible": "Unidad de Reconversión e Intervenciones Especiales (URIE)",
+      "contact": "Sergio Antonio Haro Muñoz - URIE",
+      "date": "2026-09-26",
+      "status": "Fase 1: Descubrir",
+      "PorcentajeAvanceGlobal": 12.5,
+      "herramientasRegistradasContador": 2,
+      "phases": {
+        "descubrir": "active",
+        "definir": "pending",
+        "idear": "pending",
+        "entregar": "pending"
+      }
+    },
+    {
+      "id": 13,
+      "code": "PIIP-2026-IN0013",
+      "title": "Innovación en la ejecución y acceso a la Estrategia de Emprendimiento de la Mujer Rural e Indígena (EEMRI)",
+      "responsible": "Dirección Ejecutiva / URIE / UPDC",
+      "contact": "Jorge Augusto Amaya Castillo - Director Ejecutivo",
+      "date": "2026-09-27",
+      "status": "Fase 2: Definir",
+      "PorcentajeAvanceGlobal": 37.5,
+      "herramientasRegistradasContador": 4,
+      "phases": {
+        "descubrir": "completed",
+        "definir": "active",
+        "idear": "pending",
+        "entregar": "pending"
+      }
+    }
+  ],
+  "HerramientasMetodologicas_Coleccion": {
+    "H01_ObservacionAEIOU": [
+      {
+        "id": 101,
+        "projectCode": "PIIP-2026-IN0001",
+        "activity": "Taller presencial de gestión empresarial con directivos de la Cooperativa Sol del Norte en Piura.",
+        "environment": "Local comunitario sin conexión estable a Internet.",
+        "interactions": "El capacitador explica diapositivas en laptop; los productores toman notas manuales.",
+        "objects": "Folletos impresos, cuaderno de notas, smartphone sin datos.",
+        "users": "Directivos agrarios (edad promedio 52 años), bajo dominio de herramientas digitales.",
+        "date": "2026-09-18"
+      },
+      {
+        "id": 102,
+        "projectCode": "PIIP-2026-IN0002",
+        "activity": "Verificación del cumplimiento de hitos del plan de negocio de café especial.",
+        "environment": "Parcela agrícola en Selva Central (Junín).",
+        "interactions": "Especialista zonal requiere llenar formularios físicos y luego digitalizarlos en la oficina regional.",
+        "objects": "Ficha de campo física, cámara fotográfica, tabla con sujetador.",
+        "users": "Especialista de Negocios y socio de la organización agraria.",
+        "date": "2026-09-19"
+      },
+      {
+        "id": 103,
+        "projectCode": "PIIP-2026-IN0007",
+        "activity": "Inspección de lindero y verificación de georreferenciación de predios agrícolas.",
+        "environment": "Campo abierto en Cusco (Anta).",
+        "interactions": "Evaluador busca señal GPS pero la cobertura celular es nula.",
+        "objects": "GPS Garmin portátil, fichas de elegibilidad en papel.",
+        "users": "Evaluador de elegibilidad de la CTR.",
+        "date": "2026-09-22"
+      }
+    ],
+    "H02_MapaEmpatia": [
+      {
+        "id": 201,
+        "projectCode": "PIIP-2026-IN0001",
+        "userProfile": "Directivo de Organización Agraria",
+        "thinksAndFeels": "Siente temor a utilizar herramientas virtuales complejas que le hagan perder tiempo.",
+        "hears": "Que el MIDAGRI está digitalizando todos los trámites y capacitaciones.",
+        "sees": "Jóvenes capacitándose por celular, pero pocos materiales adaptados al agro.",
+        "saysAndDoes": "Asiste a las reuniones presenciales pero le cuesta dar seguimiento a distancia.",
+        "pains": "Pérdida de jornadas de trabajo por viajar a la capital regional para capacitarse.",
+        "gains": "Aprender a su propio ritmo sin abandonar la producción de su parcela."
+      },
+      {
+        "id": 202,
+        "projectCode": "PIIP-2026-IN0007",
+        "userProfile": "Evaluador Regional de Elegibilidad (CTR)",
+        "thinksAndFeels": "Frustración por tener que digitar dos veces la misma información.",
+        "hears": "Exigencias de reducir los tiempos de respuesta de elegibilidad.",
+        "sees": "Acumulación de expedientes físicos en la oficina zonal.",
+        "saysAndDoes": "Realiza el trabajo de campo de día y llena datos de noche en Excel.",
+        "pains": "Riesgo de errores en la digitación manual de coordenadas de terreno.",
+        "gains": "Aplicativo móvil offline que capture fotos y coordenadas GPS en un solo clic."
+      }
+    ],
+    "H03_EncuestasCampo": [
+      {
+        "id": 301,
+        "projectCode": "PIIP-2026-IN0001",
+        "sampleSize": 45,
+        "targetAudience": "Socios de organizaciones agrarias en Piura y Cajamarca",
+        "keyFinding": "El 78% prefiere videos cortos explicativos en WhatsApp combinados con 1 sesión presencial mensual.",
+        "date": "2026-09-20"
+      },
+      {
+        "id": 302,
+        "projectCode": "PIIP-2026-IN0002",
+        "sampleSize": 28,
+        "targetAudience": "Especialistas Zonales de la Unidad de Negocios",
+        "keyFinding": "El 92% considera que el llenado manual de informes de monitoreo consume más del 40% de su tiempo laboral.",
+        "date": "2026-09-21"
+      }
+    ],
+    "H04_FichaPersona": [
+      {
+        "id": 401,
+        "projectCode": "PIIP-2026-IN0001",
+        "archetype": "Don Mateo - Líder Agrario Tradicional",
+        "age": 54,
+        "role": "Presidente de la Asociación de Productores de Banano Orgánico",
+        "quote": "Si el curso no me ayuda a vender mejor mi producción esta semana, no me sirve de mucho.",
+        "techSkill": "Básica (WhatsApp y llamadas)"
+      },
+      {
+        "id": 402,
+        "projectCode": "PIIP-2026-IN0013",
+        "archetype": "Rosario - Emprendedora Rural EEMRI",
+        "age": 38,
+        "role": "Líder de Comité de Mujeres Productoras de Queso Artesanal",
+        "quote": "Queremos capacitarnos y acceder a los fondos de la estrategia sin tantas trabas de papeles.",
+        "techSkill": "Intermedia (Maneja redes sociales y banca móvil)"
+      }
+    ],
+    "H05_MuroHallazgos": [
+      {
+        "id": 501,
+        "projectCode": "PIIP-2026-IN0001",
+        "category": "Infraestructura Digital",
+        "insight": "La capacitación 100% virtual fracasa en zonas rurales por falta de conectividad continua; se requiere modelo Blended Asincrónico y Offline.",
+        "evidenceSource": "AEIOU-101 y Encuesta-301"
+      },
+      {
+        "id": 502,
+        "projectCode": "PIIP-2026-IN0002",
+        "category": "Procesos Internos",
+        "insight": "El monitoreo de planes de negocio carece de alertas tempranas; los retrasos se detectan cuando la rendición de cuenta ya venció.",
+        "evidenceSource": "Entrevistas UN"
+      },
+      {
+        "id": 503,
+        "projectCode": "PIIP-2026-IN0007",
+        "category": "Tecnología de Campo",
+        "insight": "La captura manual de lindero genera observaciones legales recurrentes que congelan la elegibilidad de la organización.",
+        "evidenceSource": "Reportes UAJ y CTR"
+      }
+    ],
+    "H06_DefinicionDesafioHMW": [
+      {
+        "id": 601,
+        "projectCode": "PIIP-2026-IN0001",
+        "hmwQuestion": "¿Cómo podríamos diseñar una experiencia formativa semipresencial (Blended Learning) que fortalezca las capacidades empresariales de los directivos agrarios, reduciendo la dependencia de conectividad web continua?",
+        "targetUser": "Directivos de Organizaciones Agrarias",
+        "desiredOutcome": "Incremento del 50% en la tasa de finalización de capacitaciones."
+      },
+      {
+        "id": 602,
+        "projectCode": "PIIP-2026-IN0002",
+        "hmwQuestion": "¿Cómo podríamos automatizar el flujo de captura de datos de monitoreo en parcelas para que los especialistas zonales registren avances en tiempo real sin duplicar esfuerzos en gabinete?",
+        "targetUser": "Especialistas Zonales de la Unidad de Negocios",
+        "desiredOutcome": "Reducción del tiempo de reporte de 5 días a 24 horas."
+      },
+      {
+        "id": 603,
+        "projectCode": "PIIP-2026-IN0007",
+        "hmwQuestion": "¿Cómo podríamos validar automáticamente la elegibilidad y lindero de predios mediante georreferenciación móvil en campo, asegurando validez jurídica inmediata?",
+        "targetUser": "Evaluadores Regionales de Elegibilidad",
+        "desiredOutcome": "Cero expedientes devueltos por errores de coordenadas."
+      }
+    ],
+    "H07_LluviaIdeasCrazy8s": [
+      {
+        "id": 701,
+        "projectCode": "PIIP-2026-IN0001",
+        "ideaTitle": "Micro-módulos descargables en PWA (Progressive Web App) con sincronización automática.",
+        "author": "Especialista UPDC",
+        "category": "Digital / Mobile"
+      },
+      {
+        "id": 702,
+        "projectCode": "PIIP-2026-IN0001",
+        "ideaTitle": "Bot pedagógico interactivo en WhatsApp impulsado por IA para resolver dudas frecuentes.",
+        "author": "Analista TI",
+        "category": "Inteligencia Artificial"
+      },
+      {
+        "id": 703,
+        "projectCode": "PIIP-2026-IN0002",
+        "ideaTitle": "App móvil de supervisión con captura de fotos georreferenciadas y sello de tiempo inmutable.",
+        "author": "Fernando Loayza - UN",
+        "category": "Monitoreo Digital"
+      },
+      {
+        "id": 704,
+        "projectCode": "PIIP-2026-IN0007",
+        "ideaTitle": "Módulo de captura biométrica y GPS offline integrado a la ficha digital SDEG.",
+        "author": "José Barturen - CTR",
+        "category": "Georreferenciación"
+      }
+    ],
+    "H08_MatrizPriorizacion": [
+      {
+        "id": 801,
+        "projectCode": "PIIP-2026-IN0001",
+        "ideaId": 701,
+        "deseabilidad": 5,
+        "factibilidad": 4,
+        "viabilidad": 4,
+        "impacto": 5,
+        "scoreTotal": 18,
+        "status": "IDEA GANADORA SELECCIONADA"
+      },
+      {
+        "id": 802,
+        "projectCode": "PIIP-2026-IN0001",
+        "ideaId": 702,
+        "deseabilidad": 4,
+        "factibilidad": 3,
+        "viabilidad": 3,
+        "impacto": 4,
+        "scoreTotal": 14,
+        "status": "EN RESERVA"
+      },
+      {
+        "id": 803,
+        "projectCode": "PIIP-2026-IN0002",
+        "ideaId": 703,
+        "deseabilidad": 5,
+        "factibilidad": 4,
+        "viabilidad": 5,
+        "impacto": 5,
+        "scoreTotal": 19,
+        "status": "IDEA GANADORA SELECCIONADA"
+      },
+      {
+        "id": 804,
+        "projectCode": "PIIP-2026-IN0007",
+        "ideaId": 704,
+        "deseabilidad": 5,
+        "factibilidad": 5,
+        "viabilidad": 4,
+        "impacto": 5,
+        "scoreTotal": 19,
+        "status": "IDEA GANADORA SELECCIONADA"
+      }
+    ],
+    "H09_PrototipadoRapido": [
+      {
+        "id": 901,
+        "projectCode": "PIIP-2026-IN0001",
+        "prototypeType": "Prototipo de Interfaz Web / PWA (Figma + HTML Local-First)",
+        "version": "v1.0-beta",
+        "description": "Navegación por tarjetas de aprendizaje de 5 minutos, visor de video comprimido y evaluación corta offline.",
+        "urlArtifact": "https://waltervasquezpina-arch.github.io/app_sistema_doble_diamante/prototipos/pwa-blended.html"
+      },
+      {
+        "id": 902,
+        "projectCode": "PIIP-2026-IN0007",
+        "prototypeType": "App Móvil APK / PWA Georreferenciada",
+        "version": "v2.1",
+        "description": "Formulario SDEG con mapa interactivo Leaflet/OpenStreetMap y captura de polígonos de parcela offline.",
+        "urlArtifact": "https://waltervasquezpina-arch.github.io/app_sistema_doble_diamante/prototipos/sdeg-mobile.html"
+      }
+    ],
+    "H10_PlanAccion": [
+      {
+        "id": 1001,
+        "projectCode": "PIIP-2026-IN0001",
+        "task": "Piloto de la PWA Blended Learning con 3 Cooperativas de Piura",
+        "responsible": "Equipo UPDC + Consultor UI",
+        "deadline": "2026-10-15",
+        "status": "En Progreso"
+      },
+      {
+        "id": 1002,
+        "projectCode": "PIIP-2026-IN0007",
+        "task": "Taller de validación de captura de coordenadas con evaluadores de Cusco y Junín",
+        "responsible": "José Barturen (CTR) + OTI",
+        "deadline": "2026-10-10",
+        "status": "Completado"
+      }
+    ],
+    "H11_MatrizRiesgosTesteo": [
+      {
+        "id": 1101,
+        "projectCode": "PIIP-2026-IN0001",
+        "risk": "Baja tasa de adopción si el peso de la PWA supera los 15MB de almacenamiento en smartphones de gama baja.",
+        "mitigation": "Optimizar assets multimedia usando formatos WebP y fuentes del sistema.",
+        "severity": "Media"
+      },
+      {
+        "id": 1102,
+        "projectCode": "PIIP-2026-IN0007",
+        "risk": "Desalineación entre las coordenadas capturadas offline y el catastro oficial de la UAJ.",
+        "mitigation": "Incorporar API de validación catastral durante la sincronización a la base de datos central.",
+        "severity": "Alta"
+      }
+    ]
+  }
+}

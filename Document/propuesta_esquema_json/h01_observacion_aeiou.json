@@ -1,0 +1,95 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0001",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 1,
+      "FaseNombre": "Fase 1: Descubrir",
+      "HerramientaNumero": 1,
+      "HerramientaCodigo": "H01",
+      "HerramientaNombre": "Observación (Método AEIOU)",
+      "VistaCodigo": "V01.1",
+      "VistaTitulo": "Herramienta H01: Observación (Método AEIOU)",
+      "VistaUrl": "01-observacion.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 1,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 1 de 11 (Fase 1: Descubrir)",
+      "PasoAnterior": "index.html",
+      "PasoSiguiente": "02-mapa-empatia.html"
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:00:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "ContratoEsquemaDatos": {
+    "HerramientaCodigo": "H01",
+    "HerramientaNombre": "Observación (Método AEIOU)",
+    "CamposModelo": {
+      "activity": {
+        "type": "String",
+        "label": "Actividades (Activities)",
+        "required": true
+      },
+      "environment": {
+        "type": "String",
+        "label": "Entorno (Environments)",
+        "required": true
+      },
+      "interaction": {
+        "type": "String",
+        "label": "Interacciones (Interactions)",
+        "required": true
+      },
+      "object": {
+        "type": "String",
+        "label": "Objetos (Objects)",
+        "required": true
+      },
+      "user": {
+        "type": "String",
+        "label": "Usuarios (Users)",
+        "required": true
+      },
+      "observer": {
+        "type": "String",
+        "label": "Observador / Evaluador",
+        "required": true
+      },
+      "observationDate": {
+        "type": "DateString",
+        "label": "Fecha de Observación",
+        "required": true
+      }
+    }
+  },
+  "RegistrosEjemploGrounded": [
+    {
+      "id": 101,
+      "projectCode": "PIIP-2026-IN0001",
+      "activity": "Taller presencial de gestión empresarial para la Cooperativa Agraria Junín.",
+      "environment": "Local comunal de la organización agraria con conectividad móvil inestable.",
+      "interaction": "El capacitador explica diapositivas; los productores hacen preguntas sobre registro contable.",
+      "object": "Cuadernos de notas, proyector portátil, teléfonos móviles con WhatsApp.",
+      "user": "Socios de organizaciones agrarias, líderes comunitarios y especialistas de UPDC.",
+      "observer": "Especialista de Capacitación UPDC",
+      "observationDate": "2026-09-10"
+    },
+    {
+      "id": 102,
+      "projectCode": "PIIP-2026-IN0007",
+      "activity": "Evaluación de elegibilidad en campo de predios agrícolas en San Martín.",
+      "environment": "Parcelas agrícolas remotas sin cobertura de red de datos 4G.",
+      "interaction": "El evaluador llena fichas físicas en papel mientras conversa con el dirigente de la OPA.",
+      "object": "Fichas impresas, cámara fotográfica, receptor GPS de mano.",
+      "user": "Evaluadores regionales CTR y dirigentes de organizaciones agrarias.",
+      "observer": "José Fernando Barturen Torres - CTR",
+      "observationDate": "2026-09-12"
+    }
+  ]
+}

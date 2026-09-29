@@ -1,0 +1,224 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0005",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 4,
+      "FaseNombre": "Fase 4: Entregar",
+      "HerramientaNumero": 11,
+      "HerramientaCodigo": "H11",
+      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
+      "VistaCodigo": "V11.1",
+      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje",
+      "VistaUrl": "fase4/11-matriz-riesgos.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 11,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
+      "PasoAnterior": {
+        "HerramientaCodigo": "H10",
+        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
+        "VistaUrl": "fase4/10-plan-accion.html"
+      },
+      "PasoSiguiente": null
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-10-12T17:30:00Z",
+      "UsuarioActualRol": "Facilitador Ágil / Especialista UPP-USE"
+    }
+  },
+  "ProyectoDetalleMaestro": {
+    "id": 5,
+    "code": "PIIP-2026-IN0005",
+    "title": "Sistema de Alerta Temprana para Riesgos en Ejecución de Incentivos (SAT-INCENTIVOS)",
+    "responsible": "Unidad de Planeamiento y Presupuesto (UPP) / Unidad de Seguimiento y Evaluación (USE)",
+    "contact": "Especialista en Monitoreo y Riesgos - UPP/USE",
+    "date": "2026-09-19",
+    "status": "Fase 4: Entregar",
+    "porcentajeAvanceGlobal": 100.0,
+    "evaluacionTecnicaPuntaje": "10 / 12 Puntos (Impacto: 3, Priorización Estratégica: 4, Enfoque de Innovación: 3)",
+    "phases": {
+      "descubrir": "completed",
+      "definir": "completed",
+      "idear": "completed",
+      "entregar": "completed"
+    }
+  },
+  "RegistrosHerramientasMetodologicas": {
+    "FASE_1_DESCUBRIR": {
+      "H01_ObservacionAEIOU": [
+        {
+          "id": "aeiou-005-1",
+          "dimension": "Actividades",
+          "observation": "Los retrasos e incumplimientos en las metas físicas y financieras de los Planes de Negocio se detectan ex-post, cuando el periodo de ejecución ya ha concluido o los recursos están comprometidos sin avance tangible.",
+          "timestamp": "2026-09-19T09:00:00Z"
+        },
+        {
+          "id": "aeiou-005-2",
+          "dimension": "Entorno",
+          "observation": "Monitoreo basado en informes trimestrales estáticos en papel o tabulaciones aisladas que impiden una reacción oportuna de la UPP y USE ante desviaciones de calendario.",
+          "timestamp": "2026-09-19T11:30:00Z"
+        }
+      ],
+      "H02_MapaEmpatia": {
+        "userProfile": "Especialista de Monitoreo de la USE / Analista UPP",
+        "says": "Nos enteramos de los problemas de ejecución cuando la organización ya está paralizada o vencida.",
+        "does": "Revisa manualmente reportes desfasados de las Unidades Regionales intentando identificar desfases.",
+        "thinks": "Necesitamos un sistema automatizado que calcule desvíos automáticamente y envíe alertas de semáforo antes de que ocurra la pérdida.",
+        "feels": "Preocupado por la falta de capacidad predictiva sobre la cartera de incentivos.",
+        "pains": "Incapacidad para intervenir preventivamente y alto costo operativo en fiscalizaciones tardías.",
+        "gains": "Anticipar desviaciones, proteger los recursos públicos invertidos y elevar la tasa de cumplimiento de los Planes de Negocio al 95%."
+      },
+      "H03_EncuestasCampo": {
+        "sampleSize": 32,
+        "targetAudience": "Especialistas de Monitoreo y Seguimiento de UPP, USE y Unidades Regionales",
+        "keyResults": [
+          {
+            "question": "¿Detecta desvíos de ejecución en tiempo real?",
+            "percentageNo": 90.6
+          },
+          {
+            "question": "¿Considera útil una matriz automatizada de semáforos de riesgo?",
+            "percentageYes": 100.0
+          },
+          {
+            "question": "Principales factores de riesgo a monitorear",
+            "topFactors": [
+              "Desfase presupuestal/desembolso",
+              "Demora en adquisición de maquinaria/activos",
+              "Cambios en directivas de la Organización Agraria"
+            ]
+          }
+        ]
+      },
+      "H04_FichaPersona": {
+        "archetypeCode": "PERS-IN0005-01",
+        "name": "Ing. Roberto Carlos Mendoza",
+        "role": "Especialista en Monitoreo y Evaluación de la USE",
+        "age": 41,
+        "digitalLiteracy": "Avanzado (Dominio de Excel analítico, bases de datos y dashboards BI)",
+        "primaryGoal": "Monitorear en tiempo real la ejecución de más de 300 incentivos activos con alertas tempranas automáticas."
+      }
+    },
+    "FASE_2_DEFINIR": {
+      "H05_MuroHallazgos": [
+        {
+          "clusterId": "CLUST-IN0005-01",
+          "clusterName": "Falta de Indicadores Predictivos Early-Warning",
+          "insight": "El control actual es reactivo. Un modelo de semáforos basado en desfases de cronograma (SPI) y presupuesto (CPI) permitiría intervenir 60 días antes del colapso.",
+          "priority": "CRÍTICA"
+        },
+        {
+          "clusterId": "CLUST-IN0005-02",
+          "clusterName": "Automatización de Notificaciones Preventivas",
+          "insight": "Las alertas no deben quedarse en un sistema; deben notificarse automáticamente por correo/alertas a los responsables de las Unidades Regionales.",
+          "priority": "ALTA"
+        }
+      ],
+      "H06_DefinicionDesafioHMW": {
+        "hmwCode": "HMW-IN0005",
+        "action": "desarrollar un Sistema de Alerta Temprana automatizado con algoritmo predictivo de desvíos y matriz de semáforos de riesgo (SAT-INCENTIVOS)",
+        "targetUser": "los especialistas de monitoreo de la USE, UPP y Unidades Regionales",
+        "benefit": "identificar e intervenir preventivamente ante riesgos de paralización en la ejecución de incentivos agrarios",
+        "constraint": "la disparidad de reporte entre sedes regionales y la necesidad de alertas objetivas sin incrementar la carga de llenado manual",
+        "finalHMWStatement": "¿Cómo podríamos desarrollar un Sistema de Alerta Temprana automatizado con algoritmo predictivo de desvíos y matriz de semáforos para que los especialistas de monitoreo de la USE, UPP y Unidades Regionales identifiquen e intervengan preventivamente en la ejecución de incentivos agrarios a pesar de la heterogeneidad de reportes en campo y sin elevar la carga burocrática?"
+      }
+    },
+    "FASE_3_IDEAR": {
+      "H07_LluviaIdeasCrazy8s": [
+        {
+          "ideaId": "IDEA-IN0005-01",
+          "title": "Módulo Web SAT-INCENTIVOS Local-First con cálculo automático de índices de desvío (SPI/CPI) y alertas por semáforo (Verde, Amarillo, Rojo, Crítico)",
+          "author": "Especialista UPP/USE",
+          "votes": 14
+        },
+        {
+          "ideaId": "IDEA-IN0005-02",
+          "title": "Tablero de control estático en Excel compartido en red local",
+          "author": "Analista regional",
+          "votes": 3
+        }
+      ],
+      "H08_MatrizPriorizacion": {
+        "evaluationDate": "2026-09-27T10:30:00Z",
+        "ideasEvaluadas": [
+          {
+            "ideaId": "IDEA-IN0005-01",
+            "title": "Módulo Web SAT-INCENTIVOS con algoritmo de semáforo de riesgo y alertas automáticas",
+            "deseabilidad": 5,
+            "factibilidad": 4,
+            "viability": 5,
+            "impacto": 5,
+            "scoreTotal": 19,
+            "isWinningIdea": true
+          }
+        ],
+        "winningIdeaSummary": {
+          "title": "SAT-INCENTIVOS: Sistema de Alerta Temprana para Riesgos en Ejecución de Incentivos",
+          "rationale": "Resuelve la falta de predictividad calculando desvíos porcentuales entre avance físico y financiero planificado vs. real, generando alertas inmediatas de semáforo a cero costo de licencias."
+        }
+      }
+    },
+    "FASE_4_ENTREGAR": {
+      "H09_PrototipadoRapido": {
+        "prototypeCode": "PROTO-IN0005-PWA",
+        "prototypeType": "Progressive Web App (PWA) Local-First",
+        "title": "Panel Evaluador SAT-INCENTIVOS con Semáforos y Notificaciones de Desvío",
+        "features": [
+          "Filtro por Unidad Regional, Tipo de Incentivo (Adopción Tecnológica, Gestión, Planta) y Rango de Semáforo",
+          "Algoritmo de cálculo de riesgo: Verde (Desvío < 5%), Amarillo (5-15%), Rojo (15-30%), Crítico (> 30%)",
+          "Módulo de generación de Alertas Preventivas con ficha de acciones correctivas recomendadas",
+          "Exportación automatizada de reportes de riesgo consolidado para la Dirección Ejecutiva"
+        ]
+      },
+      "H10_PlanAccion": {
+        "planCode": "PLAN-IN0005-2026",
+        "sprints": [
+          {
+            "sprintNumber": 1,
+            "duration": "3 Semanas",
+            "focus": "Definición de algoritmo de scoring de riesgo y parametrización de Umbrales de Alerta con USE y UPP",
+            "lead": "UPP/USE"
+          },
+          {
+            "sprintNumber": 2,
+            "duration": "3 Semanas",
+            "focus": "Desarrollo del módulo web PWA, motor de cálculo JS y vista de semáforos interactivas",
+            "lead": "UA-TI / UPP"
+          },
+          {
+            "sprintNumber": 3,
+            "duration": "3 Semanas",
+            "focus": "Piloto de monitoreo con 50 incentivos en ejecución en Cusco, Junín y San Martín",
+            "lead": "USE / Unidades Regionales"
+          }
+        ]
+      },
+      "H11_MatrizRiesgosTesteo": {
+        "riskMatrix": [
+          {
+            "riskId": "RSK-IN0005-01",
+            "riskCategory": "Operativo / Calidad de Datos",
+            "description": "Reporte extemporáneo del avance físico por parte de la Unidad Regional.",
+            "severity": "ALTA",
+            "mitigationStrategy": "Notificación de alerta naranja automática al Jefe Regional por retraso en el cierre de mes."
+          }
+        ],
+        "testingCards": [
+          {
+            "testId": "TEST-IN0005-01",
+            "hypothesis": "El algoritmo SAT identifica desvíos críticos con al menos 45 días de anticipación frente al método tradicional.",
+            "sample": "50 incentivos monitoreados en piloto",
+            "result": "Confirmado: Se identificaron 8 casos de riesgo rojo con 52 días promedio de anticipación, permitiendo reestructurar el cronograma de adquisiciones sin pérdida de presupuesto.",
+            "validationStatus": "APROBADO E INSTITUCIONALIZADO"
+          }
+        ],
+        "kanbanStatus": "Pase a Producción e Integración en el Portafolio Institucional (Anexo 5) Aprobado."
+      }
+    }
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "IniciativaIdentificacion": {
+    "IniciativaCodigo": "PIIP-2026-IN0001",
+    "IniciativaNombre": "Plataforma Formativa Blended Learning para Organizaciones Agrarias",
+    "UnidadOrganicaResponsable": "Unidad de Promoción y Desarrollo de Capacidades (UPDC)",
+    "LiderProyecto": "Especialista en Capacitación Agraria - UPDC",
+    "PorcentajeAvanceGlobal": 100.0
+  },
+  "CierreFaseFormal": {
+    "FaseCerrada": "Fase 3: Idear",
+    "FechaCierre": "2026-09-27T11:35:00Z",
+    "AprobadoPor": "Unidad de Planeamiento y Presupuesto (UPP) / Facilitador Ágil UPDC",
+    "ActaCierre": "ACTA-CIERRE-F3-IN0001-2026",
+    "HitoAlcanzado": "Selección y Validación formal de la Idea Ganadora (PWA Blended Learning) y Transición Habilitada a Fase 4: Entregar",
+    "SiguienteFaseStatus": {
+      "Fase1_Descubrir": "completed",
+      "Fase2_Definir": "completed",
+      "Fase3_Idear": "completed",
+      "Fase4_Entregar": "active"
+    }
+  },
+  "RegistrosHerramientasMetodologicas": {
+    "FASE_1_DESCUBRIR": {
+      "H01_ObservacionAEIOU": [
+        {
+          "id": "aeiou-001-1",
+          "dimension": "Actividades",
+          "observation": "Los directivos agrarios viajan entre 3 y 5 horas para asistir a los talleres presenciales de AGROIDEAS, generando altas tasas de deserción.",
+          "timestamp": "2026-09-15T09:30:00Z"
+        },
+        {
+          "id": "aeiou-001-2",
+          "dimension": "Entorno",
+          "observation": "Baja o nula conectividad a internet de alta velocidad en las sedes comunales y parcelas de las cooperativas.",
+          "timestamp": "2026-09-15T11:15:00Z"
+        }
+      ],
+      "H02_MapaEmpatia": {
+        "userProfile": "Líder de Organización Agraria Beneficiaria",
+        "says": "No podemos abandonar las parcelas todo un fin de semana para ir a la capital regional a capacitarnos.",
+        "does": "Descarga manuales en PDF que rara vez puede leer en el celular por falta de formato adaptativo.",
+        "thinks": "Necesitamos cursos breves, en video y audio, que podamos revisar directamente en el campo sin gastar datos.",
+        "feels": "Frustrado por la falta de herramientas modernas adaptadas a la realidad rural.",
+        "pains": "Pérdida de jornadas de trabajo agrícola y falta de seguimiento continuo a los planes de negocio.",
+        "gains": "Fortalecer la gestión administrativa de la cooperativa y acceder a nuevos incentivos de adopción tecnológica."
+      },
+      "H03_EncuestasCampo": {
+        "sampleSize": 85,
+        "targetAudience": "Directivos de Organizaciones Agrarias (Junín, Cusco, San Martín)",
+        "keyResults": [
+          {
+            "question": "¿Cuenta con smartphone?",
+            "percentageYes": 88.2
+          },
+          {
+            "question": "¿Prefiere capacitación virtual síncrona o módulos interactivos offline?",
+            "preferredOption": "Módulos interactivos descargables (76.5%)"
+          },
+          {
+            "question": "Formatos más accesibles",
+            "topFormats": [
+              "Micro-videos (5-8 min)",
+              "Audio-guías en lenguaje sencillo",
+              "Evaluaciones tipo trivia"
+            ]
+          }
+        ]
+      },
+      "H04_FichaPersona": {
+        "archetypeCode": "PERS-IN0001-01",
+        "name": "Marcos Quispe Huamán",
+        "role": "Presidente de Cooperativa Cacaotera",
+        "age": 42,
+        "digitalLiteracy": "Intermedio (Uso diario de WhatsApp y cámara móvil, poco uso de laptops)",
+        "primaryGoal": "Capacitar a su junta directiva en rendición de cuentas sin interrumpir la cosecha."
+      }
+    },
+    "FASE_2_DEFINIR": {
+      "H05_MuroHallazgos": [
+        {
+          "clusterId": "CLUST-01",
+          "clusterName": "Aislamiento Geográfico y Conectividad Efímera",
+          "insight": "El aprendizaje debe ser Local-First: descargar contenidos cuando hay Wi-Fi en la ciudad y consumir en campo sin internet.",
+          "priority": "ALTA"
+        },
+        {
+          "clusterId": "CLUST-02",
+          "clusterName": "Formatos Pedagógicos Flexibles (Micro-learning)",
+          "insight": "Documentos de más de 30 páginas no se leen; se requieren píldoras formativas de no más de 10 minutos con validez oficial.",
+          "priority": "ALTA"
+        }
+      ],
+      "H06_DefinicionDesafioHMW": {
+        "hmwCode": "HMW-IN0001",
+        "action": "facilitar módulos formativos interactivos y descargables en formato Blended Learning",
+        "targetUser": "los líderes y directivos de las organizaciones agrarias beneficiarias",
+        "benefit": "fortalecer sus competencias en gestión, ejecución de planes de negocio y rendición de cuentas",
+        "constraint": "las limitaciones de conectividad a internet en zonas rurales y el tiempo restringido por labores agrícolas",
+        "finalHMWStatement": "¿Cómo podríamos facilitar módulos formativos interactivos y descargables en formato Blended Learning para que los líderes y directivos de las organizaciones agrarias fortalezcan sus competencias de gestión a pesar de la falta de conectividad en campo y el tiempo limitado por sus labores agrícolas?"
+      }
+    },
+    "FASE_3_IDEAR": {
+      "H07_LluviaIdeasCrazy8s": [
+        {
+          "ideaId": "IDEA-01",
+          "title": "Plataforma Web PWA Blended Learning con sincronización offline y micro-módulos multimedia",
+          "author": "Especialista UPDC",
+          "votes": 12
+        },
+        {
+          "ideaId": "IDEA-02",
+          "title": "Bot interactivo en WhatsApp impulsado por Inteligencia Artificial para consultas legales y financieras",
+          "author": "Analista OTI",
+          "votes": 7
+        },
+        {
+          "ideaId": "IDEA-03",
+          "title": "Distribución de kits físicos en USB/Tarjetas SD con videos pregrabados para las Unidades Regionales",
+          "author": "Especialista Regional",
+          "votes": 4
+        }
+      ],
+      "H08_MatrizPriorizacion": {
+        "evaluationDate": "2026-09-27T10:15:00Z",
+        "status": "COMPLETADO_Y_CERRADO",
+        "ideasEvaluadas": [
+          {
+            "ideaId": "IDEA-01",
+            "title": "Plataforma Web PWA Blended Learning con sincronización offline",
+            "deseabilidad": 5,
+            "factibilidad": 4,
+            "viabilidad": 5,
+            "impacto": 5,
+            "scoreTotal": 19,
+            "isWinningIdea": true
+          },
+          {
+            "ideaId": "IDEA-02",
+            "title": "Bot interactivo en WhatsApp",
+            "deseabilidad": 4,
+            "factibilidad": 3,
+            "viabilidad": 4,
+            "impacto": 4,
+            "scoreTotal": 15,
+            "isWinningIdea": false
+          }
+        ],
+        "winningIdeaSummary": {
+          "title": "Plataforma Web PWA Blended Learning para Organizaciones Agrarias",
+          "rationale": "Obtuvo el mayor puntaje (19/20). Resuelve el reto de conectividad mediante tecnología Progressive Web App (PWA) de costo cero de licencias y alta deseabilidad en los productores."
+        }
+      }
+    },
+    "FASE_4_ENTREGAR": {
+      "H09_PrototipadoRapido": {
+        "prototypeId": "PROTO-IN0001-01",
+        "prototypeType": "PWA - Progressive Web App (HTML5 + JS Local-First)",
+        "screens": [
+          {
+            "screenId": "SCR-01",
+            "name": "Dashboard del Productor",
+            "description": "Resumen de módulos descargados e indicador de estado de red (Online/Offline)."
+          },
+          {
+            "screenId": "SCR-02",
+            "name": "Reproductor de Micro-curso",
+            "description": "Video/Audio local con transcripción sincronizada y botón de toma de notas."
+          },
+          {
+            "screenId": "SCR-03",
+            "name": "Trivia de Evaluación",
+            "description": "Cuestionario interactivo de 5 preguntas con validación local y certificado diferido."
+          }
+        ],
+        "acceptanceCriteria": [
+          "Carga inicial de pantalla en menos de 1.5 segundos en dispositivos Android 8.0+",
+          "Funcionamiento 100% offline tras la primera descarga de contenidos",
+          "Persistencia de respuestas de evaluación en LocalStorage"
+        ]
+      },
+      "H10_PlanAccion": {
+        "roadmapCode": "ROADMAP-IN0001",
+        "sprints": [
+          {
+            "sprintNumber": 1,
+            "duration": "3 Semanas",
+            "focus": "Diseño UI/UX y maquetación PWA",
+            "leadUnit": "UPDC / OTI",
+            "deliverable": "Prototipo interactivo navegable"
+          },
+          {
+            "sprintNumber": 2,
+            "duration": "3 Semanas",
+            "focus": "Implementación del motor de almacenamiento local (StorageService) y reproductores",
+            "leadUnit": "OTI",
+            "deliverable": "Aplicación PWA ejecutable sin servidores"
+          },
+          {
+            "sprintNumber": 3,
+            "duration": "3 Semanas",
+            "focus": "Prueba piloto en campo con 25 directivos en Junín y ajuste fino",
+            "leadUnit": "UPDC / UPP",
+            "deliverable": "Reporte de validación empírica y pase a producción"
+          }
+        ]
+      },
+      "H11_MatrizRiesgosYTesteo": {
+        "risks": [
+          {
+            "riskId": "RISK-01",
+            "category": "Tecnológico",
+            "description": "Saturación de almacenamiento en celulares antiguos por descarga de videos.",
+            "severity": "ALTA",
+            "mitigation": "Optimizar compresión a formato WebM y habilitar versión prioritaria solo audio."
+          },
+          {
+            "riskId": "RISK-02",
+            "category": "Legal / Normativo",
+            "description": "Validez de las constancias digitales emitidas sin conexión síncrona.",
+            "severity": "MEDIA",
+            "mitigation": "Sincronización diferida de firmas con UAJ al conectarse a red Wi-Fi en sede regional."
+          }
+        ],
+        "learningCards": [
+          {
+            "cardId": "TEST-01",
+            "hypothesis": "El 80% de los dirigentes podrá completar un micro-curso de rendición de cuentas de forma autónoma en el aplicativo.",
+            "testResult": "El 92% de los evaluados completó el micro-curso en promedio de 12 minutos.",
+            "status": "VALIDADO",
+            "kanbanAction": "Aprobar despliegue nacional e integrar al Portafolio Institucional (Anexo 5)."
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "$schema": "./schemas/far-piip-v3.json",
+  "NavegacionYTrazabilidad": {
+    "IniciativaCodigoActiva": "PIIP-2026-IN0001",
+    "UbicacionActual": {
+      "TipoVista": "HERRAMIENTA_METODOLOGICA",
+      "FaseNumero": 4,
+      "FaseNombre": "Fase 4: Entregar",
+      "HerramientaNumero": 11,
+      "HerramientaCodigo": "H11",
+      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
+      "VistaCodigo": "V11.1",
+      "VistaTitulo": "Herramienta H11: Matriz de Gestión de Riesgos y Testeo",
+      "VistaUrl": "11-matriz-riesgos.html"
+    },
+    "PosicionEnFlujo": {
+      "PasoActual": 11,
+      "TotalPasosFlujo": 11,
+      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
+      "PasoAnterior": "10-plan-accion.html",
+      "PasoSiguiente": null
+    },
+    "ControlIteracionYTrazabilidad": {
+      "VersionIteracion": 1,
+      "PermiteIteracionAnterior": true,
+      "FechaUltimaActualizacion": "2026-09-27T11:00:00Z",
+      "UsuarioActualRol": "Facilitador Ágil"
+    }
+  },
+  "ContratoEsquemaDatos": {
+    "HerramientaCodigo": "H11",
+    "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
+    "CamposModelo": {
+      "riskDescription": {
+        "type": "String",
+        "label": "Descripción del Riesgo Identificado",
+        "required": true
+      },
+      "riskType": {
+        "type": "Enum",
+        "values": [
+          "Tecnológico",
+          "Operativo",
+          "Legal / Normativo",
+          "Presupuestal"
+        ],
+        "label": "Tipo de Riesgo",
+        "required": true
+      },
+      "probability": {
+        "type": "Enum",
+        "values": [
+          "Alta",
+          "Media",
+          "Baja"
+        ],
+        "label": "Probabilidad de Ocurrencia",
+        "required": true
+      },
+      "impact": {
+        "type": "Enum",
+        "values": [
+          "Alto",
+          "Medio",
+          "Bajo"
+        ],
+        "label": "Impacto en la Entidad",
+        "required": true
+      },
+      "mitigationStrategy": {
+        "type": "String",
+        "label": "Estrategia de Mitigación / Acción Correctiva",
+        "required": true
+      },
+      "testResult": {
+        "type": "String",
+        "label": "Resultado del Testeo de Campo y Aprendizaje",
+        "required": true
+      }
+    }
+  },
+  "RegistrosEjemploGrounded": [
+    {
+      "id": 1101,
+      "projectCode": "PIIP-2026-IN0001",
+      "riskDescription": "Pérdida de sincronización de datos de progreso por fallas prolongadas de red.",
+      "riskType": "Tecnológico",
+      "probability": "Media",
+      "impact": "Alto",
+      "mitigationStrategy": "Implementar cola de transacciones locales en IndexedDB/LocalStorage con reintento automático al detectar conexión.",
+      "testResult": "El prototipo PWA sincronizó exitosamente el 100% de los datos acumulados tras 48 horas en modo offline."
+    }
+  ]
+}
