@@ -2637,7 +2637,7 @@ Por favor, genera tus recomendaciones detalladas y viables ahora:`;
                 const submitBtn = document.getElementById('btn-submit-action-plan');
                 if (submitBtn) {
                     submitBtn.innerHTML = '<i data-lucide="plus" class="w-4 h-4 inline-block mr-1"></i> Guardar Actividad';
-                    submitBtn.className = 'btn btn-primary w-full text-xs font-bold py-2.5';
+                    submitBtn.className = 'btn btn-primary text-xs font-bold px-6 py-2';
                 }
                 if (cancelBtn) cancelBtn.classList.add('hidden');
                 if (typeof lucide !== 'undefined') lucide.createIcons();
@@ -2892,7 +2892,7 @@ Por favor, genera tus recomendaciones detalladas y viables ahora:`;
                 const submitBtn = document.getElementById('btn-submit-risk');
                 if (submitBtn) {
                     submitBtn.innerHTML = '<i data-lucide="shield" class="w-4 h-4 inline-block mr-1"></i> Registrar Riesgo';
-                    submitBtn.className = 'btn btn-primary w-full text-xs font-bold py-2.5';
+                    submitBtn.className = 'btn btn-primary text-xs font-bold px-6 py-2';
                 }
                 if (cancelBtn) cancelBtn.classList.add('hidden');
                 if (typeof lucide !== 'undefined') lucide.createIcons();

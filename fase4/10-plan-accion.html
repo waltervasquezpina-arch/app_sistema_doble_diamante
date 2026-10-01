@@ -87,74 +87,89 @@
             </a>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="space-y-6">
             <!-- Formulario Tarea / Hito -->
-            <div class="card col-span-1 h-fit">
+            <div class="card">
                 <div class="flex items-center justify-between mb-4 border-b border-slate-200 pb-2">
-                    <h3 class="card__title text-sm" id="form-h10-title">Registrar Actividad del Roadmap</h3>
-                    <span class="text-3xs font-bold text-slate-500 uppercase tracking-wider">H10 Plan</span>
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">
+                            <i data-lucide="calendar-plus" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <h3 class="card__title text-sm" id="form-h10-title">Registrar Actividad del Roadmap</h3>
+                            <p class="text-3xs text-slate-500">Defina la acción operativa clave, unidad responsable, entregables y periodo de ejecución.</p>
+                        </div>
+                    </div>
+                    <span class="text-3xs font-bold text-slate-500 uppercase tracking-wider bg-slate-100 px-2 py-1 rounded">H10 Plan</span>
                 </div>
 
                 <form id="form-action-plan" class="space-y-4 text-xs">
-                    <div class="form__group">
-                        <label class="form__label font-bold text-slate-700" for="ap-activity">Actividad / Tarea Operativa *</label>
-                        <textarea id="ap-activity" class="form__input text-xs" rows="2" placeholder="Ej. Realizar inducción y marcha blanca del sistema con especialistas zonales..." required></textarea>
-                        <span class="text-3xs text-slate-500">Definir con verbo de acción y alcance preciso.</span>
-                    </div>
-
-                    <div class="form__group">
-                        <label class="form__label font-bold text-slate-700" for="ap-leader">Unidad / Responsable Directo *</label>
-                        <input type="text" id="ap-leader" class="form__input text-xs" list="agroideas-units-list" placeholder="Ej. Unidad de Planeamiento y Presupuesto / TI" required>
-                        <datalist id="agroideas-units-list">
-                            <option value="Unidad de Planeamiento y Presupuesto (UPP)">
-                            <option value="Unidad de Tecnología e Informática (TI)">
-                            <option value="Unidad de Gestión del Conocimiento y Comunicación">
-                            <option value="Unidades Zonales (Coordinación de Campo)">
-                            <option value="Dirección Ejecutiva">
-                            <option value="Equipo Multidisciplinario de Innovación">
-                        </datalist>
-                    </div>
-
-                    <div class="form__group">
-                        <label class="form__label font-bold text-slate-700" for="ap-deliverable">Entregable Verificable *</label>
-                        <input type="text" id="ap-deliverable" class="form__input text-xs" placeholder="Ej. Informe técnico de validación y acta de conformidad" required>
-                        <span class="text-3xs text-slate-500">Producto concreto que evidencie el cumplimiento de la actividad.</span>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="form__group">
-                            <label class="form__label font-bold text-slate-700" for="ap-start">Fecha de Inicio *</label>
-                            <input type="date" id="ap-start" class="form__input text-xs" required>
+                    <!-- Fila 1: Actividad y Entregable -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div class="form__group mb-0">
+                            <label class="form__label font-bold text-slate-700" for="ap-activity">Actividad / Tarea Operativa *</label>
+                            <textarea id="ap-activity" class="form__input text-xs" rows="2" placeholder="Ej. Realizar inducción y marcha blanca del sistema con especialistas zonales..." required></textarea>
+                            <span class="text-3xs text-slate-500 mt-1 block">Definir con verbo de acción y alcance preciso.</span>
                         </div>
-                        <div class="form__group">
-                            <label class="form__label font-bold text-slate-700" for="ap-end">Fecha de Término *</label>
-                            <input type="date" id="ap-end" class="form__input text-xs" required>
+
+                        <div class="form__group mb-0">
+                            <label class="form__label font-bold text-slate-700" for="ap-deliverable">Entregable Verificable *</label>
+                            <textarea id="ap-deliverable" class="form__input text-xs" rows="2" placeholder="Ej. Informe técnico de validación y acta de conformidad" required></textarea>
+                            <span class="text-3xs text-slate-500 mt-1 block">Producto concreto que evidencie el cumplimiento de la actividad.</span>
                         </div>
                     </div>
 
-                    <div class="form__group">
-                        <label class="form__label font-bold text-slate-700" for="ap-status">Estado de Ejecución</label>
-                        <select id="ap-status" class="form__input text-xs" required>
-                            <option value="Pendiente">Pendiente</option>
-                            <option value="En Proceso">En Proceso</option>
-                            <option value="Completado">Completado</option>
-                        </select>
+                    <!-- Fila 2: Unidad Responsable, Rango de Fechas y Estado -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-start">
+                        <div class="form__group md:col-span-5 mb-0">
+                            <label class="form__label font-bold text-slate-700" for="ap-leader">Unidad / Responsable Directo *</label>
+                            <input type="text" id="ap-leader" class="form__input text-xs" list="agroideas-units-list" placeholder="Ej. Unidad de Planeamiento y Presupuesto / TI" required>
+                            <datalist id="agroideas-units-list">
+                                <option value="Unidad de Planeamiento y Presupuesto (UPP)">
+                                <option value="Unidad de Tecnología e Informática (TI)">
+                                <option value="Unidad de Gestión del Conocimiento y Comunicación">
+                                <option value="Unidades Zonales (Coordinación de Campo)">
+                                <option value="Dirección Ejecutiva">
+                                <option value="Equipo Multidisciplinario de Innovación">
+                            </datalist>
+                        </div>
+
+                        <div class="md:col-span-4 grid grid-cols-2 gap-2 mb-0">
+                            <div class="form__group mb-0">
+                                <label class="form__label font-bold text-slate-700" for="ap-start">Fecha de Inicio *</label>
+                                <input type="date" id="ap-start" class="form__input text-xs" required>
+                            </div>
+                            <div class="form__group mb-0">
+                                <label class="form__label font-bold text-slate-700" for="ap-end">Fecha de Término *</label>
+                                <input type="date" id="ap-end" class="form__input text-xs" required>
+                            </div>
+                        </div>
+
+                        <div class="form__group md:col-span-3 mb-0">
+                            <label class="form__label font-bold text-slate-700" for="ap-status">Estado de Ejecución</label>
+                            <select id="ap-status" class="form__input text-xs" required>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="En Proceso">En Proceso</option>
+                                <option value="Completado">Completado</option>
+                            </select>
+                        </div>
                     </div>
                     
-                    <div class="pt-2 flex gap-2">
-                        <button type="submit" id="btn-submit-action-plan" class="btn btn-primary w-full text-xs font-bold py-2.5">
+                    <!-- Fila 3: Botones de Acción -->
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-end gap-2">
+                        <button type="reset" id="btn-cancel-action-plan" class="btn btn-secondary text-xs px-4 py-2 hidden">
+                            Cancelar
+                        </button>
+                        <button type="submit" id="btn-submit-action-plan" class="btn btn-primary text-xs font-bold px-6 py-2">
                             <i data-lucide="plus" class="w-4 h-4 inline-block mr-1"></i>
                             <span>Guardar Actividad</span>
-                        </button>
-                        <button type="reset" id="btn-cancel-action-plan" class="btn btn-secondary text-xs px-3 py-2.5 hidden">
-                            Cancelar
                         </button>
                     </div>
                 </form>
             </div>
 
             <!-- Tabla de Tareas del Roadmap -->
-            <div class="card col-span-1 lg:col-span-2">
+            <div class="card">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 border-b border-slate-200 pb-2">
                     <div>
                         <h3 class="card__title text-sm">Cronograma de Actividades y Hoja de Ruta</h3>

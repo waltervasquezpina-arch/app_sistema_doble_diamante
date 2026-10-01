@@ -80,32 +80,45 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="space-y-6">
             <!-- Formulario Registro de Riesgo -->
-            <div class="card col-span-1 h-fit">
+            <div class="card">
                 <div class="flex items-center justify-between mb-4 border-b border-slate-200 pb-2">
-                    <h3 class="card__title text-sm" id="form-h11-title">Registrar y Evaluar Riesgo</h3>
-                    <span class="text-3xs font-bold text-slate-500 uppercase tracking-wider">H11 Riesgos</span>
+                    <div class="flex items-center gap-2">
+                        <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">
+                            <i data-lucide="shield-alert" class="w-4 h-4 text-emerald-800"></i>
+                        </div>
+                        <div>
+                            <h3 class="card__title text-sm" id="form-h11-title">Registrar y Evaluar Riesgo</h3>
+                            <p class="text-3xs text-slate-500">Identifique amenazas potenciales, califique severidad y formule contingencias verificadas en campo.</p>
+                        </div>
+                    </div>
+                    <span class="text-3xs font-bold text-slate-500 uppercase tracking-wider bg-slate-100 px-2 py-1 rounded">H11 Riesgos</span>
                 </div>
 
                 <form id="form-risk" class="space-y-4 text-xs">
-                    <div class="form__group">
-                        <label class="form__label font-bold text-slate-700" for="risk-desc">Descripción del Riesgo / Amenaza *</label>
-                        <textarea id="risk-desc" class="form__input text-xs" rows="2" placeholder="Ej. Resistencia cultural o baja alfabetización digital de los beneficiarios en zonas rurales..." required></textarea>
+                    <!-- Fila 1: Descripción y Tipología -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+                        <div class="form__group lg:col-span-7 mb-0">
+                            <label class="form__label font-bold text-slate-700" for="risk-desc">Descripción del Riesgo / Amenaza *</label>
+                            <textarea id="risk-desc" class="form__input text-xs" rows="2" placeholder="Ej. Resistencia cultural o baja alfabetización digital de los beneficiarios en zonas rurales..." required></textarea>
+                            <span class="text-3xs text-slate-500 mt-1 block">Plantear el factor adverso con causa y consecuencia estimada.</span>
+                        </div>
+
+                        <div class="form__group lg:col-span-5 mb-0">
+                            <label class="form__label font-bold text-slate-700" for="risk-type">Tipología del Riesgo *</label>
+                            <select id="risk-type" class="form__input text-xs" required>
+                                <option value="Operativo">Operativo (Adopción, procesos y campo)</option>
+                                <option value="Tecnológico">Tecnológico (Sistemas, conectividad, arquitectura)</option>
+                                <option value="Legal / Normativo">Legal / Normativo (Regulaciones, directivas, convenios)</option>
+                                <option value="Presupuestal">Presupuestal (Fondos, contrapartidas, sostenibilidad)</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="form__group">
-                        <label class="form__label font-bold text-slate-700" for="risk-type">Tipología del Riesgo *</label>
-                        <select id="risk-type" class="form__input text-xs" required>
-                            <option value="Operativo">Operativo (Adopción, procesos y campo)</option>
-                            <option value="Tecnológico">Tecnológico (Sistemas, conectividad, arquitectura)</option>
-                            <option value="Legal / Normativo">Legal / Normativo (Regulaciones, directivas, convenios)</option>
-                            <option value="Presupuestal">Presupuestal (Fondos, contrapartidas, sostenibilidad)</option>
-                        </select>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="form__group">
+                    <!-- Fila 2: Probabilidad, Impacto y Semáforo Dinámico -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+                        <div class="form__group md:col-span-3 mb-0">
                             <label class="form__label font-bold text-slate-700" for="risk-prob">Probabilidad *</label>
                             <select id="risk-prob" class="form__input text-xs" required>
                                 <option value="Baja">Baja (Poco probable)</option>
@@ -113,7 +126,7 @@
                                 <option value="Alta">Alta (Casi seguro)</option>
                             </select>
                         </div>
-                        <div class="form__group">
+                        <div class="form__group md:col-span-3 mb-0">
                             <label class="form__label font-bold text-slate-700" for="risk-impact">Impacto *</label>
                             <select id="risk-impact" class="form__input text-xs" required>
                                 <option value="Bajo">Bajo (Marginal)</option>
@@ -121,44 +134,49 @@
                                 <option value="Alto">Alto (Crítico)</option>
                             </select>
                         </div>
-                    </div>
 
-                    <!-- Indicador en Vivo de Severidad (Semáforo Dinámico) -->
-                    <div class="bg-slate-50 border border-slate-200 p-3 rounded-lg flex items-center justify-between">
-                        <div>
-                            <span class="text-3xs uppercase tracking-wider text-slate-500 font-semibold block">Nivel Calculado</span>
-                            <span class="text-2xs text-slate-600">Severidad de la amenaza</span>
+                        <!-- Indicador en Vivo de Severidad (Semáforo Dinámico) -->
+                        <div class="md:col-span-6 bg-slate-50 border border-slate-200 p-2.5 rounded-lg flex items-center justify-between">
+                            <div>
+                                <span class="text-3xs uppercase tracking-wider text-slate-500 font-semibold block">Nivel Calculado</span>
+                                <span class="text-2xs text-slate-600">Severidad de la amenaza (Matriz P × I)</span>
+                            </div>
+                            <div id="risk-level-badge" class="px-3 py-1 rounded text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800 border border-amber-300">
+                                Medio
+                            </div>
                         </div>
-                        <div id="risk-level-badge" class="px-3 py-1 rounded text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800 border border-amber-300">
-                            Medio
+                    </div>
+
+                    <!-- Fila 3: Estrategia de Mitigación y Resultado de Testeo -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                        <div class="form__group mb-0">
+                            <label class="form__label font-bold text-slate-700" for="risk-mitigation">Estrategia de Mitigación / Contingencia *</label>
+                            <textarea id="risk-mitigation" class="form__input text-xs" rows="2" placeholder="Acciones preventivas, diseño asistido, protocolos de soporte presencial..." required></textarea>
+                            <span class="text-3xs text-slate-500 mt-1 block">Acción preventiva estructurada para neutralizar o minimizar el riesgo.</span>
+                        </div>
+
+                        <div class="form__group mb-0">
+                            <label class="form__label font-bold text-slate-700" for="risk-test-result">Resultado / Evidencia de Testeo en Campo *</label>
+                            <textarea id="risk-test-result" class="form__input text-xs" rows="2" placeholder="Ej. El test de usabilidad demostró que con iconos gráficos la tasa de error se redujo al 5%..." required></textarea>
+                            <span class="text-3xs text-slate-500 mt-1 block">Hallazgo o prueba que valida la efectividad del plan de mitigación.</span>
                         </div>
                     </div>
 
-                    <div class="form__group">
-                        <label class="form__label font-bold text-slate-700" for="risk-mitigation">Estrategia de Mitigación / Contingencia *</label>
-                        <textarea id="risk-mitigation" class="form__input text-xs" rows="2" placeholder="Acciones preventivas, diseño asistido, protocolos de soporte presencial..." required></textarea>
-                    </div>
-
-                    <div class="form__group">
-                        <label class="form__label font-bold text-slate-700" for="risk-test-result">Resultado / Evidencia de Testeo en Campo *</label>
-                        <textarea id="risk-test-result" class="form__input text-xs" rows="2" placeholder="Ej. El test de usabilidad demostró que con iconos gráficos la tasa de error se redujo al 5%..." required></textarea>
-                        <span class="text-3xs text-slate-500">Hallazgo o prueba que valida la efectividad del plan de mitigación.</span>
-                    </div>
-
-                    <div class="pt-2 flex gap-2">
-                        <button type="submit" id="btn-submit-risk" class="btn btn-primary w-full text-xs font-bold py-2.5">
+                    <!-- Fila 4: Botones de Acción -->
+                    <div class="pt-2 border-t border-slate-100 flex items-center justify-end gap-2">
+                        <button type="reset" id="btn-cancel-risk" class="btn btn-secondary text-xs px-4 py-2 hidden">
+                            Cancelar
+                        </button>
+                        <button type="submit" id="btn-submit-risk" class="btn btn-primary text-xs font-bold px-6 py-2">
                             <i data-lucide="shield" class="w-4 h-4 inline-block mr-1"></i>
                             <span>Registrar Riesgo</span>
-                        </button>
-                        <button type="reset" id="btn-cancel-risk" class="btn btn-secondary text-xs px-3 py-2.5 hidden">
-                            Cancelar
                         </button>
                     </div>
                 </form>
             </div>
 
             <!-- Tabla de Riesgos -->
-            <div class="card col-span-1 lg:col-span-2">
+            <div class="card">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4 border-b border-slate-200 pb-2">
                     <div>
                         <h3 class="card__title text-sm">Matriz de Riesgos y Evidencias de Testeo</h3>
