@@ -1,234 +1,777 @@
 {
   "$schema": "./schemas/far-piip-v3.json",
-  "NavegacionYTrazabilidad": {
-    "IniciativaCodigoActiva": "PIIP-2026-IN0010",
-    "UbicacionActual": {
-      "TipoVista": "HERRAMIENTA_METODOLOGICA",
-      "FaseNumero": 4,
-      "FaseNombre": "Fase 4: Entregar",
-      "HerramientaNumero": 11,
-      "HerramientaCodigo": "H11",
-      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
-      "VistaCodigo": "V11.1",
-      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje",
-      "VistaUrl": "fase4/11-matriz-riesgos.html"
-    },
-    "PosicionEnFlujo": {
-      "PasoActual": 11,
-      "TotalPasosFlujo": 11,
-      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
-      "PasoAnterior": {
-        "HerramientaCodigo": "H10",
-        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
-        "VistaUrl": "fase4/10-plan-accion.html"
-      },
-      "PasoSiguiente": null
-    },
-    "ControlIteracionYTrazabilidad": {
-      "VersionIteracion": 1,
-      "PermiteIteracionAnterior": true,
-      "FechaUltimaActualizacion": "2026-09-27T11:55:00Z",
-      "UsuarioActualRol": "Facilitador Ágil"
-    }
-  },
-  "PortafolioPIIP_FichaMatriz": {
+  "IniciativaIdentificacion": {
     "id": 10,
-    "code": "PIIP-2026-IN0010",
-    "title": "Implementación de Casilla Electrónica para Notificaciones Institucionales (SINO-AGROIDEAS)",
-    "responsible": "Unidad de Planeamiento y Presupuesto (UPP) / Unidad de Administración (UA)",
-    "contact": "Especialista en Trámite Documentario y Notificaciones - UPP/UA",
-    "date": "2026-09-24",
-    "status": "Fase 4: Entregar",
-    "herramientasRegistradasContador": 11,
-    "opinionTecnica": {
-      "puntajeTotal": 11,
-      "maxPuntaje": 12,
-      "impacto": 4,
-      "priorizacion": 4,
-      "innovacion": 3,
-      "dictamen": "RECOMENDABLE PARA APROBACIÓN E INSTITUCIONALIZACIÓN"
-    },
-    "phases": {
+    "IniciativaCodigo": "PIIP-2026-IN0010",
+    "IniciativaNombre": "Implementación de Casilla Electrónica para Notificaciones Institucionales (SINO-AGROIDEAS)",
+    "UnidadOrganicaResponsable": "Unidad de Planeamiento y Presupuesto (UPP) / Unidad de Administración (UA)",
+    "LiderProyecto": "Especialista en Trámite Documentario y Notificaciones - UPP/UA",
+    "FechaRegistro": "2026-03-20",
+    "EstadoFases": {
       "descubrir": "completed",
-      "definir": "completed",
-      "idear": "completed",
-      "entregar": "completed"
+      "definir": "active",
+      "idear": "pending",
+      "entregar": "pending"
     },
-    "porcentajeAvanceGlobal": 100.0
+    "PorcentajeAvanceGlobal": 50.0
   },
-  "HerramientasMetodologicas_Registros": {
+  "RegistrosHerramientasMetodologicas": {
     "FASE_1_DESCUBRIR": {
       "H01_ObservacionAEIOU": [
         {
-          "id": "aeiou-010-1",
+          "id": 55,
+          "projectId": 10,
           "projectCode": "PIIP-2026-IN0010",
-          "dimension": "Actividades",
-          "observation": "Envío masivo de notificaciones administrativas y resoluciones en papel mediante mensajería física a Organizaciones Agrarias (OA) en zonas alejadas.",
-          "timestamp": "2026-09-24T09:00:00Z"
+          "activity": "Despacho de más de 120 oficios de observaciones técnicas mediante servicio de mensajería postal courier a nivel nacional.",
+          "environment": "Oficina de Trámite Documentario en sede central Lima; balanza de paquetes, sobres de manila acolchados y sellos de correspondencia.",
+          "interaction": "Operador de mensajería embala sobres uno a uno y digita direcciones rurales complejas ('a 2 km del puente colgante s/n').",
+          "object": "Sobres de seguridad, guías de despacho postal con código de barras adhesivo, listado de destinos provinciales en papel.",
+          "objects": "Sobres de seguridad, guías de despacho postal con código de barras adhesivo, listado de destinos provinciales en papel.",
+          "user": "Encargado de Notificaciones de AGROIDEAS y agente despachador de la empresa de mensajería contratada.",
+          "users": "Encargado de Notificaciones de AGROIDEAS y agente despachador de la empresa de mensajería contratada.",
+          "observer": "Coordinador de Notificaciones Administrativas - UA",
+          "observationDate": "2026-03-24",
+          "date": "2026-03-24",
+          "timestamp": "2026-03-24T14:15:00.000Z"
         },
         {
-          "id": "aeiou-010-2",
+          "id": 56,
+          "projectId": 10,
           "projectCode": "PIIP-2026-IN0010",
-          "dimension": "Entorno",
-          "observation": "Notificaciones devueltas por dirección inaccesible o no encontrada, generando validez diferida de actos administrativos por 30 a 60 días hábiles.",
-          "timestamp": "2026-09-24T11:30:00Z"
+          "activity": "Devolución masiva de 28 cédulas de notificación física por causal de 'Dirección Inaccesible' o 'Destinatario no conocido en el caserío'.",
+          "environment": "Mesa de partes de la Unidad Zonal de Ayacucho; recepción de paquetes devueltos con sellos de intento fallido.",
+          "interaction": "El especialista constata que transcurrieron 35 días hábiles sin que la cooperativa se entere de que su expediente tenía 10 días para subsanar observaciones.",
+          "object": "Cédulas de notificación devueltas con actas de visita frustrada pegadas al dorso, expediente de plan de negocios en riesgo de abandono.",
+          "objects": "Cédulas de notificación devueltas con actas de visita frustrada pegadas al dorso, expediente de plan de negocios en riesgo de abandono.",
+          "user": "Asistente de Trámite Documentario Zonal, Notificador Courier y Evaluador de Elegibilidad.",
+          "users": "Asistente de Trámite Documentario Zonal, Notificador Courier y Evaluador de Elegibilidad.",
+          "observer": "Especialista en Procedimiento Administrativo - UAJ",
+          "observationDate": "2026-04-16",
+          "date": "2026-04-16",
+          "timestamp": "2026-04-16T11:00:00.000Z"
+        },
+        {
+          "id": 57,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "activity": "Reclamo presencial airado de directivos de una organización agraria cuya solicitud fue declarada en abandono administrativo por vencimiento de plazo.",
+          "environment": "Oficina de atención al ciudadano en la sede zonal de Puno; tensión entre usuarios que viajaron 8 horas y el personal receptor.",
+          "interaction": "El presidente comunal afirma: 'Nunca nos llegó ninguna carta al pueblo, nosotros no tenemos buzón de correo ni cartero'.",
+          "object": "Resolución de abandono de trámite notificada por edicto en el diario oficial, cuadernos de asistencia de la cooperativa, boletos de pasaje.",
+          "objects": "Resolución de abandono de trámite notificada por edicto en el diario oficial, cuadernos de asistencia de la cooperativa, boletos de pasaje.",
+          "user": "Presidente y directivos de la asociación de productores de habas y quinua, Jefe Zonal Puno y abogado defensor.",
+          "users": "Presidente y directivos de la asociación de productores de habas y quinua, Jefe Zonal Puno y abogado defensor.",
+          "observer": "Defensor del Usuario / Atención al Ciudadano - UR Puno",
+          "observationDate": "2026-05-11",
+          "date": "2026-05-11",
+          "timestamp": "2026-05-11T10:30:00.000Z"
+        },
+        {
+          "id": 58,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "activity": "Notificación informal y complementaria mediante mensajes de voz y fotos por WhatsApp enviadas desde teléfonos celulares personales de los evaluadores.",
+          "environment": "Oficina técnica de la Unidad Zonal de Junín; agrónomos usando sus propios teléfonos y planes de datos para avisar a los dirigentes comunales.",
+          "interaction": "El evaluador toma foto con su celular a la página 3 del informe y le escribe al presidente comunal: 'Don Víctor, ya salió su oficio, revíselo urgente'.",
+          "object": "Celular personal del evaluador con WhatsApp, documento oficial impreso sobre el escritorio, sin trazabilidad ni valor probatorio legal.",
+          "objects": "Celular personal del evaluador con WhatsApp, documento oficial impreso sobre el escritorio, sin trazabilidad ni valor probatorio legal.",
+          "user": "Evaluador de Campo AGROIDEAS y presidente de la cooperativa agraria cafetalera.",
+          "users": "Evaluador de Campo AGROIDEAS y presidente de la cooperativa agraria cafetalera.",
+          "observer": "Auditor de Comunicaciones Institucionales - UA",
+          "observationDate": "2026-06-08",
+          "date": "2026-06-08",
+          "timestamp": "2026-06-08T16:20:00.000Z"
+        },
+        {
+          "id": 59,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "activity": "Prueba de depósito de resolución de aprobación en la nueva Casilla Electrónica Institucional con alerta dual vía SMS y correo electrónico.",
+          "environment": "Laboratorio de usabilidad de software en Lima con prueba remota de acceso desde teléfonos móviles en Cajamarca y San Martín.",
+          "interaction": "El dirigente recibe un mensaje de texto SMS: 'AGROIDEAS le notificó un documento oficial. Ingrese a casilla.agroideas.gob.pe con su Clave SOL'.",
+          "object": "Módulo de Casilla Electrónica web, pasarela de autenticación con ID Gob.pe / Clave SOL de SUNAT, constancia de depósito fehaciente en PDF con firma digital.",
+          "objects": "Módulo de Casilla Electrónica web, pasarela de autenticación con ID Gob.pe / Clave SOL de SUNAT, constancia de depósito fehaciente en PDF con firma digital.",
+          "user": "Líder de Proyecto UA/OTI, 5 directivos de organizaciones agrarias piloto y certificador digital de RENIEC.",
+          "users": "Líder de Proyecto UA/OTI, 5 directivos de organizaciones agrarias piloto y certificador digital de RENIEC.",
+          "observer": "Especialista en Derecho Administrativo Digital - UAJ/UA",
+          "observationDate": "2026-07-02",
+          "date": "2026-07-02",
+          "timestamp": "2026-07-02T11:45:00.000Z"
+        },
+        {
+          "id": 60,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "activity": "Verificación del cómputo legal automático de plazos de notificación según TUO Ley 27444 (notificación surte efecto el día del depósito en casilla).",
+          "environment": "Módulo de seguimiento legal en la Unidad de Asesoría Jurídica; pantalla con cronómetro de días hábiles restantes para subsanaciones.",
+          "interaction": "Los abogados verifican que el sistema genera automáticamente el acuse de recibo electrónico con sellado de tiempo criptográfico oficial (TSA).",
+          "object": "Certificado de sellado de tiempo de entidad acreditada por INDECOPI, visor de trazabilidad de lectura del documento, expediente digital.",
+          "objects": "Certificado de sellado de tiempo de entidad acreditada por INDECOPI, visor de trazabilidad de lectura del documento, expediente digital.",
+          "user": "Asesor Legal UAJ, Director de la Unidad de Negocios y Jefe de OTI.",
+          "users": "Asesor Legal UAJ, Director de la Unidad de Negocios y Jefe de OTI.",
+          "observer": "Auditor de Seguridad de la Información - OTI",
+          "observationDate": "2026-07-27",
+          "date": "2026-07-27",
+          "timestamp": "2026-07-27T15:10:00.000Z"
         }
       ],
-      "H02_MapaEmpatia": {
-        "userProfile": "Especialista de Trámite Documentario y Directivos de Organizaciones Agrarias",
-        "says": "Los mensajeros tardan semanas en traer el cargo físico devuelto y firmado, retrasando los desembolsos de los incentivos.",
-        "does": "Sigue enviando cartas notariales y encomiendas físicas para actos administrativos determinantes.",
-        "thinks": "Una Casilla Electrónica con alertas SMS o WhatsApp garantizaría validez legal inmediata y costo S/. 0 en mensajería.",
-        "feels": "Frustrado por la fragilidad jurídica de los cargos físicos y las prórrogas forzadas por notificaciones fallidas.",
-        "pains": "Gasto excesivo en courier, riesgo de caducidad de plazos administrativos y quejas de productores por falta de notificación.",
-        "gains": "Notificación legal con acuse de recibo inmutable en tiempo real, reducción a cero del uso de courier y agilización de trámites."
-      },
-      "H03_EncuestasCampo": {
-        "sampleSize": 54,
-        "targetAudience": "Servidores de Trámite Documentario, UAJ y Directivos Agrarios de 12 Unidades Regionales",
-        "keyResults": [
-          {
-            "question": "¿Considera indispensable sustituir el courier por Notificación Electrónica?",
-            "percentageYes": 96.3
-          },
-          {
-            "question": "¿Tiene acceso a smartphone o correo para recibir alertas de notificación?",
-            "percentageYes": 92.6
-          },
-          {
-            "question": "Tiempo promedio actual de recepción de cargo de notificación física",
-            "topAnswer": "Entre 18 y 35 días hábiles"
-          }
-        ]
-      },
-      "H04_FichaPersona": {
-        "archetypeCode": "PERS-IN0010-01",
-        "name": "Lic. Martín Sotomayor",
-        "role": "Encargado de Trámite Documentario y Archivo - AGROIDEAS",
-        "age": 41,
-        "digitalLiteracy": "Avanzado (Manejo de SGD, firma digital y bases de datos institucionales)",
-        "primaryGoal": "Lograr la notificación instantánea con valor legal de resoluciones y requerimientos a los beneficiarios."
-      }
+      "H02_MapaEmpatia": [
+        {
+          "id": 57,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "userProfile": "Responsable de Notificaciones y Actos Administrativos (Trámite Documentario)",
+          "says": "\"Enviar un oficio de observación a una cooperativa de la sierra por courier postal demora hasta 25 días en llegar y otros 20 en retornar el cargo. Es inviable.\"",
+          "does": "Prepara sobres manila con resoluciones, imprime cargos de notificación con copia carbón, coordina con la empresa de mensajería y registra fechas en libros.",
+          "thinks": "Sabe que la notificación electrónica con acuse de recibo instantáneo reduciría los tiempos de trámite de 45 días a 1 segundo conforme a la Ley 27444.",
+          "feels": "Estrés por el vencimiento de plazos legales de actos administrativos mientras los sobres viajan en camiones postales por carreteras bloqueadas.",
+          "hears": "Los evaluadores y directores quejándose de que no pueden continuar con el expediente porque el courier aún no devuelve el cargo de notificación firmado.",
+          "sees": "Cajas de cargos de notificación devueltos con sellos de 'Dirección inaccesible', 'Destinatario desconocido' o 'Zona fuera de cobertura de reparto'.",
+          "pains": "Altísimos costos en servicios de mensajería postal privada, cargos extraviados y nulidades procesales por defectos en la notificación física.",
+          "gains": "Casilla electrónica institucional con validez legal automática, depósito instantáneo con acuse de recibo y sellado de tiempo criptográfico."
+        },
+        {
+          "id": 58,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "userProfile": "Presidente de Cooperativa de Productores de Quinua Orgánica (Ayaviri, Puno)",
+          "says": "\"Nunca nos llegó la carta de observaciones de AGROIDEAS. Nos enteramos de que nuestro expediente fue archivado por abandono cuando fuimos a la ciudad.\"",
+          "does": "Monitorea los campos comunales de quinua, viaja a la capital provincial para revisar correspondencia en la agencia postal y coordina con socios.",
+          "thinks": "Siente que el Estado utiliza las notificaciones por papel para dejar fuera a los productores del campo sin darles una oportunidad real de defenderse.",
+          "feels": "Indignación y desengaño absoluto al ver el esfuerzo de meses de formulación tirado a la basura por una carta que nunca llegó a su comunidad.",
+          "hears": "Otros presidentes comunales diciendo que las cartas del gobierno se pierden en el camino o las dejan tiradas en la tienda del pueblo.",
+          "sees": "La resolución de archivo de su expediente con fecha de hace dos meses que nunca fue entregada en su domicilio legal.",
+          "pains": "Pérdida del incentivo agrario por vencimiento de plazos de subsanación no notificados y gastos inútiles en viajes a averiguar el estado.",
+          "gains": "Recepción de notificaciones con alerta SMS y WhatsApp al celular del presidente y del asesor técnico, con acceso directo al documento oficial."
+        },
+        {
+          "id": 59,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "userProfile": "Mensajero / Notificador Postal Terrestre Regional (Contratista de Courier)",
+          "says": "\"La dirección dice 'Sector Huayllapampa s/n frente al cerro', no hay número ni calle. Camino dos horas para encontrar a alguien que conozca al dirigente.\"",
+          "does": "Maneja motocicleta por trochas rurales, pregunta a pobladores locales por la ubicación de dirigentes campesinos y recolecta firmas o huellas en el cargo.",
+          "thinks": "Opina que notificar en el campo con estándares urbanos de nomenclatura de calles es absurdo y genera retrasos inevitables en las rutas.",
+          "feels": "Riesgo de accidentes en motocicleta por caminos de herradura y frustración cuando no encuentra a nadie en el domicilio tras horas de viaje.",
+          "hears": "Familiares del directivo diciendo que el presidente está en la chacra alta pasteando ganado y que no regresará hasta el fin de semana.",
+          "sees": "Casas rurales deshabitadas durante el día porque las familias están trabajando en la parcela agrícola.",
+          "pains": "Rechazo de cargos de notificación por parte del programa cuando la firma no coincide exactamente con el DNI del titular.",
+          "gains": "Reemplazo de rutas físicas remotas por notificación digital en casilla electrónica, reservando el correo físico solo para casos excepcionales."
+        },
+        {
+          "id": 60,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "userProfile": "Asesor Legal Litigante de Organización Agraria Notificada (Cusco)",
+          "says": "\"Si la notificación no cumple con los requisitos del TUO de la LPAG, deduzco la nulidad del acto administrativo y obligo a reiniciar todo el trámite.\"",
+          "does": "Revisa vicios de procedimiento en notificaciones de resoluciones de rechazo o sanciones, redacta recursos de reconsideración y apelación.",
+          "thinks": "Sabe que más del 40% de las notificaciones físicas de AGROIDEAS adolecen de vicios de forma en el cargo que hacen ganar fácilmente los recursos.",
+          "feels": "Satisfacción profesional al defender a las organizaciones campesinas pero desazón por la pérdida de tiempo que implica litigar contra el Estado.",
+          "hears": "Los funcionarios del programa quejándose de los abogados que usan tecnicismos legales para revocar decisiones de descalificación.",
+          "sees": "Cargos de notificación donde no se anotó la hora de entrega, el documento de identidad del receptor o la relación de parentesco con el titular.",
+          "pains": "Falta de un buzón digital seguro donde los plazos procesales se computen de forma transparente e incontrovertible para ambas partes.",
+          "gains": "Casilla electrónica con registro inmutable de fecha y hora de entrega y lectura, eliminando debates sobre la validez jurídica de la notificación."
+        },
+        {
+          "id": 61,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "userProfile": "Especialista de Transformación Digital y Casillas del Estado (PCM / AGROIDEAS)",
+          "says": "\"La interoperabilidad con la Casilla Única del Estado (Casilla Electrónica Nacional de PCM) es un mandato de la Ley de Gobierno Digital.\"",
+          "does": "Configura los web services con los servidores de PCM/Segdi, define las políticas de acuse de recibo y capacita al personal de mesa de partes.",
+          "thinks": "Considera que integrar la casilla electrónica de AGROIDEAS con la plataforma nacional del ciudadano unificará la experiencia del usuario público.",
+          "feels": "Orgullo por liderar la adopción de estándares digitales avanzados en el sector agropecuario peruano.",
+          "hears": "Directivos ministeriales exigiendo que los indicadores de transformación digital alcancen el 100% de cumplimiento en la evaluación anual.",
+          "sees": "Otras entidades públicas como Sunat o Indecopi operando casillas electrónicas con millones de notificaciones exitosas al año.",
+          "pains": "Demoras en autorizaciones de interoperabilidad técnica entre entidades y resistencia de usuarios que temen perder notificaciones por falta de internet.",
+          "gains": "Ecosistema integrado con Casilla Electrónica Nacional, envío dual de alertas por WhatsApp/SMS y confirmación automática de recepción legal."
+        },
+        {
+          "id": 62,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "userProfile": "Secretario General de la Dirección Ejecutiva de AGROIDEAS",
+          "says": "\"La casilla electrónica blindará jurídicamente todas las resoluciones de dirección y acortará en más de un 60% el ciclo de vida de los incentivos.\"",
+          "does": "Firma resoluciones de otorgamiento de incentivos, supervisa la emisión de actos administrativos y despacha con el Director Ejecutivo.",
+          "thinks": "Estima que el ahorro en mensajería postal permitirá reasignar más de S/. 400,000 anuales a capacitación directa de productores agrarios.",
+          "feels": "Seguridad jurídica al saber que los actos administrativos quedan firmes y consentidos en los plazos exactos que establece la ley.",
+          "hears": "Demandas de los gremios agrarios por resolver con mayor celeridad las solicitudes de cofinanciamiento pendientes.",
+          "sees": "Despachos ejecutivos demorados esperando que los mensajeros postales entreguen las resoluciones para poder convocar al comité de desembolsos.",
+          "pains": "Paralización de proyectos por retrasos en notificaciones formales y riesgo de demandas por silencio administrativo o inacción estatal.",
+          "gains": "Flujo 100% digital desde la firma de la resolución ejecutiva hasta la notificación efectiva al administrado en menos de 60 segundos."
+        }
+      ],
+      "H03_EncuestasCampo": [
+        {
+          "id": 19,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "respondent": "Donato Carrión (Presidente OA)",
+          "cooperative": "OA San Martín de Porres (Lambayeque)",
+          "satisfaction": 3,
+          "comments": "Las notificaciones postales llegan vencidas o el cartero no encuentra nuestro caserío. Nos enteramos cuando el plazo expiró.",
+          "sentiment": "Neutro",
+          "date": "2026-03-22"
+        },
+        {
+          "id": 20,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "respondent": "Abog. Gabriela Pinto (Notificaciones UPP)",
+          "cooperative": "Mesa de Partes y Trámite Documentario",
+          "satisfaction": 2,
+          "comments": "El 25% de cédulas postales físicas son devueltas por dirección inaccesible. La casilla electrónica resolverá la validez legal.",
+          "sentiment": "Negativo",
+          "date": "2026-03-28"
+        }
+      ],
+      "H04_FichaPersona": [
+        {
+          "id": 55,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "archetypeName": "Lic. Patricia Alva Corrales",
+          "name": "Lic. Patricia Alva Corrales",
+          "role": "Responsable de Notificaciones y Actos Administrativos (Trámite Documentario)",
+          "demographics": "41 años, Lima; Licenciada en Administración con especialización en Derecho Administrativo",
+          "age": 41,
+          "techTechSavviness": "Intermedio (Manejo de sistemas de correspondencia, firma digital, casillas electrónicas)",
+          "quote": "Enviar un oficio a una cooperativa de la sierra por mensajería postal demora 25 días en llegar y otros 20 en retornar el cargo firmado. Es insostenible.",
+          "bio": "Supervisa el diligenciamiento de todas las notificaciones oficiales: observaciones, resoluciones de elegibilidad, desembolsos y sanciones.",
+          "goals": [
+            "Desplegar la Casilla Electrónica Institucional con valor legal conforme al TUO de la LPAG",
+            "Reducir el tiempo de notificación de 45 días a menos de 60 segundos de forma automatizada",
+            "Ahorrar más de S/. 350,000 anuales en contratación de couriers privados de mensajería postal"
+          ],
+          "frustrations": [
+            "Sobres de notificación devueltos por el correo postal con sellos de 'dirección inubicable'",
+            "Cargos de notificación extraviados que provocan la nulidad de procedimientos administrativos",
+            "Reclamos de evaluadores que no pueden continuar los trámites porque no se sabe si el usuario fue notificado"
+          ]
+        },
+        {
+          "id": 56,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "archetypeName": "Don Juan Cancio Ticona",
+          "name": "Don Juan Cancio Ticona",
+          "role": "Presidente de Cooperativa de Quinua Orgánica (Ayaviri, Puno)",
+          "demographics": "56 años, Melgar, Puno; Secundaria incompleta, Productor alpaquero y de quinua",
+          "age": 56,
+          "techTechSavviness": "Básico (Manejo de celular para llamadas; su hija le revisa los mensajes y correos)",
+          "quote": "Nunca nos llegó la carta de observaciones de AGROIDEAS. Nos enteramos de que nuestro expediente fue archivado por abandono cuando fuimos a la ciudad.",
+          "bio": "Presidente de una cooperativa de 48 socios comunales en el altiplano puneño. Ha formulado un plan de negocio para la compra de una seleccionadora óptica de quinua.",
+          "goals": [
+            "Recibir las notificaciones y observaciones de su trámite directamente por alerta de WhatsApp y SMS en su celular",
+            "Tener la certeza de qué documentos faltan subsanar sin depender del cartero postal",
+            "Asegurar que su expediente no sea archivado por vencimiento de plazos que nunca conoció"
+          ],
+          "frustrations": [
+            "Perder un año entero de trabajo asociativo por una carta que se traspapeló en la agencia de correo",
+            "Tener que viajar 4 horas a Juliaca o Puno solo para averiguar si hay alguna carta dirigida a su cooperativa",
+            "Sensación de indefensión frente a resoluciones de rechazo emitidas a sus espaldas"
+          ]
+        },
+        {
+          "id": 57,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "archetypeName": "Sr. Teodoro Melgar Rojas",
+          "name": "Sr. Teodoro Melgar Rojas",
+          "role": "Notificador Postal Motorizado Regional (Contratista de Courier)",
+          "demographics": "38 años, Cusco; Conductor y mensajero rural con 10 años repartiendo correspondencia",
+          "age": 38,
+          "techTechSavviness": "Intermedio (Manejo de GPS en smartphone, app de captura de firmas del courier)",
+          "quote": "En el campo la dirección dice 'Sector Huayllapampa sin número frente al cerro'. Busco a la persona durante horas y muchas veces está trabajando en la chacra alta.",
+          "bio": "Recorre trochas carrozables y comunidades campesinas en motocicleta entregando notificaciones judiciales y administrativas del Estado.",
+          "goals": [
+            "Que las entidades identifiquen con precisión las coordenadas de los domicilios comunales",
+            "Reducir las entregas fallidas mediante alertas telefónicas previas coordinadas con el destinatario",
+            "Realizar sus rutas de entrega de manera segura sin exponerse a accidentes en caminos de herradura"
+          ],
+          "frustrations": [
+            "Llegar a viviendas rurales deshabitadas durante el día porque las familias están en la cosecha",
+            "Rechazo de los cargos de notificación por parte del programa cuando el firmante usa su huella digital",
+            "Riesgo de caídas en motocicleta y deterioro de los sobres por lluvias torrenciales andinas"
+          ]
+        },
+        {
+          "id": 58,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "archetypeName": "Abog. Renzo Cavassa Miró",
+          "name": "Abog. Renzo Cavassa Miró",
+          "role": "Asesor Legal Litigante de Organizaciones Agrarias (Cusco)",
+          "demographics": "43 años, Cusco; Abogado litigante en Derecho Administrativo y Constitucional",
+          "age": 43,
+          "techTechSavviness": "Intermedio (Manejo de casilla judicial Sinoe, mesa de partes electrónica de ministerios)",
+          "quote": "Si la notificación física tiene vicios de forma en el cargo, interpongo recurso de nulidad y tiro abajo la resolución de descalificación.",
+          "bio": "Defiende a cooperativas agrarias y comunidades campesinas frente a resoluciones sancionadoras o denegatorias de fondos públicos.",
+          "goals": [
+            "Contar con una casilla electrónica oficial con sellado de tiempo que determine los plazos procesales con certeza",
+            "Recibir las resoluciones completas con sus informes técnicos adjuntos en formato digital",
+            "Evitar litigios innecesarios cuando el procedimiento de notificación es limpio y transparente"
+          ],
+          "frustrations": [
+            "Cargos de notificación física ilegibles donde no se indica la hora de entrega ni el documento del receptor",
+            "Pérdida de tiempo en trámites judiciales para demostrar que la carta postal nunca fue entregada válidamente",
+            "Falta de un buzón digital unificado donde revisar todos los expedientes patrocinados"
+          ]
+        },
+        {
+          "id": 59,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "archetypeName": "Ing. Mauricio Peralta Salas",
+          "name": "Ing. Mauricio Peralta Salas",
+          "role": "Especialista de Casillas Digitales y Plataforma Nacional (PCM / AGROIDEAS)",
+          "demographics": "36 años, Lima; Ingeniero Informático, especialista en Gobierno Digital y Servicios Ciudadanos",
+          "age": 36,
+          "techTechSavviness": "Avanzado (Interoperabilidad SOAP/REST, arquitectura de casillas electrónicas, seguridad)",
+          "quote": "La Casilla Electrónica debe integrarse con la Casilla Única del Estado de la PCM para que el productor reciba sus alertas en una sola bandeja ciudadana.",
+          "bio": "Lidera la integración técnica entre los sistemas de AGROIDEAS y los servicios transversales de gobierno digital promovidos por la PCM.",
+          "goals": [
+            "Lograr la interoperabilidad plena entre el SEL v2.0 y la Casilla Electrónica Nacional",
+            "Implementar alertas automáticas multicanal (correo electrónico, SMS y WhatsApp verificado)",
+            "Garantizar el acuse de recibo y la constancia de lectura electrónica con certificación criptográfica"
+          ],
+          "frustrations": [
+            "Resistencia cultural de usuarios que desconfían del valor legal de las notificaciones digitales",
+            "Intermitencias en los servicios web de interoperabilidad interinstitucional",
+            "Falta de capacitación a los dirigentes rurales sobre cómo abrir y revisar su casilla electrónica"
+          ]
+        },
+        {
+          "id": 60,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "archetypeName": "Dr. Javier Coronado Barreda",
+          "name": "Dr. Javier Coronado Barreda",
+          "role": "Secretario General de la Dirección Ejecutiva de AGROIDEAS",
+          "demographics": "54 años, Lima; Abogado y Magíster en Gestión Pública, 18 años en el sector agrario",
+          "age": 54,
+          "techTechSavviness": "Intermedio (Firma digital de resoluciones, gestión de comités directivos, SIPA)",
+          "quote": "La casilla electrónica blindará jurídicamente todas las resoluciones directorales y acortará en más del 60% el ciclo de vida de los incentivos.",
+          "bio": "Supervisa la legalidad de los actos administrativos emitidos por la Dirección Ejecutiva. Refrenda convenios de cofinanciamiento y resoluciones de otorgamiento.",
+          "goals": [
+            "Asegurar que todas las resoluciones queden firmes y consentidas en los plazos estrictos de ley",
+            "Eliminar las paralizaciones de proyectos causadas por demoras en notificaciones formales",
+            "Optimizar los costos operativos de la institución mediante la transformación digital integral"
+          ],
+          "frustrations": [
+            "Demandas y recursos administrativos por indebida notificación que paralizan los desembolsos",
+            "Despachos ejecutivos saturados esperando que los mensajeros postales devuelvan los cargos de entrega",
+            "Retraso en la ejecución presupuestal institucional debido a los tiempos muertos del correo tradicional"
+          ]
+        }
+      ]
     },
     "FASE_2_DEFINIR": {
       "H05_MuroHallazgos": [
         {
-          "clusterId": "CLUST-IN010-01",
-          "clusterName": "Costo Ineficiente y Lentitud en Courier Físico",
-          "insight": "El 82% del gasto operativo en mensajería se concentra en notificar observaciones que podrían resolverse el mismo día de manera digital.",
-          "priority": "ALTA"
+          "id": 55,
+          "type": "Muro",
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "clusterCategory": "Tiempos de Notificación y Plazos",
+          "findingTitle": "Tiempos Excesivos del Correo Postal Tradicional Terrestre",
+          "title": "Tiempos Excesivos del Correo Postal Tradicional Terrestre",
+          "evidenceText": "Notificar un acto administrativo a una cooperativa de la sierra o selva mediante courier postal demora entre 20 y 35 días hábiles en llegar y otros 15 días en retornar el cargo físico, dilatando todo el procedimiento.",
+          "text": "Notificar un acto administrativo a una cooperativa de la sierra o selva mediante courier postal demora entre 20 y 35 días hábiles en llegar y otros 15 días en retornar el cargo físico, dilatando todo el procedimiento.",
+          "sourceTool": "Análisis de Tiempos de Mensajería Postal",
+          "priority": "Alta",
+          "quote": "El oficio de observación viaja en camión un mes entero y cuando llega a la comunidad el plazo para subsanar ya venció.",
+          "date": "2026-03-20"
         },
         {
-          "clusterId": "CLUST-IN010-02",
-          "clusterName": "Validez Legal y Certificación de Depósito Digital",
-          "insight": "La Ley de Procedimiento Administrativo General (LPAG) valida el depósito en casilla electrónica certificada como notificación personal válida.",
-          "priority": "ALTA"
+          "id": 56,
+          "type": "Muro",
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "clusterCategory": "Seguridad Jurídica y Validez",
+          "findingTitle": "Altas Tasas de Devolución Postal por Direcciones Inubicables",
+          "title": "Altas Tasas de Devolución Postal por Direcciones Inubicables",
+          "evidenceText": "El 40% de las notificaciones enviadas a comunidades rurales son devueltas con la causal de 'dirección inubicable' debido a la ausencia de nomenclatura de calles, lo que causa archivos de expedientes por abandono indebido.",
+          "text": "El 40% de las notificaciones enviadas a comunidades rurales son devueltas con la causal de 'dirección inubicable' debido a la ausencia de nomenclatura de calles, lo que causa archivos de expedientes por abandono indebido.",
+          "sourceTool": "Reporte Operativo de Courier",
+          "priority": "Alta",
+          "quote": "La dirección dice 'Sector Pampa Chica s/n' y el cartero deja el sobre en la bodega del pueblo o lo devuelve a Lima.",
+          "date": "2026-03-25"
+        },
+        {
+          "id": 57,
+          "type": "Muro",
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "clusterCategory": "Seguridad Jurídica y Validez",
+          "findingTitle": "Nulidad de Actos por Cargos de Notificación con Defectos Formales",
+          "title": "Nulidad de Actos por Cargos de Notificación con Defectos Formales",
+          "evidenceText": "Cargos de recepción firmados por terceros sin DNI o sin indicar la hora y fecha exacta son causal frecuente de nulidad en recursos de apelación, obligando a reiniciar expedientes que ya estaban listos para archivo o desembolso.",
+          "text": "Cargos de recepción firmados por terceros sin DNI o sin indicar la hora y fecha exacta son causal frecuente de nulidad en recursos de apelación, obligando a reiniciar expedientes que ya estaban listos para archivo o desembolso.",
+          "sourceTool": "Jurisprudencia de Apelaciones UAJ",
+          "priority": "Alta",
+          "quote": "El cartero no anotó el DNI del comunero que recibió la carta y el abogado del administrado anuló toda la resolución de rechazo.",
+          "date": "2026-03-30"
+        },
+        {
+          "id": 58,
+          "type": "Muro",
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "clusterCategory": "Costos Institucionales",
+          "findingTitle": "Elevado Gasto Presupuestal en Servicios de Courier Privado",
+          "title": "Elevado Gasto Presupuestal en Servicios de Courier Privado",
+          "evidenceText": "AGROIDEAS gasta más de S/. 380,000 al año en contratos de mensajería postal para notificaciones físicas en papel. La implementación de la casilla electrónica reduciría este gasto a costo marginal cercano a cero.",
+          "text": "AGROIDEAS gasta más de S/. 380,000 al año en contratos de mensajería postal para notificaciones físicas en papel. La implementación de la casilla electrónica reduciría este gasto a costo marginal cercano a cero.",
+          "sourceTool": "Evaluación Presupuestal UA",
+          "priority": "Media",
+          "quote": "Cada sobre que enviamos a una provincia lejana cuesta entre S/. 35 y S/. 60, un presupuesto que podría invertirse en asistencia técnica.",
+          "date": "2026-04-05"
+        },
+        {
+          "id": 59,
+          "type": "Muro",
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "clusterCategory": "Accesibilidad y Multicanalidad",
+          "findingTitle": "Necesidad de Notificaciones con Alerta Dual vía WhatsApp y SMS",
+          "title": "Necesidad de Notificaciones con Alerta Dual vía WhatsApp y SMS",
+          "evidenceText": "Los productores agrarios no tienen la costumbre de ingresar diariamente a un portal web a revisar su casilla. Si la notificación digital no va acompañada de una alerta SMS o WhatsApp, corren el riesgo de no enterarse a tiempo.",
+          "text": "Los productores agrarios no tienen la costumbre de ingresar diariamente a un portal web a revisar su casilla. Si la notificación digital no va acompañada de una alerta SMS o WhatsApp, corren el riesgo de no enterarse a tiempo.",
+          "sourceTool": "Encuesta de Hábitos Digitales Rurales",
+          "priority": "Media",
+          "quote": "Si me mandan un mensaje de WhatsApp a mi celular me entero el mismo día, pero no voy a entrar a la computadora todos los días a ver si hay cartas.",
+          "date": "2026-04-11"
+        },
+        {
+          "id": 60,
+          "type": "Muro",
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "clusterCategory": "Seguridad Jurídica y Validez",
+          "findingTitle": "Falta de Sellado de Tiempo Criptográfico Inmutable en las Notificaciones",
+          "title": "Falta de Sellado de Tiempo Criptográfico Inmutable en las Notificaciones",
+          "evidenceText": "El sistema actual de correo electrónico simple no genera constancias fehacientes de depósito y lectura válidas legalmente ante el Poder Judicial, lo que genera litigios sobre el cómputo exacto de plazos procesales.",
+          "text": "El sistema actual de correo electrónico simple no genera constancias fehacientes de depósito y lectura válidas legalmente ante el Poder Judicial, lo que genera litigios sobre el cómputo exacto de plazos procesales.",
+          "sourceTool": "Dictamen de Seguridad Informática",
+          "priority": "Media",
+          "quote": "El acuse de recibo de la casilla electrónica con firma digital oficial de Reniec pone fin a cualquier discusión sobre cuándo se dio por enterado el usuario.",
+          "date": "2026-04-16"
         }
       ],
-      "H06_DefinicionDesafioHMW": {
-        "hmwCode": "HMW-IN0010",
-        "action": "implementar un Sistema de Casilla Electrónica Institucional (SINO-AGROIDEAS) con alertas SMS/WhatsApp y constancia de depósito digital",
-        "targetUser": "las Organizaciones Agrarias y administrados del Programa AGROIDEAS",
-        "benefit": "garantizar la validez legal e inmediatez de las notificaciones administrativas",
-        "constraint": "las brechas de conectividad en zonas rurales y la inercia del uso del documento en papel",
-        "finalHMWStatement": "¿Cómo podríamos implementar un Sistema de Casilla Electrónica Institucional (SINO-AGROIDEAS) con alertas SMS/WhatsApp y constancia de depósito digital para que las Organizaciones Agrarias y administrados reciban notificaciones con validez legal inmediata a pesar de las brechas de conectividad y la dependencia del papel?"
-      }
+      "H06_DefinicionDesafioHMW": [
+        {
+          "id": 55,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "insightId": 55,
+          "targetUser": "los comités de adquisiciones de las organizaciones agrarias beneficiarias",
+          "actionGoal": "solicitar y comparar cotizaciones de maquinaria e insumos en una plataforma transparente",
+          "constraintOrPain": "las exigencias burocráticas del manual de adquisiciones y la escasez de proveedores formales locales",
+          "hmwStatement": "¿Cómo podríamos solicitar y comparar cotizaciones de maquinaria e insumos en una plataforma transparente para los comités de adquisiciones de las organizaciones agrarias beneficiarias a pesar de las exigencias burocráticas del manual de adquisiciones y la escasez de proveedores formales locales?",
+          "question": "¿Cómo podríamos solicitar y comparar cotizaciones de maquinaria e insumos en una plataforma transparente para los comités de adquisiciones de las organizaciones agrarias beneficiarias a pesar de las exigencias burocráticas del manual de adquisiciones y la escasez de proveedores formales locales?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 56,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "insightId": 56,
+          "targetUser": "los proveedores locales y talleres mecánicos de provincias agrarias",
+          "actionGoal": "postular sus ofertas y equipos mediante fichas estandarizadas sin costo de inscripción",
+          "constraintOrPain": "el desconocimiento de la normativa pública y la desconfianza sobre los plazos de pago",
+          "hmwStatement": "¿Cómo podríamos postular sus ofertas y equipos mediante fichas estandarizadas sin costo de inscripción para los proveedores locales y talleres mecánicos de provincias agrarias a pesar de el desconocimiento de la normativa pública y la desconfianza sobre los plazos de pago?",
+          "question": "¿Cómo podríamos postular sus ofertas y equipos mediante fichas estandarizadas sin costo de inscripción para los proveedores locales y talleres mecánicos de provincias agrarias a pesar de el desconocimiento de la normativa pública y la desconfianza sobre los plazos de pago?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 57,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "insightId": 57,
+          "targetUser": "los auditores de adquisiciones de AGROIDEAS y Órgano de Control Institucional",
+          "actionGoal": "detectar automáticamente posibles sobreprecios o direccionamientos hacia proveedores coludidos",
+          "constraintOrPain": "la comparación manual de proformas físicas y la falta de un catálogo histórico de precios de referencia",
+          "hmwStatement": "¿Cómo podríamos detectar automáticamente posibles sobreprecios o direccionamientos hacia proveedores coludidos para los auditores de adquisiciones de AGROIDEAS y Órgano de Control Institucional a pesar de la comparación manual de proformas físicas y la falta de un catálogo histórico de precios de referencia?",
+          "question": "¿Cómo podríamos detectar automáticamente posibles sobreprecios o direccionamientos hacia proveedores coludidos para los auditores de adquisiciones de AGROIDEAS y Órgano de Control Institucional a pesar de la comparación manual de proformas físicas y la falta de un catálogo histórico de precios de referencia?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 58,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "insightId": 58,
+          "targetUser": "los presidentes comunales y secretarios agrarios",
+          "actionGoal": "suscribir contratos de compraventa y garantías de postventa con validez legal inmediata",
+          "constraintOrPain": "la necesidad de viajar múltiples veces a notarías distantes para legalizar firmas y acuerdos",
+          "hmwStatement": "¿Cómo podríamos suscribir contratos de compraventa y garantías de postventa con validez legal inmediata para los presidentes comunales y secretarios agrarios a pesar de la necesidad de viajar múltiples veces a notarías distantes para legalizar firmas y acuerdos?",
+          "question": "¿Cómo podríamos suscribir contratos de compraventa y garantías de postventa con validez legal inmediata para los presidentes comunales y secretarios agrarios a pesar de la necesidad de viajar múltiples veces a notarías distantes para legalizar firmas y acuerdos?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 59,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "insightId": 59,
+          "targetUser": "las cooperativas que requieren maquinaria especializada con plazos de importación",
+          "actionGoal": "dar seguimiento al cronograma de entrega, nacionalización y puesta en marcha del equipamiento",
+          "constraintOrPain": "los retrasos en fletes marítimos que provocan el vencimiento de los plazos del plan de negocio",
+          "hmwStatement": "¿Cómo podríamos dar seguimiento al cronograma de entrega, nacionalización y puesta en marcha del equipamiento para las cooperativas que requieren maquinaria especializada con plazos de importación a pesar de los retrasos en fletes marítimos que provocan el vencimiento de los plazos del plan de negocio?",
+          "question": "¿Cómo podríamos dar seguimiento al cronograma de entrega, nacionalización y puesta en marcha del equipamiento para las cooperativas que requieren maquinaria especializada con plazos de importación a pesar de los retrasos en fletes marítimos que provocan el vencimiento de los plazos del plan de negocio?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 60,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "insightId": 60,
+          "targetUser": "los tesoreros de organizaciones en el proceso de liquidación de compras",
+          "actionGoal": "vincular las órdenes de compra adjudicadas con el comprobante de pago y el acta de recepción",
+          "constraintOrPain": "la dispersión de comprobantes que genera discrepancias en las rendiciones de cuentas finales",
+          "hmwStatement": "¿Cómo podríamos vincular las órdenes de compra adjudicadas con el comprobante de pago y el acta de recepción para los tesoreros de organizaciones en el proceso de liquidación de compras a pesar de la dispersión de comprobantes que genera discrepancias en las rendiciones de cuentas finales?",
+          "question": "¿Cómo podríamos vincular las órdenes de compra adjudicadas con el comprobante de pago y el acta de recepción para los tesoreros de organizaciones en el proceso de liquidación de compras a pesar de la dispersión de comprobantes que genera discrepancias en las rendiciones de cuentas finales?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        }
+      ]
     },
     "FASE_3_IDEAR": {
       "H07_LluviaIdeasCrazy8s": [
         {
-          "ideaId": "IDEA-IN010-01",
-          "title": "Sistema Web PWA de Casilla Electrónica (SINO-AGROIDEAS) con autenticación DNIe/Clave SOL y alertas omnicanal",
-          "author": "Analista UPP",
-          "votes": 14
+          "id": 55,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "desafioId": 55,
+          "ideaTitle": "Mercado Digital de Proveedores Agrarios Homologados con cotizador comparativo",
+          "idea": "Mercado Digital de Proveedores Agrarios Homologados con cotizador comparativo",
+          "description": "Plataforma en línea donde las cooperativas publican sus requerimientos de maquinaria y reciben proformas de múltiples talleres formales.",
+          "category": "Tecnológica",
+          "authorRole": "Ingeniero de Plataformas B2B",
+          "votesCount": 12,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "ideaId": "IDEA-IN010-02",
-          "title": "Envío de PDFs adjuntos firmados por correo institucional masivo",
-          "author": "Especialista UA",
-          "votes": 4
+          "id": 56,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "desafioId": 57,
+          "ideaTitle": "Motor de Comparación Histórica de Precios y Detección de Sobreprecios",
+          "idea": "Motor de Comparación Histórica de Precios y Detección de Sobreprecios",
+          "description": "Algoritmo que contrasta las cotizaciones recibidas contra precios de referencia nacional para advertir sobrecostos inusuales.",
+          "category": "Tecnológica",
+          "authorRole": "Analista de Inteligencia de Datos",
+          "votesCount": 10,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 57,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "desafioId": 59,
+          "ideaTitle": "Tracking Satelital de Despacho de Maquinaria e hitos aduaneros de importación",
+          "idea": "Tracking Satelital de Despacho de Maquinaria e hitos aduaneros de importación",
+          "description": "Módulo de seguimiento en tiempo real que alerta fechas estimadas de llegada de tractores, tanques o líneas de procesamiento.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Coordinador de Logística de Inversiones",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 58,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "desafioId": 60,
+          "ideaTitle": "Expediente Único Digital que amarra proforma, orden de compra y factura",
+          "idea": "Expediente Único Digital que amarra proforma, orden de compra y factura",
+          "description": "Estructura digital que vincula automáticamente los 3 documentos obligatorios, facilitando la fiscalización y auditoría posterior.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Especialista en Control Documental",
+          "votesCount": 9,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 59,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "desafioId": 58,
+          "ideaTitle": "Convenio Notarial Digital para Reconocimiento de Personerías en Contrataciones",
+          "idea": "Convenio Notarial Digital para Reconocimiento de Personerías en Contrataciones",
+          "description": "Mecanismo normativo que permite legalizar contratos de compraventa de equipamiento mediante firma digital acreditada sin viajes notariales.",
+          "category": "Normativa",
+          "authorRole": "Abogado Notarial y Registral",
+          "votesCount": 11,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 60,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "desafioId": 56,
+          "ideaTitle": "Capacitación en el Manual de Adquisiciones de AGROIDEAS para talleres y proveedores locales",
+          "idea": "Capacitación en el Manual de Adquisiciones de AGROIDEAS para talleres y proveedores locales",
+          "description": "Talleres para pequeños proveedores provinciales sobre cómo formular cotizaciones válidas, garantías y emisión de comprobantes electrónicos.",
+          "category": "Capacitación",
+          "authorRole": "Facilitador de Cadena de Suministro",
+          "votesCount": 6,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         }
       ],
-      "H08_MatrizPriorizacion": {
-        "evaluationDate": "2026-09-24T16:00:00Z",
-        "ideasEvaluadas": [
-          {
-            "ideaId": "IDEA-IN010-01",
-            "title": "Sistema Web PWA de Casilla Electrónica (SINO-AGROIDEAS) con depósito certificado y alertas omnicanal",
-            "deseabilidad": 5,
-            "factibilidad": 5,
-            "viability": 5,
-            "impacto": 4,
-            "scoreTotal": 19,
-            "isWinningIdea": true
-          },
-          {
-            "ideaId": "IDEA-IN010-02",
-            "title": "Envío de PDFs adjuntos firmados por correo institucional masivo",
-            "deseabilidad": 3,
-            "factibilidad": 4,
-            "viability": 3,
-            "impacto": 3,
-            "scoreTotal": 13,
-            "isWinningIdea": false
-          }
-        ],
-        "winningIdeaSummary": {
-          "title": "SINO-AGROIDEAS: Plataforma Web PWA de Casilla Electrónica Institucional",
-          "rationale": "Obtuvo 19/20 puntos. Cumple estrictamente con el TUO de la Ley N.° 27444, garantizando fe pública del depósito y trazabilidad legal inmutable."
+      "H08_MatrizPriorizacion": [
+        {
+          "id": 55,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "ideaId": 55,
+          "ideaTitle": "Mercado Digital de Proveedores Agrarios Homologados con cotizador comparativo",
+          "title": "Mercado Digital de Proveedores Agrarios Homologados con cotizador comparativo",
+          "desirability": 5,
+          "feasibility": 5,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 19,
+          "isWinningIdea": true,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 56,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "ideaId": 59,
+          "ideaTitle": "Convenio Notarial Digital para Reconocimiento de Personerías en Contrataciones",
+          "title": "Convenio Notarial Digital para Reconocimiento de Personerías en Contrataciones",
+          "desirability": 5,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 57,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "ideaId": 56,
+          "ideaTitle": "Motor de Comparación Histórica de Precios y Detección de Sobreprecios",
+          "title": "Motor de Comparación Histórica de Precios y Detección de Sobreprecios",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 16,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 58,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "ideaId": 58,
+          "ideaTitle": "Expediente Único Digital que amarra proforma, orden de compra y factura",
+          "title": "Expediente Único Digital que amarra proforma, orden de compra y factura",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 15,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 59,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "ideaId": 57,
+          "ideaTitle": "Tracking Satelital de Despacho de Maquinaria e hitos aduaneros de importación",
+          "title": "Tracking Satelital de Despacho de Maquinaria e hitos aduaneros de importación",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 14,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 60,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "ideaId": 60,
+          "ideaTitle": "Capacitación en el Manual de Adquisiciones de AGROIDEAS para talleres y proveedores locales",
+          "title": "Capacitación en el Manual de Adquisiciones de AGROIDEAS para talleres y proveedores locales",
+          "desirability": 3,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 13,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
         }
+      ],
+      "H09_PrototipadoRapido": {
+        "id": 10,
+        "projectId": 10,
+        "projectCode": "PIIP-2026-IN0010",
+        "prototypeTitle": "Módulo Web de Casilla Electrónica Institucional (SINO-AGROIDEAS)",
+        "name": "Módulo Web de Casilla Electrónica Institucional (SINO-AGROIDEAS)",
+        "prototypeType": "Digital PWA",
+        "keyFeatures": [
+          "Bandeja de notificaciones oficiales vinculada a Clave SOL / DNIe",
+          "Emisión automática de constancia de depósito fehaciente con sellado de tiempo TSA",
+          "Alertas simultáneas por SMS y correo electrónico al representante de la OA"
+        ],
+        "artifactUrlOrImage": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500",
+        "imageUrl": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500",
+        "description": "Casilla virtual con plena validez legal (Ley 27444), garantizando que las observaciones lleguen instantáneamente a organizaciones rurales sin depender de courier físico.",
+        "testingGoal": "100% de notificaciones acreditadas con acuse digital fehaciente en menos de 5 segundos desde su emisión."
       }
     },
     "FASE_4_ENTREGAR": {
-      "H09_PrototipadoRapido": {
-        "prototypeCode": "PROTO-IN010-PWA",
-        "prototypeName": "Módulo Web SINO-AGROIDEAS PWA",
-        "type": "Progressive Web App (PWA) Local-First + Certificador de Depósito",
-        "keyFeatures": [
-          "Bandeja de Entrada/Salida de Casilla Electrónica por RUC/DNI",
-          "Visor PDF incorporado con firma digital acreditada por INDECOPI/RENIEC",
-          "Generador de Cédula de Notificación y Constancia de Depósito Inmutable",
-          "Motor de Alertas automáticas vía SMS y WhatsApp API"
-        ],
-        "testCriteria": "Tiempo de generación de constancia de depósito < 1 segundo y notificación efectiva comprobada en < 5 minutos."
-      },
-      "H10_PlanAccion": {
-        "roadmapName": "Hoja de Ruta para Despliegue de Casilla Electrónica (SINO-AGROIDEAS)",
-        "sprints": [
-          {
-            "sprintNumber": 1,
-            "duration": "3 Semanas",
-            "objective": "Aprobación del Reglamento de Casilla Electrónica por UAJ/UPP e integración de firma digital",
-            "responsible": "UPP / UAJ"
-          },
-          {
-            "sprintNumber": 2,
-            "duration": "3 Semanas",
-            "objective": "Desarrollo del Frontend PWA SINO y API de envío de alertas SMS/WhatsApp",
-            "responsible": "UA-TI / UPP"
-          },
-          {
-            "sprintNumber": 3,
-            "duration": "3 Semanas",
-            "objective": "Pilotaje de notificación de 100 resoluciones con Organizaciones Agrarias en Junín y Arequipa",
-            "responsible": "UA-Trámite / UPP / Unidades Regionales"
-          }
-        ]
-      },
-      "H11_MatrizRiesgosTesteo": {
-        "testCode": "TEST-IN010-01",
-        "riskMitigation": [
-          {
-            "riskDescription": "Falta de lectura de la casilla por parte del administrado",
-            "mitigationStrategy": "Regla legal de surtimiento de efectos al 1er día hábil posterior al depósito y alertas duales por SMS/WhatsApp."
-          }
-        ],
-        "learningCard": {
-          "hypothesis": "Las notificaciones vía Casilla Electrónica reducen el ciclo de notificación de 25 días a menos de 10 minutos con 100% de validez jurídica.",
-          "results": "Se notificados 100 actos administrativos en piloto; tiempo promedio de notificación se redujo a 4 minutos con 0 impugnaciones por vicio de forma.",
-          "decision": "PASAR A PRODUCCIÓN E INSTITUCIONALIZAR EN EL PORTAFOLIO (ANEXO 5)"
+      "H10_PlanAccion": [
+        {
+          "id": 11,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "taskName": "Levantamiento de fuentes de datos de mercados mayoristas regionales",
+          "task": "Levantamiento de fuentes de datos de mercados mayoristas regionales",
+          "phase": "Inteligencia de Datos",
+          "responsibleUnit": "Unidad de Inteligencia Comercial",
+          "responsible": "Unidad de Inteligencia Comercial",
+          "leader": "Analista de Mercados",
+          "startDate": "2026-05-15",
+          "endDate": "2026-06-30",
+          "deadline": "2026-06-30",
+          "deliverable": "Esquema de interoperabilidad con boletines diarios del MIDAGRI y mercados zonales",
+          "status": "Completado"
         }
-      }
+      ],
+      "H11_MatrizRiesgosTesteo": [
+        {
+          "id": 12,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "riskDescription": "Desactualización de precios en mercados mayoristas por retraso en el reporte de encuestadores locales.",
+          "description": "Desactualización de precios en mercados mayoristas por retraso en el reporte de encuestadores locales.",
+          "riskType": "Operativo",
+          "probability": "Media",
+          "impact": "Medio",
+          "level": "Medio",
+          "mitigationStrategy": "Incentivos no monetarios a informantes y bot automatizado de confirmación matutina antes de las 08:00 hrs.",
+          "mitigation": "Incentivos no monetarios a informantes y bot automatizado de confirmación matutina antes de las 08:00 hrs.",
+          "testResult": "Puntualidad en el reporte mejoró del 52% al 94% mediante recordatorios automáticos por WhatsApp."
+        }
+      ]
     }
   }
 }

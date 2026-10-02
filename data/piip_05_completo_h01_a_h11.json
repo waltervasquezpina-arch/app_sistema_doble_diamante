@@ -1,224 +1,777 @@
 {
   "$schema": "./schemas/far-piip-v3.json",
-  "NavegacionYTrazabilidad": {
-    "IniciativaCodigoActiva": "PIIP-2026-IN0005",
-    "UbicacionActual": {
-      "TipoVista": "HERRAMIENTA_METODOLOGICA",
-      "FaseNumero": 4,
-      "FaseNombre": "Fase 4: Entregar",
-      "HerramientaNumero": 11,
-      "HerramientaCodigo": "H11",
-      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
-      "VistaCodigo": "V11.1",
-      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje",
-      "VistaUrl": "fase4/11-matriz-riesgos.html"
-    },
-    "PosicionEnFlujo": {
-      "PasoActual": 11,
-      "TotalPasosFlujo": 11,
-      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
-      "PasoAnterior": {
-        "HerramientaCodigo": "H10",
-        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
-        "VistaUrl": "fase4/10-plan-accion.html"
-      },
-      "PasoSiguiente": null
-    },
-    "ControlIteracionYTrazabilidad": {
-      "VersionIteracion": 1,
-      "PermiteIteracionAnterior": true,
-      "FechaUltimaActualizacion": "2026-10-12T17:30:00Z",
-      "UsuarioActualRol": "Facilitador Ágil / Especialista UPP-USE"
-    }
-  },
-  "ProyectoDetalleMaestro": {
+  "IniciativaIdentificacion": {
     "id": 5,
-    "code": "PIIP-2026-IN0005",
-    "title": "Sistema de Alerta Temprana para Riesgos en Ejecución de Incentivos (SAT-INCENTIVOS)",
-    "responsible": "Unidad de Planeamiento y Presupuesto (UPP) / Unidad de Seguimiento y Evaluación (USE)",
-    "contact": "Especialista en Monitoreo y Riesgos - UPP/USE",
-    "date": "2026-09-19",
-    "status": "Fase 4: Entregar",
-    "porcentajeAvanceGlobal": 100.0,
-    "evaluacionTecnicaPuntaje": "10 / 12 Puntos (Impacto: 3, Priorización Estratégica: 4, Enfoque de Innovación: 3)",
-    "phases": {
-      "descubrir": "completed",
-      "definir": "completed",
-      "idear": "completed",
-      "entregar": "completed"
-    }
+    "IniciativaCodigo": "PIIP-2026-IN0005",
+    "IniciativaNombre": "Sistema de Alerta Temprana para Riesgos en Ejecución de Incentivos (SAT-INCENTIVOS)",
+    "UnidadOrganicaResponsable": "Unidad de Planeamiento y Presupuesto (UPP) / Unidad de Seguimiento y Evaluación (USE)",
+    "LiderProyecto": "Especialista en Monitoreo y Riesgos - UPP/USE",
+    "FechaRegistro": "2026-02-17",
+    "EstadoFases": {
+      "descubrir": "active",
+      "definir": "pending",
+      "idear": "pending",
+      "entregar": "pending"
+    },
+    "PorcentajeAvanceGlobal": 50.0
   },
   "RegistrosHerramientasMetodologicas": {
     "FASE_1_DESCUBRIR": {
       "H01_ObservacionAEIOU": [
         {
-          "id": "aeiou-005-1",
-          "dimension": "Actividades",
-          "observation": "Los retrasos e incumplimientos en las metas físicas y financieras de los Planes de Negocio se detectan ex-post, cuando el periodo de ejecución ya ha concluido o los recursos están comprometidos sin avance tangible.",
-          "timestamp": "2026-09-19T09:00:00Z"
+          "id": 25,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "activity": "Reunión de emergencia tras enterarse por redes sociales de heladas severas que afectaron el 70% de cultivos de quinua de cooperativa beneficiaria.",
+          "environment": "Oficina de la Unidad de Negocios en Lima; directivos en videollamada con la oficina zonal de Puno.",
+          "interaction": "Especialistas descubren que la cooperativa no podrá cumplir con el volumen comprometido de entrega pactado en el plan de negocios.",
+          "object": "Reportes impresos de metas de producción, fotografías de campos congelados enviadas por WhatsApp, cronograma de inversión anual.",
+          "objects": "Reportes impresos de metas de producción, fotografías de campos congelados enviadas por WhatsApp, cronograma de inversión anual.",
+          "user": "Especialista de Monitoreo UN, analista de riesgos de UPP y presidente de la cooperativa alpaquera y de quinua.",
+          "users": "Especialista de Monitoreo UN, analista de riesgos de UPP y presidente de la cooperativa alpaquera y de quinua.",
+          "observer": "Analista de Gestión del Riesgo Operacional - UPP",
+          "observationDate": "2026-02-20",
+          "date": "2026-02-20",
+          "timestamp": "2026-02-20T11:00:00.000Z"
         },
         {
-          "id": "aeiou-005-2",
-          "dimension": "Entorno",
-          "observation": "Monitoreo basado en informes trimestrales estáticos en papel o tabulaciones aisladas que impiden una reacción oportuna de la UPP y USE ante desviaciones de calendario.",
-          "timestamp": "2026-09-19T11:30:00Z"
+          "id": 26,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "activity": "Cruce manual de alertas hidrometeorológicas del SENAMHI con las coordenadas geográficas de los planes de negocios activos en la cuenca norte.",
+          "environment": "Estación de trabajo en la Unidad de Planeamiento y Presupuesto; dos monitores con múltiples pestañas abiertas de portales estatales.",
+          "interaction": "Analista de UPP transcribe a mano en un Excel las localidades en alerta roja por lluvias intensas para identificar qué organizaciones tienen obras en curso.",
+          "object": "Boletín meteorológico SENAMHI en PDF, hoja Excel de ubicación de planes de negocio, mapa físico mural del Perú.",
+          "objects": "Boletín meteorológico SENAMHI en PDF, hoja Excel de ubicación de planes de negocio, mapa físico mural del Perú.",
+          "user": "Analista de Riesgos Climáticos UPP y Coordinador Regional de Lambayeque/Piura.",
+          "users": "Analista de Riesgos Climáticos UPP y Coordinador Regional de Lambayeque/Piura.",
+          "observer": "Especialista en Evaluación de Riesgos - UPP",
+          "observationDate": "2026-03-12",
+          "date": "2026-03-12",
+          "timestamp": "2026-03-12T15:30:00.000Z"
+        },
+        {
+          "id": 27,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "activity": "Detección tardía de conflicto social y cambio repentino de junta directiva que paralizó la cuenta mancomunada del proyecto durante 4 meses.",
+          "environment": "Local de la comunidad campesina en Espinar, Cusco; asamblea tensa con presencia de autoridades comunales y mediadores locales.",
+          "interaction": "Técnico de AGROIDEAS intenta explicar los requisitos bancarios para reanudar el cofinanciamiento mientras comuneros reclaman desconocimiento de cuentas.",
+          "object": "Actas de asamblea comunal en cuaderno de actas legalizado, estados de cuenta bancarios impresos, directiva de incentivos.",
+          "objects": "Actas de asamblea comunal en cuaderno de actas legalizado, estados de cuenta bancarios impresos, directiva de incentivos.",
+          "user": "Presidente entrante de la directiva, presidente saliente, 80 comuneros empadronados y 2 mediadores zonales.",
+          "users": "Presidente entrante de la directiva, presidente saliente, 80 comuneros empadronados y 2 mediadores zonales.",
+          "observer": "Monitor de Conflictividad y Riesgo Social - UR Cusco",
+          "observationDate": "2026-04-14",
+          "date": "2026-04-14",
+          "timestamp": "2026-04-14T09:45:00.000Z"
+        },
+        {
+          "id": 28,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "activity": "Evaluación de riesgo crediticio y mora financiera por alza internacional no prevista en los costos de fertilizantes importados.",
+          "environment": "Oficina técnica de la cooperativa bananera en Chulucanas, Piura; ambiente caluroso con ventiladores de pie.",
+          "interaction": "Gerente de la cooperativa muestra las cotizaciones triplicadas de urea y abonos fosfatados al especialista de formulación de AGROIDEAS.",
+          "object": "Cotizaciones comerciales de importadoras, facturas proforma, plantilla de estructura de costos del plan de negocio.",
+          "objects": "Cotizaciones comerciales de importadoras, facturas proforma, plantilla de estructura de costos del plan de negocio.",
+          "user": "Gerente de la cooperativa, contador general y analista económico de AGROIDEAS.",
+          "users": "Gerente de la cooperativa, contador general y analista económico de AGROIDEAS.",
+          "observer": "Evaluador de Riesgos Financieros - UPP",
+          "observationDate": "2026-05-19",
+          "date": "2026-05-19",
+          "timestamp": "2026-05-19T14:00:00.000Z"
+        },
+        {
+          "id": 29,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "activity": "Sesión de modelamiento de matriz de riesgos automatizada con indicadores predictivos (semáforos rojo, amarillo y verde) según hitos críticos.",
+          "environment": "Sala de innovación de AGROIDEAS en Lima; sesión de cocreación multidisciplinaria.",
+          "interaction": "Especialistas de UPP, UN y UAJ definen juntos los umbrales de alerta temprana para desvíos presupuestales mayores al 15%.",
+          "object": "Pizarra acrílica con matriz de calor (probabilidad vs impacto), tarjetas de riesgo codificadas por colores, laptops conectadas.",
+          "objects": "Pizarra acrílica con matriz de calor (probabilidad vs impacto), tarjetas de riesgo codificadas por colores, laptops conectadas.",
+          "user": "Jefe de UPP, analistas de sistemas de OTI, directores de UN y asesores de riesgo del MIDAGRI.",
+          "users": "Jefe de UPP, analistas de sistemas de OTI, directores de UN y asesores de riesgo del MIDAGRI.",
+          "observer": "Facilitador Metodológico - Proyecto PIIP UPP",
+          "observationDate": "2026-06-22",
+          "date": "2026-06-22",
+          "timestamp": "2026-06-22T16:15:00.000Z"
+        },
+        {
+          "id": 30,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "activity": "Prueba de envío automático de alertas push vía WhatsApp y correo a los coordinadores regionales ante desviaciones en cronograma de desembolsos.",
+          "environment": "Entorno de pruebas de TI en sede central Lima con simulación de recepción en celulares de coordinadores zonales en San Martín y Puno.",
+          "interaction": "Coordinador zonal recibe notificación en su celular: 'Alerta Amarilla: Plan PIIP-2026-0042 registra 30 días sin reporte de gasto'.",
+          "object": "Smartphones personales con app de mensajería, servidor de pruebas webhook, panel de telemetría de entrega de mensajes.",
+          "objects": "Smartphones personales con app de mensajería, servidor de pruebas webhook, panel de telemetría de entrega de mensajes.",
+          "user": "Ingeniero de software OTI, especialista de alertas de UPP y 3 coordinadores regionales de campo.",
+          "users": "Ingeniero de software OTI, especialista de alertas de UPP y 3 coordinadores regionales de campo.",
+          "observer": "Ingeniero de Calidad de Software - OTI/UPP",
+          "observationDate": "2026-07-28",
+          "date": "2026-07-28",
+          "timestamp": "2026-07-28T10:30:00.000Z"
         }
       ],
-      "H02_MapaEmpatia": {
-        "userProfile": "Especialista de Monitoreo de la USE / Analista UPP",
-        "says": "Nos enteramos de los problemas de ejecución cuando la organización ya está paralizada o vencida.",
-        "does": "Revisa manualmente reportes desfasados de las Unidades Regionales intentando identificar desfases.",
-        "thinks": "Necesitamos un sistema automatizado que calcule desvíos automáticamente y envíe alertas de semáforo antes de que ocurra la pérdida.",
-        "feels": "Preocupado por la falta de capacidad predictiva sobre la cartera de incentivos.",
-        "pains": "Incapacidad para intervenir preventivamente y alto costo operativo en fiscalizaciones tardías.",
-        "gains": "Anticipar desviaciones, proteger los recursos públicos invertidos y elevar la tasa de cumplimiento de los Planes de Negocio al 95%."
-      },
-      "H03_EncuestasCampo": {
-        "sampleSize": 32,
-        "targetAudience": "Especialistas de Monitoreo y Seguimiento de UPP, USE y Unidades Regionales",
-        "keyResults": [
-          {
-            "question": "¿Detecta desvíos de ejecución en tiempo real?",
-            "percentageNo": 90.6
-          },
-          {
-            "question": "¿Considera útil una matriz automatizada de semáforos de riesgo?",
-            "percentageYes": 100.0
-          },
-          {
-            "question": "Principales factores de riesgo a monitorear",
-            "topFactors": [
-              "Desfase presupuestal/desembolso",
-              "Demora en adquisición de maquinaria/activos",
-              "Cambios en directivas de la Organización Agraria"
-            ]
-          }
-        ]
-      },
-      "H04_FichaPersona": {
-        "archetypeCode": "PERS-IN0005-01",
-        "name": "Ing. Roberto Carlos Mendoza",
-        "role": "Especialista en Monitoreo y Evaluación de la USE",
-        "age": 41,
-        "digitalLiteracy": "Avanzado (Dominio de Excel analítico, bases de datos y dashboards BI)",
-        "primaryGoal": "Monitorear en tiempo real la ejecución de más de 300 incentivos activos con alertas tempranas automáticas."
-      }
+      "H02_MapaEmpatia": [
+        {
+          "id": 27,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "userProfile": "Analista de Gestión del Riesgo Operativo y Metas Físicas (UPP)",
+          "says": "\"Nos enteramos de que una cooperativa cayó en insolvencia cuando el banco ya les cerró las cuentas y el plan de negocio está paralizado.\"",
+          "does": "Calcula matrices de riesgo para los planes de negocio activos, procesa información climatológica del SENAMHI y alerta al comité de gerencia.",
+          "thinks": "Cree que con un modelo predictivo basado en 5 variables clave se podrían anticipar el 80% de los fracasos de proyectos cofinanciados.",
+          "feels": "Frustración por tener que apagar incendios en vez de prevenirlos y preocupación por el dinero público inmovilizado en planes fallidos.",
+          "hears": "Directores de línea sorprendidos en reuniones mensuales por proyectos que pasaron de estado verde a rojo sin aviso previo.",
+          "sees": "Noticias sobre heladas en el sur o sequías en el norte que afectarán directamente a decenas de organizaciones con planes vigentes.",
+          "pains": "Carencia de herramientas analíticas automatizadas, datos desactualizados de campo y falta de coordinación interinstitucional oportuna.",
+          "gains": "Tablero de alerta temprana con semaforización predictiva basada en riesgo climático, financiero y de gobernanza asociativa."
+        },
+        {
+          "id": 28,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "userProfile": "Coordinador Regional de Acompañamiento Técnico (UR San Martín)",
+          "says": "\"Si el río se lleva la trocha carrozable o hay plaga de roya, los productores no pueden avisarnos rápido y pierden los plazos de ejecución.\"",
+          "does": "Supervisa a los extensionistas de campo, recopila reportes de emergencias agropecuarias y tramita solicitudes de ampliación de calendario.",
+          "thinks": "Opina que las reglas de ejecución del programa son demasiado rígidas y no consideran la realidad de eventos de fuerza mayor en selva.",
+          "feels": "Angustia por los productores que pierden sus inversiones debido a contingencias externas no imputables a su gestión.",
+          "hears": "Dirigentes desesperados pidiendo reprogramaciones urgentes mientras los expedientes se demoran en trámites de sede central.",
+          "sees": "Viveros de café inundados o accesos bloqueados por huaicos que impiden la llegada de fertilizantes comprados con el incentivo.",
+          "pains": "Mecanismos burocráticos y lentos para declarar estados de emergencia técnica y rigidez en la modificación de convenios bilaterales.",
+          "gains": "Protocolo ágil de notificación móvil de emergencias con activación automática de planes de contingencia y reasignación de plazos."
+        },
+        {
+          "id": 29,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "userProfile": "Presidente de Cooperativa Cacaotera en Zona de Riesgo (Tocache, San Martín)",
+          "says": "\"El Fenómeno del Niño nos malogró los secadores solares. Avisamos a la oficina pero la respuesta demoró tanto que el hongo malogró todo el grano.\"",
+          "does": "Organiza faenas comunitarias para rescatar cosechas, envía cartas físicas a la sede regional y asiste a reuniones del COE provincial.",
+          "thinks": "Siente que cuando hay emergencias el Estado pide cartas notariales y fotos impresas en lugar de enviar auxilio técnico inmediato.",
+          "feels": "Desesperación ante la pérdida del trabajo de todo un año y temor de que AGROIDEAS les cobre penalidades o resuelva el convenio.",
+          "hears": "Los socios que dicen que el programa los abandonó en el peor momento y que las cuotas de contrapartida ya no se podrán pagar.",
+          "sees": "Cacao germinado y podrido en los cajones de fermentación por falta de sol continuo y exceso de lluvias torrenciales.",
+          "pains": "Riesgo de quiebra asociativa, pérdida de compradores internacionales de comercio justo y desconfianza comunitaria.",
+          "gains": "Botón de auxilio agroclimático en app móvil que geolocalice el daño y active asistencia técnica especializada y prórrogas automáticas."
+        },
+        {
+          "id": 30,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "userProfile": "Especialista en Adquisición de Bienes de Capital y Maquinaria (Unidad de Negocios)",
+          "says": "\"El mayor riesgo en campo es que el proveedor de tractores suba el precio por inflación del dólar o quiebre antes de entregar los equipos.\"",
+          "does": "Verifica cotizaciones de proveedores, revisa garantías comerciales y monitorea el cumplimiento de contratos de suministro de maquinaria.",
+          "thinks": "Estima que monitorear la solvencia de proveedores homologados evitaría paralizaciones que duran más de 8 meses en resolver controversias.",
+          "feels": "Inseguridad al autorizar giros millonarios a empresas proveedoras sin contar con alertas crediticias en tiempo real.",
+          "hears": "Casos de proveedores que vendieron equipos agrícolas defectuosos y luego desaparecieron sin brindar servicio posventa ni repuestos.",
+          "sees": "Contratos de compraventa con cláusulas desfavorables para las cooperativas redactados por empresas proveedoras sin supervisión.",
+          "pains": "Insolvencia de proveedores críticos, demoras en importación de maquinaria especializada y falta de un padrón de proveedores confiables.",
+          "gains": "Registro dinámico de proveedores calificados con semáforo de cumplimiento comercial y alertas automáticas de morosidad en Infocorp/Sunat."
+        },
+        {
+          "id": 31,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "userProfile": "Proveedor Homologado de Sistemas de Riego Tecnificado (Sector Privado)",
+          "says": "\"A veces importamos las tuberías y bombas pero la cooperativa no tiene listo el reservorio porque se demoró su trámite con el programa.\"",
+          "does": "Fabrica e importa equipos de riego por goteo, coordina la entrega en chacra y capacita a los agricultores en la operación del sistema.",
+          "thinks": "Considera que una mejor sincronización entre el desembolso estatal y el cronograma de siembra beneficiaría a toda la cadena de valor.",
+          "feels": "Incertidumbre financiera por demoras en los cobros de facturas y costos de almacenamiento en almacenes aduaneros.",
+          "hears": "Comentarios de otros empresarios que prefieren no vender al sector agrario estatal por la excesiva demora en los trámites de liquidación.",
+          "sees": "Equipos de riego empaquetados en almacenes durante meses a la espera de que el comité técnico del programa emita el visto bueno.",
+          "pains": "Costos financieros por capital inmovilizado y falta de previsibilidad en las fechas de recepción técnica de obras en campo.",
+          "gains": "Calendario sincronizado de hitos de entrega entre el programa, la cooperativa y el proveedor con liberación automática de pagos."
+        },
+        {
+          "id": 32,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "userProfile": "Directora de la Unidad de Seguimiento y Evaluación - USE (Sede Central)",
+          "says": "\"El portafolio PIIP y los planes de negocio necesitan métricas vivas. No podemos esperar al informe semestral para darnos cuenta de las desviaciones.\"",
+          "does": "Presenta el tablero de mando a la Alta Dirección del MIDAGRI, evalúa indicadores de impacto socioeconómico y gestiona contingencias.",
+          "thinks": "Sabe que la reputación de AGROIDEAS depende de exhibir proyectos exitosos y sostenibles en el tiempo, sin elefantes blancos.",
+          "feels": "Compromiso ético con la transparencia de los recursos públicos y urgencia por modernizar las herramientas de monitoreo estratégico.",
+          "hears": "El Despacho Ministerial solicitando balances semanales de avance de metas físicas y financieras de los programas de reconversión.",
+          "sees": "Informes estáticos en PowerPoint que quedan obsoletos al día siguiente de ser impresos debido al dinamismo de la realidad agraria.",
+          "pains": "Dispersión de bases de datos, falta de interoperabilidad entre áreas y dificultad para medir el riesgo agregado del portafolio.",
+          "gains": "Dashboard ejecutivo con analítica predictiva de riesgos, mapa de calor territorial y notificaciones directas a dispositivos móviles de decisión."
+        }
+      ],
+      "H03_EncuestasCampo": [
+        {
+          "id": 9,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "respondent": "Raúl Gómez Estrada (Presidente)",
+          "cooperative": "Asociación de Productores de Quinua - Ayacucho",
+          "satisfaction": 2,
+          "comments": "Las heladas destruyeron el 60% de nuestra siembra y el programa se enteró meses después cuando ya estábamos en mora.",
+          "sentiment": "Negativo",
+          "date": "2026-03-12"
+        },
+        {
+          "id": 10,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "respondent": "Ing. Patricia Del Águila (Analista USE)",
+          "cooperative": "Unidad de Seguimiento y Evaluación",
+          "satisfaction": 3,
+          "comments": "Si tuviéramos un sistema de alerta temprana que cruce datos de SENAMHI podríamos reprogramar metas antes de caer en incumplimiento.",
+          "sentiment": "Neutro",
+          "date": "2026-03-16"
+        }
+      ],
+      "H04_FichaPersona": [
+        {
+          "id": 25,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "archetypeName": "Econ. Julio César Barreto",
+          "name": "Econ. Julio César Barreto",
+          "role": "Analista de Riesgo Operativo y Metas Físicas (UPP Sede Central)",
+          "demographics": "40 años, Lima; Economista con Maestría en Gestión del Riesgo y Finanzas Públicas",
+          "age": 40,
+          "techTechSavviness": "Avanzado (Modelos econométricos, R, Python, tableros de semaforización)",
+          "quote": "Nos enteramos de que una cooperativa cayó en insolvencia cuando el banco ya les cerró las cuentas. Necesitamos predecir el riesgo meses antes.",
+          "bio": "Elabora las matrices de riesgo del portafolio institucional de incentivos. Diseña indicadores predictivos de estrés financiero y climático.",
+          "goals": [
+            "Desplegar un modelo predictivo que identifique planes de negocio en riesgo antes de los desembolsos",
+            "Cruzar los datos de ejecución con alertas climáticas de SENAMHI y reportes de la SBS",
+            "Emitir alertas tempranas automáticas dirigidas a los comités de gerencia de las unidades de línea"
+          ],
+          "frustrations": [
+            "Tener que enterarse de las paralizaciones de proyectos por noticias en medios regionales",
+            "Datos de avance físico desactualizados que impiden alimentar los modelos estadísticos",
+            "Falta de protocolos estandarizados de rescate o reestructuración técnica para convenios en crisis"
+          ]
+        },
+        {
+          "id": 26,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "archetypeName": "Ing. Mónica Delgado Rivas",
+          "name": "Ing. Mónica Delgado Rivas",
+          "role": "Coordinadora de Acompañamiento Técnico Zonal (UR San Martín)",
+          "demographics": "44 años, Tarapoto, San Martín; Ingeniera Agrónoma con maestría en Extensión Rural",
+          "age": 44,
+          "techTechSavviness": "Intermedio (Manejo de tablets de campo, WhatsApp empresarial, GPS)",
+          "quote": "Si una plaga ataca o el río rompe la carretera, los agricultores deben tener una forma inmediata de alertarnos para activar el plan de contingencia.",
+          "bio": "Supervisa el avance de más de 40 planes de negocio de cacao, café y palma aceitera en la selva alta. Coordina brigadas de emergencia agronómica.",
+          "goals": [
+            "Disponer de un canal móvil de reporte urgente de eventos adversos (plagas, inundaciones, desvíos)",
+            "Acelerar las adendas de prórroga justificadas por eventos de fuerza mayor comprobados",
+            "Evitar que proyectos con gran potencial productivo queden truncos por falta de auxilio oportuno"
+          ],
+          "frustrations": [
+            "Lentitud de los trámites en sede central para aprobar modificaciones al cronograma de metas",
+            "Productores que callan los problemas por miedo a que el programa les retire el incentivo",
+            "Falta de recursos logísticos para acudir inmediatamente a inspeccionar zonas de desastre"
+          ]
+        },
+        {
+          "id": 27,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "archetypeName": "Don Segundo Huamán Díaz",
+          "name": "Don Segundo Huamán Díaz",
+          "role": "Presidente de Cooperativa Cacaotera en Cuenca Inundable (Tocache, San Martín)",
+          "demographics": "52 años, Tocache; Productor cacaotero con 25 años en la cuenca del Huallaga",
+          "age": 52,
+          "techTechSavviness": "Básico (Manejo de celular básico y WhatsApp en el centro poblado)",
+          "quote": "El río se llevó los secadores solares de cacao que compramos con el incentivo. Avisamos por carta pero la respuesta demoró tres meses.",
+          "bio": "Líder de una cooperativa de 60 agricultores ex cacaoteros tradicionales. Gestiona un plan de negocio de adopción de secadores y módulos de fermentación.",
+          "goals": [
+            "Contar con un botón de alerta de emergencia agroclimática que geolocalice el daño al instante",
+            "Recibir asesoría técnica especializada para reubicar la infraestructura en zonas seguras",
+            "Evitar penalidades o resoluciones de contrato cuando los daños son provocados por el clima"
+          ],
+          "frustrations": [
+            "Pérdida de la inversión asociativa por desastres naturales imprevistos",
+            "Exigencia de trámites formales notariales en momentos de extrema emergencia comunitaria",
+            "Desánimo de los socios que amenazan con abandonar el proyecto si el Estado no responde"
+          ]
+        },
+        {
+          "id": 28,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "archetypeName": "Lic. Ricardo Santillán Vega",
+          "name": "Lic. Ricardo Santillán Vega",
+          "role": "Especialista en Adquisiciones de Maquinaria y Equipos (Unidad de Negocios)",
+          "demographics": "39 años, Lima; Licenciado en Administración y especialista en Compras Públicas",
+          "age": 39,
+          "techTechSavviness": "Avanzado (Monitoreo de mercados, cotizaciones internacionales, comercio exterior)",
+          "quote": "El mayor riesgo es que el proveedor del tractor quiebre o demore la importación 8 meses tras recibir el adelanto de la cooperativa.",
+          "bio": "Evalúa y supervisa los procesos de compra de maquinaria y bienes de capital de las organizaciones beneficiarias. Analiza solvencia de proveedores.",
+          "goals": [
+            "Crear un registro de proveedores homologados con semáforo de cumplimiento comercial",
+            "Monitorear las fluctuaciones del tipo de cambio del dólar y su impacto en las cotizaciones",
+            "Implementar contratos estandarizados con pólizas de caución que protejan los fondos del plan"
+          ],
+          "frustrations": [
+            "Proveedores informales que entregan equipos agrícolas sin servicio técnico ni repuestos",
+            "Conflictos entre directivos y casas comerciales que derivan en arbitrajes que duran años",
+            "Falta de alertas tempranas sobre empresas proveedoras con cobranza coactiva en SUNAT"
+          ]
+        },
+        {
+          "id": 29,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "archetypeName": "Ing. David Holguín Meier",
+          "name": "Ing. David Holguín Meier",
+          "role": "Gerente de Empresa Proveedora de Sistemas de Riego Tecnificado",
+          "demographics": "47 años, Lima; Ingeniero Mecánico y Empresario Agrícola",
+          "age": 47,
+          "techTechSavviness": "Avanzado (Importaciones, software de diseño hidráulico WaterCAD, ERP)",
+          "quote": "A veces importamos las electrobombas pero la cooperativa no tiene listo el reservorio porque se demoró su trámite en el ministerio.",
+          "bio": "Suministra equipos de riego por goteo y aspersión a cooperativas agrarias en la costa y sierra. Brinda capacitación técnica en instalación.",
+          "goals": [
+            "Sincronizar el calendario de importación y entrega con los desembolsos efectivos de AGROIDEAS",
+            "Contar con actas de recepción técnica digitales firmadas in situ para liberar pagos en 48 horas",
+            "Afianzar relaciones comerciales transparentes con las organizaciones de productores"
+          ],
+          "frustrations": [
+            "Capital inmovilizado en almacenes por retrasos burocráticos de los comités de recepción",
+            "Falta de previsibilidad en las fechas de pago que afecta el flujo de caja de la empresa",
+            "Cambios imprevistos de especificaciones técnicas a mitad de la ejecución de la obra"
+          ]
+        },
+        {
+          "id": 30,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "archetypeName": "Dra. María Elena Bustamante",
+          "name": "Dra. María Elena Bustamante",
+          "role": "Directora de la Unidad de Seguimiento y Evaluación - USE (Sede Central)",
+          "demographics": "48 años, Lima; Economista con Doctorado en Políticas Públicas",
+          "age": 48,
+          "techTechSavviness": "Avanzado (Gestión estratégica de datos, dashboards ejecutivos, analítica de impacto)",
+          "quote": "Un buen sistema de alerta temprana no solo evita que los proyectos fracasen, sino que protege la reputación institucional de todo el programa.",
+          "bio": "Lidera la formulación y seguimiento del marco de resultados de AGROIDEAS. Rinde cuentas periódicamente ante el Despacho Ministerial y el MEF.",
+          "goals": [
+            "Contar con un panel de mando integral que muestre el mapa de calor de riesgos a nivel nacional",
+            "Demostrar ante el MEF la eficiencia del gasto público mediante la reducción de proyectos fallidos",
+            "Institucionalizar la cultura de prevención de riesgos en todas las unidades orgánicas del programa"
+          ],
+          "frustrations": [
+            "Recibir reportes de situación cuando los problemas ya se convirtieron en escándalos públicos",
+            "Falta de interoperabilidad entre los sistemas de monitoreo técnico y las plataformas contables",
+            "Resistencia interna a clasificar proyectos con semáforo rojo por temor a sanciones administrativas"
+          ]
+        }
+      ]
     },
     "FASE_2_DEFINIR": {
       "H05_MuroHallazgos": [
         {
-          "clusterId": "CLUST-IN0005-01",
-          "clusterName": "Falta de Indicadores Predictivos Early-Warning",
-          "insight": "El control actual es reactivo. Un modelo de semáforos basado en desfases de cronograma (SPI) y presupuesto (CPI) permitiría intervenir 60 días antes del colapso.",
-          "priority": "CRÍTICA"
+          "id": 25,
+          "type": "Muro",
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "clusterCategory": "Riesgo Financiero y Operativo",
+          "findingTitle": "Detección Tardía de Insolvencia y Desvío de Fondos en Cooperativas",
+          "title": "Detección Tardía de Insolvencia y Desvío de Fondos en Cooperativas",
+          "evidenceText": "El programa detecta problemas de iliquidez o mala gestión de directivas recién cuando los bancos congelan cuentas o cuando las organizaciones caen en mora tributaria coactiva con SUNAT, paralizando el plan.",
+          "text": "El programa detecta problemas de iliquidez o mala gestión de directivas recién cuando los bancos congelan cuentas o cuando las organizaciones caen en mora tributaria coactiva con SUNAT, paralizando el plan.",
+          "sourceTool": "Informes de Seguimiento Financiero",
+          "priority": "Alta",
+          "quote": "Llegamos a intervenir cuando la cooperativa ya quebró y la maquinaria está embargada por deudas externas.",
+          "date": "2026-02-20"
         },
         {
-          "clusterId": "CLUST-IN0005-02",
-          "clusterName": "Automatización de Notificaciones Preventivas",
-          "insight": "Las alertas no deben quedarse en un sistema; deben notificarse automáticamente por correo/alertas a los responsables de las Unidades Regionales.",
-          "priority": "ALTA"
+          "id": 26,
+          "type": "Muro",
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "clusterCategory": "Vulnerabilidad Agroclimática",
+          "findingTitle": "Impacto de Heladas, Sequías y Plagas sin Canal de Alerta Rápida",
+          "title": "Impacto de Heladas, Sequías y Plagas sin Canal de Alerta Rápida",
+          "evidenceText": "Eventos de fuerza mayor como inundaciones en selva o granizadas en sierra destruyen plantaciones cofinanciadas sin que la sede central pueda reaccionar a tiempo para reprogramar metas o brindar auxilio técnico.",
+          "text": "Eventos de fuerza mayor como inundaciones en selva o granizadas en sierra destruyen plantaciones cofinanciadas sin que la sede central pueda reaccionar a tiempo para reprogramar metas o brindar auxilio técnico.",
+          "sourceTool": "Encuestas Post-Desastre",
+          "priority": "Alta",
+          "quote": "El huaico se llevó la bocatoma de riego y tuvimos que esperar tres meses una carta de respuesta para poder reparar el canal.",
+          "date": "2026-02-25"
+        },
+        {
+          "id": 27,
+          "type": "Muro",
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "clusterCategory": "Cadena de Suministro y Proveedores",
+          "findingTitle": "Incumplimiento y Quiebra de Proveedores de Bienes de Capital",
+          "title": "Incumplimiento y Quiebra de Proveedores de Bienes de Capital",
+          "evidenceText": "Empresas proveedoras de tractores y equipos de riego cobran adelantos y luego demoran meses la entrega aduciendo crisis de importación o alza del dólar, dejando obras a medio construir sin penalidades efectivas.",
+          "text": "Empresas proveedoras de tractores y equipos de riego cobran adelantos y luego demoran meses la entrega aduciendo crisis de importación o alza del dólar, dejando obras a medio construir sin penalidades efectivas.",
+          "sourceTool": "Monitoreo de Adquisiciones UN",
+          "priority": "Alta",
+          "quote": "Le pagamos el 50% al proveedor de la despulpadora y luego la empresa desapareció sin entregar las piezas completas.",
+          "date": "2026-03-02"
+        },
+        {
+          "id": 28,
+          "type": "Muro",
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "clusterCategory": "Gobernanza y Disputas Comunitarias",
+          "findingTitle": "Conflictos Internos y División de Juntas Directivas en Plena Ejecución",
+          "title": "Conflictos Internos y División de Juntas Directivas en Plena Ejecución",
+          "evidenceText": "Elecciones comunales o disputas entre bandos de socios derivan en bloqueos de firmas en el banco y desconocimiento de compromisos asumidos por directivas salientes, trabando la rendición de cuentas.",
+          "text": "Elecciones comunales o disputas entre bandos de socios derivan en bloqueos de firmas en el banco y desconocimiento de compromisos asumidos por directivas salientes, trabando la rendición de cuentas.",
+          "sourceTool": "Informes de Mediación Regional",
+          "priority": "Media",
+          "quote": "Entró un nuevo presidente en la cooperativa y se negó a reconocer las compras autorizadas por la junta directiva anterior.",
+          "date": "2026-03-07"
+        },
+        {
+          "id": 29,
+          "type": "Muro",
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "clusterCategory": "Toma de Decisiones Estratégicas",
+          "findingTitle": "Falta de un Dashboard Ejecutivo con Semaforización Predictiva",
+          "title": "Falta de un Dashboard Ejecutivo con Semaforización Predictiva",
+          "evidenceText": "La Alta Dirección de AGROIDEAS y MIDAGRI no cuenta con una pantalla de control que consolide el estado de riesgo de los más de 4,000 planes activos, dependiendo de informes narrativos semestrales que llegan tarde.",
+          "text": "La Alta Dirección de AGROIDEAS y MIDAGRI no cuenta con una pantalla de control que consolide el estado de riesgo de los más de 4,000 planes activos, dependiendo de informes narrativos semestrales que llegan tarde.",
+          "sourceTool": "Entrevistas a Directivos USE",
+          "priority": "Media",
+          "quote": "Necesitamos un mapa interactivo donde los proyectos en rojo parpadeen para tomar decisiones de contingencia de inmediato.",
+          "date": "2026-03-14"
+        },
+        {
+          "id": 30,
+          "type": "Muro",
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "clusterCategory": "Riesgo Financiero y Operativo",
+          "findingTitle": "Rigidez Normativa para Modificaciones Presupuestales Justificadas",
+          "title": "Rigidez Normativa para Modificaciones Presupuestales Justificadas",
+          "evidenceText": "El trámite para transferir saldos entre partidas del mismo plan ante aumentos de precios de insumos toma hasta 60 días, desincentivando a los productores a buscar alternativas viables frente a la inflación.",
+          "text": "El trámite para transferir saldos entre partidas del mismo plan ante aumentos de precios de insumos toma hasta 60 días, desincentivando a los productores a buscar alternativas viables frente a la inflación.",
+          "sourceTool": "Mapeo de Adendas Técnicas",
+          "priority": "Media",
+          "quote": "El saco de abono subió de precio y no podíamos reasignar 2,000 soles de otra partida sin una resolución firmada en Lima.",
+          "date": "2026-03-20"
         }
       ],
-      "H06_DefinicionDesafioHMW": {
-        "hmwCode": "HMW-IN0005",
-        "action": "desarrollar un Sistema de Alerta Temprana automatizado con algoritmo predictivo de desvíos y matriz de semáforos de riesgo (SAT-INCENTIVOS)",
-        "targetUser": "los especialistas de monitoreo de la USE, UPP y Unidades Regionales",
-        "benefit": "identificar e intervenir preventivamente ante riesgos de paralización en la ejecución de incentivos agrarios",
-        "constraint": "la disparidad de reporte entre sedes regionales y la necesidad de alertas objetivas sin incrementar la carga de llenado manual",
-        "finalHMWStatement": "¿Cómo podríamos desarrollar un Sistema de Alerta Temprana automatizado con algoritmo predictivo de desvíos y matriz de semáforos para que los especialistas de monitoreo de la USE, UPP y Unidades Regionales identifiquen e intervengan preventivamente en la ejecución de incentivos agrarios a pesar de la heterogeneidad de reportes en campo y sin elevar la carga burocrática?"
-      }
+      "H06_DefinicionDesafioHMW": [
+        {
+          "id": 25,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "insightId": 25,
+          "targetUser": "los tesoreros y contadores comunales de organizaciones agrarias",
+          "actionGoal": "rendir los gastos cofinanciados mediante la captura fotográfica inteligente de facturas y boletas",
+          "constraintOrPain": "el deterioro físico de comprobantes térmicos de papel y los errores en el cálculo manual de IGV",
+          "hmwStatement": "¿Cómo podríamos rendir los gastos cofinanciados mediante la captura fotográfica inteligente de facturas y boletas para los tesoreros y contadores comunales de organizaciones agrarias a pesar de el deterioro físico de comprobantes térmicos de papel y los errores en el cálculo manual de IGV?",
+          "question": "¿Cómo podríamos rendir los gastos cofinanciados mediante la captura fotográfica inteligente de facturas y boletas para los tesoreros y contadores comunales de organizaciones agrarias a pesar de el deterioro físico de comprobantes térmicos de papel y los errores en el cálculo manual de IGV?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 26,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "insightId": 26,
+          "targetUser": "los especialistas de liquidación financiera y desembolsos de AGROIDEAS",
+          "actionGoal": "validar automáticamente ante SUNAT la validez, código QR y condición activa de los proveedores",
+          "constraintOrPain": "el tiempo excesivo invertido en la digitación y verificación individual de miles de facturas",
+          "hmwStatement": "¿Cómo podríamos validar automáticamente ante SUNAT la validez, código QR y condición activa de los proveedores para los especialistas de liquidación financiera y desembolsos de AGROIDEAS a pesar de el tiempo excesivo invertido en la digitación y verificación individual de miles de facturas?",
+          "question": "¿Cómo podríamos validar automáticamente ante SUNAT la validez, código QR y condición activa de los proveedores para los especialistas de liquidación financiera y desembolsos de AGROIDEAS a pesar de el tiempo excesivo invertido en la digitación y verificación individual de miles de facturas?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 27,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "insightId": 27,
+          "targetUser": "los dirigentes campesinos en distritos rurales sin agencias bancarias",
+          "actionGoal": "efectuar pagos a proveedores de bienes y servicios mediante canales de banca digital segura",
+          "constraintOrPain": "la exigencia normativa de cheques de gerencia y la ausencia de cajeros o agencias en 50 km a la redonda",
+          "hmwStatement": "¿Cómo podríamos efectuar pagos a proveedores de bienes y servicios mediante canales de banca digital segura para los dirigentes campesinos en distritos rurales sin agencias bancarias a pesar de la exigencia normativa de cheques de gerencia y la ausencia de cajeros o agencias en 50 km a la redonda?",
+          "question": "¿Cómo podríamos efectuar pagos a proveedores de bienes y servicios mediante canales de banca digital segura para los dirigentes campesinos en distritos rurales sin agencias bancarias a pesar de la exigencia normativa de cheques de gerencia y la ausencia de cajeros o agencias en 50 km a la redonda?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 28,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "insightId": 28,
+          "targetUser": "los comités de administración de cuentas mancomunadas de cooperativas",
+          "actionGoal": "autorizar giros y transferencias con doble firma digital verificable",
+          "constraintOrPain": "la desconfianza hacia plataformas de banca móvil y el riesgo de suplantación de identidad",
+          "hmwStatement": "¿Cómo podríamos autorizar giros y transferencias con doble firma digital verificable para los comités de administración de cuentas mancomunadas de cooperativas a pesar de la desconfianza hacia plataformas de banca móvil y el riesgo de suplantación de identidad?",
+          "question": "¿Cómo podríamos autorizar giros y transferencias con doble firma digital verificable para los comités de administración de cuentas mancomunadas de cooperativas a pesar de la desconfianza hacia plataformas de banca móvil y el riesgo de suplantación de identidad?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 29,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "insightId": 29,
+          "targetUser": "los auditores de la Contraloría General y órganos de control institucional",
+          "actionGoal": "conciliar saldos bancarios y extractos contra las partidas presupuestales aprobadas en el plan",
+          "constraintOrPain": "las reclasificaciones contables erróneas realizadas por directivos sin formación tributaria",
+          "hmwStatement": "¿Cómo podríamos conciliar saldos bancarios y extractos contra las partidas presupuestales aprobadas en el plan para los auditores de la Contraloría General y órganos de control institucional a pesar de las reclasificaciones contables erróneas realizadas por directivos sin formación tributaria?",
+          "question": "¿Cómo podríamos conciliar saldos bancarios y extractos contra las partidas presupuestales aprobadas en el plan para los auditores de la Contraloría General y órganos de control institucional a pesar de las reclasificaciones contables erróneas realizadas por directivos sin formación tributaria?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 30,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "insightId": 30,
+          "targetUser": "las organizaciones agrarias en proceso de tramitación del segundo desembolso",
+          "actionGoal": "obtener la aprobación de su rendición previa en un plazo máximo de 7 días hábiles",
+          "constraintOrPain": "las observaciones reiterativas por detalles formales que paralizan las faenas agrícolas y obras",
+          "hmwStatement": "¿Cómo podríamos obtener la aprobación de su rendición previa en un plazo máximo de 7 días hábiles para las organizaciones agrarias en proceso de tramitación del segundo desembolso a pesar de las observaciones reiterativas por detalles formales que paralizan las faenas agrícolas y obras?",
+          "question": "¿Cómo podríamos obtener la aprobación de su rendición previa en un plazo máximo de 7 días hábiles para las organizaciones agrarias en proceso de tramitación del segundo desembolso a pesar de las observaciones reiterativas por detalles formales que paralizan las faenas agrícolas y obras?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        }
+      ]
     },
     "FASE_3_IDEAR": {
       "H07_LluviaIdeasCrazy8s": [
         {
-          "ideaId": "IDEA-IN0005-01",
-          "title": "Módulo Web SAT-INCENTIVOS Local-First con cálculo automático de índices de desvío (SPI/CPI) y alertas por semáforo (Verde, Amarillo, Rojo, Crítico)",
-          "author": "Especialista UPP/USE",
-          "votes": 14
+          "id": 25,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "desafioId": 25,
+          "ideaTitle": "Escáner Inteligente OCR de Comprobantes con validación inmediata de validez ante SUNAT",
+          "idea": "Escáner Inteligente OCR de Comprobantes con validación inmediata de validez ante SUNAT",
+          "description": "Herramienta móvil que lee el código QR o texto de la factura impresa y verifica que el RUC esté activo y el comprobante sea fidedigno.",
+          "category": "Tecnológica",
+          "authorRole": "Especialista en Visión Computacional",
+          "votesCount": 14,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "ideaId": "IDEA-IN0005-02",
-          "title": "Tablero de control estático en Excel compartido en red local",
-          "author": "Analista regional",
-          "votes": 3
+          "id": 26,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "desafioId": 28,
+          "ideaTitle": "Firma Mancomunada Digital Segura con doble factor biométrico y token OTP",
+          "idea": "Firma Mancomunada Digital Segura con doble factor biométrico y token OTP",
+          "description": "Sistema de transferencias donde presidente y tesorero autorizan desembolsos desde sus celulares con reconocimiento facial seguro.",
+          "category": "Tecnológica",
+          "authorRole": "Ingeniero de Ciberseguridad",
+          "votesCount": 11,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 27,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "desafioId": 26,
+          "ideaTitle": "Módulo de Conciliación Bancaria Automática entre transferencias y partidas del plan",
+          "idea": "Módulo de Conciliación Bancaria Automática entre transferencias y partidas del plan",
+          "description": "Mecanismo que cruza el estado de cuenta bancario con las partidas presupuestales aprobadas alertando gastos no autorizados.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Contador Liquidador de Planes",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 28,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "desafioId": 30,
+          "ideaTitle": "Ventanilla Express de Aprobación de Rendición en 72 Horas para trámites digitales",
+          "idea": "Ventanilla Express de Aprobación de Rendición en 72 Horas para trámites digitales",
+          "description": "Canal preferencial que aprueba el primer tramo de rendición en máximo 3 días si el 100% de comprobantes está validado por SUNAT.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Coordinador Financiero UPP",
+          "votesCount": 9,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 29,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "desafioId": 27,
+          "ideaTitle": "Resolución de Flexibilización para Aceptación de Pagos por Billeteras Digitales Rurales",
+          "idea": "Resolución de Flexibilización para Aceptación de Pagos por Billeteras Digitales Rurales",
+          "description": "Disposición que reconoce capturas de pantalla de pagos por Yape, Plin y BIM para jornales y compras menores en caseríos sin bancos.",
+          "category": "Normativa",
+          "authorRole": "Especialista Tributario",
+          "votesCount": 12,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 30,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "desafioId": 29,
+          "ideaTitle": "Escuela Itinerante de Contabilidad Agropecuaria y Rendición para tesoreros",
+          "idea": "Escuela Itinerante de Contabilidad Agropecuaria y Rendición para tesoreros",
+          "description": "Cursos prácticos modulares sobre llenado de libros de caja, retenciones de impuestos y ordenamiento de comprobantes de pago.",
+          "category": "Capacitación",
+          "authorRole": "Instructor Contable Regional",
+          "votesCount": 7,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         }
       ],
-      "H08_MatrizPriorizacion": {
-        "evaluationDate": "2026-09-27T10:30:00Z",
-        "ideasEvaluadas": [
-          {
-            "ideaId": "IDEA-IN0005-01",
-            "title": "Módulo Web SAT-INCENTIVOS con algoritmo de semáforo de riesgo y alertas automáticas",
-            "deseabilidad": 5,
-            "factibilidad": 4,
-            "viability": 5,
-            "impacto": 5,
-            "scoreTotal": 19,
-            "isWinningIdea": true
-          }
-        ],
-        "winningIdeaSummary": {
-          "title": "SAT-INCENTIVOS: Sistema de Alerta Temprana para Riesgos en Ejecución de Incentivos",
-          "rationale": "Resuelve la falta de predictividad calculando desvíos porcentuales entre avance físico y financiero planificado vs. real, generando alertas inmediatas de semáforo a cero costo de licencias."
+      "H08_MatrizPriorizacion": [
+        {
+          "id": 25,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "ideaId": 25,
+          "ideaTitle": "Escáner Inteligente OCR de Comprobantes con validación inmediata de validez ante SUNAT",
+          "title": "Escáner Inteligente OCR de Comprobantes con validación inmediata de validez ante SUNAT",
+          "desirability": 5,
+          "feasibility": 5,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 19,
+          "isWinningIdea": true,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 26,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "ideaId": 29,
+          "ideaTitle": "Resolución de Flexibilización para Aceptación de Pagos por Billeteras Digitales Rurales",
+          "title": "Resolución de Flexibilización para Aceptación de Pagos por Billeteras Digitales Rurales",
+          "desirability": 5,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 27,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "ideaId": 26,
+          "ideaTitle": "Firma Mancomunada Digital Segura con doble factor biométrico y token OTP",
+          "title": "Firma Mancomunada Digital Segura con doble factor biométrico y token OTP",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 16,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 28,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "ideaId": 28,
+          "ideaTitle": "Ventanilla Express de Aprobación de Rendición en 72 Horas para trámites digitales",
+          "title": "Ventanilla Express de Aprobación de Rendición en 72 Horas para trámites digitales",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 15,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 29,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "ideaId": 27,
+          "ideaTitle": "Módulo de Conciliación Bancaria Automática entre transferencias y partidas del plan",
+          "title": "Módulo de Conciliación Bancaria Automática entre transferencias y partidas del plan",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 14,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 30,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "ideaId": 30,
+          "ideaTitle": "Escuela Itinerante de Contabilidad Agropecuaria y Rendición para tesoreros",
+          "title": "Escuela Itinerante de Contabilidad Agropecuaria y Rendición para tesoreros",
+          "desirability": 4,
+          "feasibility": 3,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 13,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
         }
+      ],
+      "H09_PrototipadoRapido": {
+        "id": 5,
+        "projectId": 5,
+        "projectCode": "PIIP-2026-IN0005",
+        "prototypeTitle": "Panel Predictivo SAT-INCENTIVOS con Alertas de Desvío Operacional",
+        "name": "Panel Predictivo SAT-INCENTIVOS con Alertas de Desvío Operacional",
+        "prototypeType": "Digital PWA",
+        "keyFeatures": [
+          "Matriz de calor de riesgo probabilístico (Climático, Financiero, Social)",
+          "Disparador de alertas automáticas vía webhook hacia coordinadores zonales",
+          "Plan de contingencia y reprogramación presupuestal ágil"
+        ],
+        "artifactUrlOrImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500",
+        "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500",
+        "description": "Sistema de alerta temprana que cruza alertas meteorológicas SENAMHI y reportes de avance físico, advirtiendo retrasos críticos antes de vencimientos contractuales.",
+        "testingGoal": "Detección temprana del 85% de riesgos operacionales al menos 30 días antes del vencimiento del hito."
       }
     },
     "FASE_4_ENTREGAR": {
-      "H09_PrototipadoRapido": {
-        "prototypeCode": "PROTO-IN0005-PWA",
-        "prototypeType": "Progressive Web App (PWA) Local-First",
-        "title": "Panel Evaluador SAT-INCENTIVOS con Semáforos y Notificaciones de Desvío",
-        "features": [
-          "Filtro por Unidad Regional, Tipo de Incentivo (Adopción Tecnológica, Gestión, Planta) y Rango de Semáforo",
-          "Algoritmo de cálculo de riesgo: Verde (Desvío < 5%), Amarillo (5-15%), Rojo (15-30%), Crítico (> 30%)",
-          "Módulo de generación de Alertas Preventivas con ficha de acciones correctivas recomendadas",
-          "Exportación automatizada de reportes de riesgo consolidado para la Dirección Ejecutiva"
-        ]
-      },
-      "H10_PlanAccion": {
-        "planCode": "PLAN-IN0005-2026",
-        "sprints": [
-          {
-            "sprintNumber": 1,
-            "duration": "3 Semanas",
-            "focus": "Definición de algoritmo de scoring de riesgo y parametrización de Umbrales de Alerta con USE y UPP",
-            "lead": "UPP/USE"
-          },
-          {
-            "sprintNumber": 2,
-            "duration": "3 Semanas",
-            "focus": "Desarrollo del módulo web PWA, motor de cálculo JS y vista de semáforos interactivas",
-            "lead": "UA-TI / UPP"
-          },
-          {
-            "sprintNumber": 3,
-            "duration": "3 Semanas",
-            "focus": "Piloto de monitoreo con 50 incentivos en ejecución en Cusco, Junín y San Martín",
-            "lead": "USE / Unidades Regionales"
-          }
-        ]
-      },
-      "H11_MatrizRiesgosTesteo": {
-        "riskMatrix": [
-          {
-            "riskId": "RSK-IN0005-01",
-            "riskCategory": "Operativo / Calidad de Datos",
-            "description": "Reporte extemporáneo del avance físico por parte de la Unidad Regional.",
-            "severity": "ALTA",
-            "mitigationStrategy": "Notificación de alerta naranja automática al Jefe Regional por retraso en el cierre de mes."
-          }
-        ],
-        "testingCards": [
-          {
-            "testId": "TEST-IN0005-01",
-            "hypothesis": "El algoritmo SAT identifica desvíos críticos con al menos 45 días de anticipación frente al método tradicional.",
-            "sample": "50 incentivos monitoreados en piloto",
-            "result": "Confirmado: Se identificaron 8 casos de riesgo rojo con 52 días promedio de anticipación, permitiendo reestructurar el cronograma de adquisiciones sin pérdida de presupuesto.",
-            "validationStatus": "APROBADO E INSTITUCIONALIZADO"
-          }
-        ],
-        "kanbanStatus": "Pase a Producción e Integración en el Portafolio Institucional (Anexo 5) Aprobado."
-      }
+      "H10_PlanAccion": [
+        {
+          "id": 8,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "taskName": "Despliegue del módulo de trazabilidad y firma digital con RENIEC",
+          "task": "Despliegue del módulo de trazabilidad y firma digital con RENIEC",
+          "phase": "Piloto Operativo",
+          "responsibleUnit": "Unidad de Administración / OTI",
+          "responsible": "Unidad de Administración / OTI",
+          "leader": "Especialista de Sistemas",
+          "startDate": "2026-05-01",
+          "endDate": "2026-06-15",
+          "deadline": "2026-06-15",
+          "deliverable": "Integración de firma digital homologada y flujo de expedientes con timestamp",
+          "status": "Pendiente"
+        }
+      ],
+      "H11_MatrizRiesgosTesteo": [
+        {
+          "id": 9,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "riskDescription": "Vulnerabilidades de seguridad en el intercambio de tokens de firma digital con proveedores externos.",
+          "description": "Vulnerabilidades de seguridad en el intercambio de tokens de firma digital con proveedores externos.",
+          "riskType": "Tecnológico",
+          "probability": "Baja",
+          "impact": "Alto",
+          "level": "Medio",
+          "mitigationStrategy": "Auditoría de código estático (SAST), encriptación TLS 1.3 y certificados digitales en hardware HSM.",
+          "mitigation": "Auditoría de código estático (SAST), encriptación TLS 1.3 y certificados digitales en hardware HSM.",
+          "testResult": "Escaneo de seguridad OWASP Top 10 arrojó cero vulnerabilidades críticas en la pasarela de firma."
+        }
+      ]
     }
   }
 }

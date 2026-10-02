@@ -1,295 +1,777 @@
 {
-  "NavegacionYTrazabilidad": {
-    "IniciativaCodigoActiva": "PIIP-2026-IN0013",
-    "VistaActual": "fase4/11-matriz-riesgos.html",
-    "FaseActual": "FASE 4: ENTREGAR",
-    "PasoSecuencial": 11,
-    "TotalPasos": 11,
-    "IndicadorProgreso": {
-      "PorcentajeFase": 100.0,
-      "PorcentajeAvanceGlobal": 100.0,
-      "EstadoFase1": "completed",
-      "EstadoFase2": "completed",
-      "EstadoFase3": "completed",
-      "EstadoFase4": "completed"
-    },
-    "FichaInfoBarra": {
-      "CodigoIniciativa": "PIIP-2026-IN0013",
-      "TituloIniciativa": "Innovación en la ejecución y acceso a la Estrategia de Emprendimiento de la Mujer Rural e Indígena (EEMRI-DIGITAL)",
-      "UnidadOrganicaResponsable": "Dirección Ejecutiva (DE) / URIE / UPDC",
-      "LiderIniciativa": "Coordinadora Nacional EEMRI - DE/URIE"
-    }
-  },
-  "ProyectoInfoMaestra": {
-    "Codigo": "PIIP-2026-IN0013",
-    "Titulo": "Innovación en la ejecución y acceso a la Estrategia de Emprendimiento de la Mujer Rural e Indígena (EEMRI-DIGITAL)",
-    "UnidadOrganica": "Dirección Ejecutiva (DE) / URIE / UPDC",
-    "LiderProyecto": "Lic. Rosa María Quispe Valenzuela (Coordinadora Nacional EEMRI)",
-    "FechaRegistro": "2026-03-10",
+  "$schema": "./schemas/far-piip-v3.json",
+  "IniciativaIdentificacion": {
+    "id": 13,
+    "IniciativaCodigo": "PIIP-2026-IN0013",
+    "IniciativaNombre": "Innovación en la ejecución y acceso a la Estrategia de Emprendimiento de la Mujer Rural e Indígena (EEMRI-DIGITAL)",
+    "UnidadOrganicaResponsable": "Dirección Ejecutiva (DE) / URIE / UPDC",
+    "LiderProyecto": "Lic. Rosa María Quispe Valenzuela - Coordinadora Nacional EEMRI",
+    "FechaRegistro": "2026-09-27",
     "EstadoFases": {
       "descubrir": "completed",
-      "definir": "completed",
-      "idear": "completed",
-      "entregar": "completed"
+      "definir": "active",
+      "idear": "pending",
+      "entregar": "pending"
     },
-    "PorcentajeAvanceGlobal": 100.0,
-    "EvaluacionMulticriterio": {
-      "PuntajeTotal": 11,
-      "PuntajeMaximo": 12,
-      "Clasificacion": "Aprobado - Prioridad Alta",
-      "OpinionTecnica": "Recomendable para aprobación e institucionalización en el Portafolio (Anexo 5)."
-    }
+    "PorcentajeAvanceGlobal": 50.0
   },
-  "HerramientasMetodologicas": {
-    "H01_ObservacionAEIOU": {
-      "HerramientaNombre": "Observación AEIOU",
-      "Fase": "FASE 1: DESCUBRIR",
-      "Registros": [
+  "RegistrosHerramientasMetodologicas": {
+    "FASE_1_DESCUBRIR": {
+      "H01_ObservacionAEIOU": [
         {
-          "id": "aeiou-013-1",
-          "dimension": "Actividades",
-          "observation": "Las emprendedoras rurales e indígenas deben llenar formularios impresos complejos y presentar requisitos notariales costosos para postular a los subvenciones de la estrategia EEMRI.",
-          "timestamp": "2026-03-15T09:30:00Z"
+          "id": 73,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "activity": "Taller bilingüe de socialización de bases del incentivo EEMRI con traducción simultánea al quechua collao para lideresas agrarias.",
+          "environment": "Local comunal de la Asociación de Productoras de Quinua y Artesanía en Ayaviri, Melgar, Puno; altitud 3,920 m.s.n.m., frío intenso (5°C).",
+          "interaction": "Facilitadora traduce los términos técnicos de 'cofinanciamiento no reembolsable' mientras las lideresas consultan sobre la acreditación de tierras comunales.",
+          "object": "Rotafolios ilustrados con iconografía andina, fichas de postulación simplificadas en quechua y castellano, micrófono portátil con parlante.",
+          "objects": "Rotafolios ilustrados con iconografía andina, fichas de postulación simplificadas en quechua y castellano, micrófono portátil con parlante.",
+          "user": "Jorge Augusto Amaya Castillo, Director Ejecutivo, 38 socias productoras indígenas, presidenta comunal y facilitadora bilingüe UPDC.",
+          "users": "Jorge Augusto Amaya Castillo, Director Ejecutivo, 38 socias productoras indígenas, presidenta comunal y facilitadora bilingüe UPDC.",
+          "observer": "Jorge Augusto Amaya Castillo - Director Ejecutivo",
+          "observationDate": "2026-09-28",
+          "date": "2026-09-28",
+          "timestamp": "2026-09-28T09:30:00.000Z"
         },
         {
-          "id": "aeiou-013-2",
-          "dimension": "Entorno",
-          "observation": "Comunidades nativas y campesinas altoandinas y amazónicas con escaso acceso a internet fijo, donde la comunicación se realiza principalmente vía audio de WhatsApp y radios comunitarias.",
-          "timestamp": "2026-03-15T11:45:00Z"
+          "id": 74,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "activity": "Acompañamiento personalizado en campo para el llenado de declaraciones juradas de posesión pacífica de parcelas familiares a nombre de mujeres productoras.",
+          "environment": "Chacras de cultivo de flores y hortalizas en San Jerónimo, Cusco; trabajo al aire libre en horas de descanso del trabajo doméstico y agrícola.",
+          "interaction": "Especialista mujer de URIE explica con paciencia a las comuneras mayores cómo firmar o estampar su huella digital garantizando sus derechos.",
+          "object": "Formatos simplificados en papel sin términos jurídicos complejos, almohadilla de huella dactilar, tablero acrílico de soporte.",
+          "objects": "Formatos simplificados en papel sin términos jurídicos complejos, almohadilla de huella dactilar, tablero acrílico de soporte.",
+          "user": "Especialista de Género e Interculturalidad URIE, 14 socias de la asociación de mujeres y promotor comunal.",
+          "users": "Especialista de Género e Interculturalidad URIE, 14 socias de la asociación de mujeres y promotor comunal.",
+          "observer": "Especialista en Enfoque de Género - URIE/UPDC",
+          "observationDate": "2026-10-05",
+          "date": "2026-10-05",
+          "timestamp": "2026-10-05T11:15:00.000Z"
         },
         {
-          "id": "aeiou-013-3",
-          "dimension": "Interacciones",
-          "observation": "Baja confianza en trámites digitales complejos y necesidad de acompañamiento presencial o guiado por voz en lenguas originarias (Quechua, Aymara, Awajún).",
-          "timestamp": "2026-03-15T14:20:00Z"
+          "id": 75,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "activity": "Diagnóstico de barreras para sustentar el 20% de contrapartida de la organización agraria femenina ante la falta de cuentas bancarias y capital monetario.",
+          "environment": "Salón comunal en Huancavelica; asamblea de la asociación de productoras de derivados lácteos y queso andino.",
+          "interaction": "Las socias proponen que su mano de obra, insumos locales (leche fresca) y locales comunales sean valorizados como aporte de contrapartida no monetaria.",
+          "object": "Libreta de cuentas familiares, muestras de quesos madurados, balanza de resorte manual, cuadro de valorización de jornales.",
+          "objects": "Libreta de cuentas familiares, muestras de quesos madurados, balanza de resorte manual, cuadro de valorización de jornales.",
+          "user": "Tesorera de la asociación de mujeres, 22 socias productoras y analista de formulación económica de AGROIDEAS.",
+          "users": "Tesorera de la asociación de mujeres, 22 socias productoras y analista de formulación económica de AGROIDEAS.",
+          "observer": "Analista de Políticas de Inclusión Económica - UPP",
+          "observationDate": "2026-10-14",
+          "date": "2026-10-14",
+          "timestamp": "2026-10-14T14:40:00.000Z"
+        },
+        {
+          "id": 76,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "activity": "Mesa de articulación con el Banco de la Nación para facilitar la apertura masiva de cuentas de ahorros sin comisiones a mujeres rurales sin historial bancario.",
+          "environment": "Oficina del Banco de la Nación en Huamanga, Ayacucho; ventanilla preferencial habilitada para organizaciones EEMRI.",
+          "interaction": "El funcionario bancario valida la identidad biométrica con DNI de 18 lideresas, entregándoles su tarjeta de débito y capacitación en cajeros automáticos.",
+          "object": "Lector biométrico de huellas dactilares conectado a RENIEC, tarjetas de débito MultiRed, folletos explicativos de educación financiera.",
+          "objects": "Lector biométrico de huellas dactilares conectado a RENIEC, tarjetas de débito MultiRed, folletos explicativos de educación financiera.",
+          "user": "18 lideresas rurales beneficiarias, funcionario bancario zonal y coordinadora de la estrategia EEMRI de AGROIDEAS.",
+          "users": "18 lideresas rurales beneficiarias, funcionario bancario zonal y coordinadora de la estrategia EEMRI de AGROIDEAS.",
+          "observer": "Coordinadora Zonal EEMRI - UR Ayacucho",
+          "observationDate": "2026-10-22",
+          "date": "2026-10-22",
+          "timestamp": "2026-10-22T10:00:00.000Z"
+        },
+        {
+          "id": 77,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "activity": "Sesión práctica en campo sobre manejo tecnificado de galpones de cuyes y biohuertos familiares con asesoría técnica dirigida exclusivamente a mujeres.",
+          "environment": "Galpón demostrativo de crianza de cuyes en Chupaca, Junín; ambiente limpio con pozas de ladrillo y forraje fresco verde.",
+          "interaction": "La ingeniera zootecnista enseña el sexaje, empadre y control sanitario respetando los horarios compatibles con las tareas de cuidado familiar.",
+          "object": "Balanza de reloj para cuyes, comederos lineales de arcilla, cartillas de registro reproductivo con pictogramas a colores.",
+          "objects": "Balanza de reloj para cuyes, comederos lineales de arcilla, cartillas de registro reproductivo con pictogramas a colores.",
+          "user": "Extensionista pecuaria mujer, 26 criadoras de cuyes (edades entre 22 y 58 años) y promotor de la comunidad.",
+          "users": "Extensionista pecuaria mujer, 26 criadoras de cuyes (edades entre 22 y 58 años) y promotor de la comunidad.",
+          "observer": "Especialista Pecuaria de Extensión Rural - UPDC",
+          "observationDate": "2026-10-28",
+          "date": "2026-10-28",
+          "timestamp": "2026-10-28T15:20:00.000Z"
+        },
+        {
+          "id": 78,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "activity": "Firma protocolar y celebración comunal del primer convenio de financiamiento EEMRI para planta de hilado y artesanía textil con fibra de alpaca.",
+          "environment": "Plaza principal de Macusani, Carabaya, Puno (capital alpaquera del Perú); danzas tradicionales, música autóctona y vestimenta típica.",
+          "interaction": "La presidenta de la asociación indígena alpaquera y el Director Ejecutivo firman el convenio en medio de los aplausos de toda la comunidad.",
+          "object": "Convenio de cofinanciamiento empastado con sello oficial del MIDAGRI, muestras de mantas y chompas de lana de alpaca fina, micrófono comunal.",
+          "objects": "Convenio de cofinanciamiento empastado con sello oficial del MIDAGRI, muestras de mantas y chompas de lana de alpaca fina, micrófono comunal.",
+          "user": "Jorge Augusto Amaya Castillo, Directiva completa de la asociación de artesanas alpaqueras (100% mujeres), alcalde distrital y 120 comuneros.",
+          "users": "Jorge Augusto Amaya Castillo, Directiva completa de la asociación de artesanas alpaqueras (100% mujeres), alcalde distrital y 120 comuneros.",
+          "observer": "Director Ejecutivo - AGROIDEAS",
+          "observationDate": "2026-11-04",
+          "date": "2026-11-04",
+          "timestamp": "2026-11-04T12:00:00.000Z"
+        }
+      ],
+      "H02_MapaEmpatia": [
+        {
+          "id": 75,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "userProfile": "Presidenta de Asociación de Productoras Indígenas Awajún (Condorcanqui, Amazonas)",
+          "says": "\"Nosotras cuidamos el bosque y cosechamos vainilla y cacao nativo. Necesitamos que las capacitaciones y fichas vengan en nuestra lengua originaria.\"",
+          "does": "Lidera a 28 mujeres indígenas, recolecta frutos amazónicos tradicionales, elabora derivados artesanales y coordina con el Apu de la comunidad.",
+          "thinks": "Cree que los programas del Estado deben respetar su cosmovisión indígena y sus tiempos de cuidado familiar sin imponer ritmos de ciudad.",
+          "feels": "Orgullo por su identidad amazónica pero temor a ser engañadas o no entender los documentos redactados en español formal.",
+          "hears": "Hombres de la comunidad que dudan de la capacidad de las mujeres para administrar fondos públicos y manejar empresas asociativas.",
+          "sees": "El bosque ancestral con riqueza en biodiversidad pero con falta de caminos para sacar los productos transformados al mercado regional.",
+          "pains": "Barrera idiomática severa, falta de títulos de propiedad a nombre individual de mujeres y sobrecarga de trabajo doméstico no remunerado.",
+          "gains": "Acompañamiento técnico intercultural bilingüe, requisitos adaptados a la tenencia comunal de tierras y fondos de empoderamiento femenino directo."
+        },
+        {
+          "id": 76,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "userProfile": "Facilitadora de Género e Interculturalidad en Territorio (UPDC / URIE)",
+          "says": "\"No basta con darles presupuesto; hay que trabajar la autoestima, liderazgo y autonomía económica de las productoras rurales en sus propias parcelas.\"",
+          "does": "Imparte talleres participativos con enfoque de género, diseña dinámicas de confianza comunitaria y asesora en la formulación de planes EEMRI.",
+          "thinks": "Sabe que cuando una mujer rural recibe ingresos propios, el 90% se reinvierte en la alimentación, salud y educación de sus hijos.",
+          "feels": "Compromiso de vida con la equidad rural y satisfacción al ver a mujeres campesinas tomar la palabra por primera vez en asambleas comunales.",
+          "hears": "Comentarios machistas en los pueblos de que las mujeres van a los talleres a perder el tiempo y descuidar la cocina.",
+          "sees": "Mujeres participando en talleres con sus bebés en la espalda mientras aprenden a calcular costos de producción y precios de venta.",
+          "pains": "Resistencia patriarcal en las comunidades, falta de espacios de cuidado infantil durante los talleres y dificultades logísticas de traslado.",
+          "gains": "Metodología pedagógica adaptada con horarios flexibles, enfoque de género práctico y materiales gráficos sin tecnicismos legales."
+        },
+        {
+          "id": 77,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "userProfile": "Joven Artesana y Productora Agroforestal Bilingüe (Atalaya, Ucayali)",
+          "says": "\"Nosotras manejamos biohuertos y tintes naturales. Si nos apoyan con empaques ecológicos y redes sociales, podemos vender a todo el Perú y al mundo.\"",
+          "does": "Combina el cultivo de plantas medicinales con la elaboración de textiles shipibo-konibo y apoya a su madre en la venta por ferias.",
+          "thinks": "Considera que la tradición ancestral combinada con herramientas digitales y marketing moderno es la fórmula del éxito para la juventud indígena.",
+          "feels": "Entusiasmo por emprender y transformar su comunidad pero impotencia ante la falta de capital de trabajo y conectividad a internet.",
+          "hears": "Sus compañeras de colegio que migran a la ciudad para trabajar de empleadas domésticas por falta de oportunidades productivas en su territorio.",
+          "sees": "Turistas y compradores internacionales fascinados por sus productos pero sin canales formales para concretar pedidos a gran escala.",
+          "pains": "Intermediarios que compran sus productos a precios irrisorios y falta de acceso al crédito bancario formal por carecer de historial financiero.",
+          "gains": "Cofinanciamiento de equipamiento de transformación primaria, registro de marca colectiva en Indecopi y acceso a mercados de comercio justo."
+        },
+        {
+          "id": 78,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "userProfile": "Especialista Zonal de Elegibilidad con Criterio de Género (UR Cusco)",
+          "says": "\"La directiva EEMRI debe flexibilizar los requisitos de personería jurídica. Muchas asociaciones de mujeres están en trámite y no deben quedar fuera.\"",
+          "does": "Revisa expedientes presentados a las convocatorias de la Estrategia Mujer Rural, realiza visitas de campo y asesora en subsanaciones.",
+          "thinks": "Opina que aplicar los mismos filtros exigidos a cooperativas cafetaleras tradicionales a grupos incipientes de mujeres indígenas es una barrera de acceso.",
+          "feels": "Compromiso institucional por cumplir la meta de inclusión de mujeres establecida en la Política Nacional de Igualdad de Género.",
+          "hears": "Evaluadores tradicionales que quieren descalificar planes porque el presidente de la junta comunal no firmó el aval de las mujeres.",
+          "sees": "Organizaciones de mujeres altamente organizadas y disciplinadas con una tasa de éxito productivo superior a la media de planes masculinos.",
+          "pains": "Vacíos normativos sobre el tratamiento de comités informales de productoras y plazos de convocatoria demasiado breves para zonas aisladas.",
+          "gains": "Bases de postulación diferenciadas con puntaje adicional por liderazgo femenino real y ventanilla de asesoría técnica previa gratuita."
+        },
+        {
+          "id": 79,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "userProfile": "Líder Comunitaria de Red de Mujeres Productoras de Camélidos (Castrovirreyna, Huancavelica)",
+          "says": "\"Pastamos alpacas a más de 4,500 metros sobre el nivel del mar con el frío y las heladas. Este incentivo nos permitirá tener cobertizos y esquila mecánica.\"",
+          "does": "Esquila alpacas, selecciona fibra por finura, tiñe con plantas nativas y dirige la asociación de tejedoras de alta montaña.",
+          "thinks": "Sabe que la fibra de alpaca seleccionada por mujeres vale cuatro veces más que el vellón sucio vendido a los acopiadores intermediarios.",
+          "feels": "Fortaleza y resiliencia andina pero dolor en las manos por el frío extremo y el trabajo manual pesado sin maquinaria adecuada.",
+          "hears": "Noticias en la radio sobre fondos del gobierno para mujeres del campo y la esperanza de que esta vez sí lleguen a las zonas más altas.",
+          "sees": "Crías de alpacas muriendo por heladas que podrían salvarse con cobertizos térmicos cofinanciados por el programa.",
+          "pains": "Altísima mortalidad de ganado por eventos climáticos extremos y falta de maquinaria moderna para el hilado y descerdado de la fibra.",
+          "gains": "Infraestructura productiva adaptada al cambio climático, empoderamiento en la negociación comercial y duplicación de ingresos familiares."
+        },
+        {
+          "id": 80,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "userProfile": "Directora Ejecutiva de AGROIDEAS (Promotora de la Estrategia EEMRI)",
+          "says": "\"La Estrategia Mujer Rural no es un programa asistencial; es una apuesta de inversión productiva en las mejores gestoras del desarrollo agrario del Perú.\"",
+          "does": "Gestiona ante el MEF y el Congreso presupuestos específicos para la estrategia EEMRI, inaugura planes en territorio y rinde cuentas a la PCM.",
+          "thinks": "Sabe que visibilizar los resultados tangibles de la mujer rural garantiza la continuidad política e institucional de AGROIDEAS en el tiempo.",
+          "feels": "Orgullo por liderar un cambio histórico en las políticas públicas agrarias del país con enfoque de género e interculturalidad real.",
+          "hears": "Testimonios conmovedores de lideresas agrarias que afirman que AGROIDEAS les devolvió la dignidad y la independencia económica.",
+          "sees": "Centros de procesamiento agroindustrial liderados por mujeres campesinas e indígenas exportando a Europa y Estados Unidos.",
+          "pains": "Brechas presupuestales para atender la inmensa demanda nacional insatisfecha y resistencias burocráticas en sectores tradicionales.",
+          "gains": "Institucionalización permanente de la Estrategia EEMRI dentro del plan operativo institucional con financiamiento multianual garantizado."
+        }
+      ],
+      "H03_EncuestasCampo": [
+        {
+          "id": 25,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "respondent": "Lic. Rosa Quispe Valenzuela (Coordinadora)",
+          "cooperative": "Estrategia EEMRI - AGROIDEAS",
+          "satisfaction": 4,
+          "comments": "Las mujeres rurales tienen alta motivación pero las bases tradicionales en lenguaje técnico y castellano las excluían. El cambio a lengua originaria es vital.",
+          "sentiment": "Positivo",
+          "date": "2026-09-28"
+        },
+        {
+          "id": 26,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "respondent": "Santosa Mamani Huanca (Artesana Alpaquera)",
+          "cooperative": "Asociación de Mujeres Criadoras de Alpacas - Macusani, Puno",
+          "satisfaction": 4,
+          "comments": "Allinmi kashan. Qullqita chaskinaykupaqqa rimaykunatam allinta yachanayku. Ñuqaykuqa makinchikwanmi llamk'ayku (Está bien. Confiamos en este apoyo).",
+          "sentiment": "Positivo",
+          "date": "2026-10-02"
+        }
+      ],
+      "H04_FichaPersona": [
+        {
+          "id": 73,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "archetypeName": "Lideresa Nelyda Entsakua Tsamajain",
+          "name": "Lideresa Nelyda Entsakua Tsamajain",
+          "role": "Presidenta de Asociación de Productoras Indígenas Awajún (Condorcanqui, Amazonas)",
+          "demographics": "44 años, Río Cenepa, Amazonas; Lideresa originaria de la Nación Awajún, Bilingüe",
+          "age": 44,
+          "techTechSavviness": "Básico (Manejo de celular básico y WhatsApp en viajes a Nieva o Bagua)",
+          "quote": "Nosotras protegemos el bosque y cultivamos cacao nativo y vainilla. Necesitamos que las capacitaciones y bases del concurso respeten nuestra lengua y cultura.",
+          "bio": "Encabeza una asociación de 32 mujeres indígenas que procesan pasta de cacao y artesanías forestales sostenibles. Promueve la autonomía económica femenina en su cuenca.",
+          "goals": [
+            "Lograr que el programa reconozca la tenencia comunal de tierras sin exigir títulos individuales",
+            "Adquirir maquinaria solar para secado y tostado de cacao en su propia comunidad nativa",
+            "Generar ingresos propios para la educación y salud de sus hijos sin destruir el bosque ancestral"
+          ],
+          "frustrations": [
+            "Bases de concurso redactadas en lenguaje técnico formal sin traducción a lenguas originarias",
+            "Machismo en la comunidad que cuestiona la capacidad de las mujeres para administrar fondos públicos",
+            "Dificultades de transporte fluvial para trasladar los expedientes y los productos al mercado provincial"
+          ]
+        },
+        {
+          "id": 74,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "archetypeName": "Lic. Gladys Cárdenas Yupanqui",
+          "name": "Lic. Gladys Cárdenas Yupanqui",
+          "role": "Facilitadora de Género e Interculturalidad en Territorio (UPDC / URIE)",
+          "demographics": "39 años, Ayacucho; Socióloga especialista en Enfoque de Género y Desarrollo Rural",
+          "age": 39,
+          "techTechSavviness": "Avanzado (Metodologías participativas de educación popular, diseño de materiales lúdicos)",
+          "quote": "No basta con darles un presupuesto; hay que fortalecer la autoestima, el liderazgo y la capacidad de negociación de las productoras en sus parcelas.",
+          "bio": "Brinda asistencia técnica territorial a las organizaciones de mujeres postulantes a la estrategia EEMRI en la sierra sur y selva central.",
+          "goals": [
+            "Diseñar talleres con metodologías lúdicas y horarios flexibles que permitan el cuidado de los hijos",
+            "Capacitar a las productoras en costos, contabilidad básica y técnicas de negociación asociativa",
+            "Garantizar que los comités de evaluación valoren el impacto social y comunitario de los emprendimientos femeninos"
+          ],
+          "frustrations": [
+            "Sobrecarga de trabajo de cuidado no remunerado que limita el tiempo de las mujeres para capacitarse",
+            "Carencia de espacios seguros de guardería o cuidado infantil durante los talleres presenciales",
+            "Criterios de elegibilidad rígidos que no se adaptan a organizaciones de mujeres en etapa formativa"
+          ]
+        },
+        {
+          "id": 75,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "archetypeName": "Srta. Wendy Shahuano Mori",
+          "name": "Srta. Wendy Shahuano Mori",
+          "role": "Joven Artesana y Productora Agroforestal Bilingüe (Atalaya, Ucayali)",
+          "demographics": "24 años, Atalaya, Ucayali; Productora shipibo-konibo y técnica en enfermería",
+          "age": 24,
+          "techTechSavviness": "Avanzado (Redes sociales, TikTok, diseño gráfico básico en Canva, apps móviles)",
+          "quote": "Combinamos nuestras plantas medicinales y tintes naturales con redes sociales para vender a todo el Perú y al mundo. Solo necesitamos apoyo para mejorar el empaque.",
+          "bio": "Emprendedora joven que lidera un comité de biohuertos y productos cosméticos naturales en su comunidad. Combina conocimientos ancestrales con marketing digital.",
+          "goals": [
+            "Obtener el cofinanciamiento de AGROIDEAS para comprar una máquina extractora de aceites esenciales",
+            "Registrar la marca colectiva de su asociación de mujeres en Indecopi",
+            "Crear oportunidades de trabajo en su comunidad para evitar que las jóvenes migren a la servidumbre urbana"
+          ],
+          "frustrations": [
+            "Intermediarios comerciales que compran sus productos a precios irrisorios y los revenden a precios altos en Lima",
+            "Falta de conectividad a internet estable en su comunidad para gestionar tiendas virtuales",
+            "Falta de acceso al crédito bancario formal por no contar con bienes a su nombre para presentar garantías"
+          ]
+        },
+        {
+          "id": 76,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "archetypeName": "Dra. Karina Villena Zuloaga",
+          "name": "Dra. Karina Villena Zuloaga",
+          "role": "Especialista Zonal de Elegibilidad con Criterio de Género (UR Cusco)",
+          "demographics": "42 años, Cusco; Abogada y Socióloga, especialista en Derechos de las Mujeres",
+          "age": 42,
+          "techTechSavviness": "Intermedio (Manejo de sistemas de evaluación técnica, enfoque de género en políticas públicas)",
+          "quote": "La directiva EEMRI debe flexibilizar los requisitos de personería jurídica; muchos grupos de mujeres están formalizándose y no deben quedar fuera.",
+          "bio": "Evalúa y asesora los expedientes de la Estrategia Mujer Rural e Indígena en Cusco, Puno y Apurímac. Realiza visitas de verificación en territorio.",
+          "goals": [
+            "Otorgar puntaje adicional objetivo a proyectos liderados efectivamente por mujeres en cargos directivos",
+            "Brindar asesoría técnica legal previa gratuita a organizaciones de mujeres campesinas",
+            "Alcanzar las metas de cobertura institucional fijadas en la Política Nacional de Igualdad de Género"
+          ],
+          "frustrations": [
+            "Pliegos de observaciones emitidos por evaluadores tradicionales que descalifican planes por formalidades menores",
+            "Plazos de convocatoria demasiado breves para comunidades andinas y amazónicas aisladas",
+            "Organizaciones fachada donde se colocan nombres de mujeres en la directiva pero las decisiones las toman terceros"
+          ]
+        },
+        {
+          "id": 77,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "archetypeName": "Doña Asunta Quispe Choque",
+          "name": "Doña Asunta Quispe Choque",
+          "role": "Líder de Red de Productoras de Camélidos de Alta Montaña (Castrovirreyna, Huancavelica)",
+          "demographics": "57 años, Huancavelica (4,400 m.s.n.m.); Alpaquera tradicional, Quechua Chanka",
+          "age": 57,
+          "techTechSavviness": "Básico (No utiliza computadoras; escucha radio comunal y llamadas en celular simple)",
+          "quote": "Pasteamos alpacas con el frío y las heladas. Este incentivo nos permitirá tener cobertizos para las crías y máquinas para esquilar la fibra sin lastimar al animal.",
+          "bio": "Presidenta de una asociación de 25 mujeres criadoras de alpacas y vicuñas en la puna huancavelicana. Es experta en selección de fibra por finura y teñido natural.",
+          "goals": [
+            "Construir cobertizos térmicos para reducir la mortalidad de crías de alpaca durante las heladas de invierno",
+            "Adquirir máquinas de esquila mecánica para duplicar el rendimiento y calidad del vellón de fibra",
+            "Vender la fibra seleccionada directamente a la industria textil sin depender de rescatistas intermediarios"
+          ],
+          "frustrations": [
+            "Pérdida de más del 30% de sus animales en temporadas de nevadas extremas por falta de infraestructura",
+            "Dolor crónico en articulaciones por realizar la esquila manual con tijeras de lata oxidadas",
+            "El bajo precio que pagan los intermediarios en las ferias comunales por falta de poder de negociación"
+          ]
+        },
+        {
+          "id": 78,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "archetypeName": "Jorge Augusto Amaya Castillo / Dirección Ejecutiva",
+          "name": "Jorge Augusto Amaya Castillo / Dirección Ejecutiva",
+          "role": "Director Ejecutivo y Promotor Institucional de la Estrategia EEMRI",
+          "demographics": "55 años, Lima; Director Ejecutivo de AGROIDEAS, especialista en Políticas Agrarias",
+          "age": 55,
+          "techTechSavviness": "Avanzado (Dirección estratégica de políticas públicas, gestión ante MEF y Congreso)",
+          "quote": "La Estrategia Mujer Rural no es un programa asistencial; es una inversión productiva en las mejores administradoras del desarrollo agrario del Perú.",
+          "bio": "Lidera la implementación de la Estrategia de Emprendimiento de la Mujer Rural e Indígena. Gestiona presupuestos y alianzas interinstitucionales para su expansión.",
+          "goals": [
+            "Institucionalizar de forma permanente la estrategia EEMRI dentro del presupuesto por resultados de AGROIDEAS",
+            "Garantizar que más de 5,000 productoras rurales e indígenas accedan a planes de negocio cofinanciados",
+            "Demostrar el impacto socioeconómico directo en la reducción de la pobreza rural y la desnutrición infantil"
+          ],
+          "frustrations": [
+            "Brechas presupuestales para atender la inmensa demanda de organizaciones de mujeres que postulan anualmente",
+            "Inestabilidad política o cambios ministeriales que interrumpen los programas de apoyo a la mujer campesina",
+            "Resistencias burocráticas en sectores conservadores que priorizan modelos tradicionales de intervención"
+          ]
         }
       ]
     },
-    "H02_MapaEmpatia": {
-      "HerramientaNombre": "Mapa de Empatía",
-      "Fase": "FASE 1: DESCUBRIR",
-      "Registro": {
-        "userProfile": "Líder de Organización de Mujeres Rurales e Indígenas",
-        "says": "Queremos trabajar y comercializar nuestros productos, pero los trámites de postulación son muy difíciles y quedan muy lejos de nuestra comunidad.",
-        "does": "Asiste a asambleas comunales, organiza la producción artesanal y agrícola familiar y busca ayuda en la agencia agraria local.",
-        "thinks": "Necesitamos un proceso de postulación sencillo, con lenguaje amigable y sin pedir documentos que no podemos conseguir en el campo.",
-        "feels": "Entusiasmada por emprender pero frustrada ante la excesiva burocracia y la falta de enfoque intercultural.",
-        "pains": "Gasto de transporte a la capital provincial, pérdida de documentos físicos y barreras idiomáticas/tecnológicas.",
-        "gains": "Acceso directo al financiamiento de la estrategia EEMRI, empoderamiento económico de las mujeres y mejora del ingreso familiar."
-      }
-    },
-    "H03_EncuestasCampo": {
-      "HerramientaNombre": "Encuestas de Campo",
-      "Fase": "FASE 1: DESCUBRIR",
-      "Registro": {
-        "sampleSize": 78,
-        "targetAudience": "Emprendedoras Rurales e Indígenas de Cusco, Ayacucho, Junín y San Martín",
-        "keyResults": [
-          {
-            "question": "¿Cuenta con celular inteligente o acceso a uno familiar?",
-            "percentageYes": 84.6
-          },
-          {
-            "question": "¿Qué canal prefiere para informarse y postular a la estrategia EEMRI?",
-            "preferredOption": "Asistente web simplificado por voz/audio en lenguaje amigable (79.5%)"
-          },
-          {
-            "question": "Principales barreras percibidas",
-            "topFormats": [
-              "Dificultad para elaborar el plan de emprendimiento en formato estándar",
-              "Exceso de requisitos de documentación formal",
-              "Costos y tiempos de traslado a sedes de AGROIDEAS"
-            ]
-          }
-        ]
-      }
-    },
-    "H04_FichaPersona": {
-      "HerramientaNombre": "Ficha de Persona",
-      "Fase": "FASE 1: DESCUBRIR",
-      "Registro": {
-        "archetypeCode": "PERS-IN0013-01",
-        "name": "Sonia Mamani Condori",
-        "role": "Presidenta de la Asociación de Mujeres Productoras de Quinua Orgánica de Espinar",
-        "age": 38,
-        "digitalLiteracy": "Básico (Uso habitual de WhatsApp de voz y llamadas, sin manejo de plataformas web complejas)",
-        "primaryGoal": "Obtener el cofinanciamiento de la Estrategia EEMRI para adquirir un módulo de procesamiento y empaque de quinua sin abandonar su comunidad."
-      }
-    },
-    "H05_MuroHallazgos": {
-      "HerramientaNombre": "Muro de Hallazgos (Research Wall)",
-      "Fase": "FASE 2: DEFINIR",
-      "Registros": [
+    "FASE_2_DEFINIR": {
+      "H05_MuroHallazgos": [
         {
-          "clusterId": "CLUST-013-01",
-          "clusterName": "Enfoque Intercultural y Lenguaje Amigable",
-          "insight": "La formulación de solicitudes de emprendimiento debe sustituir los formatos burocráticos por cuestionarios interactivos por voz y guiados paso a paso.",
-          "priority": "ALTA"
+          "id": 73,
+          "type": "Muro",
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "clusterCategory": "Tenencia de Tierras y Enfoque de Género",
+          "findingTitle": "Exclusión por Falta de Títulos de Propiedad a Nombre de Mujeres",
+          "title": "Exclusión por Falta de Títulos de Propiedad a Nombre de Mujeres",
+          "evidenceText": "En el 82% de las familias rurales, los títulos de propiedad o certificados de posesión agraria están registrados exclusivamente a nombre del cónyuge varón, impidiendo que las mujeres postulen con sus propias asociaciones.",
+          "text": "En el 82% de las familias rurales, los títulos de propiedad o certificados de posesión agraria están registrados exclusivamente a nombre del cónyuge varón, impidiendo que las mujeres postulen con sus propias asociaciones.",
+          "sourceTool": "Diagnóstico de Género EEMRI",
+          "priority": "Alta",
+          "quote": "La tierra es de mi esposo pero nosotras somos quienes cuidamos los biohuertos y procesamos los productos; si piden título propio quedamos fuera.",
+          "date": "2026-09-28"
         },
         {
-          "clusterId": "CLUST-013-02",
-          "clusterName": "Simplificación Documental e Interoperabilidad",
-          "insight": "Casi el 80% de datos (DNI, RUC, Padrón de Comunidades) pueden verificarse automáticamente por interoperabilidad con RENIEC y SUNAT sin pedir copias impresas.",
-          "priority": "ALTA"
+          "id": 74,
+          "type": "Muro",
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "clusterCategory": "Sobrecarga de Cuidado y Horarios",
+          "findingTitle": "Incompatibilidad de Horarios de Talleres con Labores de Cuidado",
+          "title": "Incompatibilidad de Horarios de Talleres con Labores de Cuidado",
+          "evidenceText": "Las productoras rurales dedican entre 6 y 8 horas diarias al trabajo doméstico y cuidado infantil no remunerado. Los talleres programados en horarios convencionales de 8 a 5 registran deserción femenina de más del 60%.",
+          "text": "Las productoras rurales dedican entre 6 y 8 horas diarias al trabajo doméstico y cuidado infantil no remunerado. Los talleres programados en horarios convencionales de 8 a 5 registran deserción femenina de más del 60%.",
+          "sourceTool": "Encuesta de Uso del Tiempo en el Campo",
+          "priority": "Alta",
+          "quote": "No podemos dejar a los niños ni a los animales solos todo el día para viajar a un taller de capacitación en la capital provincial.",
+          "date": "2026-09-29"
+        },
+        {
+          "id": 75,
+          "type": "Muro",
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "clusterCategory": "Interculturalidad y Lenguas Originarias",
+          "findingTitle": "Falta de Asistencia Técnica Bilingüe en Comunidades Amazónicas y Andinas",
+          "title": "Falta de Asistencia Técnica Bilingüe en Comunidades Amazónicas y Andinas",
+          "evidenceText": "Las fichas técnicas de la estrategia EEMRI y los pliegos de formulación están exclusivamente en español, constituyendo una barrera casi insuperable para lideresas awajún, asháninkas o quechuahablantes monolingües.",
+          "text": "Las fichas técnicas de la estrategia EEMRI y los pliegos de formulación están exclusivamente en español, constituyendo una barrera casi insuperable para lideresas awajún, asháninkas o quechuahablantes monolingües.",
+          "sourceTool": "Focus Group Intercultural Nieva",
+          "priority": "Alta",
+          "quote": "Queremos presentar nuestro plan de vainilla nativa pero las bases tienen términos que no existen en nuestra lengua sin mediación bilingüe.",
+          "date": "2026-09-30"
+        },
+        {
+          "id": 76,
+          "type": "Muro",
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "clusterCategory": "Formalización y Personería Jurídica",
+          "findingTitle": "Barreras Costosas de Constitución Legal para Comités de Productoras",
+          "title": "Barreras Costosas de Constitución Legal para Comités de Productoras",
+          "evidenceText": "Muchas organizaciones de mujeres rurales son comités productivos informales sin inscripción registral en SUNARP. Exigirles los mismos costos y requisitos que a cooperativas consolidadas frena su acceso al financiamiento inicial.",
+          "text": "Muchas organizaciones de mujeres rurales son comités productivos informales sin inscripción registral en SUNARP. Exigirles los mismos costos y requisitos que a cooperativas consolidadas frena su acceso al financiamiento inicial.",
+          "sourceTool": "Entrevistas a Lideresas de Base",
+          "priority": "Alta",
+          "quote": "Inscribirnos en Registros Públicos nos cuesta más de S/. 2,500 entre notario y trámites, y ese dinero es todo nuestro capital de trabajo.",
+          "date": "2026-10-01"
+        },
+        {
+          "id": 77,
+          "type": "Muro",
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "clusterCategory": "Comercialización y Transformación Primaria",
+          "findingTitle": "Dependencia Extrema de Intermediarios para Productos Artesanales",
+          "title": "Dependencia Extrema de Intermediarios para Productos Artesanales",
+          "evidenceText": "Las productoras de fibra de camélidos, biohuertos y derivados lácteos venden su producción a intermediarios por falta de equipamiento de transformación primaria (envasado al vacío, hilado mecánico, marcas registradas).",
+          "text": "Las productoras de fibra de camélidos, biohuertos y derivados lácteos venden su producción a intermediarios por falta de equipamiento de transformación primaria (envasado al vacío, hilado mecánico, marcas registradas).",
+          "sourceTool": "Mapeo de Cadenas de Valor de Género",
+          "priority": "Media",
+          "quote": "El intermediario nos compra el queso a S/. 8 el kilo y lo vende en la ciudad a S/. 25 porque nosotras no tenemos envasadora ni registro sanitario.",
+          "date": "2026-10-01"
+        },
+        {
+          "id": 78,
+          "type": "Muro",
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "clusterCategory": "Gobernanza y Sostenibilidad",
+          "findingTitle": "Riesgo de Injerencia Externa y Suplantación en la Toma de Decisiones",
+          "title": "Riesgo de Injerencia Externa y Suplantación en la Toma de Decisiones",
+          "evidenceText": "Se han identificado casos donde se utiliza la directiva de mujeres para captar el subsidio de la estrategia EEMRI, pero los fondos y la maquinaria son controlados por dirigentes varones ajenos a los intereses asociativos femeninos.",
+          "text": "Se han identificado casos donde se utiliza la directiva de mujeres para captar el subsidio de la estrategia EEMRI, pero los fondos y la maquinaria son controlados por dirigentes varones ajenos a los intereses asociativos femeninos.",
+          "sourceTool": "Fiscalización de Campo EEMRI",
+          "priority": "Media",
+          "quote": "Debemos vigilar que el incentivo sea administrado y operado 100% por las socias mujeres sin presiones ni suplantaciones comunitarias.",
+          "date": "2026-10-01"
+        }
+      ],
+      "H06_DefinicionDesafioHMW": [
+        {
+          "id": 73,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "insightId": 73,
+          "targetUser": "los productores agrarios quechuahablantes y aimarahablantes analfabetos digitales",
+          "actionGoal": "consultar el estado de su expediente y fechas de desembolso mediante audios de voz en su lengua materna",
+          "constraintOrPain": "los sistemas de atención automatizados basados únicamente en menús de texto en castellano",
+          "hmwStatement": "¿Cómo podríamos consultar el estado de su expediente y fechas de desembolso mediante audios de voz en su lengua materna para los productores agrarios quechuahablantes y aimarahablantes analfabetos digitales a pesar de los sistemas de atención automatizados basados únicamente en menús de texto en castellano?",
+          "question": "¿Cómo podríamos consultar el estado de su expediente y fechas de desembolso mediante audios de voz en su lengua materna para los productores agrarios quechuahablantes y aimarahablantes analfabetos digitales a pesar de los sistemas de atención automatizados basados únicamente en menús de texto en castellano?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 74,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "insightId": 74,
+          "targetUser": "los comuneros que habitan en zonas rurales sin computadoras personales",
+          "actionGoal": "recibir asesoría paso a paso sobre requisitos de elegibilidad a través de WhatsApp",
+          "constraintOrPain": "la imposibilidad de navegar en páginas web institucionales pesadas desde celulares básicos",
+          "hmwStatement": "¿Cómo podríamos recibir asesoría paso a paso sobre requisitos de elegibilidad a través de WhatsApp para los comuneros que habitan en zonas rurales sin computadoras personales a pesar de la imposibilidad de navegar en páginas web institucionales pesadas desde celulares básicos?",
+          "question": "¿Cómo podríamos recibir asesoría paso a paso sobre requisitos de elegibilidad a través de WhatsApp para los comuneros que habitan en zonas rurales sin computadoras personales a pesar de la imposibilidad de navegar en páginas web institucionales pesadas desde celulares básicos?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 75,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "insightId": 75,
+          "targetUser": "los dirigentes agrarios con dudas urgentes fuera del horario de oficina ministerial",
+          "actionGoal": "obtener respuestas oficiales y normativas precisas las 24 horas del día, los 7 días de la semana",
+          "constraintOrPain": "la congestión de las centrales telefónicas en horario de oficina y los largos tiempos de espera",
+          "hmwStatement": "¿Cómo podríamos obtener respuestas oficiales y normativas precisas las 24 horas del día, los 7 días de la semana para los dirigentes agrarios con dudas urgentes fuera del horario de oficina ministerial a pesar de la congestión de las centrales telefónicas en horario de oficina y los largos tiempos de espera?",
+          "question": "¿Cómo podríamos obtener respuestas oficiales y normativas precisas las 24 horas del día, los 7 días de la semana para los dirigentes agrarios con dudas urgentes fuera del horario de oficina ministerial a pesar de la congestión de las centrales telefónicas en horario de oficina y los largos tiempos de espera?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 76,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "insightId": 76,
+          "targetUser": "los evaluadores de atención ciudadana y orientadores de AGROIDEAS",
+          "actionGoal": "transferir casos de alta complejidad del chatbot hacia especialistas humanos con todo el contexto previo",
+          "constraintOrPain": "la frustración del usuario cuando debe repetir toda su problemática al pasar de la máquina al asesor humano",
+          "hmwStatement": "¿Cómo podríamos transferir casos de alta complejidad del chatbot hacia especialistas humanos con todo el contexto previo para los evaluadores de atención ciudadana y orientadores de AGROIDEAS a pesar de la frustración del usuario cuando debe repetir toda su problemática al pasar de la máquina al asesor humano?",
+          "question": "¿Cómo podríamos transferir casos de alta complejidad del chatbot hacia especialistas humanos con todo el contexto previo para los evaluadores de atención ciudadana y orientadores de AGROIDEAS a pesar de la frustración del usuario cuando debe repetir toda su problemática al pasar de la máquina al asesor humano?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 77,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "insightId": 77,
+          "targetUser": "los productores preocupados por el consumo de saldo en sus líneas prepago",
+          "actionGoal": "interactuar con el asistente virtual mediante un canal libre de consumo de datos móviles (Zero Rating)",
+          "constraintOrPain": "la pérdida de saldo telefónico que desmotiva el uso de canales digitales de atención",
+          "hmwStatement": "¿Cómo podríamos interactuar con el asistente virtual mediante un canal libre de consumo de datos móviles (Zero Rating) para los productores preocupados por el consumo de saldo en sus líneas prepago a pesar de la pérdida de saldo telefónico que desmotiva el uso de canales digitales de atención?",
+          "question": "¿Cómo podríamos interactuar con el asistente virtual mediante un canal libre de consumo de datos móviles (Zero Rating) para los productores preocupados por el consumo de saldo en sus líneas prepago a pesar de la pérdida de saldo telefónico que desmotiva el uso de canales digitales de atención?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 78,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "insightId": 78,
+          "targetUser": "los auditores de transparencia y calidad de atención ciudadana",
+          "actionGoal": "analizar las consultas más frecuentes y los niveles de satisfacción ciudadana en tiempo real",
+          "constraintOrPain": "la falta de sistematización de las consultas verbales recibidas en ventanillas presenciales",
+          "hmwStatement": "¿Cómo podríamos analizar las consultas más frecuentes y los niveles de satisfacción ciudadana en tiempo real para los auditores de transparencia y calidad de atención ciudadana a pesar de la falta de sistematización de las consultas verbales recibidas en ventanillas presenciales?",
+          "question": "¿Cómo podríamos analizar las consultas más frecuentes y los niveles de satisfacción ciudadana en tiempo real para los auditores de transparencia y calidad de atención ciudadana a pesar de la falta de sistematización de las consultas verbales recibidas en ventanillas presenciales?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
         }
       ]
     },
-    "H06_DefinicionDesafioHMW": {
-      "HerramientaNombre": "Definición del Desafío HMW",
-      "Fase": "FASE 2: DEFINIR",
-      "Registro": {
-        "hmwCode": "HMW-IN0013",
-        "action": "implementar una plataforma digital de postulación simplificada y acompañamiento técnico (EEMRI-DIGITAL) con enfoque intercultural y soporte multimedia",
-        "targetUser": "las organizaciones de mujeres rurales e indígenas",
-        "benefit": "acceder al cofinanciamiento de sus emprendimientos agrarios de manera ágil y sin intermediarios",
-        "constraint": "las brechas de conectividad en campo, barreras idiomáticas y la complejidad tradicional de las bases de postulación",
-        "finalHMWStatement": "¿Cómo podríamos implementar una plataforma digital de postulación simplificada y acompañamiento técnico (EEMRI-DIGITAL) con enfoque intercultural para que las organizaciones de mujeres rurales e indígenas accedan al cofinanciamiento de sus emprendimientos de manera ágil a pesar de las brechas de conectividad y barreras idiomáticas?"
+    "FASE_3_IDEAR": {
+      "H07_LluviaIdeasCrazy8s": [
+        {
+          "id": 73,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "desafioId": 73,
+          "ideaTitle": "Asistente de Voz Inteligente 'Allinllachu' en Quechua y Aimara con dialectos rurales",
+          "idea": "Asistente de Voz Inteligente 'Allinllachu' en Quechua y Aimara con dialectos rurales",
+          "description": "Sistema de reconocimiento de voz entrenado en variantes dialectales andinas que responde preguntas sobre elegibilidad y trámites por audio.",
+          "category": "Tecnológica",
+          "authorRole": "Lingüista Computacional e IA",
+          "votesCount": 15,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 74,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "desafioId": 74,
+          "ideaTitle": "Chatbot Oficial de WhatsApp de AGROIDEAS con consultas de estado en 3 toques",
+          "idea": "Chatbot Oficial de WhatsApp de AGROIDEAS con consultas de estado en 3 toques",
+          "description": "Bot interactivo en el canal de mensajería más usado en el campo que permite consultar expedientes sin descargar apps adicionales.",
+          "category": "Tecnológica",
+          "authorRole": "Desarrollador de Chatbots Conversacionales",
+          "votesCount": 13,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 75,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "desafioId": 75,
+          "ideaTitle": "Atención 24/7 con escalamiento inteligente hacia asesores zonales humanos",
+          "idea": "Atención 24/7 con escalamiento inteligente hacia asesores zonales humanos",
+          "description": "Protocolo donde el bot atiende consultas frecuentes y transfiere automáticamente los casos complejos con todo el historial recopilado.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Coordinador de Atención al Ciudadano",
+          "votesCount": 9,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 76,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "desafioId": 78,
+          "ideaTitle": "Tablero en Tiempo Real de Frecuencia de Dudas Ciudadanas para mejora continua",
+          "idea": "Tablero en Tiempo Real de Frecuencia de Dudas Ciudadanas para mejora continua",
+          "description": "Panel que agrupa las preguntas más repetidas por región para actualizar los instructivos y preguntas frecuentes oficiales.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Analista de Experiencia del Usuario (UX)",
+          "votesCount": 7,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 77,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "desafioId": 77,
+          "ideaTitle": "Acuerdo Marco de Cero Calificación (Zero Rating) con Operadores Telefónicos",
+          "idea": "Acuerdo Marco de Cero Calificación (Zero Rating) con Operadores Telefónicos",
+          "description": "Convenio con Claro, Movistar, Entel y Bitel para que el canal WhatsApp y llamadas al bot no consuman megas del saldo del agricultor.",
+          "category": "Normativa",
+          "authorRole": "Gestor de Políticas de Telecomunicaciones",
+          "votesCount": 12,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 78,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "desafioId": 76,
+          "ideaTitle": "Campaña de Alfabetización y Uso del Asistente Virtual en radios comunales",
+          "idea": "Campaña de Alfabetización y Uso del Asistente Virtual en radios comunales",
+          "description": "Microprogramas radiales matutinos que dramatizan cómo un campesino utiliza el asistente telefónico para agilizar su plan de negocio.",
+          "category": "Capacitación",
+          "authorRole": "Comunicador Social Rural",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        }
+      ],
+      "H08_MatrizPriorizacion": [
+        {
+          "id": 73,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "ideaId": 73,
+          "ideaTitle": "Asistente de Voz Inteligente 'Allinllachu' en Quechua y Aimara con dialectos rurales",
+          "title": "Asistente de Voz Inteligente 'Allinllachu' en Quechua y Aimara con dialectos rurales",
+          "desirability": 5,
+          "feasibility": 5,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 19,
+          "isWinningIdea": true,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 74,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "ideaId": 74,
+          "ideaTitle": "Chatbot Oficial de WhatsApp de AGROIDEAS con consultas de estado en 3 toques",
+          "title": "Chatbot Oficial de WhatsApp de AGROIDEAS con consultas de estado en 3 toques",
+          "desirability": 5,
+          "feasibility": 5,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 18,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 75,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "ideaId": 77,
+          "ideaTitle": "Acuerdo Marco de Cero Calificación (Zero Rating) con Operadores Telefónicos",
+          "title": "Acuerdo Marco de Cero Calificación (Zero Rating) con Operadores Telefónicos",
+          "desirability": 5,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 76,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "ideaId": 75,
+          "ideaTitle": "Atención 24/7 con escalamiento inteligente hacia asesores zonales humanos",
+          "title": "Atención 24/7 con escalamiento inteligente hacia asesores zonales humanos",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 15,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 77,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "ideaId": 76,
+          "ideaTitle": "Campaña de Alfabetización y Uso del Asistente Virtual en radios comunales",
+          "title": "Campaña de Alfabetización y Uso del Asistente Virtual en radios comunales",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 14,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 78,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "ideaId": 78,
+          "ideaTitle": "Tablero en Tiempo Real de Frecuencia de Dudas Ciudadanas para mejora continua",
+          "title": "Tablero en Tiempo Real de Frecuencia de Dudas Ciudadanas para mejora continua",
+          "desirability": 3,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 13,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        }
+      ],
+      "H09_PrototipadoRapido": {
+        "id": 13,
+        "projectId": 13,
+        "projectCode": "PIIP-2026-IN0013",
+        "prototypeTitle": "Asistente Virtual Intercultural y Módulo de Postulación Simplificada EEMRI",
+        "name": "Asistente Virtual Intercultural y Módulo de Postulación Simplificada EEMRI",
+        "prototypeType": "Digital PWA",
+        "keyFeatures": [
+          "Interfaz asistida por audio en Quechua y Castellano con lenguaje claro",
+          "Formulario de acreditación simplificada de posesión comunal y personería",
+          "Calculadora de valorización de contrapartida no monetaria y mano de obra"
+        ],
+        "artifactUrlOrImage": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500",
+        "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500",
+        "description": "Aplicación guiada que derriba las barreras burocráticas y lingüísticas para organizaciones de mujeres rurales e indígenas, permitiendo postular al incentivo con apoyo de audio.",
+        "testingGoal": "El 85% de las lideresas postulantes completa la solicitud de elegibilidad en su lengua originaria sin observaciones formales."
       }
     },
-    "H07_LluviaIdeasCrazy8s": {
-      "HerramientaNombre": "Lluvia de Ideas y Crazy 8's",
-      "Fase": "FASE 3: IDEAR",
-      "Registros": [
+    "FASE_4_ENTREGAR": {
+      "H10_PlanAccion": [
         {
-          "ideaId": "IDEA-013-01",
-          "title": "Módulo Web PWA EEMRI-DIGITAL con Asistente Guiado por Voz, Formulario Simplificado e Interoperabilidad RENIEC/SUNAT",
-          "author": "Coordinación EEMRI - DE/URIE",
-          "votes": 14
-        },
+          "id": 14,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "taskName": "Capacitación a operadores de mesa de ayuda en protocolo multicanal y lenguas originarias",
+          "task": "Capacitación a operadores de mesa de ayuda en protocolo multicanal y lenguas originarias",
+          "phase": "Capacitación",
+          "responsibleUnit": "Unidad de Atención al Ciudadano",
+          "responsible": "Unidad de Atención al Ciudadano",
+          "leader": "Coordinador de Servicios al Usuario",
+          "startDate": "2026-07-01",
+          "endDate": "2026-07-20",
+          "deadline": "2026-07-20",
+          "deliverable": "15 operadores certificados en el nuevo protocolo de resolución rápida",
+          "status": "Pendiente"
+        }
+      ],
+      "H11_MatrizRiesgosTesteo": [
         {
-          "ideaId": "IDEA-013-02",
-          "title": "Unidad móvil itinerante con equipos satelitales para captura de postulaciones en comunidades nativas",
-          "author": "Especialista UPDC",
-          "votes": 8
-        },
-        {
-          "ideaId": "IDEA-013-03",
-          "title": "Bot de postulación únicamente por comandos de texto en WhatsApp",
-          "author": "Especialista UA-TI",
-          "votes": 5
+          "id": 15,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "riskDescription": "Sobrecarga de llamadas y mensajes en horas punta de cierre de convocatorias.",
+          "description": "Sobrecarga de llamadas y mensajes en horas punta de cierre de convocatorias.",
+          "riskType": "Operativo",
+          "probability": "Alta",
+          "impact": "Medio",
+          "level": "Alto",
+          "mitigationStrategy": "Enrutamiento inteligente con árbol de respuestas frecuentes (FAQ bot) y escalamiento a agentes humanos.",
+          "mitigation": "Enrutamiento inteligente con árbol de respuestas frecuentes (FAQ bot) y escalamiento a agentes humanos.",
+          "testResult": "El bot atendió el 78% de consultas frecuentes sin intervención humana, reduciendo la espera telefónica a <30 segundos."
         }
       ]
-    },
-    "H08_MatrizPriorizacion": {
-      "HerramientaNombre": "Matriz de Priorización de Ideas",
-      "Fase": "FASE 3: IDEAR",
-      "Registro": {
-        "evaluationDate": "2026-09-27T10:30:00Z",
-        "ideasEvaluadas": [
-          {
-            "ideaId": "IDEA-013-01",
-            "title": "Módulo Web PWA EEMRI-DIGITAL con Asistente Guiado y Formulario Simplificado",
-            "deseabilidad": 5,
-            "factibilidad": 4,
-            "viabilidad": 5,
-            "impacto": 5,
-            "scoreTotal": 19,
-            "isWinningIdea": true
-          },
-          {
-            "ideaId": "IDEA-013-02",
-            "title": "Unidad móvil itinerante con equipos satelitales",
-            "deseabilidad": 4,
-            "factibilidad": 3,
-            "viabilidad": 3,
-            "impacto": 4,
-            "scoreTotal": 14,
-            "isWinningIdea": false
-          }
-        ],
-        "winningIdeaSummary": {
-          "title": "Plataforma Web PWA EEMRI-DIGITAL de Postulación Simplificada y Acompañamiento Intercultural",
-          "rationale": "Logró la máxima puntuación (19/20). Elimina las barreras de entrada para las organizaciones de mujeres mediante un asistente web PWA Local-First con audios instructivos en lenguas originarias y llenado simplificado en 4 pasos."
-        }
-      }
-    },
-    "H09_PrototipadoRapido": {
-      "HerramientaNombre": "Prototipado Rápido",
-      "Fase": "FASE 4: ENTREGAR",
-      "Registro": {
-        "prototypeType": "Progressive Web App (PWA) de Postulación Simplificada Intercultural",
-        "technologies": "HTML5, TailwindCSS, JavaScript Vanilla Local-First, Web Speech API / Audios WebM",
-        "keyScreens": [
-          "Pantalla 1: Selector de Idioma/Audio (Castellano, Quechua, Aymara, Awajún)",
-          "Pantalla 2: Validación automática de DNI de integrantes con servicio RENIEC",
-          "Pantalla 3: Formulario simplificado de idea de emprendimiento mediante 5 preguntas guiadas por voz",
-          "Pantalla 4: Generador del Expediente Digital EEMRI con código QR de constancia de recepción"
-        ],
-        "validationChecklist": [
-          {
-            "criterion": "Tiempo de llenado de postulación < 20 minutos",
-            "status": "PASSED"
-          },
-          {
-            "criterion": "Soporte de funcionamiento offline para borrador",
-            "status": "PASSED"
-          },
-          {
-            "criterion": "Interoperabilidad con RENIEC y SUNAT activa",
-            "status": "PASSED"
-          }
-        ]
-      }
-    },
-    "H10_PlanAccion": {
-      "HerramientaNombre": "Plan de Acción y Hoja de Ruta",
-      "Fase": "FASE 4: ENTREGAR",
-      "Registro": {
-        "sprints": [
-          {
-            "sprintNumber": 1,
-            "durationWeeks": 3,
-            "objective": "Aprobación de la Directiva de Simplificación de Requisitos EEMRI e Integración RENIEC/SUNAT",
-            "responsible": "DE / URIE / UAJ / UPP"
-          },
-          {
-            "sprintNumber": 2,
-            "durationWeeks": 3,
-            "objective": "Desarrollo del Módulo Web PWA EEMRI-DIGITAL con audios de soporte y motor Local-First",
-            "responsible": "UA-TI / DE / UPDC"
-          },
-          {
-            "sprintNumber": 3,
-            "durationWeeks": 3,
-            "objective": "Pilotaje en campo con 20 organizaciones de mujeres en Cusco, Ayacucho y San Martín",
-            "responsible": "DE / URIE / UPDC / Unidades Regionales"
-          }
-        ]
-      }
-    },
-    "H11_MatrizRiesgosTesteo": {
-      "HerramientaNombre": "Matriz de Riesgos y Testeo",
-      "Fase": "FASE 4: ENTREGAR",
-      "Registro": {
-        "risks": [
-          {
-            "riskId": "RISK-013-01",
-            "category": "Tecnológico / Conectividad",
-            "description": "Falta de datos móviles en comunidades alejadas durante el envío final.",
-            "severity": "MEDIA",
-            "mitigation": "El aplicativo guarda el expediente completado en LocalStorage y realiza el envío de fondo tan pronto detecta señal."
-          },
-          {
-            "riskId": "RISK-013-02",
-            "category": "Social / Idiomático",
-            "description": "Comprensión inadecuada de los términos técnicos de la estrategia.",
-            "severity": "ALTA",
-            "mitigation": "Audios nativos grabados por promotoras locales en Quechua, Aymara y Awajún explicando cada campo."
-          }
-        ],
-        "testCard": {
-          "testCode": "TEST-IN0013-01",
-          "hypothesis": "Las organizaciones de mujeres rurales e indígenas completarán su postulación en menos de 20 minutos sin requerir tramitadores externos.",
-          "sampleTested": "20 Organizaciones de Mujeres en Cusco, Ayacucho y San Martín",
-          "results": "El 100% de las organizaciones logró registrar su postulación exitosamente; el tiempo promedio de registro disminuyó de 20 días calendario a solo 15 minutos, con 0% de rechazos por inconsistencias de DNI.",
-          "learning": "El acompañamiento con audio en lengua nativa y la validación en tiempo real con RENIEC elimina totalmente las barreras de entrada burocráticas.",
-          "status": "APPROVED_FOR_PRODUCTION"
-        },
-        "kanbanTicketStatus": {
-          "ticketId": "KANBAN-IN0013",
-          "status": "HECHO (PASE A PRODUCCIÓN E INCLUSIÓN EN PORTAFOLIO ANEXO 5)"
-        }
-      }
     }
   }
 }

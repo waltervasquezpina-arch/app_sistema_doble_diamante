@@ -1,280 +1,777 @@
 {
   "$schema": "./schemas/far-piip-v3.json",
-  "NavegacionYTrazabilidad": {
-    "IniciativaCodigoActiva": "PIIP-2026-IN0008",
-    "UbicacionActual": {
-      "TipoVista": "HERRAMIENTA_METODOLOGICA",
-      "FaseNumero": 4,
-      "FaseNombre": "Fase 4: Entregar",
-      "HerramientaNumero": 11,
-      "HerramientaCodigo": "H11",
-      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
-      "VistaCodigo": "V11.1",
-      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje",
-      "VistaUrl": "fase4/11-matriz-riesgos.html"
-    },
-    "PosicionEnFlujo": {
-      "PasoActual": 11,
-      "TotalPasosFlujo": 11,
-      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
-      "PasoAnterior": {
-        "HerramientaCodigo": "H10",
-        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
-        "VistaUrl": "fase4/10-plan-accion.html"
-      },
-      "PasoSiguiente": null
-    },
-    "ControlIteracionYTrazabilidad": {
-      "VersionIteracion": 1,
-      "PermiteIteracionAnterior": true,
-      "FechaUltimaActualizacion": "2026-09-27T11:50:00Z",
-      "UsuarioActualRol": "Facilitador Ágil"
-    }
-  },
-  "PortafolioPIIP_Ficha": {
+  "IniciativaIdentificacion": {
     "id": 8,
-    "code": "PIIP-2026-IN0008",
-    "title": "Nueva Arquitectura e Infraestructura del Sistema en Línea SEL v2.0",
-    "responsible": "Unidad de Administración (UA) - TI / Sistemas e Informática",
-    "contact": "Ing. Víctor Hugo Morales - Arquitecto de Software Senior UA-TI",
-    "date": "2026-09-22",
-    "porcentajeAvanceGlobal": 100.0,
-    "phases": {
+    "IniciativaCodigo": "PIIP-2026-IN0008",
+    "IniciativaNombre": "Nueva Arquitectura e Infraestructura del Sistema en Línea SEL v2.0",
+    "UnidadOrganicaResponsable": "Unidad de Administración (UA) - TI / Sistemas e Informática",
+    "LiderProyecto": "Ing. Víctor Hugo Morales - Arquitecto de Software Senior UA-TI",
+    "FechaRegistro": "2026-03-10",
+    "EstadoFases": {
       "descubrir": "completed",
       "definir": "completed",
       "idear": "completed",
-      "entregar": "completed"
+      "entregar": "active"
     },
-    "evaluacionOpinionTecnica": {
-      "informeRef": "FIIP N° IN0008 - REPORTE DE EVALUACIÓN",
-      "puntajeTotal": 11,
-      "puntajeMaximo": 12,
-      "criterios": {
-        "impacto": 4,
-        "priorizacionEstrategica": 4,
-        "enfoqueInnovacion": 3
-      },
-      "dictamen": "RECOMENDABLE PARA APROBACIÓN E INSTITUCIONALIZACIÓN"
-    }
+    "PorcentajeAvanceGlobal": 75.0
   },
-  "HerramientasMetodologicas": {
+  "RegistrosHerramientasMetodologicas": {
     "FASE_1_DESCUBRIR": {
       "H01_ObservacionAEIOU": [
         {
-          "id": "aeiou-008-1",
-          "dimension": "Actividades",
-          "observation": "El Sistema en Línea SEL v1.0 sufre caídas recurrentes y lentitud severa durante las semanas de cierre de convocatorias de Planes de Negocio, bloqueando el registro de Organizaciones Agrarias.",
-          "timestamp": "2026-09-22T08:30:00Z"
+          "id": 43,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "activity": "Caída del servidor y bloqueo de la plataforma durante las últimas 4 horas de cierre de la Convocatoria Nacional de Planes de Negocio.",
+          "environment": "Centro de datos de la sede central en Lima; sala de servidores con ventiladores al máximo y llamadas constantes de reclamo.",
+          "interaction": "Administradores de red intentan reiniciar servicios IIS mientras más de 800 usuarios intentan subir archivos PDF pesados simultáneamente.",
+          "object": "Servidor físico en rack con memoria RAM saturada al 99%, consola de monitoreo con errores HTTP 504 Gateway Timeout.",
+          "objects": "Servidor físico en rack con memoria RAM saturada al 99%, consola de monitoreo con errores HTTP 504 Gateway Timeout.",
+          "user": "Administrador de Servidores OTI, 3 analistas de soporte técnico y cientos de formuladores agrarios a nivel nacional.",
+          "users": "Administrador de Servidores OTI, 3 analistas de soporte técnico y cientos de formuladores agrarios a nivel nacional.",
+          "observer": "Ingeniero de Infraestructura y Redes - OTI",
+          "observationDate": "2026-03-12",
+          "date": "2026-03-12",
+          "timestamp": "2026-03-12T16:50:00.000Z"
         },
         {
-          "id": "aeiou-008-2",
-          "dimension": "Entorno",
-          "observation": "Servidores monolíticos heredados con tiempos de respuesta superiores a 14 segundos por página cuando concurren más de 50 usuarios simultáneos.",
-          "timestamp": "2026-09-22T10:15:00Z"
+          "id": 44,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "activity": "Intento frustrado de carga de expediente de 45 MB desde cabina de internet pública rural con velocidad de subida de solo 512 Kbps.",
+          "environment": "Cabina pública de internet en Huancavelica; terminales lentas con Windows 7 y cortes de suministro eléctrico.",
+          "interaction": "El formulador agrario ve cómo el porcentaje de carga retrocede a cero tras alcanzar el 80% debido a un microcorte de red.",
+          "object": "Computadora de cabina con teclado desgastado, memoria USB con archivos de postulación, reloj de pared que marca el fin del plazo.",
+          "objects": "Computadora de cabina con teclado desgastado, memoria USB con archivos de postulación, reloj de pared que marca el fin del plazo.",
+          "user": "Formulador técnico de la organización de productores de fibra de vicuña y administrador de la cabina de internet.",
+          "users": "Formulador técnico de la organización de productores de fibra de vicuña y administrador de la cabina de internet.",
+          "observer": "Analista de Experiencia de Usuario - OTI",
+          "observationDate": "2026-04-02",
+          "date": "2026-04-02",
+          "timestamp": "2026-04-02T17:40:00.000Z"
         },
         {
-          "id": "aeiou-008-3",
-          "dimension": "Interacciones",
-          "observation": "Los usuarios de las Organizaciones Agrarias pierden el avance de sus formularios de postulación si la conexión falla antes de presionar el botón de guardado centralizado.",
-          "timestamp": "2026-09-22T14:00:00Z"
+          "id": 45,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "activity": "Monitoreo de latencia y pérdida de paquetes en el enlace VPN corporativo entre la sede central Lima y las 24 oficinas regionales.",
+          "environment": "Área de redes y telecomunicaciones en Lima; tableros con gráficas de rendimiento de red y tiempos de ping superiores a 400ms.",
+          "interaction": "Técnicos de soporte reciben tickets de incidencias de Cusco, San Martín y Loreto reportando que el sistema se 'congela' al guardar.",
+          "object": "Software de monitoreo SNMP Zabbix, enrutadores perimetrales, sistema de gestión de tickets de mesa de ayuda OTI.",
+          "objects": "Software de monitoreo SNMP Zabbix, enrutadores perimetrales, sistema de gestión de tickets de mesa de ayuda OTI.",
+          "user": "Especialista en Telecomunicaciones OTI y coordinadores zonales en regiones remotas.",
+          "users": "Especialista en Telecomunicaciones OTI y coordinadores zonales en regiones remotas.",
+          "observer": "Especialista de Redes Zonal - OTI",
+          "observationDate": "2026-04-26",
+          "date": "2026-04-26",
+          "timestamp": "2026-04-26T11:20:00.000Z"
+        },
+        {
+          "id": 46,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "activity": "Restauración nocturna de copias de seguridad de la base de datos tras corrupción de índices por cortes intempestivos de energía.",
+          "environment": "Sala de servidores de sede central Lima; turno nocturno de madrugada (02:30 a.m.) en ambiente climatizado a 18°C.",
+          "interaction": "DBA (Administrador de Base de Datos) ejecuta scripts de recuperación transaccional y verifica integridad referencial de tablas históricas.",
+          "object": "Servidor de base de datos SQL Server, consola PowerShell con scripts de backup, cintas magnéticas LTO de respaldo secundario.",
+          "objects": "Servidor de base de datos SQL Server, consola PowerShell con scripts de backup, cintas magnéticas LTO de respaldo secundario.",
+          "user": "Administrador de Base de Datos (DBA) y Jefe de Soporte de Infraestructura.",
+          "users": "Administrador de Base de Datos (DBA) y Jefe de Soporte de Infraestructura.",
+          "observer": "DBA Senior - OTI",
+          "observationDate": "2026-05-18",
+          "date": "2026-05-18",
+          "timestamp": "2026-05-18T03:15:00.000Z"
+        },
+        {
+          "id": 47,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "activity": "Pruebas de estrés y benchmarking de la nueva arquitectura desacoplada basada en microservicios, contenedores Docker y base de datos distribuida.",
+          "environment": "Laboratorio de control de calidad de software en OTI; simulador de carga ejecutando 2,500 peticiones concurrentes por segundo.",
+          "interaction": "El equipo comprueba que ante el pico simulado de usuarios, la nube auto-escala instancias adicionales en menos de 90 segundos.",
+          "object": "Herramienta Apache JMeter para pruebas de rendimiento, panel de orquestación Kubernetes, métricas de consumo de CPU/Memoria.",
+          "objects": "Herramienta Apache JMeter para pruebas de rendimiento, panel de orquestación Kubernetes, métricas de consumo de CPU/Memoria.",
+          "user": "Arquitecto Cloud OTI, Ingeniero DevOps y Consultor externo de arquitectura de software.",
+          "users": "Arquitecto Cloud OTI, Ingeniero DevOps y Consultor externo de arquitectura de software.",
+          "observer": "Líder de Arquitectura Cloud - OTI",
+          "observationDate": "2026-06-25",
+          "date": "2026-06-25",
+          "timestamp": "2026-06-25T14:30:00.000Z"
+        },
+        {
+          "id": 48,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "activity": "Pase a producción del nuevo módulo de carga fragmentada (chunk upload) y almacenamiento distribuido con compresión automática de imágenes.",
+          "environment": "Sede central de AGROIDEAS con enlaces de prueba desde computadoras conectadas a redes móviles 3G de baja calidad.",
+          "interaction": "Un usuario sube un PDF de 80 MB; el sistema lo divide en fragmentos de 1 MB, lo optimiza a 12 MB y confirma la recepción sin errores.",
+          "object": "Navegadores Chrome y Firefox en modo desarrollador con limitador de ancho de banda a 256 Kbps, consola AWS S3 / MinIO.",
+          "objects": "Navegadores Chrome y Firefox en modo desarrollador con limitador de ancho de banda a 256 Kbps, consola AWS S3 / MinIO.",
+          "user": "Equipo de Desarrollo Web OTI y evaluadores de Unidades Regionales participantes en la marcha blanca.",
+          "users": "Equipo de Desarrollo Web OTI y evaluadores de Unidades Regionales participantes en la marcha blanca.",
+          "observer": "Jefe de la Oficina de Tecnologías de la Información (OTI)",
+          "observationDate": "2026-07-29",
+          "date": "2026-07-29",
+          "timestamp": "2026-07-29T16:00:00.000Z"
         }
       ],
-      "H02_MapaEmpatia": {
-        "userProfile": "Arquitecto de Software / Especialista TI (UA-TI)",
-        "says": "El código monolítico heredado de SEL v1.0 es inestable y cualquier cambio en un módulo genera errores en cascada en todo el sistema.",
-        "does": "Atiende llamadas de emergencia fuera de horario para reiniciar servicios e intentar recuperar formularios incompletos corruptos en base de datos.",
-        "thinks": "Debemos migrar a una arquitectura moderna, escalable, con componentes desacoplados y capacidad de almacenamiento local en el navegador.",
-        "feels": "Frustrado por dedicar tiempo a apagar incendios de infraestructura en lugar de innovar en servicios digitales para el agro.",
-        "pains": "Pérdida de credibilidad institucional, sobrecarga operativa en fechas límite y falta de redundancia ante fallos.",
-        "gains": "Contar con un sistema robusto, con disponibilidad 99.9%, capaz de procesar miles de solicitudes simultáneas sin latencia."
-      },
-      "H03_EncuestasCampo": {
-        "sampleSize": 30,
-        "targetAudience": "Especialistas de TI, Evaluadores Regionales y Usuarios de Organizaciones Agrarias registrados en SEL",
-        "keyResults": [
-          {
-            "question": "¿Ha experimentado caídas o congelamiento del sistema SEL v1.0 durante convocatorias?",
-            "percentageYes": 93.3
-          },
-          {
-            "question": "¿Cuál es la principal característica requerida para la nueva versión SEL v2.0?",
-            "preferredOption": "Guardado automático borrador offline en navegador y carga rápida (< 1 segundo) (86.7%)"
-          },
-          {
-            "question": "Módulos críticos con mayor latencia",
-            "topFormats": [
-              "Carga de Requisitos y Anexos PDF",
-              "Formulario de Presupuesto del Plan de Negocio",
-              "Consulta de Estado de Expediente"
-            ]
-          }
-        ]
-      },
-      "H04_FichaPersona": {
-        "archetypeCode": "PERS-IN0008-01",
-        "name": "Ing. Víctor Hugo Morales",
-        "role": "Arquitecto de Software Senior - UA-TI",
-        "age": 39,
-        "digitalLiteracy": "Avanzado / Experto en Infraestructura Cloud, Microservicios y Frontend PWA",
-        "primaryGoal": "Reestructurar SEL v2.0 bajo un paradigma Local-First desacoplado que garantice cero caídas de servidor y respuesta instantánea."
-      }
+      "H02_MapaEmpatia": [
+        {
+          "id": 45,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "userProfile": "Ingeniero de Software y Arquitecto Cloud (Oficina de TI - AGROIDEAS)",
+          "says": "\"El SEL v1 es un monolito antiguo en un servidor local que se satura con 50 usuarios concurrentes. Debemos migrar a microservicios en la nube.\"",
+          "does": "Diseña contenedores en Kubernetes, configura pipelines de CI/CD y monitorea el balanceo de carga en los servidores institucionales.",
+          "thinks": "Sabe que la modernización del SEL es el corazón de la transformación digital de todo AGROIDEAS y no puede fallar.",
+          "feels": "Estrés extremo durante las semanas de cierre de convocatorias cuando el servidor actual entra en cuello de botella de memoria RAM.",
+          "hears": "Jefes de unidad y directivos furiosos porque la plataforma 'se cayó' el último día de recepción de solicitudes de incentivos.",
+          "sees": "Registros de errores del servidor (logs 500 y 504 Gateway Timeout) multiplicándose en pantalla mientras el CPU llega al 100%.",
+          "pains": "Deuda técnica heredada, código espagueti sin documentación y falta de infraestructura elástica capaz de autoescalar.",
+          "gains": "Arquitectura cloud-native sin servidor (serverless) con alta disponibilidad del 99.9%, bases de datos distribuidas y microservicios modulares."
+        },
+        {
+          "id": 46,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "userProfile": "Técnico de Mesa de Ayuda y Soporte a Usuarios Externos (OTI)",
+          "says": "\"El 80% de las llamadas son de productores que olvidaron su contraseña o no pueden subir un archivo porque pesa 21 megas y el límite es 20.\"",
+          "does": "Atiende tickets de soporte por teléfono, correo y WhatsApp institucional; restablece contraseñas y guía a usuarios en el uso de la plataforma.",
+          "thinks": "Opina que si la interfaz tuviera diseño intuitivo y validaciones claras en pantalla, el volumen de tickets caería a una décima parte.",
+          "feels": "Empatía con los agricultores desesperados que no logran completar su trámite y agotamiento por repetir las mismas instrucciones básicas cientos de veces.",
+          "hears": "Campesinos llorando por teléfono porque se cierra el plazo a medianoche y la plataforma les arroja un error con letras rojas incomprensibles.",
+          "sees": "Capturas de pantalla enviadas por WhatsApp con pantallas congeladas en blanco o mensajes de error crípticos del navegador.",
+          "pains": "Falta de una base de conocimiento interactiva con tutoriales breves y herramientas para suplantar sesión y ver qué le falla al usuario.",
+          "gains": "Autenticación simplificada con Clave Única del Estado / DNI electrónico, compresión automática de archivos en el navegador y chatbot de soporte 24/7."
+        },
+        {
+          "id": 47,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "userProfile": "Usuario Postulante Concurrente en Ventana de Cierre (Lambayeque)",
+          "says": "\"Llevo tres horas intentando guardar el formulario y cada vez que doy clic me sale 'Error de Conexión' y pierdo todo lo que escribí.\"",
+          "does": "Paga a un locutorio en la plaza de Chiclayo para subir los documentos de su cooperativa arrocera antes del vencimiento a las 23:59 horas.",
+          "thinks": "Cree que el sistema está programado para fallar a propósito y que solo clasifiquen las organizaciones con conexiones caras de Lima.",
+          "feels": "Ira, frustración profunda y sensación de indefensión ante una máquina que no le permite ejercer su derecho a postular.",
+          "hears": "Los otros postulantes en el locutorio quejándose a gritos de que la página del Ministerio no abre ni carga las páginas.",
+          "sees": "El reloj del locutorio avanzando hacia la medianoche y el círculo de carga de la web girando indefinidamente sin avanzar.",
+          "pains": "Pérdida de convocatorias anuales por caídas técnicas del sistema y falta de guardado automático de borradores en el navegador.",
+          "gains": "Autoguardado continuo en tiempo real (autosave), diseño offline-first y certificado digital de intento de presentación en caso de caída del servidor."
+        },
+        {
+          "id": 48,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "userProfile": "Evaluador de Negocios en Convocatorias Masivas (Sede Central)",
+          "says": "\"Tengo que evaluar 40 expedientes en 5 días y el sistema demora 45 segundos en cargar cada pantalla. La lentitud del software me resta horas de vida.\"",
+          "does": "Ingresa al SEL diariamente, descarga archivos adjuntos, califica matrices de evaluación y redacta observaciones técnicas.",
+          "thinks": "Considera que un diseño SPA (Single Page Application) moderno con carga reactiva e instantánea multiplicaría su ritmo de trabajo.",
+          "feels": "Estrés por las metas de expedientes evaluados por semana y frustración cuando el sistema se desconecta por inactividad tras 10 minutos.",
+          "hears": "El director de unidad recordando que cada día de retraso en evaluación genera quejas de los congresistas de las regiones afectadas.",
+          "sees": "Banderolas de notificación de sesión expirada que le borran comentarios largos redactados en campos de texto sin borrador.",
+          "pains": "Tiempos de latencia inaceptables, sesiones que caducan sin aviso y falta de atajos de teclado para agilizar la navegación entre expedientes.",
+          "gains": "Interfaz ultrarrápida con carga asíncrona, vista previa de documentos integrada sin descargas y retención de sesiones activas segura."
+        },
+        {
+          "id": 49,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "userProfile": "Oficial de Seguridad de la Información - CISO (AGROIDEAS)",
+          "says": "\"La modernización debe cumplir estrictamente con los controles de seguridad ISO 27001 y la ley de protección de datos personales. No toleramos brechas.\"",
+          "does": "Realiza pruebas de penetración (pentesting), revisa vulnerabilidades OWASP, audita privilegios de usuarios y monitorea intentos de intrusión.",
+          "thinks": "Sabe que al exponer servicios públicos a internet, los ataques cibernéticos y los intentos de suplantación de identidad se incrementan exponencialmente.",
+          "feels": "Vigilancia constante y preocupación por la vulnerabilidad de credenciales compartidas entre usuarios de la misma organización agraria.",
+          "hears": "Reportes del Centro Nacional de Seguridad Digital sobre campañas de phishing dirigidas a funcionarios de ministerios productivos.",
+          "sees": "Contraseñas débiles como '123456' o 'agroideas2026' anotadas en post-its pegados en monitores de oficinas desconcentradas.",
+          "pains": "Riesgo de filtración de datos sensibles de productores, inyección SQL en formularios heredados y falta de autenticación multifactor (MFA).",
+          "gains": "Autenticación segura con doble factor (2FA/MFA), cifrado de datos en reposo y tránsito (TLS 1.3), y cumplimiento estricto del marco ENS."
+        },
+        {
+          "id": 50,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "userProfile": "Director de la Unidad de Administración (Sede Central Lima)",
+          "says": "\"Invertir en la nueva arquitectura del SEL v2 no es un gasto en computadoras, es la inversión más rentable para garantizar la operatividad de AGROIDEAS.\"",
+          "does": "Gestiona la asignación presupuestal del proyecto ante el MEF, aprueba los términos de referencia tecnológicos y lidera el comité de gobierno digital.",
+          "thinks": "Estima que modernizar el software evitará compras recurrentes de servidores físicos obsoletos cada 3 años y reducirá costos operativos.",
+          "feels": "Compromiso institucional con dejar un sistema moderno y escalable antes de culminar su periodo de gestión.",
+          "hears": "Demandas de los gremios agrarios nacionales que exigen un sistema transparente y a la altura de los bancos privados.",
+          "sees": "El contraste entre el SEL antiguo y los sistemas modernos de entidades pares como ProInnóvate o Foncodes.",
+          "pains": "Trámites largos para licitaciones públicas de servicios en la nube y resistencia de áreas tradicionales a abandonar procesos manuales.",
+          "gains": "Aprobación de la arquitectura SEL v2 en nube, migración sin pérdida de datos históricos y felicitación de los órganos de control por la eficiencia lograda."
+        }
+      ],
+      "H03_EncuestasCampo": [
+        {
+          "id": 15,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "respondent": "Ing. Víctor Morales (Arquitecto TI)",
+          "cooperative": "Unidad de Administración TI",
+          "satisfaction": 1,
+          "comments": "El sistema SEL tradicional se satura y se cae durante las últimas 4 horas del cierre de convocatorias. Se requiere nube escalable.",
+          "sentiment": "Negativo",
+          "date": "2026-03-12"
+        },
+        {
+          "id": 16,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "respondent": "Hernán Silva (Formulador de Proyectos)",
+          "cooperative": "Consultor Agrario Independiente - San Martín",
+          "satisfaction": 2,
+          "comments": "Subir un archivo PDF de 30 MB desde una cabina de internet rural es imposible si la conexión se corta a mitad de subida.",
+          "sentiment": "Negativo",
+          "date": "2026-03-18"
+        }
+      ],
+      "H04_FichaPersona": [
+        {
+          "id": 43,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "archetypeName": "Ing. Carlos Enrique Bazán",
+          "name": "Ing. Carlos Enrique Bazán",
+          "role": "Arquitecto de Software y Sistemas Distribuidos (Oficina de TI)",
+          "demographics": "41 años, Lima; Ingeniero de Software, especialista en Cloud Native y Kubernetes",
+          "age": 41,
+          "techTechSavviness": "Avanzado (Arquitectura de microservicios, bases distribuidas, DevOps, seguridad API)",
+          "quote": "El SEL v1 es un monolito antiguo en un servidor local que se satura con 50 usuarios concurrentes. Debemos migrar a microservicios elásticos en la nube.",
+          "bio": "Lidera la ingeniería del nuevo SEL v2.0. Diseña una plataforma escalable capaz de soportar picos de más de 5,000 postulantes concurrentes sin caídas.",
+          "goals": [
+            "Desplegar la arquitectura SEL v2.0 en la nube del Estado con 99.9% de disponibilidad garantizada",
+            "Implementar autoguardado continuo (autosave) para que ningún usuario pierda datos al llenar formularios",
+            "Reducir los tiempos de carga de pantalla a menos de 1.5 segundos en conexiones de internet móvil"
+          ],
+          "frustrations": [
+            "Caídas del servidor antiguo durante las horas de cierre de convocatorias nacionales",
+            "Código heredado sin pruebas unitarias que hace muy riesgoso implementar cambios rápidos",
+            "Trámites largos y engorrosos para contratar servicios de infraestructura cloud mediante licitación pública"
+          ]
+        },
+        {
+          "id": 44,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "archetypeName": "Lic. Gabriel Soto Benavides",
+          "name": "Lic. Gabriel Soto Benavides",
+          "role": "Líder de Mesa de Ayuda y Soporte a Usuarios Externos (OTI)",
+          "demographics": "33 años, Lima; Licenciado en Sistemas e Informática, especialista en UX y Atención al Usuario",
+          "age": 33,
+          "techTechSavviness": "Avanzado (Gestión de tickets en Jira/Zendesk, soporte remoto, análisis de incidentes)",
+          "quote": "El 80% de las quejas son de productores que no pueden subir sus archivos porque pesan 21 MB y el límite es 20. El sistema debe comprimir automáticamente.",
+          "bio": "Coordina el equipo de soporte que atiende a los dirigentes y consultores postulantes por teléfono, correo institucional y chat de WhatsApp.",
+          "goals": [
+            "Integrar un módulo de compresión automática de PDFs e imágenes dentro del propio navegador",
+            "Implementar autenticación única mediante Clave Única de la PCM / DNI electrónico",
+            "Disponer de un chatbot interactivo que resuelva las dudas frecuentes de navegación 24/7"
+          ],
+          "frustrations": [
+            "Llamadas de productores angustiados a la medianoche del día de cierre porque el formulario no envía",
+            "Mensajes de error crípticos del sistema que confunden al usuario en vez de indicarle qué campo corregir",
+            "Sobrecarga del personal de soporte atendiendo reseteos manuales de contraseñas olvidadas"
+          ]
+        },
+        {
+          "id": 45,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "archetypeName": "Don Faustino Rimarachín",
+          "name": "Don Faustino Rimarachín",
+          "role": "Directivo de Asociación Arrocera Concurrente en Ventana de Cierre (Ferreñafe)",
+          "demographics": "53 años, Ferreñafe, Lambayeque; Secundaria completa, Productor arrocero",
+          "age": 53,
+          "techTechSavviness": "Básico (Paga a un locutorio o cabina de internet para que un técnico le suba los archivos)",
+          "quote": "Llevo 4 horas en la cabina intentando enviar la postulación y cada vez que doy clic la página se queda en blanco. No es justo perder por la máquina.",
+          "bio": "Presidente de una asociación de 40 pequeños arroceros del valle de Chancay-Lambayeque. Busca acceder a una secadora de arroz para no malvender su cosecha.",
+          "goals": [
+            "Completar la postulación al incentivo sin sufrir fallas de conexión o congelamiento de pantallas",
+            "Obtener un comprobante electrónico con sello de tiempo que certifique la presentación formal de su solicitud",
+            "Llenar el formulario por partes durante la semana sin riesgo de que se borren sus avances"
+          ],
+          "frustrations": [
+            "Pérdida de la postulación anual por caídas técnicas del servidor en el último día de plazo",
+            "Pagar S/. 15 la hora en cabinas privadas de internet que no logran subir los archivos pesados",
+            "Sensación de frustración e impotencia frente a plataformas digitales que no contemplan la realidad rural"
+          ]
+        },
+        {
+          "id": 46,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "archetypeName": "Ing. Lorena Valdivia Ponce",
+          "name": "Ing. Lorena Valdivia Ponce",
+          "role": "Evaluadora de Negocios en Convocatorias Masivas (Sede Central)",
+          "demographics": "36 años, Lima; Economista Agraria con especialización en Finanzas",
+          "age": 36,
+          "techTechSavviness": "Avanzado (Manejo de ERPs, análisis financiero en Excel, plataformas web evaluativas)",
+          "quote": "Tengo que calificar 50 planes en dos semanas y el sistema demora 40 segundos en abrir cada anexo. La lentitud del software me agota.",
+          "bio": "Evalúa los planes de negocio durante las convocatorias nacionales masivas. Revisa matrices de ponderación, flujos de caja y cálculos de rentabilidad TIR/VAN.",
+          "goals": [
+            "Contar con una interfaz moderna y ultrarrápida tipo SPA (Single Page Application)",
+            "Visualizar documentos en vista previa inmediata sin necesidad de descargarlos a su computadora",
+            "Guardar borradores de observaciones técnicas de forma automática sin riesgo de cierre de sesión inesperado"
+          ],
+          "frustrations": [
+            "Sesiones de trabajo que expiran tras 10 minutos de inactividad borrando comentarios largos no guardados",
+            "Tener que abrir múltiples pestañas del navegador que saturan la memoria RAM de su máquina",
+            "Falta de filtros avanzados para ordenar expedientes por región, cadena productiva o estado de avance"
+          ]
+        },
+        {
+          "id": 47,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "archetypeName": "Ing. Sergio Poma Gamarra",
+          "name": "Ing. Sergio Poma Gamarra",
+          "role": "Oficial de Seguridad de la Información CISO (AGROIDEAS)",
+          "demographics": "44 años, Lima; Ingeniero Informático, certificado CISM y CISSP",
+          "age": 44,
+          "techTechSavviness": "Avanzado (Seguridad perimetral, ethical hacking, cifrado de datos, ISO 27001)",
+          "quote": "La modernización a la nube debe blindar la plataforma contra ciberataques y garantizar la estricta confidencialidad de los datos de los agricultores.",
+          "bio": "Responsable de la seguridad digital de la infraestructura de AGROIDEAS. Audita vulnerabilidades OWASP y gestiona políticas de cifrado y contingencias.",
+          "goals": [
+            "Implementar autenticación multifactor (MFA/2FA) para todos los evaluadores y administradores del sistema",
+            "Asegurar el cifrado de datos en reposo y en tránsito mediante protocolos criptográficos modernos (TLS 1.3)",
+            "Superar con éxito las auditorías de seguridad digital de la Secretaría de Gobierno y Transformación Digital"
+          ],
+          "frustrations": [
+            "Usuarios que comparten contraseñas o las anotan en papeles visibles en oficinas zonales",
+            "Intentos continuos de inyección SQL y fuerza bruta provenientes de redes externas no autorizadas",
+            "Resistencia de algunos funcionarios a utilizar mecanismos de doble factor de autenticación"
+          ]
+        },
+        {
+          "id": 48,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "archetypeName": "Eco. Roberto Carranza Ugarte",
+          "name": "Eco. Roberto Carranza Ugarte",
+          "role": "Director de la Unidad de Administración (Sede Central Lima)",
+          "demographics": "52 años, Lima; Economista con Maestría en Administración y Finanzas Públicas",
+          "age": 52,
+          "techTechSavviness": "Intermedio (Gestión presupuestal, planeamiento estratégico, toma de decisiones con BI)",
+          "quote": "Invertir en la nueva arquitectura del SEL v2.0 no es un gasto en servidores; es la única garantía de que los incentivos lleguen a tiempo al campo.",
+          "bio": "Supervisa la ejecución de los recursos operativos de la entidad. Lidera el Comité de Gobierno y Transformación Digital de AGROIDEAS.",
+          "goals": [
+            "Lograr la migración integral al SEL v2.0 dentro del cronograma y presupuesto asignado",
+            "Reducir en un 40% los costos recurrentes de mantenimiento de servidores físicos obsoletos",
+            "Posicionar a AGROIDEAS como un referente de modernización digital en el sector agropecuario peruano"
+          ],
+          "frustrations": [
+            "Quejas de los gremios agrarios nacionales ante la prensa por fallas en las plataformas virtuales del ministerio",
+            "Trámites lentos en la compra de servicios de nube debido a observaciones del sistema de contrataciones",
+            "Brechas presupuestales para financiar licencias de software y capacitación continua del equipo de TI"
+          ]
+        }
+      ]
     },
     "FASE_2_DEFINIR": {
       "H05_MuroHallazgos": [
         {
-          "clusterId": "CLUST-008-01",
-          "clusterName": "Cuello de Botella Monolítico y Dependencia Centralizada",
-          "insight": "El servidor central no soporta la concurrencia masiva en cierres de convocatorias; la arquitectura debe desacoplar la captura en cliente del procesamiento en servidor.",
-          "priority": "ALTA"
+          "id": 43,
+          "type": "Muro",
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "clusterCategory": "Arquitectura y Rendimiento Tecnológico",
+          "findingTitle": "Colapso del Servidor Local en Horas Punta de Cierre de Convocatoria",
+          "title": "Colapso del Servidor Local en Horas Punta de Cierre de Convocatoria",
+          "evidenceText": "El servidor on-premise del SEL v1.0 se satura y arroja errores 504 Gateway Timeout cuando más de 60 postulantes intentan subir anexos simultáneamente en las últimas 4 horas del cronograma.",
+          "text": "El servidor on-premise del SEL v1.0 se satura y arroja errores 504 Gateway Timeout cuando más de 60 postulantes intentan subir anexos simultáneamente en las últimas 4 horas del cronograma.",
+          "sourceTool": "Monitoreo de Servidores OTI",
+          "priority": "Alta",
+          "quote": "El sistema se cae el último día a las 8 de la noche y cientos de cooperativas se quedan sin postular por una falla de nuestros servidores.",
+          "date": "2026-03-10"
         },
         {
-          "clusterId": "CLUST-008-02",
-          "clusterName": "Estrategia Local-First y PWA para Resiliencia",
-          "insight": "Permitir el llenado de solicitudes en el navegador con guardado en IndexedDB elimina la dependencia continua de internet y evita la pérdida de datos.",
-          "priority": "ALTA"
+          "id": 44,
+          "type": "Muro",
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "clusterCategory": "Experiencia de Usuario (UX/UI)",
+          "findingTitle": "Pérdida de Información por Falta de Guardado Automático de Borradores",
+          "title": "Pérdida de Información por Falta de Guardado Automático de Borradores",
+          "evidenceText": "Al sufrir un microcorte de internet o caducar la sesión de 10 minutos, los usuarios pierden hasta 2 horas de llenado de formularios de costos agrícolas, provocando frustración extrema y quejas formales.",
+          "text": "Al sufrir un microcorte de internet o caducar la sesión de 10 minutos, los usuarios pierden hasta 2 horas de llenado de formularios de costos agrícolas, provocando frustración extrema y quejas formales.",
+          "sourceTool": "Tickets de Soporte Mesa de Ayuda",
+          "priority": "Alta",
+          "quote": "Llené 4 pestañas de presupuestos y al dar clic en 'Siguiente' me salió 'Sesión Expirada' y se borró absolutamente todo.",
+          "date": "2026-03-15"
+        },
+        {
+          "id": 45,
+          "type": "Muro",
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "clusterCategory": "Ciberseguridad y Protección de Datos",
+          "findingTitle": "Uso de Prácticas Inseguras en Credenciales Compartidas",
+          "title": "Uso de Prácticas Inseguras en Credenciales Compartidas",
+          "evidenceText": "El 70% de las cooperativas comparte un único usuario y contraseña entre dirigentes y consultores externos. No hay trazabilidad de quién modificó datos sensibles ni autenticación multifactor (MFA).",
+          "text": "El 70% de las cooperativas comparte un único usuario y contraseña entre dirigentes y consultores externos. No hay trazabilidad de quién modificó datos sensibles ni autenticación multifactor (MFA).",
+          "sourceTool": "Auditoría de Seguridad de la Información",
+          "priority": "Alta",
+          "quote": "El consultor se fue con la clave del sistema y ahora la directiva no puede acceder a su propio expediente de postulación.",
+          "date": "2026-03-19"
+        },
+        {
+          "id": 46,
+          "type": "Muro",
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "clusterCategory": "Experiencia de Usuario (UX/UI)",
+          "findingTitle": "Interfaz No Optimizada para Dispositivos Móviles ni Pantallas Pequeñas",
+          "title": "Interfaz No Optimizada para Dispositivos Móviles ni Pantallas Pequeñas",
+          "evidenceText": "El diseño web no es responsivo; tablas y botones se desbordan en pantallas de teléfonos móviles o tablets, obligando al usuario a buscar una computadora de escritorio para realizar cualquier acción básica.",
+          "text": "El diseño web no es responsivo; tablas y botones se desbordan en pantallas de teléfonos móviles o tablets, obligando al usuario a buscar una computadora de escritorio para realizar cualquier acción básica.",
+          "sourceTool": "Pruebas de Usabilidad Heurística",
+          "priority": "Media",
+          "quote": "Desde el celular no se puede ver el botón de guardar porque queda oculto detrás de la barra lateral fija.",
+          "date": "2026-03-24"
+        },
+        {
+          "id": 47,
+          "type": "Muro",
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "clusterCategory": "Arquitectura y Rendimiento Tecnológico",
+          "findingTitle": "Tiempos Excesivos de Latencia en Carga de Anexos Pesados",
+          "title": "Tiempos Excesivos de Latencia en Carga de Anexos Pesados",
+          "evidenceText": "La subida síncrona de archivos PDF sin compresión en el cliente genera tiempos de espera de hasta 5 minutos por documento, provocando que los navegadores cancelen la petición por timeout.",
+          "text": "La subida síncrona de archivos PDF sin compresión en el cliente genera tiempos de espera de hasta 5 minutos por documento, provocando que los navegadores cancelen la petición por timeout.",
+          "sourceTool": "Métricas de Performance Web",
+          "priority": "Media",
+          "quote": "El círculo de carga se queda girando y el usuario no sabe si el archivo subió o si la computadora se congeló.",
+          "date": "2026-03-28"
+        },
+        {
+          "id": 48,
+          "type": "Muro",
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "clusterCategory": "Operatividad y Gobernanza TI",
+          "findingTitle": "Deuda Técnica Acumulada y Falta de Documentación de Código",
+          "title": "Deuda Técnica Acumulada y Falta de Documentación de Código",
+          "evidenceText": "El sistema actual carece de diagramas de arquitectura, contratos de API estandarizados y pruebas automatizadas. Cualquier corrección en un módulo genera errores colaterales imprevistos en otros formularios.",
+          "text": "El sistema actual carece de diagramas de arquitectura, contratos de API estandarizados y pruebas automatizadas. Cualquier corrección en un módulo genera errores colaterales imprevistos en otros formularios.",
+          "sourceTool": "Auditoría de Código Fuente OTI",
+          "priority": "Media",
+          "quote": "Arreglamos el campo de DNI y se cayó el cálculo automático del presupuesto en la pestaña de inversiones.",
+          "date": "2026-04-03"
         }
       ],
-      "H06_DefinicionDesafioHMW": {
-        "hmwCode": "HMW-IN0008",
-        "action": "rediseñar e implementar la Nueva Arquitectura e Infraestructura del Sistema en Línea (SEL v2.0)",
-        "targetUser": "las Organizaciones Agrarias y especialistas evaluadores de AGROIDEAS",
-        "benefit": "registrar, consultar y calificar expedientes de incentivos de forma fluida e ininterrumpida con disponibilidad del 99.9%",
-        "constraint": "los picos masivos de concurrencia en convocatorias y la inestabilidad de conectividad en zonas rurales",
-        "finalHMWStatement": "¿Cómo podríamos rediseñar e implementar la Nueva Arquitectura e Infraestructura del Sistema en Línea (SEL v2.0) basada en microservicios, PWA y desacoplamiento Local-First para que las Organizaciones Agrarias y evaluadores registren y procesen solicitudes sin caídas del sistema a pesar de los picos masivos de tráfico en convocatorias?"
-      }
+      "H06_DefinicionDesafioHMW": [
+        {
+          "id": 43,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "insightId": 43,
+          "targetUser": "los productores de zonas altoandinas vulnerables a heladas, granizadas y sequías",
+          "actionGoal": "recibir pronósticos hiperlocales de riesgo extremo con al menos 72 horas de anticipación",
+          "constraintOrPain": "los reportes meteorológicos macro a nivel departamental que no reflejan los microclimas de cada quebrada",
+          "hmwStatement": "¿Cómo podríamos recibir pronósticos hiperlocales de riesgo extremo con al menos 72 horas de anticipación para los productores de zonas altoandinas vulnerables a heladas, granizadas y sequías a pesar de los reportes meteorológicos macro a nivel departamental que no reflejan los microclimas de cada quebrada?",
+          "question": "¿Cómo podríamos recibir pronósticos hiperlocales de riesgo extremo con al menos 72 horas de anticipación para los productores de zonas altoandinas vulnerables a heladas, granizadas y sequías a pesar de los reportes meteorológicos macro a nivel departamental que no reflejan los microclimas de cada quebrada?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 44,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "insightId": 44,
+          "targetUser": "los agricultores familiares que deben tomar acciones preventivas inmediatas",
+          "actionGoal": "aplicar protocolos agronómicos sencillos de protección radicular y riego defensivo",
+          "constraintOrPain": "las alertas emitidas en tecnicismos meteorológicos incomprensibles para la práctica tradicional",
+          "hmwStatement": "¿Cómo podríamos aplicar protocolos agronómicos sencillos de protección radicular y riego defensivo para los agricultores familiares que deben tomar acciones preventivas inmediatas a pesar de las alertas emitidas en tecnicismos meteorológicos incomprensibles para la práctica tradicional?",
+          "question": "¿Cómo podríamos aplicar protocolos agronómicos sencillos de protección radicular y riego defensivo para los agricultores familiares que deben tomar acciones preventivas inmediatas a pesar de las alertas emitidas en tecnicismos meteorológicos incomprensibles para la práctica tradicional?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 45,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "insightId": 45,
+          "targetUser": "las brigadas agrarias de gestión de riesgos y comités de regantes",
+          "actionGoal": "activar sirenas comunitarias o mensajes masivos de alerta por radio local y telefonía móvil",
+          "constraintOrPain": "la lentitud en las cadenas oficiales de comunicación del Sistema Nacional de Gestión de Desastres",
+          "hmwStatement": "¿Cómo podríamos activar sirenas comunitarias o mensajes masivos de alerta por radio local y telefonía móvil para las brigadas agrarias de gestión de riesgos y comités de regantes a pesar de la lentitud en las cadenas oficiales de comunicación del Sistema Nacional de Gestión de Desastres?",
+          "question": "¿Cómo podríamos activar sirenas comunitarias o mensajes masivos de alerta por radio local y telefonía móvil para las brigadas agrarias de gestión de riesgos y comités de regantes a pesar de la lentitud en las cadenas oficiales de comunicación del Sistema Nacional de Gestión de Desastres?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 46,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "insightId": 46,
+          "targetUser": "los sabios y líderes ancianos de comunidades campesinas",
+          "actionGoal": "integrar las bioindicaciones ancestrales del clima con los modelos satelitales modernos",
+          "constraintOrPain": "el desdén de los modelos puramente algorítmicos hacia los conocimientos locales milenarios",
+          "hmwStatement": "¿Cómo podríamos integrar las bioindicaciones ancestrales del clima con los modelos satelitales modernos para los sabios y líderes ancianos de comunidades campesinas a pesar de el desdén de los modelos puramente algorítmicos hacia los conocimientos locales milenarios?",
+          "question": "¿Cómo podríamos integrar las bioindicaciones ancestrales del clima con los modelos satelitales modernos para los sabios y líderes ancianos de comunidades campesinas a pesar de el desdén de los modelos puramente algorítmicos hacia los conocimientos locales milenarios?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 47,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "insightId": 47,
+          "targetUser": "los técnicos evaluadores de planes de negocio afectados por eventos climáticos severos",
+          "actionGoal": "registrar daños en parcelas y solicitar reprogramación de metas y desembolsos sin penalidades",
+          "constraintOrPain": "la rigidez de los cronogramas contractuales de inversión que no contemplan desastres naturales",
+          "hmwStatement": "¿Cómo podríamos registrar daños en parcelas y solicitar reprogramación de metas y desembolsos sin penalidades para los técnicos evaluadores de planes de negocio afectados por eventos climáticos severos a pesar de la rigidez de los cronogramas contractuales de inversión que no contemplan desastres naturales?",
+          "question": "¿Cómo podríamos registrar daños en parcelas y solicitar reprogramación de metas y desembolsos sin penalidades para los técnicos evaluadores de planes de negocio afectados por eventos climáticos severos a pesar de la rigidez de los cronogramas contractuales de inversión que no contemplan desastres naturales?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 48,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "insightId": 48,
+          "targetUser": "los operadores de seguros agrícolas catastróficos",
+          "actionGoal": "verificar siniestros georreferenciados mediante imágenes satelitales y estaciones locales",
+          "constraintOrPain": "las demoras de semanas en las pericias presenciales que postergan las indemnizaciones de emergencia",
+          "hmwStatement": "¿Cómo podríamos verificar siniestros georreferenciados mediante imágenes satelitales y estaciones locales para los operadores de seguros agrícolas catastróficos a pesar de las demoras de semanas en las pericias presenciales que postergan las indemnizaciones de emergencia?",
+          "question": "¿Cómo podríamos verificar siniestros georreferenciados mediante imágenes satelitales y estaciones locales para los operadores de seguros agrícolas catastróficos a pesar de las demoras de semanas en las pericias presenciales que postergan las indemnizaciones de emergencia?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        }
+      ]
     },
     "FASE_3_IDEAR": {
       "H07_LluviaIdeasCrazy8s": [
         {
-          "ideaId": "IDEA-IN0008-01",
-          "title": "SEL v2.0: Arquitectura Modular de Microservicios + Frontend PWA Local-First con Sincronización Asíncrona y Redis Caching",
-          "author": "Arquitecto de Software UA-TI",
-          "votes": 14
+          "id": 43,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "desafioId": 43,
+          "ideaTitle": "Red Microclimática de Sensores IoT Comunitarios con alertas predictivas a 72 horas",
+          "idea": "Red Microclimática de Sensores IoT Comunitarios con alertas predictivas a 72 horas",
+          "description": "Estaciones meteorológicas de bajo costo conectadas por radiofrecuencia LoRa que miden temperatura, humedad de suelo y rocío en quebradas.",
+          "category": "Tecnológica",
+          "authorRole": "Ingeniero Electrónico e IoT",
+          "votesCount": 14,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "ideaId": "IDEA-IN0008-02",
-          "title": "Ampliación de capacidad física de servidores locales con mayor RAM y ancho de banda dedicado",
-          "author": "Soportista TI",
-          "votes": 5
+          "id": 44,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "desafioId": 45,
+          "ideaTitle": "Transmisor de Sirenas y Alertas Automáticas vía radio comunitaria y SMS",
+          "idea": "Transmisor de Sirenas y Alertas Automáticas vía radio comunitaria y SMS",
+          "description": "Mecanismo que dispara avisos de emergencia sonora en el pueblo y mensajes de texto cuando la temperatura cae por debajo de 0°C.",
+          "category": "Tecnológica",
+          "authorRole": "Especialista en Telecomunicaciones Rurales",
+          "votesCount": 9,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "ideaId": "IDEA-IN0008-03",
-          "title": "Formulario simplificado en Google Forms para recepción provisional de expedientes",
-          "author": "Analista Operativo",
-          "votes": 2
+          "id": 45,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "desafioId": 44,
+          "ideaTitle": "Protocolos de Acción Rápida Agronómica (riego defensivo y acolchado) en lenguaje simple",
+          "idea": "Protocolos de Acción Rápida Agronómica (riego defensivo y acolchado) en lenguaje simple",
+          "description": "Fichas plastificadas con pasos inmediatos que debe ejecutar la familia campesina al recibir una alerta de helada o granizada inminente.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Agrónomo de Gestión del Riesgo",
+          "votesCount": 10,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 46,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "desafioId": 47,
+          "ideaTitle": "Flujo de Emergencia para Reprogramación Ágil de Cronogramas de Inversión",
+          "idea": "Flujo de Emergencia para Reprogramación Ágil de Cronogramas de Inversión",
+          "description": "Procedimiento simplificado que extiende plazos de entrega y desembolso sin trámites engorrosos ante desastres declarados por INDECI.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Coordinador de Seguimiento Operativo",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 47,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "desafioId": 48,
+          "ideaTitle": "Protocolo Integrado con el Seguro Agrícola Catastrófico para peritajes satelitales",
+          "idea": "Protocolo Integrado con el Seguro Agrícola Catastrófico para peritajes satelitales",
+          "description": "Marco de interoperabilidad con aseguradoras para validar siniestros mediante teledetección en menos de 5 días hábiles.",
+          "category": "Normativa",
+          "authorRole": "Especialista en Seguros Agrarios",
+          "votesCount": 11,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 48,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "desafioId": 46,
+          "ideaTitle": "Diálogo de Saberes Climáticos: Integración de bioindicadores andinos con meteorología",
+          "idea": "Diálogo de Saberes Climáticos: Integración de bioindicadores andinos con meteorología",
+          "description": "Mesas de intercambio entre abuelos conocedores del comportamiento de aves y plantas con meteorólogos del SENAMHI.",
+          "category": "Capacitación",
+          "authorRole": "Antropólogo de Saberes Ancestrales",
+          "votesCount": 7,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         }
       ],
-      "H08_MatrizPriorizacion": {
-        "evaluationDate": "2026-09-22T16:00:00Z",
-        "ideasEvaluadas": [
-          {
-            "ideaId": "IDEA-IN0008-01",
-            "title": "SEL v2.0: Arquitectura Modular de Microservicios + Frontend PWA Local-First",
-            "deseabilidad": 5,
-            "factibilidad": 4,
-            "viability": 5,
-            "impacto": 5,
-            "scoreTotal": 19,
-            "isWinningIdea": true
-          },
-          {
-            "ideaId": "IDEA-IN0008-02",
-            "title": "Ampliación de capacidad física de servidores locales",
-            "deseabilidad": 3,
-            "factibilidad": 3,
-            "viability": 3,
-            "impacto": 3,
-            "scoreTotal": 12,
-            "isWinningIdea": false
-          }
-        ],
-        "winningIdeaSummary": {
-          "title": "Nueva Arquitectura SEL v2.0: Frontend PWA Local-First + Microservicios",
-          "rationale": "Obtuvo 19/20 puntos. Elimina las caídas por saturación al trasladar el guardado de borradores al navegador del usuario (IndexedDB/PWA) y sincronizar asíncronamente vía microservicios resilientes."
+      "H08_MatrizPriorizacion": [
+        {
+          "id": 43,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "ideaId": 43,
+          "ideaTitle": "Red Microclimática de Sensores IoT Comunitarios con alertas predictivas a 72 horas",
+          "title": "Red Microclimática de Sensores IoT Comunitarios con alertas predictivas a 72 horas",
+          "desirability": 5,
+          "feasibility": 4,
+          "viability": 5,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 19,
+          "isWinningIdea": true,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 44,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "ideaId": 47,
+          "ideaTitle": "Protocolo Integrado con el Seguro Agrícola Catastrófico para peritajes satelitales",
+          "title": "Protocolo Integrado con el Seguro Agrícola Catastrófico para peritajes satelitales",
+          "desirability": 5,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 45,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "ideaId": 45,
+          "ideaTitle": "Protocolos de Acción Rápida Agronómica (riego defensivo y acolchado) en lenguaje simple",
+          "title": "Protocolos de Acción Rápida Agronómica (riego defensivo y acolchado) en lenguaje simple",
+          "desirability": 4,
+          "feasibility": 5,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 46,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "ideaId": 44,
+          "ideaTitle": "Transmisor de Sirenas y Alertas Automáticas vía radio comunitaria y SMS",
+          "title": "Transmisor de Sirenas y Alertas Automáticas vía radio comunitaria y SMS",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 15,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 47,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "ideaId": 46,
+          "ideaTitle": "Flujo de Emergencia para Reprogramación Ágil de Cronogramas de Inversión",
+          "title": "Flujo de Emergencia para Reprogramación Ágil de Cronogramas de Inversión",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 14,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 48,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "ideaId": 48,
+          "ideaTitle": "Diálogo de Saberes Climáticos: Integración de bioindicadores andinos con meteorología",
+          "title": "Diálogo de Saberes Climáticos: Integración de bioindicadores andinos con meteorología",
+          "desirability": 4,
+          "feasibility": 3,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 13,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
         }
+      ],
+      "H09_PrototipadoRapido": {
+        "id": 8,
+        "projectId": 8,
+        "projectCode": "PIIP-2026-IN0008",
+        "prototypeTitle": "Prototipo de Arquitectura Cloud SEL v2.0 con Chunk-Upload y Carga Resiliente",
+        "name": "Prototipo de Arquitectura Cloud SEL v2.0 con Chunk-Upload y Carga Resiliente",
+        "prototypeType": "Digital PWA",
+        "keyFeatures": [
+          "Carga fragmentada de archivos (chunk upload) con reanudación automática",
+          "Arquitectura de microservicios auto-escalable en contenedores",
+          "Compresión y optimización de imágenes en el cliente antes de la subida"
+        ],
+        "artifactUrlOrImage": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500",
+        "imageUrl": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500",
+        "description": "Simulador de infraestructura de alta disponibilidad que resiste conexiones rurales de baja velocidad (256 Kbps) y picos de 2,500 usuarios concurrentes sin caídas.",
+        "testingGoal": "Disponibilidad del 99.9% durante el cierre de convocatoria con tasa de error de subida menor al 0.5%."
       }
     },
     "FASE_4_ENTREGAR": {
-      "H09_PrototipadoRapido": {
-        "prototypeCode": "PROTO-IN0008-01",
-        "prototypeType": "Prototipo de Arquitectura de Software PWA + Dashboard de Control de Carga",
-        "techStack": "HTML5, Vanilla JS, TailwindCSS, Service Workers, IndexedDB, Microservicios REST/JSON",
-        "keyFeatures": [
-          "Módulo de Llenado Offline de Solicitud de Plan de Negocio con guardado automático cada 3 segundos",
-          "Visor de Estado de Sincronización (En Línea / Guardado Local / Pendiente de Envío)",
-          "Dashboard de Monitoreo de Concurrencia de Servidores y Tiempos de Respuesta (< 0.5 s)"
-        ],
-        "validationCriteria": [
-          "Tiempo de carga inicial del formulario < 1.0 segundo",
-          "Persistencia del 100% de borradores ante corte repentino de energía o conexión",
-          "Cero caídas bajo simulación de 500 usuarios concurrentes en prueba de estrés"
-        ]
-      },
-      "H10_PlanAccion": {
-        "roadmapCode": "PLAN-IN0008",
-        "sprints": [
-          {
-            "sprintNumber": 1,
-            "duration": "3 semanas",
-            "objective": "Diseño de la Arquitectura de Microservicios y Migración del Esquema de BBDD a PostgreSQL/Redis",
-            "leadUnit": "Unidad de Administración (UA) - TI",
-            "deliverables": [
-              "Especificación de APIs RESTful de SEL v2.0",
-              "Script de migración del catálogo de organizaciones y planes de negocio históricos"
-            ]
-          },
-          {
-            "sprintNumber": 2,
-            "duration": "3 semanas",
-            "objective": "Desarrollo del Frontend PWA Local-First con Service Worker y Caché IndexedDB",
-            "leadUnit": "UA-TI / UPP",
-            "deliverables": [
-              "Interfaz web adaptativa PWA del nuevo SEL v2.0",
-              "Motor de sincronización asíncrona background-sync"
-            ]
-          },
-          {
-            "sprintNumber": 3,
-            "duration": "3 semanas",
-            "objective": "Pruebas de Estrés, Pilotaje en 3 Unidades Regionales y Despliegue en Producción",
-            "leadUnit": "UA-TI / Unidades Regionales",
-            "deliverables": [
-              "Informe de Pruebas de Carga con 500 usuarios concurrentes simulados",
-              "Pase a producción de SEL v2.0 y plan de contingencia cero-downtime"
-            ]
-          }
-        ]
-      },
-      "H11_MatrizRiesgosYTesteo": {
-        "riskMatrix": [
-          {
-            "riskId": "RIESGO-008-01",
-            "category": "Tecnológico / Infraestructura",
-            "description": "Incompatibilidad de navegadores antiguos en computadoras de Organizaciones Agrarias remotas.",
-            "probability": "Media",
-            "impact": "Alto",
-            "mitigationStrategy": "Implementar polyfills y soporte progresivo para navegadores desde versiones legacy con aviso de actualización recomendada."
-          },
-          {
-            "riskId": "RIESGO-008-02",
-            "category": "Operativo / Resistencia al Cambio",
-            "description": "Desconfianza de los usuarios en el guardado local al no ver una respuesta inmediata del servidor central.",
-            "probability": "Baja",
-            "impact": "Medio",
-            "mitigationStrategy": "Incorporar un indicador visual claro de 'Borrador Guardado en Dispositivo' con sello de hora exacta y tilde verde de sincronización."
-          }
-        ],
-        "learningCards": [
-          {
-            "cardCode": "TEST-IN0008-01",
-            "hypothesis": "La nueva arquitectura PWA Local-First reducirá el tiempo de carga a menos de 1 segundo y eliminará las caídas del sistema bajo alta concurrencia.",
-            "testMethod": "Prueba de carga y estrés con 500 usuarios simulados enviando formularios simultáneamente durante 2 horas.",
-            "metrics": "Tiempo medio de respuesta (s), tasa de error (%), conservación de datos en borrador (%).",
-            "findings": "El tiempo de carga se redujo de 14.2 segundos a solo 0.45 segundos (>96.8% de optimización). Cero caídas registradas (disponibilidad 100%) y cero pérdidas de datos.",
-            "decision": "APROBADO PARA PRODUCCIÓN E INSTITUCIONALIZACIÓN EN EL PORTAFOLIO (ANEXO 5)"
-          }
-        ]
-      }
+      "H10_PlanAccion": [
+        {
+          "id": 5,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "taskName": "Migración del SEL v2.0 a microservicios para convocatorias EEMRI",
+          "task": "Migración del SEL v2.0 a microservicios para convocatorias EEMRI",
+          "phase": "Implementación",
+          "responsibleUnit": "Unidad de Administración TI",
+          "responsible": "Unidad de Administración TI",
+          "leader": "Unidad de Administración TI",
+          "startDate": "2026-04-01",
+          "endDate": "2026-06-30",
+          "deadline": "2026-06-30",
+          "deliverable": "Módulo de postulación en la nube con balanceo de carga y alta concurrencia",
+          "status": "En Proceso"
+        }
+      ],
+      "H11_MatrizRiesgosTesteo": [
+        {
+          "id": 6,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "riskDescription": "Caída del SEL v2.0 durante convocatorias EEMRI por sobrecarga de servidores ante alta demanda concurrente.",
+          "description": "Caída del SEL v2.0 durante convocatorias EEMRI por sobrecarga de servidores ante alta demanda concurrente.",
+          "riskType": "Tecnológico",
+          "probability": "Alta",
+          "impact": "Alto",
+          "level": "Alto",
+          "mitigationStrategy": "Implementar balanceo de carga y escalabilidad elástica en la nube con ventanas de mantenimiento nocturno.",
+          "mitigation": "Implementar balanceo de carga y escalabilidad elástica en la nube con ventanas de mantenimiento nocturno.",
+          "testResult": "Pruebas de estrés superaron 500 solicitudes simultáneas con tiempo de respuesta <800ms sin degradación de servicio."
+        }
+      ]
     }
   }
 }

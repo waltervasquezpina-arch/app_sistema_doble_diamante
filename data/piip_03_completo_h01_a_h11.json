@@ -1,238 +1,777 @@
 {
   "$schema": "./schemas/far-piip-v3.json",
-  "NavegacionYTrazabilidad": {
-    "IniciativaCodigoActiva": "PIIP-2026-IN0003",
-    "UbicacionActual": {
-      "TipoVista": "HERRAMIENTA_METODOLOGICA",
-      "FaseNumero": 4,
-      "FaseNombre": "Fase 4: Entregar",
-      "HerramientaNumero": 11,
-      "HerramientaCodigo": "H11",
-      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
-      "VistaCodigo": "V11.1",
-      "VistaTitulo": "Evaluación de Riesgos Legales y Tarjetas de Aprendizaje",
-      "VistaUrl": "fase4/11-matriz-riesgos.html"
-    },
-    "PosicionEnFlujo": {
-      "PasoActual": 11,
-      "TotalPasosFlujo": 11,
-      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar - Completado)",
-      "PasoAnterior": {
-        "HerramientaCodigo": "H10",
-        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
-        "VistaUrl": "fase4/10-plan-accion.html"
-      },
-      "PasoSiguiente": null
-    },
-    "ControlIteracionYTrazabilidad": {
-      "VersionIteracion": 1,
-      "PermiteIteracionAnterior": true,
-      "FechaUltimaActualizacion": "2026-10-02T16:30:00Z",
-      "UsuarioActualRol": "Facilitador Ágil / Especialista UAJ"
-    }
-  },
-  "IniciativaMetadata": {
+  "IniciativaIdentificacion": {
     "id": 3,
-    "code": "PIIP-2026-IN0003",
-    "title": "Base de Datos Dinámica de Criterios Legales para Unidades Regionales",
-    "responsibleUnit": "Unidad de Asesoría Jurídica (UAJ)",
-    "leader": "Especialista Legal Senior - UAJ",
-    "registrationDate": "2026-09-17",
-    "opinionTecnica": {
-      "puntajeTotal": 11,
-      "maxPuntaje": 12,
-      "criterios": {
-        "impactoUsuarios": 4,
-        "priorizacionEstrategica": 4,
-        "enfoqueInnovacion": 3
-      },
-      "conclusion": "RECOMENDABLE PARA APROBACIÓN POR LA ALTA DIRECCIÓN"
-    },
-    "phasesStatus": {
+    "IniciativaCodigo": "PIIP-2026-IN0003",
+    "IniciativaNombre": "Base de Datos Dinámica de Criterios Legales para Unidades Regionales",
+    "UnidadOrganicaResponsable": "Unidad de Asesoría Jurídica (UAJ)",
+    "LiderProyecto": "Especialista Legal Senior - UAJ",
+    "FechaRegistro": "2026-02-10",
+    "EstadoFases": {
       "descubrir": "completed",
-      "definir": "completed",
-      "idear": "completed",
-      "entregar": "completed"
+      "definir": "active",
+      "idear": "pending",
+      "entregar": "pending"
     },
-    "porcentajeAvanceGlobal": 100.0
+    "PorcentajeAvanceGlobal": 50.0
   },
-  "HerramientasMetodologicas_Registros": {
+  "RegistrosHerramientasMetodologicas": {
     "FASE_1_DESCUBRIR": {
       "H01_ObservacionAEIOU": [
         {
-          "id": "aeiou-003-1",
-          "dimension": "Actividades",
-          "observation": "Las Unidades Regionales (UR) emiten pronunciamientos sobre elegibilidad e impugnaciones aplicando criterios legales disímiles para casos análogos.",
-          "timestamp": "2026-09-17T09:00:00Z"
+          "id": 13,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "activity": "Consulta telefónica y por correo urgente desde Unidad Zonal sobre validez de poder comunal registrado con observaciones en SUNARP.",
+          "environment": "Oficina de Asesoría Jurídica en sede central Lima; escritorios saturados de expedientes físicos pendientes de emisión de opinión legal.",
+          "interaction": "Abogado dictaminador de UAJ atiende llamada del especialista regional y debe buscar en archivadores un criterio legal similar emitido en 2024.",
+          "object": "Teléfono anexo institucional, archivadores de palanca con opiniones legales impresas, cliente de correo Outlook.",
+          "objects": "Teléfono anexo institucional, archivadores de palanca con opiniones legales impresas, cliente de correo Outlook.",
+          "user": "Abogado dictaminador UAJ, asesor legal zonal de Cusco y presidente comunal solicitante.",
+          "users": "Abogado dictaminador UAJ, asesor legal zonal de Cusco y presidente comunal solicitante.",
+          "observer": "Asesor Legal Senior - UAJ",
+          "observationDate": "2026-02-12",
+          "date": "2026-02-12",
+          "timestamp": "2026-02-12T10:30:00.000Z"
         },
         {
-          "id": "aeiou-003-2",
-          "dimension": "Objetos",
-          "observation": "Los informes legales y dictámenes se encuentran dispersos en archivos PDF locales, PDFs escaneados y correos electrónicos no indexados.",
-          "timestamp": "2026-09-17T11:30:00Z"
+          "id": 14,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "activity": "Búsqueda manual de antecedentes e informes jurídicos vinculantes para calificar la cesión de uso de terrenos comunales sin título de propiedad individual.",
+          "environment": "Archivo físico documental de la UAJ; anaqueles metálicos de alta densidad con más de 2,500 expedientes acumulados.",
+          "interaction": "Asistente legal revisa carpeta por carpeta buscando precedentes administrativos aplicables a comunidades campesinas originarias.",
+          "object": "Guías de remisión archivística, fichas resumen en cartulina, libro de registro de opiniones legales foliado a mano.",
+          "objects": "Guías de remisión archivística, fichas resumen en cartulina, libro de registro de opiniones legales foliado a mano.",
+          "user": "Asistente legal de UAJ, archivista institucional y evaluador legal de la Unidad de Negocios.",
+          "users": "Asistente legal de UAJ, archivista institucional y evaluador legal de la Unidad de Negocios.",
+          "observer": "Especialista en Gestión Documental Jurídica - UAJ",
+          "observationDate": "2026-03-02",
+          "date": "2026-03-02",
+          "timestamp": "2026-03-02T12:00:00.000Z"
+        },
+        {
+          "id": 15,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "activity": "Mesa de trabajo técnico-jurídica para unificar criterios discrepantes entre las Unidades Regionales de Piura y Junín sobre personería jurídica.",
+          "environment": "Sala de reuniones de la Dirección Ejecutiva en Lima con participación de jefes zonales vía Teams.",
+          "interaction": "Abogados de UAJ exponen la jurisprudencia del Tribunal Registral mientras los coordinadores zonales debaten el impacto en los plazos de calificación.",
+          "object": "Proyector con cuadro comparativo de discrepancias normativas, copias impresas de resoluciones directorales, pizarra de acuerdos.",
+          "objects": "Proyector con cuadro comparativo de discrepancias normativas, copias impresas de resoluciones directorales, pizarra de acuerdos.",
+          "user": "Jefe de UAJ, 4 asesores legales de sede central y 6 coordinadores técnicos regionales de AGROIDEAS.",
+          "users": "Jefe de UAJ, 4 asesores legales de sede central y 6 coordinadores técnicos regionales de AGROIDEAS.",
+          "observer": "Abogado Coordinador de Homologación Legal - UAJ",
+          "observationDate": "2026-03-24",
+          "date": "2026-03-24",
+          "timestamp": "2026-03-24T15:00:00.000Z"
+        },
+        {
+          "id": 16,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "activity": "Revisión de cláusulas contractuales para resolución de convenios de cofinanciamiento por causal de disolución asociativa.",
+          "environment": "Despacho de asesoría legal de UAJ; entorno silencioso de análisis normativo con doble pantalla de trabajo.",
+          "interaction": "Abogado especialista redacta proyecto de informe legal consultando bases de datos externas de SUNAT y Registros Públicos.",
+          "object": "Computadora con acceso web a portal SUNARP en línea, token de firma digital, código civil y compendio de directivas AGROIDEAS.",
+          "objects": "Computadora con acceso web a portal SUNARP en línea, token de firma digital, código civil y compendio de directivas AGROIDEAS.",
+          "user": "Abogado analista UAJ y Director de la Unidad de Negocios.",
+          "users": "Abogado analista UAJ y Director de la Unidad de Negocios.",
+          "observer": "Asesor Legal de Contratos - UAJ",
+          "observationDate": "2026-04-10",
+          "date": "2026-04-10",
+          "timestamp": "2026-04-10T16:30:00.000Z"
+        },
+        {
+          "id": 17,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "activity": "Capacitación jurídica virtual a evaluadores de campo sobre detección de irregularidades en contratos de arrendamiento agrario.",
+          "environment": "Plataforma virtual de videoconferencia transmitida desde Lima hacia 24 regiones del país.",
+          "interaction": "Expositor de UAJ responde preguntas en el chat sobre cláusulas leoninas y poderes revocados; múltiples asistentes piden un repositorio centralizado.",
+          "object": "Diapositivas PowerPoint explicativas, guía de preguntas frecuentes (FAQ) en PDF, chat de dudas en tiempo real.",
+          "objects": "Diapositivas PowerPoint explicativas, guía de preguntas frecuentes (FAQ) en PDF, chat de dudas en tiempo real.",
+          "user": "85 evaluadores técnicos y legales de todas las Unidades Regionales de AGROIDEAS.",
+          "users": "85 evaluadores técnicos y legales de todas las Unidades Regionales de AGROIDEAS.",
+          "observer": "Capacitador Legal Institucional - UAJ",
+          "observationDate": "2026-05-15",
+          "date": "2026-05-15",
+          "timestamp": "2026-05-15T09:00:00.000Z"
+        },
+        {
+          "id": 18,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "activity": "Validación con usuarios del prototipo de motor de búsqueda semántica de informes y criterios legales por palabras clave e historial jurisprudencial.",
+          "environment": "Oficina Zonal de Ayacucho; sesión de prueba de usabilidad con 3 evaluadores de proyectos.",
+          "interaction": "Evaluador ingresa término 'constancia de posesión comunal' y el buscador devuelve 4 opiniones vinculantes con hipervínculos a resoluciones aplicables.",
+          "object": "Laptop de pruebas de laboratorio, cuestionario System Usability Scale (SUS), grabadora de audio para captura de impresiones.",
+          "objects": "Laptop de pruebas de laboratorio, cuestionario System Usability Scale (SUS), grabadora de audio para captura de impresiones.",
+          "user": "2 abogados evaluadores regionales, 1 practicante legal y el consultor de diseño de software.",
+          "users": "2 abogados evaluadores regionales, 1 practicante legal y el consultor de diseño de software.",
+          "observer": "Especialista UX/UI - Proyecto PIIP UAJ",
+          "observationDate": "2026-06-18",
+          "date": "2026-06-18",
+          "timestamp": "2026-06-18T11:45:00.000Z"
         }
       ],
-      "H02_MapaEmpatia": {
-        "userProfile": "Abogado Evaluador de Unidad Regional (UR)",
-        "says": "Tardo días buscando si la UAJ central ya opinó sobre la validez de ciertos documentos de personería jurídica agraria.",
-        "does": "Consulta por teléfono o WhatsApp a colegas de Lima para pedir copias de informes legales previos.",
-        "thinks": "Debería existir un buscador legal dinámico centralizado con jurisprudencia administrativa de AGROIDEAS.",
-        "feels": "Inseguro ante posibles observaciones del Órgano de Control Institucional (OCI) por disparidad de criterios.",
-        "pains": "Riesgo de nulidad de actos administrativos, demoras en la calificación de expedientes de planes de negocio.",
-        "gains": "Seguridad jurídica, estandarización nacional de criterios y reducción de tiempos de atención al usuario."
-      },
-      "H03_EncuestasCampo": {
-        "sampleSize": 38,
-        "targetAudience": "Abogados y Asesores Legales de las Unidades Regionales y Sede Central",
-        "keyResults": [
-          {
-            "question": "¿Ha encontrado contradicciones en criterios legales entre la Sede Central y Regiones?",
-            "percentageYes": 89.5
-          },
-          {
-            "question": "Tiempo promedio invertido en búsqueda de antecedentes legales",
-            "averageHours": "8.5 horas por expediente complejo"
-          },
-          {
-            "question": "Funcionalidad más requerida",
-            "topPreference": "Buscador semántico con filtros por materia legal, palabras clave y vigencia del criterio"
-          }
-        ]
-      },
-      "H04_FichaPersona": {
-        "archetypeCode": "PERS-IN0003-01",
-        "name": "Dra. Patricia Alva Morales",
-        "role": "Asesora Legal de la Unidad Regional Junín",
-        "age": 36,
-        "digitalLiteracy": "Avanzado en procesadores de texto y sistemas gubernamentales (SISO, SGD).",
-        "primaryGoal": "Resolver expedientes de impugnación con total certeza legal y alineamiento a la UAJ central."
-      }
+      "H02_MapaEmpatia": [
+        {
+          "id": 15,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "userProfile": "Asesor Legal Senior de la Unidad de Asesoría Jurídica (Sede Central Lima)",
+          "says": "\"No podemos permitir que un mismo tipo de personería jurídica comunal sea rechazada en Puno y aceptada en Junín. La norma debe aplicarse igual en todo el país.\"",
+          "does": "Redacta informes legales de opinión vinculante, atiende consultas de las 16 Unidades Regionales y sistematiza resoluciones de dirección.",
+          "thinks": "Cree que más del 60% de las consultas legales son repetitivas y podrían resolverse de inmediato con un repositorio inteligente de precedentes.",
+          "feels": "Sobrecarga de trabajo por consultas de urgencia y preocupación por emitir criterios contradictorios con pronunciamientos pasados.",
+          "hears": "Quejas de las unidades de línea por la demora de hasta 20 días en responder solicitudes de opinión legal para la firma de convenios.",
+          "sees": "Carpetas virtuales dispersas en discos duros personales de abogados que ya no laboran en la institución, con dictámenes no indexados.",
+          "pains": "Pérdida de memoria institucional, riesgo de nulidad en actos administrativos y duplicación de esfuerzos al redactar dictámenes desde cero.",
+          "gains": "Buscador semántico de criterios jurídicos vinculantes con indexación por tema agrario y actualización colaborativa en tiempo real."
+        },
+        {
+          "id": 16,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "userProfile": "Abogada Especialista Zonal de Unidad Regional (UR Cusco / Puno)",
+          "says": "\"Cuando observo un expediente de personería campesina los dirigentes me dicen que en Arequipa no les pidieron esa acta. Quedo como la burócrata mala.\"",
+          "does": "Evalúa requisitos legales de organizaciones agrarias postulantes, revisa estatutos, poderes inscritos en SUNARP y títulos comunales.",
+          "thinks": "Opina que la normativa agraria nacional tiene vacíos respecto a las comunidades originarias que requieren directrices interpretativas claras de Lima.",
+          "feels": "Aislamiento funcional respecto a la sede central y presión de las organizaciones sociales locales durante las mesas de concertación.",
+          "hears": "Directivos comunales acusando discriminación o trabas legales excesivas frente a cooperativas modernas de la costa.",
+          "sees": "Discrepancias notariales entre provincias sobre la validez de libros de actas legalizados ante jueces de paz de centros poblados.",
+          "pains": "Falta de respuestas inmediatas de la UAJ Lima ante casos atípicos y temor a incurrir en responsabilidad funcional por interpretaciones propias.",
+          "gains": "Acceso instantáneo a fichas de criterio legal estandarizadas, modelos de cláusulas observadas y chat técnico directo con asesores de la UAJ."
+        },
+        {
+          "id": 17,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "userProfile": "Presidente de Comunidad Campesina Postulante (Chota, Cajamarca)",
+          "says": "\"Nos hicieron viajar tres veces a la ciudad porque el registrador decía una cosa y el abogado de AGROIDEAS pedía otra en el estatuto comunal.\"",
+          "does": "Convoca asambleas comunales de 200 comuneros para modificar artículos estatutarios y gasta fondos comunales en trámites registrales.",
+          "thinks": "Considera que los abogados del Estado deberían enseñarles cómo redactar sus documentos antes de rechazarlos con palabras que nadie entiende.",
+          "feels": "Cansancio moral y económico tras gastar más de S/. 2,500 de la caja comunal en honorarios notariales y pasajes sin obtener respuesta favorable.",
+          "hears": "Comuneros mayores que dicen que postular al Estado es una pérdida de tiempo y que mejor sigan trabajando de manera informal.",
+          "sees": "Oficinas registrales llenas de gente del campo desorientada y notificaciones legales redactadas con jerga técnica inaccesible.",
+          "pains": "Rechazo de expedientes por observaciones formales subsanables y falta de modelos de estatutos adaptados a comunidades campesinas.",
+          "gains": "Estatutos y actas modelo pre-validadas por AGROIDEAS que garanticen aprobación registral y legal al primer intento."
+        },
+        {
+          "id": 18,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "userProfile": "Notario Público de Provincia y Asesor Legal Externo de Cooperativas (Andahuaylas)",
+          "says": "\"Las observaciones de AGROIDEAS a veces contradicen los pronunciamientos del Tribunal Registral de SUNARP. Necesitamos armonizar criterios.\"",
+          "does": "Legaliza libros de actas comunales, eleva a escritura pública constituciones de cooperativas agrarias y atiende pliegos de subsanación.",
+          "thinks": "Estima que la Ley General de Comunidades Campesinas y la Ley de Cooperativas Agrarias tienen puntos de fricción que el programa debe clarificar.",
+          "feels": "Frustración cuando una minuta elaborada según ley registral es rebotada por evaluadores del programa con criterios no publicados.",
+          "hears": "Productores desesperados pidiendo que les cambie el tenor del acta el mismo día porque vence el plazo perentorio de la convocatoria.",
+          "sees": "Diferentes interpretaciones entre notarías de la misma región sobre la acreditación de la posesión pacífica de tierras comunales.",
+          "pains": "Falta de una guía pública unificada de requisitos legales aplicables a los incentivos de AGROIDEAS.",
+          "gains": "Un compendio público digital de criterios jurídicos y lineamientos registrales vinculantes para el sector agrario."
+        },
+        {
+          "id": 19,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "userProfile": "Especialista de Elegibilidad Documental - Unidad de Planeamiento (Sede Lima)",
+          "says": "\"Si los abogados tuvieran una base de preguntas frecuentes legales, nosotros mismos podríamos filtrar observaciones sin saturar la bandeja de UAJ.\"",
+          "does": "Revisa expedientes en etapa preliminar, valida vigencias de poder, partidas registrales y declaraciones juradas de no estar inhabilitado.",
+          "thinks": "Opina que estandarizar las causales de no elegibilidad jurídica aumentaría la productividad del equipo evaluador en más de un 40%.",
+          "feels": "Dependencia excesiva de la UAJ para casos sencillos y ansiedad por el vencimiento de los plazos de atención al ciudadano.",
+          "hears": "Los coordinadores regionales pidiendo que se aceleren los informes de admisibilidad para no retrasar el comité directivo.",
+          "sees": "Cientos de expedientes detenidos esperando una sola firma legal para continuar a la fase de formulación de planes.",
+          "pains": "Cuellos de botella en la fase inicial de elegibilidad por consultas jurídicas menores no resueltas de forma estandarizada.",
+          "gains": "Árbol de decisión legal interactivo que guíe al evaluador en la verificación de poderes, personerías y titularidades de predios."
+        },
+        {
+          "id": 20,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "userProfile": "Representante Legal de Asociación Agropecuaria Indígena (Satipo, Selva Central)",
+          "says": "\"En nuestra comunidad nativa no tenemos títulos individuales, la tierra es comunal ancestral. La ley debe respetar nuestra forma de organizarnos.\"",
+          "does": "Viaja en bote y camioneta durante 12 horas hasta la oficina de AGROIDEAS para explicar la estructura de gobernanza de su pueblo indígena.",
+          "thinks": "Cree que los funcionarios públicos aplican leyes pensadas para empresas privadas de Lima a pueblos originarios con derechos colectivos reconocidos.",
+          "feels": "Dignidad en defender su territorio ancestral pero indignación ante exigencias documentales inaplicables a su realidad cultural.",
+          "hears": "Apus de otras cuencas que afirman que los fondos del Estado son solo para colonos y mestizos porque piden papeles que no existen en la selva.",
+          "sees": "Requisitos de inscripción en Registros Públicos que tardan hasta dos años debido a la falta de catastro en comunidades nativas.",
+          "pains": "Discriminación indirecta por requisitos legales formalistas y riesgo de exclusión de los incentivos de desarrollo agrario.",
+          "gains": "Protocolos jurídicos específicos con enfoque intercultural que reconozcan personerías indígenas y actas de asamblea comunal comunitaria."
+        }
+      ],
+      "H03_EncuestasCampo": [
+        {
+          "id": 5,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "respondent": "Abog. Lucía Paredes (Asesora Zonal)",
+          "cooperative": "Unidad Regional Cusco",
+          "satisfaction": 2,
+          "comments": "Cada región interpreta de forma distinta la cesión de uso comunal. Necesitamos criterios legales vinculantes unificados en una sola base.",
+          "sentiment": "Negativo",
+          "date": "2026-02-22"
+        },
+        {
+          "id": 6,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "respondent": "Víctor Quispe Triveño (Fiscal)",
+          "cooperative": "Comunidad Campesina de Huancané - Puno",
+          "satisfaction": 3,
+          "comments": "SUNARP nos observa las actas y AGROIDEAS tarda semanas en decirnos cómo subsanar el poder de la junta directiva.",
+          "sentiment": "Neutro",
+          "date": "2026-02-26"
+        }
+      ],
+      "H04_FichaPersona": [
+        {
+          "id": 13,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "archetypeName": "Dr. Humberto Salazar Vigil",
+          "name": "Dr. Humberto Salazar Vigil",
+          "role": "Asesor Jurídico Senior (Unidad de Asesoría Jurídica Sede Lima)",
+          "demographics": "51 años, Lima; Abogado especialista en Derecho Administrativo y Agrario",
+          "age": 51,
+          "techTechSavviness": "Intermedio (Bases de datos jurídicas Spij, LexisNexis, Word avanzado)",
+          "quote": "No podemos permitir que un mismo tipo de personería jurídica sea rechazada en Puno y admitida en Junín. El criterio legal debe ser uno solo.",
+          "bio": "Redacta dictámenes e informes legales vinculantes para la Dirección Ejecutiva de AGROIDEAS. Ha resuelto más de 1,500 consultas jurídicas agrarias.",
+          "goals": [
+            "Construir un repositorio inteligente de criterios jurídicos vinculantes indexado por materia",
+            "Reducir el tiempo promedio de respuesta a consultas legales de 20 días a 48 horas",
+            "Estandarizar las cláusulas de convenios bilaterales para evitar controversias judiciales"
+          ],
+          "frustrations": [
+            "Tener que responder una y otra vez las mismas consultas jurídicas formuladas por las regiones",
+            "Pérdida de pronunciamientos históricos cuando los abogados contratados dejan la institución",
+            "Discrepancias entre las resoluciones de primera instancia y los criterios de tribunales superiores"
+          ]
+        },
+        {
+          "id": 14,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "archetypeName": "Dra. Milagros Vega Candia",
+          "name": "Dra. Milagros Vega Candia",
+          "role": "Abogada Evaluadora Zonal (Unidad Regional Cusco - Apurímac)",
+          "demographics": "34 años, Cusco; Abogada especialista en Derecho Registral y Comunidades Campesinas",
+          "age": 34,
+          "techTechSavviness": "Intermedio (Maneja plataformas SUNARP en línea, mesa de partes digital)",
+          "quote": "Cuando observo un acta comunal los dirigentes me dicen que en otra región no les pidieron eso. Quedo ante ellos como una abogada caprichosa.",
+          "bio": "Revisa los requisitos legales de organizaciones postulantes: estatutos, vigencias de poder, titularidad de tierras y libros de actas.",
+          "goals": [
+            "Tener acceso inmediato a precedentes legales aprobados por la UAJ Lima ante casos complejos",
+            "Disponer de modelos oficiales de estatutos comunitarios adaptados a la Ley de Cooperativas",
+            "Capacitar a los jueces de paz y notarios rurales sobre las formalidades que exige AGROIDEAS"
+          ],
+          "frustrations": [
+            "Demora de hasta tres semanas para recibir respuesta de la sede central ante consultas específicas",
+            "Falta de uniformidad registral entre oficinas de SUNARP de diferentes departamentos",
+            "Tensión con dirigentes campesinos molestos por observaciones formales subsanables"
+          ]
+        },
+        {
+          "id": 15,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "archetypeName": "Don Marcelino Quispe Condori",
+          "name": "Don Marcelino Quispe Condori",
+          "role": "Presidente de Comunidad Campesina Titulada (Chota, Cajamarca)",
+          "demographics": "60 años, Chota, Cajamarca; Primaria completa, Quechua / Español",
+          "age": 60,
+          "techTechSavviness": "Básico (No utiliza internet ni computadoras; se asesora con directivos jóvenes)",
+          "quote": "Gastamos plata de la asamblea comunal en tres viajes a la ciudad porque el registrador decía una cosa y el abogado de AGROIDEAS pedía otra.",
+          "bio": "Dirigente comunal histórico. Lidera una comunidad de 180 familias que busca postular un plan de reconversión de pastos cultivados y mejoramiento genético vacuno.",
+          "goals": [
+            "Inscribir la junta directiva comunal y sus poderes sin sufrir reiteradas tachas registrales",
+            "Conseguir que el programa reconozca la validez de los títulos de propiedad comunal colectivos",
+            "Iniciar la ejecución del plan de negocio sin perder la confianza de los comuneros comunales"
+          ],
+          "frustrations": [
+            "Alto costo de honorarios notariales y traslados para subsanar observaciones legales menores",
+            "Uso de términos jurídicos complejos en las cartas de notificación que nadie en su pueblo comprende",
+            "Riesgo de que expire el plazo perentorio de la convocatoria mientras esperan la inscripción registral"
+          ]
+        },
+        {
+          "id": 16,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "archetypeName": "Dr. Alfonso Ballón Neira",
+          "name": "Dr. Alfonso Ballón Neira",
+          "role": "Notario Público Provincial y Asesor Legal Externo (Andahuaylas)",
+          "demographics": "56 años, Andahuaylas, Apurímac; Notario Público con 22 años de ejercicio",
+          "age": 56,
+          "techTechSavviness": "Intermedio (Sistemas notariales integrados con RENIEC y SUNARP)",
+          "quote": "Las observaciones que emiten en AGROIDEAS a menudo desconocen los precedentes de observancia obligatoria del Tribunal Registral.",
+          "bio": "Legaliza libros de actas comunales, redacta escrituras de constitución de cooperativas agrarias y asesora a asociaciones campesinas postulantes.",
+          "goals": [
+            "Contar con una guía pública de lineamientos legales emitida formalmente por AGROIDEAS",
+            "Agilizar la elevación a escritura pública de los convenios de cofinanciamiento estatal",
+            "Evitar que sus clientes agrarios sufran demoras por discrepancias de interpretación jurídica"
+          ],
+          "frustrations": [
+            "Falta de comunicación institucional directa entre los evaluadores del ministerio y las notarías locales",
+            "Directivos campesinos que acuden a última hora exigiendo minutas inmediatas por vencimiento de plazos",
+            "Criterios de elegibilidad legal que cambian de una convocatoria a otra sin previo aviso oficial"
+          ]
+        },
+        {
+          "id": 17,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "archetypeName": "Lic. Diana Espinoza Torres",
+          "name": "Lic. Diana Espinoza Torres",
+          "role": "Evaluadora de Elegibilidad Documental (UPP Sede Central Lima)",
+          "demographics": "32 años, Lima; Licenciada en Administración Pública, 6 años en programas sociales",
+          "age": 32,
+          "techTechSavviness": "Avanzado (Gestión documental electrónica, flujos BPM, auditoría interna)",
+          "quote": "Si tuviéramos un árbol de decisiones legales interactivo, el 80% de los expedientes se calificarían el mismo día sin saturar a los abogados.",
+          "bio": "Filtra preliminarmente los expedientes que ingresan por mesa de partes virtual. Revisa vigencias de poder, declaraciones juradas y antecedentes de no inhabilitación.",
+          "goals": [
+            "Estandarizar la lista de chequeo legal para que todos los evaluadores califiquen con el mismo rasero",
+            "Reducir las observaciones subsanables en la fase de admisibilidad documental",
+            "Atender las solicitudes de elegibilidad dentro de los plazos establecidos en el TUPA"
+          ],
+          "frustrations": [
+            "Cuellos de botella en la UAJ que paralizan decenas de expedientes por consultas legales sencillas",
+            "Tener que llamar por teléfono a las oficinas zonales para descifrar documentos escaneados borrosos",
+            "Expedientes que son aprobados en admisibilidad pero rebotados meses después en comités de crédito"
+          ]
+        },
+        {
+          "id": 18,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "archetypeName": "Apu Tsetsen Tiwi Ampam",
+          "name": "Apu Tsetsen Tiwi Ampam",
+          "role": "Representante Legal de Asociación Comunal Indígena (Río Cenepa, Amazonas)",
+          "demographics": "48 años, Condorcanqui, Amazonas; Líder originario de la Nación Awajún",
+          "age": 48,
+          "techTechSavviness": "Básico (Teléfono satelital comunal y celular 2G cuando viaja a Nieva)",
+          "quote": "Nuestra tierra es ancestral y comunitaria. La ley del Estado debe respetar la autoridad de la asamblea indígena sin exigir escrituras individuales.",
+          "bio": "Líder indígena que impulsa el cultivo sostenible de cacao criollo y vainilla silvestre en el bosque comunal. Gestiona la postulación de su comunidad a fondos públicos.",
+          "goals": [
+            "Lograr que AGROIDEAS admita las actas comunales indígenas firmadas por el Apu y los ancianos",
+            "Proteger el bosque de la deforestación mediante incentivos de bionegocios sostenibles",
+            "Llevar desarrollo económico respetando las tradiciones culturales de su pueblo originario"
+          ],
+          "frustrations": [
+            "Requisitos de inscripción registral diseñados para empresas comerciales que no aplican a la selva",
+            "Tener que viajar 14 horas en deslizador fluvial solo para dejar un documento de aclaración legal",
+            "Sentirse excluidos de los programas de incentivos por barreras burocráticas centralistas"
+          ]
+        }
+      ]
     },
     "FASE_2_DEFINIR": {
       "H05_MuroHallazgos": [
         {
-          "clusterId": "CLUST-LEG-01",
-          "clusterName": "Descentralización sin Indexación Normativa",
-          "insight": "Las Unidades Regionales no carecen de capacidad técnica, sino de un repositorio estandarizado e indexado de la doctrina legal de AGROIDEAS.",
-          "priority": "ALTA"
+          "id": 13,
+          "type": "Muro",
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "clusterCategory": "Marco Legal y Normativo",
+          "findingTitle": "Inconsistencia de Criterios Jurídicos entre Unidades Regionales",
+          "title": "Inconsistencia de Criterios Jurídicos entre Unidades Regionales",
+          "evidenceText": "Un mismo tipo de personería jurídica comunal o vigencia de poder puede ser declarada admisible en la UR Junín y ser observada como causal de tacha en la UR Cusco. No existe una fuente única de verdad legal vinculante.",
+          "text": "Un mismo tipo de personería jurídica comunal o vigencia de poder puede ser declarada admisible en la UR Junín y ser observada como causal de tacha en la UR Cusco. No existe una fuente única de verdad legal vinculante.",
+          "sourceTool": "Focus Group Legal UAJ",
+          "priority": "Alta",
+          "quote": "Cada región interpreta las normas agrarias a su manera. Necesitamos una base centralizada de criterios uniformes.",
+          "date": "2026-02-15"
         },
         {
-          "clusterId": "CLUST-LEG-02",
-          "clusterName": "Prevención de la Disparidad Criterial",
-          "insight": "Un criterio legal unificado reduce en más de un 60% la sobrecarga de apelaciones presentadas por las organizaciones agrarias.",
-          "priority": "ALTA"
+          "id": 14,
+          "type": "Muro",
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "clusterCategory": "Memoria Institucional y Eficiencia",
+          "findingTitle": "Pérdida de Memoria Institucional por Dispersión de Dictámenes",
+          "title": "Pérdida de Memoria Institucional por Dispersión de Dictámenes",
+          "evidenceText": "Más de 800 opiniones legales emitidas en los últimos cinco años se encuentran guardadas en carpetas personales de abogados que ya no laboran en la entidad. Los nuevos asesores redactan dictámenes desde cero.",
+          "text": "Más de 800 opiniones legales emitidas en los últimos cinco años se encuentran guardadas en carpetas personales de abogados que ya no laboran en la entidad. Los nuevos asesores redactan dictámenes desde cero.",
+          "sourceTool": "Auditoría de Gestión Jurídica",
+          "priority": "Alta",
+          "quote": "Demoramos tres semanas en responder una consulta que ya fue resuelta exactamente igual hace dos años por otro colega.",
+          "date": "2026-02-20"
+        },
+        {
+          "id": 15,
+          "type": "Muro",
+          "projectId": 3,
+          "projectCategory": "Marco Legal y Normativo",
+          "clusterCategory": "Enfoque Intercultural",
+          "findingTitle": "Incompatibilidad entre Requisitos Comerciales y Tierras Comunales Indígenas",
+          "title": "Incompatibilidad entre Requisitos Comerciales y Tierras Comunales Indígenas",
+          "evidenceText": "Los lineamientos legales exigen títulos individuales inscritos en Registros Públicos, lo que excluye de facto a comunidades nativas amazónicas con propiedad ancestral colectiva reconocida constitucionalmente.",
+          "text": "Los lineamientos legales exigen títulos individuales inscritos en Registros Públicos, lo que excluye de facto a comunidades nativas amazónicas con propiedad ancestral colectiva reconocida constitucionalmente.",
+          "sourceTool": "Entrevistas a Líderes Étnicos",
+          "priority": "Alta",
+          "quote": "Nos piden títulos como si fuéramos empresas de Lima, cuando la Constitución protege nuestro territorio comunal colectivo.",
+          "date": "2026-02-26"
+        },
+        {
+          "id": 16,
+          "type": "Muro",
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "clusterCategory": "Accesibilidad y Lenguaje Claro",
+          "findingTitle": "Uso Excesivo de Jerga Jurídica Inaccesible en las Notificaciones",
+          "title": "Uso Excesivo de Jerga Jurídica Inaccesible en las Notificaciones",
+          "evidenceText": "Las cartas de observación citan artículos y tecnicismos procesales que los dirigentes campesinos no entienden, obligándolos a contratar abogados privados que cobran honorarios desproporcionados para descifrar el requerimiento.",
+          "text": "Las cartas de observación citan artículos y tecnicismos procesales que los dirigentes campesinos no entienden, obligándolos a contratar abogados privados que cobran honorarios desproporcionados para descifrar el requerimiento.",
+          "sourceTool": "Encuestas a Beneficiarios",
+          "priority": "Media",
+          "quote": "El documento decía 'carece de tracto sucesivo y representación suficiente'. Tuvimos que pagar S/. 400 a un abogado para que nos diga que faltaba legalizar un acta.",
+          "date": "2026-03-02"
+        },
+        {
+          "id": 17,
+          "type": "Muro",
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "clusterCategory": "Eficiencia en la Evaluación",
+          "findingTitle": "Falta de Modelos Pre-validados de Estatutos y Minutas Agrarias",
+          "title": "Falta de Modelos Pre-validados de Estatutos y Minutas Agrarias",
+          "evidenceText": "El 55% de las observaciones legales iniciales se deben a errores en la redacción de objetos sociales o quórums de asamblea en los estatutos. Si AGROIDEAS publicara minutas tipo pre-validadas con SUNARP, la aprobación sería inmediata.",
+          "text": "El 55% de las observaciones legales iniciales se deben a errores en la redacción de objetos sociales o quórums de asamblea en los estatutos. Si AGROIDEAS publicara minutas tipo pre-validadas con SUNARP, la aprobación sería inmediata.",
+          "sourceTool": "Análisis Estadístico de Observaciones",
+          "priority": "Media",
+          "quote": "Si el programa nos diera un modelo de estatuto ya aprobado por los registradores, no tendríamos que rehacer las escrituras públicas.",
+          "date": "2026-03-08"
+        },
+        {
+          "id": 18,
+          "type": "Muro",
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "clusterCategory": "Memoria Institucional y Eficiencia",
+          "findingTitle": "Sobrecarga de Consultas Repetitivas en la Bandeja de la UAJ",
+          "title": "Sobrecarga de Consultas Repetitivas en la Bandeja de la UAJ",
+          "evidenceText": "Los evaluadores de la UPP y de las 16 regiones remiten consultas formales por casos idénticos (ej. vigencia de poderes de directivas prorrogadas). Un buscador semántico de criterios resolvería el 70% de las dudas al instante.",
+          "text": "Los evaluadores de la UPP y de las 16 regiones remiten consultas formales por casos idénticos (ej. vigencia de poderes de directivas prorrogadas). Un buscador semántico de criterios resolvería el 70% de las dudas al instante.",
+          "sourceTool": "Mapeo de Cargas de Trabajo UAJ",
+          "priority": "Media",
+          "quote": "Los mismos abogados de sede central terminan copiando y pegando párrafos de informes anteriores porque no hay una base de consulta pública.",
+          "date": "2026-03-14"
         }
       ],
-      "H06_DefinicionDesafioHMW": {
-        "hmwCode": "HMW-IN0003",
-        "action": "implementar una base de datos dinámica y buscador semántico de criterios legales unificados",
-        "targetUser": "los abogados y evaluadores de las Unidades Regionales de AGROIDEAS",
-        "benefit": "estandarizar la interpretación normativa, acelerar la atención de expedientes y brindar seguridad jurídica a los beneficiarios",
-        "constraint": "la dispersión histórica de documentos y la falta de etiquetado temático de los informes legales",
-        "finalHMWStatement": "¿Cómo podríamos implementar una base de datos dinámica y buscador semántico de criterios legales unificados para que los abogados de las Unidades Regionales estandaricen sus dictámenes y aceleren la calificación de expedientes a pesar de la dispersión histórica de los informes legales?"
-      }
+      "H06_DefinicionDesafioHMW": [
+        {
+          "id": 13,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "insightId": 13,
+          "targetUser": "los supervisores de campo y extensionistas técnicos en zonas de difícil acceso",
+          "actionGoal": "levantar polígonos georreferenciados e hitos de obra sin requerir conectividad a internet",
+          "constraintOrPain": "la ausencia total de señal satelital o cobertura de telefonía celular en valles profundos",
+          "hmwStatement": "¿Cómo podríamos levantar polígonos georreferenciados e hitos de obra sin requerir conectividad a internet para los supervisores de campo y extensionistas técnicos en zonas de difícil acceso a pesar de la ausencia total de señal satelital o cobertura de telefonía celular en valles profundos?",
+          "question": "¿Cómo podríamos levantar polígonos georreferenciados e hitos de obra sin requerir conectividad a internet para los supervisores de campo y extensionistas técnicos en zonas de difícil acceso a pesar de la ausencia total de señal satelital o cobertura de telefonía celular en valles profundos?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 14,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "insightId": 14,
+          "targetUser": "los inspectores agrarios en jornadas extensas de caminata comunal",
+          "actionGoal": "operar la aplicación móvil durante toda la jornada laboral continua en campo",
+          "constraintOrPain": "el consumo acelerado de batería ocasionado por el uso intensivo de GPS y la falta de energía eléctrica",
+          "hmwStatement": "¿Cómo podríamos operar la aplicación móvil durante toda la jornada laboral continua en campo para los inspectores agrarios en jornadas extensas de caminata comunal a pesar de el consumo acelerado de batería ocasionado por el uso intensivo de GPS y la falta de energía eléctrica?",
+          "question": "¿Cómo podríamos operar la aplicación móvil durante toda la jornada laboral continua en campo para los inspectores agrarios en jornadas extensas de caminata comunal a pesar de el consumo acelerado de batería ocasionado por el uso intensivo de GPS y la falta de energía eléctrica?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 15,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "insightId": 15,
+          "targetUser": "los comités de recepción comunitaria y fiscalizadores del plan de negocio",
+          "actionGoal": "firmar digitalmente actas de conformidad de maquinaria e infraestructura instalada",
+          "constraintOrPain": "el temor a firmar en pantallas táctiles sin comprender la validez jurídica de la suscripción digital",
+          "hmwStatement": "¿Cómo podríamos firmar digitalmente actas de conformidad de maquinaria e infraestructura instalada para los comités de recepción comunitaria y fiscalizadores del plan de negocio a pesar de el temor a firmar en pantallas táctiles sin comprender la validez jurídica de la suscripción digital?",
+          "question": "¿Cómo podríamos firmar digitalmente actas de conformidad de maquinaria e infraestructura instalada para los comités de recepción comunitaria y fiscalizadores del plan de negocio a pesar de el temor a firmar en pantallas táctiles sin comprender la validez jurídica de la suscripción digital?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 16,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "insightId": 16,
+          "targetUser": "los auditores gubernamentales y la Unidad de Monitoreo de AGROIDEAS",
+          "actionGoal": "comprobar la autenticidad temporal y geográfica de las evidencias fotográficas de avance",
+          "constraintOrPain": "el riesgo de adulteración de metadatos EXIF o reciclaje de fotos tomadas en otros proyectos",
+          "hmwStatement": "¿Cómo podríamos comprobar la autenticidad temporal y geográfica de las evidencias fotográficas de avance para los auditores gubernamentales y la Unidad de Monitoreo de AGROIDEAS a pesar de el riesgo de adulteración de metadatos EXIF o reciclaje de fotos tomadas en otros proyectos?",
+          "question": "¿Cómo podríamos comprobar la autenticidad temporal y geográfica de las evidencias fotográficas de avance para los auditores gubernamentales y la Unidad de Monitoreo de AGROIDEAS a pesar de el riesgo de adulteración de metadatos EXIF o reciclaje de fotos tomadas en otros proyectos?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 17,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "insightId": 17,
+          "targetUser": "los técnicos evaluadores regionales al retornar a las sedes desconcentradas",
+          "actionGoal": "sincronizar automáticamente gigabytes de evidencia multimedia y polígonos espaciales",
+          "constraintOrPain": "las conexiones Wi-Fi de ancho de banda restringido en las oficinas del interior del país",
+          "hmwStatement": "¿Cómo podríamos sincronizar automáticamente gigabytes de evidencia multimedia y polígonos espaciales para los técnicos evaluadores regionales al retornar a las sedes desconcentradas a pesar de las conexiones Wi-Fi de ancho de banda restringido en las oficinas del interior del país?",
+          "question": "¿Cómo podríamos sincronizar automáticamente gigabytes de evidencia multimedia y polígonos espaciales para los técnicos evaluadores regionales al retornar a las sedes desconcentradas a pesar de las conexiones Wi-Fi de ancho de banda restringido en las oficinas del interior del país?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 18,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "insightId": 18,
+          "targetUser": "los coordinadores territoriales de seguimiento de compromisos contractuales",
+          "actionGoal": "geolocalizar parcelas en estado crítico de rendimiento y planificar rutas de supervisión eficientes",
+          "constraintOrPain": "la dispersión geográfica extrema de predios familiares en cuencas hidrográficas aisladas",
+          "hmwStatement": "¿Cómo podríamos geolocalizar parcelas en estado crítico de rendimiento y planificar rutas de supervisión eficientes para los coordinadores territoriales de seguimiento de compromisos contractuales a pesar de la dispersión geográfica extrema de predios familiares en cuencas hidrográficas aisladas?",
+          "question": "¿Cómo podríamos geolocalizar parcelas en estado crítico de rendimiento y planificar rutas de supervisión eficientes para los coordinadores territoriales de seguimiento de compromisos contractuales a pesar de la dispersión geográfica extrema de predios familiares en cuencas hidrográficas aisladas?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        }
+      ]
     },
     "FASE_3_IDEAR": {
       "H07_LluviaIdeasCrazy8s": [
         {
-          "ideaId": "IDEA-LEG-01",
-          "title": "Base de Datos Dinámica Web con Buscador Facetado y Etiquetado Temático de Criterios Legales (LEX-AGROIDEAS)",
-          "author": "Especialista UAJ",
-          "votes": 14
+          "id": 13,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "desafioId": 13,
+          "ideaTitle": "App GeoInspector con captura de polígonos GPS sin señal y marca de agua criptográfica",
+          "idea": "App GeoInspector con captura de polígonos GPS sin señal y marca de agua criptográfica",
+          "description": "Módulo móvil para supervisores que registra linderos, altitud y fotos de obras con sello inalterable de fecha, hora y coordenadas geodésicas.",
+          "category": "Tecnológica",
+          "authorRole": "Ingeniero Geomático",
+          "votesCount": 13,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "ideaId": "IDEA-LEG-02",
-          "title": "Boletín mensual en PDF enviado por correo electrónico con los informes legales relevantes",
-          "author": "Asesor Jurídico",
-          "votes": 3
+          "id": 14,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "desafioId": 14,
+          "ideaTitle": "Modo Eco-Batería con renderizado de alto contraste y suspensión de sensores",
+          "idea": "Modo Eco-Batería con renderizado de alto contraste y suspensión de sensores",
+          "description": "Configuración en la app que extiende la autonomía operativa hasta 14 horas continuas en zonas andinas sin acceso a recarga eléctrica.",
+          "category": "Tecnológica",
+          "authorRole": "Especialista Móvil Android",
+          "votesCount": 9,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "ideaId": "IDEA-LEG-03",
-          "title": "Foro web interno de consultas legales asíncronas entre asesores de regiones",
-          "author": "Analista UPP",
-          "votes": 5
+          "id": 15,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "desafioId": 17,
+          "ideaTitle": "Planificador de Rutas Optimizadas de Inspección por Microcuencas",
+          "idea": "Planificador de Rutas Optimizadas de Inspección por Microcuencas",
+          "description": "Herramienta que agrupa las visitas técnicas en circuitos geográficos lógicos reduciendo en 40% los costos y tiempos de viáticos.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Jefe de Unidad Regional",
+          "votesCount": 10,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 16,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "desafioId": 18,
+          "ideaTitle": "Auditoría Aleatoria de Gabinete mediante comparación multiespectral",
+          "idea": "Auditoría Aleatoria de Gabinete mediante comparación multiespectral",
+          "description": "Procedimiento de control que compara las fotos de supervisión con imágenes satelitales Sentinel para corroborar vegetación y obras.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Auditor Técnico de Monitoreo",
+          "votesCount": 6,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 17,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "desafioId": 15,
+          "ideaTitle": "Protocolo Jurídico de Acreditación de Firmas Digitales en Pantallas Táctiles",
+          "idea": "Protocolo Jurídico de Acreditación de Firmas Digitales en Pantallas Táctiles",
+          "description": "Norma técnica interna que convalida el acta de recepción suscrita en tableta por el comité comunal con la misma validez que el papel.",
+          "category": "Normativa",
+          "authorRole": "Abogado de Contrataciones",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 18,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "desafioId": 16,
+          "ideaTitle": "Pasantías de Topografía Comunitaria para comités de fiscalización campesinos",
+          "idea": "Pasantías de Topografía Comunitaria para comités de fiscalización campesinos",
+          "description": "Jornadas prácticas de aprendizaje donde comuneros aprenden a verificar hitos y linderos con dispositivos GPS de mano y celulares.",
+          "category": "Capacitación",
+          "authorRole": "Técnico Agrónomo Extensionista",
+          "votesCount": 7,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         }
       ],
-      "H08_MatrizPriorizacion": {
-        "evaluationDate": "2026-09-28T11:00:00Z",
-        "ideasEvaluadas": [
-          {
-            "ideaId": "IDEA-LEG-01",
-            "title": "Base de Datos Dinámica Web con Buscador Facetado (LEX-AGROIDEAS)",
-            "deseabilidad": 5,
-            "factibilidad": 4,
-            "viabilidad": 5,
-            "impacto": 5,
-            "scoreTotal": 19,
-            "isWinningIdea": true
-          },
-          {
-            "ideaId": "IDEA-LEG-03",
-            "title": "Foro web interno de consultas legales asíncronas",
-            "deseabilidad": 4,
-            "factibilidad": 4,
-            "viabilidad": 3,
-            "impacto": 3,
-            "scoreTotal": 14,
-            "isWinningIdea": false
-          }
-        ],
-        "winningIdeaSummary": {
-          "title": "LEX-AGROIDEAS: Base de Datos Dinámica de Criterios Legales",
-          "rationale": "Resuelve la fragmentación normativa mediante un motor web Local-First con indexación por descriptores legales, vigencia y filtros por materia."
+      "H08_MatrizPriorizacion": [
+        {
+          "id": 13,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "ideaId": 13,
+          "ideaTitle": "App GeoInspector con captura de polígonos GPS sin señal y marca de agua criptográfica",
+          "title": "App GeoInspector con captura de polígonos GPS sin señal y marca de agua criptográfica",
+          "desirability": 5,
+          "feasibility": 4,
+          "viability": 5,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 19,
+          "isWinningIdea": true,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 14,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "ideaId": 15,
+          "ideaTitle": "Planificador de Rutas Optimizadas de Inspección por Microcuencas",
+          "title": "Planificador de Rutas Optimizadas de Inspección por Microcuencas",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 15,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "ideaId": 14,
+          "ideaTitle": "Modo Eco-Batería con renderizado de alto contraste y suspensión de sensores",
+          "title": "Modo Eco-Batería con renderizado de alto contraste y suspensión de sensores",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 16,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 16,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "ideaId": 17,
+          "ideaTitle": "Protocolo Jurídico de Acreditación de Firmas Digitales en Pantallas Táctiles",
+          "title": "Protocolo Jurídico de Acreditación de Firmas Digitales en Pantallas Táctiles",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 15,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 17,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "ideaId": 18,
+          "ideaTitle": "Pasantías de Topografía Comunitaria para comités de fiscalización campesinos",
+          "title": "Pasantías de Topografía Comunitaria para comités de fiscalización campesinos",
+          "desirability": 4,
+          "feasibility": 3,
+          "viability": 4,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 14,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 18,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "ideaId": 16,
+          "ideaTitle": "Auditoría Aleatoria de Gabinete mediante comparación multiespectral",
+          "title": "Auditoría Aleatoria de Gabinete mediante comparación multiespectral",
+          "desirability": 3,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 13,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
         }
+      ],
+      "H09_PrototipadoRapido": {
+        "id": 3,
+        "projectId": 3,
+        "projectCode": "PIIP-2026-IN0003",
+        "prototypeTitle": "Buscador Facetado y Repositorio Dinámico de Criterios Legales UAJ",
+        "name": "Buscador Facetado y Repositorio Dinámico de Criterios Legales UAJ",
+        "prototypeType": "Digital PWA",
+        "keyFeatures": [
+          "Buscador principal con autocompletado por descriptores legales",
+          "Ficha sumillada con criterio jurídico vinculante e informe fuente",
+          "Notificaciones push a evaluadores regionales ante nuevos precedentes"
+        ],
+        "artifactUrlOrImage": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=500",
+        "imageUrl": "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=500",
+        "description": "Aplicación web local-first para consulta inmediata de criterios normativos, con motor de búsqueda facetado por materia registral, agraria y contractual.",
+        "testingGoal": "El 90% de los evaluadores regionales localiza el criterio legal vinculante en menos de 60 segundos."
       }
     },
     "FASE_4_ENTREGAR": {
-      "H09_PrototipadoRapido": {
-        "prototypeType": "Aplicación Web Local-First con Motor de Búsqueda Facetada",
-        "designedViews": [
-          "Buscador Principal con autocomplete por descriptores legales (ej. 'Elegibilidad', 'Sucesión de Posición', 'Empatía Jurídica')",
-          "Ficha del Criterio Legal con texto sumillado, informe fuente adjunto en PDF y estado de vigencia (Vigente / Derogado / Modificado)",
-          "Módulo de Consulta Rápida y descarga de compendios temáticos"
-        ],
-        "validationCriteria": [
-          "Búsqueda de criterio específico en menos de 3 segundos",
-          "Visualización clara de la vigencia normativa y enlaces a informes sustentatorios"
-        ]
-      },
-      "H10_PlanAccion": {
-        "sprints": [
-          {
-            "sprintNumber": 1,
-            "duration": "3 semanas",
-            "objective": "Sistematización y digitación del compendio histórico de informes legales de la UAJ (2020-2026).",
-            "responsible": "Unidad de Asesoría Jurídica (UAJ)"
-          },
-          {
-            "sprintNumber": 2,
-            "duration": "3 semanas",
-            "objective": "Maquetación del buscador web facetado con DataTables.js y filtros dinámicos.",
-            "responsible": "Oficina de Tecnologías de la Información (UA-TI) / UAJ"
-          },
-          {
-            "sprintNumber": 3,
-            "duration": "3 semanas",
-            "objective": "Despliegue piloto con 5 Unidades Regionales y capacitación a asesores legales.",
-            "responsible": "UAJ / UPP"
-          }
-        ]
-      },
-      "H11_MatrizRiesgosYTesteo": {
-        "riskAssessment": [
-          {
-            "riskCategory": "Legal / Operativo",
-            "description": "Riesgo de obsolescencia de un criterio publicado tras cambios en la norma general (ej. Ley de Modernización).",
-            "mitigationStrategy": "Designar un Administrador Legal en UAJ con protocolo de actualización obligatoria inmediata tras emisión de nueva norma."
-          }
-        ],
-        "learningCard": {
-          "testCode": "TEST-IN0003-01",
-          "hypothesisTested": "El uso del repositorio LEX-AGROIDEAS reducirá el tiempo de atención de consultas legales complejas en las UR de 8 horas a menos de 30 minutos.",
-          "observedResult": "Durante el pilotaje con las UR de Junín y San Martín, el tiempo promedio de búsqueda y sustentación se redujo a 12 minutos (97.5% de ahorro de tiempo).",
-          "decision": "PASAR A PRODUCCIÓN E INSTITUCIONALIZACIÓN EN EL PORTAFOLIO (ANEXO 5)"
+      "H10_PlanAccion": [
+        {
+          "id": 6,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "taskName": "Sistematización de informes legales para base de criterios vinculantes",
+          "task": "Sistematización de informes legales para base de criterios vinculantes",
+          "phase": "Diseño",
+          "responsibleUnit": "Unidad de Asesoría Jurídica (UAJ)",
+          "responsible": "Unidad de Asesoría Jurídica (UAJ)",
+          "leader": "Alex Dario Abad Escalante",
+          "startDate": "2026-05-15",
+          "endDate": "2026-06-15",
+          "deadline": "2026-06-15",
+          "deliverable": "Compendio digital indexado de 120 resoluciones y criterios legales frecuentes",
+          "status": "Pendiente"
         }
-      }
+      ],
+      "H11_MatrizRiesgosTesteo": [
+        {
+          "id": 7,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "riskDescription": "Discrepancias de interpretación legal entre asesores de sede central y coordinadores regionales.",
+          "description": "Discrepancias de interpretación legal entre asesores de sede central y coordinadores regionales.",
+          "riskType": "Legal / Normativo",
+          "probability": "Media",
+          "impact": "Alto",
+          "level": "Alto",
+          "mitigationStrategy": "Publicación vinculante de lineamientos jurídicos y sesiones quincenales de unificación de criterios.",
+          "mitigation": "Publicación vinculante de lineamientos jurídicos y sesiones quincenales de unificación de criterios.",
+          "testResult": "Reducción del 70% en observaciones reiteradas de expedientes durante el piloto en 4 regiones."
+        }
+      ]
     }
   }
 }

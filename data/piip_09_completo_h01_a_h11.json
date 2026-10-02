@@ -1,287 +1,777 @@
 {
   "$schema": "./schemas/far-piip-v3.json",
-  "NavegacionYTrazabilidad": {
-    "IniciativaCodigoActiva": "PIIP-2026-IN0009",
-    "UbicacionActual": {
-      "TipoVista": "HERRAMIENTA_METODOLOGICA",
-      "FaseNumero": 4,
-      "FaseNombre": "Fase 4: Entregar",
-      "HerramientaNumero": 11,
-      "HerramientaCodigo": "H11",
-      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
-      "VistaCodigo": "V11.1",
-      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje (VAC-DIGITAL)",
-      "VistaUrl": "fase4/11-matriz-riesgos.html"
-    },
-    "PosicionEnFlujo": {
-      "PasoActual": 11,
-      "TotalPasosFlujo": 11,
-      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar - Cierre de Proyecto)",
-      "PasoAnterior": {
-        "HerramientaCodigo": "H10",
-        "HerramientaNombre": "Plan de Acción y Hoja de Ruta",
-        "VistaUrl": "fase4/10-plan-accion.html"
-      },
-      "PasoSiguiente": null
-    },
-    "ControlIteracionYTrazabilidad": {
-      "VersionIteracion": 1,
-      "PermiteIteracionAnterior": true,
-      "FechaUltimaActualizacion": "2026-10-02T16:30:00Z",
-      "UsuarioActualRol": "Líder de Proyecto RRHH / Facilitador Ágil"
-    }
-  },
-  "ProyectoIdentificacion": {
+  "IniciativaIdentificacion": {
     "id": 9,
-    "code": "PIIP-2026-IN0009",
-    "title": "Plataforma Digital de Gestión y Programación de Vacaciones del Personal (VAC-DIGITAL)",
-    "responsible": "Unidad de Administración - Recursos Humanos (UA-RRHH)",
-    "contact": "Especialista en Gestión de Recursos Humanos - UA",
-    "date": "2026-03-15",
-    "opinionTecnicaSummary": {
-      "informeNumero": "INFORME TÉCNICO N.º 009-2026-AGROIDEAS/UPP-MODERNIZACIÓN",
-      "puntajeTotal": 10,
-      "impactoUsuarios": "Nivel 4 (4 ptos) - Resuelve incertidumbre de saldos en tiempo real para el cliente interno",
-      "priorizacionEstrategica": "Nivel 3 (3 ptos) - Alineado a la Política Nacional de Modernización y eficiencia en el back-office",
-      "enfoqueInnovacion": "Nivel 3 (3 ptos) - Digitalización centrada en el usuario con adaptación a regímenes CAS, 728, 276 y 30057",
-      "rangoDecision": "Recomendable para aprobación (10-12 pts)",
-      "condicionamientoTecnico": "Ejecutar ciclo de co-creación y prototipado rápido para asegurar interfaz intuitiva e interoperabilidad con asistencia"
-    },
-    "phases": {
+    "IniciativaCodigo": "PIIP-2026-IN0009",
+    "IniciativaNombre": "Plataforma Digital de Gestión y Programación de Vacaciones del Personal (VAC-DIGITAL)",
+    "UnidadOrganicaResponsable": "Unidad de Administración - Recursos Humanos (UA-RRHH)",
+    "LiderProyecto": "Especialista en Gestión de Recursos Humanos - UA",
+    "FechaRegistro": "2026-03-15",
+    "EstadoFases": {
       "descubrir": "completed",
-      "definir": "completed",
-      "idear": "completed",
-      "entregar": "completed"
+      "definir": "active",
+      "idear": "pending",
+      "entregar": "pending"
     },
-    "porcentajeAvanceGlobal": 100.0
+    "PorcentajeAvanceGlobal": 50.0
   },
-  "HerramientasMetodologicas_Coleccion": {
-    "H01_ObservacionAEIOU": [
-      {
-        "id": "aeiou-009-01",
-        "projectCode": "PIIP-2026-IN0009",
-        "dimension": "Actividades",
-        "observation": "Solicitudes físicas en papel (fichas impresas) y correos dispersos enviados por los servidores para programar descanso vacacional, generando demoras de hasta 15 días en la aprobación por jefaturas y Recursos Humanos.",
-        "timestamp": "2026-03-16T09:00:00Z"
-      },
-      {
-        "id": "aeiou-009-02",
-        "projectCode": "PIIP-2026-IN0009",
-        "dimension": "Entorno",
-        "observation": "Oficinas de Recursos Humanos en sede central y Unidades Regionales con acumulados de memorándums físicos e incertidumbre de saldos acumulados por coexistencia de 4 regímenes laborales (CAS D.Leg. 1057, 728, 276 y Ley 30057).",
-        "timestamp": "2026-03-16T11:30:00Z"
-      },
-      {
-        "id": "aeiou-009-03",
-        "projectCode": "PIIP-2026-IN0009",
-        "dimension": "Interacciones",
-        "observation": "Servidor ↔ Jefatura Inmediata ↔ Especialista RRHH. Constantes llamadas y correos de consulta ('¿cuántos días me quedan?') por falta de visibilidad del saldo en tiempo real.",
-        "timestamp": "2026-03-16T14:15:00Z"
-      },
-      {
-        "id": "aeiou-009-04",
-        "projectCode": "PIIP-2026-IN0009",
-        "dimension": "Objetos",
-        "observation": "Formatos físicos en PDF/Excel no estandarizados, legajos de personal en físico, planillas manuales de asistencia.",
-        "timestamp": "2026-03-16T16:00:00Z"
-      },
-      {
-        "id": "aeiou-009-05",
-        "projectCode": "PIIP-2026-IN0009",
-        "dimension": "Usuarios",
-        "observation": "Más de 280 servidores civiles de AGROIDEAS a nivel nacional (Sede Central y 25 Unidades Regionales).",
-        "timestamp": "2026-03-16T17:00:00Z"
-      }
-    ],
-    "H02_MapaEmpatia": {
-      "projectCode": "PIIP-2026-IN0009",
-      "userProfile": "Servidor Civil y Jefatura Inmediata de AGROIDEAS",
-      "says": "\"El trámite de vacaciones en papel es lento y nunca sé con certeza exacta cuántos días acumulados me quedan según mi régimen laboral.\"",
-      "does": "Imprime fichas físicas, busca la firma manuscrita de su jefe directo y la entrega personalmente o por trámite documentario a Recursos Humanos.",
-      "thinks": "Considera que un trámite tan cotidiano como pedir vacaciones no debería tomar dos semanas ni requerir firmas en papel.",
-      "feels": "Frustrado por la carga burocrática innecesaria e incertidumbre al planificar su descanso familiar.",
-      "pains": "Riesgo de pérdida de solicitudes físicas, demoras en aprobación que chocan con viajes programados, errores en la contabilización de días por régimen laboral.",
-      "gains": "Transparencia absoluta en saldos vacacionales, solicitud en 2 clics desde celular o laptop, y aprobaciones instantáneas con notificaciones automáticas."
-    },
-    "H03_EncuestasCampo": {
-      "projectCode": "PIIP-2026-IN0009",
-      "sampleSize": 124,
-      "targetAudience": "Servidores Civiles y Jefes de Unidad de AGROIDEAS (Lima y Regiones)",
-      "keyResults": [
+  "RegistrosHerramientasMetodologicas": {
+    "FASE_1_DESCUBRIR": {
+      "H01_ObservacionAEIOU": [
         {
-          "question": "¿Ha experimentado demoras en la respuesta a su solicitud de vacaciones?",
-          "percentageYes": 89.5
+          "id": 49,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "activity": "Llenado a mano y firma física de solicitud de programación vacacional en formato papel impreso para trámite interno.",
+          "environment": "Oficina Zonal de AGROIDEAS en Tarapoto, San Martín; calor ambiental de 33°C y documentos físicos esperando visto bueno.",
+          "interaction": "Especialista de campo llena formato, solicita firma presencial a su coordinador zonal y debe enviar la hoja por valija física a Lima.",
+          "object": "Formato de solicitud de vacaciones de RRHH en papel bond, tampón de huella dactilar, bolígrafo azul, sobre manila.",
+          "objects": "Formato de solicitud de vacaciones de RRHH en papel bond, tampón de huella dactilar, bolígrafo azul, sobre manila.",
+          "user": "Especialista técnico de campo CAS, coordinador zonal y conserje de oficina.",
+          "users": "Especialista técnico de campo CAS, coordinador zonal y conserje de oficina.",
+          "observer": "Especialista de Recursos Humanos - Sede Central",
+          "observationDate": "2026-03-18",
+          "date": "2026-03-18",
+          "timestamp": "2026-03-18T10:15:00.000Z"
         },
         {
-          "question": "¿Conoce con precisión su saldo de días vacacionales actualizados?",
-          "percentageNo": 77.4
+          "id": 50,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "activity": "Cálculo manual de días pendientes acumulados y truncos de más de 380 servidores bajo regímenes CAS (D.L. 1057) y 728.",
+          "environment": "Área de Recursos Humanos en Lima; escritorios cubiertos de legajos individuales de personal y hojas de cálculo desactualizadas.",
+          "interaction": "Analista de personal revisa fecha de ingreso, adendas contractuales y descansos médicos uno por uno en fichas Kardex físicas.",
+          "object": "Libro de registro de control de asistencia, calculadora de escritorio, matriz Excel 'Control_Vacaciones_2026_v4_FINAL.xlsx'.",
+          "objects": "Libro de registro de control de asistencia, calculadora de escritorio, matriz Excel 'Control_Vacaciones_2026_v4_FINAL.xlsx'.",
+          "user": "Analista de Personal de RRHH y Responsable de Nóminas y Compensaciones.",
+          "users": "Analista de Personal de RRHH y Responsable de Nóminas y Compensaciones.",
+          "observer": "Jefa de Recursos Humanos - Unidad de Administración",
+          "observationDate": "2026-04-08",
+          "date": "2026-04-08",
+          "timestamp": "2026-04-08T12:00:00.000Z"
         },
         {
-          "question": "¿Considera necesario un portal digital autónomo de autoservicio vacacional?",
-          "percentageYes": 98.4
+          "id": 51,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "activity": "Superposición no planificada de solicitudes vacacionales en temporada de cosecha que deja sin supervisores a toda una región.",
+          "environment": "Oficina Zonal de Cusco; reuniones con productores que reclaman visitas de campo pendientes de aprobación.",
+          "interaction": "El coordinador zonal advierte que los dos únicos agrónomos de la zona salieron de vacaciones el mismo mes por falta de un calendario visual compartido.",
+          "object": "Pizarra acrílica con calendario mensual con nombres tachados a mano, cuaderno de quejas de usuarios agrarios.",
+          "objects": "Pizarra acrílica con calendario mensual con nombres tachados a mano, cuaderno de quejas de usuarios agrarios.",
+          "user": "Coordinador Zonal Cusco, 2 especialistas agrónomos y presidente de la cooperativa de papa nativa.",
+          "users": "Coordinador Zonal Cusco, 2 especialistas agrónomos y presidente de la cooperativa de papa nativa.",
+          "observer": "Auditor de Gestión del Rendimiento - RRHH",
+          "observationDate": "2026-05-12",
+          "date": "2026-05-12",
+          "timestamp": "2026-05-12T15:30:00.000Z"
+        },
+        {
+          "id": 52,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "activity": "Trámite urgente de interrupción de vacaciones por emergencia climática en la costa norte tras desborde de ríos.",
+          "environment": "Sede central Lima; emisión apresurada de resolución administrativa de suspensión temporal de descanso remunerado.",
+          "interaction": "Jefatura de administración llama al servidor para solicitar su retorno inmediato al puesto; no hay registro digital de los días compensatorios.",
+          "object": "Teléfono celular institucional, memorando circular impreso, libro de resoluciones de administración.",
+          "objects": "Teléfono celular institucional, memorando circular impreso, libro de resoluciones de administración.",
+          "user": "Jefe de la Unidad de Administración, servidor reincorporado y secretaria general.",
+          "users": "Jefe de la Unidad de Administración, servidor reincorporado y secretaria general.",
+          "observer": "Especialista en Normativa de Servir - RRHH",
+          "observationDate": "2026-06-03",
+          "date": "2026-06-03",
+          "timestamp": "2026-06-03T09:40:00.000Z"
+        },
+        {
+          "id": 53,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "activity": "Sesión de diseño del autoservicio web del empleado con saldo de días vacacionales en tiempo real y flujo de aprobación por correo electrónico.",
+          "environment": "Sala de capacitación de AGROIDEAS en Lima; sesión de cocreación con delegados de trabajadores de sede central y regiones.",
+          "interaction": "Los colaboradores prueban en sus teléfonos la interfaz para solicitar 5 días hábiles de fraccionamiento vacacional conforme al D.L. 1405.",
+          "object": "Prototipo interactivo en Figma, smartphone con simulador de correo de aprobación con un solo clic, ficha de feedback rápido.",
+          "objects": "Prototipo interactivo en Figma, smartphone con simulador de correo de aprobación con un solo clic, ficha de feedback rápido.",
+          "user": "12 servidores de diversas unidades orgánicas y el equipo de desarrollo de sistemas de información.",
+          "users": "12 servidores de diversas unidades orgánicas y el equipo de desarrollo de sistemas de información.",
+          "observer": "Diseñador de Servicios Internos - RRHH/OTI",
+          "observationDate": "2026-06-26",
+          "date": "2026-06-26",
+          "timestamp": "2026-06-26T11:00:00.000Z"
+        },
+        {
+          "id": 54,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "activity": "Validación del módulo de reportes gerenciales para jefaturas con semáforo de riesgo de contingencias laborales por vacaciones truncas o vencidas.",
+          "environment": "Despacho de la Dirección Ejecutiva en Lima; presentación del cuadro de mando integral de talento humano.",
+          "interaction": "El Director Ejecutivo visualiza el indicador de personal con más de 45 días acumulados y aprueba el plan de salida escalonada anual.",
+          "object": "Dashboard interactivo en Power BI, alerta de contingencia económica proyectada en soles, directiva de bienestar social.",
+          "objects": "Dashboard interactivo en Power BI, alerta de contingencia económica proyectada en soles, directiva de bienestar social.",
+          "user": "Director Ejecutivo, Jefe de la Unidad de Administración y Jefa de Recursos Humanos.",
+          "users": "Director Ejecutivo, Jefe de la Unidad de Administración y Jefa de Recursos Humanos.",
+          "observer": "Analista de Inteligencia de Gestión - UPP",
+          "observationDate": "2026-07-24",
+          "date": "2026-07-24",
+          "timestamp": "2026-07-24T16:30:00.000Z"
+        }
+      ],
+      "H02_MapaEmpatia": [
+        {
+          "id": 51,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "userProfile": "Especialista de Recursos Humanos y Control de Asistencia (Sede Central)",
+          "says": "\"Controlar las vacaciones de más de 350 trabajadores en 16 regiones con memorándums en papel y una hoja de Excel gigante es una pesadilla diaria.\"",
+          "does": "Calcula días devengados de descanso físico, redacta resoluciones administrativas, concilia solicitudes con las leyes laborales (CAS, 728, 276) y atiende quejas.",
+          "thinks": "Considera que un autoservicio digital donde el propio trabajador programe su descanso con aprobación de su jefe en un clic liberaría el 70% de su tiempo.",
+          "feels": "Sobrecarga mental por calcular manualmente días truncos y temor a cometer errores que deriven en pagos indemnizatorios por vacaciones no gozadas.",
+          "hears": "Jefes de unidad quejándose de que no saben qué colaboradores estarán disponibles la próxima semana para comisiones de campo.",
+          "sees": "Planillas Excel con fórmulas complejas y colores discordantes que se cuelgan al abrir y papeles de solicitud extraviados en los despachos.",
+          "pains": "Cálculos manuales propensos a error, falta de integración con el sistema de nómina y conflictos por cruces imprevistos de vacaciones en el mismo equipo.",
+          "gains": "Plataforma web de autoservicio con cálculo automático de saldos de descanso, calendario compartido de ausencias y firma digital de papeletas."
+        },
+        {
+          "id": 52,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "userProfile": "Especialista de Campo Destacado en Unidad Regional Fronteriza (Madre de Dios)",
+          "says": "\"Para pedir 3 días de descanso tengo que imprimir un formato, pedir firma a mi jefe zonal, escanearlo, mandarlo por correo a Lima y esperar 2 semanas.\"",
+          "does": "Pasa semanas internado en comunidades nativas de la selva sur, regresa a Puerto Maldonado y tramita sus descansos compensatorios acumulados.",
+          "thinks": "Cree que los trabajadores de provincias son tratados como de segunda categoría frente a los de sede central que gestionan sus permisos en el pasillo.",
+          "feels": "Desconexión con la sede central, sensación de desamparo laboral y cansancio tras largas jornadas de campo sin descansos oportunos.",
+          "hears": "Compañeros de otras instituciones del Estado que ya usan apps en su celular para marcar asistencia y solicitar días libres.",
+          "sees": "Correos electrónicos sin responder durante días mientras sus boletos de viaje aéreo a su ciudad natal suben de precio por la espera.",
+          "pains": "Lentitud desesperante en la autorización de permisos urgentes y pérdida de días de descanso por vencimiento de plazos administrativos.",
+          "gains": "App móvil para solicitar vacaciones y descansos en 3 clics, con notificación inmediata de aprobación y actualización en tiempo real de su récord laboral."
+        },
+        {
+          "id": 53,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "userProfile": "Jefe de Unidad Orgánica / Aprobador de Roles Vacacionales (UPDC)",
+          "says": "\"Necesito planificar el rol de vacaciones de mi equipo sin dejar a la unidad desabastecida durante los meses pico de capacitaciones a agricultores.\"",
+          "does": "Revisa solicitudes de vacaciones de 25 profesionales, concilia fechas con el calendario operativo institucional y emite vistos buenos.",
+          "thinks": "Opina que una vista de calendario tipo diagrama de Gantt donde vea la disponibilidad de todo su equipo resolvería los roces entre compañeros.",
+          "feels": "Incomodidad al tener que rechazar solicitudes de vacaciones porque dos especialistas clave pidieron las mismas semanas de descanso.",
+          "hears": "Colaboradores reclamando favoritismos si a uno se le aprueba primero la fecha solicitada para vacaciones familiares de verano.",
+          "sees": "Superposición de permisos que dejan sin evaluadores la ventanilla durante la fecha más crítica de cierre de semestre.",
+          "pains": "Falta de visibilidad integral de los compromisos de entrega frente a los descansos del personal y trámites de reasignación engorrosos.",
+          "gains": "Panel gerencial con vista de Gantt de disponibilidad, alertas automáticas de traslapes en puestos críticos y aprobación masiva informada."
+        },
+        {
+          "id": 54,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "userProfile": "Servidor Administrativo Bajo Régimen CAS (Sede Central Lima)",
+          "says": "\"Nunca sé cuántos días de vacaciones me quedan con exactitud. Cada vez que pregunto a Recursos Humanos me dicen una cifra distinta al mes anterior.\"",
+          "does": "Presenta solicitudes impresas en mesa de partes, guarda fotocopias de sus papeletas firmadas como respaldo personal y revisa sus boletas de pago.",
+          "thinks": "Considera que como trabajador tiene el derecho básico de consultar su estado de descansos de manera transparente y en cualquier momento.",
+          "feels": "Incertidumbre al planificar viajes familiares y molestia por la falta de transparencia en el registro de días compensatorios por horas extras.",
+          "hears": "Comentarios de pasillo de que si no tomas tus vacaciones antes de cumplir el año de servicio pierdes los días o te obligan a salir cuando la institución decida.",
+          "sees": "Bandejas de entrada de correo saturadas con memorandos de notificación de descanso obligatorio con fechas impuestas a última hora.",
+          "pains": "Desconocimiento de su saldo real de vacaciones, pérdida de días no gozados y falta de un canal privado y confiable de consulta.",
+          "gains": "Portal del empleado con acceso seguro a su récord de vacaciones, histórico de solicitudes aprobadas y calculadora de días hábiles/calendario."
+        },
+        {
+          "id": 55,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "userProfile": "Médica Ocupacional y Bienestar Social (Unidad de Recursos Humanos)",
+          "says": "\"El estrés laboral y el agotamiento en los evaluadores de campo es alto. Las vacaciones no son un premio, son una necesidad de salud física y mental.\"",
+          "does": "Monitorea la salud ocupacional del personal, tramita descansos médicos, valida certificados del Colegio Médico y diseña campañas de bienestar.",
+          "thinks": "Sabe que los colaboradores que no gozan de vacaciones oportunas tienen mayores tasas de licencias por enfermedad y menor productividad.",
+          "feels": "Preocupación por el personal que acumula dos periodos vacacionales sin goce debido a la presión continua de carga laboral.",
+          "hears": "Especialistas que sufren de lumbalgias y estrés agudo tras meses seguidos de comisiones de servicio sin pausas adecuadas.",
+          "sees": "Certificados médicos particulares de dudosa autenticidad presentados a última hora cuando el trabajador ya no soporta la sobrecarga.",
+          "pains": "Falta de un sistema que alerte cuando un trabajador está próximo a vencer su periodo vacacional para programar su descanso preventivo.",
+          "gains": "Módulo de alertas tempranas de riesgo de salud y vencimiento vacacional, con validación electrónica de certificados médicos de Essalud."
+        },
+        {
+          "id": 56,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "userProfile": "Directora de la Unidad de Administración - UA (Sede Central)",
+          "says": "\"Las indemnizaciones por vacaciones no gozadas representan un riesgo fiscal severo para el presupuesto de la entidad. Debemos automatizar el control.\"",
+          "does": "Supervisa la legalidad de los actos administrativos de personal, aprueba el rol anual de vacaciones institucional y rinde cuentas a SERVIR.",
+          "thinks": "Estima que la automatización del proceso eliminará al 100% las contingencias laborales y demandas ante el Tribunal de SERVIR por temas vacacionales.",
+          "feels": "Responsabilidad por la armonía del clima organizacional y la eficiencia en el gasto del presupuesto de personal del programa.",
+          "hears": "Recomendaciones de los auditores de OCI exigiendo el cumplimiento estricto del descanso vacacional oportuno de acuerdo con el D.L. 1405.",
+          "sees": "Informes de contingencias laborales con montos acumulados por indemnizaciones vacacionales heredadas de gestiones pasadas.",
+          "pains": "Riesgo de sanciones de SERVIR/Sunafil por incumplimiento del goce vacacional y clima laboral deteriorado por disputas burocráticas.",
+          "gains": "Cumplimiento normativo automatizado al 100%, eliminación de contingencias indemnizatorias y reportes ejecutivos en tiempo real para SERVIR."
+        }
+      ],
+      "H03_EncuestasCampo": [
+        {
+          "id": 17,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "respondent": "Dra. Carmen Rosa Ortiz (Analista RRHH)",
+          "cooperative": "Área de Recursos Humanos - Sede Central",
+          "satisfaction": 2,
+          "comments": "El control de vacaciones en Excel manual provoca errores en saldos de días truncos y reclamos constantes de los trabajadores.",
+          "sentiment": "Negativo",
+          "date": "2026-03-22"
+        },
+        {
+          "id": 18,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "respondent": "Ing. Manuel Zegarra (Supervisor Zonal)",
+          "cooperative": "Unidad Regional Arequipa",
+          "satisfaction": 3,
+          "comments": "Pedir vacaciones mediante formatos impresos enviados por valija demora dos semanas en aprobarse. Debe ser por autoservicio web.",
+          "sentiment": "Neutro",
+          "date": "2026-03-26"
+        }
+      ],
+      "H04_FichaPersona": [
+        {
+          "id": 49,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "archetypeName": "Lic. Mariana Gómez Tello",
+          "name": "Lic. Mariana Gómez Tello",
+          "role": "Especialista de Recursos Humanos y Control de Asistencia (Sede Central)",
+          "demographics": "37 años, Lima; Licenciada en Relaciones Industriales y Gestión del Talento",
+          "age": 37,
+          "techTechSavviness": "Intermedio (Manejo de sistemas de planillas, Excel avanzado, legislación laboral pública)",
+          "quote": "Controlar las vacaciones de más de 350 trabajadores en 16 regiones con papeletas en papel y un Excel gigante es una fuente diaria de errores.",
+          "bio": "Administra el rol vacacional institucional, calcula días truncos y atiende solicitudes bajo los regímenes CAS (D.L. 1057), 728 y Ley SERVIR.",
+          "goals": [
+            "Implementar un módulo web de autoservicio donde cada trabajador gestione sus solicitudes y vea su saldo real",
+            "Automatizar el cálculo de descansos físicos evitando traslapes en áreas críticas",
+            "Eliminar al 100% las papeletas impresas mediante la integración de firma digital"
+          ],
+          "frustrations": [
+            "Papeletas de solicitud que se extravían en los despachos de los jefes de unidad",
+            "Discusiones con colaboradores que afirman tener más días de descanso de los que figuran en el registro manual",
+            "El riesgo constante de incurrir en indemnizaciones por vacaciones no gozadas dentro del año reglamentario"
+          ]
+        },
+        {
+          "id": 50,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "archetypeName": "Ing. Hugo Benítez Valenzuela",
+          "name": "Ing. Hugo Benítez Valenzuela",
+          "role": "Especialista de Campo en Unidad Regional Fronteriza (Madre de Dios)",
+          "demographics": "40 años, Puerto Maldonado; Ingeniero Forestal, labora en comisiones de campo continuas",
+          "age": 40,
+          "techTechSavviness": "Intermedio (Smartphone, correo institucional, apps de mensajería)",
+          "quote": "Para pedir tres días de descanso tengo que imprimir un formato, pedir visto bueno a mi jefe zonal, escanearlo, mandarlo por correo a Lima y esperar dos semanas.",
+          "bio": "Pasa semanas internado en comunidades nativas de Tambopata y Tahuamanu evaluando planes de castaña y bionegocios. Desea planificar sus descansos con previsión.",
+          "goals": [
+            "Solicitar sus días de vacaciones desde el celular en tres clics con confirmación inmediata",
+            "Conocer su récord vacacional devengado y días compensatorios por comisiones acumuladas",
+            "Poder coordinar sus vuelos a su ciudad natal con pasajes comprados con anticipación"
+          ],
+          "frustrations": [
+            "Lentitud de la sede central para aprobar solicitudes de descanso urgente",
+            "Sensación de aislamiento y trato desigual respecto a los trabajadores de la sede central",
+            "Perder días de descanso acumulados por vencimiento de los plazos administrativos"
+          ]
+        },
+        {
+          "id": 51,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "archetypeName": "Dr. Jorge Lévano Zamudio",
+          "name": "Dr. Jorge Lévano Zamudio",
+          "role": "Jefe de Unidad Orgánica y Aprobador de Turnos (UPDC)",
+          "demographics": "48 años, Lima; Máster en Gestión Pública y Desarrollo Rural",
+          "age": 48,
+          "techTechSavviness": "Intermedio (Manejo de sistemas de gestión documental, tableros de avance)",
+          "quote": "Necesito ver la disponibilidad de todo mi equipo en un calendario visual para no dejar desabastecidas las capacitaciones de campo en meses pico.",
+          "bio": "Dirige un equipo de 28 profesionales que recorren el país brindando talleres y asistencia técnica. Debe equilibrar los derechos laborales con las metas del POI.",
+          "goals": [
+            "Disponer de un calendario compartido tipo Gantt que muestre las ausencias programadas del equipo",
+            "Aprobar o reprogramar solicitudes de descanso con alertas de traslape en puestos críticos",
+            "Cumplir las metas operativas de capacitación sin sobrecargar a los especialistas que quedan en turno"
+          ],
+          "frustrations": [
+            "Descubrir a última hora que dos evaluadores clave pidieron vacaciones en la misma semana de cierre",
+            "Tener que firmar decenas de formatos físicos que congestionan su despacho",
+            "Tensiones internas en el equipo cuando se debe rechazar una solicitud por falta de cobertura"
+          ]
+        },
+        {
+          "id": 52,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "archetypeName": "Sra. Rocío Flores Saldaña",
+          "name": "Sra. Rocío Flores Saldaña",
+          "role": "Servidora Administrativa Bajo Régimen CAS (Sede Central Lima)",
+          "demographics": "35 años, Lima; Asistente Administrativa con 7 años en la institución",
+          "age": 35,
+          "techTechSavviness": "Intermedio (Ofimática, trámite documentario, sistemas internos)",
+          "quote": "Nunca sé exactamente cuántos días de vacaciones me quedan. Cada vez que pregunto a Recursos Humanos me dicen una cifra distinta al mes anterior.",
+          "bio": "Apoya las coordinaciones logísticas y trámites administrativos de la Dirección Ejecutiva. Desea programar sus vacaciones familiares de forma transparente.",
+          "goals": [
+            "Acceder a su portal del empleado para consultar su historial de vacaciones tomadas y saldo pendiente",
+            "Fraccionar sus descansos vacacionales en periodos cortos según lo permitido por el D.L. 1405",
+            "Recibir notificaciones por correo o app cuando su jefe apruebe o apruebe parcialmente su solicitud"
+          ],
+          "frustrations": [
+            "Falta de transparencia en el saldo de días compensatorios por trabajo en sobretiempo",
+            "Memorandos de Recursos Humanos que obligan a salir de vacaciones de forma imprevista para no generar indemnización",
+            "Demoras en la regularización de papeletas por descansos médicos o emergencias familiares"
+          ]
+        },
+        {
+          "id": 53,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "archetypeName": "Dra. Andrea Villacorta Ríos",
+          "name": "Dra. Andrea Villacorta Ríos",
+          "role": "Médica Ocupacional y Especialista en Bienestar Laboral (RRHH)",
+          "demographics": "42 años, Lima; Médico Cirujano especialista en Medicina Ocupacional",
+          "age": 42,
+          "techTechSavviness": "Intermedio (Sistemas de historias clínicas, validación de descansos Essalud)",
+          "quote": "El descanso vacacional no es un premio; es una necesidad biológica y mental indispensable para evitar el síndrome de burnout en trabajadores de campo.",
+          "bio": "Monitorea la salud integral y el clima ocupacional de los colaboradores de AGROIDEAS. Valida descansos médicos y propone pausas activas.",
+          "goals": [
+            "Alertar tempranamente a las jefaturas cuando un trabajador acumula más de 11 meses continuos de labor sin descanso",
+            "Digitalizar la recepción y validación de certificados médicos de incapacidad temporal (CITT)",
+            "Promover un equilibrio saludable entre la alta exigencia laboral y la vida personal del personal"
+          ],
+          "frustrations": [
+            "Especialistas con agotamiento crónico que postergan sus vacaciones por la presión de cumplir metas",
+            "Dificultades para verificar la autenticidad de certificados médicos emitidos en provincias remotas",
+            "Falta de datos integrados que correlacionen el ausentismo laboral con la falta de descansos oportunos"
+          ]
+        },
+        {
+          "id": 54,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "archetypeName": "Mag. Pilar Bustamante Prado",
+          "name": "Mag. Pilar Bustamante Prado",
+          "role": "Directora de Administración y Gestión del Empleo (Sede Central)",
+          "demographics": "50 años, Lima; Magíster en Gestión Pública y Recursos Humanos por la Universidad del Pacífico",
+          "age": 50,
+          "techTechSavviness": "Intermedio (Gestión de personal en el Estado, normativas de SERVIR, cuadros de puestos)",
+          "quote": "La automatización del rol de vacaciones blindará a la institución contra contingencias fiscales y multas de SUNAFIL, mejorando el clima laboral.",
+          "bio": "Lidera la política de recursos humanos del programa. Rinde cuentas del cumplimiento de las directivas de SERVIR sobre descanso físico vacacional.",
+          "goals": [
+            "Alcanzar el 100% de cumplimiento del rol anual de vacaciones institucional sin pagos indemnizatorios",
+            "Implementar el legajo digital y el autoservicio de personal en toda la estructura desconcentrada",
+            "Fortalecer el compromiso y la motivación de los servidores públicos de AGROIDEAS"
+          ],
+          "frustrations": [
+            "Pasivos laborales acumulados por vacaciones no gozadas heredadas de ejercicios fiscales anteriores",
+            "Sobrecarga de trabajo en el área de planillas cuadrando días de descuento manual a fin de mes",
+            "Conflictos entre trabajadores y directores que escalan innecesariamente al Tribunal de SERVIR"
+          ]
         }
       ]
     },
-    "H04_FichaPersona": {
-      "projectCode": "PIIP-2026-IN0009",
-      "archetypeCode": "PERS-IN0009-01",
-      "name": "Dra. Carmen Rosa Gutiérrez",
-      "role": "Especialista Zonal de Evaluación (Régimen CAS D.Leg. 1057) - Unidad Regional Junín",
-      "age": 38,
-      "digitalLiteracy": "Alto (Maneja plataformas web institucionales, smartphone y correo institucional)",
-      "primaryGoal": "Programar sus vacaciones fraccionadas de forma ágil desde su celular sin tener que enviar papeles por currier a Lima.",
-      "mainPainPoint": "Falta de un canal digital de autoservicio que le muestre sus días disponibles y notifique a su jefe directo inmediatamente."
-    },
-    "H05_MuroHallazgos": [
-      {
-        "projectCode": "PIIP-2026-IN0009",
-        "clusterId": "CLUST-09-A",
-        "clusterName": "Burocracia y Uso Excesivo de Papel en Gestión Interna",
-        "insight": "El 85% del tiempo del proceso de vacaciones se gasta en el traslado físico o correo de documentos firmados. Un autoservicio digital elimina el 100% del papel.",
-        "priority": "ALTA"
-      },
-      {
-        "projectCode": "PIIP-2026-IN0009",
-        "clusterId": "CLUST-09-B",
-        "clusterName": "Complejidad Multirégimen Laboral (1057, 728, 276, 30057)",
-        "insight": "El motor del sistema debe calcular los períodos vacacionales respetando las reglas de fraccionamiento legal específicas de cada régimen laboral sin requerir cálculo manual por RRHH.",
-        "priority": "ALTA"
-      }
-    ],
-    "H06_DefinicionDesafioHMW": {
-      "projectCode": "PIIP-2026-IN0009",
-      "hmwCode": "HMW-IN0009",
-      "action": "implementar una plataforma digital de autoservicio y seguimiento de vacaciones (VAC-DIGITAL) con motor de reglas multirégimen",
-      "targetUser": "los servidores civiles y jefaturas de AGROIDEAS",
-      "benefit": "garantizar transparencia en saldos en tiempo real, agilizar aprobaciones e independizar el trámite de solicitudes impresas",
-      "constraint": "la diversidad de regímenes laborales (CAS, 728, 276, 30057) y la necesidad de interoperar con el sistema de asistencia",
-      "finalHMWStatement": "¿Cómo podríamos implementar una plataforma digital de autoservicio y seguimiento vacacional (VAC-DIGITAL) con motor de reglas multirégimen para que los servidores civiles y jefaturas gestionen el descanso vacacional de manera transparente e inmediata a pesar de la coexistencia de múltiples regímenes laborales y sin sobrecargar al equipo de Recursos Humanos?"
-    },
-    "H07_LluviaIdeasCrazy8s": [
-      {
-        "projectCode": "PIIP-2026-IN0009",
-        "ideaId": "IDEA-09-01",
-        "title": "Portal Web PWA VAC-DIGITAL con Autoservicio del Servidor, Semáforo de Saldos y Aprobación en 1-Click por Jefatura",
-        "author": "Especialista RRHH / UA-TI",
-        "votes": 14
-      },
-      {
-        "projectCode": "PIIP-2026-IN0009",
-        "ideaId": "IDEA-09-02",
-        "title": "Módulo de solicitudes de vacaciones por correo electrónico con botones de aprobación incrustados",
-        "author": "Analista de Procesos UPP",
-        "votes": 6
-      },
-      {
-        "projectCode": "PIIP-2026-IN0009",
-        "ideaId": "IDEA-09-03",
-        "title": "Chatbot en Teams/WhatsApp para consulta de saldos vacacionales",
-        "author": "Desarrollador TI",
-        "votes": 8
-      }
-    ],
-    "H08_MatrizPriorizacion": {
-      "projectCode": "PIIP-2026-IN0009",
-      "evaluationDate": "2026-09-27T11:00:00Z",
-      "ideasEvaluadas": [
+    "FASE_2_DEFINIR": {
+      "H05_MuroHallazgos": [
         {
-          "ideaId": "IDEA-09-01",
-          "title": "Portal Web PWA VAC-DIGITAL con Autoservicio del Servidor, Semáforo de Saldos y Aprobación en 1-Click",
-          "deseabilidad": 5,
-          "factibilidad": 5,
-          "viabilidad": 4,
-          "impacto": 5,
-          "scoreTotal": 19,
-          "isWinningIdea": true
+          "id": 49,
+          "type": "Muro",
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "clusterCategory": "Riesgo Legal e Indemnizaciones",
+          "findingTitle": "Riesgo Fiscal por Indemnizaciones de Vacaciones No Gozadas",
+          "title": "Riesgo Fiscal por Indemnizaciones de Vacaciones No Gozadas",
+          "evidenceText": "La falta de un control automatizado de vencimiento provoca que decenas de servidores acumulen dos periodos vacacionales sin goce, generando pasivos contingentes y multas potenciales de SUNAFIL.",
+          "text": "La falta de un control automatizado de vencimiento provoca que decenas de servidores acumulen dos periodos vacacionales sin goce, generando pasivos contingentes y multas potenciales de SUNAFIL.",
+          "sourceTool": "Auditoría de Recursos Humanos",
+          "priority": "Alta",
+          "quote": "La entidad ha tenido que pagar más de S/. 280,000 en indemnizaciones por vacaciones truncas o no gozadas que pudieron programarse oportunamente.",
+          "date": "2026-03-15"
         },
         {
-          "ideaId": "IDEA-09-03",
-          "title": "Chatbot en Teams/WhatsApp para consulta de saldos vacacionales",
-          "deseabilidad": 4,
-          "factibilidad": 3,
-          "viabilidad": 4,
-          "impacto": 3,
-          "scoreTotal": 14,
-          "isWinningIdea": false
+          "id": 50,
+          "type": "Muro",
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "clusterCategory": "Ineficiencia Administrativa",
+          "findingTitle": "Lentitud del Trámite Manual de Papeletas Físicas en Provincias",
+          "title": "Lentitud del Trámite Manual de Papeletas Físicas en Provincias",
+          "evidenceText": "Para un trabajador de una Unidad Regional, solicitar 3 días de descanso exige imprimir el formato, recolectar firmas manuales del jefe zonal, escanear y enviar por valija a Lima, tardando hasta 15 días hábiles.",
+          "text": "Para un trabajador de una Unidad Regional, solicitar 3 días de descanso exige imprimir el formato, recolectar firmas manuales del jefe zonal, escanear y enviar por valija a Lima, tardando hasta 15 días hábiles.",
+          "sourceTool": "Mapeo de Flujos de Personal",
+          "priority": "Alta",
+          "quote": "Llega la fecha de las vacaciones y la papeleta sigue esperando firma en Lima. El trabajador tiene que viajar sin saber si tiene permiso formal.",
+          "date": "2026-03-20"
+        },
+        {
+          "id": 51,
+          "type": "Muro",
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "clusterCategory": "Continuidad Operativa",
+          "findingTitle": "Traslape Imprevisto de Descansos en Puestos Críticos de Evaluación",
+          "title": "Traslape Imprevisto de Descansos en Puestos Críticos de Evaluación",
+          "evidenceText": "Al no existir un calendario institucional compartido, dos o tres evaluadores técnicos del mismo cultivo salen de vacaciones en la misma semana, dejando desabastecida la atención de expedientes en épocas de cierre.",
+          "text": "Al no existir un calendario institucional compartido, dos o tres evaluadores técnicos del mismo cultivo salen de vacaciones en la misma semana, dejando desabastecida la atención de expedientes en épocas de cierre.",
+          "sourceTool": "Entrevistas a Jefaturas de Línea",
+          "priority": "Alta",
+          "quote": "Nos quedamos sin ingenieros de riego justo la semana en que debíamos presentar los informes al Comité de Aprobación.",
+          "date": "2026-03-25"
+        },
+        {
+          "id": 52,
+          "type": "Muro",
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "clusterCategory": "Transparencia Laboral",
+          "findingTitle": "Desconocimiento del Saldo Real de Vacaciones por el Servidor",
+          "title": "Desconocimiento del Saldo Real de Vacaciones por el Servidor",
+          "evidenceText": "Los colaboradores no cuentan con un autoservicio web para consultar sus días pendientes y días compensatorios por sobretiempo, generando decenas de llamadas y correos diarios de reclamo a Recursos Humanos.",
+          "text": "Los colaboradores no cuentan con un autoservicio web para consultar sus días pendientes y días compensatorios por sobretiempo, generando decenas de llamadas y correos diarios de reclamo a Recursos Humanos.",
+          "sourceTool": "Encuesta de Clima Laboral",
+          "priority": "Media",
+          "quote": "Uno pide 7 días y le descuentan 10 porque nadie sabe con exactitud cómo se computan los fines de semana en el régimen CAS.",
+          "date": "2026-03-30"
+        },
+        {
+          "id": 53,
+          "type": "Muro",
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "clusterCategory": "Salud Ocupacional y Clima",
+          "findingTitle": "Fatiga Crónica y Burnout en Evaluadores con Comisiones Continuas",
+          "title": "Fatiga Crónica y Burnout en Evaluadores con Comisiones Continuas",
+          "evidenceText": "Los profesionales de campo acumulan hasta 60 días de comisiones consecutivas en zonas de altura o selva sin pausas de descanso programadas, lo que incrementa las licencias médicas y reduce la calidad de la evaluación.",
+          "text": "Los profesionales de campo acumulan hasta 60 días de comisiones consecutivas en zonas de altura o selva sin pausas de descanso programadas, lo que incrementa las licencias médicas y reduce la calidad de la evaluación.",
+          "sourceTool": "Informe de Medicina Ocupacional",
+          "priority": "Media",
+          "quote": "Los evaluadores llegan exhaustos de las provincias y continúan redactando informes sin tomarse los días de descanso compensatorio.",
+          "date": "2026-04-04"
+        },
+        {
+          "id": 54,
+          "type": "Muro",
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "clusterCategory": "Ineficiencia Administrativa",
+          "findingTitle": "Cálculo Manual Propenso a Errores en Planillas de Personal",
+          "title": "Cálculo Manual Propenso a Errores en Planillas de Personal",
+          "evidenceText": "El personal de asistencia digita los días de descanso en planillas Excel separadas de la nómina mensual, generando discrepancias en los pagos de remuneraciones y reclamos en cada cierre de mes.",
+          "text": "El personal de asistencia digita los días de descanso en planillas Excel separadas de la nómina mensual, generando discrepancias en los pagos de remuneraciones y reclamos en cada cierre de mes.",
+          "sourceTool": "Auditoría de Planillas",
+          "priority": "Media",
+          "quote": "Si una papeleta llega tarde a fin de mes, se le descuenta el sueldo al trabajador injustamente y hay que hacer reintegros al mes siguiente.",
+          "date": "2026-04-10"
         }
       ],
-      "winningIdeaSummary": {
-        "title": "VAC-DIGITAL: Plataforma Web PWA de Autoservicio Vacacional con Motor Multirégimen y Notificaciones Instantáneas",
-        "rationale": "Alcanzó el puntaje más alto (19/20). Resuelve integralmente la gestión vacacional con cero uso de papel, validación automatizada por régimen laboral y alta deseabilidad en los servidores civiles."
-      }
-    },
-    "H09_PrototipadoRapido": {
-      "projectCode": "PIIP-2026-IN0009",
-      "prototypeType": "Progressive Web App (PWA) Responsive Local-First",
-      "prototypeName": "VAC-DIGITAL: Portal de Autoservicio del Servidor Civil",
-      "modules": [
+      "H06_DefinicionDesafioHMW": [
         {
-          "name": "Dashboard 'Mis Vacaciones'",
-          "description": "Visualizador de días disponibles, gozados, trunca y programados con desglose por período vacacional y régimen laboral."
+          "id": 49,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "insightId": 49,
+          "targetUser": "los comités de acopio y control de calidad en plantas procesadoras comunales",
+          "actionGoal": "estampar identificadores QR y registrar lotes de producción en un libro contable distribuido",
+          "constraintOrPain": "el tiempo limitado durante la recepción de tolvas y la falta de lectores ópticos industriales",
+          "hmwStatement": "¿Cómo podríamos estampar identificadores QR y registrar lotes de producción en un libro contable distribuido para los comités de acopio y control de calidad en plantas procesadoras comunales a pesar de el tiempo limitado durante la recepción de tolvas y la falta de lectores ópticos industriales?",
+          "question": "¿Cómo podríamos estampar identificadores QR y registrar lotes de producción en un libro contable distribuido para los comités de acopio y control de calidad en plantas procesadoras comunales a pesar de el tiempo limitado durante la recepción de tolvas y la falta de lectores ópticos industriales?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
         },
         {
-          "name": "Solicitud Interactiva con Calendario",
-          "description": "Selector intuitivo de fechas con validación automática de días hábiles/calendario según D.Leg. 1057 / 728 / 276 / 30057."
+          "id": 50,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "insightId": 50,
+          "targetUser": "los compradores internacionales y tostadores de café y cacao de especialidad",
+          "actionGoal": "verificar instantáneamente la geolocalización de la finca, variedades genéticas y huella de carbono",
+          "constraintOrPain": "la proliferación de certificados en papel fácilmente falsificables en el mercado global",
+          "hmwStatement": "¿Cómo podríamos verificar instantáneamente la geolocalización de la finca, variedades genéticas y huella de carbono para los compradores internacionales y tostadores de café y cacao de especialidad a pesar de la proliferación de certificados en papel fácilmente falsificables en el mercado global?",
+          "question": "¿Cómo podríamos verificar instantáneamente la geolocalización de la finca, variedades genéticas y huella de carbono para los compradores internacionales y tostadores de café y cacao de especialidad a pesar de la proliferación de certificados en papel fácilmente falsificables en el mercado global?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
         },
         {
-          "name": "Bandeja de Aprobaciones para Jefaturas",
-          "description": "Panel donde los Jefes de Unidad aceptan o reprograman solicitudes en 1 clic con notificación instantánea al trabajador."
+          "id": 51,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "insightId": 51,
+          "targetUser": "los pequeños productores que aplican prácticas orgánicas y de comercio justo",
+          "actionGoal": "cobrar un diferencial de precio o prima de especialidad directamente por su certificación de origen",
+          "constraintOrPain": "la apropiación del valor agregado por parte de intermediarios que no transfieren las primas al productor",
+          "hmwStatement": "¿Cómo podríamos cobrar un diferencial de precio o prima de especialidad directamente por su certificación de origen para los pequeños productores que aplican prácticas orgánicas y de comercio justo a pesar de la apropiación del valor agregado por parte de intermediarios que no transfieren las primas al productor?",
+          "question": "¿Cómo podríamos cobrar un diferencial de precio o prima de especialidad directamente por su certificación de origen para los pequeños productores que aplican prácticas orgánicas y de comercio justo a pesar de la apropiación del valor agregado por parte de intermediarios que no transfieren las primas al productor?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
         },
         {
-          "name": "Módulo de Administración de RRHH",
-          "description": "Generador automático de papeletas de vacaciones en PDF con firma digital e integración con el legajo personal."
-        }
-      ],
-      "validationSuccessMetrics": "Tiempo de solicitud < 1 minuto; Tiempo de respuesta de jefatura < 24 horas; 100% de eliminación de carpetas físicas impresas."
-    },
-    "H10_PlanAccion": {
-      "projectCode": "PIIP-2026-IN0009",
-      "roadmapSprints": [
-        {
-          "sprintNumber": 1,
-          "duration": "3 semanas",
-          "focus": "Mapeo de reglas de negocio por régimen laboral (CAS, 728, 276, 30057) y diseño UI/UX centrado en el usuario.",
-          "responsibleUnit": "UA-RRHH / UPP-Modernización"
+          "id": 52,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "insightId": 52,
+          "targetUser": "los operadores logísticos y encargados de almacén aduanero",
+          "actionGoal": "garantizar la cadena de custodia inalterable durante el traslado hacia puerto de embarque",
+          "constraintOrPain": "los riesgos de contaminación cruzada o reemplazo fraudulento de sacos durante el transporte",
+          "hmwStatement": "¿Cómo podríamos garantizar la cadena de custodia inalterable durante el traslado hacia puerto de embarque para los operadores logísticos y encargados de almacén aduanero a pesar de los riesgos de contaminación cruzada o reemplazo fraudulento de sacos durante el transporte?",
+          "question": "¿Cómo podríamos garantizar la cadena de custodia inalterable durante el traslado hacia puerto de embarque para los operadores logísticos y encargados de almacén aduanero a pesar de los riesgos de contaminación cruzada o reemplazo fraudulento de sacos durante el transporte?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
         },
         {
-          "sprintNumber": 2,
-          "duration": "3 semanas",
-          "focus": "Desarrollo del Frontend PWA, motor de cálculo de días vacacionales e integración con la base de datos de asistencia.",
-          "responsibleUnit": "UA-TI / UA-RRHH"
+          "id": 53,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "insightId": 53,
+          "targetUser": "los directivos comunales preocupados por los costos de implementación tecnológica",
+          "actionGoal": "adoptar herramientas de trazabilidad basadas en estándares abiertos sin tarifas abusivas de licencia",
+          "constraintOrPain": "la percepción de que la tecnología blockchain es prohibitivamente costosa y compleja",
+          "hmwStatement": "¿Cómo podríamos adoptar herramientas de trazabilidad basadas en estándares abiertos sin tarifas abusivas de licencia para los directivos comunales preocupados por los costos de implementación tecnológica a pesar de la percepción de que la tecnología blockchain es prohibitivamente costosa y compleja?",
+          "question": "¿Cómo podríamos adoptar herramientas de trazabilidad basadas en estándares abiertos sin tarifas abusivas de licencia para los directivos comunales preocupados por los costos de implementación tecnológica a pesar de la percepción de que la tecnología blockchain es prohibitivamente costosa y compleja?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
         },
         {
-          "sprintNumber": 3,
-          "duration": "3 semanas",
-          "focus": "Piloto controlado con 60 servidores de Sede Central y Unidades Regionales de Junín y Arequipa, ajuste fino y despliegue nacional.",
-          "responsibleUnit": "UA-RRHH / UPP / UA-TI"
+          "id": 54,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "insightId": 54,
+          "targetUser": "los inspectores de certificadoras internacionales (USDA Organic, Fairtrade, Rainforest)",
+          "actionGoal": "auditar el registro histórico de aplicaciones y cosecha sin requerir revisión masiva de cuadernos de campo",
+          "constraintOrPain": "los registros manuscritos incompletos o manchados que demoran las auditorías de recertificación",
+          "hmwStatement": "¿Cómo podríamos auditar el registro histórico de aplicaciones y cosecha sin requerir revisión masiva de cuadernos de campo para los inspectores de certificadoras internacionales (USDA Organic, Fairtrade, Rainforest) a pesar de los registros manuscritos incompletos o manchados que demoran las auditorías de recertificación?",
+          "question": "¿Cómo podríamos auditar el registro histórico de aplicaciones y cosecha sin requerir revisión masiva de cuadernos de campo para los inspectores de certificadoras internacionales (USDA Organic, Fairtrade, Rainforest) a pesar de los registros manuscritos incompletos o manchados que demoran las auditorías de recertificación?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
         }
       ]
     },
-    "H11_MatrizRiesgosTesteo": {
-      "projectCode": "PIIP-2026-IN0009",
-      "riskMatrix": [
+    "FASE_3_IDEAR": {
+      "H07_LluviaIdeasCrazy8s": [
         {
-          "riskId": "RIESGO-09-01",
-          "category": "Operativo / Reglas de Negocio",
-          "description": "Inconsistencias en saldos históricos migrados manualmente desde planillas Excel antiguas.",
-          "severity": "MEDIO",
-          "mitigationStrategy": "Fase previa de conciliación de saldo inicial firmado por cada servidor en el primer login al sistema (Verificación de Conformidad)."
+          "id": 49,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "desafioId": 49,
+          "ideaTitle": "Pasaporte Digital de Producto con QR inalterable registrado en blockchain pública",
+          "idea": "Pasaporte Digital de Producto con QR inalterable registrado en blockchain pública",
+          "description": "Etiqueta inteligente que certifica la historia del lote desde la recolección en parcela hasta el tostado o empacado final.",
+          "category": "Tecnológica",
+          "authorRole": "Arquitecto de Blockchain",
+          "votesCount": 13,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "riskId": "RIESGO-09-02",
-          "category": "Tecnológico / Interoperabilidad",
-          "description": "Desconexión con el sistema de marcas de asistencia de personal.",
-          "severity": "BAJO",
-          "mitigationStrategy": "Desarrollo de API REST interna de sincronización diaria entre VAC-DIGITAL y el marcador de asistencia."
+          "id": 50,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "desafioId": 50,
+          "ideaTitle": "Storytelling Interactivo de Finca para el consumidor final con perfil del productor",
+          "idea": "Storytelling Interactivo de Finca para el consumidor final con perfil del productor",
+          "description": "Micrositio web al que accede el comprador escaneando el producto, mostrando fotos de la familia agricultora y altitud de cosecha.",
+          "category": "Tecnológica",
+          "authorRole": "Especialista UX/UI y Contenidos",
+          "votesCount": 10,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 51,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "desafioId": 51,
+          "ideaTitle": "Smart Contract de Distribución Automática de Primas de Calidad hacia el productor",
+          "idea": "Smart Contract de Distribución Automática de Primas de Calidad hacia el productor",
+          "description": "Contrato inteligente que transfiere el sobreprecio pagado por el comprador extranjero directamente a la cuenta del socio calificado.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Desarrollador Web3",
+          "votesCount": 11,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 52,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "desafioId": 52,
+          "ideaTitle": "Sellos Criptográficos de Seguridad y precintos de acopio en tolvas",
+          "idea": "Sellos Criptográficos de Seguridad y precintos de acopio en tolvas",
+          "description": "Protocolo de control físico y digital que garantiza que los lotes de café de especialidad no se mezclen con calidades inferiores.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Supervisor de Planta de Procesamiento",
+          "votesCount": 7,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 53,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "desafioId": 53,
+          "ideaTitle": "Marco de Reconocimiento de Certificados Digitales de Origen ante SENASA y Aduanas",
+          "idea": "Marco de Reconocimiento de Certificados Digitales de Origen ante SENASA y Aduanas",
+          "description": "Convenio interinstitucional que valida la cadena de custodia blockchain como insumo válido para permisos de exportación.",
+          "category": "Normativa",
+          "authorRole": "Asesor de Normativa Sanitaria y Aduanera",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 54,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "desafioId": 54,
+          "ideaTitle": "Cuaderno de Campo Digital Simplificado para auditorías orgánicas sin papeles",
+          "idea": "Cuaderno de Campo Digital Simplificado para auditorías orgánicas sin papeles",
+          "description": "Capacitación práctica para registrar aplicaciones de biol y biofermentos desde una app sencilla que genera reportes automáticos para inspectores.",
+          "category": "Capacitación",
+          "authorRole": "Auditor Interno de Normas Orgánicas",
+          "votesCount": 9,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         }
       ],
-      "learningCard": {
-        "testCode": "TEST-IN0009-01",
-        "hypothesis": "Los servidores y jefaturas completarán el flujo de solicitud y aprobación de vacaciones en menos de 24 horas a través de la PWA.",
-        "sample": "60 servidores civiles de Sede Central, Junín y Arequipa durante 2 semanas de prueba piloto.",
-        "results": "El 96.7% de las solicitudes se procesaron y aprobaron en menos de 3 horas desde el celular o laptop. Se logró 0% de uso de papel.",
-        "status": "VALIDADO - Aprobado para despliegue institucional masivo en el Portafolio PIIP (Anexo 5)."
+      "H08_MatrizPriorizacion": [
+        {
+          "id": 49,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "ideaId": 49,
+          "ideaTitle": "Pasaporte Digital de Producto con QR inalterable registrado en blockchain pública",
+          "title": "Pasaporte Digital de Producto con QR inalterable registrado en blockchain pública",
+          "desirability": 5,
+          "feasibility": 4,
+          "viability": 5,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 19,
+          "isWinningIdea": true,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 50,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "ideaId": 51,
+          "ideaTitle": "Smart Contract de Distribución Automática de Primas de Calidad hacia el productor",
+          "title": "Smart Contract de Distribución Automática de Primas de Calidad hacia el productor",
+          "desirability": 5,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 51,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "ideaId": 50,
+          "ideaTitle": "Storytelling Interactivo de Finca para el consumidor final con perfil del productor",
+          "title": "Storytelling Interactivo de Finca para el consumidor final con perfil del productor",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 16,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 52,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "ideaId": 54,
+          "ideaTitle": "Cuaderno de Campo Digital Simplificado para auditorías orgánicas sin papeles",
+          "title": "Cuaderno de Campo Digital Simplificado para auditorías orgánicas sin papeles",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 15,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 53,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "ideaId": 53,
+          "ideaTitle": "Marco de Reconocimiento de Certificados Digitales de Origen ante SENASA y Aduanas",
+          "title": "Marco de Reconocimiento de Certificados Digitales de Origen ante SENASA y Aduanas",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 14,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 54,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "ideaId": 52,
+          "ideaTitle": "Sellos Criptográficos de Seguridad y precintos de acopio en tolvas",
+          "title": "Sellos Criptográficos de Seguridad y precintos de acopio en tolvas",
+          "desirability": 3,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 13,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        }
+      ],
+      "H09_PrototipadoRapido": {
+        "id": 9,
+        "projectId": 9,
+        "projectCode": "PIIP-2026-IN0009",
+        "prototypeTitle": "Portal de Autoservicio del Servidor Civil (VAC-DIGITAL)",
+        "name": "Portal de Autoservicio del Servidor Civil (VAC-DIGITAL)",
+        "prototypeType": "Digital PWA",
+        "keyFeatures": [
+          "Consulta de saldo vacacional acumulado y trunco en tiempo real",
+          "Flujo de aprobación digital con un solo clic para jefaturas zonales",
+          "Calendario consolidado de programación para evitar desabastecimiento de campo"
+        ],
+        "artifactUrlOrImage": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500",
+        "imageUrl": "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500",
+        "description": "Plataforma web responsive que permite a servidores CAS y 728 tramitar descansos remunerados desde el móvil, con semáforos de cobertura operativa institucional.",
+        "testingGoal": "Tiempo promedio de solicitud y aprobación de vacaciones reducido de 14 días hábiles a menos de 2 horas."
       }
+    },
+    "FASE_4_ENTREGAR": {
+      "H10_PlanAccion": [
+        {
+          "id": 10,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "taskName": "Instalación de sensores agroclimáticos piloto y pruebas de difusión por SMS",
+          "task": "Instalación de sensores agroclimáticos piloto y pruebas de difusión por SMS",
+          "phase": "Piloto Tecnológico",
+          "responsibleUnit": "Unidad Zonal Junín / Innovación",
+          "responsible": "Unidad Zonal Junín / Innovación",
+          "leader": "Ingeniero Agroclimático",
+          "startDate": "2026-07-01",
+          "endDate": "2026-08-30",
+          "deadline": "2026-08-30",
+          "deliverable": "Red piloto de 5 estaciones operativas con emisión de 1,200 alertas preventivas",
+          "status": "Pendiente"
+        }
+      ],
+      "H11_MatrizRiesgosTesteo": [
+        {
+          "id": 11,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "riskDescription": "Deterioro o vandalismo de sensores climáticos instalados en campos comunales desatendidos.",
+          "description": "Deterioro o vandalismo de sensores climáticos instalados en campos comunales desatendidos.",
+          "riskType": "Operativo",
+          "probability": "Baja",
+          "impact": "Medio",
+          "level": "Bajo",
+          "mitigationStrategy": "Actas de custodia comunal y convenios con presidentes de rondas campesinas y cooperativas aliadas.",
+          "mitigation": "Actas de custodia comunal y convenios con presidentes de rondas campesinas y cooperativas aliadas.",
+          "testResult": "Las 5 estaciones piloto se mantuvieron 100% íntegras tras 90 días con vigilancia comunal activa."
+        }
+      ]
     }
   }
 }

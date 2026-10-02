@@ -55,12 +55,20 @@ function initDatabase() {
     if (!db._schemaVersion || db._schemaVersion < SCHEMA_VERSION) {
         console.log(`[PIIP DB] Migrando base de datos de v${db._schemaVersion || 0} a v${SCHEMA_VERSION}...`);
         
-        // 1. Asegurar los 13 proyectos oficiales sin borrar proyectos agregados por el usuario
+        // 1. Asegurar los 13 proyectos oficiales y sincronizar metadatos oficiales actualizados
         if (!db.projects) db.projects = [];
         initialState.projects.forEach(seedProj => {
-            const exists = db.projects.some(p => p.code === seedProj.code || p.id === seedProj.id);
-            if (!exists) {
-                db.projects.push(seedProj);
+            const idx = db.projects.findIndex(p => p.code === seedProj.code || p.id === seedProj.id);
+            if (idx === -1) {
+                db.projects.push({ ...seedProj });
+            } else {
+                db.projects[idx] = { 
+                    ...db.projects[idx], 
+                    title: seedProj.title, 
+                    responsible: seedProj.responsible, 
+                    contact: seedProj.contact,
+                    code: seedProj.code
+                };
             }
         });
 
@@ -284,6 +292,16 @@ function initDatabase() {
         if (!Array.isArray(db.prototypes) || db.prototypes.length === 0) {
             db.prototypes = JSON.parse(JSON.stringify(initialState.prototypes || []));
         } else {
+            if (initialState.prototypes) {
+                initialState.prototypes.forEach(seedProto => {
+                    const existingIdx = db.prototypes.findIndex(p => (seedProto.id && p.id === seedProto.id) || (p.projectCode && p.projectCode === seedProto.projectCode));
+                    if (existingIdx === -1) {
+                        db.prototypes.push({ ...seedProto });
+                    } else {
+                        db.prototypes[existingIdx] = { ...seedProto, ...db.prototypes[existingIdx] };
+                    }
+                });
+            }
             db.prototypes.forEach(p => {
                 if (!p.projectCode && p.projectId) {
                     const proj = db.projects.find(pr => pr.id === p.projectId);

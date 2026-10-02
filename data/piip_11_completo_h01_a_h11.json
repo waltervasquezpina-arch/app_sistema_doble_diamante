@@ -1,249 +1,777 @@
 {
   "$schema": "./schemas/far-piip-v3.json",
-  "NavegacionYTrazabilidad": {
-    "IniciativaCodigoActiva": "PIIP-2026-IN0011",
-    "UbicacionActual": {
-      "TipoVista": "HERRAMIENTA_METODOLOGICA",
-      "FaseNumero": 4,
-      "FaseNombre": "Fase 4: Entregar",
-      "HerramientaNumero": 11,
-      "HerramientaCodigo": "H11",
-      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
-      "VistaCodigo": "V11.1",
-      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje",
-      "VistaUrl": "fase4/11-matriz-riesgos.html"
+  "IniciativaIdentificacion": {
+    "id": 11,
+    "IniciativaCodigo": "PIIP-2026-IN0011",
+    "IniciativaNombre": "Automatización del Proceso de Rendición de Cuentas de Organizaciones Agrarias",
+    "UnidadOrganicaResponsable": "Unidad de Reconversión e Intervenciones Especiales (URIE)",
+    "LiderProyecto": "Sergio Antonio Haro Muñoz - URIE",
+    "FechaRegistro": "2026-04-01",
+    "EstadoFases": {
+      "descubrir": "active",
+      "definir": "pending",
+      "idear": "pending",
+      "entregar": "pending"
     },
-    "PosicionEnFlujo": {
-      "PasoActual": 11,
-      "TotalPasosFlujo": 11,
-      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
-      "PasoAnterior": {
-        "HerramientaCodigo": "H10",
-        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
-        "VistaUrl": "fase4/10-plan-accion.html"
-      },
-      "PasoSiguiente": null
-    },
-    "ControlIteracionYTrazabilidad": {
-      "VersionIteracion": 1,
-      "PermiteIteracionAnterior": true,
-      "FechaUltimaActualizacion": "2026-09-27T11:58:00Z",
-      "UsuarioActualRol": "Facilitador Ágil"
-    }
+    "PorcentajeAvanceGlobal": 50.0
   },
-  "PortafolioPIIP_Coleccion": [
-    {
-      "id": 11,
-      "code": "PIIP-2026-IN0011",
-      "title": "Automatización del Proceso de Rendición de Cuentas de Organizaciones Agrarias",
-      "responsible": "Unidad de Reconversión e Intervenciones Especiales (URIE)",
-      "contact": "Sergio Antonio Haro Muñoz - URIE",
-      "date": "2026-09-25",
-      "status": "Fase 4: Entregar (Completado)",
-      "herramientasRegistradasContador": 11,
-      "porcentajeAvanceGlobal": 100.0,
-      "phases": {
-        "descubrir": "completed",
-        "definir": "completed",
-        "idear": "completed",
-        "entregar": "completed"
-      }
-    }
-  ],
-  "HerramientasMetodologicas_Coleccion": {
-    "H01_ObservacionAEIOU": [
-      {
-        "id": "aeiou-011-1",
-        "projectCode": "PIIP-2026-IN0011",
-        "dimension": "Actividades",
-        "observation": "Las Organizaciones Agrarias (OA) presentan carpetas físicas con cientos de comprobantes de pago impresos (facturas, boletas, recibos por honorarios) para justificar los desembolsos de los incentivos.",
-        "timestamp": "2026-09-25T09:00:00Z"
-      },
-      {
-        "id": "aeiou-011-2",
-        "projectCode": "PIIP-2026-IN0011",
-        "dimension": "Interacciones",
-        "observation": "Los evaluadores contables de URIE realizan el cotejo manual comprobante por comprobante contra la SUNAT, sufriendo rechazos continuos por inconsistencias en RUC, fechas o montos no autorizados en el Plan de Negocio.",
-        "timestamp": "2026-09-25T11:30:00Z"
-      }
-    ],
-    "H02_MapaEmpatia": {
-      "projectCode": "PIIP-2026-IN0011",
-      "userProfile": "Sergio Antonio Haro Muñoz (Especialista en Rendición de Cuentas - URIE)",
-      "says": "Las organizaciones agrarias pierden semanas viajando a la sede regional para entregar carpetas contables que luego son observadas por errores formales en facturas.",
-      "does": "Revisa manualmente cada comprobante de pago físico, verifica el estado en la SUNAT e ingresa los datos uno a uno en hojas Excel.",
-      "thinks": "Debería existir un sistema digital que valide automáticamente las facturas electrónicas con la SUNAT y verifique la partida presupuestal aprobada.",
-      "feels": "Frustrado por la sobrecarga de trabajo operativo contable y la demora en los cierres de rendición de cuentas.",
-      "pains": "Elevada tasa de observaciones contables, riesgo de comprobantes duplicados o clonados, y mora en el cierre financiero de proyectos.",
-      "gains": "Validación contable en tiempo real, transparencia total, rendición de cuentas en 48 horas y liquidación financiera oportuna."
-    },
-    "H03_EncuestasCampo": {
-      "projectCode": "PIIP-2026-IN0011",
-      "sampleSize": 48,
-      "targetAudience": "Contadores y Tesoreros de Organizaciones Agrarias y Evaluadores de URIE",
-      "keyResults": [
+  "RegistrosHerramientasMetodologicas": {
+    "FASE_1_DESCUBRIR": {
+      "H01_ObservacionAEIOU": [
         {
-          "question": "¿Cuánto tiempo toma armar y revisar un expediente de rendición de cuentas en físico?",
-          "result": "Entre 30 y 60 días calendario por cada hito de desembolso (87.5%)."
+          "id": 61,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "activity": "Recepción de tres archivadores de palanca repletos de comprobantes de pago físicos, facturas térmicas desgastadas y boletas de venta.",
+          "environment": "Oficina de la Unidad de Negocios en sede central Lima; pilas de archivadores sobre las mesas y olor a papel guardado.",
+          "interaction": "El liquidador contable desengrapa recibos de peajes y boletas de ferretería arrugadas para pegarlas en hojas bond y numerarlas.",
+          "object": "Archivadores de palanca de 8 cm, cinta adhesiva transparente, barra de goma para pegar recibos, hojas bond A4 recicladas.",
+          "objects": "Archivadores de palanca de 8 cm, cinta adhesiva transparente, barra de goma para pegar recibos, hojas bond A4 recicladas.",
+          "user": "Especialista Liquidador Financiero UN y tesorero de la cooperativa agraria de cacao.",
+          "users": "Especialista Liquidador Financiero UN y tesorero de la cooperativa agraria de cacao.",
+          "observer": "Especialista de Liquidación de Planes de Negocio - UN",
+          "observationDate": "2026-04-03",
+          "date": "2026-04-03",
+          "timestamp": "2026-04-03T10:00:00.000Z"
         },
         {
-          "question": "¿Cuáles son las principales causas de observación en la rendición de cuentas?",
-          "result": "Errores de digitación en RUC/monto (64.6%), comprobantes emitidos fuera de fecha del hito (58.3%), y rubros no contemplados en el plan (41.7%)."
+          "id": 62,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "activity": "Verificación manual de cada factura contra los estados de cuenta bancarios para validar bancarización de transacciones superiores a S/. 2,000.",
+          "environment": "Área contable de la Unidad de Negocios; dos monitores con hojas de cálculo y decenas de vouchers bancarios descoloridos.",
+          "interaction": "Contador revisa línea por línea del extracto bancario con resaltador fluorescente comparando el número de cheque o transferencia interbancaria.",
+          "object": "Extractos bancarios en papel continuo, resaltadores fluorescentes amarillos y verdes, calculadora de cinta de papel.",
+          "objects": "Extractos bancarios en papel continuo, resaltadores fluorescentes amarillos y verdes, calculadora de cinta de papel.",
+          "user": "Auditor Contable UN y asistente administrativo de la cooperativa.",
+          "users": "Auditor Contable UN y asistente administrativo de la cooperativa.",
+          "observer": "Analista Contable de Rendición - UN",
+          "observationDate": "2026-04-24",
+          "date": "2026-04-24",
+          "timestamp": "2026-04-24T14:30:00.000Z"
         },
         {
-          "question": "¿Estaría dispuesto a subir las facturas electrónicas (XML/PDF) mediante un portal web de rendición automática?",
-          "result": "El 95.8% está totalmente a favor."
+          "id": 63,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "activity": "Detección de facturas anuladas o emitidas por proveedores con condición de 'No Habido' en el padrón tributario de SUNAT.",
+          "environment": "Sede zonal de AGROIDEAS en Trujillo, La Libertad; reunión de trabajo con el contador externo de la asociación de espárragos.",
+          "interaction": "El liquidador le comunica al directivo que S/. 45,000 de gastos presentados no son deducibles y deben ser restituidos de inmediato.",
+          "object": "Reporte de observaciones contables, consulta RUC en monitor, contrato de cofinanciamiento con cláusula de penalidades.",
+          "objects": "Reporte de observaciones contables, consulta RUC en monitor, contrato de cofinanciamiento con cláusula de penalidades.",
+          "user": "Liquidador Zonal UN, presidente de la asociación agraria y contador externo.",
+          "users": "Liquidador Zonal UN, presidente de la asociación agraria y contador externo.",
+          "observer": "Supervisor de Rendición de Fondos - UR La Libertad",
+          "observationDate": "2026-05-15",
+          "date": "2026-05-15",
+          "timestamp": "2026-05-15T11:15:00.000Z"
+        },
+        {
+          "id": 64,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "activity": "Devolución física por encomienda postal de un expediente de rendición de cuentas con 14 observaciones de forma para su subsanación en provincia.",
+          "environment": "Oficina de despacho logístico en Lima; embalaje de pesada caja de cartón que tardará 8 días en llegar a Chanchamayo.",
+          "interaction": "El directivo en provincia se frustra porque la subsanación es de firmas en 2 recibos menores pero debe esperar toda la caja devuelta.",
+          "object": "Caja de cartón sellada con cinta adhesiva de seguridad, pliego de observaciones impreso de 18 páginas, guía de remisión.",
+          "objects": "Caja de cartón sellada con cinta adhesiva de seguridad, pliego de observaciones impreso de 18 páginas, guía de remisión.",
+          "user": "Especialista de Trámite Documentario y tesorero de la cooperativa en la selva central.",
+          "users": "Especialista de Trámite Documentario y tesorero de la cooperativa en la selva central.",
+          "observer": "Monitor de Eficiencia Administrativa - UPP",
+          "observationDate": "2026-06-05",
+          "date": "2026-06-05",
+          "timestamp": "2026-06-05T16:00:00.000Z"
+        },
+        {
+          "id": 65,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "activity": "Prueba de escaneo inteligente de facturas y boletas con tecnología OCR móvil y validación en tiempo real contra los servicios web de SUNAT.",
+          "environment": "Centro de acopio de la cooperativa en Satipo; prueba de campo con el tesorero usando un teléfono celular inteligente.",
+          "interaction": "El tesorero apunta con la cámara al código QR de la factura electrónica; la app lee el RUC, monto, IGV y verifica validez en 3 segundos.",
+          "object": "Smartphone con cámara de 48 MP, app móvil de rendición digital, factura electrónica impresa con código QR.",
+          "objects": "Smartphone con cámara de 48 MP, app móvil de rendición digital, factura electrónica impresa con código QR.",
+          "user": "Tesorero comunal (54 años), hija de apoyo técnico y consultor de automatización de procesos.",
+          "users": "Tesorero comunal (54 años), hija de apoyo técnico y consultor de automatización de procesos.",
+          "observer": "Líder de Automatización de Rendiciones - UN/OTI",
+          "observationDate": "2026-06-29",
+          "date": "2026-06-29",
+          "timestamp": "2026-06-29T12:30:00.000Z"
+        },
+        {
+          "id": 66,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "activity": "Generación automatizada con un solo clic del informe de liquidación financiera y acta de cierre del plan de negocios con firma digital.",
+          "environment": "Sede central de la Unidad de Negocios en Lima; liquidación completa aprobada en 15 minutos en lugar de los 4 meses tradicionales.",
+          "interaction": "El liquidador revisa el balance conciliado automáticamente, pulsa 'Emitir Conformidad' y el sistema notifica el cierre a la cooperativa.",
+          "object": "Módulo web de liquidación contable automatizada, token criptográfico para firma digital de la resolución de cierre.",
+          "objects": "Módulo web de liquidación contable automatizada, token criptográfico para firma digital de la resolución de cierre.",
+          "user": "Director de la Unidad de Negocios, Liquidador Contable Jefe y Presidente de la Cooperativa Agraria.",
+          "users": "Director de la Unidad de Negocios, Liquidador Contable Jefe y Presidente de la Cooperativa Agraria.",
+          "observer": "Auditor Financiero Jefe - UN",
+          "observationDate": "2026-07-28",
+          "date": "2026-07-28",
+          "timestamp": "2026-07-28T14:45:00.000Z"
+        }
+      ],
+      "H02_MapaEmpatia": [
+        {
+          "id": 63,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "userProfile": "Contador General de Cooperativa Agraria Beneficiaria (Pichanaki, Junín)",
+          "says": "\"Cada mes tengo que armar legajos de 200 facturas pegadas en hojas bond, sellar cada comprobante y viajar a Lima a presentarlos en persona.\"",
+          "does": "Concilia libros contables, descarga comprobantes electrónicos XML de SUNAT, llena las matrices de rendición en Excel y viaja a la sede central.",
+          "thinks": "Cree que si el sistema de AGROIDEAS se conectara directamente a la base de comprobantes de pago de SUNAT, la rendición sería automática.",
+          "feels": "Estrés a fin de mes por cuadrar centavos en las liquidaciones y frustración cuando le rechazan una rendición por un error tipográfico en una boleta.",
+          "hears": "Los directivos de la cooperativa quejándose de que no hay liquidez para la siguiente compra de fertilizantes porque la rendición anterior sigue observada.",
+          "sees": "Archivadores llenos de fotocopias de comprobantes de pago, extractos bancarios y cheques que acumulan polvo en la oficina comunal.",
+          "pains": "Rechazo de facturas por errores en el RUC o giro comercial no autorizado, demoras de hasta 45 días en la aprobación de rendiciones y multas fiscales.",
+          "gains": "Módulo de rendición web con validación instantánea de XML ante SUNAT, cruce automático con partidas del plan y aprobación en línea."
+        },
+        {
+          "id": 64,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "userProfile": "Especialista de Liquidación Financiera y Rendiciones (URIE - Lima)",
+          "says": "\"Paso 8 horas al día digitando números de factura en un Excel para verificar si los montos coinciden con las cuentas bancarias. Es trabajo de robot.\"",
+          "does": "Revisa rendiciones de cuentas físicas de las 13 iniciativas y cientos de planes de negocio, verifica comprobantes en la web de SUNAT y redacta pliegos de reparos.",
+          "thinks": "Sabe que la verificación manual de comprobantes es obsoleta y que la automatización permitiría enfocarse en verificar si el dinero generó valor real en campo.",
+          "feels": "Cansancio visual extremo y dolor de cabeza tras revisar miles de números diminutos en facturas y boletas escaneadas de baja calidad.",
+          "hears": "Los coordinadores regionales llamando todos los días para preguntar si ya salió el informe de visto bueno de la rendición del mes.",
+          "sees": "Pilas de archivadores sobre su escritorio que tapan la pantalla de su monitor y carpetas de rendiciones con comprobantes duplicados.",
+          "pains": "Riesgo de pasar por alto facturas clonadas o empresas fantasma debido al volumen inmanejable de documentos físicos.",
+          "gains": "Bot de conciliación automática que verifique en tiempo real la validez del comprobante en SUNAT, la condición de habido y la no duplicidad de factura."
+        },
+        {
+          "id": 65,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "userProfile": "Tesorero Comunal no Bancarizado de Asociación Agraria (Abancay, Apurímac)",
+          "says": "\"En nuestro pueblo pagamos los jornales de cosecha en efectivo con recibos manuales. AGROIDEAS nos exige boletas electrónicas que nadie emite en la chacra.\"",
+          "does": "Lleva la caja chica comunal en una libreta de notas, paga a los peones en mano propia y recolecta firmas en cuadernos de asistencia.",
+          "thinks": "Considera que las normas contables del Estado están hechas para empresas comerciales de la capital y no reconocen el trabajo comunal rural (minka y ayni).",
+          "feels": "Inseguridad al manejar dinero en efectivo por caminos rurales y temor a ser acusado de malversación por los socios si la rendición es rechazada.",
+          "hears": "Los comuneros que se niegan a firmar recibos con huella dactilar porque desconfían de que el Estado use sus huellas para otros fines.",
+          "sees": "Especialistas de la ciudad rechazando recibos simples de jornales porque no tienen firma de un contador colegiado con sello oficial.",
+          "pains": "Rechazo de gastos legítimos de mano de obra local por falta de comprobantes electrónicos en zonas rurales sin comercio formal.",
+          "gains": "Mecanismo simplificado de rendición de jornales rurales mediante declaración jurada colectiva digital con registro fotográfico y geolocalización."
+        },
+        {
+          "id": 66,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "userProfile": "Funcionario de la Unidad de Negocios - Validador de Desembolsos (Sede Central)",
+          "says": "\"No podemos autorizar el siguiente desembolso de 300,000 soles hasta que la cooperativa rinda cuentas al 100% del desembolso anterior.\"",
+          "does": "Cruza informes de avance técnico con liquidaciones financieras de URIE y emite las autorizaciones de giro bancario a las cuentas mancomunadas.",
+          "thinks": "Sabe que el 'efecto embudo' en las rendiciones de cuentas es la principal causa de subejecución presupuestal en todos los programas agrarios.",
+          "feels": "Presión entre la urgencia de acelerar la ejecución del presupuesto institucional y el deber de cautelar los recursos públicos.",
+          "hears": "Congresistas y gremios criticando la lentitud del programa para ejecutar los presupuestos asignados por el Ministerio de Economía.",
+          "sees": "Convenios con ejecución financiera paralizada durante 6 meses esperando la subsanación de una factura de 150 soles.",
+          "pains": "Rigidez de los esquemas de desembolso tipo 'todo o nada' que castigan la ejecución de obras grandes por observaciones contables menores.",
+          "gains": "Esquema de rendición modular continua con autorizaciones parciales de desembolso proporcionales al avance validado sin paralizar las compras."
+        },
+        {
+          "id": 67,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "userProfile": "Auditor Financiero Externo de Planes de Reconversión y Adopción (Sociedad de Auditoría)",
+          "says": "\"Las muestras de auditoría revelan inconsistencias recurrentes entre la fecha del comprobante de pago y la fecha de salida del inventario de almacén.\"",
+          "does": "Audita estados financieros de los convenios de cofinanciamiento, contrasta kardex de almacén físico contra rendiciones y emite dictámenes de auditoría.",
+          "thinks": "Opina que sin trazabilidad digital entre el pago bancario, la factura electrónica y el ingreso real al almacén, el riesgo de fraude es latente.",
+          "feels": "Exigencia técnica en el cumplimiento de Normas Internacionales de Auditoría (NIA) aplicadas al sector público agrario.",
+          "hears": "Funcionarios justificando desórdenes contables en la 'falta de cultura tributaria de las comunidades campesinas'.",
+          "sees": "Facturas con descripciones genéricas como 'Materiales agrícolas varios' sin detalle de marcas, modelos o números de lote de los fertilizantes.",
+          "pains": "Falta de pistas de auditoría digital que vinculen el comprobante de SUNAT con la foto de entrega del bien en la parcela del beneficiario.",
+          "gains": "Trazabilidad digital integral de 3 vías: comprobante XML validado + extracto bancario en línea + acta de recepción de almacén georreferenciada."
+        },
+        {
+          "id": 68,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "userProfile": "Especialista en Integración con Servicios Web SUNAT (OTI)",
+          "says": "\"La API de SUNAT para comprobantes de pago nos permite validar en microsegundos si una factura está activa, cancelada o pertenece a una empresa no habida.\"",
+          "does": "Desarrolla los conectores API REST con los servicios web de SUNAT y Banco de la Nación, implementa colas de procesamiento y monitorea tiempos de respuesta.",
+          "thinks": "Sabe que conectar los sistemas del Estado entre sí ahorra millones de horas hombre de digitación inútil y erradica el fraude documental.",
+          "feels": "Entusiasmo al ver cómo la tecnología resuelve problemas burocráticos históricos del aparato estatal.",
+          "hears": "Los contadores de las unidades operativas pidiendo que el sistema lea directamente el código QR de las facturas con la cámara del celular.",
+          "sees": "Los tiempos de respuesta de la API de SUNAT bajando a menos de 200 milisegundos por consulta en pruebas de laboratorio.",
+          "pains": "Intermitencias en los servidores públicos externos en días de vencimiento tributario y cambios de esquema XML sin previo aviso.",
+          "gains": "Lector QR en app móvil que capture el comprobante, consulte a SUNAT al instante y auto-complete todos los campos de la rendición sin teclear."
+        }
+      ],
+      "H03_EncuestasCampo": [
+        {
+          "id": 21,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "respondent": "Sergio Haro Muñoz (Responsable URIE)",
+          "cooperative": "Unidad de Reconversión e Intervenciones Especiales",
+          "satisfaction": 2,
+          "comments": "La liquidación financiera manual de cientos de boletas y facturas demora meses. Validar con SUNAT vía API es indispensable.",
+          "sentiment": "Negativo",
+          "date": "2026-04-05"
+        },
+        {
+          "id": 22,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "respondent": "Clara Vilca (Tesorera)",
+          "cooperative": "Cooperativa Agraria de Frutas Tropicales - Satipo",
+          "satisfaction": 3,
+          "comments": "Pegar recibos en hojas y viajar a Lima para subsanar firmas nos cuesta dinero y tiempo. Queremos rendir por celular con fotos.",
+          "sentiment": "Neutro",
+          "date": "2026-04-10"
+        }
+      ],
+      "H04_FichaPersona": [
+        {
+          "id": 61,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "archetypeName": "C.P.C. Manuel Odría Benavides",
+          "name": "C.P.C. Manuel Odría Benavides",
+          "role": "Contador General de Cooperativa Agraria Beneficiaria (Pichanaki, Junín)",
+          "demographics": "46 años, Pichanaki; Contador Público Colegiado, especialista en tributación agraria",
+          "age": 46,
+          "techTechSavviness": "Intermedio (Sistemas contables Concar, portal SUNAT Clave SOL, Excel avanzado)",
+          "quote": "Cada fin de mes armo archivadores con 300 facturas pegadas en papel, sello cada comprobante y viajo a Lima a entregarlos en ventanilla.",
+          "bio": "Lleva la contabilidad de dos cooperativas cafetaleras beneficiarias de planes de adopción de tecnología. Es responsable de elaborar las rendiciones mensuales.",
+          "goals": [
+            "Cargar las facturas electrónicas directamente en formato XML/PDF al portal de AGROIDEAS",
+            "Obtener validación automática instantánea de comprobantes de pago ante SUNAT",
+            "Acelerar la aprobación de rendiciones para que la cooperativa no sufra corte de liquidez"
+          ],
+          "frustrations": [
+            "Rechazo de rendiciones enteras por un error mecanográfico en el RUC de un comprobante menor",
+            "Tener que viajar 10 horas en bus a Lima solo para sustentar una carpeta de comprobantes físicos",
+            "Demoras de hasta 60 días para que la Unidad de Reconversión emita el informe de visto bueno contable"
+          ]
+        },
+        {
+          "id": 62,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "archetypeName": "Lic. Evelyn Cornejo Farfán",
+          "name": "Lic. Evelyn Cornejo Farfán",
+          "role": "Especialista de Liquidación Financiera y Rendiciones (URIE Sede Central)",
+          "demographics": "35 años, Lima; Licenciada en Contabilidad y Auditoría Gubernamental",
+          "age": 35,
+          "techTechSavviness": "Avanzado (Cruces masivos de facturación electrónica, macros Excel, conciliaciones)",
+          "quote": "Paso 8 horas al día digitando números de factura en una hoja de cálculo para verificar si coinciden con los cheques. Es trabajo de robot.",
+          "bio": "Revisa y liquida las rendiciones de cuentas de cientos de planes de negocio a nivel nacional. Emite los pliegos de observaciones financieras.",
+          "goals": [
+            "Implementar un bot de conciliación que cruce el extracto bancario con las facturas XML en segundos",
+            "Verificar automáticamente la condición de 'habido' y RUC activo del proveedor en SUNAT",
+            "Dedicar su tiempo profesional al análisis de valor del gasto en vez de la digitación manual de comprobantes"
+          ],
+          "frustrations": [
+            "Rimeros de archivadores sobre su escritorio con miles de comprobantes impresos de baja calidad",
+            "Riesgo de que se filtren facturas clonadas o emitidas por empresas de fachada por falta de cruce automático",
+            "Presión constante de las unidades de línea para aprobar desembolsos sin haber revisado los sustentos"
+          ]
+        },
+        {
+          "id": 63,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "archetypeName": "Don Crisóstomo Huaccachi",
+          "name": "Don Crisóstomo Huaccachi",
+          "role": "Tesorero Comunal no Bancarizado de Asociación Agraria (Andahuaylas)",
+          "demographics": "58 años, Apurímac; Primaria completa, Productor de maíz y tubérculos andinos",
+          "age": 58,
+          "techTechSavviness": "Básico (Lleva las cuentas comunales en un cuaderno rayado y usa dinero en efectivo)",
+          "quote": "En el campo pagamos los jornales de cosecha en mano propia con recibo manual. El programa nos exige boleta electrónica que nadie emite en la chacra.",
+          "bio": "Custodia la caja chica comunal y administra los pagos a los peones en las faenas agrícolas comunitarias (ayni). Es reconocido por su honradez comunitaria.",
+          "goals": [
+            "Que AGROIDEAS admita declaraciones juradas colectivas con firma y huella para pago de jornales rurales",
+            "Aprender a utilizar la billetera digital comunal o cuenta básica del Banco de la Nación sin intermediarios",
+            "Pagar oportunamente a los peones sin temor a que el gasto sea desconocido por el auditor del Estado"
+          ],
+          "frustrations": [
+            "Tener que viajar 3 horas a la ciudad para pagar comisiones bancarias por transferencias mínimas",
+            "Que le observen recibos de mano de obra local porque el trabajador rural no tiene RUC ni boleta",
+            "Miedo a ser acusado de malversación de fondos por sus propios vecinos si la rendición es rechazada"
+          ]
+        },
+        {
+          "id": 64,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "archetypeName": "Econ. Andrés Vilca Paredes",
+          "name": "Econ. Andrés Vilca Paredes",
+          "role": "Funcionario de la Unidad de Negocios y Validador de Desembolsos (Sede Central)",
+          "demographics": "44 años, Lima; Economista con Maestría en Gestión de Proyectos de Inversión",
+          "age": 44,
+          "techTechSavviness": "Avanzado (Flujos financieros de proyectos, SIAF-SP, tableros de liquidez)",
+          "quote": "El esquema de desembolsos tipo 'todo o nada' castiga a las organizaciones; debemos permitir liquidaciones modulares continuas.",
+          "bio": "Autoriza las transferencias bancarias a las cuentas mancomunadas de los convenios de cofinanciamiento tras verificar los informes técnicos y contables.",
+          "goals": [
+            "Implementar un esquema de rendición modular continua con liberaciones proporcionales de fondos",
+            "Evitar la paralización de obras agrícolas por observaciones contables subsanables",
+            "Optimizar la curva de ejecución presupuestal institucional a lo largo de todo el año fiscal"
+          ],
+          "frustrations": [
+            "Convenios con ejecución física al 100% que no pueden cerrar liquidación por demoras en rendiciones",
+            "El 'efecto embudo' en los meses de noviembre y diciembre cuando se acumulan miles de liquidaciones",
+            "Quejas de los productores y proveedores por la retención prolongada de pagos justificados"
+          ]
+        },
+        {
+          "id": 65,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "archetypeName": "Mag. Emilio Carpio Zevallos",
+          "name": "Mag. Emilio Carpio Zevallos",
+          "role": "Auditor Financiero Externo de Convenios de Adopción (Sociedad de Auditoría)",
+          "demographics": "52 años, Arequipa; Contador Público y Auditor Financiero Internacional",
+          "age": 52,
+          "techTechSavviness": "Avanzado (Normas NIA, software de muestreo estadístico ACL/IDEA, auditoría forense)",
+          "quote": "La rendición digital de cuentas debe vincular de forma inalterable tres elementos: la factura electrónica SUNAT, el débito bancario y el acta de almacén.",
+          "bio": "Audita los estados financieros y las rendiciones de cuentas de los convenios suscritos por AGROIDEAS con fondos del tesoro público y cooperación técnica.",
+          "goals": [
+            "Verificar la trazabilidad integral de 3 vías en cada gasto ejecutado con fondos públicos",
+            "Emitir dictámenes de auditoría financiera limpios sin salvedades por falta de sustento documental",
+            "Promover la bancarización y la formalización contable en las organizaciones agrarias del país"
+          ],
+          "frustrations": [
+            "Inconsistencias entre las fechas de emisión de comprobantes y la salida de bienes del inventario",
+            "Facturas con conceptos genéricos que impiden comprobar si el insumo correspondió a la partida autorizada",
+            "Falta de pistas de auditoría digital inmutables que certifiquen quién aprobó cada desembolso"
+          ]
+        },
+        {
+          "id": 66,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "archetypeName": "Ing. Pedro Pablo Arana",
+          "name": "Ing. Pedro Pablo Arana",
+          "role": "Especialista en Integración con Servicios Web SUNAT (Oficina de TI)",
+          "demographics": "34 años, Lima; Ingeniero de Sistemas especialista en APIs REST y Arquitectura de Integración",
+          "age": 34,
+          "techTechSavviness": "Avanzado (Desarrollo de servicios web, integración con SUNAT/RENIEC/Banco de la Nación)",
+          "quote": "Con la API de SUNAT podemos validar en microsegundos si una factura está activa, si el proveedor es habido y si el RUC coincide con la cotización.",
+          "bio": "Desarrolla los conectores entre el módulo de rendición de cuentas del SEL y las plataformas de interoperabilidad del Estado peruano.",
+          "goals": [
+            "Incorporar un lector de código QR en la app móvil que capture y autollene la rendición en segundos",
+            "Automatizar el rechazo inmediato de comprobantes cancelados o pertenecientes a proveedores no habidos",
+            "Asegurar una alta disponibilidad de los servicios de consulta aun en días de alta congestión tributaria"
+          ],
+          "frustrations": [
+            "Caídas temporales de los servicios web externos de SUNAT durante los cierres mensuales de impuestos",
+            "Cambios en los esquemas XML de comprobantes electrónicos implementados sin suficiente anticipación",
+            "Falta de recursos de hardware para procesar millones de consultas en lotes durante los picos de rendición"
+          ]
         }
       ]
     },
-    "H04_FichaPersona": {
-      "projectCode": "PIIP-2026-IN0011",
-      "archetypeCode": "PERS-IN0011-01",
-      "name": "Sergio Antonio Haro Muñoz",
-      "role": "Especialista en Gestión y Rendición de Cuentas - URIE",
-      "age": 39,
-      "digitalLiteracy": "Avanzado (Dominio de sistemas contables, Excel financiero y plataformas administrativas)",
-      "primaryGoal": "Automatizar la validación de comprobantes de pago de las organizaciones agrarias con la SUNAT y garantizar la correcta ejecución del presupuesto asignado."
-    },
-    "H05_MuroHallazgos": [
-      {
-        "id": "hallazgo-011-1",
-        "projectCode": "PIIP-2026-IN0011",
-        "clusterId": "CLUST-01",
-        "clusterName": "Validación Contable Manual y Lenta",
-        "insight": "El 70% de las observaciones en rendiciones se deben a errores formales en las facturas que un servicio de validación automática SUNAT (API) resolvería de forma instantánea.",
-        "priority": "ALTA"
-      },
-      {
-        "id": "hallazgo-011-2",
-        "projectCode": "PIIP-2026-IN0011",
-        "clusterId": "CLUST-02",
-        "clusterName": "Conciliación Presupuestal Automatizada",
-        "insight": "Vincular cada comprobante de pago al rubro específico del Plan de Negocio previene sobregiros presupuestales y desvíos de fondos antes del envío del expediente.",
-        "priority": "ALTA"
-      }
-    ],
-    "H06_DefinicionDesafioHMW": {
-      "projectCode": "PIIP-2026-IN0011",
-      "hmwCode": "HMW-IN0011",
-      "action": "implementar un Módulo Web de Rendición de Cuentas Automatizada (RENDICION-DIGITAL) con validación XML/SUNAT e imputación presupuestal en tiempo real",
-      "targetUser": "los tesoreros de las Organizaciones Agrarias y los especialistas contables de URIE",
-      "benefit": "eliminar las observaciones formales, acelerar la aprobación de rendiciones y garantizar la transparencia presupuestal",
-      "constraint": "la diversidad de regímenes tributarios de las cooperativas y la dispersión geográfica de las compras",
-      "finalHMWStatement": "¿Cómo podríamos implementar un Módulo Web de Rendición de Cuentas Automatizada (RENDICION-DIGITAL) con validación XML/SUNAT e imputación presupuestal en tiempo real para que los tesoreros de las organizaciones agrarias y especialistas de URIE liquiden los fondos en 48 horas a pesar de la dispersión de compras y la complejidad tributaria?"
-    },
-    "H07_LluviaIdeasCrazy8s": [
-      {
-        "id": "idea-011-1",
-        "projectCode": "PIIP-2026-IN0011",
-        "ideaId": "IDEA-011-A",
-        "title": "Módulo Web PWA RENDICION-DIGITAL con carga de XML/PDF de Facturas Electrónicas, consulta automática API SUNAT y concilidador presupuestal",
-        "author": "Sergio Antonio Haro Muñoz (URIE)",
-        "votes": 14
-      },
-      {
-        "id": "idea-011-2",
-        "projectCode": "PIIP-2026-IN0011",
-        "ideaId": "IDEA-011-B",
-        "title": "Escaneo de facturas físicas con IA/OCR desde aplicativo móvil de campo",
-        "author": "Analista de Sistemas UA-TI",
-        "votes": 8
-      }
-    ],
-    "H08_MatrizPriorizacion": {
-      "projectCode": "PIIP-2026-IN0011",
-      "evaluationDate": "2026-09-27T10:00:00Z",
-      "ideasEvaluadas": [
+    "FASE_2_DEFINIR": {
+      "H05_MuroHallazgos": [
         {
-          "ideaId": "IDEA-011-A",
-          "title": "Módulo Web PWA RENDICION-DIGITAL con consulta API SUNAT e imputación presupuestal",
-          "deseabilidad": 5,
-          "factibilidad": 5,
-          "viabilidad": 5,
-          "impacto": 4,
-          "scoreTotal": 19,
-          "isWinningIdea": true
+          "id": 61,
+          "type": "Muro",
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "clusterCategory": "Verificación y Carga Operativa",
+          "findingTitle": "Digitación Manual Extenuante de Facturas en Hojas de Cálculo",
+          "title": "Digitación Manual Extenuante de Facturas en Hojas de Cálculo",
+          "evidenceText": "Los analistas contables de la URIE digitan manualmente hasta 1,500 comprobantes físicos al mes en planillas Excel para verificar importes, fechas y RUCs, consumiendo semanas de trabajo que podrían automatizarse con APIs de SUNAT.",
+          "text": "Los analistas contables de la URIE digitan manualmente hasta 1,500 comprobantes físicos al mes en planillas Excel para verificar importes, fechas y RUCs, consumiendo semanas de trabajo que podrían automatizarse con APIs de SUNAT.",
+          "sourceTool": "Mapeo de Tiempos URIE",
+          "priority": "Alta",
+          "quote": "Pasamos todo el mes tipeando números de facturas y boletas en lugar de evaluar si el gasto generó rentabilidad en la cooperativa.",
+          "date": "2026-04-01"
         },
         {
-          "ideaId": "IDEA-011-B",
-          "title": "Escaneo de facturas físicas con IA/OCR",
-          "deseabilidad": 4,
-          "factibilidad": 3,
-          "viabilidad": 4,
-          "impacto": 3,
-          "scoreTotal": 14,
-          "isWinningIdea": false
+          "id": 62,
+          "type": "Muro",
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "clusterCategory": "Fluidez Financiera y Desembolsos",
+          "findingTitle": "El 'Efecto Embudo' en Rendiciones que Paraliza los Nuevos Desembolsos",
+          "title": "El 'Efecto Embudo' en Rendiciones que Paraliza los Nuevos Desembolsos",
+          "evidenceText": "Por una observación contable de S/. 200 en una boleta de combustible, se retiene el siguiente desembolso de S/. 300,000 durante meses, dejando sin pago a proveedores de fertilizantes y paralizando el cultivo.",
+          "text": "Por una observación contable de S/. 200 en una boleta de combustible, se retiene el siguiente desembolso de S/. 300,000 durante meses, dejando sin pago a proveedores de fertilizantes y paralizando el cultivo.",
+          "sourceTool": "Diagnóstico de Cuellos de Botella UN",
+          "priority": "Alta",
+          "quote": "Por una boleta de fotocopias mal emitida nos congelan toda la cuenta y no podemos pagar la cuota de la maquinaria.",
+          "date": "2026-04-06"
+        },
+        {
+          "id": 63,
+          "type": "Muro",
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "clusterCategory": "Realidad Rural y Jornales",
+          "findingTitle": "Incompatibilidad de Comprobantes Electrónicos para Jornales Campesinos",
+          "title": "Incompatibilidad de Comprobantes Electrónicos para Jornales Campesinos",
+          "evidenceText": "Los peones rurales y comuneros cobran por faena diaria en efectivo y no emiten recibos por honorarios electrónicos. El sistema estatal rechaza los recibos de caja manuales, generando gastos no reconocidos.",
+          "text": "Los peones rurales y comuneros cobran por faena diaria en efectivo y no emiten recibos por honorarios electrónicos. El sistema estatal rechaza los recibos de caja manuales, generando gastos no reconocidos.",
+          "sourceTool": "Entrevistas a Tesoreros Comunales",
+          "priority": "Alta",
+          "quote": "En el cerro nadie tiene RUC ni computadora para emitir recibo por honorarios. Si el programa no acepta la planilla de jornales con huella, quedamos como deudores.",
+          "date": "2026-04-12"
+        },
+        {
+          "id": 64,
+          "type": "Muro",
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "clusterCategory": "Fraude y Riesgo Tributario",
+          "findingTitle": "Riesgo de Facturas Clonadas y Proveedores No Habidos en SUNAT",
+          "title": "Riesgo de Facturas Clonadas y Proveedores No Habidos en SUNAT",
+          "evidenceText": "La verificación puramente en papel ha permitido que malos proveedores emitan facturas de empresas con baja de oficio o comprobantes cancelados en la web de SUNAT, generando responsabilidades civiles y penales a los directivos.",
+          "text": "La verificación puramente en papel ha permitido que malos proveedores emitan facturas de empresas con baja de oficio o comprobantes cancelados en la web de SUNAT, generando responsabilidades civiles y penales a los directivos.",
+          "sourceTool": "Informes de Hallazgos OCI",
+          "priority": "Alta",
+          "quote": "La cooperativa compró abonos de buena fe y meses después nos enteramos de que el proveedor dio de baja su RUC antes de la venta.",
+          "date": "2026-04-17"
+        },
+        {
+          "id": 65,
+          "type": "Muro",
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "clusterCategory": "Trazabilidad Contable",
+          "findingTitle": "Falta de Conciliación Automática de Tres Vías (Factura - Banco - Almacén)",
+          "title": "Falta de Conciliación Automática de Tres Vías (Factura - Banco - Almacén)",
+          "evidenceText": "No existe un conector que vincule automáticamente el comprobante XML de SUNAT, la transferencia en el extracto bancario y el acta de ingreso al almacén comunal, exigiendo cotejos manuales propensos a error.",
+          "text": "No existe un conector que vincule automáticamente el comprobante XML de SUNAT, la transferencia en el extracto bancario y el acta de ingreso al almacén comunal, exigiendo cotejos manuales propensos a error.",
+          "sourceTool": "Auditoría de Sistemas Financieros",
+          "priority": "Media",
+          "quote": "Si el sistema leyera el código QR de la factura y cruzara con la cuenta bancaria, la rendición se aprobaría en 10 minutos.",
+          "date": "2026-04-22"
+        },
+        {
+          "id": 66,
+          "type": "Muro",
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "clusterCategory": "Fluidez Financiera y Desembolsos",
+          "findingTitle": "Gastos Excesivos de Traslado a Lima para Sustentar Carpetas Contables",
+          "title": "Gastos Excesivos de Traslado a Lima para Sustentar Carpetas Contables",
+          "evidenceText": "Los contadores de las organizaciones viajan periódicamente a Lima llevando archivadores pesados para absolver observaciones contables cara a cara con los liquidadores, gastando fondos de la cooperativa en viáticos.",
+          "text": "Los contadores de las organizaciones viajan periódicamente a Lima llevando archivadores pesados para absolver observaciones contables cara a cara con los liquidadores, gastando fondos de la cooperativa en viáticos.",
+          "sourceTool": "Encuesta a Contadores de Cooperativas",
+          "priority": "Media",
+          "quote": "Gasto S/. 600 en pasajes y hotel para venir a explicarle al liquidador una glosa contable que pudimos aclarar por videollamada.",
+          "date": "2026-04-28"
         }
       ],
-      "winningIdeaSummary": {
-        "title": "Módulo Web PWA RENDICION-DIGITAL para Organizaciones Agrarias (URIE)",
-        "rationale": "Obtuvo el mayor puntaje (19/20). Permite a las cooperativas cargar sus archivos XML/PDF de facturación electrónica, validándolos instantáneamente contra la SUNAT y comprobando su alineamiento con las partidas presupuestales aprobadas."
-      }
-    },
-    "H09_PrototipadoRapido": {
-      "projectCode": "PIIP-2026-IN0011",
-      "prototypeCode": "PROTO-IN0011-PWA",
-      "prototypeType": "Aplicación Web PWA Local-First (RENDICION-DIGITAL)",
-      "description": "Prototipo interactivo que incluye arrastrar y soltar de archivos XML/PDF, consulta simulada a Web Service de SUNAT, cálculo automático de saldos de partidas presupuestales y generación del Informe de Liquidación Contable en PDF.",
-      "keyScreens": [
-        "Dashboard de Estado de Rendiciones por Hito de Desembolso",
-        "Modulo de Carga y Validación Automática de Facturas XML",
-        "Tabla de Conciliación Presupuestal por Rubro (Maquinarias, Insumos, Asistencia Técnica)",
-        "Generador de Informe Técnico-Contable de Aprobación"
-      ],
-      "successMetrics": [
-        "Tiempo de validación de comprobante < 2 segundos",
-        "0% de comprobantes duplicados o con RUC no habido ingresados",
-        "Generación automática del reporte consolidado de rendición"
+      "H06_DefinicionDesafioHMW": [
+        {
+          "id": 61,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "insightId": 61,
+          "targetUser": "los comités de regantes y directivos de parcelas bajo riego tecnificado",
+          "actionGoal": "medir y optimizar el consumo de metros cúbicos de agua por tonelada cosechada",
+          "constraintOrPain": "la falta de caudalímetros accesibles y la creencia de que el riego abundante siempre produce más",
+          "hmwStatement": "¿Cómo podríamos medir y optimizar el consumo de metros cúbicos de agua por tonelada cosechada para los comités de regantes y directivos de parcelas bajo riego tecnificado a pesar de la falta de caudalímetros accesibles y la creencia de que el riego abundante siempre produce más?",
+          "question": "¿Cómo podríamos medir y optimizar el consumo de metros cúbicos de agua por tonelada cosechada para los comités de regantes y directivos de parcelas bajo riego tecnificado a pesar de la falta de caudalímetros accesibles y la creencia de que el riego abundante siempre produce más?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 62,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "insightId": 62,
+          "targetUser": "los productores que implementan prácticas agroforestales y conservación de suelos",
+          "actionGoal": "calcular el balance neto de emisiones de carbono y certificar sus parcelas como carbono-neutras",
+          "constraintOrPain": "la complejidad de las fórmulas del IPCC y el alto costo de consultorías de huella ambiental",
+          "hmwStatement": "¿Cómo podríamos calcular el balance neto de emisiones de carbono y certificar sus parcelas como carbono-neutras para los productores que implementan prácticas agroforestales y conservación de suelos a pesar de la complejidad de las fórmulas del IPCC y el alto costo de consultorías de huella ambiental?",
+          "question": "¿Cómo podríamos calcular el balance neto de emisiones de carbono y certificar sus parcelas como carbono-neutras para los productores que implementan prácticas agroforestales y conservación de suelos a pesar de la complejidad de las fórmulas del IPCC y el alto costo de consultorías de huella ambiental?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 63,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "insightId": 63,
+          "targetUser": "los extensionistas y fiscalizadores de sostenibilidad de AGROIDEAS",
+          "actionGoal": "verificar el cumplimiento de los Planes de Manejo Ambiental (PMA) comprometidos en los planes",
+          "constraintOrPain": "la falta de herramientas digitales para auditar la disposición de envases de agroquímicos en campo",
+          "hmwStatement": "¿Cómo podríamos verificar el cumplimiento de los Planes de Manejo Ambiental (PMA) comprometidos en los planes para los extensionistas y fiscalizadores de sostenibilidad de AGROIDEAS a pesar de la falta de herramientas digitales para auditar la disposición de envases de agroquímicos en campo?",
+          "question": "¿Cómo podríamos verificar el cumplimiento de los Planes de Manejo Ambiental (PMA) comprometidos en los planes para los extensionistas y fiscalizadores de sostenibilidad de AGROIDEAS a pesar de la falta de herramientas digitales para auditar la disposición de envases de agroquímicos en campo?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 64,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "insightId": 64,
+          "targetUser": "las organizaciones agrarias interesadas en mercados de bonos de carbono y servicios ecosistémicos",
+          "actionGoal": "acceder a financiamiento verde internacional acreditando la preservación de bosques y bofedales",
+          "constraintOrPain": "los requisitos burocráticos internacionales y la intermediación abusiva de fondos climáticos",
+          "hmwStatement": "¿Cómo podríamos acceder a financiamiento verde internacional acreditando la preservación de bosques y bofedales para las organizaciones agrarias interesadas en mercados de bonos de carbono y servicios ecosistémicos a pesar de los requisitos burocráticos internacionales y la intermediación abusiva de fondos climáticos?",
+          "question": "¿Cómo podríamos acceder a financiamiento verde internacional acreditando la preservación de bosques y bofedales para las organizaciones agrarias interesadas en mercados de bonos de carbono y servicios ecosistémicos a pesar de los requisitos burocráticos internacionales y la intermediación abusiva de fondos climáticos?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 65,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "insightId": 65,
+          "targetUser": "las comunidades agrarias situadas en cabeceras de cuenca hidrográfica",
+          "actionGoal": "monitorear la calidad de agua y sedimentos mediante sensores comunitarios sencillos",
+          "constraintOrPain": "el temor a la contaminación minera o agroindustrial sin contar con evidencia analítica propia",
+          "hmwStatement": "¿Cómo podríamos monitorear la calidad de agua y sedimentos mediante sensores comunitarios sencillos para las comunidades agrarias situadas en cabeceras de cuenca hidrográfica a pesar de el temor a la contaminación minera o agroindustrial sin contar con evidencia analítica propia?",
+          "question": "¿Cómo podríamos monitorear la calidad de agua y sedimentos mediante sensores comunitarios sencillos para las comunidades agrarias situadas en cabeceras de cuenca hidrográfica a pesar de el temor a la contaminación minera o agroindustrial sin contar con evidencia analítica propia?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 66,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "insightId": 66,
+          "targetUser": "los directores de unidades de evaluación técnica de AGROIDEAS",
+          "actionGoal": "priorizar la asignación de incentivos a planes de negocio con impacto ambiental positivo demostrable",
+          "constraintOrPain": "la carencia de una matriz ponderada de ecoeficiencia integrada en la plataforma de elegibilidad",
+          "hmwStatement": "¿Cómo podríamos priorizar la asignación de incentivos a planes de negocio con impacto ambiental positivo demostrable para los directores de unidades de evaluación técnica de AGROIDEAS a pesar de la carencia de una matriz ponderada de ecoeficiencia integrada en la plataforma de elegibilidad?",
+          "question": "¿Cómo podríamos priorizar la asignación de incentivos a planes de negocio con impacto ambiental positivo demostrable para los directores de unidades de evaluación técnica de AGROIDEAS a pesar de la carencia de una matriz ponderada de ecoeficiencia integrada en la plataforma de elegibilidad?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        }
       ]
     },
-    "H10_PlanAccion": {
-      "projectCode": "PIIP-2026-IN0011",
-      "sprints": [
+    "FASE_3_IDEAR": {
+      "H07_LluviaIdeasCrazy8s": [
         {
-          "sprintNumber": 1,
-          "duration": "3 semanas",
-          "goal": "Definición de reglas de validación contable e integración con estructura de partidas de Planes de Negocio",
-          "lead": "Sergio Antonio Haro Muñoz (URIE / UPP)"
+          "id": 61,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "desafioId": 61,
+          "ideaTitle": "Calculadora Móvil de Huella Hídrica y Programador de Riego Óptimo por cultivo",
+          "idea": "Calculadora Móvil de Huella Hídrica y Programador de Riego Óptimo por cultivo",
+          "description": "App que calcula los litros de agua requeridos por surco o goteo según temperatura y textura del suelo, optimizando turnos de regadío.",
+          "category": "Tecnológica",
+          "authorRole": "Especialista en Recursos Hídricos",
+          "votesCount": 11,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "sprintNumber": 2,
-          "duration": "3 semanas",
-          "goal": "Desarrollo del Módulo Web RENDICION-DIGITAL PWA y motor de lectura XML/SUNAT",
-          "lead": "Unidad de Administración (UA-TI / URIE)"
+          "id": 62,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "desafioId": 62,
+          "ideaTitle": "Algoritmo Satelital de Estimación de Biomasa y Captura de Carbono en parcelas",
+          "idea": "Algoritmo Satelital de Estimación de Biomasa y Captura de Carbono en parcelas",
+          "description": "Herramienta que analiza índices de vegetación NDVI para certificar las toneladas de carbono retenidas en sistemas agroforestales.",
+          "category": "Tecnológica",
+          "authorRole": "Científico de Teledetección Ambiental",
+          "votesCount": 10,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "sprintNumber": 3,
-          "duration": "3 semanas",
-          "goal": "Pilotaje en campo con 15 organizaciones agrarias en proceso de rendición de cuentas en Junín, Cajamarca y San Martín",
-          "lead": "URIE / Unidades Regionales"
-        }
-      ]
-    },
-    "H11_MatrizRiesgosTesteo": {
-      "projectCode": "PIIP-2026-IN0011",
-      "riskAssessment": [
-        {
-          "riskId": "RIESGO-01",
-          "category": "Tecnológico / Operativo",
-          "description": "Interrupción o indisponibilidad temporal del servicio de consulta Web Service de la SUNAT durante la carga masiva.",
-          "mitigationStrategy": "Implementación de cola de validación asíncrona en Local-First con reintento automático en segundo plano.",
-          "severity": "MEDIA"
+          "id": 63,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "desafioId": 63,
+          "ideaTitle": "Puntos Comunitarios de Acopio de Envases de Agroquímicos con canje ecológico",
+          "idea": "Puntos Comunitarios de Acopio de Envases de Agroquímicos con canje ecológico",
+          "description": "Incentivo donde las organizaciones entregan envases con triple lavado y reciben insumos biológicos o plantas para reforestación.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Coordinador de Manejo Ambiental",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "riskId": "RIESGO-02",
-          "category": "Operativo / Capacidades",
-          "description": "Dificultad de los tesoreros rurales para descargar el archivo XML original emitido por sus proveedores.",
-          "mitigationStrategy": "Módulo de captura alternativa via código QR e instructivos paso a paso en formato micro-learning.",
-          "severity": "BAJA"
+          "id": 64,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "desafioId": 65,
+          "ideaTitle": "Monitoreo Participativo Comunal de Calidad de Agua con tiras fotográficas",
+          "idea": "Monitoreo Participativo Comunal de Calidad de Agua con tiras fotográficas",
+          "description": "Metodología donde los agricultores sumergen una tira en sus canales y la fotografían con el celular para detectar pH y salinidad.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Biólogo de Calidad de Aguas",
+          "votesCount": 9,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 65,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "desafioId": 66,
+          "ideaTitle": "Incentivo Verde: Bonificación de 10 Puntos en elegibilidad para planes con impacto ecológico",
+          "idea": "Incentivo Verde: Bonificación de 10 Puntos en elegibilidad para planes con impacto ecológico",
+          "description": "Reforma en las bases de evaluación que prioriza proyectos que incorporen reservorios cosechadores de agua o cercos vivos.",
+          "category": "Normativa",
+          "authorRole": "Especialista en Políticas Ambientales",
+          "votesCount": 12,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 66,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "desafioId": 64,
+          "ideaTitle": "Diplomado Práctico en Acceso a Mercados de Bonos de Carbono para cooperativas",
+          "idea": "Diplomado Práctico en Acceso a Mercados de Bonos de Carbono para cooperativas",
+          "description": "Programa de capacitación para gerentes agrarios sobre requisitos internacionales de créditos de carbono y sellos verdes.",
+          "category": "Capacitación",
+          "authorRole": "Docente en Sostenibilidad Agropecuaria",
+          "votesCount": 7,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         }
       ],
-      "learningCard": {
-        "testCode": "TEST-IN0011-01",
-        "hypothesis": "El uso del módulo RENDICION-DIGITAL reducirá el tiempo de liquidación contable de 45 días a menos de 48 horas.",
-        "findings": "En la prueba piloto con 15 organizaciones agrarias, el tiempo promedio de aprobación de la rendición disminuyó de 45 días a solo 3.5 horas (>99.2% de eficiencia), identificando 12 comprobantes observados antes de la presentación formal.",
-        "decision": "APROBADO PARA PASE A PRODUCCIÓN E INSTITUCIONALIZACIÓN EN EL PORTAFOLIO PIIP (ANEXO 5)"
+      "H08_MatrizPriorizacion": [
+        {
+          "id": 61,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "ideaId": 65,
+          "ideaTitle": "Incentivo Verde: Bonificación de 10 Puntos en elegibilidad para planes con impacto ecológico",
+          "title": "Incentivo Verde: Bonificación de 10 Puntos en elegibilidad para planes con impacto ecológico",
+          "desirability": 5,
+          "feasibility": 5,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 19,
+          "isWinningIdea": true,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 62,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "ideaId": 61,
+          "ideaTitle": "Calculadora Móvil de Huella Hídrica y Programador de Riego Óptimo por cultivo",
+          "title": "Calculadora Móvil de Huella Hídrica y Programador de Riego Óptimo por cultivo",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 63,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "ideaId": 62,
+          "ideaTitle": "Algoritmo Satelital de Estimación de Biomasa y Captura de Carbono en parcelas",
+          "title": "Algoritmo Satelital de Estimación de Biomasa y Captura de Carbono en parcelas",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 16,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 64,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "ideaId": 64,
+          "ideaTitle": "Monitoreo Participativo Comunal de Calidad de Agua con tiras fotográficas",
+          "title": "Monitoreo Participativo Comunal de Calidad de Agua con tiras fotográficas",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 15,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 65,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "ideaId": 63,
+          "ideaTitle": "Puntos Comunitarios de Acopio de Envases de Agroquímicos con canje ecológico",
+          "title": "Puntos Comunitarios de Acopio de Envases de Agroquímicos con canje ecológico",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 14,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 66,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "ideaId": 66,
+          "ideaTitle": "Diplomado Práctico en Acceso a Mercados de Bonos de Carbono para cooperativas",
+          "title": "Diplomado Práctico en Acceso a Mercados de Bonos de Carbono para cooperativas",
+          "desirability": 3,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 13,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        }
+      ],
+      "H09_PrototipadoRapido": {
+        "id": 11,
+        "projectId": 11,
+        "projectCode": "PIIP-2026-IN0011",
+        "prototypeTitle": "Aplicación Web de Rendición de Cuentas Automatizada (RENDICION-DIGITAL)",
+        "name": "Aplicación Web de Rendición de Cuentas Automatizada (RENDICION-DIGITAL)",
+        "prototypeType": "Digital PWA",
+        "keyFeatures": [
+          "Carga masiva drag-and-drop de facturas electrónicas XML y PDF",
+          "Consulta automática al API de SUNAT para verificar RUC habido y comprobante válido",
+          "Conciliación automática contra extractos bancarios y liquidación en un clic"
+        ],
+        "artifactUrlOrImage": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=500",
+        "imageUrl": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=500",
+        "description": "Sistema que elimina el pegado físico de recibos en papel bond, validando la deducibilidad tributaria y bancarización de gastos cofinanciados al instante.",
+        "testingGoal": "Reducción del ciclo de liquidación de rendiciones de 4 meses a solo 3 días hábiles."
       }
+    },
+    "FASE_4_ENTREGAR": {
+      "H10_PlanAccion": [
+        {
+          "id": 12,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "taskName": "Modelamiento de fórmulas de retorno social y rentabilidad de planes de negocio",
+          "task": "Modelamiento de fórmulas de retorno social y rentabilidad de planes de negocio",
+          "phase": "Metodología",
+          "responsibleUnit": "Unidad de Planeamiento y Presupuesto / Monitoreo",
+          "responsible": "Unidad de Planeamiento y Presupuesto / Monitoreo",
+          "leader": "Economista Senior UPP",
+          "startDate": "2026-04-01",
+          "endDate": "2026-05-15",
+          "deadline": "2026-05-15",
+          "deliverable": "Modelo econométrico validado con panel de control de indicadores socioeconómicos",
+          "status": "Completado"
+        }
+      ],
+      "H11_MatrizRiesgosTesteo": [
+        {
+          "id": 13,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "riskDescription": "Sesgos en la evaluación de impacto económico por falta de grupos de control no beneficiarios.",
+          "description": "Sesgos en la evaluación de impacto económico por falta de grupos de control no beneficiarios.",
+          "riskType": "Operativo",
+          "probability": "Media",
+          "impact": "Medio",
+          "level": "Medio",
+          "mitigationStrategy": "Diseño cuasiexperimental de Propensity Score Matching (PSM) utilizando datos del Censo Agropecuario.",
+          "mitigation": "Diseño cuasiexperimental de Propensity Score Matching (PSM) utilizando datos del Censo Agropecuario.",
+          "testResult": "Validación econométrica con panel de 400 organizaciones demostró significancia estadística al 99%."
+        }
+      ]
     }
   }
 }

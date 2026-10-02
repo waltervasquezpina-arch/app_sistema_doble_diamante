@@ -1,236 +1,791 @@
 {
   "$schema": "./schemas/far-piip-v3.json",
-  "NavegacionYTrazabilidad": {
-    "IniciativaCodigoActiva": "PIIP-2026-IN0007",
-    "UbicacionActual": {
-      "TipoVista": "HERRAMIENTA_METODOLOGICA",
-      "FaseNumero": 4,
-      "FaseNombre": "Fase 4: Entregar",
-      "HerramientaNumero": 11,
-      "HerramientaCodigo": "H11",
-      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
-      "VistaCodigo": "V11.1",
-      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje",
-      "VistaUrl": "fase4/11-matriz-riesgos.html"
+  "IniciativaIdentificacion": {
+    "id": 7,
+    "IniciativaCodigo": "PIIP-2026-IN0007",
+    "IniciativaNombre": "Sistema Digital de Evaluación de Elegibilidad con Georreferenciación (SDEG)",
+    "UnidadOrganicaResponsable": "Dirección Ejecutiva - Coordinación Técnica Regional (CTR)",
+    "LiderProyecto": "José Fernando Barturen Torres - CTR",
+    "FechaRegistro": "2026-03-01",
+    "EstadoFases": {
+      "descubrir": "completed",
+      "definir": "completed",
+      "idear": "active",
+      "entregar": "pending"
     },
-    "PosicionEnFlujo": {
-      "PasoActual": 11,
-      "TotalPasosFlujo": 11,
-      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
-      "PasoAnterior": {
-        "HerramientaCodigo": "H10",
-        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
-        "VistaUrl": "fase4/10-plan-accion.html"
-      },
-      "PasoSiguiente": null
-    },
-    "ControlIteracionYTrazabilidad": {
-      "VersionIteracion": 1,
-      "PermiteIteracionAnterior": true,
-      "FechaUltimaActualizacion": "2026-09-27T11:48:00Z",
-      "UsuarioActualRol": "Facilitador Ágil"
-    }
+    "PorcentajeAvanceGlobal": 50.0
   },
-  "PortafolioPIIP_Coleccion": [
-    {
-      "id": 7,
-      "code": "PIIP-2026-IN0007",
-      "title": "Sistema Digital de Evaluación de Elegibilidad con Georreferenciación (SDEG)",
-      "responsible": "Dirección Ejecutiva - Coordinación Técnica Regional (CTR)",
-      "contact": "José Fernando Barturen Torres - CTR",
-      "date": "2026-09-21",
-      "status": "Fase 4: Entregar (Completado)",
-      "porcentajeAvanceGlobal": 100.0,
-      "phases": {
-        "descubrir": "completed",
-        "definir": "completed",
-        "idear": "completed",
-        "entregar": "completed"
-      }
-    }
-  ],
-  "HerramientasMetodologicas_Coleccion": {
+  "RegistrosHerramientasMetodologicas": {
     "FASE_1_DESCUBRIR": {
       "H01_ObservacionAEIOU": [
         {
-          "id": "aeiou-007-1",
+          "id": 37,
+          "projectId": 7,
           "projectCode": "PIIP-2026-IN0007",
-          "dimension": "Actividades",
-          "observation": "Los evaluadores técnicos de las Unidades Regionales deben trasladarse a las parcelas de las Organizaciones Agrarias (OA) para realizar mediciones físicas con GPS de mano no estandarizados, demorando semanas en contrastar la información con catastros oficiales.",
-          "timestamp": "2026-09-15T08:30:00Z"
+          "activity": "Levantamiento de coordenadas de linderos prediales en campo bajo intensa lluvia con GPS de navegación portátil.",
+          "environment": "Comunidades campesinas de la sierra de Ancash a 3,400 m.s.n.m.; caminos de herradura resbalosos y cielo completamente cubierto.",
+          "interaction": "Evaluador de campo espera hasta 15 minutos en cada vértice para captar señal de satélite suficiente mientras el productor señala mojones de piedra.",
+          "object": "GPS Garmin eTrex de pilas AA, libreta de campo impermeable 'Rite in the Rain', cinta métrica de 30m, cámara digital.",
+          "objects": "GPS Garmin eTrex de pilas AA, libreta de campo impermeable 'Rite in the Rain', cinta métrica de 30m, cámara digital.",
+          "user": "José Fernando Barturen Torres, evaluador de campo CTR, productor agrario comunero y juez de paz distrital.",
+          "users": "José Fernando Barturen Torres, evaluador de campo CTR, productor agrario comunero y juez de paz distrital.",
+          "observer": "José Fernando Barturen Torres - CTR",
+          "observationDate": "2026-03-05",
+          "date": "2026-03-05",
+          "timestamp": "2026-03-05T09:00:00.000Z"
         },
         {
-          "id": "aeiou-007-2",
+          "id": 38,
+          "projectId": 7,
           "projectCode": "PIIP-2026-IN0007",
-          "dimension": "Objetos",
-          "observation": "Uso de planos en papel, mapas no georreferenciados y formatos dispersos que imposibilitan verificar cruces con áreas naturales protegidas o deforestadas.",
-          "timestamp": "2026-09-15T11:00:00Z"
+          "activity": "Dibujo manual y georreferenciación de croquis de predios sobre fotocopias desactualizadas de planos catastrales del Ministerio de Agricultura (PETT).",
+          "environment": "Oficina de la Unidad Regional en Huaraz; mesa de dibujo con reglas y escalímetro sin software GIS instalado.",
+          "interaction": "Técnico compara a ojo los vértices anotados en la libreta contra las curvas de nivel impresas; detecta posible superposición con el parque nacional Huascarán.",
+          "object": "Escalímetro, lápiz 2B, borrador de miga, plano catastral PETT escala 1:10,000 en papel mantequilla doblado.",
+          "objects": "Escalímetro, lápiz 2B, borrador de miga, plano catastral PETT escala 1:10,000 en papel mantequilla doblado.",
+          "user": "Especialista en Catastro Rural Zonal y Evaluador Agronómico CTR.",
+          "users": "Especialista en Catastro Rural Zonal y Evaluador Agronómico CTR.",
+          "observer": "Topógrafo / Especialista SIG Zonal - UR Ancash",
+          "observationDate": "2026-03-28",
+          "date": "2026-03-28",
+          "timestamp": "2026-03-28T14:30:00.000Z"
+        },
+        {
+          "id": 39,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "activity": "Consulta interinstitucional lenta mediante oficios en papel hacia SERNANP y SERFOR para descartar traslapes con áreas naturales protegidas o bosques de producción.",
+          "environment": "Mesa de partes presencial de dependencias públicas en Lima y Huaraz; espera de plazos de respuesta que superan los 45 días hábiles.",
+          "interaction": "El evaluador de AGROIDEAS reitera con tercer oficio el pedido de opinión técnica cartográfica sin obtener respuesta electrónica.",
+          "object": "Oficios con número de registro de trámite documentario en papel, anexos con coordenadas UTM mecanografiadas.",
+          "objects": "Oficios con número de registro de trámite documentario en papel, anexos con coordenadas UTM mecanografiadas.",
+          "user": "Especialista de Elegibilidad CTR y funcionario de catastro de SERNANP.",
+          "users": "Especialista de Elegibilidad CTR y funcionario de catastro de SERNANP.",
+          "observer": "Coordinador de Enlace Interinstitucional - CTR",
+          "observationDate": "2026-04-18",
+          "date": "2026-04-18",
+          "timestamp": "2026-04-18T11:15:00.000Z"
+        },
+        {
+          "id": 40,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "activity": "Verificación in situ de fuentes hídricas y aforos de agua para proyectos de reconversión productiva a palto y arándano.",
+          "environment": "Quebrada de cabecera de cuenca en Caraz; terreno escarpado con canal rústico de tierra sin revestimiento.",
+          "interaction": "Especialista realiza prueba de flotador para medir caudal mientras dirigentes de la comisión de regantes acreditan su derecho de uso de agua de la ANA.",
+          "object": "Moliente o correntómetro portátil, botella flotadora graduada, cronómetro digital, resolución administrativa de la Autoridad Local del Agua (ALA).",
+          "objects": "Moliente o correntómetro portátil, botella flotadora graduada, cronómetro digital, resolución administrativa de la Autoridad Local del Agua (ALA).",
+          "user": "Especialista en Riego Tecnificado AGROIDEAS, presidente del canal de regantes y 6 agricultores postulantes.",
+          "users": "Especialista en Riego Tecnificado AGROIDEAS, presidente del canal de regantes y 6 agricultores postulantes.",
+          "observer": "Ingeniero Hidráulico Evaluador - CTR",
+          "observationDate": "2026-05-14",
+          "date": "2026-05-14",
+          "timestamp": "2026-05-14T08:30:00.000Z"
+        },
+        {
+          "id": 41,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "activity": "Prueba de campo del aplicativo móvil SDEG con almacenamiento offline y captura automática de polígonos por GPS satelital del teléfono móvil.",
+          "environment": "Parcelas de maíz morado en Callejón de Huaylas; zona rural sin datos móviles durante el recorrido por las chacras.",
+          "interaction": "Evaluador camina por el perímetro del predio; la app traza el polígono en tiempo real y calcula automáticamente el área neta en hectáreas.",
+          "object": "Smartphone rugged de uso rudo con certificación IP68 y chip GPS de doble frecuencia L1/L5, estacas de madera de delimitación.",
+          "objects": "Smartphone rugged de uso rudo con certificación IP68 y chip GPS de doble frecuencia L1/L5, estacas de madera de delimitación.",
+          "user": "2 evaluadores de campo de CTR y presidente de la asociación agrícola postulante.",
+          "users": "2 evaluadores de campo de CTR y presidente de la asociación agrícola postulante.",
+          "observer": "Líder Técnico SDEG - CTR/OTI",
+          "observationDate": "2026-06-11",
+          "date": "2026-06-11",
+          "timestamp": "2026-06-11T12:00:00.000Z"
+        },
+        {
+          "id": 42,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "activity": "Validación de cruce espacial automatizado en geovisor web conectando capas catastrales de MIDAGRI, SERNANP, INGEMMET y títulos comunales.",
+          "environment": "Sala de control geográfico en Lima; videowall con mapa satelital multicapa de alta resolución.",
+          "interaction": "El sistema analiza el polígono cargado y emite en 10 segundos el 'Certificado de No Superposición de Áreas Protegidas' con código QR oficial.",
+          "object": "Servidor GIS con Geoserver y PostGIS, Geovisor web interactivo, visor satelital Sentinel-2.",
+          "objects": "Servidor GIS con Geoserver y PostGIS, Geovisor web interactivo, visor satelital Sentinel-2.",
+          "user": "José Fernando Barturen Torres, Director Ejecutivo, Directora de CTR y especialistas de evaluación de elegibilidad.",
+          "users": "José Fernando Barturen Torres, Director Ejecutivo, Directora de CTR y especialistas de evaluación de elegibilidad.",
+          "observer": "Arquitecto de Soluciones Geoespaciales - CTR",
+          "observationDate": "2026-07-16",
+          "date": "2026-07-16",
+          "timestamp": "2026-07-16T15:45:00.000Z"
         }
       ],
-      "H02_MapaEmpatia": {
-        "projectCode": "PIIP-2026-IN0007",
-        "userProfile": "Evaluador Técnico Regional de Elegibilidad - CTR / UR",
-        "says": "Comprobar si una parcela superpone un área protegida o zona deforestada nos toma semanas pidiendo informes a otras entidades.",
-        "does": "Dibuja polígonos aproximados a mano y revisa capas geográficas de SERNANP o Midagri en múltiples webs sin integración.",
-        "thinks": "Deberíamos poder capturar el polígono en campo con el celular y cruzarlo automáticamente con el mapa nacional.",
-        "feels": "Inseguro ante posibles observaciones de los órganos de control por superposición no detectada.",
-        "pains": "Reiteradas observaciones a expedientes de elegibilidad y demoras que superan los 30 días hábiles.",
-        "gains": "Emisión de informes técnicos de elegibilidad en menos de 48 horas con respaldo cartográfico inmutable."
-      },
-      "H03_EncuestasCampo": {
-        "projectCode": "PIIP-2026-IN0007",
-        "sampleSize": 36,
-        "targetAudience": "Especialistas Técnicos y Coordinadores de Unidades Regionales (CTR)",
-        "keyResults": [
-          {
-            "question": "¿Cuál es la principal causa de retraso en la emisión del informe de elegibilidad?",
-            "percentage": 86.1,
-            "detail": "Verificación cartográfica manual y falta de superposición georreferenciada automática."
-          },
-          {
-            "question": "¿Cuenta con dispositivo móvil para captura de polígonos GPS en campo?",
-            "percentage": 94.4,
-            "detail": "El 94.4% de los técnicos cuenta con smartphone capaz de correr PWA de mapeo offline."
-          }
-        ]
-      },
-      "H04_FichaPersona": {
-        "projectCode": "PIIP-2026-IN0007",
-        "archetypeCode": "PERS-IN0007-01",
-        "name": "Ing. José Fernando Barturen Torres",
-        "role": "Coordinador Técnico Regional - CTR",
-        "age": 41,
-        "digitalLiteracy": "Alto (Manejo de sistemas GIS, Google Earth y herramientas móviles)",
-        "primaryGoal": "Agilizar la calificación de elegibilidad geográfica de los planes de negocio garantizando cero superposición con áreas restringidas."
-      }
+      "H02_MapaEmpatia": [
+        {
+          "id": 39,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "userProfile": "Ingeniero Agrónomo y Evaluador de Campo CTR (UR Áncash)",
+          "says": "\"Caminar tres horas cerro arriba con una ficha de papel bajo la lluvia y tomar fotos con el celular sin batería es inhumano. El sistema debe funcionar offline.\"",
+          "does": "Visita parcelas de postulantes en Callejón de Huaylas, verifica linderos, disponibilidad hídrica y llena actas de inspección física.",
+          "thinks": "Considera que una app móvil con mapa satelital precargado y GPS submétrico ahorraría el 50% del tiempo de evaluación en campo.",
+          "feels": "Agotamiento físico en trabajo de altura y temor de perder anotaciones en papel por lluvia o extravío en los traslados a pie.",
+          "hears": "Productores que afirman que sus terrenos llegan hasta la quebrada mientras los títulos dicen otra cosa.",
+          "sees": "Parcelas sin linderos claros, canales de regadío rústicos y zonas sin señal de internet en un radio de 25 kilómetros.",
+          "pains": "Tener que volver a la oficina en la noche a transcribir datos de la libreta y subir fotos pesadas a una carpeta compartida lenta.",
+          "gains": "App móvil de inspección de campo que capture polígonos GPS, tome fotos con marca de agua inalterable y sincronice al volver a la ciudad."
+        },
+        {
+          "id": 40,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "userProfile": "Productor Agrario Postulante con Parcelas Dispersas (Huánuco)",
+          "says": "\"Tengo tres chacras chiquitas: una de papa en la puna, otra de maíz en la falda y otra de hortalizas en el valle. Quiero que el evaluador las vea todas.\"",
+          "does": "Guía al evaluador por senderos de herradura, muestra los mojones de piedra ancestrales y explica cómo rota sus cultivos en el año.",
+          "thinks": "Cree que el programa no entiende la lógica del minifundio andino donde la dispersión de parcelas es una estrategia contra el riesgo de heladas.",
+          "feels": "Orgullo por el trabajo de su tierra pero miedo a que lo descalifiquen porque sus parcelas no forman un solo predio continuo.",
+          "hears": "Dirigentes que le dijeron que si sus tierras no están juntas en un solo plano catastral, AGROIDEAS lo va a rechazar de plano.",
+          "sees": "El evaluador sufriendo con el celular buscando señal y quejándose de que el mapa no carga en la pantalla.",
+          "pains": "Riesgo de ser excluido por falta de catastro rural oficial y demora de meses en la verificación de sus derechos de posesión.",
+          "gains": "Reconocimiento de predios agrícolas fragmentados mediante polígonos GPS múltiples agrupados bajo su código de productor familiar."
+        },
+        {
+          "id": 41,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "userProfile": "Coordinador Técnico Regional CTR (Sede Central Lima)",
+          "says": "\"No podemos seguir aprobando expedientes donde dos cooperativas distintas presentan las mismas parcelas para ganar doble incentivo.\"",
+          "does": "Supervisa los dictámenes de elegibilidad de las 16 regiones, aprueba planes de viaje de campo y presenta resultados al Comité Técnico.",
+          "thinks": "Sabe que la georreferenciación satelital obligatoria es el único filtro efectivo para eliminar la duplicidad de beneficiarios y parcelas superpuestas.",
+          "feels": "Responsabilidad por la transparencia en la asignación de presupuestos y urgencia por estandarizar la rigurosidad técnica de los evaluadores.",
+          "hears": "Denuncias anónimas sobre padrones inflados donde se incluyen terrenos de familiares que no se dedican a la agricultura.",
+          "sees": "Planos dibujados a mano alzada sin escala ni coordenadas UTM válidas adjuntados en expedientes de organizaciones agrarias.",
+          "pains": "Falta de un visor geográfico institucional integrado y riesgo de aprobar planes en zonas no permitidas (áreas protegidas o fajas marginales).",
+          "gains": "Geovisor institucional que cruce automáticamente polígonos agrícolas contra el mapa de áreas protegidas (SERNANP), fajas marginales (ANA) y comunidades."
+        },
+        {
+          "id": 42,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "userProfile": "Especialista en Sistemas de Información Geográfica - GIS (OTI / CTR)",
+          "says": "\"La tecnología GIS moderna permite calcular el área exacta, la pendiente del terreno y el índice de vegetación NDVI con imágenes Sentinel en segundos.\"",
+          "does": "Procesa capas vectoriales de parcelas agrarias, realiza análisis espacial de cobertura vegetal y capacita a los evaluadores en manejo de GPS.",
+          "thinks": "Considera un desperdicio no aprovechar la teledetección espacial gratuita de la constelación Copernicus para auditar cultivos desde el espacio.",
+          "feels": "Entusiasmo por el potencial tecnológico pero frustración cuando se adquieren licencias GIS costosas que los evaluadores no saben utilizar.",
+          "hears": "Evaluadores pidiendo que la herramienta sea tan simple de usar como Google Maps y que no requiera conocimientos complejos de topografía.",
+          "sees": "Archivos KML y Shapefiles mal proyectados que caen en medio del océano por errores de configuración en los GPS de mano.",
+          "pains": "Formatos geoespaciales incompatibles, falta de estandarización de sistemas de coordenadas (WGS84 vs PSAD56) y datos incompletos.",
+          "gains": "Plataforma web con conversión automática de coordenadas, validación topológica en línea y cálculo automatizado de aptitud agroclimática."
+        },
+        {
+          "id": 43,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "userProfile": "Presidenta de Comité de Productoras de Berries y Flores (Caraz, Áncash)",
+          "says": "\"Nosotras tenemos invernaderos en terrazas andinas. Queremos que el sistema reconozca la alta productividad de nuestros terrenos pequeños.\"",
+          "does": "Administra el vivero de arándanos y frambuesas, organiza los turnos de riego y atiende la visita de elegibilidad técnica de AGROIDEAS.",
+          "thinks": "Cree que los criterios de elegibilidad están hechos para grandes extensiones de costa y discriminan la agricultura intensiva de pequeña escala.",
+          "feels": "Confianza en la calidad de su producción de alto valor pero inseguridad frente a requisitos técnicos de hectáreas mínimas.",
+          "hears": "Otras asociaciones de mujeres que fueron rechazadas porque sus parcelas medían menos de una hectárea a pesar de facturar millones de soles.",
+          "sees": "Invernaderos con tecnología de punta y fertirriego que deslumbran al evaluador pero que chocan con formularios rígidos que piden cultivos extensivos.",
+          "pains": "Criterios de elegibilidad desactualizados que miden solo cantidad de tierra en vez de densidad productiva y valor agregado por metro cuadrado.",
+          "gains": "Módulo de elegibilidad con parámetros diferenciados para cultivos de alta intensidad tecnológica y horticultura de exportación."
+        },
+        {
+          "id": 44,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "userProfile": "Verificador Técnico Zonal de Linderos y Recursos Hídricos (Cusco)",
+          "says": "\"Lo primero que miro antes de ver la tierra es la fuente de agua. Si no hay licencia del ANA o aforo comprobado, el plan de negocio es inviable.\"",
+          "does": "Mide caudales de agua en manantiales comunales, revisa resoluciones de derechos de uso de agua y fotografía las tomas de captación.",
+          "thinks": "Sabe que el 70% de los conflictos futuros entre cooperativas vecinas nacen de disputas por el agua de riego que no se validaron al inicio.",
+          "feels": "Responsabilidad ambiental por no promover proyectos que sobreexploten acuíferos en cuencas con estrés hídrico severo.",
+          "hears": "Dirigentes asegurando que el agua les sobra todo el año cuando en época de estiaje el canal queda completamente seco.",
+          "sees": "Canales de tierra con pérdidas por infiltración de más del 50% y quebradas con caudales disminuidos por el retroceso glaciar.",
+          "pains": "Falta de interoperabilidad en tiempo real con el Sistema Nacional de Información de Recursos Hídricos de la Autoridad Nacional del Agua (ANA).",
+          "gains": "Capa cartográfica hidrológica integrada con validación automática de disponibilidad hídrica por cuenca y código de licencia de uso de agua."
+        }
+      ],
+      "H03_EncuestasCampo": [
+        {
+          "id": 13,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "respondent": "Ing. José Barturen (Evaluador CTR)",
+          "cooperative": "Unidad Regional Ancash",
+          "satisfaction": 2,
+          "comments": "Sin internet no podemos subir coordenadas de campo. Tenemos que esperar días para sincronizar polígonos GPS en gabinete.",
+          "sentiment": "Negativo",
+          "date": "2026-03-08"
+        },
+        {
+          "id": 14,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "respondent": "Teodoro Alanya (Directivo)",
+          "cooperative": "Comunidad Campesina de Caraz - Ancash",
+          "satisfaction": 3,
+          "comments": "El deslinde con el parque nacional Huascarán demoró más de un año por falta de planos digitales cruzados con SERNANP.",
+          "sentiment": "Neutro",
+          "date": "2026-03-14"
+        }
+      ],
+      "H04_FichaPersona": [
+        {
+          "id": 37,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "archetypeName": "Ing. José Fernando Barturen Torres",
+          "name": "Ing. José Fernando Barturen Torres",
+          "role": "Coordinador Técnico Regional CTR (Sede Central Lima)",
+          "demographics": "46 años, Lima; Ingeniero Agrónomo con 15 años liderando operaciones regionales",
+          "age": 46,
+          "techTechSavviness": "Avanzado (Sistemas GIS, teledetección satelital, gestión de expedientes territoriales)",
+          "quote": "La georreferenciación satelital obligatoria es el único filtro efectivo para eliminar la duplicidad de parcelas y evitar que se aprueben proyectos superpuestos.",
+          "bio": "Supervisa los dictámenes de elegibilidad técnica en las 16 regiones. Diseña el protocolo de inspección de campo mediante herramientas geodésicas modernas.",
+          "goals": [
+            "Implementar el Sistema Digital de Elegibilidad con Georreferenciación (SDEG) en todo el país",
+            "Eliminar al 100% las solicitudes con parcelas duplicadas o ubicadas en áreas naturales protegidas",
+            "Agilizar la emisión del certificado de elegibilidad técnica de 30 días a 7 días hábiles"
+          ],
+          "frustrations": [
+            "Planos dibujados a mano alzada sin coordenadas UTM válidas que ingresan por mesa de partes",
+            "Expedientes que aprueban elegibilidad pero que al momento de la siembra carecen de acceso a fuentes de agua",
+            "Falta de equipos móviles adecuados en las unidades desconcentradas para capturar polígonos GPS"
+          ]
+        },
+        {
+          "id": 38,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "archetypeName": "Ing. Carmen Salazar Huanca",
+          "name": "Ing. Carmen Salazar Huanca",
+          "role": "Evaluadora Agrónoma de Campo (Unidad Regional Áncash)",
+          "demographics": "38 años, Huaraz, Áncash; Ingeniera Agrónoma, 10 años evaluando parcelas andinas",
+          "age": 38,
+          "techTechSavviness": "Intermedio (Manejo de GPS Garmin, aplicaciones de geolocalización, QGIS básico)",
+          "quote": "Caminar 4 horas cerro arriba bajo la lluvia para verificar un lindero y que el celular se quede sin batería es muy duro. Necesitamos una app offline.",
+          "bio": "Recorre las comunidades del Callejón de Huaylas y Conchucos evaluando solicitudes de elegibilidad. Mide áreas, pendientes y analiza la aptitud de los suelos.",
+          "goals": [
+            "Disponer de una app móvil que capture el polígono de la parcela sin necesidad de conexión a internet",
+            "Subir fotos de las parcelas con marca de agua inalterable de fecha, hora y coordenadas GPS",
+            "Sincronizar automáticamente los datos con el servidor central al llegar al hotel en la ciudad"
+          ],
+          "frustrations": [
+            "Llenar actas de campo en papel bajo la lluvia que luego se rompen o manchan con barro",
+            "Tener que dedicar las noches a tipear coordenadas manualmente en hojas de cálculo",
+            "Discusiones sobre linderos entre comuneros cuando no existen hitos catastrales visibles"
+          ]
+        },
+        {
+          "id": 39,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "archetypeName": "Don Braulio Condori Mayta",
+          "name": "Don Braulio Condori Mayta",
+          "role": "Productor Agrario con Parcelas Andinas Dispersas (Panao, Huánuco)",
+          "demographics": "57 años, Huánuco; Productor de papa y cereales andinos, Quechua / Español",
+          "age": 57,
+          "techTechSavviness": "Básico (Manejo de teléfono celular sencillo para coordinaciones familiares)",
+          "quote": "Tengo tres parcelas chiquitas: una arriba para papa nativa, otra en la falda para maíz y otra abajo para habas. Quiero que el sistema registre las tres.",
+          "bio": "Agricultor tradicional que practica el control vertical de pisos ecológicos para mitigar riesgos climáticos. Postula con su asociación al incentivo tecnológico.",
+          "goals": [
+            "Que AGROIDEAS reconozca sus parcelas discontinuas como una sola unidad productiva familiar",
+            "Obtener el certificado de elegibilidad sin que le exijan un plano catastral costoso de ingeniero privado",
+            "Acceder a semillas de calidad y motocultores para tecnificar sus pequeñas parcelas de altura"
+          ],
+          "frustrations": [
+            "Evaluadores que quieren descalificarlo porque sus terrenos no forman un solo predio continuo",
+            "Cobro excesivo de técnicos privados que cobran hasta S/. 2,000 por levantar planos topográficos",
+            "Demora de varios meses para saber si la visita de campo resultó aprobada o con observaciones"
+          ]
+        },
+        {
+          "id": 40,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "archetypeName": "Ing. Hernán Vidal Obregón",
+          "name": "Ing. Hernán Vidal Obregón",
+          "role": "Especialista en Teledetección y GIS (Oficina de TI / CTR)",
+          "demographics": "33 años, Lima; Geógrafo e Ingeniero de Sistemas, especialista en Imágenes Satelitales",
+          "age": 33,
+          "techTechSavviness": "Avanzado (Google Earth Engine, ArcGIS Pro, imágenes Sentinel-2 y PlanetScope)",
+          "quote": "Con imágenes satelitales multiespectrales podemos validar el índice de vigor vegetal NDVI y comprobar si la parcela realmente estuvo cultivada los últimos tres años.",
+          "bio": "Diseña las capas espaciales del geovisor institucional de AGROIDEAS. Desarrolla algoritmos de clasificación de cobertura agrícola mediante satélite.",
+          "goals": [
+            "Integrar el catálogo de imágenes satelitales gratuitas Copernicus para validación remota de cultivos",
+            "Automatizar el cruce de polígonos postulantes contra las capas de áreas naturales protegidas de SERNANP",
+            "Capacitar a los evaluadores zonales en la captura de polígonos vectoriales estandarizados WGS84"
+          ],
+          "frustrations": [
+            "Archivos Shapefile o KML enviados por consultores con coordenadas mal proyectadas en el océano",
+            "Lentitud de los servidores para procesar capas vectoriales pesadas en horas punta",
+            "Falta de catastro rural oficial actualizado en la mayoría de comunidades campesinas del país"
+          ]
+        },
+        {
+          "id": 41,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "archetypeName": "Sra. Gregoria Mendoza Quispe",
+          "name": "Sra. Gregoria Mendoza Quispe",
+          "role": "Líder de Comité de Productoras de Berries en Terrazas (Caraz, Áncash)",
+          "demographics": "42 años, Caraz; Técnica agropecuaria y productora de arándanos y fresas",
+          "age": 42,
+          "techTechSavviness": "Intermedio (Manejo de smartphone, redes sociales para venta y sistemas de riego automatizado)",
+          "quote": "Nuestros invernaderos están en terrazas andinas de alta densidad. El sistema no debe medir solo hectáreas de tierra, sino tecnología y rendimiento.",
+          "bio": "Lidera un comité de 18 mujeres productoras de berries de exportación. Producen fruta de alto valor comercial en pequeñas superficies tecnificadas.",
+          "goals": [
+            "Demostrar que su pequeña superficie tecnificada es más rentable que un fundo extenso tradicional",
+            "Acreditar la elegibilidad de sus parcelas familiares sin depender de la titularidad de sus cónyuges",
+            "Acceder al incentivo para adquirir una cámara de frío solar para el acopio de la fruta fresca"
+          ],
+          "frustrations": [
+            "Criterios de evaluación antiguos que exigen un número mínimo de hectáreas diseñado para cultivos extensivos",
+            "Dificultades para registrar terrazas agrícolas andinas en polígonos satelitales estándar",
+            "Falta de asesoría técnica previa para subsanar observaciones de delimitación predial"
+          ]
+        },
+        {
+          "id": 42,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "archetypeName": "Ing. Samuel Rivera Zevallos",
+          "name": "Ing. Samuel Rivera Zevallos",
+          "role": "Verificador Técnico Hidrológico Zonal (UR Cusco - Valle Sagrado)",
+          "demographics": "47 años, Cusco; Ingeniero Agrónomo especialista en Recursos Hídricos y Riego",
+          "age": 47,
+          "techTechSavviness": "Intermedio (Manejo de aforadores de caudal, GPS submétrico, cartas del ANA)",
+          "quote": "Lo primero que verifico antes de ver la tierra es la fuente de agua. Si no hay licencia del ANA o caudal garantizado en estiaje, el plan de negocio es inviable.",
+          "bio": "Inspecciona las tomas de captación, manantiales comunales y canales de regadío de los proyectos postulantes. Evalúa la disponibilidad hídrica en época seca.",
+          "goals": [
+            "Interoperar el sistema de elegibilidad con la base de licencias de uso de agua de la Autoridad Nacional del Agua",
+            "Georreferenciar las fuentes hídricas y canales principales en la ficha digital de inspección",
+            "Prevenir conflictos comunales por el agua antes de que se apruebe el cofinanciamiento del plan"
+          ],
+          "frustrations": [
+            "Organizaciones que aseguran tener agua suficiente pero cuyo caudal disminuye drásticamente en agosto",
+            "Comunidades que usan canales rústicos de tierra donde se pierde más del 60% del agua por infiltración",
+            "Demoras de la ANA para emitir las resoluciones de asignación de agua de riego"
+          ]
+        }
+      ]
     },
     "FASE_2_DEFINIR": {
       "H05_MuroHallazgos": [
         {
-          "id": "hallazgo-007-1",
+          "id": 37,
+          "type": "Muro",
+          "projectId": 7,
           "projectCode": "PIIP-2026-IN0007",
-          "clusterId": "CLUST-GIS-01",
-          "clusterName": "Verificación Cartográfica Manual e Ineficiente",
-          "insight": "El 70% del tiempo de determinación de elegibilidad se pierde en el levantamiento y contraste manual de coordenadas con múltiples plataformas del Estado.",
-          "priority": "ALTA"
+          "clusterCategory": "Trazabilidad e Integridad",
+          "findingTitle": "Vulnerabilidad de las Evidencias Fotográficas de Campo",
+          "title": "Vulnerabilidad de las Evidencias Fotográficas de Campo",
+          "evidenceText": "Las fotografías tomadas con celulares personales no cuentan con coordenadas GPS incrustadas ni sellado de tiempo protegido. Existe riesgo real de que se presenten fotos de parcelas ajenas o de años anteriores.",
+          "text": "Las fotografías tomadas con celulares personales no cuentan con coordenadas GPS incrustadas ni sellado de tiempo protegido. Existe riesgo real de que se presenten fotos de parcelas ajenas o de años anteriores.",
+          "sourceTool": "Observación de Campo AEIOU CTR",
+          "priority": "Alta",
+          "quote": "¿Cómo demuestro que estuve en esa parcela si mi foto no tiene coordenadas verificadas?",
+          "date": "2026-03-08"
         },
         {
-          "id": "hallazgo-007-2",
+          "id": 38,
+          "type": "Muro",
+          "projectId": 7,
           "projectCode": "PIIP-2026-IN0007",
-          "clusterId": "CLUST-GIS-02",
-          "clusterName": "Captura Offline de Polígonos en Campo",
-          "insight": "La herramienta debe funcionar 100% offline en zonas de campo, almacenando polígonos GPS localmente para sincronizarse al detectar señal.",
-          "priority": "ALTA"
+          "clusterCategory": "Catastro y Superposición Territorial",
+          "findingTitle": "Superposición de Polígonos y Duplicidad de Beneficiarios",
+          "title": "Superposición de Polígonos y Duplicidad de Beneficiarios",
+          "evidenceText": "La falta de un visor geográfico integrado permite que dos organizaciones diferentes postulen las mismas parcelas agrícolas para captar doble cofinanciamiento de incentivos estatales.",
+          "text": "La falta de un visor geográfico integrado permite que dos organizaciones diferentes postulen las mismas parcelas agrícolas para captar doble cofinanciamiento de incentivos estatales.",
+          "sourceTool": "Cotejo Geoespacial CTR",
+          "priority": "Alta",
+          "quote": "Detectamos en gabinete que una misma chacra de palto figuraba en el padrón de dos cooperativas vecinas de la misma cuenca.",
+          "date": "2026-03-12"
+        },
+        {
+          "id": 39,
+          "type": "Muro",
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "clusterCategory": "Realidad del Minifundio Rural",
+          "findingTitle": "Incompatibilidad con Parcelas Agrícolas Fragmentadas y Dispersas",
+          "title": "Incompatibilidad con Parcelas Agrícolas Fragmentadas y Dispersas",
+          "evidenceText": "El sistema actual exige que el productor tenga una sola parcela continua de 2 hectáreas, descalificando la lógica tradicional andina donde cada familia cultiva 3 o 4 parcelas pequeñas en diferentes pisos ecológicos.",
+          "text": "El sistema actual exige que el productor tenga una sola parcela continua de 2 hectáreas, descalificando la lógica tradicional andina donde cada familia cultiva 3 o 4 parcelas pequeñas en diferentes pisos ecológicos.",
+          "sourceTool": "Entrevistas a Comuneros Andinos",
+          "priority": "Alta",
+          "quote": "Tengo una parcela arriba para papa nativa y otra abajo para maíz. Si el sistema no junta mis dos terrenos, quedo fuera del programa.",
+          "date": "2026-03-17"
+        },
+        {
+          "id": 40,
+          "type": "Muro",
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "clusterCategory": "Seguridad Ambiental y Recursos Hídricos",
+          "findingTitle": "Falta de Validación Automática con Fuentes Hídricas y Áreas Protegidas",
+          "title": "Falta de Validación Automática con Fuentes Hídricas y Áreas Protegidas",
+          "evidenceText": "Se han aprobado planes de negocio en áreas marginales de ríos o zonas de amortiguamiento de parques nacionales (SERNANP) debido a que los evaluadores no cuentan con capas cartográficas oficiales en sus dispositivos.",
+          "text": "Se han aprobado planes de negocio en áreas marginales de ríos o zonas de amortiguamiento de parques nacionales (SERNANP) debido a que los evaluadores no cuentan con capas cartográficas oficiales en sus dispositivos.",
+          "sourceTool": "Cruces de Información SERNANP-ANA",
+          "priority": "Alta",
+          "quote": "Un cruce espacial en pantalla evitaría aprobar proyectos que luego son paralizados por invadir la zona de reserva forestal.",
+          "date": "2026-03-22"
+        },
+        {
+          "id": 41,
+          "type": "Muro",
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "clusterCategory": "Operatividad y Herramientas Móviles",
+          "findingTitle": "Uso de Dispositivos GPS Obsoletos y Problemas de Proyección UTM",
+          "title": "Uso de Dispositivos GPS Obsoletos y Problemas de Proyección UTM",
+          "evidenceText": "Muchos evaluadores de campo utilizan GPS de mano antiguos configurados en el datum PSAD56 en lugar de WGS84, generando desfases de hasta 200 metros que ubican parcelas en barrancos o lagunas inexistentes.",
+          "text": "Muchos evaluadores de campo utilizan GPS de mano antiguos configurados en el datum PSAD56 en lugar de WGS84, generando desfases de hasta 200 metros que ubican parcelas en barrancos o lagunas inexistentes.",
+          "sourceTool": "Diagnóstico de Equipamiento CTR",
+          "priority": "Media",
+          "quote": "Cuando subimos los puntos tomados en campo, el software muestra que el establo lechero está flotando en medio del mar.",
+          "date": "2026-03-27"
+        },
+        {
+          "id": 42,
+          "type": "Muro",
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "clusterCategory": "Eficiencia en la Evaluación",
+          "findingTitle": "Demora Excesiva en la Emisión del Certificado de Elegibilidad Técnica",
+          "title": "Demora Excesiva en la Emisión del Certificado de Elegibilidad Técnica",
+          "evidenceText": "La verificación manual de linderos, planos y padrones de socios retrasa la emisión del certificado de elegibilidad más de 40 días hábiles, acortando el tiempo disponible para la formulación del plan de negocio definitivo.",
+          "text": "La verificación manual de linderos, planos y padrones de socios retrasa la emisión del certificado de elegibilidad más de 40 días hábiles, acortando el tiempo disponible para la formulación del plan de negocio definitivo.",
+          "sourceTool": "Trazabilidad de Trámite TUPA",
+          "priority": "Media",
+          "quote": "El productor espera más de un mes solo para saber si su terreno es elegible y poder recién empezar a armar el presupuesto.",
+          "date": "2026-04-02"
         }
       ],
-      "H06_DefinicionDesafioHMW": {
-        "projectCode": "PIIP-2026-IN0007",
-        "hmwCode": "HMW-IN0007",
-        "action": "implementar un Sistema Digital de Evaluación de Elegibilidad con Georreferenciación (SDEG) en PWA con captura de polígonos GPS y cruce automatizado de capas GIS",
-        "targetUser": "los evaluadores técnicos regionales y la Coordinación Técnica Regional (CTR)",
-        "benefit": "emitir dictámenes de elegibilidad geográfica inmediatos y con alta precisión cartográfica",
-        "constraint": "las zonas con nula conectividad a internet en campo y la dispersión de bases catastrales",
-        "finalHMWStatement": "¿Cómo podríamos implementar un Sistema Digital de Evaluación de Elegibilidad con Georreferenciación (SDEG) en PWA con captura de polígonos GPS y cruce automatizado de capas GIS para que los evaluadores técnicos regionales emitan dictámenes de elegibilidad precisos e inmediatos a pesar de la falta de conectividad en campo y la dispersión de bases catastrales?"
-      }
+      "H06_DefinicionDesafioHMW": [
+        {
+          "id": 37,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "insightId": 37,
+          "targetUser": "los comités de comercialización de cooperativas y asociaciones agrarias",
+          "actionGoal": "conocer los precios actualizados en chacra, mercado mayorista y puertos de exportación",
+          "constraintOrPain": "la asimetría de información que permite a los intermediarios imponer precios desfavorables",
+          "hmwStatement": "¿Cómo podríamos conocer los precios actualizados en chacra, mercado mayorista y puertos de exportación para los comités de comercialización de cooperativas y asociaciones agrarias a pesar de la asimetría de información que permite a los intermediarios imponer precios desfavorables?",
+          "question": "¿Cómo podríamos conocer los precios actualizados en chacra, mercado mayorista y puertos de exportación para los comités de comercialización de cooperativas y asociaciones agrarias a pesar de la asimetría de información que permite a los intermediarios imponer precios desfavorables?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 38,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "insightId": 38,
+          "targetUser": "los productores agrarios que planifican la cosecha y fletes de carga",
+          "actionGoal": "articular envíos consolidados y contratar transporte refrigerado a tarifas competitivas",
+          "constraintOrPain": "la reducida escala individual de carga y las dificultades de acceso por trochas carrozables",
+          "hmwStatement": "¿Cómo podríamos articular envíos consolidados y contratar transporte refrigerado a tarifas competitivas para los productores agrarios que planifican la cosecha y fletes de carga a pesar de la reducida escala individual de carga y las dificultades de acceso por trochas carrozables?",
+          "question": "¿Cómo podríamos articular envíos consolidados y contratar transporte refrigerado a tarifas competitivas para los productores agrarios que planifican la cosecha y fletes de carga a pesar de la reducida escala individual de carga y las dificultades de acceso por trochas carrozables?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 39,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "insightId": 39,
+          "targetUser": "las empresas agroindustriales y supermercados compradores de productos de calidad",
+          "actionGoal": "identificar lotes estandarizados con certificación orgánica y buenas prácticas agrícolas (BPA)",
+          "constraintOrPain": "la heterogeneidad en el calibre, empaque y humedad de las entregas de pequeños agricultores",
+          "hmwStatement": "¿Cómo podríamos identificar lotes estandarizados con certificación orgánica y buenas prácticas agrícolas (BPA) para las empresas agroindustriales y supermercados compradores de productos de calidad a pesar de la heterogeneidad en el calibre, empaque y humedad de las entregas de pequeños agricultores?",
+          "question": "¿Cómo podríamos identificar lotes estandarizados con certificación orgánica y buenas prácticas agrícolas (BPA) para las empresas agroindustriales y supermercados compradores de productos de calidad a pesar de la heterogeneidad en el calibre, empaque y humedad de las entregas de pequeños agricultores?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 40,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "insightId": 40,
+          "targetUser": "los directivos comunales sin experiencia en negociación contractual avanzada",
+          "actionGoal": "firmar acuerdos de compra a futuro y contratos marco con cláusulas de precio piso justas",
+          "constraintOrPain": "el riesgo de incumplimiento contractual por fluctuaciones climáticas y falta de garantías legales",
+          "hmwStatement": "¿Cómo podríamos firmar acuerdos de compra a futuro y contratos marco con cláusulas de precio piso justas para los directivos comunales sin experiencia en negociación contractual avanzada a pesar de el riesgo de incumplimiento contractual por fluctuaciones climáticas y falta de garantías legales?",
+          "question": "¿Cómo podríamos firmar acuerdos de compra a futuro y contratos marco con cláusulas de precio piso justas para los directivos comunales sin experiencia en negociación contractual avanzada a pesar de el riesgo de incumplimiento contractual por fluctuaciones climáticas y falta de garantías legales?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 41,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "insightId": 41,
+          "targetUser": "los socios productores que necesitan cotizaciones rápidas antes de vender en chacra",
+          "actionGoal": "recibir boletines diarios de precios y demanda insatisfecha a través de mensajes de voz y WhatsApp",
+          "constraintOrPain": "la sobrecarga de datos en portales web complejos que no pueden consultar desde el campo",
+          "hmwStatement": "¿Cómo podríamos recibir boletines diarios de precios y demanda insatisfecha a través de mensajes de voz y WhatsApp para los socios productores que necesitan cotizaciones rápidas antes de vender en chacra a pesar de la sobrecarga de datos en portales web complejos que no pueden consultar desde el campo?",
+          "question": "¿Cómo podríamos recibir boletines diarios de precios y demanda insatisfecha a través de mensajes de voz y WhatsApp para los socios productores que necesitan cotizaciones rápidas antes de vender en chacra a pesar de la sobrecarga de datos en portales web complejos que no pueden consultar desde el campo?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 42,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "insightId": 42,
+          "targetUser": "los especialistas en articulación comercial de las sedes de AGROIDEAS",
+          "actionGoal": "hacer seguimiento a las ruedas de negocios y verificar el cierre formal de órdenes de compra",
+          "constraintOrPain": "la falta de un registro centralizado que vincule los acuerdos pactados con las ventas efectivas",
+          "hmwStatement": "¿Cómo podríamos hacer seguimiento a las ruedas de negocios y verificar el cierre formal de órdenes de compra para los especialistas en articulación comercial de las sedes de AGROIDEAS a pesar de la falta de un registro centralizado que vincule los acuerdos pactados con las ventas efectivas?",
+          "question": "¿Cómo podríamos hacer seguimiento a las ruedas de negocios y verificar el cierre formal de órdenes de compra para los especialistas en articulación comercial de las sedes de AGROIDEAS a pesar de la falta de un registro centralizado que vincule los acuerdos pactados con las ventas efectivas?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        }
+      ]
     },
     "FASE_3_IDEAR": {
       "H07_LluviaIdeasCrazy8s": [
         {
-          "ideaId": "IDEA-007-01",
+          "id": 37,
+          "projectId": 7,
           "projectCode": "PIIP-2026-IN0007",
-          "title": "Aplicativo Web PWA SDEG con captura de polígonos GPS offline e interoperabilidad con capas geográficas (MIDAGRI-GEO, SERNANP, Geocatmin)",
-          "author": "José Fernando Barturen Torres - CTR",
-          "votes": 14
+          "desafioId": 37,
+          "ideaTitle": "Observatorio Celular de Precios Mayoristas y Tendencias con alertas de voz",
+          "idea": "Observatorio Celular de Precios Mayoristas y Tendencias con alertas de voz",
+          "description": "Canal que envía resúmenes matutinos en audio sobre el precio del café, cacao y granos en los principales mercados del país.",
+          "category": "Tecnológica",
+          "authorRole": "Especialista en Mercado y Precios",
+          "votesCount": 12,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "ideaId": "IDEA-007-02",
+          "id": 38,
+          "projectId": 7,
           "projectCode": "PIIP-2026-IN0007",
-          "title": "Uso de drones para fotogrametría en cada parcela evaluada",
-          "author": "Especialista Regional Junín",
-          "votes": 4
+          "desafioId": 38,
+          "ideaTitle": "Calculadora Logística de Consolidación de Fletes y rutas compartidas",
+          "idea": "Calculadora Logística de Consolidación de Fletes y rutas compartidas",
+          "description": "Módulo que agrupa la carga de múltiples productores cercanos para contratar camiones completos a menor costo por quintal.",
+          "category": "Tecnológica",
+          "authorRole": "Ingeniero de Transporte y Logística",
+          "votesCount": 9,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 39,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "desafioId": 39,
+          "ideaTitle": "Catálogo Digital de Oferta Exportable con fichas técnicas estandarizadas",
+          "idea": "Catálogo Digital de Oferta Exportable con fichas técnicas estandarizadas",
+          "description": "Vitrina comercial web bilingüe donde las cooperativas publican sus calibres, tazas de catación y perfiles sensoriales para compradores.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Especialista Comercial de Agroexportación",
+          "votesCount": 10,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 40,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "desafioId": 42,
+          "ideaTitle": "Ruedas de Negocios Virtuales B2B con seguimiento de compromisos de compra",
+          "idea": "Ruedas de Negocios Virtuales B2B con seguimiento de compromisos de compra",
+          "description": "Eventos de enlace comercial estructurados con acompañamiento de AGROIDEAS para cerrar cartas de intención formales.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Gestor de Articulación Comercial",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 41,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "desafioId": 40,
+          "ideaTitle": "Modelo Estandarizado de Contrato Forward con Cláusula de Precio Piso",
+          "idea": "Modelo Estandarizado de Contrato Forward con Cláusula de Precio Piso",
+          "description": "Plantilla contractual aprobada que protege al productor frente a caídas abruptas de precio internacional sin penalidades lesivas.",
+          "category": "Normativa",
+          "authorRole": "Especialista en Derecho Agrario y Comercial",
+          "votesCount": 11,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 42,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "desafioId": 41,
+          "ideaTitle": "Programa de Formación en Negociación y Cierre de Contratos para directivos",
+          "idea": "Programa de Formación en Negociación y Cierre de Contratos para directivos",
+          "description": "Simulaciones y talleres prácticos de venta directa para que los dirigentes puedan debatir de igual a igual frente a exportadores.",
+          "category": "Capacitación",
+          "authorRole": "Mentor de Liderazgo Comercial",
+          "votesCount": 7,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         }
       ],
-      "H08_MatrizPriorizacion": {
-        "projectCode": "PIIP-2026-IN0007",
-        "evaluationDate": "2026-09-27T10:15:00Z",
-        "ideasEvaluadas": [
-          {
-            "ideaId": "IDEA-007-01",
-            "title": "Aplicativo Web PWA SDEG con captura de polígonos GPS offline e interoperabilidad GIS",
-            "deseabilidad": 5,
-            "factibilidad": 5,
-            "viabilidad": 4,
-            "impacto": 5,
-            "scoreTotal": 19,
-            "isWinningIdea": true
-          },
-          {
-            "ideaId": "IDEA-007-02",
-            "title": "Uso de drones para fotogrametría",
-            "deseabilidad": 4,
-            "factibilidad": 2,
-            "viabilidad": 2,
-            "impacto": 4,
-            "scoreTotal": 12,
-            "isWinningIdea": false
-          }
-        ],
-        "winningIdeaSummary": {
-          "title": "Sistema Digital de Evaluación de Elegibilidad con Georreferenciación (SDEG)",
-          "score": "19/20 Puntos",
-          "rationale": "Resuelve la verificación de elegibilidad en tiempo récord mediante PWA ejecutable en móviles con GPS integrado, guardando datos en LocalStorage y validando superposiciones al conectar con el visor geográfico."
+      "H08_MatrizPriorizacion": [
+        {
+          "id": 37,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "ideaId": 37,
+          "ideaTitle": "Observatorio Celular de Precios Mayoristas y Tendencias con alertas de voz",
+          "title": "Observatorio Celular de Precios Mayoristas y Tendencias con alertas de voz",
+          "desirability": 5,
+          "feasibility": 5,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 19,
+          "isWinningIdea": true,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 38,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "ideaId": 41,
+          "ideaTitle": "Modelo Estandarizado de Contrato Forward con Cláusula de Precio Piso",
+          "title": "Modelo Estandarizado de Contrato Forward con Cláusula de Precio Piso",
+          "desirability": 5,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 39,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "ideaId": 39,
+          "ideaTitle": "Catálogo Digital de Oferta Exportable con fichas técnicas estandarizadas",
+          "title": "Catálogo Digital de Oferta Exportable con fichas técnicas estandarizadas",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 16,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 40,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "ideaId": 38,
+          "ideaTitle": "Calculadora Logística de Consolidación de Fletes y rutas compartidas",
+          "title": "Calculadora Logística de Consolidación de Fletes y rutas compartidas",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 15,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 41,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "ideaId": 40,
+          "ideaTitle": "Ruedas de Negocios Virtuales B2B con seguimiento de compromisos de compra",
+          "title": "Ruedas de Negocios Virtuales B2B con seguimiento de compromisos de compra",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 14,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 42,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "ideaId": 42,
+          "ideaTitle": "Programa de Formación en Negociación y Cierre de Contratos para directivos",
+          "title": "Programa de Formación en Negociación y Cierre de Contratos para directivos",
+          "desirability": 3,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 13,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
         }
+      ],
+      "H09_PrototipadoRapido": {
+        "id": 7,
+        "projectId": 7,
+        "projectCode": "PIIP-2026-IN0007",
+        "prototypeTitle": "Maqueta Interactiva de App Móvil de Campo Anti-Fraude SDEG",
+        "name": "Maqueta Interactiva de App Móvil de Campo Anti-Fraude SDEG",
+        "prototypeType": "Digital PWA",
+        "keyFeatures": [
+          "Captura de foto con cámara bloqueada y sello GPS inmutable",
+          "Trazado de polígonos parcelarios offline y cálculo de área neta",
+          "Cruce automático contra capas de áreas naturales protegidas SERNANP"
+        ],
+        "artifactUrlOrImage": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500",
+        "imageUrl": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500",
+        "description": "La evaluadora abre el app en su tablet. Selecciona el expediente, toma la foto con coordenadas GPS + timestamp y traza el predio offline para sincronizar después.",
+        "testingGoal": "Cero expedientes cargados con metadatos alterados en un lote simulado de 30 inspecciones."
       }
     },
     "FASE_4_ENTREGAR": {
-      "H09_PrototipadoRapido": {
-        "projectCode": "PIIP-2026-IN0007",
-        "prototypeName": "Prototipo SDEG - Visor Geográfico PWA Local-First",
-        "technologyStack": "HTML5 / JS Leaflet / Turf.js / LocalStorage PWA",
-        "keyFeatures": [
-          "Captura de puntos GPS y trazado de polígonos de parcelas offline",
-          "Cálculo automático de área (hectáreas) y perímetro mediante Turf.js",
-          "Cruce de capas simulado con áreas protegidas SERNANP y bosques de protección",
-          "Generación del Certificado de Elegibilidad Geográfica en PDF con código QR y coordenadas UTMS"
-        ]
-      },
-      "H10_PlanAccion": {
-        "projectCode": "PIIP-2026-IN0007",
-        "roadmap": [
-          {
-            "sprint": "Sprint 1 (Semanas 1-3)",
-            "objective": "Integración de reglas de elegibilidad geográfica y definición de capas cartográficas con CTR/UAJ.",
-            "responsible": "CTR / UPP / UAJ"
-          },
-          {
-            "sprint": "Sprint 2 (Semanas 4-6)",
-            "objective": "Desarrollo del visor web PWA SDEG con Leaflet.js y motor offline de captura de polígonos GPS.",
-            "responsible": "UA-TI / CTR"
-          },
-          {
-            "sprint": "Sprint 3 (Semanas 7-9)",
-            "objective": "Pilotaje en Unidades Regionales de Junín y San Martín evaluando 30 parcelas reales.",
-            "responsible": "CTR / Unidades Regionales"
-          }
-        ]
-      },
-      "H11_MatrizRiesgosTesteo": {
-        "projectCode": "PIIP-2026-IN0007",
-        "risks": [
-          {
-            "riskId": "RISK-IN0007-01",
-            "description": "Imprecisión de GPS en teléfonos móviles de gama baja bajo cobertura boscosa densa.",
-            "severity": "MEDIA",
-            "mitigation": "Incorporar algoritmo de promedio de precisión multiseñal y tolerancia paramétrica de error en metros."
-          }
-        ],
-        "testCard": {
-          "testCode": "TEST-IN0007-01",
-          "hypothesis": "El uso de SDEG reduce el tiempo de evaluación de elegibilidad geográfica a menos de 48 horas con precisión >95%.",
-          "result": "VALIDADO: El tiempo de calificación se redujo de 28 días calendario a 1.5 horas (reducción del 97.7%), detectando 2 casos de superposición parcial antes del desembolso.",
-          "status": "APROBADO PARA PRODUCCIÓN E INCLUSIÓN EN ANEXO 5"
+      "H10_PlanAccion": [
+        {
+          "id": 3,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "taskName": "Prueba de app de campo offline con evaluadores de la UR Ancash",
+          "task": "Prueba de app de campo offline con evaluadores de la UR Ancash",
+          "phase": "Piloto Fase 1",
+          "responsibleUnit": "Unidad de Negocios (UN) / UR Ancash",
+          "responsible": "Unidad de Negocios (UN) / UR Ancash",
+          "leader": "José Fernando Barturen Torres",
+          "startDate": "2026-06-15",
+          "endDate": "2026-06-30",
+          "deadline": "2026-06-30",
+          "deliverable": "Lote piloto de 30 expedientes inspeccionados con sello GPS y timestamp UTC anti-fraude",
+          "status": "En Proceso"
         }
-      }
+      ],
+      "H11_MatrizRiesgosTesteo": [
+        {
+          "id": 3,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "riskDescription": "Rechazo de evaluadores a adoptar la app por curva de aprendizaje y cambio de rutinas de trabajo establecidas.",
+          "description": "Rechazo de evaluadores a adoptar la app por curva de aprendizaje y cambio de rutinas de trabajo establecidas.",
+          "riskType": "Operativo",
+          "probability": "Media",
+          "impact": "Medio",
+          "level": "Medio",
+          "mitigationStrategy": "Programa de capacitación certificada de 8 horas con manual interactivo y designación de Campeones Digitales por Unidad Regional.",
+          "mitigation": "Programa de capacitación certificada de 8 horas con manual interactivo y designación de Campeones Digitales por Unidad Regional.",
+          "testResult": "10 de 10 evaluadores en Ancash redujeron su tiempo de captura de campo de 45 a 12 minutos por expediente."
+        },
+        {
+          "id": 4,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "riskDescription": "Falta de tablets IP68 en las Unidades Regionales para trabajo de campo en condiciones climáticas adversas.",
+          "description": "Falta de tablets IP68 en las Unidades Regionales para trabajo de campo en condiciones climáticas adversas.",
+          "riskType": "Presupuestal",
+          "probability": "Alta",
+          "impact": "Alto",
+          "level": "Alto",
+          "mitigationStrategy": "Incluir adquisición de 25 tablets ruguerizadas en la ampliación presupuestal y establecer protocolo de préstamo rotativo.",
+          "mitigation": "Incluir adquisición de 25 tablets ruguerizadas en la ampliación presupuestal y establecer protocolo de préstamo rotativo.",
+          "testResult": "Las tablets de prueba operaron sin fallas mecánicas bajo lluvia ligera en 3 comunidades de Huari."
+        }
+      ]
     }
   }
 }

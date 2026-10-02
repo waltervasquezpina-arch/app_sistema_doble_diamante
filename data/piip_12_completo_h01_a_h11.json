@@ -1,229 +1,777 @@
 {
   "$schema": "./schemas/far-piip-v3.json",
-  "NavegacionYTrazabilidad": {
-    "IniciativaCodigoActiva": "PIIP-2026-IN0012",
-    "IniciativaNombreActiva": "Portal de Transparencia Interactivo para Beneficiarios del Programa AGROIDEAS",
+  "IniciativaIdentificacion": {
+    "id": 12,
+    "IniciativaCodigo": "PIIP-2026-IN0012",
+    "IniciativaNombre": "Portal de Transparencia Interactivo para Beneficiarios del Programa AGROIDEAS",
     "UnidadOrganicaResponsable": "Unidad de Reconversión e Intervenciones Especiales (URIE) / UPP",
     "LiderProyecto": "Sergio Antonio Haro Muñoz - URIE",
-    "UbicacionActual": {
-      "TipoVista": "HERRAMIENTA_METODOLOGICA",
-      "FaseNumero": 4,
-      "FaseNombre": "Entregar (Convergencia)",
-      "HerramientaCodigo": "H11",
-      "HerramientaNombre": "Matriz de Riesgos y Testeo (Pase a Producción)",
-      "VistaCodigo": "V04.3",
-      "VistaTitulo": "Fase 4: Entregar - Matriz de Riesgos y Tarjeta de Testeo",
-      "VistaUrl": "fase4/11-matriz-riesgos.html"
+    "FechaRegistro": "2026-04-05",
+    "EstadoFases": {
+      "descubrir": "active",
+      "definir": "pending",
+      "idear": "pending",
+      "entregar": "pending"
     },
-    "PosicionEnFlujo": {
-      "PasoActual": 11,
-      "TotalPasosFlujo": 11,
-      "EtiquetaSecuencia": "Paso 11 de 11 - Cierre de Flujo y Registro en Portafolio",
-      "PasoAnterior": "fase4/10-plan-accion.html",
-      "PasoSiguiente": null
-    },
-    "ControlIteracionYTrazabilidad": {
-      "VersionIteracion": 1,
-      "PermiteIteracionAnterior": true,
-      "FechaUltimaActualizacion": "2026-09-27T11:58:00Z",
-      "UsuarioActualRol": "Facilitador Ágil / Especialista URIE"
-    }
+    "PorcentajeAvanceGlobal": 50.0
   },
-  "PortafolioPIIP_FichaMaestra": {
-    "id": 12,
-    "code": "PIIP-2026-IN0012",
-    "title": "Portal de Transparencia Interactivo para Beneficiarios del Programa AGROIDEAS",
-    "responsible": "Unidad de Reconversión e Intervenciones Especiales (URIE) / UPP",
-    "contact": "Sergio Antonio Haro Muñoz - URIE",
-    "date": "2026-09-26",
-    "status": "Fase 4: Entregar (Completado)",
-    "porcentajeAvanceGlobal": 100.0,
-    "herramientasRegistradasContador": 11,
-    "opinionTecnicaEvaluacion": {
-      "puntajeTotal": 11,
-      "puntajeMaximo": 12,
-      "impacto": 4,
-      "priorizacionEstrategica": 4,
-      "enfoqueInnovacion": 3,
-      "dictamen": "RECOMENDABLE PARA APROBACIÓN E INSTITUCIONALIZACIÓN"
-    },
-    "phases": {
-      "descubrir": "completed",
-      "definir": "completed",
-      "idear": "completed",
-      "entregar": "completed"
-    }
-  },
-  "HerramientasMetodologicas_Registros": {
+  "RegistrosHerramientasMetodologicas": {
     "FASE_1_DESCUBRIR": {
       "H01_ObservacionAEIOU": [
         {
-          "id": "aeiou-0012-01",
-          "dimension": "Actividades",
-          "observation": "Los representantes de Organizaciones Agrarias (OA) y productores beneficiarios deben acudir presencialmente a las sedes regionales o enviar solicitudes escritas para conocer el estado de desembolso de sus incentivos y avance de ejecución.",
-          "timestamp": "2026-09-26T09:15:00Z"
+          "id": 67,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "activity": "Recepción y procesamiento de solicitudes de acceso a la información pública formuladas por gremios de agricultores y periodistas de investigación.",
+          "environment": "Oficina de Transparencia y Acceso a la Información en Lima; pilas de reportes en PDF impresos y solicitudes de prórroga de plazo.",
+          "interaction": "El responsable de transparencia debe pedir por correo a 3 áreas distintas que le preparen tablas de montos asignados por cadena productiva.",
+          "object": "Formulario oficial de solicitud de acceso a la información en papel, buzón de correo institucional, matriz de seguimiento de plazos.",
+          "objects": "Formulario oficial de solicitud de acceso a la información en papel, buzón de correo institucional, matriz de seguimiento de plazos.",
+          "user": "Funcionario Responsable de Transparencia UPP, periodista agrario regional y analistas de datos de UN.",
+          "users": "Funcionario Responsable de Transparencia UPP, periodista agrario regional y analistas de datos de UN.",
+          "observer": "Oficial de Transparencia y Acceso a la Información - UPP",
+          "observationDate": "2026-04-06",
+          "date": "2026-04-06",
+          "timestamp": "2026-04-06T10:30:00.000Z"
         },
         {
-          "id": "aeiou-0012-02",
-          "dimension": "Entorno",
-          "observation": "Falta de un canal digital público y amigable de rendición de cuentas e información abierta de beneficiarios, montos cofinanciados y georreferenciación de Planes de Negocio.",
-          "timestamp": "2026-09-26T11:00:00Z"
+          "id": 68,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "activity": "Consolidación de tablas estadísticas históricas de los últimos 10 años dispersas en archivos Microsoft Access, Excel y textos planos.",
+          "environment": "Área de estadística de UPP en Lima; terminal de cómputo con archivos con nombres divergentes ('Datos_Finales_2022_arreglado.xls').",
+          "interaction": "El estadístico detecta diferencias numéricas en el total de planes aprobados entre la memoria anual y los reportes de planeamiento.",
+          "object": "Archivos Access .mdb, libros Excel con fórmulas rotas, manual de codificación de cadenas agropecuarias.",
+          "objects": "Archivos Access .mdb, libros Excel con fórmulas rotas, manual de codificación de cadenas agropecuarias.",
+          "user": "Especialista Estadístico de UPP y Coordinador de Monitoreo Estratégico.",
+          "users": "Especialista Estadístico de UPP y Coordinador de Monitoreo Estratégico.",
+          "observer": "Analista de Datos Abiertos - UPP",
+          "observationDate": "2026-04-28",
+          "date": "2026-04-28",
+          "timestamp": "2026-04-28T15:00:00.000Z"
+        },
+        {
+          "id": 69,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "activity": "Entrevista con dirigentes agrarios provinciales para conocer cómo buscan información sobre el destino de los fondos públicos asignados a su valle.",
+          "environment": "Local de la Junta de Usuarios del Sector Hidráulico Menor en Chancay-Huaral, Lima Provincias.",
+          "interaction": "Los agricultores señalan que los archivos PDF subidos al Portal de Transparencia Estándar (PTE) son incomprensibles y no permiten buscar por distrito.",
+          "object": "Smartphones personales de los agricultores, portal PTE mostrado en pantalla de celular con zoom forzado, actas de la junta.",
+          "objects": "Smartphones personales de los agricultores, portal PTE mostrado en pantalla de celular con zoom forzado, actas de la junta.",
+          "user": "8 dirigentes de comisiones de regantes, presidente de la Junta de Usuarios e investigadora social de AGROIDEAS.",
+          "users": "8 dirigentes de comisiones de regantes, presidente de la Junta de Usuarios e investigadora social de AGROIDEAS.",
+          "observer": "Investigador de Participación Ciudadana - UPP",
+          "observationDate": "2026-05-20",
+          "date": "2026-05-20",
+          "timestamp": "2026-05-20T11:45:00.000Z"
+        },
+        {
+          "id": 70,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "activity": "Sesión de co-diseño de dashboards interactivos con mapas provinciales dinámicos, gráficos de barras por cultivo y descarga en formatos abiertos (.CSV, .JSON).",
+          "environment": "Sala de conferencias de AGROIDEAS en Lima con representantes de la sociedad civil y observatorios de políticas agrarias.",
+          "interaction": "Los participantes sugieren incorporar filtros sencillos: 'Mi Región', 'Mi Cultivo', 'Monto Invertido' y 'Número de Familias Beneficiadas'.",
+          "object": "Tarjetas de diseño UI, prototipo interactivo en Power BI Embedded y mapas coropléticos de calor regional.",
+          "objects": "Tarjetas de diseño UI, prototipo interactivo en Power BI Embedded y mapas coropléticos de calor regional.",
+          "user": "Especialistas de UPP, desarrolladores web de OTI, representantes de Conveagro y periodistas agropecuarios.",
+          "users": "Especialistas de UPP, desarrolladores web de OTI, representantes de Conveagro y periodistas agropecuarios.",
+          "observer": "Líder de Transparencia e Innovación Cívica - UPP",
+          "observationDate": "2026-06-12",
+          "date": "2026-06-12",
+          "timestamp": "2026-06-12T16:00:00.000Z"
+        },
+        {
+          "id": 71,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "activity": "Prueba de accesibilidad web (WCAG 2.1 nivel AA) y velocidad de carga del portal de transparencia desde dispositivos móviles en zonas de conexión limitada.",
+          "environment": "Cabina comunitaria en San Jerónimo, Cusco; prueba con conexión de 1.5 Mbps y usuarios no expertos en navegación digital.",
+          "interaction": "Un directivo quechua-hablante logra filtrar en 20 segundos los 14 planes de papa nativa aprobados en su provincia y ver los montos adjudicados.",
+          "object": "Tableta básica Android, lector de pantalla para personas con discapacidad visual, herramienta Google Lighthouse.",
+          "objects": "Tableta básica Android, lector de pantalla para personas con discapacidad visual, herramienta Google Lighthouse.",
+          "user": "3 líderes comunales andinos, facilitador de inclusión digital y evaluador de accesibilidad web.",
+          "users": "3 líderes comunales andinos, facilitador de inclusión digital y evaluador de accesibilidad web.",
+          "observer": "Especialista en Inclusión y Accesibilidad Digital - UPP",
+          "observationDate": "2026-07-06",
+          "date": "2026-07-06",
+          "timestamp": "2026-07-06T10:15:00.000Z"
+        },
+        {
+          "id": 72,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "activity": "Presentación pública del Portal Interactivo de Datos Abiertos del Programa AGROIDEAS con actualización diaria automatizada vía API institucional.",
+          "environment": "Auditorio principal del MIDAGRI en Lima; transmisión en vivo por redes sociales con autoridades sectoriales y medios de comunicación.",
+          "interaction": "El Director Ejecutivo demuestra cómo cualquier ciudadano puede auditar en tiempo real la ejecución de más de S/. 200 millones en incentivos agrarios.",
+          "object": "Pantalla gigante LED de alta definición, portal web público en producción (datos.agroideas.gob.pe), notas de prensa oficiales.",
+          "objects": "Pantalla gigante LED de alta definición, portal web público en producción (datos.agroideas.gob.pe), notas de prensa oficiales.",
+          "user": "Ministro de Desarrollo Agrario y Riego, Director Ejecutivo de AGROIDEAS, gremios agrarios nacionales y prensa especializada.",
+          "users": "Ministro de Desarrollo Agrario y Riego, Director Ejecutivo de AGROIDEAS, gremios agrarios nacionales y prensa especializada.",
+          "observer": "Coordinador General de Modernización y Transparencia - UPP",
+          "observationDate": "2026-07-30",
+          "date": "2026-07-30",
+          "timestamp": "2026-07-30T11:00:00.000Z"
         }
       ],
-      "H02_MapaEmpatia": {
-        "userProfile": "Directivo de Organización Agraria Beneficiaria y Ciudadano Productor",
-        "says": "Queremos ver en qué fase va nuestro incentivo y cuánto dinero se ha desembolsado sin depender de llamadas o intermediarios.",
-        "does": "Envía documentos de acceso a la información pública o consulta a los especialistas regionales periódicamente.",
-        "thinks": "La información de los fondos asignados por AGROIDEAS debería ser pública, clara y consultable desde el celular en cualquier momento.",
-        "feels": "Incertidumbre por la falta de visibilidad del estado de su expediente y la ejecución de su Plan de Negocio.",
-        "pains": "Gasto de tiempo y dinero en traslados para hacer seguimiento presencial, sospechas de opacidad.",
-        "gains": "Transparencia absoluta, control social, monitoreo en tiempo real del estado de transferencias e incentivos."
-      },
-      "H03_EncuestasCampo": {
-        "sampleSize": 72,
-        "targetAudience": "Directivos de Organizaciones Agrarias y Ciudadanía Agraria en Junín, Arequipa y San Martín",
-        "keyResults": [
-          {
-            "question": "¿Considera útil disponer de un portal web interactivo para consultar el avance de su Plan de Negocio?",
-            "percentageYes": 98.6
-          },
-          {
-            "question": "¿Qué datos considera prioritarios para visualizar en un portal público?",
-            "topFormats": [
-              "Monto del incentivo cofinanciado y saldo por desembolsar",
-              "Estado actual de aprobación (Semicuantitativo / Semáforo)",
-              "Ubicación georreferenciada de la organización y cadena productiva",
-              "Fotografías de entregables y maquinaria adquirida"
-            ]
-          }
-        ]
-      },
-      "H04_FichaPersona": {
-        "archetypeCode": "PERS-IN0012-01",
-        "name": "Don Tomas Huanca Yana",
-        "role": "Socio Fiscalizador de Cooperativa Agraria de Fruticultores",
-        "age": 49,
-        "digitalLiteracy": "Básico-Intermedio (Uso activo de smartphone para consultas web y WhatsApp)",
-        "primaryGoal": "Verificar en línea las transferencias de cofinanciamiento realizadas por AGROIDEAS a su cooperativa con total transparencia."
-      }
+      "H02_MapaEmpatia": [
+        {
+          "id": 69,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "userProfile": "Ciudadano Investigador y Periodista Agrario Regional (Cajamarca / Lambayeque)",
+          "says": "\"Para saber qué cooperativas ganaron los incentivos en mi provincia tengo que presentar solicitudes de acceso a la información y esperar 10 días.\"",
+          "does": "Investiga el impacto del gasto público agrario, publica reportajes en medios locales y fiscaliza presuntos casos de clientelismo político.",
+          "thinks": "Cree que toda la información de proyectos cofinanciados con dinero del Estado debería ser de acceso público abierto en un mapa interactivo.",
+          "feels": "Frustración cuando las entidades entregan PDFs escaneados borrosos en lugar de archivos de datos abiertos (CSV/Excel) reutilizables.",
+          "hears": "Agricultores de a pie que sospechan que los fondos de AGROIDEAS se reparten siempre entre los mismos grupos de poder agrario regional.",
+          "sees": "Portales de transparencia estándar donde solo hay acuerdos de directorio en texto plano sin estadísticas, gráficos ni geolocalización.",
+          "pains": "Opacidad en la información pública, respuestas evasivas y falta de visualizaciones comprensibles para el ciudadano común.",
+          "gains": "Portal interactivo con mapas temáticos por cadena productiva, montos asignados por cooperativa y descargas directas en formatos de datos abiertos."
+        },
+        {
+          "id": 70,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "userProfile": "Pequeño Productor no Asociado Interesado en Convocatorias (Otuzco, La Libertad)",
+          "says": "\"Escucho que mis vecinos compraron tractores con ayuda de AGROIDEAS pero no sé a quién acudir ni cuánto dinero realmente pone el Estado y cuánto la cooperativa.\"",
+          "does": "Cultiva papa y quinua en 2 hectáreas, busca información en ferias agrarias y pregunta en la municipalidad distrital por programas de apoyo.",
+          "thinks": "Opina que la información del gobierno está escondida en páginas web difíciles de entender para alguien que solo terminó la primaria.",
+          "feels": "Curiosidad y deseo de progreso pero desconfianza de ser engañado por intermediarios o tramitadores inescrupulosos que cobran por asesoría.",
+          "hears": "Tramitadores en la plaza cobrando 5,000 soles por armar un expediente asegurando que 'tienen contactos' dentro de AGROIDEAS.",
+          "sees": "Carteles publicitarios de proyectos inaugurados con logotipos del ministerio pero sin información clara de cómo otros pueden participar.",
+          "pains": "Falta de información clara y accesible sobre requisitos reales, cronogramas de convocatorias y proliferación de tramitadores fraudulentos.",
+          "gains": "Simulador interactivo en el portal web que le indique si califica a un incentivo respondiendo 4 preguntas simples desde su teléfono móvil."
+        },
+        {
+          "id": 71,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "userProfile": "Oficial de Integridad y Acceso a la Información Pública (AGROIDEAS)",
+          "says": "\"La mejor vacuna contra la corrupción y las denuncias de favoritismo es poner todos los datos a la luz pública de forma transparente y proactiva.\"",
+          "does": "Atiende solicitudes de la Ley de Transparencia, promueve la cultura de integridad en los funcionarios y gestiona el canal de denuncias.",
+          "thinks": "Sabe que publicar proactivamente la información reduce las solicitudes de transparencia en un 70% y eleva la confianza ciudadana en el programa.",
+          "feels": "Compromiso ético con la rendición de cuentas y preocupación por responder dentro de los estrictos plazos de la Autoridad de Transparencia.",
+          "hears": "Críticas de organizaciones civiles que cuestionan la falta de datos abiertos sobre el destino real de los fondos no reembolsables.",
+          "sees": "Decenas de solicitudes ciudadanas pidiendo exactamente la misma información sobre montos invertidos en ciertas regiones o cadenas productivas.",
+          "pains": "Tener que coordinar manualmente con diversas unidades orgánicas para consolidar datos que deberían estar automatizados en un portal.",
+          "gains": "Portal de transparencia con actualización diaria automática conectada a la base de datos de convenios y buzón de integridad con trazabilidad."
+        },
+        {
+          "id": 72,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "userProfile": "Especialista de Comunicaciones y Relaciones Institucionales (Sede Central)",
+          "says": "\"Queremos mostrar los rostros del éxito: cuántas familias salieron de la pobreza gracias a la tecnificación, no solo cifras frías en un informe.\"",
+          "does": "Produce notas de prensa, documenta casos de éxito en video, gestiona las redes sociales institucionales y actualiza el portal web.",
+          "thinks": "Considera que un portal interactivo con historias de vida, fotos de antes y después y métricas visuales es la mejor vitrina del impacto de AGROIDEAS.",
+          "feels": "Entusiasmo por difundir historias inspiradoras de campesinos exitosos pero limitación por la falta de herramientas web dinámicas en la plataforma actual.",
+          "hears": "Medios de comunicación solicitando infografías y material audiovisual para notas periodísticas sobre reactivación agraria nacional.",
+          "sees": "El interés masivo de la juventud rural en redes sociales (TikTok, Facebook) cuando se publican videos dinámicos sobre innovación en el campo.",
+          "pains": "Plataforma institucional estática en Gob.pe con limitaciones de diseño gráfico y restricciones para incrustar dashboards interactivos.",
+          "gains": "Sección interactiva con historias de éxito geolocalizadas, galerías multimedia de alta resolución y métricas de impacto en tiempo real."
+        },
+        {
+          "id": 73,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "userProfile": "Analista de Inteligencia de Negocios y Visualización de Datos (UPP)",
+          "says": "\"Podemos convertir millones de filas de datos en tableros interactivos de PowerBI y mapas dinámicos donde cualquier persona filtre por su distrito.\"",
+          "does": "Diseña modelos de datos relacionales, construye tableros de control ejecutivos y publica indicadores de desempeño institucional.",
+          "thinks": "Sabe que la democratización de los datos permite a los gobiernos regionales y locales articular sus propios presupuestos con las intervenciones de AGROIDEAS.",
+          "feels": "Pasión por el diseño de información accesible y satisfacción al ver que los directivos toman decisiones basados en evidencia visual.",
+          "hears": "Alcaldes distritales que preguntan en qué comunidades de su distrito ya interviene el programa para no duplicar obras de riego o maquinaria.",
+          "sees": "Autoridades locales invirtiendo en proyectos duplicados por desconocimiento de las inversiones ya comprometidas por el programa nacional.",
+          "pains": "Datos no normalizados con nombres de cooperativas mal escritos en los registros antiguos que dificultan la agregación estadística.",
+          "gains": "Tableros embebidos interactivos con filtros por departamento, provincia, distrito, cadena productiva (café, cacao, leche, cuyes) y año fiscal."
+        },
+        {
+          "id": 74,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "userProfile": "Dirigente de Federación Nacional Campesina (CNA / CCP - Lima)",
+          "says": "\"Las organizaciones de base tenemos derecho a fiscalizar si el presupuesto asignado por ley llega efectivamente a los pequeños productores o se queda en el camino.\"",
+          "does": "Representa a gremios agrarios en mesas de diálogo con el MIDAGRI, revisa la ejecución del presupuesto del sector agrario y plantea propuestas de política.",
+          "thinks": "Considera que un portal de transparencia robusto fortalece la democracia agraria y empodera a los dirigentes con información técnica veraz.",
+          "feels": "Deber cívico con sus bases campesinas y vigilancia activa para evitar favoritismos partidarios en la distribución de incentivos.",
+          "hears": "Dirigentes de base que se quejan de que en sus regiones nunca se ven los beneficios del programa mientras en otras provincias hay múltiples proyectos.",
+          "sees": "Disparidades territoriales en la inversión pública agraria que requieren ser evidenciadas mediante mapas oficiales y verificables.",
+          "pains": "Dificultad para acceder a información desagregada por género, edad de beneficiarios y pertenencia a comunidades campesinas o nativas.",
+          "gains": "Panel de equidad territorial y de género en el portal con descarga de microdatos anonimizados para investigación y control social."
+        }
+      ],
+      "H03_EncuestasCampo": [
+        {
+          "id": 23,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "respondent": "Carlos Becerra (Periodista de Investigación)",
+          "cooperative": "Red de Periodismo Agrario Regional",
+          "satisfaction": 2,
+          "comments": "El portal de transparencia solo publica archivos PDF escaneados que no se pueden filtrar ni descargar en tablas de datos abiertas.",
+          "sentiment": "Negativo",
+          "date": "2026-04-12"
+        },
+        {
+          "id": 24,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "respondent": "Esteban Ramos (Presidente de Junta de Usuarios)",
+          "cooperative": "Junta de Usuarios del Valle Chancay-Huaral",
+          "satisfaction": 3,
+          "comments": "Queremos ver en un mapa interactivo cuánto dinero se invirtió en nuestro distrito y qué asociaciones fueron beneficiadas.",
+          "sentiment": "Neutro",
+          "date": "2026-04-18"
+        }
+      ],
+      "H04_FichaPersona": [
+        {
+          "id": 67,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "archetypeName": "Lic. Walter Albarracín Cruz",
+          "name": "Lic. Walter Albarracín Cruz",
+          "role": "Periodista de Investigación Agraria Regional (Cajamarca - Lambayeque)",
+          "demographics": "45 años, Cajamarca; Licenciado en Periodismo y Miembro de la Red de Periodismo de Datos",
+          "age": 45,
+          "techTechSavviness": "Intermedio (Manejo de herramientas de visualización, análisis de datos en Excel, web)",
+          "quote": "Para saber qué cooperativas ganaron los incentivos en mi provincia tengo que pedir acceso a la información y esperar 10 días. Debe ser público y en línea.",
+          "bio": "Investiga la inversión pública en el sector rural y publica reportajes sobre el impacto de los proyectos agropecuarios en el norte del país.",
+          "goals": [
+            "Acceder a un portal interactivo con mapa temático que muestre montos, beneficiarios y avances por distrito",
+            "Descargar bases de datos abiertas en formato CSV/Excel para investigaciones periodísticas y académicas",
+            "Fiscalizar el uso equitativo de los fondos públicos evitando el direccionamiento político"
+          ],
+          "frustrations": [
+            "Recibir documentos en PDF escaneados borrosos donde no se puede buscar texto ni extraer cifras",
+            "Portales de transparencia estándar donde solo hay resoluciones en texto plano sin mapas ni gráficos",
+            "Demoras injustificadas en la entrega de información sobre convenios liquidados y en ejecución"
+          ]
+        },
+        {
+          "id": 68,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "archetypeName": "Don Nicanor Ruiz Paredes",
+          "name": "Don Nicanor Ruiz Paredes",
+          "role": "Pequeño Productor no Asociado Interesado en Convocatorias (Otuzco, La Libertad)",
+          "demographics": "51 años, Otuzco, La Libertad; Primaria completa, Productor de papa y hortalizas",
+          "age": 51,
+          "techTechSavviness": "Básico (Manejo de WhatsApp básico en celular de gama baja)",
+          "quote": "Veo que mis vecinos de la cooperativa compraron un tractor con apoyo de AGROIDEAS, pero no sé cómo postular ni cuánto dinero pone el gobierno.",
+          "bio": "Agricultor individual que cultiva 2 hectáreas. Desea asociarse con otros productores de su caserío para postular a un incentivo de tecnificación.",
+          "goals": [
+            "Consultar desde su celular de forma fácil y clara qué requisitos necesita para formar una organización",
+            "Usar un simulador en línea que le diga si califica a un incentivo respondiendo 4 preguntas sencillas",
+            "Conocer las fechas exactas de las convocatorias para no dejarse engañar por tramitadores falsos"
+          ],
+          "frustrations": [
+            "Páginas web del Estado con lenguaje técnico y rebuscado que solo entienden los ingenieros",
+            "Tramitadores inescrupulosos en las plazas que cobran miles de soles prometiendo 'contactos en el ministerio'",
+            "Falta de canales de orientación directa y transparente para pequeños productores no agremiados"
+          ]
+        },
+        {
+          "id": 69,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "archetypeName": "Abog. Sofía Montenegro Vela",
+          "name": "Abog. Sofía Montenegro Vela",
+          "role": "Oficial de Integridad y Acceso a la Información Pública (AGROIDEAS)",
+          "demographics": "41 años, Lima; Abogada especialista en Integridad Pública y Ética Gubernamental",
+          "age": 41,
+          "techTechSavviness": "Avanzado (Gestión del portal de transparencia estándar, buzones de denuncia seguros)",
+          "quote": "La mejor vacuna contra la corrupción y las sospechas de favoritismo es poner todos los datos a la luz pública de forma transparente y proactiva.",
+          "bio": "Gestiona el canal de denuncias de actos de corrupción y atiende las solicitudes ciudadanas bajo la Ley de Transparencia (Ley 27806).",
+          "goals": [
+            "Desplegar el Portal de Transparencia Interactivo con actualización automatizada diaria",
+            "Reducir las solicitudes de acceso a la información en un 70% gracias a la publicación proactiva de datos",
+            "Elevar el índice de confianza ciudadana en la gestión transparente de los fondos de AGROIDEAS"
+          ],
+          "frustrations": [
+            "Tener que solicitar información manualmente a cada unidad operativa para responder a los ciudadanos",
+            "Denuncias anónimas maliciosas que congestionan la gestión por falta de datos públicos verificables",
+            "Sistemas cerrados que no permiten exportar datos abiertos conforme a los estándares de la PCM"
+          ]
+        },
+        {
+          "id": 70,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "archetypeName": "Lic. Rodrigo Peñaloza Castro",
+          "name": "Lic. Rodrigo Peñaloza Castro",
+          "role": "Especialista de Comunicaciones y Prensa Institucional (Sede Central)",
+          "demographics": "37 años, Lima; Comunicador Social y Productor Multimedia",
+          "age": 37,
+          "techTechSavviness": "Avanzado (Producción audiovisual, redes sociales, diseño web interactivo, storytelling)",
+          "quote": "Queremos mostrar los rostros y las historias de vida de las familias que salieron de la pobreza gracias al incentivo, no solo números en una tabla.",
+          "bio": "Produce notas de prensa, documentales cortos de casos de éxito y contenidos para las redes sociales oficiales de AGROIDEAS y MIDAGRI.",
+          "goals": [
+            "Integrar galerías interactivas con fotos de 'antes y después' e historias de éxito geolocalizadas",
+            "Crear contenidos visuales accesibles para que los jóvenes rurales conozcan las oportunidades del agro",
+            "Medir el impacto de la comunicación institucional mediante métricas de interacción ciudadana"
+          ],
+          "frustrations": [
+            "Plataforma institucional estática en Gob.pe con limitaciones para incrustar dashboards interactivos",
+            "Falta de material fotográfico de alta calidad actualizado de los proyectos de zonas remotas",
+            "Dificultades para comunicar temas técnicos complejos en formatos sencillos y atractivos"
+          ]
+        },
+        {
+          "id": 71,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "archetypeName": "Ing. Gladys Farfán Hurtado",
+          "name": "Ing. Gladys Farfán Hurtado",
+          "role": "Analista de Inteligencia de Negocios y Visualización (UPP)",
+          "demographics": "34 años, Lima; Ingeniera de Sistemas con especialización en Big Data y Business Intelligence",
+          "age": 34,
+          "techTechSavviness": "Avanzado (PowerBI, Tableau, SQL Server, Python, integración de APIs de datos abiertos)",
+          "quote": "Convertimos millones de registros de convenios en mapas interactivos donde cualquier persona puede filtrar por su distrito o cadena productiva.",
+          "bio": "Diseña y mantiene los tableros analíticos institucionales. Desarrolla visualizaciones dinámicas de ejecución presupuestal y metas del portafolio.",
+          "goals": [
+            "Publicar tableros de control interactivos con filtros por departamento, provincia, cultivo y año fiscal",
+            "Integrar el portal con la plataforma nacional de datos abiertos de la Presidencia del Consejo de Ministros",
+            "Brindar a los alcaldes y gobernadores regionales información precisa para articular inversiones agrarias"
+          ],
+          "frustrations": [
+            "Bases de datos heredadas con nombres de cooperativas mal digitados que requieren limpieza manual",
+            "Falta de cultura de datos abiertos en algunos mandos medios que consideran la información como privada",
+            "Demoras en la actualización de los servidores que alimentan los tableros interactivos"
+          ]
+        },
+        {
+          "id": 72,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "archetypeName": "Don Santos Saavedra Vásquez",
+          "name": "Don Santos Saavedra Vásquez",
+          "role": "Dirigente de Federación Nacional Campesina (CNA / CCP - Lima)",
+          "demographics": "59 años, Cajamarca; Dirigente agrario nacional con 30 años de trayectoria gremial",
+          "age": 59,
+          "techTechSavviness": "Intermedio (Consulta noticias en internet, redes sociales y plataformas de gestión pública)",
+          "quote": "Las organizaciones agrarias de base tenemos el derecho constitucional de vigilar si los fondos públicos llegan a la agricultura familiar o a intermediarios.",
+          "bio": "Representa a gremios campesinos en comisiones consultivas con el Ejecutivo. Promueve el control social y la asignación justa de presupuestos agrarios.",
+          "goals": [
+            "Monitorear la distribución territorial de los incentivos para evitar la concentración en pocas regiones",
+            "Verificar qué porcentaje de los fondos beneficia directamente a comunidades campesinas y pueblos indígenas",
+            "Contar con información verificable para fundamentar propuestas gremiales en mesas de diálogo técnico"
+          ],
+          "frustrations": [
+            "Opacidad en los criterios de priorización de planes de negocio durante los comités directivos",
+            "Dificultad para acceder a información desagregada por género, edad y tipo de cadena productiva",
+            "Promesas de inversión ministerial que no se reflejan en obras tangibles en las parcelas comunales"
+          ]
+        }
+      ]
     },
     "FASE_2_DEFINIR": {
       "H05_MuroHallazgos": [
         {
-          "clusterId": "CLUST-IN0012-01",
-          "clusterName": "Transparencia Activa y Gobierno Abierto",
-          "insight": "Publicar los datos de Planes de Negocio en un mapa interactivo abierto reduce en 80% las solicitudes físicas de acceso a la información y fortalece la confianza institucional.",
-          "priority": "ALTA"
+          "id": 67,
+          "type": "Muro",
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "clusterCategory": "Transparencia y Acceso Ciudadano",
+          "findingTitle": "Opacidad y Dispersión de la Información sobre Beneficiarios y Montos",
+          "title": "Opacidad y Dispersión de la Información sobre Beneficiarios y Montos",
+          "evidenceText": "La ciudadanía y los periodistas no pueden consultar en línea qué organizaciones ganaron los incentivos en su distrito, cuánto dinero recibieron ni qué tecnología compraron, debiendo tramitar solicitudes de acceso a la información.",
+          "text": "La ciudadanía y los periodistas no pueden consultar en línea qué organizaciones ganaron los incentivos en su distrito, cuánto dinero recibieron ni qué tecnología compraron, debiendo tramitar solicitudes de acceso a la información.",
+          "sourceTool": "Auditoría de Transparencia Activa",
+          "priority": "Alta",
+          "quote": "Para saber qué cooperativas recibieron fondos en mi provincia tengo que presentar una carta formal y esperar diez días hábiles.",
+          "date": "2026-04-05"
         },
         {
-          "clusterId": "CLUST-IN0012-02",
-          "clusterName": "Visualización Intuitiva Local-First",
-          "insight": "El portal debe ser liviano, compatible con dispositivos móviles (PWA) y presentar dashboards gráficos de fácil interpretación sin términos burocráticos.",
-          "priority": "ALTA"
+          "id": 68,
+          "type": "Muro",
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "clusterCategory": "Prevención del Fraude y Tramitadores",
+          "findingTitle": "Proliferación de Falsos Gestores por Falta de Información Oficial en Línea",
+          "title": "Proliferación de Falsos Gestores por Falta de Información Oficial en Línea",
+          "evidenceText": "La ausencia de un simulador público interactivo de requisitos permite que tramitadores inescrupulosos cobren sumas elevadas a comunidades campesinas prometiendo 'aprobar expedientes' con supuestos contactos internos.",
+          "text": "La ausencia de un simulador público interactivo de requisitos permite que tramitadores inescrupulosos cobren sumas elevadas a comunidades campesinas prometiendo 'aprobar expedientes' con supuestos contactos internos.",
+          "sourceTool": "Denuncias ante Oficina de Integridad",
+          "priority": "Alta",
+          "quote": "En la plaza del pueblo hay gestores que cobran S/. 5,000 asegurando que tienen vara en el ministerio porque la gente no sabe cómo postular.",
+          "date": "2026-04-10"
+        },
+        {
+          "id": 69,
+          "type": "Muro",
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "clusterCategory": "Articulación Interinstitucional",
+          "findingTitle": "Duplicidad de Inversiones Públicas con Gobiernos Regionales y Municipios",
+          "title": "Duplicidad de Inversiones Públicas con Gobiernos Regionales y Municipios",
+          "evidenceText": "Al no existir un mapa público interactivo de planes cofinanciados, municipalidades distritales y gobiernos regionales financian tractores o reservorios para las mismas asociaciones ya atendidas por AGROIDEAS.",
+          "text": "Al no existir un mapa público interactivo de planes cofinanciados, municipalidades distritales y gobiernos regionales financian tractores o reservorios para las mismas asociaciones ya atendidas por AGROIDEAS.",
+          "sourceTool": "Mesa de Articulación Intergubernamental",
+          "priority": "Alta",
+          "quote": "El alcalde compró equipos para una cooperativa que ya había recibido el mismo incentivo de AGROIDEAS tres meses antes.",
+          "date": "2026-04-16"
+        },
+        {
+          "id": 70,
+          "type": "Muro",
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "clusterCategory": "Democratización y Datos Abiertos",
+          "findingTitle": "Falta de Datos Abiertos Descargables para Investigación y Control Social",
+          "title": "Falta de Datos Abiertos Descargables para Investigación y Control Social",
+          "evidenceText": "Los portales institucionales solo ofrecen resoluciones en PDF escaneado sin datasets descargables en formatos abiertos (CSV o JSON), impidiendo que universidades y gremios agrarios realicen estudios de impacto económico.",
+          "text": "Los portales institucionales solo ofrecen resoluciones en PDF escaneado sin datasets descargables en formatos abiertos (CSV o JSON), impidiendo que universidades y gremios agrarios realicen estudios de impacto económico.",
+          "sourceTool": "Encuesta a Investigadores Agrarios",
+          "priority": "Media",
+          "quote": "Queremos hacer tesis de maestría sobre el impacto de los incentivos pero los datos están encerrados en informes estáticos.",
+          "date": "2026-04-21"
+        },
+        {
+          "id": 71,
+          "type": "Muro",
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "clusterCategory": "Comunicación y Casos de Éxito",
+          "findingTitle": "Invisibilidad de Casos de Éxito y Rostros de la Agricultura Familiar",
+          "title": "Invisibilidad de Casos de Éxito y Rostros de la Agricultura Familiar",
+          "evidenceText": "El portal institucional publica tablas presupuestales frías pero no visibiliza las historias de superación de las familias beneficiarias ni el incremento real en sus ingresos, perdiendo potencial de difusión e inspiración comunal.",
+          "text": "El portal institucional publica tablas presupuestales frías pero no visibiliza las historias de superación de las familias beneficiarias ni el incremento real en sus ingresos, perdiendo potencial de difusión e inspiración comunal.",
+          "sourceTool": "Diagnóstico de Imagen y Prensa",
+          "priority": "Media",
+          "quote": "No se muestran las fotos de antes y después de los establos tecnificados ni cómo mejoró la vida de los socios con la adopción tecnológica.",
+          "date": "2026-04-26"
+        },
+        {
+          "id": 72,
+          "type": "Muro",
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "clusterCategory": "Transparencia y Acceso Ciudadano",
+          "findingTitle": "Sobrecarga de Solicitudes Repetitivas en la Oficina de Integridad",
+          "title": "Sobrecarga de Solicitudes Repetitivas en la Oficina de Integridad",
+          "evidenceText": "Más del 65% de las solicitudes presentadas bajo la Ley de Transparencia piden información estándar sobre montos asignados por departamento, obligando a los funcionarios a elaborar reportes ad-hoc que un dashboard resolvería.",
+          "text": "Más del 65% de las solicitudes presentadas bajo la Ley de Transparencia piden información estándar sobre montos asignados por departamento, obligando a los funcionarios a elaborar reportes ad-hoc que un dashboard resolvería.",
+          "sourceTool": "Estadística de Mesa de Partes Transparencia",
+          "priority": "Media",
+          "quote": "Un portal interactivo con filtros por provincia y cadena productiva eliminaría dos tercios de la carga de solicitudes de información.",
+          "date": "2026-05-02"
         }
       ],
-      "H06_DefinicionDesafioHMW": {
-        "hmwCode": "HMW-IN0012",
-        "action": "implementar un Portal de Transparencia Interactivo y Abierto para Beneficiarios",
-        "targetUser": "las organizaciones agrarias, productores beneficiarios y la ciudadanía",
-        "benefit": "acceder en tiempo real al estado de ejecución, desembolsos y georreferenciación de los Planes de Negocio",
-        "constraint": "las brechas de conectividad en zonas rurales y la complejidad de los datos administrativos internos",
-        "finalHMWStatement": "¿Cómo podríamos implementar un Portal de Transparencia Interactivo y Abierto para Beneficiarios con mapas y dashboards PWA para que las organizaciones agrarias y la ciudadanía monitoreen los desembolsos y la ejecución de Planes de Negocio a pesar de la dispersión de datos y las brechas de conectividad?"
-      }
+      "H06_DefinicionDesafioHMW": [
+        {
+          "id": 67,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "insightId": 67,
+          "targetUser": "los dirigentes y comités electorales de cooperativas agrarias",
+          "actionGoal": "renovar sus cuadros directivos con paridad de género y relevo generacional de jóvenes",
+          "constraintOrPain": "la reelección indefinida de liderazgos tradicionales y la apatía de las nuevas generaciones",
+          "hmwStatement": "¿Cómo podríamos renovar sus cuadros directivos con paridad de género y relevo generacional de jóvenes para los dirigentes y comités electorales de cooperativas agrarias a pesar de la reelección indefinida de liderazgos tradicionales y la apatía de las nuevas generaciones?",
+          "question": "¿Cómo podríamos renovar sus cuadros directivos con paridad de género y relevo generacional de jóvenes para los dirigentes y comités electorales de cooperativas agrarias a pesar de la reelección indefinida de liderazgos tradicionales y la apatía de las nuevas generaciones?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 68,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "insightId": 68,
+          "targetUser": "las socias mujeres productoras en asambleas comunitarias",
+          "actionGoal": "asumir roles decisorios y cargos de presidencia en los consejos de administración",
+          "constraintOrPain": "los patrones socioculturales machistas y la falta de horarios compatibles con el cuidado del hogar",
+          "hmwStatement": "¿Cómo podríamos asumir roles decisorios y cargos de presidencia en los consejos de administración para las socias mujeres productoras en asambleas comunitarias a pesar de los patrones socioculturales machistas y la falta de horarios compatibles con el cuidado del hogar?",
+          "question": "¿Cómo podríamos asumir roles decisorios y cargos de presidencia en los consejos de administración para las socias mujeres productoras en asambleas comunitarias a pesar de los patrones socioculturales machistas y la falta de horarios compatibles con el cuidado del hogar?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 69,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "insightId": 69,
+          "targetUser": "los consejos de vigilancia y comités de fiscalización interna",
+          "actionGoal": "revisar balances económicos mensuales y verificar el uso adecuado del fondo rotatorio y maquinaria",
+          "constraintOrPain": "la retención de información financiera por parte de gerentes generales o contadores externos",
+          "hmwStatement": "¿Cómo podríamos revisar balances económicos mensuales y verificar el uso adecuado del fondo rotatorio y maquinaria para los consejos de vigilancia y comités de fiscalización interna a pesar de la retención de información financiera por parte de gerentes generales o contadores externos?",
+          "question": "¿Cómo podríamos revisar balances económicos mensuales y verificar el uso adecuado del fondo rotatorio y maquinaria para los consejos de vigilancia y comités de fiscalización interna a pesar de la retención de información financiera por parte de gerentes generales o contadores externos?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 70,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "insightId": 70,
+          "targetUser": "los secretarios de actas comunales",
+          "actionGoal": "registrar la asistencia a asambleas, acuerdos y cuotas sociales en un libro digital inmutable",
+          "constraintOrPain": "el deterioro y extravío de libros de actas manuales que invalida las inscripciones en registros públicos",
+          "hmwStatement": "¿Cómo podríamos registrar la asistencia a asambleas, acuerdos y cuotas sociales en un libro digital inmutable para los secretarios de actas comunales a pesar de el deterioro y extravío de libros de actas manuales que invalida las inscripciones en registros públicos?",
+          "question": "¿Cómo podríamos registrar la asistencia a asambleas, acuerdos y cuotas sociales en un libro digital inmutable para los secretarios de actas comunales a pesar de el deterioro y extravío de libros de actas manuales que invalida las inscripciones en registros públicos?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 71,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "insightId": 71,
+          "targetUser": "los facilitadores del fortalecimiento asociativo de AGROIDEAS",
+          "actionGoal": "evaluar el Índice de Madurez Organizacional y diseñar planes de capacitación a la medida",
+          "constraintOrPain": "la ausencia de una metodología diagnóstica estandarizada para medir la gobernanza democrática",
+          "hmwStatement": "¿Cómo podríamos evaluar el Índice de Madurez Organizacional y diseñar planes de capacitación a la medida para los facilitadores del fortalecimiento asociativo de AGROIDEAS a pesar de la ausencia de una metodología diagnóstica estandarizada para medir la gobernanza democrática?",
+          "question": "¿Cómo podríamos evaluar el Índice de Madurez Organizacional y diseñar planes de capacitación a la medida para los facilitadores del fortalecimiento asociativo de AGROIDEAS a pesar de la ausencia de una metodología diagnóstica estandarizada para medir la gobernanza democrática?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 72,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "insightId": 72,
+          "targetUser": "los socios de base en desacuerdo con decisiones del directorio",
+          "actionGoal": "presentar quejas, consultas y pedidos de rendición de cuentas mediante un buzón ético transparente",
+          "constraintOrPain": "el temor a represalias o expulsión de la organización por cuestionar la gestión comunal",
+          "hmwStatement": "¿Cómo podríamos presentar quejas, consultas y pedidos de rendición de cuentas mediante un buzón ético transparente para los socios de base en desacuerdo con decisiones del directorio a pesar de el temor a represalias o expulsión de la organización por cuestionar la gestión comunal?",
+          "question": "¿Cómo podríamos presentar quejas, consultas y pedidos de rendición de cuentas mediante un buzón ético transparente para los socios de base en desacuerdo con decisiones del directorio a pesar de el temor a represalias o expulsión de la organización por cuestionar la gestión comunal?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        }
+      ]
     },
     "FASE_3_IDEAR": {
       "H07_LluviaIdeasCrazy8s": [
         {
-          "ideaId": "IDEA-IN0012-01",
-          "title": "Portal Web PWA Interactivo de Transparencia Abierta (AGROIDEAS-TRANSPARENCIA) con Mapa SIG, Búsqueda por RUC/OA y Semáforo de Desembolsos",
-          "author": "Sergio Antonio Haro Muñoz (URIE)",
-          "votes": 14
+          "id": 67,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "desafioId": 70,
+          "ideaTitle": "Libro Digital de Actas y Padrón de Socios Inmutable con verificación biométrica",
+          "idea": "Libro Digital de Actas y Padrón de Socios Inmutable con verificación biométrica",
+          "description": "Plataforma segura que registra la asistencia a asambleas mediante huella o fotografía, garantizando el quórum legal inobjetable.",
+          "category": "Tecnológica",
+          "authorRole": "Especialista en Firma Digital",
+          "votesCount": 12,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "ideaId": "IDEA-IN0012-02",
-          "title": "Boletines impresos mensuales enviados por correo postal a cada junta directiva",
-          "author": "Especialista Regional",
-          "votes": 3
+          "id": 68,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "desafioId": 72,
+          "ideaTitle": "Buzón de Sugerencias y Transparencia Interna anónimo para alertas de gestión",
+          "idea": "Buzón de Sugerencias y Transparencia Interna anónimo para alertas de gestión",
+          "description": "Canal web y telefónico donde los socios pueden reportar dudas sobre el destino de los fondos del plan sin temor a represalias.",
+          "category": "Tecnológica",
+          "authorRole": "Especialista en Ética e Integridad",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 69,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "desafioId": 67,
+          "ideaTitle": "Cuota de Participación Juvenil y Paridad de Género vinculada a incentivos asociativos",
+          "idea": "Cuota de Participación Juvenil y Paridad de Género vinculada a incentivos asociativos",
+          "description": "Mecanismo de bonificación en los planes de negocio de cooperativas que acrediten al menos 30% de mujeres y jóvenes en sus directivas.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Especialista en Género e Inclusión",
+          "votesCount": 11,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 70,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "desafioId": 69,
+          "ideaTitle": "Tablero Financiero Abierto en la sede comunal con infografías de ingresos y egresos",
+          "idea": "Tablero Financiero Abierto en la sede comunal con infografías de ingresos y egresos",
+          "description": "Láminas gráficas mensuales de gran formato que traducen los balances contables en diagramas sencillos para todos los socios.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Facilitador de Comunicación Comunitaria",
+          "votesCount": 9,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 71,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "desafioId": 68,
+          "ideaTitle": "Estatuto Modelo Estandarizado de Cooperativas Agrarias adaptado a la Ley 31335",
+          "idea": "Estatuto Modelo Estandarizado de Cooperativas Agrarias adaptado a la Ley 31335",
+          "description": "Guía jurídica modelo homologada con PRODUCE y SUNARP que previene vacíos legales en los periodos de mandato directivo.",
+          "category": "Normativa",
+          "authorRole": "Abogado Corporativo Cooperativo",
+          "votesCount": 9,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 72,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "desafioId": 71,
+          "ideaTitle": "Escuela de Lideresas Agrarias y Gestión Empresarial Femenina",
+          "idea": "Escuela de Lideresas Agrarias y Gestión Empresarial Femenina",
+          "description": "Ciclo formativo de liderazgo, oratoria y gestión financiera dirigido exclusivamente a socias productoras para asumir presidencias.",
+          "category": "Capacitación",
+          "authorRole": "Mentora de Liderazgo Comunitario",
+          "votesCount": 10,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         }
       ],
-      "H08_MatrizPriorizacion": {
-        "evaluationDate": "2026-09-26T15:30:00Z",
-        "ideasEvaluadas": [
-          {
-            "ideaId": "IDEA-IN0012-01",
-            "title": "Portal Web PWA Interactivo AGROIDEAS-TRANSPARENCIA con Mapa SIG y Buscador Abierto",
-            "deseabilidad": 5,
-            "factibilidad": 4,
-            "viabilidad": 5,
-            "impacto": 5,
-            "scoreTotal": 19,
-            "isWinningIdea": true
-          },
-          {
-            "ideaId": "IDEA-IN0012-02",
-            "title": "Boletines impresos mensuales",
-            "deseabilidad": 2,
-            "factibilidad": 3,
-            "viabilidad": 2,
-            "impacto": 2,
-            "scoreTotal": 9,
-            "isWinningIdea": false
-          }
-        ],
-        "winningIdeaSummary": {
-          "title": "Portal Web PWA Interactivo de Transparencia Abierta (AGROIDEAS-TRANSPARENCIA)",
-          "rationale": "Ganadora con 19/20 puntos. Fomenta el gobierno abierto, reduce la carga de atención presencial y democratiza la información de incentivos públicos."
+      "H08_MatrizPriorizacion": [
+        {
+          "id": 67,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "ideaId": 67,
+          "ideaTitle": "Libro Digital de Actas y Padrón de Socios Inmutable con verificación biométrica",
+          "title": "Libro Digital de Actas y Padrón de Socios Inmutable con verificación biométrica",
+          "desirability": 5,
+          "feasibility": 4,
+          "viability": 5,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 19,
+          "isWinningIdea": true,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 68,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "ideaId": 69,
+          "ideaTitle": "Cuota de Participación Juvenil y Paridad de Género vinculada a incentivos asociativos",
+          "title": "Cuota de Participación Juvenil y Paridad de Género vinculada a incentivos asociativos",
+          "desirability": 5,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 69,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "ideaId": 72,
+          "ideaTitle": "Escuela de Lideresas Agrarias y Gestión Empresarial Femenina",
+          "title": "Escuela de Lideresas Agrarias y Gestión Empresarial Femenina",
+          "desirability": 4,
+          "feasibility": 5,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 70,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "ideaId": 71,
+          "ideaTitle": "Estatuto Modelo Estandarizado de Cooperativas Agrarias adaptado a la Ley 31335",
+          "title": "Estatuto Modelo Estandarizado de Cooperativas Agrarias adaptado a la Ley 31335",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 15,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 71,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "ideaId": 70,
+          "ideaTitle": "Tablero Financiero Abierto en la sede comunal con infografías de ingresos y egresos",
+          "title": "Tablero Financiero Abierto en la sede comunal con infografías de ingresos y egresos",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 14,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 72,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "ideaId": 68,
+          "ideaTitle": "Buzón de Sugerencias y Transparencia Interna anónimo para alertas de gestión",
+          "title": "Buzón de Sugerencias y Transparencia Interna anónimo para alertas de gestión",
+          "desirability": 3,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 13,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
         }
+      ],
+      "H09_PrototipadoRapido": {
+        "id": 12,
+        "projectId": 12,
+        "projectCode": "PIIP-2026-IN0012",
+        "prototypeTitle": "Portal de Transparencia Activa y Microdatos Abiertos de AGROIDEAS",
+        "name": "Portal de Transparencia Activa y Microdatos Abiertos de AGROIDEAS",
+        "prototypeType": "Digital PWA",
+        "keyFeatures": [
+          "Geovisor ciudadano interactivo por departamento, provincia y cultivo",
+          "Descarga directa de datasets en formatos abiertos CSV, JSON y XLSX",
+          "Diseño accesible adaptado a dispositivos móviles de gama de entrada"
+        ],
+        "artifactUrlOrImage": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500",
+        "imageUrl": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=500",
+        "description": "Portal público interactivo donde productores, gremios y periodistas pueden auditar la asignación y ejecución presupuestal de los planes de negocio en tiempo real.",
+        "testingGoal": "Atención autónoma del 95% de pedidos de información pública sin requerir trámite manual por mesa de partes."
       }
     },
     "FASE_4_ENTREGAR": {
-      "H09_PrototipadoRapido": {
-        "prototypeCode": "PROTO-IN0012-PWA",
-        "prototypeType": "Progressive Web App (PWA) de Transparencia Activa",
-        "keyFeatures": [
-          "Buscador abierto por RUC, Nombre de Organización, Cadena Productiva o Región",
-          "Mapa interactivo con capas de ubicación de Planes de Negocio e Incentivos ejecutados",
-          "Dashboard gráfico de estado de desembolso (Monto Aprobado vs Desembolsado vs Ejecutado)",
-          "Galería pública de fotos de bienes y tecnología entregada a las cooperativas"
-        ],
-        "validationCriteria": "Tiempo de consulta < 1 segundo y 100% de accesibilidad en navegadores móviles."
-      },
-      "H10_PlanAccion": {
-        "roadmapSprints": [
-          {
-            "sprintNumber": 1,
-            "durationWeeks": 3,
-            "deliverable": "Mapeo de datos públicos de Planes de Negocio e integración de API Abierta (URIE / UPP / OTI)"
-          },
-          {
-            "sprintNumber": 2,
-            "durationWeeks": 3,
-            "deliverable": "Desarrollo del Portal PWA con mapas interactivos Leaflet y gráficos Chart.js (UA-TI / URIE)"
-          },
-          {
-            "sprintNumber": 3,
-            "durationWeeks": 3,
-            "deliverable": "Pilotaje público con 40 Organizaciones Agrarias de Junín, San Martín y Arequipa"
-          }
-        ]
-      },
-      "H11_MatrizRiesgosTesteo": {
-        "riskEvaluation": [
-          {
-            "riskId": "RISK-IN0012-01",
-            "description": "Riesgo de exposición no autorizada de datos personales sensibles de productores",
-            "severity": "MEDIA",
-            "mitigation": "Anonimización automatizada conforme a la Ley de Protección de Datos Personales (Ley N.° 29733)."
-          }
-        ],
-        "testCard": {
-          "testCode": "TEST-IN0012-01",
-          "sampleAudience": "40 Líderes y socios de Organizaciones Agrarias",
-          "quantitativeResults": "Reducción de solicitudes presenciales de información de 18 días a 0 minutos (consulta web instantánea en < 1 segundo).",
-          "satisfactionRate": "98.5%",
-          "recommendation": "APROBADO PARA PASE A PRODUCCIÓN E INCLUSIÓN EN EL PORTAFOLIO INSTITUCIONAL (ANEXO 5)."
+      "H10_PlanAccion": [
+        {
+          "id": 13,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "taskName": "Pruebas de pasarela API y autenticación OAuth2 con servicios de MIDAGRI",
+          "task": "Pruebas de pasarela API y autenticación OAuth2 con servicios de MIDAGRI",
+          "phase": "Integración",
+          "responsibleUnit": "Unidad de Tecnologías de la Información",
+          "responsible": "Unidad de Tecnologías de la Información",
+          "leader": "Arquitecto de Integración TI",
+          "startDate": "2026-06-10",
+          "endDate": "2026-07-25",
+          "deadline": "2026-07-25",
+          "deliverable": "Protocolo de intercambio de datos con registro de productores agrarios (PPA)",
+          "status": "En Proceso"
         }
-      }
+      ],
+      "H11_MatrizRiesgosTesteo": [
+        {
+          "id": 14,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "riskDescription": "Latencia o caídas de servicio en la API del Registro de Productores Agrarios (PPA - MIDAGRI).",
+          "description": "Latencia o caídas de servicio en la API del Registro de Productores Agrarios (PPA - MIDAGRI).",
+          "riskType": "Tecnológico",
+          "probability": "Media",
+          "impact": "Medio",
+          "level": "Medio",
+          "mitigationStrategy": "Caché de consultas recientes con política de refresco de 24 horas y cola de procesamiento diferido.",
+          "mitigation": "Caché de consultas recientes con política de refresco de 24 horas y cola de procesamiento diferido.",
+          "testResult": "La disponibilidad del servicio percibida por el usuario se mantuvo en 99.8% a pesar de 4 caídas temporales del servidor central."
+        }
+      ]
     }
   }
 }

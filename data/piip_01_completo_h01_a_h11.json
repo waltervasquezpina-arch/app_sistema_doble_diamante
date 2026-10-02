@@ -1,418 +1,835 @@
 {
   "$schema": "./schemas/far-piip-v3.json",
   "IniciativaIdentificacion": {
+    "id": 1,
     "IniciativaCodigo": "PIIP-2026-IN0001",
     "IniciativaNombre": "Plataforma Formativa Blended Learning para Organizaciones Agrarias",
     "UnidadOrganicaResponsable": "Unidad de Promoción y Desarrollo de Capacidades (UPDC)",
     "LiderProyecto": "Especialista en Capacitación Agraria - UPDC",
-    "PorcentajeAvanceGlobal": 100.0
-  },
-  "CierreFaseFormal": {
-    "FaseCerrada": "Fase 3: Idear",
-    "FechaCierre": "2026-09-27T11:35:00Z",
-    "AprobadoPor": "Unidad de Planeamiento y Presupuesto (UPP) / Facilitador Ágil UPDC",
-    "ActaCierre": "ACTA-CIERRE-F3-IN0001-2026",
-    "HitoAlcanzado": "Selección y Validación formal de la Idea Ganadora (PWA Blended Learning) y Transición Habilitada a Fase 4: Entregar",
-    "SiguienteFaseStatus": {
-      "Fase1_Descubrir": "completed",
-      "Fase2_Definir": "completed",
-      "Fase3_Idear": "completed",
-      "Fase4_Entregar": "active"
-    }
+    "FechaRegistro": "2026-01-15",
+    "EstadoFases": {
+      "descubrir": "completed",
+      "definir": "completed",
+      "idear": "active",
+      "entregar": "pending"
+    },
+    "PorcentajeAvanceGlobal": 50.0
   },
   "RegistrosHerramientasMetodologicas": {
     "FASE_1_DESCUBRIR": {
       "H01_ObservacionAEIOU": [
         {
-          "id": "aeiou-001-1",
-          "observer": "Especialista en Capacitación UPDC",
-          "observationDate": "2026-01-20",
+          "id": 1,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
           "activity": "Sesiones de capacitación sincrónica remota a Organizaciones Agrarias (OAs) sobre Agronegocios mediante plataforma virtual Chamilo LMS.",
           "environment": "Oficina UPDC Lima, con conexión a productores en zonas rurales de Ayacucho, Junín y Puno vía Zoom.",
           "interaction": "Facilitador UPDC ↔ Presidentes de OAs. Alta tasa de abandono a la mitad de la sesión por problemas de conectividad.",
           "object": "Laptop, proyector, plataforma Chamilo, apuntes en papel, fichas de pre-test impresas.",
+          "objects": "Laptop, proyector, plataforma Chamilo, apuntes en papel, fichas de pre-test impresas.",
           "user": "4,290 agricultores organizados a nivel nacional; personal UPDC, UN, URIE y Unidades Regionales.",
-          "timestamp": "2026-01-20T10:00:00Z"
+          "users": "4,290 agricultores organizados a nivel nacional; personal UPDC, UN, URIE y Unidades Regionales.",
+          "observer": "Especialista en Capacitación UPDC",
+          "observationDate": "2026-01-20",
+          "date": "2026-01-20",
+          "timestamp": "2026-01-20T10:00:00.000Z"
         },
         {
-          "id": "aeiou-001-2",
-          "observer": "Facilitador de Campo UPDC - Sede Selva Central",
-          "observationDate": "2026-02-14",
+          "id": 2,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
           "activity": "Taller presencial de gestión empresarial y contabilidad cooperativa para la Cooperativa Agraria Cafetalera Pangoa.",
           "environment": "Local comunal de la organización agraria en Satipo, Junín; alta humedad, fluido eléctrico inestable y conectividad móvil intermitente (solo 2G/EDGE).",
           "interaction": "El facilitador proyecta diapositivas mientras los dirigentes replican ejercicios de flujo de caja; surgen dudas complejas sobre facturación electrónica agraria.",
           "object": "Cuadernos de notas, proyector portátil a batería, papelógrafos, teléfonos celulares con WhatsApp.",
+          "objects": "Cuadernos de notas, proyector portátil a batería, papelógrafos, teléfonos celulares con WhatsApp.",
           "user": "28 socios de la cooperativa cafetalera (hombres y mujeres de 35 a 62 años), junta directiva y 2 especialistas zonales de UPDC.",
-          "timestamp": "2026-02-14T11:30:00Z"
+          "users": "28 socios de la cooperativa cafetalera (hombres y mujeres de 35 a 62 años), junta directiva y 2 especialistas zonales de UPDC.",
+          "observer": "Facilitador de Campo UPDC - Sede Selva Central",
+          "observationDate": "2026-02-14",
+          "date": "2026-02-14",
+          "timestamp": "2026-02-14T11:30:00.000Z"
         },
         {
-          "id": "aeiou-001-3",
-          "observer": "Especialista en Extensión Agraria - UR Puno",
-          "observationDate": "2026-03-08",
+          "id": 3,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
           "activity": "Taller piloto de uso de módulos interactivos offline sobre inocuidad alimentaria y buenas prácticas agrícolas en quechua y aimara.",
           "environment": "Almacén comunal a 3,850 m.s.n.m. en Ilave, El Collao, Puno; vientos fuertes, temperatura baja (8°C), sin señal de internet en un radio de 12 km.",
           "interaction": "Productor líder comparte su celular con 3 comuneros para escuchar cápsulas de audio en aimara; debaten activamente sobre control biológico de plagas.",
           "object": "Teléfonos inteligentes de gama baja (Android Go), parlante portátil Bluetooth recargable, rotafolios gráficos plastificados.",
+          "objects": "Teléfonos inteligentes de gama baja (Android Go), parlante portátil Bluetooth recargable, rotafolios gráficos plastificados.",
           "user": "34 productores alpaqueros y paperos (promedio 50 años), promotora comunal bilingüe y técnico evaluador de AGROIDEAS Puno.",
-          "timestamp": "2026-03-08T09:15:00Z"
+          "users": "34 productores alpaqueros y paperos (promedio 50 años), promotora comunal bilingüe y técnico evaluador de AGROIDEAS Puno.",
+          "observer": "Especialista en Extensión Agraria - UR Puno",
+          "observationDate": "2026-03-08",
+          "date": "2026-03-08",
+          "timestamp": "2026-03-08T09:15:00.000Z"
         },
         {
-          "id": "aeiou-001-4",
-          "observer": "Coordinador Técnico de Modernización - UPP/UPDC",
-          "observationDate": "2026-04-18",
-          "activity": "Evaluación diagnóstica de competencias digitales de directivos de cooperativa cacaotera para la rendición de cuentas del incentivo de adopción de tecnología.",
+          "id": 4,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "activity": "Evaluación diagnóstica de competencias digitales de directivos de cooperativa cacaotera para la rendición de cuentas del incentivo.",
           "environment": "Centro de acopio de cacao en Kimbiri, VRAEM, Ayacucho; alta temperatura (31°C), ruido de maquinaria de secado y cobertura móvil 3G intermitente solo en zonas altas.",
           "interaction": "Tesorero comunal intenta cargar comprobantes de pago escaneados; al caerse la conexión se pierde el formulario web sin guardar borrador.",
           "object": "Fichas físicas de rendición de cuentas, comprobantes de pago impresos, escáner portátil USB, laptop comunal con Windows 7 desactualizado.",
+          "objects": "Fichas físicas de rendición de cuentas, comprobantes de pago impresos, escáner portátil USB, laptop comunal con Windows 7 desactualizado.",
           "user": "Presidente y tesorero de la cooperativa (44 y 52 años), contador externo contratado y analista de seguimiento UPDC.",
-          "timestamp": "2026-04-18T15:45:00Z"
+          "users": "Presidente y tesorero de la cooperativa (44 y 52 años), contador externo contratado y analista de seguimiento UPDC.",
+          "observer": "Coordinador Técnico de Modernización - UPP/UPDC",
+          "observationDate": "2026-04-18",
+          "date": "2026-04-18",
+          "timestamp": "2026-04-18T14:40:00.000Z"
         },
         {
-          "id": "aeiou-001-5",
-          "observer": "Especialista UX/Pedagógico - Proyecto PIIP",
-          "observationDate": "2026-05-22",
+          "id": 5,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
           "activity": "Prueba de laboratorio de campo para micro-cápsulas de aprendizaje descargables (videos cortos de 3 minutos) en formato PWA offline.",
           "environment": "Parcela demostrativa de café bajo sombra en Soritor, Moyobamba, San Martín; sin cobertura de datos móviles durante el recorrido en finca, con Wi-Fi en acopio.",
           "interaction": "Productores descargan 4 cápsulas en el centro de acopio y las reproducen en la chacra sin internet; verifican el procedimiento de podas y fertilización orgánica.",
           "object": "Smartphones personales de los socios, tarjetas de memoria microSD con respaldo multimedia, ficha de validación de usabilidad tipo rúbrica.",
+          "objects": "Smartphones personales de los socios, tarjetas de memoria microSD con respaldo multimedia, ficha de validación de usabilidad tipo rúbrica.",
           "user": "19 socios productores de café (edad 28 a 55 años, 40% mujeres productoras) y extensionista agrario regional.",
-          "timestamp": "2026-05-22T10:20:00Z"
+          "users": "19 socios productores de café (edad 28 a 55 años, 40% mujeres productoras) y extensionista agrario regional.",
+          "observer": "Especialista UX/Pedagógico - Proyecto PIIP",
+          "observationDate": "2026-05-22",
+          "date": "2026-05-22",
+          "timestamp": "2026-05-22T16:00:00.000Z"
         },
         {
-          "id": "aeiou-001-6",
-          "observer": "Líder de Innovación Ágil - UPDC/OTI",
-          "observationDate": "2026-06-15",
+          "id": 6,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
           "activity": "Sesión grupal de simulación de acceso al módulo de mercado y certificación orgánica GlobalGAP mediante chatbot interactivo de mensajería.",
           "environment": "Salón comunal de la Asociación de Pequeños Productores en Sullana, Piura; buena cobertura 4G, ambiente caluroso (34°C).",
           "interaction": "Productores interactúan enviando notas de voz al chatbot para consultar precios de referencia y fechas de auditoría; valoran la rapidez de respuesta inmediata.",
           "object": "Celulares personales con WhatsApp, afiches infográficos impresos en paredes, proyector multimedia.",
+          "objects": "Celulares personales con WhatsApp, afiches infográficos impresos en paredes, proyector multimedia.",
           "user": "45 socios productores de banano orgánico, presidente del comité técnico y especialista de la Unidad de Negocios (UN).",
-          "timestamp": "2026-06-15T16:00:00Z"
-        },
-        {
-          "id": "aeiou-001-7",
-          "observer": "Monitora de Capacitación Agraria - UPDC Cusco",
-          "observationDate": "2026-07-29",
-          "activity": "Monitoreo del aprendizaje híbrido (Blended) en gestión asociativa y contratos de exportación para cooperativa agraria de mujeres rurales.",
-          "environment": "Sala municipal en Urubamba, Cusco; computadoras de escritorio compartidas y conexión de banda ancha por fibra óptica estable.",
-          "interaction": "Las productoras completan cuestionarios gamificados tipo trivia en parejas; comparan respuestas y discuten términos de calidad comercial.",
-          "object": "8 computadoras de escritorio compartidas, cuadernos de apuntes personales, certificados digitales de aprobación de módulo.",
-          "user": "22 socias de la Asociación de Productoras Agropecuarias del Valle Sagrado (EEMRI) y facilitadora pedagógica UPDC.",
-          "timestamp": "2026-07-29T11:10:00Z"
-        },
-        {
-          "id": "aeiou-001-8",
-          "observer": "Investigador Social / Evaluador Etnográfico - UPP",
-          "observationDate": "2026-08-20",
-          "activity": "Ronda de entrevistas y observación etnográfica sobre el hábito de repaso de contenidos técnicos en el hogar después de la jornada agropecuaria.",
-          "environment": "Viviendas rurales de comuneros en Cangallo, Ayacucho; horario nocturno (19:00 a 21:00 horas), iluminación solar/batería, sin señal de datos.",
-          "interaction": "El productor comparte el teléfono móvil con su hijo de secundaria para que le ayude a leer los resúmenes infográficos del curso antes de dormir.",
-          "object": "Smartphone compartido en el núcleo familiar, cuaderno de apuntes con anotaciones manuscritas, lámpara recargable LED.",
-          "user": "Productor ganadero lechero (56 años), familiar de apoyo (estudiante 16 años) y antropólogo/investigador social de campo.",
-          "timestamp": "2026-08-20T20:30:00Z"
+          "users": "45 socios productores de banano orgánico, presidente del comité técnico y especialista de la Unidad de Negocios (UN).",
+          "observer": "Líder de Innovación Ágil - UPDC/OTI",
+          "observationDate": "2026-06-15",
+          "date": "2026-06-15",
+          "timestamp": "2026-06-15T10:30:00.000Z"
         }
       ],
       "H02_MapaEmpatia": [
         {
-          "id": "emp-001-1",
-          "archetypeCode": "EMP-IN0001-01",
+          "id": 1,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
           "userProfile": "Presidente de Cooperativa Agraria (productor de papa nativa, sierra centro)",
+          "says": "\"El trámite del plan de negocios demora demasiado y corremos el riesgo de perder la campaña agrícola. La plataforma web es muy complicada para nosotros.\"",
+          "does": "Viaja cada 2 semanas a la oficina zonal para preguntar el estado de su expediente. Llama por celular al especialista de campo con frecuencia.",
           "thinks": "Cree que el sistema está diseñado para gente con estudios universitarios. Desconfía de que sus datos estén seguros en internet.",
           "feels": "Inseguridad frente a sistemas en línea y angustia por los tiempos de aprobación institucional.",
           "hears": "Otros dirigentes le dicen que los fondos AGROIDEAS llegan tarde, a destiempo con la campaña. Escucha en radio que el gobierno impulsa digitalización.",
           "sees": "Carpetas de papel acumuladas en la oficina zonal. Sus vecinos que no tienen acceso a internet aunque tienen celular básico.",
-          "says": "\"El trámite del plan de negocios demora demasiado y corremos el riesgo de perder la campaña agrícola. La plataforma web es muy complicada para nosotros.\"",
-          "does": "Viaja cada 2 semanas a la oficina zonal para preguntar el estado de su expediente. Llama por celular al especialista de campo con frecuencia.",
           "pains": "Pérdida económica por no recibir el incentivo a tiempo. Costo de viaje hasta la ciudad (S/. 80-120 por visita). Vergüenza de no saber usar la computadora.",
-          "gains": "Quiere saber el estado de su expediente desde su celular. Desea capacitarse en su idioma (quechua) y a su ritmo sin salir de su comunidad.",
-          "timestamp": "2026-02-05T10:00:00Z"
+          "gains": "Quiere saber el estado de su expediente desde su celular. Desea capacitarse en su idioma (quechua) y a su ritmo sin salir de su comunidad."
         },
         {
-          "id": "emp-001-2",
-          "archetypeCode": "EMP-IN0001-02",
+          "id": 2,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
           "userProfile": "Lideresa de Organización Agraria de Mujeres Rurales (EEMRI - Valle Sagrado)",
+          "says": "\"No podemos abandonar nuestras parcelas ni a nuestras familias dos días enteros para viajar a la capital a recibir un taller teórico.\"",
+          "does": "Descarga manuales en PDF que rara vez puede abrir por falta de señal en la chacra. Comparte infografías impresas con las socias.",
           "thinks": "Considera que los cursos deben ser prácticos, en video breve o audio, y con contenidos aplicables de inmediato a su cultivo.",
           "feels": "Entusiasmo por liderar su organización pero frustración por las barreras tecnológicas y la brecha de conectividad rural.",
           "hears": "Comentarios de comuneras sobre la dificultad de entender términos legales y financieros de los planes de negocio.",
           "sees": "Señal móvil intermitente en las asambleas, socias tomando notas a mano y jóvenes del pueblo que dominan WhatsApp.",
-          "says": "\"No podemos abandonar nuestras parcelas ni a nuestras familias dos días enteros para viajar a la capital a recibir un taller teórico.\"",
-          "does": "Descarga manuales en PDF que rara vez puede abrir por falta de señal en la chacra. Comparte infografías impresas con las socias.",
           "pains": "Pérdida de jornadas de trabajo en el campo, recargo del trabajo de cuidado y falta de materiales pedagógicos en lengua originaria.",
-          "gains": "Módulos interactivos sin consumo de datos (offline), certificación formativa oficial y autonomía en la rendición de cuentas.",
-          "timestamp": "2026-02-18T14:30:00Z"
+          "gains": "Módulos interactivos sin consumo de datos (offline), certificación formativa oficial y autonomía en la rendición de cuentas."
         },
         {
-          "id": "emp-001-3",
-          "archetypeCode": "EMP-IN0001-03",
+          "id": 3,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
           "userProfile": "Joven Técnico Agropecuario e Hijo de Comunero (Puno / Cusco)",
+          "says": "\"Si nos dan tutoriales directos en el celular o por WhatsApp, nosotros mismos guiamos a nuestros padres en el uso de la plataforma.\"",
+          "does": "Ayuda a los adultos mayores de la cooperativa a llenar formularios virtuales, tomar fotos a las boletas y verificar correos.",
           "thinks": "Siente que las instituciones públicas aún usan sistemas lentos y no aprovechan la mensajería instantánea ni la gamificación.",
           "feels": "Motivación por transformar el agro familiar mediante tecnología, pero cansancio ante interfaces complejas y no intuitivas.",
           "hears": "Sus compañeros técnicos comentan que las guías institucionales son densas y llenas de tecnicismos burocráticos.",
           "sees": "Padres con teléfonos inteligentes usados solo para llamadas y mensajes de texto, sin aprovechar aplicaciones pedagógicas.",
-          "says": "\"Si nos dan tutoriales directos en el celular o por WhatsApp, nosotros mismos guiamos a nuestros padres en el uso de la plataforma.\"",
-          "does": "Ayuda a los adultos mayores de la cooperativa a llenar formularios virtuales, tomar fotos a las boletas y verificar correos.",
           "pains": "Tener que rehacer documentos por observaciones menores, falta de soporte técnico ágil y poca pedagogía interactiva.",
-          "gains": "Aprender metodologías ágiles de formulación de planes, soporte tipo chatbot y micro-credenciales reconocidas por MIDAGRI.",
-          "timestamp": "2026-03-12T09:15:00Z"
+          "gains": "Aprender metodologías ágiles de formulación de planes, soporte tipo chatbot y micro-credenciales reconocidas por MIDAGRI."
         },
         {
-          "id": "emp-001-4",
-          "archetypeCode": "EMP-IN0001-04",
+          "id": 4,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
           "userProfile": "Facilitadora Pedagógica y Especialista de Capacitación (UPDC Regional)",
+          "says": "\"Los productores tienen una riqueza empírica inmensa; lo que necesitan es mediación didáctica adaptada a su realidad cultural y territorial.\"",
+          "does": "Diseña guías metodológicas, viaja a comunidades para talleres presenciales y monitorea el progreso de los módulos formativos.",
           "thinks": "Cree firmemente que el modelo híbrido (blended) con material descargable es la clave para superar el analfabetismo digital.",
           "feels": "Compromiso social con el desarrollo rural pero sobrecarga por atender manualmente dudas recurrentes de decenas de OAs.",
           "hears": "Extensionistas zonales solicitando herramientas pedagógicas más dinámicas y evaluadores pidiendo mejor calidad en expedientes.",
           "sees": "Alta deserción en cursos 100% virtuales y un notable éxito cuando se combinan sesiones grupales presenciales con cápsulas offline.",
-          "says": "\"Los productores tienen una riqueza empírica inmensa; lo que necesitan es mediación didáctica adaptada a su realidad cultural y territorial.\"",
-          "does": "Diseña guías metodológicas, viaja a comunidades para talleres presenciales y monitorea el progreso de los módulos formativos.",
           "pains": "Falta de analítica en tiempo real del progreso estudiantil y dificultades logísticas de traslado a zonas remotas.",
-          "gains": "Un panel docente centralizado, banco de recursos multimedia estandarizado y métricas de impacto formativo verificables.",
-          "timestamp": "2026-04-05T11:45:00Z"
+          "gains": "Un panel docente centralizado, banco de recursos multimedia estandarizado y métricas de impacto formativo verificables."
         },
         {
-          "id": "emp-001-5",
-          "archetypeCode": "EMP-IN0001-05",
+          "id": 5,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
           "userProfile": "Técnico Evaluador Zonal de Planes de Negocio (Oficina Desconcentrada)",
+          "says": "\"Si las cooperativas llegan mejor capacitadas, el tiempo de evaluación y subsanación de observaciones se reduciría a la mitad.\"",
+          "does": "Revisa expedientes físicos y digitales, redacta pliegos de observaciones y coordina con dirigentes agrarios.",
           "thinks": "Opina que la capacitación previa en gestión asociativa y costos agrícolas es el filtro más efectivo para la sostenibilidad del plan.",
           "feels": "Presión por cumplir plazos del TUPA y desánimo al rechazar solicitudes por errores subsanables en la formulación.",
           "hears": "Reclamos constantes de organizaciones sobre la severidad y lenguaje técnico de las observaciones legales y contables.",
           "sees": "Planes de negocios presentados con deficiencias reiteradas en flujos de caja y cálculos de contrapartida de la cooperativa.",
-          "says": "\"Si las cooperativas llegan mejor capacitadas, el tiempo de evaluación y subsanación de observaciones se reduciría a la mitad.\"",
-          "does": "Revisa expedientes físicos y digitales, redacta pliegos de observaciones y coordina con dirigentes agrarios.",
           "pains": "Reiteradas mesas de trabajo para aclarar los mismos puntos metodológicos y retraso general en la cadena de incentivos.",
-          "gains": "Organizaciones agrarias autónomas, documentación estandarizada desde el inicio y aprobación expedita de planes de negocio.",
-          "timestamp": "2026-05-14T16:20:00Z"
+          "gains": "Organizaciones agrarias autónomas, documentación estandarizada desde el inicio y aprobación expedita de planes de negocio."
         },
         {
-          "id": "emp-001-6",
-          "archetypeCode": "EMP-IN0001-06",
+          "id": 6,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
           "userProfile": "Gerente General de Cooperativa Cafetalera de Selva Central (Junín)",
+          "says": "\"Manejamos contratos de exportación exigentes; necesitamos que AGROIDEAS nos forme en trazabilidad y certificaciones internacionales.\"",
+          "does": "Coordina con clientes del exterior, supervisa lotes de café y gestiona las solicitudes de incentivos ante el Estado.",
           "thinks": "Considera que los programas de formación del Estado deben elevar el nivel hacia la competitividad global y no quedarse en lo básico.",
           "feels": "Urgencia por modernizar los procesos de acopio y temor a perder clientes internacionales por demoras burocráticas.",
           "hears": "Brokers y compradores europeos exigiendo cumplimiento estricto del reglamento de libre deforestación (EUDR).",
           "sees": "Competidores de otros países que reciben asistencia técnica y capacitación digital en tiempo real.",
-          "says": "\"Manejamos contratos de exportación exigentes; necesitamos que AGROIDEAS nos forme en trazabilidad y certificaciones internacionales.\"",
-          "does": "Coordina con clientes del exterior, supervisa lotes de café y gestiona las solicitudes de incentivos ante el Estado.",
           "pains": "Riesgo de sanciones comerciales, costos elevados de asesorías privadas externas y lentitud en la homologación de incentivos.",
-          "gains": "Módulos especializados en comercio exterior, herramientas de trazabilidad satelital y alianzas estratégicas con mercados premium.",
-          "timestamp": "2026-06-20T10:00:00Z"
+          "gains": "Módulos especializados en comercio exterior, herramientas de trazabilidad satelital y alianzas estratégicas con mercados premium."
         },
         {
-          "id": "emp-001-7",
-          "archetypeCode": "EMP-IN0001-07",
+          "id": 7,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
           "userProfile": "Productor Ganadero Tradicional no Bancarizado (Sierra Sur - Puno)",
+          "says": "\"Yo trabajo desde las cuatro de la mañana con el ganado; no entiendo de claves de internet ni de bancos virtuales.\"",
+          "does": "Asiste a las ferias semanales, vende leche al por mayor y entrega sus comprobantes manuales al tesorero comunal.",
           "thinks": "Cree que los programas del gobierno son solo para las grandes asociaciones de la costa y no para pequeños comuneros.",
           "feels": "Desconfianza inicial ante cualquier sistema informático y temor a ser excluido de los beneficios de la modernización.",
           "hears": "Rumores en el campo de que la digitalización busca cobrarles más impuestos o quitarles personería jurídica.",
           "sees": "Agencias bancarias a más de tres horas de camino y vecinos que han sido estafados con mensajes fraudulentos al celular.",
-          "says": "\"Yo trabajo desde las cuatro de la mañana con el ganado; no entiendo de claves de internet ni de bancos virtuales.\"",
-          "does": "Asiste a las ferias semanales, vende leche al por mayor y entrega sus comprobantes manuales al tesorero comunal.",
           "pains": "Altos costos de transporte a capitales provinciales, exclusión financiera y barreras de lectoescritura en plataformas digitales.",
-          "gains": "Acompañamiento presencial de promotores de confianza, contenidos en quechua/aimara y mecanismos de pago transparentes.",
-          "timestamp": "2026-07-15T08:30:00Z"
+          "gains": "Acompañamiento presencial de promotores de confianza, contenidos en quechua/aimara y mecanismos de pago transparentes."
         },
         {
-          "id": "emp-001-8",
-          "archetypeCode": "EMP-IN0001-08",
+          "id": 8,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
           "userProfile": "Especialista de Monitoreo y Evaluación UPP (Sede Central Lima)",
+          "says": "\"Necesitamos evidencia cuantitativa del incremento de competencias en los productores para sustentar el presupuesto del PIIP.\"",
+          "does": "Analiza matrices de indicadores, elabora informes técnicos para MIDAGRI/PCM y audita el avance de las fases del Doble Diamante.",
           "thinks": "Estima que la trazabilidad digital de las herramientas de innovación es indispensable para institucionalizar el portafolio.",
           "feels": "Satisfacción al observar adopción de innovaciones pero preocupación por la dispersión de datos entre unidades regionales.",
           "hears": "Directivos solicitando reportes ejecutivos consolidados e inspectores de control posterior revisando la evidencia del gasto.",
           "sees": "Diferencias significativas en el nivel de madurez digital entre las diversas regiones del país.",
-          "says": "\"Necesitamos evidencia cuantitativa del incremento de competencias en los productores para sustentar el presupuesto del PIIP.\"",
-          "does": "Analiza matrices de indicadores, elabora informes técnicos para MIDAGRI/PCM y audita el avance de las fases del Doble Diamante.",
           "pains": "Datos no integrados, demoras en el reporte de resultados de campo y resistencia al cambio en algunos mandos intermedios.",
-          "gains": "Reportes automatizados en un clic, indicadores de impacto formativo claros y cumplimiento impecable de la metodología SIPA.",
-          "timestamp": "2026-08-25T15:10:00Z"
+          "gains": "Reportes automatizados en un clic, indicadores de impacto formativo claros y cumplimiento impecable de la metodología SIPA."
         }
       ],
-      "H03_EncuestasCampo": {
-        "sampleSize": 85,
-        "targetAudience": "Directivos de Organizaciones Agrarias (Junín, Cusco, San Martín)",
-        "keyResults": [
-          {
-            "question": "¿Cuenta con smartphone?",
-            "percentageYes": 88.2
-          },
-          {
-            "question": "¿Prefiere capacitación virtual síncrona o módulos interactivos offline?",
-            "preferredOption": "Módulos interactivos descargables (76.5%)"
-          },
-          {
-            "question": "Formatos más accesibles",
-            "topFormats": [
-              "Micro-videos (5-8 min)",
-              "Audio-guías en lenguaje sencillo",
-              "Evaluaciones tipo trivia"
-            ]
-          }
-        ]
-      },
-      "H04_FichaPersona": {
-        "archetypeCode": "PERS-IN0001-01",
-        "name": "Marcos Quispe Huamán",
-        "role": "Presidente de Cooperativa Cacaotera",
-        "age": 42,
-        "digitalLiteracy": "Intermedio (Uso diario de WhatsApp y cámara móvil, poco uso de laptops)",
-        "primaryGoal": "Capacitar a su junta directiva en rendición de cuentas sin interrumpir la cosecha."
-      }
+      "H03_EncuestasCampo": [
+        {
+          "id": 1,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "respondent": "Juan Ticona Apaza (Presidente)",
+          "cooperative": "Cooperativa Agraria Altiplano - Puno",
+          "satisfaction": 2,
+          "comments": "La plataforma virtual es muy pesada cuando no tenemos buena señal. Necesitamos módulos que funcionen sin gastar datos.",
+          "sentiment": "Negativo",
+          "date": "2026-01-22"
+        },
+        {
+          "id": 2,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "respondent": "María Condori Quispe (Lideresa)",
+          "cooperative": "Asoc. Agropecuaria Los Andes - Cusco",
+          "satisfaction": 4,
+          "comments": "Las capacitaciones presenciales son buenas pero viajar a la capital nos quita días de cosecha. Los audios breves ayudan mucho.",
+          "sentiment": "Neutro",
+          "date": "2026-01-24"
+        }
+      ],
+      "H04_FichaPersona": [
+        {
+          "id": 1,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "archetypeName": "Don Roberto Mamani Condori",
+          "name": "Don Roberto Mamani Condori",
+          "role": "Presidente de Cooperativa Agraria y Productor de Papa Nativa",
+          "demographics": "54 años, Puno (3,820 m.s.n.m.), Secundaria incompleta, Quechua / Español",
+          "age": 54,
+          "techTechSavviness": "Básico (Usa WhatsApp para llamadas y audios; no usa computadora)",
+          "quote": "Quiero que mi asociación progrese sin perder meses enteros en papeles. Que el Estado nos capacite con herramientas prácticas en nuestra propia lengua.",
+          "bio": "Agricultor líder con 30 años de experiencia cultivando papas nativas en el altiplano. Dirige una cooperativa de 45 familias y busca certificar sus parcelas para agroexportación.",
+          "goals": [
+            "Aprender a gestionar costos y contratos de exportación sin depender de intermediarios abusivos",
+            "Capacitar a los socios jóvenes para que asuman la directiva y manejen las plataformas de AGROIDEAS",
+            "Obtener el incentivo de adopción tecnológica para instalar un almacén térmico de semilla certificada"
+          ],
+          "frustrations": [
+            "Talleres virtuales que exigen conexión Zoom de alta velocidad inexistente en su comunidad",
+            "Manuales técnicos de más de 80 páginas redactados en jerga jurídica incomprensible",
+            "Gastar S/. 120 en pasajes cada vez que viaja a la capital provincial para pedir orientación presencial"
+          ]
+        },
+        {
+          "id": 2,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "archetypeName": "Lideresa Rosa Huamán Ccallo",
+          "name": "Lideresa Rosa Huamán Ccallo",
+          "role": "Presidenta de Asociación de Mujeres Rurales EEMRI (Valle Sagrado)",
+          "demographics": "46 años, Urubamba, Cusco; Primaria completa, Quechua originario",
+          "age": 46,
+          "techTechSavviness": "Básico (Smartphone Android Go compartido en familia, escucha audios)",
+          "quote": "No podemos abandonar nuestras chacras dos días enteros para viajar a un curso teórico. Queremos aprender en la comunidad.",
+          "bio": "Productora de maíz blanco gigante y hortalizas agroecológicas. Lidera a 24 mujeres campesinas en la transformación artesanal de harinas y néctares naturales.",
+          "goals": [
+            "Dominar la formulación de planes de negocio con enfoque asociativo de mujeres rurales",
+            "Acceder a micro-módulos de audio descargables para escuchar mientras realiza labores de campo",
+            "Lograr autonomía financiera para las socias de su organización agraria comunal"
+          ],
+          "frustrations": [
+            "Sobrecarga de trabajo de cuidado familiar que le impide asistir a talleres en horarios de oficina",
+            "Falta de materiales didácticos con pertinencia cultural e ilustraciones claras",
+            "Desconfianza de algunos evaluadores que dudan de la capacidad de gestión femenina"
+          ]
+        },
+        {
+          "id": 3,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "archetypeName": "Técnico Alex Valenzuela Quispe",
+          "name": "Técnico Alex Valenzuela Quispe",
+          "role": "Joven Promotor Agropecuario y Facilitador Digital Comunal",
+          "demographics": "26 años, Huancayo, Junín; Técnico en Producción Agropecuaria, Bilingüe",
+          "age": 26,
+          "techTechSavviness": "Avanzado (Domina redes sociales, apps móviles, herramientas nube y GPS)",
+          "quote": "Si el programa nos da tutoriales ágiles y micro-cápsulas en video, nosotros mismos guiamos a nuestros padres en el uso del sistema.",
+          "bio": "Hijo de comuneros cafetaleros, egresado de instituto tecnológico. Ayuda a su cooperativa en la digitalización de inventarios, toma de fotos y subida de reportes.",
+          "goals": [
+            "Especializarse como extensionista digital certificado por MIDAGRI en metodologías ágiles",
+            "Implementar módulos de asistencia técnica mediante chatbots de mensajería instantánea",
+            "Reducir las observaciones técnicas en los expedientes de su organización"
+          ],
+          "frustrations": [
+            "Sistemas web institucionales lentos y poco responsivos en pantallas de celulares",
+            "Poca apertura de directivos mayores a modernizar las prácticas de registro manual",
+            "Falta de credenciales digitales o certificaciones formativas con valor curricular oficial"
+          ]
+        },
+        {
+          "id": 4,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "archetypeName": "Ing. Patricia Benavente Ríos",
+          "name": "Ing. Patricia Benavente Ríos",
+          "role": "Especialista Pedagógica y Capacitadora Senior (UPDC Sede Central)",
+          "demographics": "41 años, Lima; Ingeniera Agrónoma con Maestría en Educación Rural",
+          "age": 41,
+          "techTechSavviness": "Avanzado (Diseño instruccional en LMS Chamilo/Moodle, analítica formativa)",
+          "quote": "La clave del aprendizaje en el campo no es la tecnología en sí, sino el diseño pedagógico híbrido que respeta los saberes locales.",
+          "bio": "Responsable del diseño curricular del portafolio formativo de AGROIDEAS. Ha capacitado a más de 3,000 agricultores en 12 regiones del país.",
+          "goals": [
+            "Consolidar la plataforma Blended Learning con recursos multimedia offline sincronizables",
+            "Medir el incremento real de competencias de gestión en las organizaciones agrarias",
+            "Estandarizar el banco de recursos educativos digitales para extensionistas zonales"
+          ],
+          "frustrations": [
+            "Alta tasa de deserción en cursos 100% virtuales debido a la brecha de conectividad rural",
+            "Dificultad para hacer seguimiento personalizado a miles de estudiantes sin herramientas de analítica",
+            "Presupuesto limitado para elaboración de material audiovisual en lenguas originarias"
+          ]
+        },
+        {
+          "id": 5,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "archetypeName": "Ing. Walter Cárdenas Meneses",
+          "name": "Ing. Walter Cárdenas Meneses",
+          "role": "Evaluador Zonal Desconcentrado de Planes de Negocio (UR Cusco)",
+          "demographics": "38 años, Sicuani, Cusco; Ingeniero Agrícola, 10 años en el sector público",
+          "age": 38,
+          "techTechSavviness": "Intermedio (Office avanzado, SIG básico, sistemas de gestión del Estado)",
+          "quote": "Cuando una cooperativa llega bien capacitada desde el inicio, el tiempo de evaluación se reduce a la mitad.",
+          "bio": "Evalúa expedientes de planes de adopción tecnológica y reconversión. Atiende directamente las mesas técnicas provinciales y revisa pliegos de subsanación.",
+          "goals": [
+            "Que las cooperativas presenten flujos de caja y estudios de mercado técnicamente viables",
+            "Contar con una guía metodológica unificada para homologar criterios de evaluación",
+            "Acelerar la emisión de informes de elegibilidad y viabilidad técnica"
+          ],
+          "frustrations": [
+            "Tener que rechazar planes por errores básicos de cálculo que pudieron evitarse con capacitación",
+            "Presión de dirigentes locales que confunden la rigurosidad técnica con mala voluntad funcional",
+            "Carencia de herramientas para monitorear el progreso formativo previo de los directivos postulantes"
+          ]
+        },
+        {
+          "id": 6,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "archetypeName": "Gerente Carlos Mendoza Paucar",
+          "name": "Gerente Carlos Mendoza Paucar",
+          "role": "Gerente General de Cooperativa Cafetalera (La Merced, Selva Central)",
+          "demographics": "49 años, Chanchamayo, Junín; Administrador de Empresas, 15 años liderando OAs",
+          "age": 49,
+          "techTechSavviness": "Intermedio (Maneja banca electrónica, ERP contable y correo corporativo)",
+          "quote": "Competimos contra cooperativas de Colombia y Brasil; la formación de AGROIDEAS debe apuntar a la calidad de exportación y sostenibilidad.",
+          "bio": "Lidera una cooperativa de 120 socios productores de café especial con certificaciones Rainforest Alliance y Fair Trade. Exporta directamente a Europa.",
+          "goals": [
+            "Capacitar al equipo técnico en trazabilidad satelital y reglamento de no deforestación EUDR",
+            "Acceder a cofinanciamiento para modernizar la planta de beneficio ecológico de café",
+            "Fortalecer la gobernanza cooperativa y la transparencia financiera ante la asamblea"
+          ],
+          "frustrations": [
+            "Cursos institucionales que se quedan en conceptos elementales sin profundizar en comercio exterior",
+            "Demoras burocráticas que descalzan los cronogramas de entrega a clientes internacionales",
+            "Falta de módulos formativos en gestión de coberturas de precios en bolsa de materias primas"
+          ]
+        }
+      ]
     },
     "FASE_2_DEFINIR": {
       "H05_MuroHallazgos": [
         {
-          "clusterId": "CLUST-01",
-          "clusterName": "Aislamiento Geográfico y Conectividad Efímera",
-          "insight": "El aprendizaje debe ser Local-First: descargar contenidos cuando hay Wi-Fi en la ciudad y consumir en campo sin internet.",
-          "priority": "ALTA"
+          "id": 1,
+          "type": "Muro",
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "clusterCategory": "Accesibilidad y Alfabetización Digital",
+          "findingTitle": "Brecha de Alfabetización Digital en Directivos Mayores",
+          "title": "Brecha de Alfabetización Digital en Directivos Mayores",
+          "evidenceText": "Los productores agrarios mayores de 50 años se sienten intimidados ante plataformas web complejas y optan por trámites presenciales, pagando hasta S/. 120 de pasaje por visita para recibir orientación verbal.",
+          "text": "Los productores agrarios mayores de 50 años se sienten intimidados ante plataformas web complejas y optan por trámites presenciales, pagando hasta S/. 120 de pasaje por visita para recibir orientación verbal.",
+          "sourceTool": "Encuestas de Campo + AEIOU",
+          "priority": "Alta",
+          "quote": "Prefiero viajar y hablar con un especialista de carne y hueso antes que llenar formularios en una computadora.",
+          "date": "2026-01-25"
         },
         {
-          "clusterId": "CLUST-02",
-          "clusterName": "Formatos Pedagógicos Flexibles (Micro-learning)",
-          "insight": "Documentos de más de 30 páginas no se leen; se requieren píldoras formativas de no más de 10 minutos con validez oficial.",
-          "priority": "ALTA"
+          "id": 2,
+          "type": "Muro",
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "clusterCategory": "Infraestructura y Conectividad",
+          "findingTitle": "Dependencia Crítica de Formatos Descargables Offline",
+          "title": "Dependencia Crítica de Formatos Descargables Offline",
+          "evidenceText": "El 68% de las comunidades campesinas beneficiarias tiene cobertura móvil 2G o nula. Los cursos virtuales sincrónicos por Zoom o Chamilo sufren tasas de deserción superiores al 75% por cortes de señal.",
+          "text": "El 68% de las comunidades campesinas beneficiarias tiene cobertura móvil 2G o nula. Los cursos virtuales sincrónicos por Zoom o Chamilo sufren tasas de deserción superiores al 75% por cortes de señal.",
+          "sourceTool": "AEIOU + Mapa de Empatía",
+          "priority": "Alta",
+          "quote": "La plataforma es muy lenta cuando no tenemos buena señal. Cuando baja el wifi al pueblo descargamos los videos para verlos en la chacra.",
+          "date": "2026-01-28"
+        },
+        {
+          "id": 3,
+          "type": "Muro",
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "clusterCategory": "Pedagogía y Lengua Originaria",
+          "findingTitle": "Barrera Lingüística en Comunidades Quechuas y Aimaras",
+          "title": "Barrera Lingüística en Comunidades Quechuas y Aimaras",
+          "evidenceText": "Los manuales de formulación redactados en español formal no logran transferir conceptos financieros complejos (TIR, VAN, punto de equilibrio). Las cápsulas de audio en quechua/aimara elevaron la retención en un 85%.",
+          "text": "Los manuales de formulación redactados en español formal no logran transferir conceptos financieros complejos (TIR, VAN, punto de equilibrio). Las cápsulas de audio en quechua/aimara elevaron la retención en un 85%.",
+          "sourceTool": "Focus Group Rural",
+          "priority": "Alta",
+          "quote": "Entendemos mejor el cálculo del abono cuando nos lo explican en quechua y con ejemplos de nuestra propia cosecha.",
+          "date": "2026-02-04"
+        },
+        {
+          "id": 4,
+          "type": "Muro",
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "clusterCategory": "Relevo Generacional",
+          "findingTitle": "Los Jóvenes Rurales como Mediadores Digitales Familiares",
+          "title": "Los Jóvenes Rurales como Mediadores Digitales Familiares",
+          "evidenceText": "Los hijos de comuneros con estudios técnicos o secundarios manejan smartphones con fluidez y son quienes efectivamente llenan los registros y descargan tutoriales para sus padres directivos.",
+          "text": "Los hijos de comuneros con estudios técnicos o secundarios manejan smartphones con fluidez y son quienes efectivamente llenan los registros y descargan tutoriales para sus padres directivos.",
+          "sourceTool": "Observación Etnográfica",
+          "priority": "Media",
+          "quote": "Si nos dan guías por WhatsApp y videos cortos, nosotros mismos enseñamos a nuestros padres en las noches.",
+          "date": "2026-02-10"
+        },
+        {
+          "id": 5,
+          "type": "Muro",
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "clusterCategory": "Acreditación y Motivación",
+          "findingTitle": "Incentivo Psicosocial de la Certificación Oficial MIDAGRI",
+          "title": "Incentivo Psicosocial de la Certificación Oficial MIDAGRI",
+          "evidenceText": "Obtener un certificado con valor oficial del Ministerio de Desarrollo Agrario y Riego genera alto prestigio comunitario y motiva a los productores a completar las evaluaciones modulares.",
+          "text": "Obtener un certificado con valor oficial del Ministerio de Desarrollo Agrario y Riego genera alto prestigio comunitario y motiva a los productores a completar las evaluaciones modulares.",
+          "sourceTool": "Encuestas de Satisfacción",
+          "priority": "Media",
+          "quote": "Tener mi cartón firmado por el ministerio demuestra a mi asamblea comunal que estamos preparados para manejar el presupuesto.",
+          "date": "2026-02-18"
+        },
+        {
+          "id": 6,
+          "type": "Muro",
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "clusterCategory": "Gestión Operativa de la Capacitación",
+          "findingTitle": "Sobrecarga de Asistencia Técnica Manual en Extensionistas Zonales",
+          "title": "Sobrecarga de Asistencia Técnica Manual en Extensionistas Zonales",
+          "evidenceText": "Los especialistas de campo de la UPDC dedican más del 60% de su jornada laboral a responder telefónicamente las mismas dudas básicas sobre descarga de fichas y formatos de pre-test.",
+          "text": "Los especialistas de campo de la UPDC dedican más del 60% de su jornada laboral a responder telefónicamente las mismas dudas básicas sobre descarga de fichas y formatos de pre-test.",
+          "sourceTool": "Entrevistas a Especialistas UPDC",
+          "priority": "Media",
+          "quote": "Si tuviéramos un chatbot o repositorio de preguntas frecuentes, podríamos enfocarnos en visitas presenciales de mayor impacto.",
+          "date": "2026-02-25"
         }
       ],
-      "H06_DefinicionDesafioHMW": {
-        "hmwCode": "HMW-IN0001",
-        "action": "facilitar módulos formativos interactivos y descargables en formato Blended Learning",
-        "targetUser": "los líderes y directivos de las organizaciones agrarias beneficiarias",
-        "benefit": "fortalecer sus competencias en gestión, ejecución de planes de negocio y rendición de cuentas",
-        "constraint": "las limitaciones de conectividad a internet en zonas rurales y el tiempo restringido por labores agrícolas",
-        "finalHMWStatement": "¿Cómo podríamos facilitar módulos formativos interactivos y descargables en formato Blended Learning para que los líderes y directivos de las organizaciones agrarias fortalezcan sus competencias de gestión a pesar de la falta de conectividad en campo y el tiempo limitado por sus labores agrícolas?"
-      }
+      "H06_DefinicionDesafioHMW": [
+        {
+          "id": 1,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "insightId": 1,
+          "targetUser": "los productores agrarios de comunidades campesinas andinas y nativas",
+          "actionGoal": "completar su empadronamiento y acreditación de personería jurídica de forma descentralizada",
+          "constraintOrPain": "la ausencia de conectividad a internet fija y el alto costo de transporte hacia la capital provincial",
+          "hmwStatement": "¿Cómo podríamos completar su empadronamiento y acreditación de personería jurídica de forma descentralizada para los productores agrarios de comunidades campesinas andinas y nativas a pesar de la ausencia de conectividad a internet fija y el alto costo de transporte hacia la capital provincial?",
+          "question": "¿Cómo podríamos completar su empadronamiento y acreditación de personería jurídica de forma descentralizada para los productores agrarios de comunidades campesinas andinas y nativas a pesar de la ausencia de conectividad a internet fija y el alto costo de transporte hacia la capital provincial?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 2,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "insightId": 2,
+          "targetUser": "los especialistas evaluadores de admisibilidad en las sedes regionales de AGROIDEAS",
+          "actionGoal": "verificar en tiempo real la vigencia de poder comunal y antecedentes registrales ante SUNARP y RENIEC",
+          "constraintOrPain": "las intermitencias en las plataformas interoperables del Estado y la duplicidad de fuentes documentales",
+          "hmwStatement": "¿Cómo podríamos verificar en tiempo real la vigencia de poder comunal y antecedentes registrales ante SUNARP y RENIEC para los especialistas evaluadores de admisibilidad en las sedes regionales de AGROIDEAS a pesar de las intermitencias en las plataformas interoperables del Estado y la duplicidad de fuentes documentales?",
+          "question": "¿Cómo podríamos verificar en tiempo real la vigencia de poder comunal y antecedentes registrales ante SUNARP y RENIEC para los especialistas evaluadores de admisibilidad en las sedes regionales de AGROIDEAS a pesar de las intermitencias en las plataformas interoperables del Estado y la duplicidad de fuentes documentales?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 3,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "insightId": 3,
+          "targetUser": "los técnicos catastrales y especialistas en saneamiento territorial",
+          "actionGoal": "identificar instantáneamente superposiciones de polígonos y predios en áreas naturales protegidas",
+          "constraintOrPain": "la existencia de títulos de propiedad históricos dibujados a mano alzada sin coordenadas geodésicas oficiales",
+          "hmwStatement": "¿Cómo podríamos identificar instantáneamente superposiciones de polígonos y predios en áreas naturales protegidas para los técnicos catastrales y especialistas en saneamiento territorial a pesar de la existencia de títulos de propiedad históricos dibujados a mano alzada sin coordenadas geodésicas oficiales?",
+          "question": "¿Cómo podríamos identificar instantáneamente superposiciones de polígonos y predios en áreas naturales protegidas para los técnicos catastrales y especialistas en saneamiento territorial a pesar de la existencia de títulos de propiedad históricos dibujados a mano alzada sin coordenadas geodésicas oficiales?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 4,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "insightId": 4,
+          "targetUser": "los directivos comunales adultos mayores con escaso dominio de tecnologías web complejas",
+          "actionGoal": "capturar fotografías legibles y digitalizar actas de asamblea comunal desde teléfonos básicos",
+          "constraintOrPain": "la baja alfabetización informática y la complejidad de formularios digitales extensos",
+          "hmwStatement": "¿Cómo podríamos capturar fotografías legibles y digitalizar actas de asamblea comunal desde teléfonos básicos para los directivos comunales adultos mayores con escaso dominio de tecnologías web complejas a pesar de la baja alfabetización informática y la complejidad de formularios digitales extensos?",
+          "question": "¿Cómo podríamos capturar fotografías legibles y digitalizar actas de asamblea comunal desde teléfonos básicos para los directivos comunales adultos mayores con escaso dominio de tecnologías web complejas a pesar de la baja alfabetización informática y la complejidad de formularios digitales extensos?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 5,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "insightId": 5,
+          "targetUser": "las asambleas comunales y juntas directivas de asociaciones agrarias",
+          "actionGoal": "resguardar la soberanía, integridad y privacidad de la nómina de comuneros calificados",
+          "constraintOrPain": "la desconfianza frente al riesgo de filtración de datos territoriales y el temor a la pérdida de propiedad comunal",
+          "hmwStatement": "¿Cómo podríamos resguardar la soberanía, integridad y privacidad de la nómina de comuneros calificados para las asambleas comunales y juntas directivas de asociaciones agrarias a pesar de la desconfianza frente al riesgo de filtración de datos territoriales y el temor a la pérdida de propiedad comunal?",
+          "question": "¿Cómo podríamos resguardar la soberanía, integridad y privacidad de la nómina de comuneros calificados para las asambleas comunales y juntas directivas de asociaciones agrarias a pesar de la desconfianza frente al riesgo de filtración de datos territoriales y el temor a la pérdida de propiedad comunal?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 6,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "insightId": 6,
+          "targetUser": "los dirigentes de cooperativas postulantes con observaciones de admisibilidad",
+          "actionGoal": "subsanar requerimientos documentales en menos de 48 horas mediante canales móviles interactivos",
+          "constraintOrPain": "las demoras de hasta 3 semanas generadas por notificaciones postales físicas en zonas rurales",
+          "hmwStatement": "¿Cómo podríamos subsanar requerimientos documentales en menos de 48 horas mediante canales móviles interactivos para los dirigentes de cooperativas postulantes con observaciones de admisibilidad a pesar de las demoras de hasta 3 semanas generadas por notificaciones postales físicas en zonas rurales?",
+          "question": "¿Cómo podríamos subsanar requerimientos documentales en menos de 48 horas mediante canales móviles interactivos para los dirigentes de cooperativas postulantes con observaciones de admisibilidad a pesar de las demoras de hasta 3 semanas generadas por notificaciones postales físicas en zonas rurales?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        }
+      ]
     },
     "FASE_3_IDEAR": {
       "H07_LluviaIdeasCrazy8s": [
         {
-          "ideaId": "IDEA-01",
-          "title": "Plataforma Web PWA Blended Learning con sincronización offline y micro-módulos multimedia",
-          "author": "Especialista UPDC",
-          "votes": 12
+          "id": 1,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "desafioId": 1,
+          "ideaTitle": "App PWA Padrón Rural Offline con sincronización por lotes SQLite",
+          "idea": "App PWA Padrón Rural Offline con sincronización por lotes SQLite",
+          "description": "Aplicación web progresiva que opera sin señal, almacena expedientes en caché cifrada y sincroniza automáticamente al detectar cobertura celular.",
+          "category": "Tecnológica",
+          "authorRole": "Arquitecto de Software UPDC",
+          "votesCount": 11,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "ideaId": "IDEA-02",
-          "title": "Bot interactivo en WhatsApp impulsado por Inteligencia Artificial para consultas legales y financieras",
-          "author": "Analista OTI",
-          "votes": 7
+          "id": 2,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "desafioId": 3,
+          "ideaTitle": "Motor de Cruce GIS Catastral automatizado contra capas de SERNANP y MIDAGRI",
+          "idea": "Motor de Cruce GIS Catastral automatizado contra capas de SERNANP y MIDAGRI",
+          "description": "Herramienta que analiza polígonos de predios postulantes y genera un reporte semáforo de traslapes en menos de 10 segundos.",
+          "category": "Tecnológica",
+          "authorRole": "Especialista SIG y Catastro",
+          "votesCount": 9,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "ideaId": "IDEA-03",
-          "title": "Distribución de kits físicos en USB/Tarjetas SD con videos pregrabados para las Unidades Regionales",
-          "author": "Especialista Regional",
-          "votes": 4
+          "id": 3,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "desafioId": 2,
+          "ideaTitle": "Flujo Fast-Track de Validación en 48 Horas para cooperativas con buen historial",
+          "idea": "Flujo Fast-Track de Validación en 48 Horas para cooperativas con buen historial",
+          "description": "Procedimiento abreviado de acreditación para organizaciones agrarias con personería jurídica consolidada y cumplimiento tributario impecable.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Especialista en Evaluación UPP",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 4,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "desafioId": 6,
+          "ideaTitle": "Mesa Técnica Descentralizada Itinerante con conectividad satelital Starlink",
+          "idea": "Mesa Técnica Descentralizada Itinerante con conectividad satelital Starlink",
+          "description": "Módulos móviles de atención que visitan ferias agropecuarias provinciales para resolver observaciones documentales en el mismo día.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Coordinador de Enlace Regional",
+          "votesCount": 7,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 5,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "desafioId": 5,
+          "ideaTitle": "Directiva de Declaración Jurada Digital con valor probatorio anticipado",
+          "idea": "Directiva de Declaración Jurada Digital con valor probatorio anticipado",
+          "description": "Marco normativo interno que valida las actas de asamblea comunal digitalizadas mediante firma simple o huella con valor provisional.",
+          "category": "Normativa",
+          "authorRole": "Asesor Legal Institucional",
+          "votesCount": 10,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 6,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "desafioId": 4,
+          "ideaTitle": "Programa 'Líder Agrario Digital': Guías visuales y bootcamps en lengua materna",
+          "idea": "Programa 'Líder Agrario Digital': Guías visuales y bootcamps en lengua materna",
+          "description": "Talleres pedagógicos vivenciales con material audiovisual interactivo en Quechua y Aimara para capacitar a los delegados en la toma de fotos de actas.",
+          "category": "Capacitación",
+          "authorRole": "Facilitador de Extensión Rural",
+          "votesCount": 6,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         }
       ],
-      "H08_MatrizPriorizacion": {
-        "evaluationDate": "2026-09-27T10:15:00Z",
-        "status": "COMPLETADO_Y_CERRADO",
-        "ideasEvaluadas": [
-          {
-            "ideaId": "IDEA-01",
-            "title": "Plataforma Web PWA Blended Learning con sincronización offline",
-            "deseabilidad": 5,
-            "factibilidad": 4,
-            "viabilidad": 5,
-            "impacto": 5,
-            "scoreTotal": 19,
-            "isWinningIdea": true
-          },
-          {
-            "ideaId": "IDEA-02",
-            "title": "Bot interactivo en WhatsApp",
-            "deseabilidad": 4,
-            "factibilidad": 3,
-            "viabilidad": 4,
-            "impacto": 4,
-            "scoreTotal": 15,
-            "isWinningIdea": false
-          }
-        ],
-        "winningIdeaSummary": {
-          "title": "Plataforma Web PWA Blended Learning para Organizaciones Agrarias",
-          "rationale": "Obtuvo el mayor puntaje (19/20). Resuelve el reto de conectividad mediante tecnología Progressive Web App (PWA) de costo cero de licencias y alta deseabilidad en los productores."
+      "H08_MatrizPriorizacion": [
+        {
+          "id": 1,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "ideaId": 1,
+          "ideaTitle": "App PWA Padrón Rural Offline con sincronización por lotes SQLite",
+          "title": "App PWA Padrón Rural Offline con sincronización por lotes SQLite",
+          "desirability": 5,
+          "feasibility": 5,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 19,
+          "isWinningIdea": true,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 2,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "ideaId": 2,
+          "ideaTitle": "Motor de Cruce GIS Catastral automatizado contra capas de SERNANP y MIDAGRI",
+          "title": "Motor de Cruce GIS Catastral automatizado contra capas de SERNANP y MIDAGRI",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 3,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "ideaId": 5,
+          "ideaTitle": "Directiva de Declaración Jurada Digital con valor probatorio anticipado",
+          "title": "Directiva de Declaración Jurada Digital con valor probatorio anticipado",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 5,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 16,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 4,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "ideaId": 3,
+          "ideaTitle": "Flujo Fast-Track de Validación en 48 Horas para cooperativas con buen historial",
+          "title": "Flujo Fast-Track de Validación en 48 Horas para cooperativas con buen historial",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 15,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 5,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "ideaId": 6,
+          "ideaTitle": "Programa 'Líder Agrario Digital': Guías visuales y bootcamps en lengua materna",
+          "title": "Programa 'Líder Agrario Digital': Guías visuales y bootcamps en lengua materna",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 14,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 6,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "ideaId": 4,
+          "ideaTitle": "Mesa Técnica Descentralizada Itinerante con conectividad satelital Starlink",
+          "title": "Mesa Técnica Descentralizada Itinerante con conectividad satelital Starlink",
+          "desirability": 4,
+          "feasibility": 3,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 13,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
         }
+      ],
+      "H09_PrototipadoRapido": {
+        "id": 1,
+        "projectId": 1,
+        "projectCode": "PIIP-2026-IN0001",
+        "prototypeTitle": "Simulador Web PWA de la Plataforma Blended Learning",
+        "name": "Simulador Web PWA de la Plataforma Blended Learning",
+        "prototypeType": "Digital PWA",
+        "keyFeatures": [
+          "Modo offline de micro-lecciones",
+          "Certificación automática al terminar módulos",
+          "Insignias de progreso y audio en quechua/aimara"
+        ],
+        "artifactUrlOrImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500",
+        "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500",
+        "description": "El productor Don Roberto recibe un mensaje de WhatsApp. Responde con una nota de voz en quechua. El bot transcribe, responde con un video corto y registra su avance en Chamilo automáticamente.",
+        "testingGoal": "El 80% de los usuarios de prueba debe completar un micro-módulo de 3 minutos sin requerir asistencia externa."
       }
     },
     "FASE_4_ENTREGAR": {
-      "H09_PrototipadoRapido": {
-        "prototypeId": "PROTO-IN0001-01",
-        "prototypeType": "PWA - Progressive Web App (HTML5 + JS Local-First)",
-        "screens": [
-          {
-            "screenId": "SCR-01",
-            "name": "Dashboard del Productor",
-            "description": "Resumen de módulos descargados e indicador de estado de red (Online/Offline)."
-          },
-          {
-            "screenId": "SCR-02",
-            "name": "Reproductor de Micro-curso",
-            "description": "Video/Audio local con transcripción sincronizada y botón de toma de notas."
-          },
-          {
-            "screenId": "SCR-03",
-            "name": "Trivia de Evaluación",
-            "description": "Cuestionario interactivo de 5 preguntas con validación local y certificado diferido."
-          }
-        ],
-        "acceptanceCriteria": [
-          "Carga inicial de pantalla en menos de 1.5 segundos en dispositivos Android 8.0+",
-          "Funcionamiento 100% offline tras la primera descarga de contenidos",
-          "Persistencia de respuestas de evaluación en LocalStorage"
-        ]
-      },
-      "H10_PlanAccion": {
-        "roadmapCode": "ROADMAP-IN0001",
-        "sprints": [
-          {
-            "sprintNumber": 1,
-            "duration": "3 Semanas",
-            "focus": "Diseño UI/UX y maquetación PWA",
-            "leadUnit": "UPDC / OTI",
-            "deliverable": "Prototipo interactivo navegable"
-          },
-          {
-            "sprintNumber": 2,
-            "duration": "3 Semanas",
-            "focus": "Implementación del motor de almacenamiento local (StorageService) y reproductores",
-            "leadUnit": "OTI",
-            "deliverable": "Aplicación PWA ejecutable sin servidores"
-          },
-          {
-            "sprintNumber": 3,
-            "duration": "3 Semanas",
-            "focus": "Prueba piloto en campo con 25 directivos en Junín y ajuste fino",
-            "leadUnit": "UPDC / UPP",
-            "deliverable": "Reporte de validación empírica y pase a producción"
-          }
-        ]
-      },
-      "H11_MatrizRiesgosYTesteo": {
-        "risks": [
-          {
-            "riskId": "RISK-01",
-            "category": "Tecnológico",
-            "description": "Saturación de almacenamiento en celulares antiguos por descarga de videos.",
-            "severity": "ALTA",
-            "mitigation": "Optimizar compresión a formato WebM y habilitar versión prioritaria solo audio."
-          },
-          {
-            "riskId": "RISK-02",
-            "category": "Legal / Normativo",
-            "description": "Validez de las constancias digitales emitidas sin conexión síncrona.",
-            "severity": "MEDIA",
-            "mitigation": "Sincronización diferida de firmas con UAJ al conectarse a red Wi-Fi en sede regional."
-          }
-        ],
-        "learningCards": [
-          {
-            "cardId": "TEST-01",
-            "hypothesis": "El 80% de los dirigentes podrá completar un micro-curso de rendición de cuentas de forma autónoma en el aplicativo.",
-            "testResult": "El 92% de los evaluados completó el micro-curso en promedio de 12 minutos.",
-            "status": "VALIDADO",
-            "kanbanAction": "Aprobar despliegue nacional e integrar al Portafolio Institucional (Anexo 5)."
-          }
-        ]
-      }
+      "H10_PlanAccion": [
+        {
+          "id": 1,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "taskName": "Desarrollo del módulo de contenidos formativos offline en PWA",
+          "task": "Desarrollo del módulo de contenidos formativos offline en PWA",
+          "phase": "Piloto Fase 1",
+          "responsibleUnit": "Unidad de Promoción y Desarrollo de Capacidades (UPDC)",
+          "responsible": "Unidad de Promoción y Desarrollo de Capacidades (UPDC)",
+          "leader": "Equipo de Innovación Ágil UPDC",
+          "startDate": "2026-10-01",
+          "endDate": "2026-10-20",
+          "deadline": "2026-10-20",
+          "deliverable": "Módulo PWA empaquetado para distribución en Unidades Zonales",
+          "status": "En Proceso"
+        },
+        {
+          "id": 2,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "taskName": "Despliegue experimental del bot WhatsApp en cooperativas de Chanchamayo",
+          "task": "Despliegue experimental del bot WhatsApp en cooperativas de Chanchamayo",
+          "phase": "Piloto Fase 1",
+          "responsibleUnit": "Equipo de Innovación Ágil UPDC",
+          "responsible": "Equipo de Innovación Ágil UPDC",
+          "leader": "Equipo de Innovación Ágil UPDC",
+          "startDate": "2026-10-21",
+          "endDate": "2026-11-15",
+          "deadline": "2026-11-15",
+          "deliverable": "Reporte de adopción con 50 productores y métricas de usabilidad en quechua/español",
+          "status": "Pendiente"
+        }
+      ],
+      "H11_MatrizRiesgosTesteo": [
+        {
+          "id": 1,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "riskDescription": "Pérdida de sincronización de datos de progreso por fallas prolongadas de red en zonas rurales.",
+          "description": "Pérdida de sincronización de datos de progreso por fallas prolongadas de red en zonas rurales.",
+          "riskType": "Tecnológico",
+          "probability": "Media",
+          "impact": "Alto",
+          "level": "Alto",
+          "mitigationStrategy": "Implementar cola de transacciones locales en IndexedDB/LocalStorage con reintento automático al detectar conexión.",
+          "mitigation": "Implementar cola de transacciones locales en IndexedDB/LocalStorage con reintento automático al detectar conexión.",
+          "testResult": "El prototipo PWA sincronizó exitosamente el 100% de los datos acumulados tras 48 horas en modo offline."
+        },
+        {
+          "id": 2,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "riskDescription": "Resistencia cultural al uso de WhatsApp por desconfianza en canales no presenciales por parte de líderes de mayor edad.",
+          "description": "Resistencia cultural al uso de WhatsApp por desconfianza en canales no presenciales por parte de líderes de mayor edad.",
+          "riskType": "Operativo",
+          "probability": "Media",
+          "impact": "Alto",
+          "level": "Alto",
+          "mitigationStrategy": "Realizar inducciones presenciales asistidas en asambleas comunales con demostración práctica del bot en quechua.",
+          "mitigation": "Realizar inducciones presenciales asistidas en asambleas comunales con demostración práctica del bot en quechua.",
+          "testResult": "85% de los líderes de la cooperativa de Chanchamayo que participaron en el taller piloto utilizaron el bot autónomamente en la segunda sesión."
+        }
+      ]
     }
   }
 }

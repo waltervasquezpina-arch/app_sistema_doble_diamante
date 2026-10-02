@@ -1,228 +1,777 @@
 {
   "$schema": "./schemas/far-piip-v3.json",
-  "NavegacionYTrazabilidad": {
-    "IniciativaCodigoActiva": "PIIP-2026-IN0006",
-    "UbicacionActual": {
-      "TipoVista": "HERRAMIENTA_METODOLOGICA",
-      "FaseNumero": 4,
-      "FaseNombre": "Fase 4: Entregar",
-      "HerramientaNumero": 11,
-      "HerramientaCodigo": "H11",
-      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
-      "VistaCodigo": "V11.1",
-      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje (PIIP-2026-IN0006)",
-      "VistaUrl": "fase4/11-matriz-riesgos.html"
-    },
-    "PosicionEnFlujo": {
-      "PasoActual": 11,
-      "TotalPasosFlujo": 11,
-      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
-      "PasoAnterior": {
-        "HerramientaCodigo": "H10",
-        "HerramientaNombre": "Plan de Acción (Hoja de Ruta)",
-        "VistaUrl": "fase4/10-plan-accion.html"
-      },
-      "PasoSiguiente": null
-    },
-    "ControlIteracionYTrazabilidad": {
-      "VersionIteracion": 1,
-      "PermiteIteracionAnterior": true,
-      "FechaUltimaActualizacion": "2026-10-20T16:00:00Z",
-      "UsuarioActualRol": "Facilitador Ágil"
-    }
-  },
-  "ProyectoIdentificacion": {
+  "IniciativaIdentificacion": {
     "id": 6,
-    "code": "PIIP-2026-IN0006",
-    "title": "Directiva para Fiscalización Posterior Basada en Riesgos",
-    "responsible": "Unidad de Planeamiento y Presupuesto (UPP)",
-    "contact": "Analista de Control y Fiscalización - UPP",
-    "date": "2026-09-20",
-    "opinionTecnicaPuntaje": "10/12 Puntos (Anexo 4 - Recomendable)",
-    "porcentajeAvanceGlobal": 100.0,
-    "phases": {
-      "descubrir": "completed",
-      "definir": "completed",
-      "idear": "completed",
-      "entregar": "completed"
-    }
+    "IniciativaCodigo": "PIIP-2026-IN0006",
+    "IniciativaNombre": "Directiva para Fiscalización Posterior Basada en Riesgos",
+    "UnidadOrganicaResponsable": "Unidad de Planeamiento y Presupuesto (UPP)",
+    "LiderProyecto": "Analista de Control y Fiscalización - UPP",
+    "FechaRegistro": "2026-02-24",
+    "EstadoFases": {
+      "descubrir": "active",
+      "definir": "pending",
+      "idear": "pending",
+      "entregar": "pending"
+    },
+    "PorcentajeAvanceGlobal": 50.0
   },
-  "HerramientasMetodologicas": {
+  "RegistrosHerramientasMetodologicas": {
     "FASE_1_DESCUBRIR": {
       "H01_ObservacionAEIOU": [
         {
-          "id": "aeiou-006-1",
-          "dimension": "Actividades",
-          "observation": "La fiscalización posterior de los incentivos liquidados se realiza de manera muestral aleatoria no ponderada (10% fijo), auditando expedientes de bajo riesgo y dejando fuera del control casos de alto presupuesto o sospecha de fraude.",
-          "timestamp": "2026-09-20T09:00:00Z"
+          "id": 31,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "activity": "Sorteo manual tradicional con balotas y hojas impresas para seleccionar el 10% obligatorio de expedientes que irán a fiscalización posterior.",
+          "environment": "Sala de reuniones de la Unidad de Administración en Lima; presencia de veedores institucionales y escribano administrativo.",
+          "interaction": "El encargado extrae números al azar sin considerar montos involucrados, historial crediticio ni antecedentes de observaciones previas.",
+          "object": "Ánfora acrílica transparente, tarjetas con números de expedientes impresos, acta notarial de selección aleatoria.",
+          "objects": "Ánfora acrílica transparente, tarjetas con números de expedientes impresos, acta notarial de selección aleatoria.",
+          "user": "Responsable de Fiscalización Posterior, representante de Asesoría Jurídica y veedor de Control Interno.",
+          "users": "Responsable de Fiscalización Posterior, representante de Asesoría Jurídica y veedor de Control Interno.",
+          "observer": "Alex Dario Abad Escalante - UPP",
+          "observationDate": "2026-02-25",
+          "date": "2026-02-25",
+          "timestamp": "2026-02-25T11:30:00.000Z"
         },
         {
-          "id": "aeiou-006-2",
-          "dimension": "Objetos",
-          "observation": "Los informes de fiscalización se redactan en formatos físicos heterogéneos sin matriz de evaluación de riesgos estandarizada.",
-          "timestamp": "2026-09-20T11:30:00Z"
+          "id": 32,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "activity": "Inspección inopinada de fiscalización posterior en caserío rural para comprobar la autenticidad del padrón comunal y la tenencia de tierras.",
+          "environment": "Parcelas de cultivo en Huanta, Ayacucho; acceso tras 4 horas de viaje en camioneta 4x4 por camino de trocha.",
+          "interaction": "Fiscalizador visita casa por casa a los supuestos socios de la lista; detecta que 5 personas registradas fallecieron antes de la postulación.",
+          "object": "Padrón de socios original firmado en fotocopia, tablero de madera con formulario de constatación de supervivencia, grabadora de voz.",
+          "objects": "Padrón de socios original firmado en fotocopia, tablero de madera con formulario de constatación de supervivencia, grabadora de voz.",
+          "user": "Auditor de Fiscalización Posterior, teniente gobernador local y comuneros de la zona.",
+          "users": "Auditor de Fiscalización Posterior, teniente gobernador local y comuneros de la zona.",
+          "observer": "Fiscalizador de Campo - UPP/UAJ",
+          "observationDate": "2026-03-18",
+          "date": "2026-03-18",
+          "timestamp": "2026-03-18T10:00:00.000Z"
+        },
+        {
+          "id": 33,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "activity": "Cotejo presencial en notarías locales para verificar la autenticidad de firmas legalizadas en declaraciones juradas de compromiso de cofinanciamiento.",
+          "environment": "Despacho notarial en Huancayo, Junín; ambiente formal con atención al público y búsqueda en libros notariales empastados.",
+          "interaction": "Fiscalizador solicita exhibición del libro de legalizaciones; el personal notarial tarda varias horas en certificar que el sello no corresponde.",
+          "object": "Documento original materia de fiscalización, oficio formal de requerimiento de información, libros notariales cronológicos.",
+          "objects": "Documento original materia de fiscalización, oficio formal de requerimiento de información, libros notariales cronológicos.",
+          "user": "Especialista de Fiscalización Posterior y asistente notarial autorizado.",
+          "users": "Especialista de Fiscalización Posterior y asistente notarial autorizado.",
+          "observer": "Abogado Fiscalizador - UAJ/UPP",
+          "observationDate": "2026-04-20",
+          "date": "2026-04-20",
+          "timestamp": "2026-04-20T14:45:00.000Z"
+        },
+        {
+          "id": 34,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "activity": "Cruce masivo de proveedores declarados por las organizaciones agrarias contra las bases de datos de SUNAT para detectar facturas clonadas o no habidas.",
+          "environment": "Sede central Lima; analista con conexión a servicios web del portal tributario de SUNAT.",
+          "interaction": "El analista ingresa RUC por RUC de manera manual al no contar con un API interoperable de consulta masiva por lotes.",
+          "object": "Computadora con macros de Excel para consultas web individuales, listado impreso de 350 proveedores de maquinaria y fertilizantes.",
+          "objects": "Computadora con macros de Excel para consultas web individuales, listado impreso de 350 proveedores de maquinaria y fertilizantes.",
+          "user": "Analista Contable de Fiscalización Posterior y Jefe de Auditoría.",
+          "users": "Analista Contable de Fiscalización Posterior y Jefe de Auditoría.",
+          "observer": "Analista de Inteligencia de Datos - UPP",
+          "observationDate": "2026-05-25",
+          "date": "2026-05-25",
+          "timestamp": "2026-05-25T16:00:00.000Z"
+        },
+        {
+          "id": 35,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "activity": "Diseño de la nueva directiva institucional que reemplaza el muestreo aleatorio simple por un algoritmo de scoring de riesgo ponderado.",
+          "environment": "Mesa de trabajo interinstitucional en Lima con representantes del Sistema Nacional de Control y asesores de modernización.",
+          "interaction": "Debate metodológico sobre variables predictivas de fraude: monto adjudicado, antigüedad de la persona jurídica y rotación de directivos.",
+          "object": "Borrador de directiva en Word con control de cambios, árbol de decisiones en Lucidchart, marco normativo del TUO de la Ley 27444.",
+          "objects": "Borrador de directiva en Word con control de cambios, árbol de decisiones en Lucidchart, marco normativo del TUO de la Ley 27444.",
+          "user": "Equipo de Innovación UPP, Asesor Legal UAJ, Director de UN y representante del OCI.",
+          "users": "Equipo de Innovación UPP, Asesor Legal UAJ, Director de UN y representante del OCI.",
+          "observer": "Consultor Normativo en Gestión Pública - UPP",
+          "observationDate": "2026-06-30",
+          "date": "2026-06-30",
+          "timestamp": "2026-06-30T11:15:00.000Z"
+        },
+        {
+          "id": 36,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "activity": "Simulación y calibración del modelo de scoring de riesgo aplicando datos históricos de 500 expedientes cerrados de los últimos tres años.",
+          "environment": "Laboratorio de analítica de datos en OTI/UPP; pantallas con gráficos de dispersión y curvas ROC de precisión predictiva.",
+          "interaction": "Los analistas comprueban que el nuevo modelo habría detectado el 85% de irregularidades auditadas auditando solo el 20% de expedientes de mayor riesgo.",
+          "object": "Dashboard de visualización Power BI, scripts en Python de análisis exploratorio, dataset anonimizado de expedientes.",
+          "objects": "Dashboard de visualización Power BI, scripts en Python de análisis exploratorio, dataset anonimizado de expedientes.",
+          "user": "Científico de datos OTI, responsable de fiscalización UPP y director ejecutivo.",
+          "users": "Científico de datos OTI, responsable de fiscalización UPP y director ejecutivo.",
+          "observer": "Especialista en Modelamiento Cuantitativo - UPP",
+          "observationDate": "2026-07-22",
+          "date": "2026-07-22",
+          "timestamp": "2026-07-22T15:00:00.000Z"
         }
       ],
-      "H02_MapaEmpatia": {
-        "userProfile": "Analista de Control y Fiscalización (UPP)",
-        "says": "Invertimos el mismo esfuerzo auditando una compra de S/. 5,000 que un incentivo de Adopción de Tecnología de S/. 500,000.",
-        "does": "Muestra al azar expedientes archivados sin un scoring previo de riesgo.",
-        "thinks": "Debemos focalizar la fiscalización donde exista mayor probabilidad de desvío o falta de sustento.",
-        "feels": "Inseguro ante la posibilidad de no detectar irregularidades graves por muestreo aleatorio tradicional.",
-        "pains": "Carga administrativa alta en auditorías de bajo impacto y falta de criterios unificados de aleatoriedad ponderada.",
-        "gains": "Directiva aprobada, matriz de scoring automatizada e incrementos en la tasa de hallazgos relevantes de fiscalización."
-      },
-      "H03_EncuestasCampo": {
-        "sampleSize": 28,
-        "targetAudience": "Auditores y especialistas de control de UPP, UAJ y Unidades Regionales",
-        "keyResults": [
-          {
-            "question": "¿Considera eficiente el muestreo aleatorio plano del 10%?",
-            "percentageNo": 92.8
-          },
-          {
-            "question": "¿Cree conveniente implementar un modelo basado en matriz de riesgos?",
-            "percentageYes": 100.0
-          },
-          {
-            "question": "Criterios prioritarios de riesgo señalados",
-            "topOptions": [
-              "Monto del Incentivo (89%)",
-              "Historial de la Organización Agraria (82%)",
-              "Complejidad del Proveedor (75%)"
-            ]
-          }
-        ]
-      },
-      "H04_FichaPersona": {
-        "archetypeCode": "PERS-IN0006-01",
-        "name": "Abog. Carlos Mendoza Rivas",
-        "role": "Analista de Control y Fiscalización Posterior - UPP",
-        "age": 39,
-        "digitalLiteracy": "Avanzado (Dominio de hojas de cálculo, sistemas de auditoría y gestión documental)",
-        "primaryGoal": "Implementar un modelo predictivo de fiscalización basada en riesgos alineado al Sistema Nacional de Control."
-      }
+      "H02_MapaEmpatia": [
+        {
+          "id": 33,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "userProfile": "Especialista de Fiscalización Posterior y Control de Calidad (UPP)",
+          "says": "\"Revisar el 100% de los expedientes al azar es ineficiente y desgastante. Debemos fiscalizar donde el algoritmo detecte mayor probabilidad de fraude.\"",
+          "does": "Selecciona muestras de planes de negocio aprobados, cruza padrones de socios contra Reniec y Sunat, y viaja a comprobar la existencia real de parcelas.",
+          "thinks": "Considera que una matriz de riesgo con variables como monto adjudicado, historial de la directiva y atipicidad de cotizaciones enfocaría el control.",
+          "feels": "Frustración por perder tiempo en organizaciones intachables mientras casos de riesgo pasan desapercibidos por falta de capacidad operativa.",
+          "hears": "Auditores externos advirtiendo que la fiscalización puramente formalista no detecta la simulación de socios fantasmas en padrones.",
+          "sees": "Carpetas de fiscalización apiladas con documentos que cumplen todos los sellos pero cuyas parcelas en la realidad no existen o están abandonadas.",
+          "pains": "Presupuesto de viáticos limitado para fiscalizaciones presenciales y carencia de herramientas analíticas de minería de datos.",
+          "gains": "Modelo de scoring de riesgo para seleccionar muestras inteligentes de fiscalización y cruces masivos automatizados con Reniec y Sunarp."
+        },
+        {
+          "id": 34,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "userProfile": "Coordinador Zonal de Unidad Regional (UR Junín)",
+          "says": "\"Cuando la fiscalización posterior cae a una comunidad sin criterio previo, los productores se asustan y piensan que les van a quitar los tractores.\"",
+          "does": "Acompaña a las comisiones fiscalizadoras de Lima, coordina la entrega de libros contables y media entre comuneros y auditores.",
+          "thinks": "Opina que la fiscalización debe ser pedagógica y orientadora para fortalecer las capacidades contables de la cooperativa.",
+          "feels": "Incomodidad al tener que fiscalizar a organizaciones que recién están aprendiendo a gestionar fondos asociativos.",
+          "hears": "Dirigentes molestos porque sienten que el Estado desconfía de ellos mientras las grandes agroindustrias reciben exoneraciones sin controles tan severos.",
+          "sees": "Productores nerviosos buscando boletas de combustible de hace dos años guardadas en bolsas de plástico.",
+          "pains": "Tensiones sociales en asambleas comunales por visitas de fiscalización no anunciadas y lenguaje intimidante en requerimientos de información.",
+          "gains": "Directiva clara con criterios objetivos de riesgo, protocolo de visita amigable y lista de chequeo transparente conocida previamente por las OAs."
+        },
+        {
+          "id": 35,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "userProfile": "Dirigente de Cooperativa Fiscalizada Muestralmente (Chanchamayo)",
+          "says": "\"Nosotros no tenemos nada que esconder, pero nos piden facturas electrónicas impresas con sellos que la misma Sunat ya no emite en papel.\"",
+          "does": "Abre el almacén de abonos orgánicos a los inspectores, muestra el funcionamiento de la despulpadora de café y entrega libros contables.",
+          "thinks": "Cree que los fiscalizadores deberían ir a la chacra a ver cómo mejoró el rendimiento del café en lugar de revisar si la boleta tiene una mancha.",
+          "feels": "Orgullo por mostrar las mejoras productivas pero angustia ante posibles multas por errores puramente formales o contables.",
+          "hears": "Rumores en el pueblo de que si la fiscalización encuentra un error, los directivos pueden ir a la cárcel o perder su personería jurídica.",
+          "sees": "Los técnicos de Lima con chalecos institucionales y tablets revisando cada rincón del centro de beneficio húmedo.",
+          "pains": "Costo de contratar un contador externo para preparar la carpeta de fiscalización y pérdida de días de trabajo agrícola.",
+          "gains": "Acta de fiscalización digital con cierre in situ, informe de conformidad inmediato y recomendaciones de mejora sin sanciones arbitrarias."
+        },
+        {
+          "id": 36,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "userProfile": "Abogado de Procedimientos Administrativos Sancionadores (UAJ)",
+          "says": "\"Si la fiscalización posterior no respeta el debido procedimiento y la tipicidad, los sancionados apelan al Poder Judicial y ganan los juicios.\"",
+          "does": "Instruye expedientes de infracción, analiza descargos de organizaciones infractoras y proyecta resoluciones de sanción o absolución.",
+          "thinks": "Sabe que un enfoque basado en riesgos previene la judicialización masiva y permite concentrar sanciones en actos con dolo demostrado.",
+          "feels": "Presión por cumplir los plazos de caducidad del procedimiento sancionador (Ley 27444) y evitar la prescripción de infracciones graves.",
+          "hears": "Defensores legales alegando vulneración al principio de razonabilidad y proporcionalidad en la imposición de penalidades.",
+          "sees": "Expedientes sancionadores con pruebas débiles recolectadas en campo sin cadena de custodia adecuada.",
+          "pains": "Altas tasas de apelaciones fundadas por defectos en la etapa inspectiva y falta de graduación proporcional de sanciones.",
+          "gains": "Catálogo estandarizado de infracciones y criterios objetivos de atenuantes/eximentes alineados con la nueva directiva de riesgos."
+        },
+        {
+          "id": 37,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "userProfile": "Auditor de Cumplimiento de Metas y Compromisos (Órgano de Control)",
+          "says": "\"El objetivo final no es multar, sino garantizar que los incentivos no reembolsables hayan generado la adopción tecnológica comprometida.\"",
+          "does": "Verifica que los planes de negocio cumplan los tres años de sostenibilidad posteriores a la liquidación del convenio.",
+          "thinks": "Estima que la fiscalización posterior ex post (1 a 3 años después) es el único indicador real de si el dinero público generó desarrollo agrario duradero.",
+          "feels": "Deber cívico con la rendición de cuentas pública pero frustración cuando encuentra maquinaria abandonada por falta de repuestos o división comunal.",
+          "hears": "Comentarios de comuneros que indican que la cooperativa se formó solo para ganar el premio de AGROIDEAS y luego se desintegró.",
+          "sees": "Tractores oxidados en patios comunales o empacadoras de fruta vendidas a terceros en contravención al convenio suscrito.",
+          "pains": "Dificultad para recuperar fondos en organizaciones ya disueltas y falta de monitoreo continuo posliquidación.",
+          "gains": "Monitoreo satelital y de alertas tributarias de supervivencia asociativa durante los 3 años posconvenio para fiscalizar casos críticos."
+        },
+        {
+          "id": 38,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "userProfile": "Analista Estadístico y Científico de Datos de Riesgo (UPP)",
+          "says": "\"El análisis de redes nos muestra patrones de consultores que formulan planes idénticos para cooperativas fantasma en distintas regiones.\"",
+          "does": "Construye algoritmos de detección de anomalías, analiza grafos de relaciones entre proveedores, consultores y directivos, y genera alertas de colusión.",
+          "thinks": "Sabe que la inteligencia de datos y el machine learning son la frontera de la fiscalización pública moderna contra redes de corrupción.",
+          "feels": "Entusiasmo por aplicar ciencia de datos al sector agrario pero frustración por la heterogeneidad y suciedad de los datos históricos.",
+          "hears": "Especialistas de campo que confirman en secreto que ciertos malos formuladores cobran porcentajes del incentivo a los campesinos.",
+          "sees": "Textos de planes de negocio copiados textualmente palabra por palabra entre proyectos de diferentes provincias y cultivos.",
+          "pains": "Falta de herramientas de software especializadas y limitaciones en el acceso a bases de datos de inteligencia financiera.",
+          "gains": "Módulo de detección automática de plagio en formulación y motor de reglas de riesgo incorporado en la plataforma SEL."
+        }
+      ],
+      "H03_EncuestasCampo": [
+        {
+          "id": 11,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "respondent": "Dr. Fernando Salazar (Auditor OCI)",
+          "cooperative": "Órgano de Control Institucional - MIDAGRI",
+          "satisfaction": 2,
+          "comments": "El sorteo de expedientes por balotas aleatorias no es eficiente. Se debe fiscalizar con scoring basado en riesgo objetivo.",
+          "sentiment": "Negativo",
+          "date": "2026-03-20"
+        },
+        {
+          "id": 12,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "respondent": "Segundo Benavides (Veedor Comunal)",
+          "cooperative": "Ronda Campesina de Cajamarca",
+          "satisfaction": 4,
+          "comments": "La fiscalización debe ser en campo y verificar si el tractor o la planta realmente existen y no solo en papeles firmados.",
+          "sentiment": "Positivo",
+          "date": "2026-03-25"
+        }
+      ],
+      "H04_FichaPersona": [
+        {
+          "id": 31,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "archetypeName": "Lic. Álvaro Paredes Quiroga",
+          "name": "Lic. Álvaro Paredes Quiroga",
+          "role": "Especialista de Fiscalización Posterior y Calidad (UPP)",
+          "demographics": "39 años, Lima; Licenciado en Administración con especialización en Auditoría Forense",
+          "age": 39,
+          "techTechSavviness": "Avanzado (Minería de datos, software analítico antifraude, cruces masivos)",
+          "quote": "Revisar el 100% de los expedientes al azar es ineficiente y desgastante. La fiscalización debe dirigirse donde el algoritmo señale anomalías.",
+          "bio": "Responsable de ejecutar la fiscalización posterior según la Ley 27444. Aplica cruces masivos contra RENIEC, SUNAT y SUNARP.",
+          "goals": [
+            "Aprobar una directiva institucional de fiscalización posterior con enfoque de gestión de riesgos",
+            "Detectar redes de malos consultores que presentan padrones de socios falsificados",
+            "Automatizar el cálculo de scoring de riesgo para seleccionar muestras inteligentes de control"
+          ],
+          "frustrations": [
+            "Perder semanas revisando expedientes intachables mientras casos de fraude pasan inadvertidos",
+            "Falta de presupuesto para comisiones de campo sorpresivas en zonas remotas",
+            "Carencia de herramientas automatizadas para cotejar identidades de directivos inhabilitados"
+          ]
+        },
+        {
+          "id": 32,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "archetypeName": "Ing. Néstor Ccolque Huarhua",
+          "name": "Ing. Néstor Ccolque Huarhua",
+          "role": "Coordinador de Inspecciones Técnicas y Fiscalización (UR Junín)",
+          "demographics": "43 años, Huancayo; Ingeniero Agrónomo con experiencia en control interno",
+          "age": 43,
+          "techTechSavviness": "Intermedio (Cámara georreferenciada, tablet, verificación de linderos)",
+          "quote": "La fiscalización posterior en el campo no debe ser intimidante; debe orientar a los directivos para que corrijan sus libros contables.",
+          "bio": "Ejecuta las visitas in situ de fiscalización posterior en Junín, Pasco y Huancavelica. Verifica la existencia de parcelas y maquinaria cofinanciada.",
+          "goals": [
+            "Contar con una lista de verificación transparente conocida de antemano por las organizaciones",
+            "Cerrar las actas de fiscalización in situ en formato digital con firma del presidente comunal",
+            "Diferenciar entre errores formales de aprendizaje contable y actos con dolo o simulación"
+          ],
+          "frustrations": [
+            "El temor de los comuneros que ocultan información creyendo que la fiscalización busca despojarlos de sus bienes",
+            "Productores que no conservan los comprobantes de pago de combustible de hace dos años",
+            "Requerimientos de información emitidos desde Lima con plazos perentorios imposibles de cumplir en el campo"
+          ]
+        },
+        {
+          "id": 33,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "archetypeName": "Don Daniel Paucarcaja",
+          "name": "Don Daniel Paucarcaja",
+          "role": "Dirigente de Cooperativa Fiscalizada Muestralmente (Chanchamayo)",
+          "demographics": "51 años, Chanchamayo; Productor de cítricos y jengibre orgánico",
+          "age": 51,
+          "techTechSavviness": "Básico (Manejo de llamadas y coordinación verbal con el contador comunal)",
+          "quote": "Nosotros no tenemos nada que esconder, pero nos piden facturas electrónicas impresas con sellos que la misma SUNAT ya no emite en papel.",
+          "bio": "Presidente de una cooperativa de 40 productores de kion (jengibre) que fue seleccionada aleatoriamente en la muestra anual de fiscalización posterior.",
+          "goals": [
+            "Demostrar que los fondos del incentivo se invirtieron al 100% en la planta de lavado y empaque",
+            "Obtener el informe de conformidad de fiscalización posterior para quedar habilitados a futuros fondos",
+            "Capacitar al tesorero comunal en la custodia de documentos según los estándares del Estado"
+          ],
+          "frustrations": [
+            "Costo imprevisto de contratar a un contador privado para armar la carpeta requerida por los inspectores",
+            "Pérdida de jornadas de trabajo en el campo para atender a las comisiones fiscalizadoras",
+            "Rumores en la asamblea comunal de que los directivos cometieron faltas graves cuando se trata de una fiscalización ordinaria"
+          ]
+        },
+        {
+          "id": 34,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "archetypeName": "Dr. Luis Alberto Noriega",
+          "name": "Dr. Luis Alberto Noriega",
+          "role": "Abogado Instructor de Procedimientos Sancionadores (UAJ Sede Lima)",
+          "demographics": "45 años, Lima; Abogado especialista en Procedimiento Administrativo Sancionador",
+          "age": 45,
+          "techTechSavviness": "Intermedio (Manejo de expedientes sancionadores digitales, jurisprudencia del TCA)",
+          "quote": "Si el acta de fiscalización no garantiza el debido proceso y la tipicidad, los sancionados van al Poder Judicial y el Estado pierde los juicios.",
+          "bio": "Instruye y resuelve los expedientes de presunta infracción detectados en la fiscalización posterior. Determina sanciones de inhabilitación o devolución de fondos.",
+          "goals": [
+            "Contar con actas de fiscalización con pruebas sólidas, fotografías con metadatos y cadena de custodia",
+            "Aplicar una tabla de graduación de sanciones proporcional al daño real ocasionado",
+            "Evitar la prescripción o caducidad de los procedimientos sancionadores mediante alertas de plazos"
+          ],
+          "frustrations": [
+            "Informes de fiscalización con defectos formales que vulneran el derecho de defensa del administrado",
+            "Dificultad para recuperar los montos cofinanciados cuando la cooperativa ya no tiene patrimonio ejecutable",
+            "Falta de tipificación clara de faltas leves, graves y muy graves en la normativa actual"
+          ]
+        },
+        {
+          "id": 35,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "archetypeName": "Mag. César Samanez Flores",
+          "name": "Mag. César Samanez Flores",
+          "role": "Auditor de Cumplimiento de Metas y Compromisos Ex Post (Control Interno)",
+          "demographics": "49 años, Lima; Contador Público y Magíster en Auditoría Gubernamental",
+          "age": 49,
+          "techTechSavviness": "Avanzado (Auditoría de desempeño, seguimiento de sostenibilidad de inversiones)",
+          "quote": "El objetivo de la fiscalización posterior no es sancionar, sino comprobar si los incentivos lograron que la cooperativa sea autosostenible tres años después.",
+          "bio": "Realiza evaluaciones de sostenibilidad ex post a planes de negocio que culminaron sus desembolsos hace 1, 2 o 3 años. Verifica el uso continuado de la tecnología.",
+          "goals": [
+            "Constatar que la maquinaria cofinanciada continúe operativa y en propiedad de la organización",
+            "Medir el incremento en los ingresos netos de las familias beneficiarias a mediano plazo",
+            "Identificar buenas prácticas de gestión asociativa para replicarlas en futuros proyectos"
+          ],
+          "frustrations": [
+            "Cooperativas que se disuelven poco después de recibir el último desembolso del incentivo",
+            "Maquinaria moderna abandonada o subutilizada por falta de técnicos de mantenimiento en la zona",
+            "Dificultad para contactar a directivos que ya culminaron su periodo y no dejaron libros de actas"
+          ]
+        },
+        {
+          "id": 36,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "archetypeName": "Ing. Claudia Méndez Villegas",
+          "name": "Ing. Claudia Méndez Villegas",
+          "role": "Científica de Datos y Analista de Inteligencia Antifraude (UPP)",
+          "demographics": "31 años, Lima; Ingeniera Estadística e Informática, especialista en Machine Learning",
+          "age": 31,
+          "techTechSavviness": "Avanzado (Python, Neo4j para grafos de relaciones, algoritmos de clustering)",
+          "quote": "El análisis de redes nos muestra patrones de consultores que copian planes idénticos para cooperativas fantasma en distintas provincias.",
+          "bio": "Construye algoritmos de detección de colusión y plagio en las solicitudes de planes de negocio. Analiza grafos de relaciones entre directivos y proveedores.",
+          "goals": [
+            "Desplegar un motor de reglas antifraude en el SEL v2.0 que alerte similitudes textuales superiores al 70%",
+            "Cruzar los padrones de socios postulantes contra las planillas de trabajadores públicos para evitar incompatibilidades",
+            "Automatizar el cálculo de la probabilidad de riesgo para la selección de la muestra de fiscalización"
+          ],
+          "frustrations": [
+            "Bases de datos históricas no estructuradas con registros en texto libre difíciles de minar",
+            "Falta de acceso en tiempo real a las bases de datos de antecedentes penales e inteligencia financiera",
+            "Escepticismo de algunos evaluadores tradicionales que desconfían de los algoritmos de analítica"
+          ]
+        }
+      ]
     },
     "FASE_2_DEFINIR": {
       "H05_MuroHallazgos": [
         {
-          "clusterId": "CLUST-06-01",
-          "clusterName": "Ineficiencia del Muestreo Aleatorio Tradicional",
-          "insight": "El muestreo fijo del 10% dispersa la capacidad de auditoría; enfocar la muestra en el 20% de mayor riesgo financiero cubre el 80% del valor total de incentivos.",
-          "priority": "ALTA"
+          "id": 31,
+          "type": "Muro",
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "clusterCategory": "Estrategia de Fiscalización",
+          "findingTitle": "Ineficiencia del Muestreo Aleatorio Tradicional al 100%",
+          "title": "Ineficiencia del Muestreo Aleatorio Tradicional al 100%",
+          "evidenceText": "Seleccionar expedientes al azar para fiscalización posterior consume el 80% del presupuesto de viáticos en revisar organizaciones transparentes con riesgos nulos, mientras casos de colusión no son auditados.",
+          "text": "Seleccionar expedientes al azar para fiscalización posterior consume el 80% del presupuesto de viáticos en revisar organizaciones transparentes con riesgos nulos, mientras casos de colusión no son auditados.",
+          "sourceTool": "Evaluación de Eficacia Inspectiva UPP",
+          "priority": "Alta",
+          "quote": "Fiscalizamos cooperativas intachables que tienen todo en regla y dejamos sin revisar expedientes millonarios con indicios de consultoras dudosas.",
+          "date": "2026-02-24"
         },
         {
-          "clusterId": "CLUST-06-02",
-          "clusterName": "Directiva e Instrumentos Normativos de Fiscalización",
-          "insight": "Se requiere una Directiva Institucional aprobada por RDE que respalde legalmente la selección ponderada por riesgos.",
-          "priority": "ALTA"
+          "id": 32,
+          "type": "Muro",
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "clusterCategory": "Inteligencia de Datos Antifraude",
+          "findingTitle": "Proliferación de Consultores 'Fábrica' que Plagian Planes de Negocio",
+          "title": "Proliferación de Consultores 'Fábrica' que Plagian Planes de Negocio",
+          "evidenceText": "Se han detectado formuladores que presentan planes de negocio idénticos palabra por palabra para organizaciones de diferentes provincias, cobrando hasta el 10% del incentivo y falseando padrones de socios.",
+          "text": "Se han detectado formuladores que presentan planes de negocio idénticos palabra por palabra para organizaciones de diferentes provincias, cobrando hasta el 10% del incentivo y falseando padrones de socios.",
+          "sourceTool": "Cotejo Textual de Expedientes",
+          "priority": "Alta",
+          "quote": "Encontramos el mismo estudio de mercado de café de Junín copiado en un expediente de cacao de San Martín con los mismos gráficos.",
+          "date": "2026-03-01"
+        },
+        {
+          "id": 33,
+          "type": "Muro",
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "clusterCategory": "Procedimiento y Garantías Legales",
+          "findingTitle": "Vicios de Tipicidad y Nulidades Procesales en Sanciones Administrativas",
+          "title": "Vicios de Tipicidad y Nulidades Procesales en Sanciones Administrativas",
+          "evidenceText": "Más del 35% de las sanciones impuestas a cooperativas son revocadas por el Poder Judicial debido a actas de fiscalización mal levantadas, falta de motivación o vulneración del principio de razonabilidad.",
+          "text": "Más del 35% de las sanciones impuestas a cooperativas son revocadas por el Poder Judicial debido a actas de fiscalización mal levantadas, falta de motivación o vulneración del principio de razonabilidad.",
+          "sourceTool": "Revisión de Casos Contenciosos UAJ",
+          "priority": "Alta",
+          "quote": "Si el inspector no deja constancia clara de la hora y de los documentos revisados in situ, el juez anula la sanción en primera instancia.",
+          "date": "2026-03-06"
+        },
+        {
+          "id": 34,
+          "type": "Muro",
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "clusterCategory": "Impacto Comunal y Percepción",
+          "findingTitle": "Temor y Desconfianza Campesina ante Visitas de Fiscalización",
+          "title": "Temor y Desconfianza Campesina ante Visitas de Fiscalización",
+          "evidenceText": "Las inspecciones punitivas generan pánico en comunidades rurales. Los agricultores temen que el Estado les incaute los tractores por simples errores de llenado en cuadernos contables rústicos.",
+          "text": "Las inspecciones punitivas generan pánico en comunidades rurales. Los agricultores temen que el Estado les incaute los tractores por simples errores de llenado en cuadernos contables rústicos.",
+          "sourceTool": "Focus Group en Selva Central",
+          "priority": "Media",
+          "quote": "Cuando llegaron los fiscalizadores con chalecos y cámaras, la gente del pueblo pensó que la policía nos iba a llevar presos por las cuentas.",
+          "date": "2026-03-11"
+        },
+        {
+          "id": 35,
+          "type": "Muro",
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "clusterCategory": "Sostenibilidad Ex Post",
+          "findingTitle": "Falta de Control sobre la Disolución de OAs tras Culminar Desembolsos",
+          "title": "Falta de Control sobre la Disolución de OAs tras Culminar Desembolsos",
+          "evidenceText": "Existen organizaciones que funcionan activamente mientras reciben los fondos del Estado y se disuelven al año siguiente de la liquidación, vendiendo la maquinaria a terceros sin que exista fiscalización ex post.",
+          "text": "Existen organizaciones que funcionan activamente mientras reciben los fondos del Estado y se disuelven al año siguiente de la liquidación, vendiendo la maquinaria a terceros sin que exista fiscalización ex post.",
+          "sourceTool": "Auditorías de Desempeño OCI",
+          "priority": "Media",
+          "quote": "El convenio exige mantener la actividad durante 3 años, pero nadie vuelve al campo a verificar si el tractor sigue en la comunidad.",
+          "date": "2026-03-16"
+        },
+        {
+          "id": 36,
+          "type": "Muro",
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "clusterCategory": "Inteligencia de Datos Antifraude",
+          "findingTitle": "Carencia de Interoperabilidad con Bases de Antecedentes y RUC",
+          "title": "Carencia de Interoperabilidad con Bases de Antecedentes y RUC",
+          "evidenceText": "La verificación de directivos inhabilitados para contratar con el Estado o con deudas tributarias en cobranza coactiva se realiza de forma manual y tardía, cuando el convenio ya fue firmado.",
+          "text": "La verificación de directivos inhabilitados para contratar con el Estado o con deudas tributarias en cobranza coactiva se realiza de forma manual y tardía, cuando el convenio ya fue firmado.",
+          "sourceTool": "Mapeo de Cruces de Información",
+          "priority": "Media",
+          "quote": "Un cruce automatizado contra el Registro de Proveedores Sancionados del OSCE evitaría suscribir convenios con directivos inhabilitados.",
+          "date": "2026-03-22"
         }
       ],
-      "H06_DefinicionDesafioHMW": {
-        "hmwCode": "HMW-IN0006",
-        "action": "aprobar una Directiva de Fiscalización Posterior Basada en Riesgos y desplegar un algoritmo de selección inteligente",
-        "targetUser": "los analistas de control de la UPP y auditores institucionales",
-        "benefit": "focalizar la fiscalización en expedientes de alto impacto financiero y elevar la efectividad en la detección de anomalías",
-        "constraint": "la resistencia al cambio frente al muestreo tradicional y las restricciones normativas del control gubernamental",
-        "finalHMWStatement": "¿Cómo podríamos aprobar una Directiva de Fiscalización Posterior Basada en Riesgos y desplegar un algoritmo de selección inteligente para que los analistas de control de la UPP focalicen las auditorías en expedientes de alto riesgo a pesar de la inercia del muestreo aleatorio tradicional?"
-      }
+      "H06_DefinicionDesafioHMW": [
+        {
+          "id": 31,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "insightId": 31,
+          "targetUser": "los pequeños productores agrarios con lenguas maternas Quechua o Aimara",
+          "actionGoal": "recibir asesoría agronómica y tutoriales de manejo de maquinaria en su propia lengua originaria",
+          "constraintOrPain": "el predominio exclusivo de manuales técnicos en español con terminología académica compleja",
+          "hmwStatement": "¿Cómo podríamos recibir asesoría agronómica y tutoriales de manejo de maquinaria en su propia lengua originaria para los pequeños productores agrarios con lenguas maternas Quechua o Aimara a pesar de el predominio exclusivo de manuales técnicos en español con terminología académica compleja?",
+          "question": "¿Cómo podríamos recibir asesoría agronómica y tutoriales de manejo de maquinaria en su propia lengua originaria para los pequeños productores agrarios con lenguas maternas Quechua o Aimara a pesar de el predominio exclusivo de manuales técnicos en español con terminología académica compleja?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 32,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "insightId": 32,
+          "targetUser": "los agricultores en parcelas remotas sin acceso continuo a redes móviles de datos",
+          "actionGoal": "consultar guías técnicas interactivas, videos demostrativos y audios de extensión agrícola en modo offline",
+          "constraintOrPain": "el alto costo del plan de datos móviles y la intermitencia de la cobertura 3G en las chacras",
+          "hmwStatement": "¿Cómo podríamos consultar guías técnicas interactivas, videos demostrativos y audios de extensión agrícola en modo offline para los agricultores en parcelas remotas sin acceso continuo a redes móviles de datos a pesar de el alto costo del plan de datos móviles y la intermitencia de la cobertura 3G en las chacras?",
+          "question": "¿Cómo podríamos consultar guías técnicas interactivas, videos demostrativos y audios de extensión agrícola en modo offline para los agricultores en parcelas remotas sin acceso continuo a redes móviles de datos a pesar de el alto costo del plan de datos móviles y la intermitencia de la cobertura 3G en las chacras?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 33,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "insightId": 33,
+          "targetUser": "los especialistas agronómicos del Hub Tecnológico en Lima y regiones",
+          "actionGoal": "diagnosticar plagas y enfermedades en cultivos mediante fotografías enviadas por los productores",
+          "constraintOrPain": "la baja resolución de imágenes y la iluminación deficiente en capturas tomadas bajo sombra",
+          "hmwStatement": "¿Cómo podríamos diagnosticar plagas y enfermedades en cultivos mediante fotografías enviadas por los productores para los especialistas agronómicos del Hub Tecnológico en Lima y regiones a pesar de la baja resolución de imágenes y la iluminación deficiente en capturas tomadas bajo sombra?",
+          "question": "¿Cómo podríamos diagnosticar plagas y enfermedades en cultivos mediante fotografías enviadas por los productores para los especialistas agronómicos del Hub Tecnológico en Lima y regiones a pesar de la baja resolución de imágenes y la iluminación deficiente en capturas tomadas bajo sombra?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 34,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "insightId": 34,
+          "targetUser": "los técnicos de mantenimiento de maquinaria agrícola en provincias",
+          "actionGoal": "acceder a catálogos de repuestos y diagramas de despiece mecánico certificados por los fabricantes",
+          "constraintOrPain": "la escasez de manuales de servicio y el uso de repuestos incompatibles que dañan los motores",
+          "hmwStatement": "¿Cómo podríamos acceder a catálogos de repuestos y diagramas de despiece mecánico certificados por los fabricantes para los técnicos de mantenimiento de maquinaria agrícola en provincias a pesar de la escasez de manuales de servicio y el uso de repuestos incompatibles que dañan los motores?",
+          "question": "¿Cómo podríamos acceder a catálogos de repuestos y diagramas de despiece mecánico certificados por los fabricantes para los técnicos de mantenimiento de maquinaria agrícola en provincias a pesar de la escasez de manuales de servicio y el uso de repuestos incompatibles que dañan los motores?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 35,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "insightId": 35,
+          "targetUser": "los directivos de organizaciones agrarias en proceso de reconversión productiva",
+          "actionGoal": "coordinar calendarios de asistencia técnica personalizada y registrar la asistencia de socios",
+          "constraintOrPain": "la superposición con épocas de siembra o cosecha intensa que reduce la participación presencial",
+          "hmwStatement": "¿Cómo podríamos coordinar calendarios de asistencia técnica personalizada y registrar la asistencia de socios para los directivos de organizaciones agrarias en proceso de reconversión productiva a pesar de la superposición con épocas de siembra o cosecha intensa que reduce la participación presencial?",
+          "question": "¿Cómo podríamos coordinar calendarios de asistencia técnica personalizada y registrar la asistencia de socios para los directivos de organizaciones agrarias en proceso de reconversión productiva a pesar de la superposición con épocas de siembra o cosecha intensa que reduce la participación presencial?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 36,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "insightId": 36,
+          "targetUser": "los jóvenes hijos de comuneros con mayor facilidad para el entorno digital",
+          "actionGoal": "formarse como promotores tecnológicos comunales y replicar los saberes en sus parcelas",
+          "constraintOrPain": "la falta de programas de certificación oficial que reconozcan su rol como facilitadores locales",
+          "hmwStatement": "¿Cómo podríamos formarse como promotores tecnológicos comunales y replicar los saberes en sus parcelas para los jóvenes hijos de comuneros con mayor facilidad para el entorno digital a pesar de la falta de programas de certificación oficial que reconozcan su rol como facilitadores locales?",
+          "question": "¿Cómo podríamos formarse como promotores tecnológicos comunales y replicar los saberes en sus parcelas para los jóvenes hijos de comuneros con mayor facilidad para el entorno digital a pesar de la falta de programas de certificación oficial que reconozcan su rol como facilitadores locales?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        }
+      ]
     },
     "FASE_3_IDEAR": {
       "H07_LluviaIdeasCrazy8s": [
         {
-          "ideaId": "IDEA-06-01",
-          "title": "Directiva Institucional con Módulo Web PWA de Scoring de Riesgo de Fiscalización (FISC-RISK)",
-          "author": "Analista de Control UPP",
-          "votes": 13
+          "id": 31,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "desafioId": 31,
+          "ideaTitle": "Repositorio Audiovisual Offline con videocápsulas dobladas a Quechua y Aimara",
+          "idea": "Repositorio Audiovisual Offline con videocápsulas dobladas a Quechua y Aimara",
+          "description": "Biblioteca descargable en tarjeta microSD y app móvil con lecciones prácticas sobre poda, fertilización y despiece mecánico.",
+          "category": "Tecnológica",
+          "authorRole": "Diseñador Instruccional Multimedia",
+          "votesCount": 13,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "ideaId": "IDEA-06-02",
-          "title": "Auditorías 100% presenciales para todas las organizaciones con incentivos mayores a 500 mil soles",
-          "author": "Especialista UAJ",
-          "votes": 5
+          "id": 32,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "desafioId": 33,
+          "ideaTitle": "Sistema Experto de Telediagnóstico Agronómico por imágenes asistido por IA",
+          "idea": "Sistema Experto de Telediagnóstico Agronómico por imágenes asistido por IA",
+          "description": "Motor de clasificación botánica que analiza manchas en hojas y frutos, orientando sobre plagas comunes como roya, broca o monilia.",
+          "category": "Tecnológica",
+          "authorRole": "Científico de Datos Agrícolas",
+          "votesCount": 11,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 33,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "desafioId": 35,
+          "ideaTitle": "Red de Calendarios Agrícolas Sincronizados para programar asistencias técnicas",
+          "idea": "Red de Calendarios Agrícolas Sincronizados para programar asistencias técnicas",
+          "description": "Coordinación basada en las épocas fenológicas del cultivo para no interrumpir cosechas y maximizar la asistencia a capacitaciones.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Coordinador de Asistencia Técnica",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 34,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "desafioId": 34,
+          "ideaTitle": "Banco de Convenios con Universidades e Institutos para mantenimiento de maquinaria",
+          "idea": "Banco de Convenios con Universidades e Institutos para mantenimiento de maquinaria",
+          "description": "Alianzas estratégicas para que egresados de carreras técnicas realicen prácticas supervisadas dando servicio a los tractores y plantas.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Especialista en Articulación Institucional",
+          "votesCount": 7,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 35,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "desafioId": 36,
+          "ideaTitle": "Certificación Oficial de Competencias Laborales para Promotores Tecnológicos Comunales",
+          "idea": "Certificación Oficial de Competencias Laborales para Promotores Tecnológicos Comunales",
+          "description": "Homologación con el Ministerio de Trabajo para certificar formalmente a jóvenes campesinos como extensionistas locales.",
+          "category": "Normativa",
+          "authorRole": "Asesor de Fortalecimiento de Capacidades",
+          "votesCount": 10,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 36,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "desafioId": 32,
+          "ideaTitle": "Maletines Solares Autónomos con proyector portátil para caseríos sin energía",
+          "idea": "Maletines Solares Autónomos con proyector portátil para caseríos sin energía",
+          "description": "Equipos móviles con panel solar y batería recargable que permiten proyectar talleres audiovisuales en locales comunales aislados.",
+          "category": "Capacitación",
+          "authorRole": "Coordinador Logístico Rural",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         }
       ],
-      "H08_MatrizPriorizacion": {
-        "evaluationDate": "2026-10-05T11:00:00Z",
-        "ideasEvaluadas": [
-          {
-            "ideaId": "IDEA-06-01",
-            "title": "Directiva e Instrumento Web FISC-RISK para Fiscalización Basada en Riesgos",
-            "deseabilidad": 5,
-            "factibilidad": 4,
-            "viabilidad": 5,
-            "impacto": 5,
-            "scoreTotal": 19,
-            "isWinningIdea": true
-          },
-          {
-            "ideaId": "IDEA-06-02",
-            "title": "Auditorías presenciales masivas por tope de monto",
-            "deseabilidad": 3,
-            "factibilidad": 2,
-            "viabilidad": 3,
-            "impacto": 4,
-            "scoreTotal": 12,
-            "isWinningIdea": false
-          }
-        ],
-        "winningIdeaSummary": {
-          "title": "Directiva Institucional y Módulo Web FISC-RISK para Fiscalización Basada en Riesgos",
-          "rationale": "Ganadora con 19/20 puntos. Proporciona el marco legal (Directiva) y el motor tecnológico para clasificar expedientes por nivel de riesgo (Alto, Medio, Bajo) asegurando cobertura del 100% en casos críticos."
+      "H08_MatrizPriorizacion": [
+        {
+          "id": 31,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "ideaId": 31,
+          "ideaTitle": "Repositorio Audiovisual Offline con videocápsulas dobladas a Quechua y Aimara",
+          "title": "Repositorio Audiovisual Offline con videocápsulas dobladas a Quechua y Aimara",
+          "desirability": 5,
+          "feasibility": 5,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 19,
+          "isWinningIdea": true,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 32,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "ideaId": 32,
+          "ideaTitle": "Sistema Experto de Telediagnóstico Agronómico por imágenes asistido por IA",
+          "title": "Sistema Experto de Telediagnóstico Agronómico por imágenes asistido por IA",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 33,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "ideaId": 35,
+          "ideaTitle": "Certificación Oficial de Competencias Laborales para Promotores Tecnológicos Comunales",
+          "title": "Certificación Oficial de Competencias Laborales para Promotores Tecnológicos Comunales",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 5,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 16,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 34,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "ideaId": 36,
+          "ideaTitle": "Maletines Solares Autónomos con proyector portátil para caseríos sin energía",
+          "title": "Maletines Solares Autónomos con proyector portátil para caseríos sin energía",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 15,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 35,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "ideaId": 33,
+          "ideaTitle": "Red de Calendarios Agrícolas Sincronizados para programar asistencias técnicas",
+          "title": "Red de Calendarios Agrícolas Sincronizados para programar asistencias técnicas",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 14,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 36,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "ideaId": 34,
+          "ideaTitle": "Banco de Convenios con Universidades e Institutos para mantenimiento de maquinaria",
+          "title": "Banco de Convenios con Universidades e Institutos para mantenimiento de maquinaria",
+          "desirability": 3,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 13,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
         }
+      ],
+      "H09_PrototipadoRapido": {
+        "id": 6,
+        "projectId": 6,
+        "projectCode": "PIIP-2026-IN0006",
+        "prototypeTitle": "Calculadora del Índice de Riesgo de Fiscalización (IRF) y Muestreo Dirigido",
+        "name": "Calculadora del Índice de Riesgo de Fiscalización (IRF) y Muestreo Dirigido",
+        "prototypeType": "Digital PWA",
+        "keyFeatures": [
+          "Algoritmo de scoring ponderado multivariable (monto, antigüedad, historial)",
+          "Muestreo estratificado inteligente reemplazando sorteo por balotas",
+          "Generador de actas de fiscalización inopinada de campo estandarizadas"
+        ],
+        "artifactUrlOrImage": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500",
+        "imageUrl": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500",
+        "description": "Módulo analítico que asigna puntaje de riesgo a los expedientes calificados, priorizando fiscalizaciones in situ donde existe mayor probabilidad de hallazgos.",
+        "testingGoal": "Incremento de la tasa de efectividad de hallazgos sustantivos del 12% al 65% en fiscalizaciones posteriores."
       }
     },
     "FASE_4_ENTREGAR": {
-      "H09_PrototipadoRapido": {
-        "prototypeType": "Módulo Web PWA Local-First & Proyecto de Directiva de Fiscalización",
-        "keyFeatures": [
-          "Calculadora interactiva del Índice de Riesgo de Fiscalización (IRF) basada en 5 variables",
-          "Matriz de categorización automática (Riesgo Alto: Auditoría en 100% de casos; Riesgo Medio: 30%; Riesgo Bajo: 5%)",
-          "Generador automático de Actas de Fiscalización Posterior en PDF"
-        ],
-        "validationCriteria": "Aprobación técnica por UAJ/UPP y precisión del algoritmo > 90% en pruebas ciegas."
-      },
-      "H10_PlanAccion": {
-        "roadmapSprints": [
-          {
-            "sprintNumber": 1,
-            "durationWeeks": 3,
-            "objective": "Formulación del proyecto de Directiva de Fiscalización Basada en Riesgos y matriz de ponderación.",
-            "responsibleUnit": "UPP / UAJ"
-          },
-          {
-            "sprintNumber": 2,
-            "durationWeeks": 3,
-            "objective": "Desarrollo del módulo web PWA FISC-RISK e integración con la base de datos de incentivos.",
-            "responsibleUnit": "UA-TI / UPP"
-          },
-          {
-            "sprintNumber": 3,
-            "durationWeeks": 3,
-            "objective": "Prueba piloto de fiscalización en 40 expedientes cerrados en 2025 y elevación a Dirección Ejecutiva para aprobación formal.",
-            "responsibleUnit": "UPP / Alta Dirección"
-          }
-        ]
-      },
-      "H11_MatrizRiesgosYTesteo": {
-        "risksIdentified": [
-          {
-            "riskId": "RISK-06-01",
-            "category": "Legal",
-            "description": "Cuestionamiento de organizaciones agrarias fiscalizadas por cambio de metodología de muestreo.",
-            "mitigationStrategy": "Incluir en la Directiva la sustentación técnica de la NT-GIP y el principio de eficiencia del control posterior."
-          }
-        ],
-        "learningCards": [
-          {
-            "cardId": "TEST-IN0006-01",
-            "hypothesis": "El algoritmo FISC-RISK identificará un 300% más de inconsistencias reales que el muestreo aleatorio simple.",
-            "fieldTestResult": "En la muestra de 40 expedientes, FISC-RISK detectó 14 hallazgos relevantes vs. 3 hallazgos detectados previamente con muestreo plano (incremento del 366%).",
-            "decision": "Validado. Iniciar trámite de Resolución de Dirección Ejecutiva para la aprobación formal de la Directiva e inclusión en el Portafolio (Anexo 5)."
-          }
-        ],
-        "kanbanStatus": "Pase a Producción e Institucionalización en el Portafolio (Anexo 5) Aprobado"
-      }
+      "H10_PlanAccion": [
+        {
+          "id": 9,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "taskName": "Conducción de sesiones piloto de teleasistencia agronómica con cooperativas",
+          "task": "Conducción de sesiones piloto de teleasistencia agronómica con cooperativas",
+          "phase": "Validación en Campo",
+          "responsibleUnit": "Unidad de Negocios / Asistencia Técnica",
+          "responsible": "Unidad de Negocios / Asistencia Técnica",
+          "leader": "Coordinador Agronómico",
+          "startDate": "2026-06-01",
+          "endDate": "2026-07-15",
+          "deadline": "2026-07-15",
+          "deliverable": "Informe de 40 teleconsultas técnicas registradas con diagnóstico y prescripción",
+          "status": "Pendiente"
+        }
+      ],
+      "H11_MatrizRiesgosTesteo": [
+        {
+          "id": 10,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "riskDescription": "Baja calidad de imagen en videoasistencias debido a enlaces 3G inestables en parcelas alejadas.",
+          "description": "Baja calidad de imagen en videoasistencias debido a enlaces 3G inestables en parcelas alejadas.",
+          "riskType": "Operativo",
+          "probability": "Alta",
+          "impact": "Medio",
+          "level": "Alto",
+          "mitigationStrategy": "Protocolo híbrido: toma de fotografías de alta resolución con carga en segundo plano y llamada de audio comprimido.",
+          "mitigation": "Protocolo híbrido: toma de fotografías de alta resolución con carga en segundo plano y llamada de audio comprimido.",
+          "testResult": "La modalidad asíncrona de diagnóstico fotográfico resolvió el 92% de las consultas sin necesidad de videollamada HD."
+        }
+      ]
     }
   }
 }

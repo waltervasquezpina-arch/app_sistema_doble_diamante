@@ -1,245 +1,775 @@
 {
   "$schema": "./schemas/far-piip-v3.json",
-  "NavegacionYTrazabilidad": {
-    "IniciativaCodigoActiva": "PIIP-2026-IN0004",
-    "UbicacionActual": {
-      "TipoVista": "HERRAMIENTA_METODOLOGICA",
-      "FaseNumero": 4,
-      "FaseNombre": "Fase 4: Entregar",
-      "HerramientaNumero": 11,
-      "HerramientaCodigo": "H11",
-      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
-      "VistaCodigo": "V11.1",
-      "VistaTitulo": "Evaluación de Riesgos y Tarjetas de Aprendizaje - Proyecto 04",
-      "VistaUrl": "fase4/11-matriz-riesgos.html"
+  "IniciativaIdentificacion": {
+    "id": 4,
+    "IniciativaCodigo": "PIIP-2026-IN0004",
+    "IniciativaNombre": "Lineamientos para la Digitalización Integral de Expedientes de Incentivos",
+    "UnidadOrganicaResponsable": "Unidad de Planeamiento y Presupuesto (UPP)",
+    "LiderProyecto": "Alex Dario Abad Escalante - UPP",
+    "FechaRegistro": "2026-02-17",
+    "EstadoFases": {
+      "descubrir": "active",
+      "definir": "pending",
+      "idear": "pending",
+      "entregar": "pending"
     },
-    "PosicionEnFlujo": {
-      "PasoActual": 11,
-      "TotalPasosFlujo": 11,
-      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar - Proyecto 04 Completado)",
-      "PasoAnterior": {
-        "HerramientaCodigo": "H10",
-        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
-        "VistaUrl": "fase4/10-plan-accion.html"
-      },
-      "PasoSiguiente": null
-    },
-    "ControlIteracionYTrazabilidad": {
-      "VersionIteracion": 1,
-      "PermiteIteracionAnterior": true,
-      "FechaUltimaActualizacion": "2026-10-10T11:00:00Z",
-      "UsuarioActualRol": "Facilitador Ágil / UPP"
-    }
+    "PorcentajeAvanceGlobal": 50.0
   },
-  "PortafolioPIIP_Coleccion": [
-    {
-      "id": 4,
-      "code": "PIIP-2026-IN0004",
-      "title": "Lineamientos para la Digitalización Integral de Expedientes de Incentivos",
-      "responsible": "Unidad de Planeamiento y Presupuesto (UPP)",
-      "contact": "Alex Dario Abad Escalante - UPP",
-      "date": "2026-09-18",
-      "status": "Fase 4: Entregar (Completado)",
-      "porcentajeAvanceGlobal": 100.0,
-      "herramientasRegistradasContador": 11,
-      "phases": {
-        "descubrir": "completed",
-        "definir": "completed",
-        "idear": "completed",
-        "entregar": "completed"
-      },
-      "evaluacionFIIP": {
-        "puntajeTotal": 11,
-        "puntajeMaximo": 12,
-        "criterioImpacto": 3,
-        "criterioPriorizacion": 4,
-        "criterioEnfoqueInnovacion": 4,
-        "dictamen": "Recomendable para aprobación e implementación institucional"
-      }
-    }
-  ],
-  "HerramientasMetodologicas_Coleccion": {
-    "H01_ObservacionAEIOU": [
-      {
-        "id": "aeiou-004-1",
-        "projectCode": "PIIP-2026-IN0004",
-        "dimension": "Actividades",
-        "observation": "El proceso físico de recepción, foliación y archivo de expedientes de solicitud de incentivos requiere entre 25 y 40 días hábiles de revisión manual en mesa de partes y carpetas físicas.",
-        "timestamp": "2026-09-18T09:00:00Z"
-      },
-      {
-        "id": "aeiou-004-2",
-        "projectCode": "PIIP-2026-IN0004",
-        "dimension": "Objetos/Documentos",
-        "observation": "Expedientes físicos que superan las 300 páginas por Organización Agraria, generando altos costos de almacenamiento, riesgo de extravío de folios y dificultad de auditoría.",
-        "timestamp": "2026-09-18T11:30:00Z"
-      }
-    ],
-    "H02_MapaEmpatia": {
-      "projectCode": "PIIP-2026-IN0004",
-      "userProfile": "Analista de Evaluación de Expedientes de UPP / Unidades de Línea",
-      "says": "Pasamos semanas buscando un folio o verificando si un documento adjunto coincide con la versión original en físico.",
-      "does": "Archiva manualmente tomos impresos y revisa hoja por hoja las firmas y sellos institucionales.",
-      "thinks": "Deberíamos contar con un repositorio digital con firma electrónica integrada y foliación digital automatizada.",
-      "feels": "Aprobado por el exceso de carga documental física y el riesgo de contingencias de control gubernamental.",
-      "pains": "Cuellos de botella en la atención de solicitudes de incentivos y riesgo de deterioro o pérdida de documentos físicos.",
-      "gains": "Estandarización, búsqueda inmediata por metadatos, cero papel y reducción de tiempos de evaluación en un 70%."
-    },
-    "H03_EncuestasCampo": {
-      "projectCode": "PIIP-2026-IN0004",
-      "sampleSize": 35,
-      "targetAudience": "Evaluadores documentales de UPP, UN, URIE y Trámite Documentario de AGROIDEAS",
-      "keyResults": [
+  "RegistrosHerramientasMetodologicas": {
+    "FASE_1_DESCUBRIR": {
+      "H01_ObservacionAEIOU": [
         {
-          "question": "¿Considera indispensable la transición hacia expedientes 100% digitales?",
-          "percentageYes": 97.1
+          "id": 19,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "activity": "Recepción física, conteo y foliación manual de expediente de postulación de 850 folios en mesa de partes presencial.",
+          "environment": "Mesa de partes de la sede central en Lima; fila de usuarios esperando atención y cajas de cartón con expedientes acumulados en pasadizos.",
+          "interaction": "Operador de ventanilla sella folio por folio con numerador manual; el directivo agrario espera 45 minutos para recibir cargo de recepción.",
+          "object": "Sellos fechadores, numerador metálico de golpe, almohadilla de tinta roja, engrapador industrial, cajas de archivo.",
+          "objects": "Sellos fechadores, numerador metálico de golpe, almohadilla de tinta roja, engrapador industrial, cajas de archivo.",
+          "user": "Operador de Mesa de Partes, tramitador de la cooperativa agraria y supervisor de trámite documentario.",
+          "users": "Operador de Mesa de Partes, tramitador de la cooperativa agraria y supervisor de trámite documentario.",
+          "observer": "Alex Dario Abad Escalante - UPP",
+          "observationDate": "2026-02-18",
+          "date": "2026-02-18",
+          "timestamp": "2026-02-18T10:00:00.000Z"
         },
         {
-          "question": "Principal barrera identificada en el flujo actual",
-          "topAnswer": "Ausencia de una Directiva Técnica de Digitalización e Indexación Homologada (88.6%)"
+          "id": 20,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "activity": "Escaneo manual de documentos en hojas oficio y formatos continuos con escáner plano de baja velocidad.",
+          "environment": "Área de digitalización de archivo central; calor generado por maquinaria de fotocopiado y ruido constante de motores de escáner.",
+          "interaction": "Digitalizador desgrampa cuidadosamente expedientes antiguos con riesgo de rotura de papel periódico o recibos termosensibles borrosos.",
+          "object": "Escáner plano de escritorio, desengrapador tipo pinza, sobres manila de reemplazo, estación de trabajo con disco duro saturado.",
+          "objects": "Escáner plano de escritorio, desengrapador tipo pinza, sobres manila de reemplazo, estación de trabajo con disco duro saturado.",
+          "user": "2 técnicos digitalizadores contratados por terceros y el supervisor de archivo documental.",
+          "users": "2 técnicos digitalizadores contratados por terceros y el supervisor de archivo documental.",
+          "observer": "Especialista en Archivo y Digitalización - UPP",
+          "observationDate": "2026-03-10",
+          "date": "2026-03-10",
+          "timestamp": "2026-03-10T14:15:00.000Z"
         },
         {
-          "question": "Requisito técnico más valorado",
-          "topAnswer": "Foliación digital automática con sello de tiempo y valor legal (91.4%)"
+          "id": 21,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "activity": "Búsqueda física de anexos técnicos y planos extraviados requeridos para una auditoría de la Contraloría General de la República.",
+          "environment": "Depósito de archivo pasivo en sótano institucional; polvo, poca ventilación y carpetas apiladas en palets de madera.",
+          "interaction": "Auditor gubernamental y archivista revisan inventarios manuscritos buscando un legajo del año 2021 durante más de 3 horas.",
+          "object": "Linterna de mano, escalerilla metálica, mascarilla contra polvo, registro de préstamos de expedientes en cuaderno A4.",
+          "objects": "Linterna de mano, escalerilla metálica, mascarilla contra polvo, registro de préstamos de expedientes en cuaderno A4.",
+          "user": "Auditor del Órgano de Control Institucional (OCI), custodio de archivo pasivo y analista de UPP.",
+          "users": "Auditor del Órgano de Control Institucional (OCI), custodio de archivo pasivo y analista de UPP.",
+          "observer": "Analista de Procesos Institucionales - UPP",
+          "observationDate": "2026-04-05",
+          "date": "2026-04-05",
+          "timestamp": "2026-04-05T11:30:00.000Z"
+        },
+        {
+          "id": 22,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "activity": "Cotejo de firmas y metadatos en documentos PDF escaneados sin reconocimiento óptico de caracteres (OCR) ni indexación semántica.",
+          "environment": "Oficina de evaluación de expedientes en Lima; evaluador revisa en monitor de 19 pulgadas documentos escaneados a 150 DPI inclinados.",
+          "interaction": "Evaluador debe rotar manualmente las páginas y hacer zoom al 400% para verificar el número de DNI y la firma del padrón de socios.",
+          "object": "Visor de PDF gratuito sin funciones avanzadas, regla plástica sobre la pantalla, libreta de notas de inconsistencias.",
+          "objects": "Visor de PDF gratuito sin funciones avanzadas, regla plástica sobre la pantalla, libreta de notas de inconsistencias.",
+          "user": "Especialista en Evaluación de Expedientes de la Unidad de Negocios.",
+          "users": "Especialista en Evaluación de Expedientes de la Unidad de Negocios.",
+          "observer": "Auditor de Calidad Documentaria - UPP",
+          "observationDate": "2026-05-08",
+          "date": "2026-05-08",
+          "timestamp": "2026-05-08T16:00:00.000Z"
+        },
+        {
+          "id": 23,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "activity": "Envío de valijas físicas interprovinciales con expedientes originales desde la Unidad Zonal de Arequipa hacia la sede central en Lima.",
+          "environment": "Agencia de encomiendas y transporte terrestre; manipulación de sacos de lona precintados sujetos a demoras por bloqueos carreteros.",
+          "interaction": "Mensajero entrega guía de remisión física y recibe comprobante de recepción con código de rastreo manual.",
+          "object": "Sacos de lona reforzada con precintos de seguridad plásticos numerados, guías de despacho, etiquetas de advertencia 'Frágil'.",
+          "objects": "Sacos de lona reforzada con precintos de seguridad plásticos numerados, guías de despacho, etiquetas de advertencia 'Frágil'.",
+          "user": "Mensajero institucional, recepcionista de empresa de transportes y asistente administrativo zonal.",
+          "users": "Mensajero institucional, recepcionista de empresa de transportes y asistente administrativo zonal.",
+          "observer": "Coordinador de Logística Zonal - AGROIDEAS",
+          "observationDate": "2026-06-02",
+          "date": "2026-06-02",
+          "timestamp": "2026-06-02T17:10:00.000Z"
+        },
+        {
+          "id": 24,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "activity": "Demostración de flujo digital de expediente electrónico con firma digital certificada y metadatos interoperables según Modelo de Gestión Documental (MGD).",
+          "environment": "Auditorio institucional de AGROIDEAS; taller de inducción para jefes de unidad y coordinadores zonales.",
+          "interaction": "Facilitador muestra cómo un expediente de 300 folios se indexa en 45 segundos con OCR automático y validación RENIEC.",
+          "object": "Proyector interactivo, lectores de DNI electrónico, laptops con certificados digitales de RENIEC y software de gestión documental.",
+          "objects": "Proyector interactivo, lectores de DNI electrónico, laptops con certificados digitales de RENIEC y software de gestión documental.",
+          "user": "Directores de Línea, Jefes de Unidad, Asesores de OTI y consultores de gobierno digital de la Secretaría de Gobierno y Transformación Digital (SGTD).",
+          "users": "Directores de Línea, Jefes de Unidad, Asesores de OTI y consultores de gobierno digital de la Secretaría de Gobierno y Transformación Digital (SGTD).",
+          "observer": "Líder de Transformación Digital - UPP",
+          "observationDate": "2026-07-20",
+          "date": "2026-07-20",
+          "timestamp": "2026-07-20T10:00:00.000Z"
+        }
+      ],
+      "H02_MapaEmpatia": [
+        {
+          "id": 21,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "userProfile": "Responsable del Archivo Central y Gestión Documental (AGROIDEAS Lima)",
+          "says": "\"El sótano está colapsado de cajas con más de 10 años de expedientes en papel. Si ocurre una inundación o siniestro, se pierde la historia del programa.\"",
+          "does": "Clasifica legajos físicos de planes de negocio, atiende solicitudes de desarchive de la fiscalía y coordina el expurgo documental con AGN.",
+          "thinks": "Sabe que la microfilmación y digitalización con valor legal (Línea de Digitalización con Firma Digital) es urgente para liberar espacio y asegurar custodia.",
+          "feels": "Preocupación constante por el deterioro físico del papel por humedad y polillas, además de la lentitud para ubicar un expediente solicitado.",
+          "hears": "Auditores de Contraloría exigiendo ver legajos originales que tardan hasta 4 días hábiles en ser ubicados entre miles de cajas archivadoras.",
+          "sees": "Pasillos abarrotados de cajas rotuladas a mano, carritos de transporte manual desgastados y anaqueles al límite de su capacidad de carga.",
+          "pains": "Riesgo inminente de extravío o mutilación de documentos probatorios y alto costo de alquiler de almacenes externos de custodia física.",
+          "gains": "Repositorio documental digital centralizado con metadatos estandarizados, búsqueda por RUC o código de proyecto y acceso en segundos."
+        },
+        {
+          "id": 22,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "userProfile": "Asistente Administrativa de Mesa de Partes y Trámite Documentario (UR Piura)",
+          "says": "\"Los productores nos traen expedientes de tres tomos con 1,200 hojas. Foliar y escanear todo eso con una sola multifuncional nos toma todo el día.\"",
+          "does": "Recepciona documentos de organizaciones agrarias, folia a mano con sellos de tinta, escanea anexos y genera cargos de recepción manual.",
+          "thinks": "Considera que si los productores pudieran cargar los anexos directamente en una mesa de partes digital, la atención en ventanilla sería fluida.",
+          "feels": "Dolor en muñecas por foliar miles de hojas y estrés al atender colas de directivos agrarios en días de cierre de convocatorias.",
+          "hears": "Los dirigentes quejándose de esperar 3 horas en la sala de espera solo para que les sellen el cargo de su expediente.",
+          "sees": "Rimeros de papel en su escritorio que amenazan con caerse, grapas oxidadas y escáneres atascados por papeles arrugados o de diverso gramaje.",
+          "pains": "Riesgo de errores humanos en la foliación física y demoras de hasta una semana en remitir los expedientes escaneados a Lima.",
+          "gains": "Ventanilla virtual interoperable con validación automática de requisitos en PDF y generación de código QR de seguimiento instantáneo."
+        },
+        {
+          "id": 23,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "userProfile": "Especialista Evaluador Técnico de la Unidad de Negocios (Sede Central)",
+          "says": "\"Para revisar un plan de negocio tengo que abrir 15 archivos PDF sin índice y buscar una factura entre 300 páginas desordenadas. Es agotador.\"",
+          "does": "Revisa presupuestos de planes de negocio, contrasta cotizaciones con fichas técnicas y verifica que las firmas concuerden en todos los tomos.",
+          "thinks": "Estima que contar con un expediente digital estructurado por capítulos interactivos reduciría el tiempo de evaluación técnica de 12 días a 4 días.",
+          "feels": "Fatiga visual por revisar escaneos de mala calidad, inclinados o ilegibles y frustración por la falta de un índice digital unificado.",
+          "hears": "Coordinadores zonales reclamando porque los plazos de evaluación se vencen mientras él sigue buscando anexos extraviados en el PDF.",
+          "sees": "Archivos PDF gigantescos de más de 200 MB que cuelgan la computadora de trabajo o páginas escaneadas al revés.",
+          "pains": "Archivos corruptos, falta de reconocimiento óptico de caracteres (OCR) y dificultad para hacer anotaciones o marcas de revisión colaborativa.",
+          "gains": "Visor de expediente electrónico con OCR nativo, marcadores automáticos por sección (legal, técnica, financiera) y herramientas de anotación."
+        },
+        {
+          "id": 24,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "userProfile": "Directivo de Organización Agraria de Productores de Maíz Morado (Carhuaz, Áncash)",
+          "says": "\"Gastamos más de 600 soles solo en fotocopias, empastados y pasajes para llevar tres copias idénticas a la oficina. Eso es plata de la comida.\"",
+          "does": "Junta aportes de 30 comuneros, viaja a la capital de provincia para fotocopiar e imprimir planos a color y armar los archivadores de palanca.",
+          "thinks": "Considera absurdo que en la época del celular con internet el Estado siga pidiendo documentos por triplicado en archivadores pesados.",
+          "feels": "Económicamente perjudicado y temeroso de que en el viaje en combi se moje o dañe una de las carpetas originales.",
+          "hears": "El dueño del centro de fotocopiado haciendo bromas de que AGROIDEAS es su mejor cliente en época de presentación de planes.",
+          "sees": "Costales de rafia llenos de archivadores de palanca siendo cargados en las bodegas de los buses interprovinciales rumbo a Lima.",
+          "pains": "Gasto superfluo en papelería e impresiones, riesgo de deterioro físico en el transporte y costos logísticos que no aportan a la productividad.",
+          "gains": "Carga 100% digital desde una cabina de internet o teléfono celular, con acuse de recibo electrónico con validez legal inmediata."
+        },
+        {
+          "id": 25,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "userProfile": "Auditor Interno de Procesos y Cumplimiento Normativo (Control Institucional)",
+          "says": "\"En un expediente físico es imposible saber quién modificó una hoja o en qué fecha exacta se insertó una adenda. El expediente digital da certeza.\"",
+          "does": "Audita la cadena de custodia de las solicitudes de incentivos, verifica el cumplimiento del TUPA y revisa denuncias de presuntas irregularidades.",
+          "thinks": "Sabe que la digitalización conforme a la Ley de Gobierno Digital y la norma técnica del AGN es la única garantía de integridad probatoria.",
+          "feels": "Incertidumbre cuando se detectan foliaciones dobles con corrector blanco o sellos de fecha colocados fuera de plazo reglamentario.",
+          "hears": "Casos de expedientes traspapelados entre gerencias durante transiciones de gestión o cambios de gobierno.",
+          "sees": "Hojas sueltas sin foliar en carpetas antiguas y firmas no legibles sin sello de posfirma que dificultan identificar al evaluador responsable.",
+          "pains": "Falta de pistas de auditoría forense en el manejo de papel y vulnerabilidad del archivo físico ante manipulaciones indebidas.",
+          "gains": "Firma digital con certificado oficial Reniec/MIDAGRI, trazabilidad de logs por usuario y foliación electrónica inalterable."
+        },
+        {
+          "id": 26,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "userProfile": "Especialista en Transformación Digital e Infraestructura Cloud (OTI)",
+          "says": "\"No se trata solo de escanear papeles y guardar PDFs en carpetas compartidas; digitalizar es rediseñar el flujo con datos estructurados y firma digital.\"",
+          "does": "Diseña la arquitectura del gestor de contenido empresarial (ECM), gestiona el almacenamiento en la nube del Estado y configura políticas de respaldo.",
+          "thinks": "Estima que la migración a un modelo de expediente nativo digital ahorrará más de 1.8 millones de soles al programa en un horizonte de 5 años.",
+          "feels": "Entusiasmo técnico por modernizar la entidad pero cautela ante la resistencia cultural al cambio en funcionarios acostumbrados al sello de tinta.",
+          "hears": "Usuarios de áreas administrativas que afirman que no confían en la firma digital y que prefieren seguir imprimiendo para firmar con lapicero.",
+          "sees": "Discos duros de red saturados con archivos duplicados nombrados como 'expediente_final_v2_revisado_ok.pdf'.",
+          "pains": "Falta de directivas institucionales claras sobre ciclo de vida digital y escasez de presupuesto para almacenamiento masivo en la nube.",
+          "gains": "Directiva aprobada de digitalización integral, interoperabilidad con PIDE (Plataforma de Interoperabilidad del Estado) y metadatos unificados."
+        }
+      ],
+      "H03_EncuestasCampo": [
+        {
+          "id": 7,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "respondent": "Elena Vargas Cárdenas (Tramitadora)",
+          "cooperative": "Cooperativa Cafetalera Pichanaki",
+          "satisfaction": 2,
+          "comments": "Presentar 800 hojas impresas en valija física es muy costoso y riesgoso. Si se pierde una hoja tenemos que rehacer todo.",
+          "sentiment": "Negativo",
+          "date": "2026-03-02"
+        },
+        {
+          "id": 8,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "respondent": "Lic. Martín Solano (Mesa de Partes)",
+          "cooperative": "Sede Central AGROIDEAS Lima",
+          "satisfaction": 2,
+          "comments": "El foliado manual de expedientes gruesos causa retrasos de más de 30 días en admisibilidad. Urge digitalización con OCR.",
+          "sentiment": "Negativo",
+          "date": "2026-03-05"
+        }
+      ],
+      "H04_FichaPersona": [
+        {
+          "id": 19,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "archetypeName": "Lic. Marcos Vinces Peñaloza",
+          "name": "Lic. Marcos Vinces Peñaloza",
+          "role": "Responsable del Archivo Central y Gestión Documental (AGROIDEAS Lima)",
+          "demographics": "53 años, Lima; Licenciado en Archivística y Gestión Documental, 20 años de experiencia",
+          "age": 53,
+          "techTechSavviness": "Intermedio (Software de gestión de archivos, normas AGN, microfilmación)",
+          "quote": "El sótano está colapsado de archivadores de palanca de más de 10 años. Si ocurre un siniestro, se pierde la memoria probatoria de miles de convenios.",
+          "bio": "Custodia más de 20,000 legajos de planes de negocio. Administra los préstamos de expedientes a la Fiscalía, OCI y áreas operativas de la entidad.",
+          "goals": [
+            "Implementar la digitalización con valor legal (microformas digitales) bajo la norma del AGN",
+            "Liberar el 80% del espacio físico del archivo central mediante custodia digital certificada",
+            "Permitir la búsqueda instantánea de cualquier folio histórico por RUC o código de plan"
+          ],
+          "frustrations": [
+            "Riesgo de polillas, humedad y deterioro físico irreversible del papel en depósitos antiguos",
+            "Tardar hasta 4 días hábiles en ubicar y desarchivar un expediente requerido por la Contraloría",
+            "Alto costo presupuestal de alquiler de almacenes externos para guardar papel muerto"
+          ]
+        },
+        {
+          "id": 20,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "archetypeName": "Sra. Juana Bautista Alarcón",
+          "name": "Sra. Juana Bautista Alarcón",
+          "role": "Asistente de Mesa de Partes y Trámite Documentario (UR Piura)",
+          "demographics": "43 años, Piura; Técnica en Administración y Secretariado Ejecutivo",
+          "age": 43,
+          "techTechSavviness": "Intermedio (Mesa de partes virtual, escáneres de alta velocidad, PDF editor)",
+          "quote": "Los productores nos traen tomos empastados de 800 hojas. Foliar y escanear todo eso con una sola máquina nos toma jornadas enteras.",
+          "bio": "Recibe los expedientes de las cooperativas bananeras y algodoneras de Piura y Tumbes. Realiza la foliación de entrada y la verificación de firmas originales.",
+          "goals": [
+            "Contar con una ventanilla virtual interoperable donde los anexos se carguen digitalmente",
+            "Automatizar la foliación electrónica con código QR inmutable desde el momento de recepción",
+            "Brindar una atención en ventanilla rápida y sin colas en días de cierre de convocatorias"
+          ],
+          "frustrations": [
+            "Fatiga muscular por sellar y foliar manualmente miles de páginas al día",
+            "Atascos constantes en los escáneres por grapas olvidadas o papeles arrugados",
+            "Reclamos de usuarios en ventanilla por la demora en la emisión del cargo de recepción"
+          ]
+        },
+        {
+          "id": 21,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "archetypeName": "Ing. Oscar Morales Chumpitaz",
+          "name": "Ing. Oscar Morales Chumpitaz",
+          "role": "Evaluador Técnico de Proyectos de Adopción (Unidad de Negocios)",
+          "demographics": "37 años, Lima; Ingeniero Agrícola, 9 años formulando y evaluando planes",
+          "age": 37,
+          "techTechSavviness": "Avanzado (Manejo de visores PDF con OCR, software presupuestal S10, Excel)",
+          "quote": "Revisar un plan de negocio escaneado sin índice digital me obliga a buscar cotizaciones página por página. Se pierde demasiado tiempo.",
+          "bio": "Evalúa la viabilidad técnica y presupuestal de los planes de negocio. Contrasta planos de infraestructura de riego y cotizaciones de maquinaria.",
+          "goals": [
+            "Disponer de un visor de expediente electrónico estructurado por secciones con OCR inteligente",
+            "Hacer anotaciones y observaciones técnicas directamente sobre el documento digital compartido",
+            "Disminuir el ciclo de evaluación técnica de 15 días a 5 días hábiles por expediente"
+          ],
+          "frustrations": [
+            "Archivos PDF escaneados con hojas giradas, borrosas o con texto no seleccionable",
+            "Tener que descargar archivos gigantescos de más de 250 MB que saturan el ancho de banda",
+            "Falta de una herramienta para comparar automáticamente dos versiones de un mismo plan de negocio"
+          ]
+        },
+        {
+          "id": 22,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "archetypeName": "Don Teófilo Cruzado Ramos",
+          "name": "Don Teófilo Cruzado Ramos",
+          "role": "Directivo de Asociación de Productores de Granos Andinos (Carhuaz, Áncash)",
+          "demographics": "55 años, Carhuaz, Áncash; Secundaria completa, Productor de kiwicha y quinua",
+          "age": 55,
+          "techTechSavviness": "Básico (Usa celular básico para llamadas y acude a cabinas de internet con su hijo)",
+          "quote": "Gastamos más de S/. 500 solo en fotocopias, empastes y pasajes para entregar tres archivadores pesados en Lima. Eso perjudica a la cooperativa.",
+          "bio": "Presidente de una asociación comunal de 35 socios. Ha participado en tres convocatorias del Estado reuniendo costales de carpetas físicas.",
+          "goals": [
+            "Presentar la solicitud y todos los documentos desde una cabina de internet de su distrito",
+            "Ahorrar los gastos de impresión, empastado y traslados terrestres a la capital",
+            "Saber en tiempo real si su expediente fue admitido sin tener que viajar a preguntar"
+          ],
+          "frustrations": [
+            "Riesgo de que los archivadores físicos se mojen o dañen en la bodega del bus interprovincial",
+            "Que le rechacen el expediente en ventanilla porque faltó foliar una sola página de un anexo",
+            "Tener que pagar favores a tramitadores para que revisen si el expediente sigue en trámite"
+          ]
+        },
+        {
+          "id": 23,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "archetypeName": "Abog. Gustavo Prado Reátegui",
+          "name": "Abog. Gustavo Prado Reátegui",
+          "role": "Auditor de Cumplimiento Normativo y Archivos (Control Institucional)",
+          "demographics": "46 años, Lima; Abogado especialista en Derecho Informático y Cero Papel",
+          "age": 46,
+          "techTechSavviness": "Avanzado (Normas ISO 27001, Ley de Gobierno Digital, firma digital con DNIe)",
+          "quote": "En el papel físico es imposible saber quién arrancó una hoja o cambió una fecha. El expediente electrónico garantiza inmutabilidad y certeza legal.",
+          "bio": "Audita los procedimientos administrativos sancionadores y la custodia documental en el marco del Sistema Nacional de Archivos y la PCM.",
+          "goals": [
+            "Asegurar que el 100% de los expedientes cuenten con firma digital bajo la infraestructura oficial PKI",
+            "Establecer la línea de tiempo inalterable (logs de auditoría) en cada actuación administrativa",
+            "Garantizar la interoperabilidad documental con el Poder Judicial y la Contraloría"
+          ],
+          "frustrations": [
+            "Foliaciones dobles corregidas con típex blanco en expedientes antiguos bajo auditoría",
+            "Pérdida de comprobantes originales durante el traslado físico entre gerencias",
+            "Resistencia al cambio de funcionarios que insisten en imprimir documentos firmados digitalmente"
+          ]
+        },
+        {
+          "id": 24,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "archetypeName": "Ing. Renzo Alarcón Zúñiga",
+          "name": "Ing. Renzo Alarcón Zúñiga",
+          "role": "Arquitecto de Transformación Digital y Cloud ECM (Oficina de TI)",
+          "demographics": "35 años, Lima; Ingeniero de Sistemas, certificado en AWS Cloud y Alfresco ECM",
+          "age": 35,
+          "techTechSavviness": "Avanzado (Desarrollo cloud, contenedores Docker, microservicios, seguridad API)",
+          "quote": "Digitalizar no es escanear papeles y guardarlos en un Google Drive; es rediseñar los flujos de trabajo con metadatos estructurados y firma digital.",
+          "bio": "Lidera la implementación de la arquitectura de gestión documental digital de AGROIDEAS. Diseña los repositorios en la nube del Estado peruano.",
+          "goals": [
+            "Desplegar un gestor documental nativo cloud con capacidad para 50 millones de folios seguros",
+            "Integrar el expediente digital con la PIDE (Plataforma de Interoperabilidad del Estado)",
+            "Lograr que el 90% de los trámites se inicien y culminen de forma digital sin una sola hoja física"
+          ],
+          "frustrations": [
+            "Discos de red locales saturados de copias de seguridad no estructuradas",
+            "Limitaciones de ancho de banda en agencias zonales para sincronizar archivos pesados",
+            "Falta de capacitación en los equipos administrativos sobre buenas prácticas de nombramiento digital"
+          ]
         }
       ]
     },
-    "H04_FichaPersona": {
-      "projectCode": "PIIP-2026-IN0004",
-      "archetypeCode": "PERS-IN0004-01",
-      "name": "Alex Dario Abad Escalante",
-      "role": "Especialista en Modernización de la Gestión Pública - UPP",
-      "age": 39,
-      "digitalLiteracy": "Avanzado (Gestión documental electrónica, diseño de procesos e interoperabilidad)",
-      "primaryGoal": "Establecer la directiva y repositorio web para la cero papelización de expedientes de incentivos en AGROIDEAS."
-    },
-    "H05_MuroHallazgos": [
-      {
-        "id": "hallazgo-004-1",
-        "projectCode": "PIIP-2026-IN0004",
-        "clusterId": "CLUST-IN0004-01",
-        "clusterName": "Fragmentación Documental e Ineficiencia Operativa",
-        "insight": "El 60% del tiempo de evaluación de incentivos se consume en la verificación física y ordenamiento de folios duplicados.",
-        "priority": "ALTA"
-      },
-      {
-        "id": "hallazgo-004-2",
-        "projectCode": "PIIP-2026-IN0004",
-        "clusterId": "CLUST-IN0004-02",
-        "clusterName": "Validez Legal y Firma Digital",
-        "insight": "Es urgente normar el uso de expediente electrónico con metadatos estructurados compatibles con el Modelo de Digitalización del Estado.",
-        "priority": "ALTA"
-      }
-    ],
-    "H06_DefinicionDesafioHMW": {
-      "projectCode": "PIIP-2026-IN0004",
-      "hmwCode": "HMW-IN0004",
-      "action": "establecer lineamientos y un módulo web de digitalización integral de expedientes con indexación por metadatos",
-      "targetUser": "los evaluadores documentales y las organizaciones agrarias postulantes",
-      "benefit": "reducir los tiempos de calificación, garantizar la trazabilidad inmutable y eliminar el uso de papel",
-      "constraint": "el elevado volumen histórico de expedientes impresos y la necesidad de mantener el valor probatorio legal",
-      "finalHMWStatement": "¿Cómo podríamos establecer lineamientos y un módulo web de digitalización integral de expedientes con indexación por metadatos para que los evaluadores y organizaciones agrarias reduzcan los tiempos de calificación y garanticen trazabilidad inmutable a pesar del elevado volumen histórico físico y la exigencia de validez legal?"
-    },
-    "H07_LluviaIdeasCrazy8s": [
-      {
-        "ideaId": "IDEA-IN0004-01",
-        "projectCode": "PIIP-2026-IN0004",
-        "title": "Módulo Web de Digitalización de Expedientes con OCR, Indexación por Metadatos y Foliación Digital (AGROIDEAS-DIGITAL)",
-        "author": "Alex Dario Abad Escalante - UPP",
-        "votes": 14
-      },
-      {
-        "ideaId": "IDEA-IN0004-02",
-        "projectCode": "PIIP-2026-IN0004",
-        "title": "Escaneo centralizado con tercerización de custodia de archivos impresos",
-        "author": "Analista de Archivo - UA",
-        "votes": 5
-      }
-    ],
-    "H08_MatrizPriorizacion": {
-      "projectCode": "PIIP-2026-IN0004",
-      "evaluationDate": "2026-09-27T11:00:00Z",
-      "ideasEvaluadas": [
+    "FASE_2_DEFINIR": {
+      "H05_MuroHallazgos": [
         {
-          "ideaId": "IDEA-IN0004-01",
-          "title": "Módulo Web de Digitalización con OCR e Indexación por Metadatos (AGROIDEAS-DIGITAL)",
-          "deseabilidad": 5,
-          "factibilidad": 4,
-          "viabilidad": 5,
-          "impacto": 5,
-          "scoreTotal": 19,
-          "isWinningIdea": true
+          "id": 19,
+          "type": "Muro",
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "clusterCategory": "Costos y Barreras Económicas",
+          "findingTitle": "Gasto Económico Desproporcionado en Papelería y Traslados Físicos",
+          "title": "Gasto Económico Desproporcionado en Papelería y Traslados Físicos",
+          "evidenceText": "Exigir expedientes físicos por triplicado en archivadores de palanca de 800 hojas impone a cada organización un gasto de entre S/. 500 y S/. 800 en fotocopias, empastes y pasajes interprovinciales a las sedes zonales.",
+          "text": "Exigir expedientes físicos por triplicado en archivadores de palanca de 800 hojas impone a cada organización un gasto de entre S/. 500 y S/. 800 en fotocopias, empastes y pasajes interprovinciales a las sedes zonales.",
+          "sourceTool": "Encuesta de Costos de Transacción",
+          "priority": "Alta",
+          "quote": "Gastamos el fondo de emergencia de la cooperativa en tres archivadores pesados que tuvimos que cargar en costales en el bus a Lima.",
+          "date": "2026-02-18"
         },
         {
-          "ideaId": "IDEA-IN0004-02",
-          "title": "Escaneo centralizado con custodia externa",
-          "deseabilidad": 3,
-          "factibilidad": 3,
-          "viabilidad": 3,
-          "impacto": 3,
-          "scoreTotal": 12,
-          "isWinningIdea": false
+          "id": 20,
+          "type": "Muro",
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "clusterCategory": "Custodia y Riesgo Documental",
+          "findingTitle": "Colapso del Archivo Físico y Riesgo de Siniestro en Depósitos",
+          "title": "Colapso del Archivo Físico y Riesgo de Siniestro en Depósitos",
+          "evidenceText": "El almacén central custodia más de 20,000 legajos históricos en cajas apiladas al límite de carga. Hay expedientes afectados por humedad y polillas, con riesgo inminente de pérdida probatoria ante auditorías de control.",
+          "text": "El almacén central custodia más de 20,000 legajos históricos en cajas apiladas al límite de carga. Hay expedientes afectados por humedad y polillas, con riesgo inminente de pérdida probatoria ante auditorías de control.",
+          "sourceTool": "Inspección de Archivo Central",
+          "priority": "Alta",
+          "quote": "Si ocurre una fuga de agua o un incendio en el sótano, se pierde la historia y los sustentos legales de diez años de convenios estatales.",
+          "date": "2026-02-23"
+        },
+        {
+          "id": 21,
+          "type": "Muro",
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "clusterCategory": "Eficiencia en la Evaluación",
+          "findingTitle": "Pérdida de Horas Hombre en Foliación y Búsqueda Manual de Folios",
+          "title": "Pérdida de Horas Hombre en Foliación y Búsqueda Manual de Folios",
+          "evidenceText": "El personal de mesa de partes dedica hasta 4 horas al día a foliar manualmente con sello y tinta, mientras que los evaluadores técnicos tardan 45 minutos en ubicar una factura específica dentro de tomos no digitalizados.",
+          "text": "El personal de mesa de partes dedica hasta 4 horas al día a foliar manualmente con sello y tinta, mientras que los evaluadores técnicos tardan 45 minutos en ubicar una factura específica dentro de tomos no digitalizados.",
+          "sourceTool": "Estudio de Tiempos y Métodos",
+          "priority": "Alta",
+          "quote": "Termino la jornada con dolor en la muñeca de tanto sellar hojas, cuando todo podría foliarlo un código QR en un clic.",
+          "date": "2026-03-01"
+        },
+        {
+          "id": 22,
+          "type": "Muro",
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "clusterCategory": "Seguridad e Integridad Probatoria",
+          "findingTitle": "Vulnerabilidad de Integridad en Documentos Físicos Sueltos",
+          "title": "Vulnerabilidad de Integridad en Documentos Físicos Sueltos",
+          "evidenceText": "En legajos físicos con grapas o perforaciones manuales se han detectado hojas traspapeladas, enmiendas con típex y firmas no identificables, dificultando deslindar responsabilidades funcionales ante el OCI.",
+          "text": "En legajos físicos con grapas o perforaciones manuales se han detectado hojas traspapeladas, enmiendas con típex y firmas no identificables, dificultando deslindar responsabilidades funcionales ante el OCI.",
+          "sourceTool": "Informe de Control Posterior",
+          "priority": "Alta",
+          "quote": "El expediente digital con firma electrónica y sellado de tiempo es la única garantía de que nadie alteró una cotización a espaldas del comité.",
+          "date": "2026-03-06"
+        },
+        {
+          "id": 23,
+          "type": "Muro",
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "clusterCategory": "Tecnología e Infraestructura",
+          "findingTitle": "Archivos PDF Gigantescos y Falta de Reconocimiento OCR",
+          "title": "Archivos PDF Gigantescos y Falta de Reconocimiento OCR",
+          "evidenceText": "Cuando las unidades escanean documentos, generan PDFs de 200 MB en imagen sin compresión ni texto reconocible (OCR), lo que colapsa el ancho de banda y hace imposible copiar datos o buscar palabras clave.",
+          "text": "Cuando las unidades escanean documentos, generan PDFs de 200 MB en imagen sin compresión ni texto reconocible (OCR), lo que colapsa el ancho de banda y hace imposible copiar datos o buscar palabras clave.",
+          "sourceTool": "Diagnóstico de Infraestructura TI",
+          "priority": "Media",
+          "quote": "Descargar un expediente escaneado toma 20 minutos y cuando abre no se puede ni copiar el número de partida registral.",
+          "date": "2026-03-12"
+        },
+        {
+          "id": 24,
+          "type": "Muro",
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "clusterCategory": "Cultura Organizacional y Cambio",
+          "findingTitle": "Resistencia Cultural al Desuso del Sello y la Firma con Lapicero",
+          "title": "Resistencia Cultural al Desuso del Sello y la Firma con Lapicero",
+          "evidenceText": "Existe arraigo en mandos medios tradicionales que exigen imprimir documentos con firma digital para estampar un sello físico de recepción, duplicando el consumo de papel y anulando las ventajas de la política Cero Papel.",
+          "text": "Existe arraigo en mandos medios tradicionales que exigen imprimir documentos con firma digital para estampar un sello físico de recepción, duplicando el consumo de papel y anulando las ventajas de la política Cero Papel.",
+          "sourceTool": "Focus Group Interno AGROIDEAS",
+          "priority": "Media",
+          "quote": "Muchos jefes siguen pidiendo 'el papelito firmado' porque sienten que la firma digital en pantalla no tiene el mismo peso legal.",
+          "date": "2026-03-18"
         }
       ],
-      "winningIdeaSummary": {
-        "title": "AGROIDEAS-DIGITAL: Módulo Web de Digitalización e Indexación de Expedientes",
-        "rationale": "Obtuvo el máximo puntaje de priorización (19/20). Resuelve estructuralmente el problema documental asegurando compatibilidad con el estándar de Gobierno Digital y costo presupuestal de desarrollo S/. 0.00."
-      }
-    },
-    "H09_PrototipadoRapido": {
-      "projectCode": "PIIP-2026-IN0004",
-      "prototypeType": "Aplicación Web Local-First para Carga, Visor OCR e Indexación de Expedientes",
-      "features": [
-        "Visor PDF multifeature con foliador digital automático en marca de agua",
-        "Extractor de metadatos (RUC Organización, Nombre Plan, Región, Tipo Incentivo)",
-        "Controlador LocalStorage con respaldo en JSON exportable"
-      ],
-      "validationCriteria": "Tiempo de procesamiento e indexación de un expediente de 100 páginas en menos de 3 segundos"
-    },
-    "H10_PlanAccion": {
-      "projectCode": "PIIP-2026-IN0004",
-      "roadmap": [
+      "H06_DefinicionDesafioHMW": [
         {
-          "sprint": "Sprint 1 (3 Semanas)",
-          "objective": "Aprobación de Directiva Técnica de Digitalización e Indexación Documental",
-          "leadUnit": "UPP / UAJ"
+          "id": 19,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "insightId": 19,
+          "targetUser": "los directores ejecutivos y tomadores de decisión del MIDAGRI y AGROIDEAS",
+          "actionGoal": "monitorear en tiempo real el porcentaje de ejecución presupuestal y cumplimiento de metas físicas",
+          "constraintOrPain": "el desfase de hasta 45 días en el reporte manual consolidado proveniente de las 16 regiones",
+          "hmwStatement": "¿Cómo podríamos monitorear en tiempo real el porcentaje de ejecución presupuestal y cumplimiento de metas físicas para los directores ejecutivos y tomadores de decisión del MIDAGRI y AGROIDEAS a pesar de el desfase de hasta 45 días en el reporte manual consolidado proveniente de las 16 regiones?",
+          "question": "¿Cómo podríamos monitorear en tiempo real el porcentaje de ejecución presupuestal y cumplimiento de metas físicas para los directores ejecutivos y tomadores de decisión del MIDAGRI y AGROIDEAS a pesar de el desfase de hasta 45 días en el reporte manual consolidado proveniente de las 16 regiones?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
         },
         {
-          "sprint": "Sprint 2 (3 Semanas)",
-          "objective": "Desarrollo del Módulo Web Visor de Expedientes y Foliación Digital en PWA",
-          "leadUnit": "UA-TI / UPP"
+          "id": 20,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "insightId": 20,
+          "targetUser": "los jefes de unidades regionales y coordinadores zonales",
+          "actionGoal": "comparar el rendimiento productivo y rentabilidad de cadenas agropecuarias entre departamentos",
+          "constraintOrPain": "la falta de indicadores estandarizados de productividad por hectárea y volumen cosechado",
+          "hmwStatement": "¿Cómo podríamos comparar el rendimiento productivo y rentabilidad de cadenas agropecuarias entre departamentos para los jefes de unidades regionales y coordinadores zonales a pesar de la falta de indicadores estandarizados de productividad por hectárea y volumen cosechado?",
+          "question": "¿Cómo podríamos comparar el rendimiento productivo y rentabilidad de cadenas agropecuarias entre departamentos para los jefes de unidades regionales y coordinadores zonales a pesar de la falta de indicadores estandarizados de productividad por hectárea y volumen cosechado?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
         },
         {
-          "sprint": "Sprint 3 (3 Semanas)",
-          "objective": "Piloto de digitalización con 50 expedientes de incentivos de Adopción de Tecnología",
-          "leadUnit": "UPP / UN / URIE"
+          "id": 21,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "insightId": 21,
+          "targetUser": "los analistas de políticas agrarias y evaluadores de impacto socioeconómico",
+          "actionGoal": "medir el incremento real en el ingreso familiar neto atribuible a las inversiones del plan de negocio",
+          "constraintOrPain": "la ausencia de líneas de base comparativas y grupos de control estadístico robustos",
+          "hmwStatement": "¿Cómo podríamos medir el incremento real en el ingreso familiar neto atribuible a las inversiones del plan de negocio para los analistas de políticas agrarias y evaluadores de impacto socioeconómico a pesar de la ausencia de líneas de base comparativas y grupos de control estadístico robustos?",
+          "question": "¿Cómo podríamos medir el incremento real en el ingreso familiar neto atribuible a las inversiones del plan de negocio para los analistas de políticas agrarias y evaluadores de impacto socioeconómico a pesar de la ausencia de líneas de base comparativas y grupos de control estadístico robustos?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 22,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "insightId": 22,
+          "targetUser": "los directivos de organizaciones agrarias beneficiarias",
+          "actionGoal": "visualizar el avance de su plan de negocio mediante semáforos simples y métricas comprensibles",
+          "constraintOrPain": "la jerga técnica econométrica que limita la comprensión ciudadana en audiencias de rendición de cuentas",
+          "hmwStatement": "¿Cómo podríamos visualizar el avance de su plan de negocio mediante semáforos simples y métricas comprensibles para los directivos de organizaciones agrarias beneficiarias a pesar de la jerga técnica econométrica que limita la comprensión ciudadana en audiencias de rendición de cuentas?",
+          "question": "¿Cómo podríamos visualizar el avance de su plan de negocio mediante semáforos simples y métricas comprensibles para los directivos de organizaciones agrarias beneficiarias a pesar de la jerga técnica econométrica que limita la comprensión ciudadana en audiencias de rendición de cuentas?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 23,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "insightId": 23,
+          "targetUser": "los planificadores estratégicos de la Unidad de Planeamiento y Presupuesto (UPP)",
+          "actionGoal": "anticipar desvíos presupuestales y emitir alertas tempranas de riesgo de caducidad de fondos",
+          "constraintOrPain": "la dispersión de registros financieros en múltiples hojas de cálculo descentralizadas",
+          "hmwStatement": "¿Cómo podríamos anticipar desvíos presupuestales y emitir alertas tempranas de riesgo de caducidad de fondos para los planificadores estratégicos de la Unidad de Planeamiento y Presupuesto (UPP) a pesar de la dispersión de registros financieros en múltiples hojas de cálculo descentralizadas?",
+          "question": "¿Cómo podríamos anticipar desvíos presupuestales y emitir alertas tempranas de riesgo de caducidad de fondos para los planificadores estratégicos de la Unidad de Planeamiento y Presupuesto (UPP) a pesar de la dispersión de registros financieros en múltiples hojas de cálculo descentralizadas?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 24,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "insightId": 24,
+          "targetUser": "los cooperantes internacionales y entidades cofinanciadoras del Estado",
+          "actionGoal": "auditar tableros públicos de impacto sobre adopción de tecnologías limpias y género",
+          "constraintOrPain": "la inexistencia de módulos abiertos de datos con desagregación por enfoque de género y juventud",
+          "hmwStatement": "¿Cómo podríamos auditar tableros públicos de impacto sobre adopción de tecnologías limpias y género para los cooperantes internacionales y entidades cofinanciadoras del Estado a pesar de la inexistencia de módulos abiertos de datos con desagregación por enfoque de género y juventud?",
+          "question": "¿Cómo podríamos auditar tableros públicos de impacto sobre adopción de tecnologías limpias y género para los cooperantes internacionales y entidades cofinanciadoras del Estado a pesar de la inexistencia de módulos abiertos de datos con desagregación por enfoque de género y juventud?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
         }
       ]
     },
-    "H11_MatrizRiesgosTesteo": {
-      "projectCode": "PIIP-2026-IN0004",
-      "risksEvaluated": [
+    "FASE_3_IDEAR": {
+      "H07_LluviaIdeasCrazy8s": [
         {
-          "riskId": "RISK-004-01",
-          "category": "Técnico/Almacenamiento",
-          "description": "Exceso de peso de archivos PDF escaneados a alta resolución",
-          "mitigation": "Algoritmo de compresión PDF cliente en JavaScript antes del guardado",
-          "severity": "MEDIA"
+          "id": 19,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "desafioId": 19,
+          "ideaTitle": "Dashboard Analítico Ejecutivo con alertas de desviación presupuestal en tiempo real",
+          "idea": "Dashboard Analítico Ejecutivo con alertas de desviación presupuestal en tiempo real",
+          "description": "Panel interactivo que consolida desembolsos y metas físicas de las 16 regiones con semáforos de advertencia para el Directorio.",
+          "category": "Tecnológica",
+          "authorRole": "Ingeniero de Datos PowerBI",
+          "votesCount": 12,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "riskId": "RISK-004-02",
-          "category": "Legal",
-          "description": "Observaciones de la CGR por validez de copia digitalizada",
-          "mitigation": "Protocolo de cotejo posterior con el documento original y sello digital",
-          "severity": "ALTA"
+          "id": 20,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "desafioId": 20,
+          "ideaTitle": "Visualizador Territorial Interactivo de Cadenas de Valor con mapas de calor",
+          "idea": "Visualizador Territorial Interactivo de Cadenas de Valor con mapas de calor",
+          "description": "Mapa geográfico dinámico que muestra hectáreas atendidas, volumen cosechado e impacto en café, cacao, cuyes y lácteos por departamento.",
+          "category": "Tecnológica",
+          "authorRole": "Especialista en Geointeligencia",
+          "votesCount": 10,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 21,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "desafioId": 21,
+          "ideaTitle": "Metodología Automatizada de Evaluación de Impacto Ex Post mediante grupos de control",
+          "idea": "Metodología Automatizada de Evaluación de Impacto Ex Post mediante grupos de control",
+          "description": "Algoritmo cuasiexperimental de Propensity Score Matching (PSM) que mide el ingreso neto de beneficiarios frente a productores no atendidos.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Investigador Econométrico UPP",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 22,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "desafioId": 23,
+          "ideaTitle": "Comité Mensual de Eficiencia Operativa basado en analítica predictiva",
+          "idea": "Comité Mensual de Eficiencia Operativa basado en analítica predictiva",
+          "description": "Mesa de trabajo de los jefes de línea para reasignar recursos hacia las cadenas con mayor celeridad en la ejecución de inversiones.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Director de Planificación",
+          "votesCount": 7,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 23,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "desafioId": 24,
+          "ideaTitle": "Directiva de Datos Abiertos y Transparencia Activa de Incentivos Agrarios",
+          "idea": "Directiva de Datos Abiertos y Transparencia Activa de Incentivos Agrarios",
+          "description": "Marco normativo que autoriza la publicación trimestral de microdatos anonimizados para consulta pública, academia y gremios agrarios.",
+          "category": "Normativa",
+          "authorRole": "Oficial de Integridad y Transparencia",
+          "votesCount": 9,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 24,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "desafioId": 22,
+          "ideaTitle": "Talleres de Alfabetización de Datos y Lectura de Tableros para líderes agrarios",
+          "idea": "Talleres de Alfabetización de Datos y Lectura de Tableros para líderes agrarios",
+          "description": "Capacitación comunitaria enfocada en interpretar indicadores de rendimiento, costos y rentabilidad para sus asambleas generales.",
+          "category": "Capacitación",
+          "authorRole": "Facilitador de Gobernanza",
+          "votesCount": 6,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         }
       ],
-      "testCards": [
+      "H08_MatrizPriorizacion": [
         {
-          "cardId": "TEST-IN0004-01",
-          "hypothesis": "Los evaluadores reducirán en más de un 60% el tiempo de calificación documental al usar indexación por metadatos.",
-          "result": "Confirmado: El tiempo promedio de evaluación bajó de 35 días a 4 días hábiles (88.5% de reducción).",
-          "kanbanStatus": "Pase a Producción e Institucionalización en Portafolio"
+          "id": 19,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "ideaId": 19,
+          "ideaTitle": "Dashboard Analítico Ejecutivo con alertas de desviación presupuestal en tiempo real",
+          "title": "Dashboard Analítico Ejecutivo con alertas de desviación presupuestal en tiempo real",
+          "desirability": 5,
+          "feasibility": 5,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 19,
+          "isWinningIdea": true,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 20,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "ideaId": 20,
+          "ideaTitle": "Visualizador Territorial Interactivo de Cadenas de Valor con mapas de calor",
+          "title": "Visualizador Territorial Interactivo de Cadenas de Valor con mapas de calor",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 17,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 21,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "ideaId": 23,
+          "ideaTitle": "Directiva de Datos Abiertos y Transparencia Activa de Incentivos Agrarios",
+          "title": "Directiva de Datos Abiertos y Transparencia Activa de Incentivos Agrarios",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 5,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 16,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 22,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "ideaId": 21,
+          "ideaTitle": "Metodología Automatizada de Evaluación de Impacto Ex Post mediante grupos de control",
+          "title": "Metodología Automatizada de Evaluación de Impacto Ex Post mediante grupos de control",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 15,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 23,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "ideaId": 22,
+          "ideaTitle": "Comité Mensual de Eficiencia Operativa basado en analítica predictiva",
+          "title": "Comité Mensual de Eficiencia Operativa basado en analítica predictiva",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 14,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 24,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "ideaId": 24,
+          "ideaTitle": "Talleres de Alfabetización de Datos y Lectura de Tableros para líderes agrarios",
+          "title": "Talleres de Alfabetización de Datos y Lectura de Tableros para líderes agrarios",
+          "desirability": 3,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 13,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        }
+      ],
+      "H09_PrototipadoRapido": {
+        "id": 4,
+        "projectId": 4,
+        "projectCode": "PIIP-2026-IN0004",
+        "prototypeTitle": "Visor OCR e Indexador Digital de Expedientes de Incentivos",
+        "name": "Visor OCR e Indexador Digital de Expedientes de Incentivos",
+        "prototypeType": "Digital PWA",
+        "keyFeatures": [
+          "Visor PDF multifeature con foliador digital automático y marca de agua",
+          "Extractor OCR de metadatos (RUC, Organización, Cadena, Región)",
+          "Control de versiones y validación de firma digital RENIEC"
+        ],
+        "artifactUrlOrImage": "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=500",
+        "imageUrl": "https://images.unsplash.com/photo-1450133064473-71024230f91b?w=500",
+        "description": "Módulo de digitalización centralizada que procesa legajos físicos de 300+ páginas, genera índices semánticos automáticos y garantiza foliación inmutable.",
+        "testingGoal": "Reducción del tiempo de foliación y búsqueda de antecedentes de 4 días a 3 minutos por expediente."
+      }
+    },
+    "FASE_4_ENTREGAR": {
+      "H10_PlanAccion": [
+        {
+          "id": 7,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "taskName": "Elaboración de la directiva y lineamientos técnicos de digitalización de expedientes",
+          "task": "Elaboración de la directiva y lineamientos técnicos de digitalización de expedientes",
+          "phase": "Normativa",
+          "responsibleUnit": "Unidad de Planeamiento y Presupuesto (UPP)",
+          "responsible": "Unidad de Planeamiento y Presupuesto (UPP)",
+          "leader": "Alex Dario Abad Escalante - UPP",
+          "startDate": "2026-04-10",
+          "endDate": "2026-05-20",
+          "deadline": "2026-05-20",
+          "deliverable": "Proyecto de directiva interna con opinión favorable de asesoría jurídica",
+          "status": "En Proceso"
+        }
+      ],
+      "H11_MatrizRiesgosTesteo": [
+        {
+          "id": 8,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "riskDescription": "Retraso en la promulgación de la directiva de digitalización por observaciones de control institucional.",
+          "description": "Retraso en la promulgación de la directiva de digitalización por observaciones de control institucional.",
+          "riskType": "Legal / Normativo",
+          "probability": "Media",
+          "impact": "Medio",
+          "level": "Medio",
+          "mitigationStrategy": "Mesa de trabajo técnico-normativa previa con OCI y Asesoría Jurídica antes de la firma de resolución ejecutiva.",
+          "mitigation": "Mesa de trabajo técnico-normativa previa con OCI y Asesoría Jurídica antes de la firma de resolución ejecutiva.",
+          "testResult": "Validación anticipada de 18 artículos de la directiva sin observaciones de fondo."
         }
       ]
     }

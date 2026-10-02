@@ -1,267 +1,777 @@
 {
   "$schema": "./schemas/far-piip-v3.json",
-  "NavegacionYTrazabilidad": {
-    "IniciativaCodigoActiva": "PIIP-2026-IN0002",
-    "IniciativaIdentificacion": {
-      "IniciativaCodigo": "PIIP-2026-IN0002",
-      "IniciativaNombre": "Sistema Digital de Monitoreo de Planes de Negocio",
-      "UnidadOrganicaResponsable": "Unidad de Negocios (UN)",
-      "LiderProyecto": "Fernando Ademir Loayza Choque - Unidad de Negocios"
+  "IniciativaIdentificacion": {
+    "id": 2,
+    "IniciativaCodigo": "PIIP-2026-IN0002",
+    "IniciativaNombre": "Sistema Digital de Monitoreo de Planes de Negocio",
+    "UnidadOrganicaResponsable": "Unidad de Negocios (UN) - AGROIDEAS",
+    "LiderProyecto": "Fernando Ademir Loayza Choque - Unidad de Negocios",
+    "FechaRegistro": "2026-02-03",
+    "EstadoFases": {
+      "descubrir": "completed",
+      "definir": "active",
+      "idear": "pending",
+      "entregar": "pending"
     },
-    "EstadoMatrizDobleDiamante": {
-      "Fase1_Descubrir": "Completado",
-      "Fase2_Definir": "Completado",
-      "Fase3_Idear": "Completado",
-      "Fase4_Entregar": "Completado",
-      "PorcentajeAvanceGlobal": 100.0
-    },
-    "UbicacionActual": {
-      "TipoVista": "HERRAMIENTA_METODOLOGICA",
-      "FaseNumero": 4,
-      "FaseNombre": "Fase 4: Entregar",
-      "HerramientaNumero": 11,
-      "HerramientaCodigo": "H11",
-      "HerramientaNombre": "Matriz de Gestión de Riesgos y Testeo",
-      "VistaCodigo": "V11.1",
-      "VistaTitulo": "Matriz de Riesgos y Tarjetas de Aprendizaje",
-      "VistaUrl": "fase4/11-matriz-riesgos.html"
-    },
-    "PosicionEnFlujo": {
-      "PasoActual": 11,
-      "TotalPasosFlujo": 11,
-      "EtiquetaSecuencia": "Paso 11 de 11 (Fase 4: Entregar)",
-      "PasoAnterior": {
-        "HerramientaCodigo": "H10",
-        "HerramientaNombre": "Hoja de Ruta (Plan de Acción)",
-        "VistaUrl": "fase4/10-plan-accion.html"
-      },
-      "PasoSiguiente": null
-    },
-    "ControlIteracionYTrazabilidad": {
-      "VersionIteracion": 1,
-      "PermiteIteracionAnterior": true,
-      "FechaUltimaActualizacion": "2026-09-27T11:40:00Z",
-      "UsuarioActualRol": "Facilitador Ágil"
-    }
+    "PorcentajeAvanceGlobal": 50.0
   },
-  "DatosIniciativa": {
-    "code": "PIIP-2026-IN0002",
-    "title": "Sistema Digital de Monitoreo de Planes de Negocio",
-    "responsible": "Unidad de Negocios (UN) - AGROIDEAS",
-    "contact": "Fernando Ademir Loayza Choque - Unidad de Negocios",
-    "date": "2026-02-03",
-    "rubricScore": {
-      "impact": 3,
-      "strategicPriority": 4,
-      "innovationFocus": 3,
-      "totalScore": 10,
-      "evaluationResult": "Recomendable para aprobación (10 a 12 puntos)"
-    }
-  },
-  "RegistrosHerramientas": {
+  "RegistrosHerramientasMetodologicas": {
     "FASE_1_DESCUBRIR": {
       "H01_ObservacionAEIOU": [
         {
-          "id": "aeiou-002-1",
-          "dimension": "Actividades",
-          "observation": "Supervisión presencial y llenado manual de reportes impresos sobre la ejecución física y financiera de los incentivos de adopción de tecnología en planes de negocio.",
-          "timestamp": "2026-02-10T09:00:00Z"
+          "id": 7,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "activity": "Supervisión presencial y levantamiento de acta de recepción técnica para tractor agrícola cofinanciado por plan de negocio.",
+          "environment": "Fundo comunal de cooperativa arrocera en Camaná, Arequipa; campo abierto soleado con polvo y sin sombra para trabajo administrativo.",
+          "interaction": "Especialista UN revisa número de chasis y factura física mientras el directivo agrario y el proveedor firman triplicado en papel.",
+          "object": "Tractor agrícola, ficha técnica de especificaciones, tablero acrílico con formato de conformidad en papel, cámara fotográfica digital.",
+          "objects": "Tractor agrícola, ficha técnica de especificaciones, tablero acrílico con formato de conformidad en papel, cámara fotográfica digital.",
+          "user": "Especialista de Seguimiento UN, presidente de la cooperativa y representante comercial de la empresa proveedora de maquinaria.",
+          "users": "Especialista de Seguimiento UN, presidente de la cooperativa y representante comercial de la empresa proveedora de maquinaria.",
+          "observer": "Fernando Ademir Loayza Choque - UN",
+          "observationDate": "2026-02-10",
+          "date": "2026-02-10",
+          "timestamp": "2026-02-10T09:30:00.000Z"
         },
         {
-          "id": "aeiou-002-2",
-          "dimension": "Entorno",
-          "observation": "Parcelas agrícolas y sedes de organizaciones agrarias en zonas rurales con baja cobertura móvil (Majes, VRAEM, San Martín).",
-          "timestamp": "2026-02-10T11:30:00Z"
+          "id": 8,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "activity": "Inspección de avance físico de obra civil en planta de procesamiento y secado de café con fondos del incentivo de adopción de tecnología.",
+          "environment": "Centro de beneficio húmedo en Pichanaqui, Chanchamayo; fuerte ruido ambiental de construcción y sin cobertura celular en el fondo del valle.",
+          "interaction": "Ingeniero supervisor de AGROIDEAS confronta cronograma valorizado físico contra cuaderno de obra con el maestro residente de obra.",
+          "object": "Cuaderno de obra empastado, cinta métrica de 50m, planos arquitectónicos impresos en formato A1, nivel láser portátil.",
+          "objects": "Cuaderno de obra empastado, cinta métrica de 50m, planos arquitectónicos impresos en formato A1, nivel láser portátil.",
+          "user": "Supervisor de Infraestructura UN, fiscal de la cooperativa y residente de obra civil.",
+          "users": "Supervisor de Infraestructura UN, fiscal de la cooperativa y residente de obra civil.",
+          "observer": "Inspector Zonal de Obras - UR Junín",
+          "observationDate": "2026-03-04",
+          "date": "2026-03-04",
+          "timestamp": "2026-03-04T11:00:00.000Z"
         },
         {
-          "id": "aeiou-002-3",
-          "dimension": "Interacciones",
-          "observation": "Especialistas de Unidades Regionales recogen cuadernos de campo e intercambian actas físicas con los asesores técnicos y directivos de las cooperativas.",
-          "timestamp": "2026-02-10T14:15:00Z"
+          "id": 9,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "activity": "Consolidación de matrices de ejecución financiera y avance de metas físicas de 45 planes de negocios de la región.",
+          "environment": "Oficina de Unidad Zonal en Tarapoto, San Martín; terminal de escritorio con hojas Excel descentralizadas y caídas temporales de red local.",
+          "interaction": "Coordinador zonal intercambia correos y mensajes de WhatsApp con 8 consultores de campo solicitando aclaración de inconsistencias en saldos.",
+          "object": "Archivos Excel (.xlsx) con macros no estandarizadas, memorandos físicos de desembolso, carpetas colgantes en archivador metálico.",
+          "objects": "Archivos Excel (.xlsx) con macros no estandarizadas, memorandos físicos de desembolso, carpetas colgantes en archivador metálico.",
+          "user": "Coordinador Zonal AGROIDEAS, 8 consultores externos de asistencia técnica y analista financiero en sede central.",
+          "users": "Coordinador Zonal AGROIDEAS, 8 consultores externos de asistencia técnica y analista financiero en sede central.",
+          "observer": "Analista de Monitoreo Financiero - UN Sede Central",
+          "observationDate": "2026-04-12",
+          "date": "2026-04-12",
+          "timestamp": "2026-04-12T15:20:00.000Z"
         },
         {
-          "id": "aeiou-002-4",
-          "dimension": "Objetos",
-          "observation": "Fichas de monitoreo impresas, hojas Excel descentralizadas, fotografías almacenadas en teléfonos personales y carpetas físicas archivadas.",
-          "timestamp": "2026-02-10T16:00:00Z"
+          "id": 10,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "activity": "Verificación en campo del incremento de rendimiento por hectárea y calidad de grano en parcelas demostrativas.",
+          "environment": "Fincas de pequeños productores en Jaén, Cajamarca; topografía accidentada de ladera, senderos peatonales de difícil acceso.",
+          "interaction": "Técnico extensionista realiza muestreo de peso de grano y llenado de planilla con el productor dueño de parcela.",
+          "object": "Balanza de precisión digital de bolsillo, penetrómetro de pulpa, GPS de mano Garmin, planilla física en portapapeles.",
+          "objects": "Balanza de precisión digital de bolsillo, penetrómetro de pulpa, GPS de mano Garmin, planilla física en portapapeles.",
+          "user": "Productor cafetalero beneficiario, extensionista agrícola zonal y dirigente de comité técnico.",
+          "users": "Productor cafetalero beneficiario, extensionista agrícola zonal y dirigente de comité técnico.",
+          "observer": "Especialista Agrónomo de Monitoreo - UR Cajamarca",
+          "observationDate": "2026-05-18",
+          "date": "2026-05-18",
+          "timestamp": "2026-05-18T10:15:00.000Z"
         },
         {
-          "id": "aeiou-002-5",
-          "dimension": "Usuarios",
-          "observation": "Especialistas de la Unidad de Negocios en sede central, coordinadores regionales de seguimiento, consultores de asistencia técnica y directivos de OAs.",
-          "timestamp": "2026-02-10T17:00:00Z"
+          "id": 11,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "activity": "Inventario físico anual de bienes de capital entregados a la organización agraria (equipos de frío, despulpadoras y motofumigadoras).",
+          "environment": "Almacén general de la asociación en Oxapampa, Pasco; ambiente techado pero húmedo, iluminación deficiente.",
+          "interaction": "Especialista de control patrimonial verifica placas de código de barras junto al tesorero comunal.",
+          "object": "Lector óptico de código de barras USB, marbetes metálicos autoadhesivos, catálogo de bienes del plan de negocios.",
+          "objects": "Lector óptico de código de barras USB, marbetes metálicos autoadhesivos, catálogo de bienes del plan de negocios.",
+          "user": "Especialista de Patrimonio AGROIDEAS, tesorero de la asociación y custodio de almacén comunal.",
+          "users": "Especialista de Patrimonio AGROIDEAS, tesorero de la asociación y custodio de almacén comunal.",
+          "observer": "Auditor Patrimonial Zonal - UN",
+          "observationDate": "2026-06-25",
+          "date": "2026-06-25",
+          "timestamp": "2026-06-25T14:00:00.000Z"
+        },
+        {
+          "id": 12,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "activity": "Reunión de coordinación de alerta temprana por retraso crítico de 60 días en adquisición de paneles solares.",
+          "environment": "Sede de la Unidad de Negocios en Lima con enlace virtual híbrido hacia la oficina zonal de Puno.",
+          "interaction": "Jefe de Unidad de Negocios evalúa con el equipo técnico medidas correctivas y reprogramación de calendario de desembolsos.",
+          "object": "Tablero Kanban en pizarra acrílica con post-its de alerta roja, proyector de gráficos Gantt, acta de compromiso institucional.",
+          "objects": "Tablero Kanban en pizarra acrílica con post-its de alerta roja, proyector de gráficos Gantt, acta de compromiso institucional.",
+          "user": "Jefe de la Unidad de Negocios, 3 analistas de seguimiento, director zonal Puno y presidente de la OA alpaquera.",
+          "users": "Jefe de la Unidad de Negocios, 3 analistas de seguimiento, director zonal Puno y presidente de la OA alpaquera.",
+          "observer": "Coordinador de Seguimiento Operativo - UN",
+          "observationDate": "2026-07-14",
+          "date": "2026-07-14",
+          "timestamp": "2026-07-14T16:45:00.000Z"
         }
       ],
-      "H02_MapaEmpatia": {
-        "userProfile": "Especialista de Seguimiento de la Unidad de Negocios (Lic. Fernando Loayza Choque)",
-        "says": "Paso más tiempo consolidando reportes en Excel de 25 regiones que analizando si los planes de negocio están cumpliendo sus hitos.",
-        "does": "Consolida manualmente matrices Excel recibidas por correo electrónico desde las Unidades Regionales y solicita constantemente aclaraciones por teléfono.",
-        "thinks": "Necesitamos un sistema centralizado con un tablero de control que muestre alertas automáticas cuando un plan de negocio se retrase.",
-        "feels": "Frustrado por el retraso en la información y la alta carga burocrática administrativa que impide una supervisión proactiva.",
-        "pains": "Información dispersa en correos y archivos locales, falta de visibilidad en tiempo real de los 4,290 planes de negocio y riesgo de detectar inconsistencias tardíamente.",
-        "gains": "Contar con un Dashboard con semáforo de riesgo en tiempo real, trazabilidad completa de los desembolsos e informes de monitoreo generados con un solo clic."
-      },
-      "H03_EncuestasCampo": {
-        "sampleSize": 42,
-        "targetAudience": "Especialistas de Seguimiento de Unidades Regionales y Consultores de Asistencia Técnica",
-        "keyResults": [
-          {
-            "question": "¿Cuánto tiempo invierte semanalmente en consolidar reportes físicos/Excel?",
-            "preferredOption": "Entre 12 y 16 horas semanales (78.5%)"
-          },
-          {
-            "question": "¿Cuál es la principal causa de retraso en la presentación de avances?",
-            "preferredOption": "Falta de un canal digital único para la carga de datos e hitos de campo (83.3%)"
-          },
-          {
-            "question": "Funcionalidad más requerida para la nueva plataforma",
-            "topFormats": [
-              "Dashboard con semáforo de alerta temprana (Verde/Amarillo/Rojo)",
-              "Carga de evidencias fotográficas con validación de fecha y ubicación",
-              "Generación automática de reportes ejecutivos en PDF"
-            ]
-          }
-        ]
-      },
-      "H04_FichaPersona": {
-        "archetypeCode": "PERS-IN0002-01",
-        "name": "Lic. Fernando Ademir Loayza Choque",
-        "role": "Especialista de Seguimiento - Unidad de Negocios AGROIDEAS",
-        "age": 42,
-        "digitalLiteracy": "Avanzado en herramientas de oficina y sistemas web institucionales; nivel usuario en bases de datos.",
-        "primaryGoal": "Monitorear en tiempo real el avance físico-financiero de los planes de negocio para prevenir incumplimientos y optimizar el uso de los recursos públicos."
-      }
+      "H02_MapaEmpatia": [
+        {
+          "id": 9,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "userProfile": "Especialista Evaluador de Planes de Negocio - Unidad de Negocios",
+          "says": "\"Pasamos más tiempo consolidando hojas de cálculo que analizando el impacto real de las inversiones en el campo.\"",
+          "does": "Revisa correos electrónicos, llama a coordinadores zonales y contrasta reportes físicos contra el sistema central.",
+          "thinks": "Deberíamos contar con alertas automáticas de desvío presupuestal y semaforización de cumplimiento de metas.",
+          "feels": "Sobrecarga operativa y frustración por demoras en rendiciones de cuentas de las cooperativas.",
+          "hears": "Demandas de las Unidades Regionales por agilizar la validación de desembolsos.",
+          "sees": "Multiplicidad de formatos de Excel no estandarizados y desfase de información de hasta 45 días.",
+          "pains": "Riesgo de inconsistencias en auditorías y falta de trazabilidad histórica en planes multianuales.",
+          "gains": "Un tablero centralizado en tiempo real con datos georreferenciados y trazabilidad inmutable."
+        },
+        {
+          "id": 10,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "userProfile": "Coordinador Zonal de Supervisión en Campo (Unidad Regional Arequipa/Majes)",
+          "says": "\"Viajar a inspeccionar parcelas sin datos en tiempo real hace que lleguemos cuando el problema ya ocurrió. Necesitamos alertas antes de que se pierda la cosecha.\"",
+          "does": "Recorre fundos lecheros y de ají páprika, anota incidencias en libreta y redacta informes semanales en la noche en su hospedaje.",
+          "thinks": "Considera que el monitoreo debe ser preventivo y no punitivo, apoyando al productor en desvíos operativos antes del cierre contable.",
+          "feels": "Estrés por cubrir grandes distancias territoriales y desánimo cuando las fallas técnicas no se detectan a tiempo para corregirlas.",
+          "hears": "Los dirigentes cooperativos reclaman por visitas imprevistas y especialistas centrales exigen informes con fotografías georreferenciadas.",
+          "sees": "Tractores y sistemas de riego por goteo detenidos por falta de repuestos o demoras en la autorización del segundo desembolso.",
+          "pains": "Carencia de conectividad en ruta, duplicidad de formatos impresos y pérdida de horas de trabajo transcribiendo datos a hojas de cálculo.",
+          "gains": "Registro móvil offline de visitas con sincronización automática en nube y semáforo preventivo de riesgos en cada plan de negocio."
+        },
+        {
+          "id": 11,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "userProfile": "Gerente Técnico de Cooperativa Agraria Beneficiaria (Irrigación Majes)",
+          "says": "\"Cumplimos con las metas productivas pero nos trabamos en reportar los indicadores como pide AGROIDEAS. Cada evaluador nos pide un formato distinto.\"",
+          "does": "Consolida volúmenes de acopio de leche, coordina con técnicos de campo y prepara carpetas bimestrales para presentar a la sede zonal.",
+          "thinks": "Cree que el programa debería evaluar el impacto en kilos producidos y rentabilidad del socio, más que el cumplimiento ciego de papeleo formal.",
+          "feels": "Orgullo por el crecimiento de los establos tecnificados pero temor constante a suspensiones de desembolsos por observaciones de forma.",
+          "hears": "Comentarios de otras organizaciones que sufrieron congelamiento de cuentas por atrasos de 5 días en la entrega de reportes de avance.",
+          "sees": "Tableros de control modernos en empresas privadas compradoras de leche frente a carpetas de cartón y planillas Excel en la oficina comunal.",
+          "pains": "Demoras de hasta 60 días para aprobar ampliaciones de plazo justificadas y falta de visibilidad del estado de su expediente de monitoreo.",
+          "gains": "Un panel único en línea donde cargar avances con acuse de recibo inmediato y aprobación modular sin paralizar las compras de campo."
+        },
+        {
+          "id": 12,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "userProfile": "Especialista Financiero de Seguimiento de Inversiones (Sede Central Lima)",
+          "says": "\"Cuando detectamos que una cooperativa desvió fondos para otra partida ya pasaron cuatro meses. El monitoreo financiero debe ser en línea.\"",
+          "does": "Revisa estados de cuenta bancarios de convenios, concilia partidas presupuestales de adopción tecnológica y elabora reportes para MEF.",
+          "thinks": "Estima que la interoperabilidad bancaria con el Banco de la Nación reduciría en un 90% las inconsistencias en rendición de fondos públicos.",
+          "feels": "Responsabilidad legal ante auditorías de Contraloría y sobrecarga por la verificación manual de miles de transferencias y cheques.",
+          "hears": "Jefes de unidad exigiendo porcentajes de ejecución presupuestal trimestral y advertencias de la OCI sobre convenios con baja ejecución.",
+          "sees": "Cuentas corrientes mancomunadas con saldos inmovilizados durante meses mientras las organizaciones agrarias esperan autorizaciones de gasto.",
+          "pains": "Falta de integración entre el sistema SEL y el SIAF-SP, reportes manuales no estandarizados y desfase temporal de los extractos bancarios.",
+          "gains": "Alertas automatizadas de desvíos presupuestales mayores al 10%, trazabilidad de desembolsos y conciliación bancaria automatizada."
+        },
+        {
+          "id": 13,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "userProfile": "Directivo de Organización de Productores de Palto Hass (Valle de Huanta, Ayacucho)",
+          "says": "\"Nuestras plantas no esperan los tiempos de oficina. Si la fertilización se retrasa dos semanas, la floración se cae y la producción se arruina.\"",
+          "does": "Supervisa cuadrillas de cosecha y empaque, atiende al supervisor de AGROIDEAS y coordina asambleas dominicales para rendir cuentas a los socios.",
+          "thinks": "Piensa que los funcionarios de Lima no comprenden los ciclos fenológicos de los cultivos ni la volatilidad de precios en el mercado de exportación.",
+          "feels": "Impotencia al ver trámites estancados en ventanillas burocráticas mientras el mercado exige entregas puntuales con estándares internacionales.",
+          "hears": "Los socios comunales sospechan que los directivos demoran las obras a propósito, generando tensiones y desconfianza comunitaria.",
+          "sees": "Pozas de geomembrana a medio construir esperando la aprobación de una adenda técnica solicitada hace meses.",
+          "pains": "Pérdida de ventanas comerciales de exportación, penalidades contractuales con acopiadores y desánimo de los socios comunales.",
+          "gains": "Canal ágil para solicitar reprogramaciones técnicas por causas climáticas y respuesta vinculante garantizada en menos de 7 días hábiles."
+        },
+        {
+          "id": 14,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "userProfile": "Auditor de Control Concurrente (OCI - MIDAGRI / Contraloría)",
+          "says": "\"Sin evidencia fotográfica georreferenciada ni registros de fecha inmutables, cualquier desembolso es susceptible de hallazgo de control.\"",
+          "does": "Revisa muestras aleatorias de expedientes de planes de negocio, realiza visitas de inspección física sorpresiva y emite informes de hito de control.",
+          "thinks": "Considera que un sistema digital robusto con firma electrónica y geolocalización satelital blindaría a los funcionarios de denuncias injustas.",
+          "feels": "Rigurosidad en la custodia de fondos del tesoro público pero comprensión del impacto negativo que la paralización de obras genera en el campo.",
+          "hears": "Noticias sobre investigaciones fiscales a programas sociales y presiones de directivos para flexibilizar requisitos sin marco legal.",
+          "sees": "Actas de entrega de maquinaria con firmas no legibles y fotos tomadas en ángulos donde no se aprecia el número de serie de los tractores.",
+          "pains": "Inconsistencias documentales difíciles de verificar retrospectivamente y falta de una pista de auditoría digital inmutable.",
+          "gains": "Repositorio digital con sellado de tiempo (timestamping), trazabilidad de cada aprobación y geolocalización verificada de activos adquiridos."
+        }
+      ],
+      "H03_EncuestasCampo": [
+        {
+          "id": 3,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "respondent": "Roberto Huamán Flores (Gerente)",
+          "cooperative": "Cooperativa Agroindustrial del Vraem",
+          "satisfaction": 2,
+          "comments": "Los reportes de avance físico-financiero en Excel se demoran meses en consolidar. No sabemos si el desembolso llegará a tiempo.",
+          "sentiment": "Negativo",
+          "date": "2026-02-14"
+        },
+        {
+          "id": 4,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "respondent": "Ing. Carlos Mendoza (Especialista UN)",
+          "cooperative": "Unidad Zonal Junín - AGROIDEAS",
+          "satisfaction": 3,
+          "comments": "El monitoreo en campo necesita herramientas digitales en tablet. Pasar notas de papel al sistema consume más de 12 horas por semana.",
+          "sentiment": "Neutro",
+          "date": "2026-02-18"
+        }
+      ],
+      "H04_FichaPersona": [
+        {
+          "id": 7,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "archetypeName": "Ing. Fernando Loayza Choque",
+          "name": "Ing. Fernando Loayza Choque",
+          "role": "Especialista de Seguimiento y Monitoreo (Unidad de Negocios Lima)",
+          "demographics": "42 años, Lima; Ingeniero Zootecnista con especialización en Monitoreo de Proyectos",
+          "age": 42,
+          "techTechSavviness": "Avanzado (Manejo de PowerBI, bases de datos relacionales y tableros de control)",
+          "quote": "Pasamos más tiempo consolidando hojas de cálculo que analizando el impacto real de las inversiones en el campo.",
+          "bio": "Encargado del monitoreo de planes pecuarios y agrícolas a nivel nacional. Coordina la validación técnica de hitos para la autorización de desembolsos.",
+          "goals": [
+            "Implementar un tablero en tiempo real que muestre la ejecución física y financiera consolidada",
+            "Automatizar las alertas preventivas de desvío presupuestal y atraso en metas de producción",
+            "Eliminar el uso de planillas Excel dispersas y consolidar la información en una sola base de datos"
+          ],
+          "frustrations": [
+            "Desfase de hasta 45 días entre la ejecución del gasto en campo y el reporte que llega a Lima",
+            "Información fragmentada en correos, memorandos físicos y carpetas personales",
+            "Riesgo de observaciones de auditoría por falta de trazabilidad histórica en convenios multianuales"
+          ]
+        },
+        {
+          "id": 8,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "archetypeName": "Ing. Víctor Raúl Cuentas",
+          "name": "Ing. Víctor Raúl Cuentas",
+          "role": "Supervisor Zonal de Campo (Unidad Regional Arequipa - Majes)",
+          "demographics": "45 años, Arequipa; Ingeniero Agrónomo, 12 años en inspecciones agropecuarias",
+          "age": 45,
+          "techTechSavviness": "Intermedio (Maneja GPS navegador, cámara digital, laptop y hojas de cálculo)",
+          "quote": "Si no tengo datos actualizados en la tablet cuando visito el establo, no puedo contrastar lo que el productor me dice con lo presupuestado.",
+          "bio": "Recorre periódicamente los establos lecheros y fundos agrícolas de Majes, Camaná y La Joya para constatar la entrega de bienes y el avance de obras.",
+          "goals": [
+            "Registrar actas de inspección in situ desde el celular con firma digital del directivo comunal",
+            "Detectar a tiempo cuellos de botella en la instalación de maquinaria para brindar auxilio técnico",
+            "Reducir las horas de oficina dedicadas a transcribir apuntes de campo al sistema central"
+          ],
+          "frustrations": [
+            "Falta de señal móvil en zonas rurales que le impide consultar el expediente digital en campo",
+            "Duplicidad de formatos: llenar una ficha en papel y luego tener que tipear lo mismo en la computadora",
+            "Demoras de la sede central para aprobar modificaciones técnicas solicitadas por los productores"
+          ]
+        },
+        {
+          "id": 9,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "archetypeName": "Ing. Ronald Cáceres Pacheco",
+          "name": "Ing. Ronald Cáceres Pacheco",
+          "role": "Gerente Técnico de Cooperativa Ganadera Beneficiaria (Irrigación Majes)",
+          "demographics": "39 años, Majes, Arequipa; Ingeniero Agroindustrial, 8 años gerenciando OAs",
+          "age": 39,
+          "techTechSavviness": "Intermedio (Maneja software ganadero de control lechero, Excel y banca online)",
+          "quote": "Cumplimos con las metas lecheras pero los trámites de monitoreo de AGROIDEAS nos congelan los desembolsos por semanas.",
+          "bio": "Gestiona la ejecución de un plan de negocio de S/. 1.2 millones cofinanciado por el programa para la compra de tanques de frío y ordeñadoras mecánicas.",
+          "goals": [
+            "Reportar avances mensuales mediante una plataforma web simple sin tener que viajar a Arequipa",
+            "Obtener desembolsos fluidos para pagar puntualmente a los proveedores de maquinaria",
+            "Demostrar el incremento de litros de leche producidos por vaca al día gracias a la tecnificación"
+          ],
+          "frustrations": [
+            "Cada supervisor que visita el establo pide la información en formatos distintos",
+            "Paralización de compras críticas por observaciones formales en comprobantes de pago menores",
+            "Falta de un canal directo para consultar el estado del trámite de aprobación de adendas"
+          ]
+        },
+        {
+          "id": 10,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "archetypeName": "Lic. Carmen Rosa Palomino",
+          "name": "Lic. Carmen Rosa Palomino",
+          "role": "Analista Financiera de Rendición de Inversiones (Sede Central Lima)",
+          "demographics": "36 años, Lima; Contadora Pública Colegiada, especialista en control gubernamental",
+          "age": 36,
+          "techTechSavviness": "Avanzado (SIAF-SP, SIGA-MEF, herramientas contables y conciliación bancaria)",
+          "quote": "El monitoreo físico debe dialogar en tiempo real con la ejecución financiera; si compran el tractor deben tener la factura validada al instante.",
+          "bio": "Verifica que cada sol ejecutado por las cooperativas coincida estrictamente con las partidas autorizadas en el convenio bilateral de cofinanciamiento.",
+          "goals": [
+            "Interoperar el sistema de monitoreo con las cuentas corrientes del Banco de la Nación",
+            "Automatizar el cálculo de la contrapartida en efectivo aportada por las organizaciones agrarias",
+            "Emitir dictámenes de liquidación financiera en menos de 15 días hábiles"
+          ],
+          "frustrations": [
+            "Facturas con descripciones vagas que no detallan las especificaciones técnicas del bien adquirido",
+            "Extractos bancarios en PDF que deben ser digitados manualmente en planillas de conciliación",
+            "Expedientes de rendición que llegan con retrasos de varios meses tras el cierre del trimestre"
+          ]
+        },
+        {
+          "id": 11,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "archetypeName": "Don Eusebio Quispealaya",
+          "name": "Don Eusebio Quispealaya",
+          "role": "Directivo de Asociación de Productores de Palto Hass (Huanta, Ayacucho)",
+          "demographics": "58 años, Huanta, Ayacucho; Secundaria completa, Productor agropecuario",
+          "age": 58,
+          "techTechSavviness": "Básico (Manejo de llamadas telefónicas y WhatsApp con apoyo de sus hijos)",
+          "quote": "Las plantas de palto no esperan las firmas de los ingenieros de Lima; si el fertilizante llega un mes tarde, la cosecha se pierde.",
+          "bio": "Presidente de una asociación de 32 pequeños agricultores de valle interandino. Lidera la instalación de reservorios y sistemas de riego tecnificado.",
+          "goals": [
+            "Instalar el sistema de riego por goteo antes del inicio de la temporada de floración",
+            "Asegurar la compra conjunta de abonos orgánicos a precio mayorista para todos los socios",
+            "Mantener informada a la asamblea comunal sobre el avance del proyecto sin malentendidos"
+          ],
+          "frustrations": [
+            "Rigidez burocrática ante imprevistos climáticos como sequías o granizadas",
+            "Temor a ser sancionados o denunciados por errores en la rendición de cuentas que no supieron cómo subsanar",
+            "Pérdida de confianza de los socios cuando las obras se paralizan por trámites administrativos"
+          ]
+        },
+        {
+          "id": 12,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "archetypeName": "Mag. Javier Tello Arévalo",
+          "name": "Mag. Javier Tello Arévalo",
+          "role": "Auditor de Control Concurrente (OCI MIDAGRI / Contraloría General)",
+          "demographics": "47 años, Lima; Economista y Auditor Gubernamental Certificado",
+          "age": 47,
+          "techTechSavviness": "Avanzado (Auditoría basada en riesgos, trazabilidad forense digital)",
+          "quote": "Sin evidencia fotográfica georreferenciada y sellado de tiempo, cualquier desembolso corre el riesgo de ser observado como hallazgo de control.",
+          "bio": "Supervisa los hitos de control concurrente en la ejecución de incentivos agrarios. Evalúa el cumplimiento normativo y la custodia de los fondos públicos.",
+          "goals": [
+            "Garantizar que los fondos no reembolsables se apliquen exclusivamente a los fines del convenio",
+            "Contar con una pista de auditoría inmutable que identifique al funcionario que autorizó cada pago",
+            "Verificar que los bienes adquiridos existan físicamente en las parcelas de los beneficiarios"
+          ],
+          "frustrations": [
+            "Falta de georreferenciación confiable en las fotos que sustentan las visitas de inspección técnica",
+            "Actas de entrega suscritas con firmas ilegibles sin número de documento de identidad",
+            "Dificultad para acceder a los expedientes de monitoreo histórico durante las auditorías de cierre"
+          ]
+        }
+      ]
     },
     "FASE_2_DEFINIR": {
       "H05_MuroHallazgos": [
         {
-          "clusterId": "CLUST-IN0002-01",
-          "clusterName": "Fragmentación y Dispersión de la Información",
-          "insight": "La supervisión actual se gestiona como islas de información en Excel, lo que impide construir un historial unificado por cada organización agraria.",
-          "priority": "ALTA"
+          "id": 7,
+          "type": "Muro",
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "clusterCategory": "Gestión de la Información",
+          "findingTitle": "Fragmentación y Desfase de la Información de Seguimiento",
+          "title": "Fragmentación y Desfase de la Información de Seguimiento",
+          "evidenceText": "Los datos de avance de los planes de negocio viven en silos aislados: correos electrónicos, archivos Excel individuales, actas en papel y memorandos. Existe un desfase de hasta 45 días respecto a la realidad del campo.",
+          "text": "Los datos de avance de los planes de negocio viven en silos aislados: correos electrónicos, archivos Excel individuales, actas en papel y memorandos. Existe un desfase de hasta 45 días respecto a la realidad del campo.",
+          "sourceTool": "Entrevistas en Profundidad UN",
+          "priority": "Alta",
+          "quote": "Paso más tiempo armando reportes en Excel y cuadrando versiones que analizando si los proyectos realmente van bien.",
+          "date": "2026-02-12"
         },
         {
-          "clusterId": "CLUST-IN0002-02",
-          "clusterName": "Supervisión Reactiva vs. Alerta Preventiva",
-          "insight": "Los retrasos en la ejecución de incentivos se detectan cuando la campaña agrícola o el periodo de asistencia técnica ya ha concluido; se requiere un semáforo de alertas automáticas.",
-          "priority": "ALTA"
+          "id": 8,
+          "type": "Muro",
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "clusterCategory": "Gestión Financiera y Desembolsos",
+          "findingTitle": "Efecto Cuello de Botella en la Autorización del Segundo Desembolso",
+          "title": "Efecto Cuello de Botella en la Autorización del Segundo Desembolso",
+          "evidenceText": "Las organizaciones tardan en promedio 72 días en recibir el segundo desembolso debido a observaciones contables menores. Esto causa la paralización de calendarios agrícolas sensibles como siembras y fertilizaciones.",
+          "text": "Las organizaciones tardan en promedio 72 días en recibir el segundo desembolso debido a observaciones contables menores. Esto causa la paralización de calendarios agrícolas sensibles como siembras y fertilizaciones.",
+          "sourceTool": "Análisis de Tiempos y Movimientos",
+          "priority": "Alta",
+          "quote": "Si el desembolso para el abono se retrasa un mes, la floración se pierde y el plan de negocio fracasa antes de empezar.",
+          "date": "2026-02-16"
+        },
+        {
+          "id": 9,
+          "type": "Muro",
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "clusterCategory": "Operatividad de Campo",
+          "findingTitle": "Dificultad de Inspección en Zonas con Conectividad Nula",
+          "title": "Dificultad de Inspección en Zonas con Conectividad Nula",
+          "evidenceText": "Los supervisores zonales no pueden contrastar en campo las metas aprobadas porque las fichas técnicas viven en el servidor de Lima. Tienen que regresar a la ciudad para redactar sus informes en borrador.",
+          "text": "Los supervisores zonales no pueden contrastar en campo las metas aprobadas porque las fichas técnicas viven en el servidor de Lima. Tienen que regresar a la ciudad para redactar sus informes en borrador.",
+          "sourceTool": "Observación de Campo AEIOU",
+          "priority": "Alta",
+          "quote": "Viajo tres horas a una quebrada y no puedo verificar si el modelo de motobomba que instalaron coincide con lo contratado.",
+          "date": "2026-02-22"
+        },
+        {
+          "id": 10,
+          "type": "Muro",
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "clusterCategory": "Alertas y Mitigación de Riesgos",
+          "findingTitle": "Inexistencia de Semáforos Preventivos de Desvío Presupuestal",
+          "title": "Inexistencia de Semáforos Preventivos de Desvío Presupuestal",
+          "evidenceText": "Las desviaciones en partidas de maquinaria o insumos solo se detectan en la liquidación final, cuando ya no es posible reorientar los fondos cofinanciados ni exigir reposición a los proveedores.",
+          "text": "Las desviaciones en partidas de maquinaria o insumos solo se detectan en la liquidación final, cuando ya no es posible reorientar los fondos cofinanciados ni exigir reposición a los proveedores.",
+          "sourceTool": "Auditorías de Muestra OCI",
+          "priority": "Alta",
+          "quote": "Nos enteramos de que una cooperativa compró una marca no autorizada cuando el proveedor ya cobró y cerró su tienda.",
+          "date": "2026-03-01"
+        },
+        {
+          "id": 11,
+          "type": "Muro",
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "clusterCategory": "Gobernanza y Relación con el Beneficiario",
+          "findingTitle": "Incertidumbre y Desconfianza Comunitaria por Falta de Trazabilidad",
+          "title": "Incertidumbre y Desconfianza Comunitaria por Falta de Trazabilidad",
+          "evidenceText": "Los dirigentes comunales no tienen visibilidad del estado de su informe de monitoreo. Al no recibir respuesta rápida, los socios comunales sospechan que los directivos retienen el dinero indebidamente.",
+          "text": "Los dirigentes comunales no tienen visibilidad del estado de su informe de monitoreo. Al no recibir respuesta rápida, los socios comunales sospechan que los directivos retienen el dinero indebidamente.",
+          "sourceTool": "Encuestas de Clima Comunal",
+          "priority": "Media",
+          "quote": "En la asamblea dominical los socios me acusan de haberme gastado el dinero porque en la web no figura si AGROIDEAS aprobó el informe.",
+          "date": "2026-03-05"
+        },
+        {
+          "id": 12,
+          "type": "Muro",
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "clusterCategory": "Gestión Financiera y Desembolsos",
+          "findingTitle": "Falta de Interoperabilidad con Cuentas Corrientes del Banco de la Nación",
+          "title": "Falta de Interoperabilidad con Cuentas Corrientes del Banco de la Nación",
+          "evidenceText": "La verificación de saldos en las cuentas mancomunadas exige que el directivo agrario acuda a la ventanilla bancaria a solicitar un extracto sellado, generando gastos de traslado y demoras administrativas.",
+          "text": "La verificación de saldos en las cuentas mancomunadas exige que el directivo agrario acuda a la ventanilla bancaria a solicitar un extracto sellado, generando gastos de traslado y demoras administrativas.",
+          "sourceTool": "Mapeo de Procesos Financieros",
+          "priority": "Media",
+          "quote": "El banco nos cobra S/. 15 por cada estado de cuenta impreso y perdemos medio día en la cola de la agencia provincial.",
+          "date": "2026-03-12"
         }
       ],
-      "H06_DefinicionDesafioHMW": {
-        "hmwCode": "HMW-IN0002",
-        "action": "desarrollar un sistema digital centralizado de monitoreo con dashboards y alertas automáticas en tiempo real",
-        "targetUser": "los especialistas de seguimiento de la Unidad de Negocios y de las Unidades Regionales",
-        "benefit": "reducir la carga administrativa manual, centralizar la información física-financiera y anticipar posibles incumplimientos",
-        "constraint": "las limitaciones de conectividad en las parcelas de los beneficiarios y la heterogeneidad de los formatos de planes de negocio",
-        "finalHMWStatement": "¿Cómo podríamos desarrollar un sistema digital centralizado de monitoreo con dashboards y alertas automáticas para que los especialistas de seguimiento reduzcan la carga administrativa y anticipen incumplimientos en los planes de negocio a pesar de las brechas de conectividad en campo y la diversidad de formatos?"
-      }
+      "H06_DefinicionDesafioHMW": [
+        {
+          "id": 7,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "insightId": 7,
+          "targetUser": "los líderes agrarios y comités directivos de organizaciones postulantes",
+          "actionGoal": "consultar el estado exacto, evaluador a cargo y tiempos estimados de su plan de negocio",
+          "constraintOrPain": "la falta de visibilidad en el flujo administrativo que genera incertidumbre y sospechas de arbitrariedad",
+          "hmwStatement": "¿Cómo podríamos consultar el estado exacto, evaluador a cargo y tiempos estimados de su plan de negocio para los líderes agrarios y comités directivos de organizaciones postulantes a pesar de la falta de visibilidad en el flujo administrativo que genera incertidumbre y sospechas de arbitrariedad?",
+          "question": "¿Cómo podríamos consultar el estado exacto, evaluador a cargo y tiempos estimados de su plan de negocio para los líderes agrarios y comités directivos de organizaciones postulantes a pesar de la falta de visibilidad en el flujo administrativo que genera incertidumbre y sospechas de arbitrariedad?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 8,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "insightId": 8,
+          "targetUser": "los directores de línea y coordinadores de unidades técnicas de AGROIDEAS",
+          "actionGoal": "balancear equitativamente la carga de expedientes y detectar cuellos de botella en la evaluación de viabilidad",
+          "constraintOrPain": "la fragmentación de expedientes en múltiples plataformas institucionales no integradas",
+          "hmwStatement": "¿Cómo podríamos balancear equitativamente la carga de expedientes y detectar cuellos de botella en la evaluación de viabilidad para los directores de línea y coordinadores de unidades técnicas de AGROIDEAS a pesar de la fragmentación de expedientes en múltiples plataformas institucionales no integradas?",
+          "question": "¿Cómo podríamos balancear equitativamente la carga de expedientes y detectar cuellos de botella en la evaluación de viabilidad para los directores de línea y coordinadores de unidades técnicas de AGROIDEAS a pesar de la fragmentación de expedientes en múltiples plataformas institucionales no integradas?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 9,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "insightId": 9,
+          "targetUser": "los formuladores de planes de negocio y equipos técnicos de las organizaciones",
+          "actionGoal": "cargar anexos presupuestales y cronogramas de inversión mediante plantillas estandarizadas",
+          "constraintOrPain": "la incompatibilidad entre formatos de hojas de cálculo y la discrepancia en fórmulas financieras",
+          "hmwStatement": "¿Cómo podríamos cargar anexos presupuestales y cronogramas de inversión mediante plantillas estandarizadas para los formuladores de planes de negocio y equipos técnicos de las organizaciones a pesar de la incompatibilidad entre formatos de hojas de cálculo y la discrepancia en fórmulas financieras?",
+          "question": "¿Cómo podríamos cargar anexos presupuestales y cronogramas de inversión mediante plantillas estandarizadas para los formuladores de planes de negocio y equipos técnicos de las organizaciones a pesar de la incompatibilidad entre formatos de hojas de cálculo y la discrepancia en fórmulas financieras?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 10,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "insightId": 10,
+          "targetUser": "los comités de fiscalización comunal de las organizaciones beneficiarias",
+          "actionGoal": "acceder a un historial inalterable de observaciones, actas y dictámenes oficiales",
+          "constraintOrPain": "el extravío de documentos físicos y las discusiones sobre versiones contradictorias de planes",
+          "hmwStatement": "¿Cómo podríamos acceder a un historial inalterable de observaciones, actas y dictámenes oficiales para los comités de fiscalización comunal de las organizaciones beneficiarias a pesar de el extravío de documentos físicos y las discusiones sobre versiones contradictorias de planes?",
+          "question": "¿Cómo podríamos acceder a un historial inalterable de observaciones, actas y dictámenes oficiales para los comités de fiscalización comunal de las organizaciones beneficiarias a pesar de el extravío de documentos físicos y las discusiones sobre versiones contradictorias de planes?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 11,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "insightId": 11,
+          "targetUser": "los socios agrarios ubicados en caseríos con cobertura celular intermitente",
+          "actionGoal": "recibir alertas tempranas por mensajería SMS y WhatsApp ante cualquier avance en su expediente",
+          "constraintOrPain": "el escaso uso de correos electrónicos institucionales formales en el ámbito rural",
+          "hmwStatement": "¿Cómo podríamos recibir alertas tempranas por mensajería SMS y WhatsApp ante cualquier avance en su expediente para los socios agrarios ubicados en caseríos con cobertura celular intermitente a pesar de el escaso uso de correos electrónicos institucionales formales en el ámbito rural?",
+          "question": "¿Cómo podríamos recibir alertas tempranas por mensajería SMS y WhatsApp ante cualquier avance en su expediente para los socios agrarios ubicados en caseríos con cobertura celular intermitente a pesar de el escaso uso de correos electrónicos institucionales formales en el ámbito rural?",
+          "status": "Aprobado UPP",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        },
+        {
+          "id": 12,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "insightId": 12,
+          "targetUser": "los auditores de control interno y comisiones evaluadoras de elegibilidad",
+          "actionGoal": "comprobar la trazabilidad de tiempos normativos de atención y el cumplimiento estricto del TUPA",
+          "constraintOrPain": "el registro manual de fechas de ingreso que dificulta la auditoría de plazos legales",
+          "hmwStatement": "¿Cómo podríamos comprobar la trazabilidad de tiempos normativos de atención y el cumplimiento estricto del TUPA para los auditores de control interno y comisiones evaluadoras de elegibilidad a pesar de el registro manual de fechas de ingreso que dificulta la auditoría de plazos legales?",
+          "question": "¿Cómo podríamos comprobar la trazabilidad de tiempos normativos de atención y el cumplimiento estricto del TUPA para los auditores de control interno y comisiones evaluadoras de elegibilidad a pesar de el registro manual de fechas de ingreso que dificulta la auditoría de plazos legales?",
+          "status": "Validado por Equipo",
+          "createdAt": "2026-03-20T10:00:00.000Z"
+        }
+      ]
     },
     "FASE_3_IDEAR": {
       "H07_LluviaIdeasCrazy8s": [
         {
-          "ideaId": "IDEA-IN0002-01",
-          "title": "Dashboard Web de Monitoreo de Planes de Negocio con Semáforo de Riesgo y generación de reportes automáticos en PDF",
-          "author": "Fernando Loayza - UN",
-          "votes": 14
+          "id": 7,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "desafioId": 7,
+          "ideaTitle": "Tracking Semafórico Ciudadano tipo Courier con notificaciones por WhatsApp y SMS",
+          "idea": "Tracking Semafórico Ciudadano tipo Courier con notificaciones por WhatsApp y SMS",
+          "description": "Portal transparente donde el productor ingresa su código de trámite y visualiza en qué etapa se encuentra su plan con avatar del evaluador asignado.",
+          "category": "Tecnológica",
+          "authorRole": "Desarrollador Full Stack",
+          "votesCount": 14,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "ideaId": "IDEA-IN0002-02",
-          "title": "Aplicativo móvil offline para registradores de campo con sincronización de avances y fotografías",
-          "author": "Especialista UR Arequipa",
-          "votes": 8
+          "id": 8,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "desafioId": 8,
+          "ideaTitle": "Bandeja Unificada de Expedientes con balanceador inteligente de carga",
+          "idea": "Bandeja Unificada de Expedientes con balanceador inteligente de carga",
+          "description": "Sistema que distribuye automáticamente los planes de negocio entrantes según la especialidad productiva y carga de trabajo de los evaluadores.",
+          "category": "Tecnológica",
+          "authorRole": "Líder Técnico de Innovación",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         },
         {
-          "ideaId": "IDEA-IN0002-03",
-          "title": "Sistema de notificaciones automatizadas por correo y SMS para recordar fechas de rendición a las cooperativas",
-          "author": "Analista OTI",
-          "votes": 5
+          "id": 9,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "desafioId": 9,
+          "ideaTitle": "Plantillas Financieras Parametrizadas en la nube con validación instantánea",
+          "idea": "Plantillas Financieras Parametrizadas en la nube con validación instantánea",
+          "description": "Hojas de cálculo en línea con fórmulas bloqueadas que alertan al formulador de incoherencias en flujos de caja antes de someter el plan.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Economista de Planes de Negocio",
+          "votesCount": 7,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 10,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "desafioId": 12,
+          "ideaTitle": "Protocolo de Alerta Preventiva de Vencimiento de Plazos TUPA",
+          "idea": "Protocolo de Alerta Preventiva de Vencimiento de Plazos TUPA",
+          "description": "Mecanismo de semáforo que notifica a las jefaturas cuando un expediente supera el 70% del tiempo reglamentario sin dictamen.",
+          "category": "Procesos / Gestión",
+          "authorRole": "Analista de Procesos UPP",
+          "votesCount": 6,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 11,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "desafioId": 10,
+          "ideaTitle": "Reglamento de Notificación Electrónica Obligatoria en Casilla Virtual",
+          "idea": "Reglamento de Notificación Electrónica Obligatoria en Casilla Virtual",
+          "description": "Disposición que otorga validez legal plena a los avisos digitales emitidos a la casilla del directivo, reduciendo tiempos de notificación postal.",
+          "category": "Normativa",
+          "authorRole": "Especialista Legal en Gestión Pública",
+          "votesCount": 9,
+          "createdAt": "2026-03-22T10:00:00.000Z"
+        },
+        {
+          "id": 12,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "desafioId": 11,
+          "ideaTitle": "Clínica Virtual de Subsanación Documental con mentores de AGROIDEAS",
+          "idea": "Clínica Virtual de Subsanación Documental con mentores de AGROIDEAS",
+          "description": "Sesiones semanales de asesoría sincrónica y asincrónica para guiar a los directivos en la corrección de observaciones técnicas complejas.",
+          "category": "Capacitación",
+          "authorRole": "Coordinador de Capacitación Zonal",
+          "votesCount": 8,
+          "createdAt": "2026-03-22T10:00:00.000Z"
         }
       ],
-      "H08_MatrizPriorizacion": {
-        "evaluationDate": "2026-09-27T10:30:00Z",
-        "ideasEvaluadas": [
-          {
-            "ideaId": "IDEA-IN0002-01",
-            "title": "Dashboard Web de Monitoreo con Semáforo de Riesgo (Idea Ganadora)",
-            "deseabilidad": 5,
-            "factibilidad": 4,
-            "viabilidad": 4,
-            "impacto": 4,
-            "scoreTotal": 17,
-            "isWinningIdea": true
-          },
-          {
-            "ideaId": "IDEA-IN0002-02",
-            "title": "Aplicativo móvil offline para campo",
-            "deseabilidad": 4,
-            "factibilidad": 3,
-            "viabilidad": 3,
-            "impacto": 4,
-            "scoreTotal": 14,
-            "isWinningIdea": false
-          }
-        ],
-        "winningIdeaSummary": {
-          "title": "Dashboard Web de Monitoreo de Planes de Negocio con Semáforo de Riesgo (AGROIDEAS-MONITOR)",
-          "rationale": "Obtuvo el mayor puntaje multicriterio (17/20). Resuelve la dispersión de datos mediante una solución web Local-First/Cloud integrable con el SEL v2.0 y el padrón de incentivos."
+      "H08_MatrizPriorizacion": [
+        {
+          "id": 7,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "ideaId": 7,
+          "ideaTitle": "Tracking Semafórico Ciudadano tipo Courier con notificaciones por WhatsApp y SMS",
+          "title": "Tracking Semafórico Ciudadano tipo Courier con notificaciones por WhatsApp y SMS",
+          "desirability": 5,
+          "feasibility": 5,
+          "viability": 4,
+          "impact": 5,
+          "innovation": 4,
+          "totalScore": 19,
+          "isWinningIdea": true,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 8,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "ideaId": 8,
+          "ideaTitle": "Bandeja Unificada de Expedientes con balanceador inteligente de carga",
+          "title": "Bandeja Unificada de Expedientes con balanceador inteligente de carga",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 4,
+          "innovation": 4,
+          "totalScore": 16,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 9,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "ideaId": 11,
+          "ideaTitle": "Reglamento de Notificación Electrónica Obligatoria en Casilla Virtual",
+          "title": "Reglamento de Notificación Electrónica Obligatoria en Casilla Virtual",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 5,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 16,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 10,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "ideaId": 9,
+          "ideaTitle": "Plantillas Financieras Parametrizadas en la nube con validación instantánea",
+          "title": "Plantillas Financieras Parametrizadas en la nube con validación instantánea",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 4,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 15,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 11,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "ideaId": 12,
+          "ideaTitle": "Clínica Virtual de Subsanación Documental con mentores de AGROIDEAS",
+          "title": "Clínica Virtual de Subsanación Documental con mentores de AGROIDEAS",
+          "desirability": 4,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 14,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
+        },
+        {
+          "id": 12,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "ideaId": 10,
+          "ideaTitle": "Protocolo de Alerta Preventiva de Vencimiento de Plazos TUPA",
+          "title": "Protocolo de Alerta Preventiva de Vencimiento de Plazos TUPA",
+          "desirability": 3,
+          "feasibility": 4,
+          "viability": 3,
+          "impact": 3,
+          "innovation": 4,
+          "totalScore": 13,
+          "isWinningIdea": false,
+          "createdAt": "2026-03-24T10:00:00.000Z"
         }
+      ],
+      "H09_PrototipadoRapido": {
+        "id": 2,
+        "projectId": 2,
+        "projectCode": "PIIP-2026-IN0002",
+        "prototypeTitle": "Dashboard Interactivo de Semáforo de Riesgo y Alertas (AGROIDEAS-MONITOR)",
+        "name": "Dashboard Interactivo de Semáforo de Riesgo y Alertas (AGROIDEAS-MONITOR)",
+        "prototypeType": "Digital PWA",
+        "keyFeatures": [
+          "Visualización de planes con semáforo de riesgo",
+          "Filtro por unidad regional y cadena productiva",
+          "Disparo de alertas automáticas vía SMS/WhatsApp"
+        ],
+        "artifactUrlOrImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500",
+        "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500",
+        "description": "Tablero con vista de proyectos ordenados por semáforo de riesgo (Verde, Amarillo, Rojo). El especialista puede filtrar por región y fase del plan, abriendo el historial completo de hitos.",
+        "testingGoal": "Reducción de 5 días a 10 minutos en la identificación de planes de negocio con riesgo de incumplimiento contractual."
       }
     },
     "FASE_4_ENTREGAR": {
-      "H09_PrototipadoRapido": {
-        "prototypeCode": "PROTO-IN0002-01",
-        "prototypeName": "Mockup Interactivo: Dashboard de Monitoreo de Planes de Negocio (AGROIDEAS-MONITOR)",
-        "prototypeType": "Prototipo de Solución Funcional (Web App Local-First)",
-        "screenLayouts": [
-          "Vista 1: Tablero General con semáforo de riesgo (Verde: Ejecución normal, Amarillo: Alerta de retraso < 30 días, Rojo: Crítico > 30 días)",
-          "Vista 2: Ficha Detallada del Plan de Negocio con cronograma de hitos de asistencia técnica y desembolsos",
-          "Vista 3: Generador de Reporte Ejecutivo Consolidado para la Jefatura de la Unidad de Negocios y la UPP"
-        ],
-        "acceptanceCriteria": "Carga del Dashboard con 1,000 registros en menos de 1 segundo mediante indexación en LocalStorage/JSON."
-      },
       "H10_PlanAccion": [
         {
-          "sprint": "Sprint 1 (Semanas 1-3)",
-          "activity": "Levantamiento de reglas de negocio y estructuración de la base de datos de indicadores de seguimiento",
-          "responsible": "Unidad de Negocios (UN) / UPP",
-          "status": "Completado"
-        },
-        {
-          "sprint": "Sprint 2 (Semanas 4-6)",
-          "activity": "Maquetación del Dashboard en HTML5/TailwindCSS y desarrollo del motor de cálculo del semáforo de riesgo en JS",
-          "responsible": "Oficina de Tecnologías de la Información (OTI)",
-          "status": "Completado"
-        },
-        {
-          "sprint": "Sprint 3 (Semanas 7-9)",
-          "activity": "Prueba piloto con 15 especialistas de las Unidades Regionales de Arequipa, Junín y San Martín",
-          "responsible": "Unidad de Negocios / Equipo Ágil",
+          "id": 4,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "taskName": "Definición de indicadores de semáforo de riesgo y arquitectura del dashboard",
+          "task": "Definición de indicadores de semáforo de riesgo y arquitectura del dashboard",
+          "phase": "Diseño Técnico",
+          "responsibleUnit": "Unidad de Monitoreo / OTI",
+          "responsible": "Unidad de Monitoreo / OTI",
+          "leader": "Fernando Ademir Loayza Choque",
+          "startDate": "2026-05-01",
+          "endDate": "2026-05-31",
+          "deadline": "2026-05-31",
+          "deliverable": "Documento de especificación de arquitectura y modelo relacional de alertas",
           "status": "Completado"
         }
       ],
-      "H11_MatrizRiesgosTesteo": {
-        "risksEvaluated": [
-          {
-            "riskId": "RISK-IN0002-01",
-            "description": "Inconsistencias en los datos históricos registrados en archivos Excel descentralizados.",
-            "impact": "Alto",
-            "mitigation": "Fase de depuración y estandarización de campos previa a la migración inicial."
-          },
-          {
-            "riskId": "RISK-IN0002-02",
-            "description": "Resistencia de consultores de asistencia técnica a registrar información de avance en el nuevo sistema.",
-            "impact": "Medio",
-            "mitigation": "Condicionar la conformidad del pago de honorarios a la actualización de hitos en el tablero digital."
-          }
-        ],
-        "learningCard": {
-          "testCode": "TEST-IN0002-01",
-          "hypothesis": "Creemos que el Dashboard automatizado reducirá en un 60% el tiempo dedicado a consolidar reportes mensuales de seguimiento.",
-          "observation": "Durante el pilotaje con 15 especialistas, el tiempo promedio de consolidación pasó de 14 horas a 25 minutos.",
-          "learnedOutcome": "El algoritmo de semáforo de riesgo identifica inmediatamente los planes desfasados, permitiendo enfocar la supervisión en los casos críticos.",
-          "actionDecided": "Pase a producción e integración formal en el Portafolio Institucional (Anexo 5) como Solución Funcional Aprobada."
+      "H11_MatrizRiesgosTesteo": [
+        {
+          "id": 5,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "riskDescription": "Calidad deficiente de los datos históricos de planes de negocio, impidiendo construir indicadores de riesgo confiables.",
+          "description": "Calidad deficiente de los datos históricos de planes de negocio, impidiendo construir indicadores de riesgo confiables.",
+          "riskType": "Operativo",
+          "probability": "Alta",
+          "impact": "Medio",
+          "level": "Alto",
+          "mitigationStrategy": "Fase previa de depuración y homologación de bases de datos históricas con scripts automatizados de validación.",
+          "mitigation": "Fase previa de depuración y homologación de bases de datos históricas con scripts automatizados de validación.",
+          "testResult": "Depuración exitosa de 3,800 registros con reducción del 94% en inconsistencias de fechas y montos."
         }
-      }
+      ]
     }
   }
 }
