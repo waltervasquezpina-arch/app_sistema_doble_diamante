@@ -99,11 +99,19 @@ function initDatabase() {
         }
         if (initialState.empathyMaps) {
             initialState.empathyMaps.forEach(seedMap => {
-                const exists = db.empathyMaps.some(m => m.projectId === seedMap.projectId);
-                if (!exists) db.empathyMaps.push(seedMap);
+                const exists = db.empathyMaps.some(m => (seedMap.id && m.id === seedMap.id) || (m.projectId === seedMap.projectId && m.userProfile === seedMap.userProfile));
+                if (!exists) {
+                    db.empathyMaps.push(seedMap);
+                } else {
+                    const idx = db.empathyMaps.findIndex(m => (seedMap.id && m.id === seedMap.id) || (m.projectId === seedMap.projectId && m.userProfile === seedMap.userProfile));
+                    if (idx !== -1 && !db.empathyMaps[idx].id && seedMap.id) {
+                        db.empathyMaps[idx].id = seedMap.id;
+                    }
+                }
             });
         }
-        db.empathyMaps.forEach(m => {
+        db.empathyMaps.forEach((m, i) => {
+            if (!m.id) m.id = i + 1;
             if (!m.projectCode && m.projectId) {
                 const proj = db.projects.find(p => p.id === m.projectId);
                 if (proj) m.projectCode = proj.code;
@@ -567,6 +575,49 @@ function precargarEjemploAEIOU(projectIdentifier = 'active') {
 
     if (!proj) return null;
 
+    // Buscar registros en la semilla oficial para este proyecto
+    const seedItems = (typeof initialState !== 'undefined' && initialState.aeiou) ?
+        initialState.aeiou.filter(item => item.projectCode === proj.code || item.projectId === proj.id) : [];
+
+    if (seedItems.length > 0) {
+        const db = getDB();
+        if (!db.aeiou) db.aeiou = [];
+        let addedCount = 0;
+
+        seedItems.forEach(seedObs => {
+            const exists = db.aeiou.some(o => 
+                (o.id === seedObs.id && o.projectCode === seedObs.projectCode) ||
+                (o.projectCode === seedObs.projectCode && o.activity === seedObs.activity)
+            );
+            if (!exists) {
+                const newId = db.aeiou.length ? Math.max(...db.aeiou.map(o => o.id || 0)) + 1 : 1;
+                db.aeiou.push({
+                    id: newId,
+                    projectId: proj.id,
+                    projectCode: proj.code,
+                    activity: seedObs.activity || '',
+                    environment: seedObs.environment || '',
+                    interaction: seedObs.interaction || '',
+                    object: seedObs.object || seedObs.objects || '',
+                    objects: seedObs.object || seedObs.objects || '',
+                    user: seedObs.user || seedObs.users || '',
+                    users: seedObs.user || seedObs.users || '',
+                    observer: seedObs.observer || 'Especialista AGROIDEAS',
+                    observationDate: seedObs.observationDate || seedObs.date || new Date().toISOString().split('T')[0],
+                    date: seedObs.observationDate || seedObs.date || new Date().toISOString().split('T')[0],
+                    timestamp: new Date().toISOString()
+                });
+                addedCount++;
+            }
+        });
+
+        if (addedCount > 0) {
+            saveDB(db);
+            return db.aeiou.filter(o => o.projectCode === proj.code || o.projectId === proj.id);
+        }
+    }
+
+    // Fallback: plantilla individual si no hay semillas específicas
     const ejemplo = {
         projectId: proj.id,
         projectCode: proj.code,
@@ -583,13 +634,13 @@ function precargarEjemploAEIOU(projectIdentifier = 'active') {
 }
 
 // ==========================================================================
-// H02: Mapa de Empatía
+// H02: Mapa de Empatía (Soporte multi-arquetipo por iniciativa)
 // ==========================================================================
-function obtenerMapaEmpatia(projectFilter = 'active') {
+function obtenerMapasEmpatia(projectFilter = 'active') {
     const db = getDB();
     if (!db.empathyMaps) db.empathyMaps = [];
 
-    // Migración de compatibility si existe empathyMap legacy suelto
+    // Compatibilidad legacy
     if (db.empathyMap && db.empathyMaps.length === 0) {
         db.empathyMaps.push(db.empathyMap);
     }
@@ -613,13 +664,23 @@ function obtenerMapaEmpatia(projectFilter = 'active') {
         if (proj) targetId = proj.id;
     }
 
-    const found = db.empathyMaps.find(m => {
+    const list = db.empathyMaps.filter(m => {
         if (targetCode && m.projectCode && m.projectCode === targetCode) return true;
         if (targetId && m.projectId && m.projectId === targetId) return true;
         return false;
     });
 
-    return found || null;
+    return list;
+}
+
+function obtenerMapaEmpatia(projectFilter = 'active', mapId = null) {
+    const maps = obtenerMapasEmpatia(projectFilter);
+    if (maps.length === 0) return null;
+    if (mapId) {
+        const found = maps.find(m => m.id === Number(mapId) || m.id === String(mapId));
+        if (found) return found;
+    }
+    return maps[0];
 }
 
 function guardarMapaEmpatia(mapa, projectFilter = 'active') {
@@ -645,13 +706,22 @@ function guardarMapaEmpatia(mapa, projectFilter = 'active') {
         if (proj) targetId = proj.id;
     }
 
-    const idx = db.empathyMaps.findIndex(m => {
-        if (targetCode && m.projectCode && m.projectCode === targetCode) return true;
-        if (targetId && m.projectId && m.projectId === targetId) return true;
-        return false;
-    });
+    const mapId = mapa.id ? Number(mapa.id) : (mapa._id ? Number(mapa._id) : null);
+    
+    let idx = -1;
+    if (mapId) {
+        idx = db.empathyMaps.findIndex(m => m.id === mapId);
+    } else if (mapa.userProfile) {
+        idx = db.empathyMaps.findIndex(m => {
+            const matchesProj = (targetCode && m.projectCode === targetCode) || (targetId && m.projectId === targetId);
+            return matchesProj && m.userProfile && m.userProfile.toLowerCase().trim() === mapa.userProfile.toLowerCase().trim();
+        });
+    }
+
+    const nextId = db.empathyMaps.reduce((max, item) => Math.max(max, Number(item.id) || 0), 0) + 1;
 
     const newMap = {
+        id: idx !== -1 && db.empathyMaps[idx].id ? db.empathyMaps[idx].id : (mapId || nextId),
         projectId: targetId,
         projectCode: targetCode,
         userProfile: mapa.userProfile || 'Productor Agrario / Beneficiario del Programa',
@@ -679,6 +749,19 @@ function guardarMapaEmpatia(mapa, projectFilter = 'active') {
 
     saveDB(db);
     return newMap;
+}
+
+function eliminarMapaEmpatia(id) {
+    const db = getDB();
+    if (!db.empathyMaps) return false;
+    const numId = Number(id);
+    const initialLen = db.empathyMaps.length;
+    db.empathyMaps = db.empathyMaps.filter(m => Number(m.id) !== numId);
+    if (db.empathyMaps.length < initialLen) {
+        saveDB(db);
+        return true;
+    }
+    return false;
 }
 
 // Precargar ejemplo metodológico de Mapa de Empatía

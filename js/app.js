@@ -529,9 +529,14 @@ function initApp() {
     const formEmpathy = document.getElementById('form-empathy');
     const canvasThink = document.getElementById('canvas-think');
     const canvasProfileBadge = document.getElementById('canvas-profile-badge');
+    const canvasCountBadge = document.getElementById('canvas-count-badge');
+    const empathyArchetypeTabs = document.getElementById('empathy-archetype-tabs');
     const activeProjectTitleH02 = document.getElementById('active-project-title-h02');
+    const btnNewEmpathyProfile = document.getElementById('btn-new-empathy-profile');
 
-    function renderEmpathyMap() {
+    let currentEmpathyMapId = null;
+
+    function renderEmpathyMap(selectedId = null) {
         if (!canvasThink) return;
         const activeProj = typeof obtenerProyectoActivo === 'function' ? obtenerProyectoActivo() : null;
 
@@ -543,10 +548,69 @@ function initApp() {
             if (unitEl) unitEl.textContent = activeProj.responsible || 'AGROIDEAS';
         }
 
-        const data = typeof obtenerMapaEmpatia === 'function' ? obtenerMapaEmpatia('active') : null;
+        const allMaps = typeof obtenerMapasEmpatia === 'function' 
+            ? obtenerMapasEmpatia('active') 
+            : (typeof obtenerMapaEmpatia === 'function' ? [obtenerMapaEmpatia('active')].filter(Boolean) : []);
+
+        if (canvasCountBadge) {
+            canvasCountBadge.textContent = `${allMaps.length} Arquetipo${allMaps.length === 1 ? '' : 's'}`;
+        }
+
+        // Determinar mapa activo a mostrar
+        let data = null;
+        if (selectedId) {
+            data = allMaps.find(m => String(m.id) === String(selectedId)) || null;
+            if (data) currentEmpathyMapId = data.id;
+        } else if (currentEmpathyMapId) {
+            data = allMaps.find(m => String(m.id) === String(currentEmpathyMapId)) || null;
+        }
+
+        if (!data && allMaps.length > 0) {
+            data = allMaps[0];
+            currentEmpathyMapId = data.id;
+        }
+
+        // Renderizar pestañas de arquetipos si existe el contenedor
+        if (empathyArchetypeTabs) {
+            if (allMaps.length === 0) {
+                empathyArchetypeTabs.innerHTML = `
+                    <div class="text-xs text-slate-400 italic py-1">
+                        No hay arquetipos registrados para esta iniciativa. Usa el formulario para agregar uno o precarga los ejemplos.
+                    </div>
+                `;
+            } else {
+                empathyArchetypeTabs.innerHTML = allMaps.map((item, index) => {
+                    const isSelected = data && String(data.id) === String(item.id);
+                    const activeClasses = isSelected 
+                        ? 'bg-emerald-700 text-white font-bold shadow-sm border-emerald-800' 
+                        : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border-slate-200';
+                    return `
+                        <button type="button" 
+                                data-empathy-id="${item.id}" 
+                                class="empathy-tab-btn text-2xs px-3 py-1.5 rounded-full border transition-all flex items-center gap-1.5 ${activeClasses}">
+                            <span class="w-4 h-4 rounded-full flex items-center justify-center text-3xs ${isSelected ? 'bg-white/20 text-white' : 'bg-emerald-100 text-emerald-800'} font-bold">
+                                ${index + 1}
+                            </span>
+                            <span class="max-w-[220px] truncate text-left" title="${item.userProfile || 'Arquetipo'}">
+                                ${item.userProfile || 'Arquetipo ' + (index + 1)}
+                            </span>
+                        </button>
+                    `;
+                }).join('');
+
+                // Adjuntar listeners a las pestañas de arquetipos
+                empathyArchetypeTabs.querySelectorAll('.empathy-tab-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = btn.getAttribute('data-empathy-id');
+                        renderEmpathyMap(id);
+                    });
+                });
+            }
+        }
+
         if (data) {
             document.getElementById('emp-profile').value = data.userProfile || '';
-            document.getElementById('emp-think').value = data.thinks || data.says || '';
+            document.getElementById('emp-think').value = data.thinks || '';
             const feelInput = document.getElementById('emp-feel');
             if (feelInput) feelInput.value = data.feels || '';
             document.getElementById('emp-hear').value = data.hears || '';
@@ -611,6 +675,7 @@ function initApp() {
         formEmpathy.addEventListener('submit', (e) => {
             e.preventDefault();
             const mapData = {
+                id: currentEmpathyMapId || null,
                 userProfile: document.getElementById('emp-profile').value,
                 thinks: document.getElementById('emp-think').value,
                 feels: document.getElementById('emp-feel') ? document.getElementById('emp-feel').value : '',
@@ -621,10 +686,28 @@ function initApp() {
                 pains: document.getElementById('emp-pain').value,
                 gains: document.getElementById('emp-gain').value
             };
-            guardarMapaEmpatia(mapData, 'active');
-            renderEmpathyMap();
+            const saved = guardarMapaEmpatia(mapData, 'active');
+            if (saved && saved.id) currentEmpathyMapId = saved.id;
+            renderEmpathyMap(currentEmpathyMapId);
             alert('Lienzo del Mapa de Empatía actualizado exitosamente.');
         });
+
+        if (btnNewEmpathyProfile) {
+            btnNewEmpathyProfile.addEventListener('click', () => {
+                currentEmpathyMapId = null;
+                document.getElementById('emp-profile').value = '';
+                document.getElementById('emp-think').value = '';
+                if (document.getElementById('emp-feel')) document.getElementById('emp-feel').value = '';
+                document.getElementById('emp-hear').value = '';
+                document.getElementById('emp-see').value = '';
+                if (document.getElementById('emp-say')) document.getElementById('emp-say').value = '';
+                if (document.getElementById('emp-do')) document.getElementById('emp-do').value = '';
+                document.getElementById('emp-pain').value = '';
+                document.getElementById('emp-gain').value = '';
+                document.getElementById('emp-profile').focus();
+                if (canvasProfileBadge) canvasProfileBadge.textContent = 'Nuevo Arquetipo (Modo Registro)';
+            });
+        }
 
         const btnPreloadEmpathy = document.getElementById('btn-preload-empathy');
         if (btnPreloadEmpathy) {
@@ -2997,22 +3080,29 @@ function mostrarFichaProyecto(projectId) {
     
     // Mapa de empatía
     const empMaps = db.empathyMaps || (db.empathyMap ? [db.empathyMap] : []);
-    const emp = empMaps.find(m => m.projectId === projectId);
+    const projectEmpathyList = empMaps.filter(m => m.projectId === projectId);
     let empathyHtml = '';
-    if (!emp) {
+    if (projectEmpathyList.length === 0) {
         empathyHtml = '<p class="text-xs text-slate-500 italic">No hay mapa de empatía registrado para este proyecto.</p>';
     } else {
-        empathyHtml = `
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                <div class="bg-slate-50 p-3 rounded border border-slate-200"><strong>Perfil Arquetipo:</strong><p class="mt-1 text-slate-600">${emp.userProfile || '-'}</p></div>
-                <div class="bg-slate-50 p-3 rounded border border-slate-200"><strong>¿Qué piensa y siente?:</strong><p class="mt-1 text-slate-600">${emp.says || '-'}</p></div>
-                <div class="bg-slate-50 p-3 rounded border border-slate-200"><strong>¿Qué oye?:</strong><p class="mt-1 text-slate-600">${emp.hears || '-'}</p></div>
-                <div class="bg-slate-50 p-3 rounded border border-slate-200"><strong>¿Qué ve?:</strong><p class="mt-1 text-slate-600">${emp.sees || '-'}</p></div>
-                <div class="bg-slate-50 p-3 rounded border border-slate-200"><strong>¿Qué dice y hace?:</strong><p class="mt-1 text-slate-600">${emp.does || '-'}</p></div>
-                <div class="bg-slate-50 p-3 rounded border border-slate-200"><strong>Dolores/Esfuerzos:</strong><p class="mt-1 text-slate-600">${emp.pains || '-'}</p></div>
-                <div class="bg-emerald-50/50 p-3 rounded border border-emerald-100 md:col-span-2"><strong>Resultados/Necesidades:</strong><p class="mt-1 text-emerald-950 font-semibold">${emp.gains || '-'}</p></div>
+        empathyHtml = projectEmpathyList.map((emp, idx) => `
+            <div class="mb-3 border border-slate-200 rounded-lg p-3 bg-white shadow-2xs">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-2 mb-2">
+                    <span class="text-2xs font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-150">
+                        Arquetipo ${idx + 1}: ${emp.userProfile || 'General'}
+                    </span>
+                    <span class="text-3xs text-slate-400">Lienzo Etnográfico</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs">
+                    <div class="bg-slate-50 p-2.5 rounded border border-slate-200"><strong>¿Qué piensa y siente?:</strong><p class="mt-0.5 text-slate-600">${emp.thinks || emp.feels || emp.says || '-'}</p></div>
+                    <div class="bg-slate-50 p-2.5 rounded border border-slate-200"><strong>¿Qué oye?:</strong><p class="mt-0.5 text-slate-600">${emp.hears || '-'}</p></div>
+                    <div class="bg-slate-50 p-2.5 rounded border border-slate-200"><strong>¿Qué ve?:</strong><p class="mt-0.5 text-slate-600">${emp.sees || '-'}</p></div>
+                    <div class="bg-slate-50 p-2.5 rounded border border-slate-200"><strong>¿Qué dice y hace?:</strong><p class="mt-0.5 text-slate-600">${emp.says || emp.does || '-'}</p></div>
+                    <div class="bg-amber-50/60 p-2.5 rounded border border-amber-200"><strong>Dolores / Frustraciones:</strong><p class="mt-0.5 text-amber-900">${emp.pains || '-'}</p></div>
+                    <div class="bg-emerald-50/70 p-2.5 rounded border border-emerald-200"><strong>Resultados / Ganancias:</strong><p class="mt-0.5 text-emerald-950 font-semibold">${emp.gains || '-'}</p></div>
+                </div>
             </div>
-        `;
+        `).join('');
     }
     document.getElementById('modalEmpathyContainer').innerHTML = empathyHtml;
     
