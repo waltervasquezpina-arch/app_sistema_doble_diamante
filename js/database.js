@@ -1027,6 +1027,30 @@ function precargarEjemploPersona(projectIdentifier = 'active') {
 
     if (!proj) return null;
 
+    const db = getDB();
+    if (!db.personas) db.personas = [];
+
+    // Si existen semillas en initialState para este proyecto, cargarlas todas
+    if (initialState && initialState.personas && initialState.personas.length > 0) {
+        let addedCount = 0;
+        initialState.personas.forEach(seedPer => {
+            if (seedPer.projectCode === proj.code || seedPer.projectId === proj.id) {
+                const idx = db.personas.findIndex(p => p.id === seedPer.id || (p.projectId === seedPer.projectId && p.archetypeName === seedPer.archetypeName));
+                if (idx === -1) {
+                    db.personas.push({ ...seedPer });
+                    addedCount++;
+                } else {
+                    db.personas[idx] = { ...seedPer, ...db.personas[idx] };
+                    addedCount++;
+                }
+            }
+        });
+        if (addedCount > 0) {
+            saveDB(db);
+            return db.personas.filter(p => p.projectCode === proj.code || p.projectId === proj.id);
+        }
+    }
+
     const ejemplo = {
         projectId: proj.id,
         projectCode: proj.code,

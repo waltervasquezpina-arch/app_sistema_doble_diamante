@@ -1007,7 +1007,13 @@ function initApp() {
     function renderPersonas() {
         if (!personasContainer) return;
         personasContainer.innerHTML = '';
-        const list = typeof obtenerPersonas === 'function' ? obtenerPersonas('active') : [];
+        let list = typeof obtenerPersonas === 'function' ? obtenerPersonas('active') : [];
+
+        // Si no hay arquetipos cargados pero existen semillas, precargar automáticamente para la iniciativa activa
+        if (list.length === 0 && typeof precargarEjemploPersona === 'function') {
+            precargarEjemploPersona('active');
+            list = typeof obtenerPersonas === 'function' ? obtenerPersonas('active') : [];
+        }
 
         const countEl = document.getElementById('count-personas');
         if (countEl) {

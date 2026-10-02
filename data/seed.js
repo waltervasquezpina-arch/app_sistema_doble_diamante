@@ -17,7 +17,7 @@
  */
 
 const PIIP_SEED_DATA = {
-  "_schemaVersion": 12,
+  "_schemaVersion": 13,
   "_source": "Fichas de Iniciativa de Innovación Pública AGROIDEAS IN0001-IN0013 (2026)",
   "_generated": "2026-10-01",
   "users": [
@@ -1611,69 +1611,1800 @@ const PIIP_SEED_DATA = {
     }
   ],
   "personas": [
-    {
-      "id": 1,
-      "projectId": 1,
-      "projectCode": "PIIP-2026-IN0001",
-      "archetypeName": "Mateo Quispe - El Líder Agrario Innovador",
-      "name": "Don Roberto Mamani / Mateo Quispe",
-      "role": "Presidente de Asociación de Productores de Palto y Papa Nativa",
-      "demographics": "54 años, Pichanaki (Junín) y Altiplano (Puno), Secundaria Completa",
-      "age": 54,
-      "bio": "Lleva más de 20 años dedicado a la agricultura familiar asociativa. Lidera a 45 socios en su comunidad y busca que accedan a mejores mercados y fondos no reembolsables de AGROIDEAS.",
-      "goals": [
-        "Capacitar a su junta directiva en costos y contabilidad asociativa",
-        "Acceder a fondos de reconversión y adopción tecnológica de AGROIDEAS sin tramitadores"
-      ],
-      "frustrations": [
-        "Trámites burocráticos lentos y expedientes en papel que se retrasan meses",
-        "Falta de conectividad estable para capacitarse en plataformas virtuales complejas"
-      ],
-      "techTechSavviness": "Medio (Maneja smartphone, llamadas por WhatsApp y banca móvil básica)",
-      "quote": "Quiero que mi asociación progrese sin perder meses enteros en papeles. Que el estado nos ayude con herramientas que entendamos."
-    },
-    {
-      "id": 2,
-      "projectId": 7,
-      "projectCode": "PIIP-2026-IN0007",
-      "archetypeName": "Ing. Carmen Salazar Huanca - La Evaluadora de Campo",
-      "name": "Ing. Carmen Salazar Huanca",
-      "role": "Especialista Evaluadora - Unidad Regional Ancash",
-      "demographics": "38 años, Huaraz (Ancash), Ingeniera Agrónoma Colegiada",
-      "age": 38,
-      "bio": "Recorre comunidades campesinas altoandinas evaluando la viabilidad técnica y social de expedientes para la calificación del EEMRI.",
-      "goals": [
-        "Realizar evaluaciones de campo justas, rápidas y verificables",
-        "Respaldar sus informes técnicos con evidencias georreferenciadas inalterables"
-      ],
-      "frustrations": [
-        "Llenar actas físicas en papel bajo la lluvia o sol sin verificar datos previos en tiempo real",
-        "Riesgo de que sus fotografías de campo sean cuestionadas por falta de sello GPS y timestamp"
-      ],
-      "techTechSavviness": "Medio-Alto (Uso intensivo de tablet, GPS y aplicativos de campo)",
-      "quote": "Necesito herramientas que funcionen sin internet. No puedo depender de la señal para hacer mi trabajo en campo."
-    },
-    {
-      "id": 3,
-      "projectId": 2,
-      "projectCode": "PIIP-2026-IN0002",
-      "archetypeName": "Lic. Fernando Loayza Choque - El Analista de Datos",
-      "name": "Lic. Fernando Loayza Choque",
-      "role": "Especialista de Seguimiento - Unidad de Negocios",
-      "demographics": "42 años, Lima (Sede Central MIDAGRI), Economista Agrario",
-      "age": 42,
-      "bio": "Responsable de monitorear la ejecución física y financiera de más de 4,200 planes de negocio a nivel nacional.",
-      "goals": [
-        "Monitorear en tiempo real el avance de las 4,290 organizaciones agrarias",
-        "Detectar oportunamente cuellos de botella y desvíos presupuestales antes de que venzan las campañas"
-      ],
-      "frustrations": [
-        "Información dispersa en decenas de archivos Excel no estandarizados y correos zonales",
-        "Desfase de información de hasta 45 días para consolidar el estado de las inversiones"
-      ],
-      "techTechSavviness": "Avanzado (Dominio de ERPs, bases de datos y analítica en tableros)",
-      "quote": "Paso más tiempo consolidando hojas de cálculo que analizando el impacto real de las inversiones en el campo."
-    }
+      {
+          "id": 1,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "archetypeName": "Don Roberto Mamani Condori",
+          "name": "Don Roberto Mamani Condori",
+          "role": "Presidente de Cooperativa Agraria y Productor de Papa Nativa",
+          "demographics": "54 años, Puno (3,820 m.s.n.m.), Secundaria incompleta, Quechua / Español",
+          "age": 54,
+          "techTechSavviness": "Básico (Usa WhatsApp para llamadas y audios; no usa computadora)",
+          "quote": "Quiero que mi asociación progrese sin perder meses enteros en papeles. Que el Estado nos capacite con herramientas prácticas en nuestra propia lengua.",
+          "bio": "Agricultor líder con 30 años de experiencia cultivando papas nativas en el altiplano. Dirige una cooperativa de 45 familias y busca certificar sus parcelas para agroexportación.",
+          "goals": [
+              "Aprender a gestionar costos y contratos de exportación sin depender de intermediarios abusivos",
+              "Capacitar a los socios jóvenes para que asuman la directiva y manejen las plataformas de AGROIDEAS",
+              "Obtener el incentivo de adopción tecnológica para instalar un almacén térmico de semilla certificada"
+          ],
+          "frustrations": [
+              "Talleres virtuales que exigen conexión Zoom de alta velocidad inexistente en su comunidad",
+              "Manuales técnicos de más de 80 páginas redactados en jerga jurídica incomprensible",
+              "Gastar S/. 120 en pasajes cada vez que viaja a la capital provincial para pedir orientación presencial"
+          ]
+      },
+      {
+          "id": 2,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "archetypeName": "Lideresa Rosa Huamán Ccallo",
+          "name": "Lideresa Rosa Huamán Ccallo",
+          "role": "Presidenta de Asociación de Mujeres Rurales EEMRI (Valle Sagrado)",
+          "demographics": "46 años, Urubamba, Cusco; Primaria completa, Quechua originario",
+          "age": 46,
+          "techTechSavviness": "Básico (Smartphone Android Go compartido en familia, escucha audios)",
+          "quote": "No podemos abandonar nuestras chacras dos días enteros para viajar a un curso teórico. Queremos aprender en la comunidad.",
+          "bio": "Productora de maíz blanco gigante y hortalizas agroecológicas. Lidera a 24 mujeres campesinas en la transformación artesanal de harinas y néctares naturales.",
+          "goals": [
+              "Dominar la formulación de planes de negocio con enfoque asociativo de mujeres rurales",
+              "Acceder a micro-módulos de audio descargables para escuchar mientras realiza labores de campo",
+              "Lograr autonomía financiera para las socias de su organización agraria comunal"
+          ],
+          "frustrations": [
+              "Sobrecarga de trabajo de cuidado familiar que le impide asistir a talleres en horarios de oficina",
+              "Falta de materiales didácticos con pertinencia cultural e ilustraciones claras",
+              "Desconfianza de algunos evaluadores que dudan de la capacidad de gestión femenina"
+          ]
+      },
+      {
+          "id": 3,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "archetypeName": "Técnico Alex Valenzuela Quispe",
+          "name": "Técnico Alex Valenzuela Quispe",
+          "role": "Joven Promotor Agropecuario y Facilitador Digital Comunal",
+          "demographics": "26 años, Huancayo, Junín; Técnico en Producción Agropecuaria, Bilingüe",
+          "age": 26,
+          "techTechSavviness": "Avanzado (Domina redes sociales, apps móviles, herramientas nube y GPS)",
+          "quote": "Si el programa nos da tutoriales ágiles y micro-cápsulas en video, nosotros mismos guiamos a nuestros padres en el uso del sistema.",
+          "bio": "Hijo de comuneros cafetaleros, egresado de instituto tecnológico. Ayuda a su cooperativa en la digitalización de inventarios, toma de fotos y subida de reportes.",
+          "goals": [
+              "Especializarse como extensionista digital certificado por MIDAGRI en metodologías ágiles",
+              "Implementar módulos de asistencia técnica mediante chatbots de mensajería instantánea",
+              "Reducir las observaciones técnicas en los expedientes de su organización"
+          ],
+          "frustrations": [
+              "Sistemas web institucionales lentos y poco responsivos en pantallas de celulares",
+              "Poca apertura de directivos mayores a modernizar las prácticas de registro manual",
+              "Falta de credenciales digitales o certificaciones formativas con valor curricular oficial"
+          ]
+      },
+      {
+          "id": 4,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "archetypeName": "Ing. Patricia Benavente Ríos",
+          "name": "Ing. Patricia Benavente Ríos",
+          "role": "Especialista Pedagógica y Capacitadora Senior (UPDC Sede Central)",
+          "demographics": "41 años, Lima; Ingeniera Agrónoma con Maestría en Educación Rural",
+          "age": 41,
+          "techTechSavviness": "Avanzado (Diseño instruccional en LMS Chamilo/Moodle, analítica formativa)",
+          "quote": "La clave del aprendizaje en el campo no es la tecnología en sí, sino el diseño pedagógico híbrido que respeta los saberes locales.",
+          "bio": "Responsable del diseño curricular del portafolio formativo de AGROIDEAS. Ha capacitado a más de 3,000 agricultores en 12 regiones del país.",
+          "goals": [
+              "Consolidar la plataforma Blended Learning con recursos multimedia offline sincronizables",
+              "Medir el incremento real de competencias de gestión en las organizaciones agrarias",
+              "Estandarizar el banco de recursos educativos digitales para extensionistas zonales"
+          ],
+          "frustrations": [
+              "Alta tasa de deserción en cursos 100% virtuales debido a la brecha de conectividad rural",
+              "Dificultad para hacer seguimiento personalizado a miles de estudiantes sin herramientas de analítica",
+              "Presupuesto limitado para elaboración de material audiovisual en lenguas originarias"
+          ]
+      },
+      {
+          "id": 5,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "archetypeName": "Ing. Walter Cárdenas Meneses",
+          "name": "Ing. Walter Cárdenas Meneses",
+          "role": "Evaluador Zonal Desconcentrado de Planes de Negocio (UR Cusco)",
+          "demographics": "38 años, Sicuani, Cusco; Ingeniero Agrícola, 10 años en el sector público",
+          "age": 38,
+          "techTechSavviness": "Intermedio (Office avanzado, SIG básico, sistemas de gestión del Estado)",
+          "quote": "Cuando una cooperativa llega bien capacitada desde el inicio, el tiempo de evaluación se reduce a la mitad.",
+          "bio": "Evalúa expedientes de planes de adopción tecnológica y reconversión. Atiende directamente las mesas técnicas provinciales y revisa pliegos de subsanación.",
+          "goals": [
+              "Que las cooperativas presenten flujos de caja y estudios de mercado técnicamente viables",
+              "Contar con una guía metodológica unificada para homologar criterios de evaluación",
+              "Acelerar la emisión de informes de elegibilidad y viabilidad técnica"
+          ],
+          "frustrations": [
+              "Tener que rechazar planes por errores básicos de cálculo que pudieron evitarse con capacitación",
+              "Presión de dirigentes locales que confunden la rigurosidad técnica con mala voluntad funcional",
+              "Carencia de herramientas para monitorear el progreso formativo previo de los directivos postulantes"
+          ]
+      },
+      {
+          "id": 6,
+          "projectId": 1,
+          "projectCode": "PIIP-2026-IN0001",
+          "archetypeName": "Gerente Carlos Mendoza Paucar",
+          "name": "Gerente Carlos Mendoza Paucar",
+          "role": "Gerente General de Cooperativa Cafetalera (La Merced, Selva Central)",
+          "demographics": "49 años, Chanchamayo, Junín; Administrador de Empresas, 15 años liderando OAs",
+          "age": 49,
+          "techTechSavviness": "Intermedio (Maneja banca electrónica, ERP contable y correo corporativo)",
+          "quote": "Competimos contra cooperativas de Colombia y Brasil; la formación de AGROIDEAS debe apuntar a la calidad de exportación y sostenibilidad.",
+          "bio": "Lidera una cooperativa de 120 socios productores de café especial con certificaciones Rainforest Alliance y Fair Trade. Exporta directamente a Europa.",
+          "goals": [
+              "Capacitar al equipo técnico en trazabilidad satelital y reglamento de no deforestación EUDR",
+              "Acceder a cofinanciamiento para modernizar la planta de beneficio ecológico de café",
+              "Fortalecer la gobernanza cooperativa y la transparencia financiera ante la asamblea"
+          ],
+          "frustrations": [
+              "Cursos institucionales que se quedan en conceptos elementales sin profundizar en comercio exterior",
+              "Demoras burocráticas que descalzan los cronogramas de entrega a clientes internacionales",
+              "Falta de módulos formativos en gestión de coberturas de precios en bolsa de materias primas"
+          ]
+      },
+      {
+          "id": 7,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "archetypeName": "Ing. Fernando Loayza Choque",
+          "name": "Ing. Fernando Loayza Choque",
+          "role": "Especialista de Seguimiento y Monitoreo (Unidad de Negocios Lima)",
+          "demographics": "42 años, Lima; Ingeniero Zootecnista con especialización en Monitoreo de Proyectos",
+          "age": 42,
+          "techTechSavviness": "Avanzado (Manejo de PowerBI, bases de datos relacionales y tableros de control)",
+          "quote": "Pasamos más tiempo consolidando hojas de cálculo que analizando el impacto real de las inversiones en el campo.",
+          "bio": "Encargado del monitoreo de planes pecuarios y agrícolas a nivel nacional. Coordina la validación técnica de hitos para la autorización de desembolsos.",
+          "goals": [
+              "Implementar un tablero en tiempo real que muestre la ejecución física y financiera consolidada",
+              "Automatizar las alertas preventivas de desvío presupuestal y atraso en metas de producción",
+              "Eliminar el uso de planillas Excel dispersas y consolidar la información en una sola base de datos"
+          ],
+          "frustrations": [
+              "Desfase de hasta 45 días entre la ejecución del gasto en campo y el reporte que llega a Lima",
+              "Información fragmentada en correos, memorandos físicos y carpetas personales",
+              "Riesgo de observaciones de auditoría por falta de trazabilidad histórica en convenios multianuales"
+          ]
+      },
+      {
+          "id": 8,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "archetypeName": "Ing. Víctor Raúl Cuentas",
+          "name": "Ing. Víctor Raúl Cuentas",
+          "role": "Supervisor Zonal de Campo (Unidad Regional Arequipa - Majes)",
+          "demographics": "45 años, Arequipa; Ingeniero Agrónomo, 12 años en inspecciones agropecuarias",
+          "age": 45,
+          "techTechSavviness": "Intermedio (Maneja GPS navegador, cámara digital, laptop y hojas de cálculo)",
+          "quote": "Si no tengo datos actualizados en la tablet cuando visito el establo, no puedo contrastar lo que el productor me dice con lo presupuestado.",
+          "bio": "Recorre periódicamente los establos lecheros y fundos agrícolas de Majes, Camaná y La Joya para constatar la entrega de bienes y el avance de obras.",
+          "goals": [
+              "Registrar actas de inspección in situ desde el celular con firma digital del directivo comunal",
+              "Detectar a tiempo cuellos de botella en la instalación de maquinaria para brindar auxilio técnico",
+              "Reducir las horas de oficina dedicadas a transcribir apuntes de campo al sistema central"
+          ],
+          "frustrations": [
+              "Falta de señal móvil en zonas rurales que le impide consultar el expediente digital en campo",
+              "Duplicidad de formatos: llenar una ficha en papel y luego tener que tipear lo mismo en la computadora",
+              "Demoras de la sede central para aprobar modificaciones técnicas solicitadas por los productores"
+          ]
+      },
+      {
+          "id": 9,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "archetypeName": "Ing. Ronald Cáceres Pacheco",
+          "name": "Ing. Ronald Cáceres Pacheco",
+          "role": "Gerente Técnico de Cooperativa Ganadera Beneficiaria (Irrigación Majes)",
+          "demographics": "39 años, Majes, Arequipa; Ingeniero Agroindustrial, 8 años gerenciando OAs",
+          "age": 39,
+          "techTechSavviness": "Intermedio (Maneja software ganadero de control lechero, Excel y banca online)",
+          "quote": "Cumplimos con las metas lecheras pero los trámites de monitoreo de AGROIDEAS nos congelan los desembolsos por semanas.",
+          "bio": "Gestiona la ejecución de un plan de negocio de S/. 1.2 millones cofinanciado por el programa para la compra de tanques de frío y ordeñadoras mecánicas.",
+          "goals": [
+              "Reportar avances mensuales mediante una plataforma web simple sin tener que viajar a Arequipa",
+              "Obtener desembolsos fluidos para pagar puntualmente a los proveedores de maquinaria",
+              "Demostrar el incremento de litros de leche producidos por vaca al día gracias a la tecnificación"
+          ],
+          "frustrations": [
+              "Cada supervisor que visita el establo pide la información en formatos distintos",
+              "Paralización de compras críticas por observaciones formales en comprobantes de pago menores",
+              "Falta de un canal directo para consultar el estado del trámite de aprobación de adendas"
+          ]
+      },
+      {
+          "id": 10,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "archetypeName": "Lic. Carmen Rosa Palomino",
+          "name": "Lic. Carmen Rosa Palomino",
+          "role": "Analista Financiera de Rendición de Inversiones (Sede Central Lima)",
+          "demographics": "36 años, Lima; Contadora Pública Colegiada, especialista en control gubernamental",
+          "age": 36,
+          "techTechSavviness": "Avanzado (SIAF-SP, SIGA-MEF, herramientas contables y conciliación bancaria)",
+          "quote": "El monitoreo físico debe dialogar en tiempo real con la ejecución financiera; si compran el tractor deben tener la factura validada al instante.",
+          "bio": "Verifica que cada sol ejecutado por las cooperativas coincida estrictamente con las partidas autorizadas en el convenio bilateral de cofinanciamiento.",
+          "goals": [
+              "Interoperar el sistema de monitoreo con las cuentas corrientes del Banco de la Nación",
+              "Automatizar el cálculo de la contrapartida en efectivo aportada por las organizaciones agrarias",
+              "Emitir dictámenes de liquidación financiera en menos de 15 días hábiles"
+          ],
+          "frustrations": [
+              "Facturas con descripciones vagas que no detallan las especificaciones técnicas del bien adquirido",
+              "Extractos bancarios en PDF que deben ser digitados manualmente en planillas de conciliación",
+              "Expedientes de rendición que llegan con retrasos de varios meses tras el cierre del trimestre"
+          ]
+      },
+      {
+          "id": 11,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "archetypeName": "Don Eusebio Quispealaya",
+          "name": "Don Eusebio Quispealaya",
+          "role": "Directivo de Asociación de Productores de Palto Hass (Huanta, Ayacucho)",
+          "demographics": "58 años, Huanta, Ayacucho; Secundaria completa, Productor agropecuario",
+          "age": 58,
+          "techTechSavviness": "Básico (Manejo de llamadas telefónicas y WhatsApp con apoyo de sus hijos)",
+          "quote": "Las plantas de palto no esperan las firmas de los ingenieros de Lima; si el fertilizante llega un mes tarde, la cosecha se pierde.",
+          "bio": "Presidente de una asociación de 32 pequeños agricultores de valle interandino. Lidera la instalación de reservorios y sistemas de riego tecnificado.",
+          "goals": [
+              "Instalar el sistema de riego por goteo antes del inicio de la temporada de floración",
+              "Asegurar la compra conjunta de abonos orgánicos a precio mayorista para todos los socios",
+              "Mantener informada a la asamblea comunal sobre el avance del proyecto sin malentendidos"
+          ],
+          "frustrations": [
+              "Rigidez burocrática ante imprevistos climáticos como sequías o granizadas",
+              "Temor a ser sancionados o denunciados por errores en la rendición de cuentas que no supieron cómo subsanar",
+              "Pérdida de confianza de los socios cuando las obras se paralizan por trámites administrativos"
+          ]
+      },
+      {
+          "id": 12,
+          "projectId": 2,
+          "projectCode": "PIIP-2026-IN0002",
+          "archetypeName": "Mag. Javier Tello Arévalo",
+          "name": "Mag. Javier Tello Arévalo",
+          "role": "Auditor de Control Concurrente (OCI MIDAGRI / Contraloría General)",
+          "demographics": "47 años, Lima; Economista y Auditor Gubernamental Certificado",
+          "age": 47,
+          "techTechSavviness": "Avanzado (Auditoría basada en riesgos, trazabilidad forense digital)",
+          "quote": "Sin evidencia fotográfica georreferenciada y sellado de tiempo, cualquier desembolso corre el riesgo de ser observado como hallazgo de control.",
+          "bio": "Supervisa los hitos de control concurrente en la ejecución de incentivos agrarios. Evalúa el cumplimiento normativo y la custodia de los fondos públicos.",
+          "goals": [
+              "Garantizar que los fondos no reembolsables se apliquen exclusivamente a los fines del convenio",
+              "Contar con una pista de auditoría inmutable que identifique al funcionario que autorizó cada pago",
+              "Verificar que los bienes adquiridos existan físicamente en las parcelas de los beneficiarios"
+          ],
+          "frustrations": [
+              "Falta de georreferenciación confiable en las fotos que sustentan las visitas de inspección técnica",
+              "Actas de entrega suscritas con firmas ilegibles sin número de documento de identidad",
+              "Dificultad para acceder a los expedientes de monitoreo histórico durante las auditorías de cierre"
+          ]
+      },
+      {
+          "id": 13,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "archetypeName": "Dr. Humberto Salazar Vigil",
+          "name": "Dr. Humberto Salazar Vigil",
+          "role": "Asesor Jurídico Senior (Unidad de Asesoría Jurídica Sede Lima)",
+          "demographics": "51 años, Lima; Abogado especialista en Derecho Administrativo y Agrario",
+          "age": 51,
+          "techTechSavviness": "Intermedio (Bases de datos jurídicas Spij, LexisNexis, Word avanzado)",
+          "quote": "No podemos permitir que un mismo tipo de personería jurídica sea rechazada en Puno y admitida en Junín. El criterio legal debe ser uno solo.",
+          "bio": "Redacta dictámenes e informes legales vinculantes para la Dirección Ejecutiva de AGROIDEAS. Ha resuelto más de 1,500 consultas jurídicas agrarias.",
+          "goals": [
+              "Construir un repositorio inteligente de criterios jurídicos vinculantes indexado por materia",
+              "Reducir el tiempo promedio de respuesta a consultas legales de 20 días a 48 horas",
+              "Estandarizar las cláusulas de convenios bilaterales para evitar controversias judiciales"
+          ],
+          "frustrations": [
+              "Tener que responder una y otra vez las mismas consultas jurídicas formuladas por las regiones",
+              "Pérdida de pronunciamientos históricos cuando los abogados contratados dejan la institución",
+              "Discrepancias entre las resoluciones de primera instancia y los criterios de tribunales superiores"
+          ]
+      },
+      {
+          "id": 14,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "archetypeName": "Dra. Milagros Vega Candia",
+          "name": "Dra. Milagros Vega Candia",
+          "role": "Abogada Evaluadora Zonal (Unidad Regional Cusco - Apurímac)",
+          "demographics": "34 años, Cusco; Abogada especialista en Derecho Registral y Comunidades Campesinas",
+          "age": 34,
+          "techTechSavviness": "Intermedio (Maneja plataformas SUNARP en línea, mesa de partes digital)",
+          "quote": "Cuando observo un acta comunal los dirigentes me dicen que en otra región no les pidieron eso. Quedo ante ellos como una abogada caprichosa.",
+          "bio": "Revisa los requisitos legales de organizaciones postulantes: estatutos, vigencias de poder, titularidad de tierras y libros de actas.",
+          "goals": [
+              "Tener acceso inmediato a precedentes legales aprobados por la UAJ Lima ante casos complejos",
+              "Disponer de modelos oficiales de estatutos comunitarios adaptados a la Ley de Cooperativas",
+              "Capacitar a los jueces de paz y notarios rurales sobre las formalidades que exige AGROIDEAS"
+          ],
+          "frustrations": [
+              "Demora de hasta tres semanas para recibir respuesta de la sede central ante consultas específicas",
+              "Falta de uniformidad registral entre oficinas de SUNARP de diferentes departamentos",
+              "Tensión con dirigentes campesinos molestos por observaciones formales subsanables"
+          ]
+      },
+      {
+          "id": 15,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "archetypeName": "Don Marcelino Quispe Condori",
+          "name": "Don Marcelino Quispe Condori",
+          "role": "Presidente de Comunidad Campesina Titulada (Chota, Cajamarca)",
+          "demographics": "60 años, Chota, Cajamarca; Primaria completa, Quechua / Español",
+          "age": 60,
+          "techTechSavviness": "Básico (No utiliza internet ni computadoras; se asesora con directivos jóvenes)",
+          "quote": "Gastamos plata de la asamblea comunal en tres viajes a la ciudad porque el registrador decía una cosa y el abogado de AGROIDEAS pedía otra.",
+          "bio": "Dirigente comunal histórico. Lidera una comunidad de 180 familias que busca postular un plan de reconversión de pastos cultivados y mejoramiento genético vacuno.",
+          "goals": [
+              "Inscribir la junta directiva comunal y sus poderes sin sufrir reiteradas tachas registrales",
+              "Conseguir que el programa reconozca la validez de los títulos de propiedad comunal colectivos",
+              "Iniciar la ejecución del plan de negocio sin perder la confianza de los comuneros comunales"
+          ],
+          "frustrations": [
+              "Alto costo de honorarios notariales y traslados para subsanar observaciones legales menores",
+              "Uso de términos jurídicos complejos en las cartas de notificación que nadie en su pueblo comprende",
+              "Riesgo de que expire el plazo perentorio de la convocatoria mientras esperan la inscripción registral"
+          ]
+      },
+      {
+          "id": 16,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "archetypeName": "Dr. Alfonso Ballón Neira",
+          "name": "Dr. Alfonso Ballón Neira",
+          "role": "Notario Público Provincial y Asesor Legal Externo (Andahuaylas)",
+          "demographics": "56 años, Andahuaylas, Apurímac; Notario Público con 22 años de ejercicio",
+          "age": 56,
+          "techTechSavviness": "Intermedio (Sistemas notariales integrados con RENIEC y SUNARP)",
+          "quote": "Las observaciones que emiten en AGROIDEAS a menudo desconocen los precedentes de observancia obligatoria del Tribunal Registral.",
+          "bio": "Legaliza libros de actas comunales, redacta escrituras de constitución de cooperativas agrarias y asesora a asociaciones campesinas postulantes.",
+          "goals": [
+              "Contar con una guía pública de lineamientos legales emitida formalmente por AGROIDEAS",
+              "Agilizar la elevación a escritura pública de los convenios de cofinanciamiento estatal",
+              "Evitar que sus clientes agrarios sufran demoras por discrepancias de interpretación jurídica"
+          ],
+          "frustrations": [
+              "Falta de comunicación institucional directa entre los evaluadores del ministerio y las notarías locales",
+              "Directivos campesinos que acuden a última hora exigiendo minutas inmediatas por vencimiento de plazos",
+              "Criterios de elegibilidad legal que cambian de una convocatoria a otra sin previo aviso oficial"
+          ]
+      },
+      {
+          "id": 17,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "archetypeName": "Lic. Diana Espinoza Torres",
+          "name": "Lic. Diana Espinoza Torres",
+          "role": "Evaluadora de Elegibilidad Documental (UPP Sede Central Lima)",
+          "demographics": "32 años, Lima; Licenciada en Administración Pública, 6 años en programas sociales",
+          "age": 32,
+          "techTechSavviness": "Avanzado (Gestión documental electrónica, flujos BPM, auditoría interna)",
+          "quote": "Si tuviéramos un árbol de decisiones legales interactivo, el 80% de los expedientes se calificarían el mismo día sin saturar a los abogados.",
+          "bio": "Filtra preliminarmente los expedientes que ingresan por mesa de partes virtual. Revisa vigencias de poder, declaraciones juradas y antecedentes de no inhabilitación.",
+          "goals": [
+              "Estandarizar la lista de chequeo legal para que todos los evaluadores califiquen con el mismo rasero",
+              "Reducir las observaciones subsanables en la fase de admisibilidad documental",
+              "Atender las solicitudes de elegibilidad dentro de los plazos establecidos en el TUPA"
+          ],
+          "frustrations": [
+              "Cuellos de botella en la UAJ que paralizan decenas de expedientes por consultas legales sencillas",
+              "Tener que llamar por teléfono a las oficinas zonales para descifrar documentos escaneados borrosos",
+              "Expedientes que son aprobados en admisibilidad pero rebotados meses después en comités de crédito"
+          ]
+      },
+      {
+          "id": 18,
+          "projectId": 3,
+          "projectCode": "PIIP-2026-IN0003",
+          "archetypeName": "Apu Tsetsen Tiwi Ampam",
+          "name": "Apu Tsetsen Tiwi Ampam",
+          "role": "Representante Legal de Asociación Comunal Indígena (Río Cenepa, Amazonas)",
+          "demographics": "48 años, Condorcanqui, Amazonas; Líder originario de la Nación Awajún",
+          "age": 48,
+          "techTechSavviness": "Básico (Teléfono satelital comunal y celular 2G cuando viaja a Nieva)",
+          "quote": "Nuestra tierra es ancestral y comunitaria. La ley del Estado debe respetar la autoridad de la asamblea indígena sin exigir escrituras individuales.",
+          "bio": "Líder indígena que impulsa el cultivo sostenible de cacao criollo y vainilla silvestre en el bosque comunal. Gestiona la postulación de su comunidad a fondos públicos.",
+          "goals": [
+              "Lograr que AGROIDEAS admita las actas comunales indígenas firmadas por el Apu y los ancianos",
+              "Proteger el bosque de la deforestación mediante incentivos de bionegocios sostenibles",
+              "Llevar desarrollo económico respetando las tradiciones culturales de su pueblo originario"
+          ],
+          "frustrations": [
+              "Requisitos de inscripción registral diseñados para empresas comerciales que no aplican a la selva",
+              "Tener que viajar 14 horas en deslizador fluvial solo para dejar un documento de aclaración legal",
+              "Sentirse excluidos de los programas de incentivos por barreras burocráticas centralistas"
+          ]
+      },
+      {
+          "id": 19,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "archetypeName": "Lic. Marcos Vinces Peñaloza",
+          "name": "Lic. Marcos Vinces Peñaloza",
+          "role": "Responsable del Archivo Central y Gestión Documental (AGROIDEAS Lima)",
+          "demographics": "53 años, Lima; Licenciado en Archivística y Gestión Documental, 20 años de experiencia",
+          "age": 53,
+          "techTechSavviness": "Intermedio (Software de gestión de archivos, normas AGN, microfilmación)",
+          "quote": "El sótano está colapsado de archivadores de palanca de más de 10 años. Si ocurre un siniestro, se pierde la memoria probatoria de miles de convenios.",
+          "bio": "Custodia más de 20,000 legajos de planes de negocio. Administra los préstamos de expedientes a la Fiscalía, OCI y áreas operativas de la entidad.",
+          "goals": [
+              "Implementar la digitalización con valor legal (microformas digitales) bajo la norma del AGN",
+              "Liberar el 80% del espacio físico del archivo central mediante custodia digital certificada",
+              "Permitir la búsqueda instantánea de cualquier folio histórico por RUC o código de plan"
+          ],
+          "frustrations": [
+              "Riesgo de polillas, humedad y deterioro físico irreversible del papel en depósitos antiguos",
+              "Tardar hasta 4 días hábiles en ubicar y desarchivar un expediente requerido por la Contraloría",
+              "Alto costo presupuestal de alquiler de almacenes externos para guardar papel muerto"
+          ]
+      },
+      {
+          "id": 20,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "archetypeName": "Sra. Juana Bautista Alarcón",
+          "name": "Sra. Juana Bautista Alarcón",
+          "role": "Asistente de Mesa de Partes y Trámite Documentario (UR Piura)",
+          "demographics": "43 años, Piura; Técnica en Administración y Secretariado Ejecutivo",
+          "age": 43,
+          "techTechSavviness": "Intermedio (Mesa de partes virtual, escáneres de alta velocidad, PDF editor)",
+          "quote": "Los productores nos traen tomos empastados de 800 hojas. Foliar y escanear todo eso con una sola máquina nos toma jornadas enteras.",
+          "bio": "Recibe los expedientes de las cooperativas bananeras y algodoneras de Piura y Tumbes. Realiza la foliación de entrada y la verificación de firmas originales.",
+          "goals": [
+              "Contar con una ventanilla virtual interoperable donde los anexos se carguen digitalmente",
+              "Automatizar la foliación electrónica con código QR inmutable desde el momento de recepción",
+              "Brindar una atención en ventanilla rápida y sin colas en días de cierre de convocatorias"
+          ],
+          "frustrations": [
+              "Fatiga muscular por sellar y foliar manualmente miles de páginas al día",
+              "Atascos constantes en los escáneres por grapas olvidadas o papeles arrugados",
+              "Reclamos de usuarios en ventanilla por la demora en la emisión del cargo de recepción"
+          ]
+      },
+      {
+          "id": 21,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "archetypeName": "Ing. Oscar Morales Chumpitaz",
+          "name": "Ing. Oscar Morales Chumpitaz",
+          "role": "Evaluador Técnico de Proyectos de Adopción (Unidad de Negocios)",
+          "demographics": "37 años, Lima; Ingeniero Agrícola, 9 años formulando y evaluando planes",
+          "age": 37,
+          "techTechSavviness": "Avanzado (Manejo de visores PDF con OCR, software presupuestal S10, Excel)",
+          "quote": "Revisar un plan de negocio escaneado sin índice digital me obliga a buscar cotizaciones página por página. Se pierde demasiado tiempo.",
+          "bio": "Evalúa la viabilidad técnica y presupuestal de los planes de negocio. Contrasta planos de infraestructura de riego y cotizaciones de maquinaria.",
+          "goals": [
+              "Disponer de un visor de expediente electrónico estructurado por secciones con OCR inteligente",
+              "Hacer anotaciones y observaciones técnicas directamente sobre el documento digital compartido",
+              "Disminuir el ciclo de evaluación técnica de 15 días a 5 días hábiles por expediente"
+          ],
+          "frustrations": [
+              "Archivos PDF escaneados con hojas giradas, borrosas o con texto no seleccionable",
+              "Tener que descargar archivos gigantescos de más de 250 MB que saturan el ancho de banda",
+              "Falta de una herramienta para comparar automáticamente dos versiones de un mismo plan de negocio"
+          ]
+      },
+      {
+          "id": 22,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "archetypeName": "Don Teófilo Cruzado Ramos",
+          "name": "Don Teófilo Cruzado Ramos",
+          "role": "Directivo de Asociación de Productores de Granos Andinos (Carhuaz, Áncash)",
+          "demographics": "55 años, Carhuaz, Áncash; Secundaria completa, Productor de kiwicha y quinua",
+          "age": 55,
+          "techTechSavviness": "Básico (Usa celular básico para llamadas y acude a cabinas de internet con su hijo)",
+          "quote": "Gastamos más de S/. 500 solo en fotocopias, empastes y pasajes para entregar tres archivadores pesados en Lima. Eso perjudica a la cooperativa.",
+          "bio": "Presidente de una asociación comunal de 35 socios. Ha participado en tres convocatorias del Estado reuniendo costales de carpetas físicas.",
+          "goals": [
+              "Presentar la solicitud y todos los documentos desde una cabina de internet de su distrito",
+              "Ahorrar los gastos de impresión, empastado y traslados terrestres a la capital",
+              "Saber en tiempo real si su expediente fue admitido sin tener que viajar a preguntar"
+          ],
+          "frustrations": [
+              "Riesgo de que los archivadores físicos se mojen o dañen en la bodega del bus interprovincial",
+              "Que le rechacen el expediente en ventanilla porque faltó foliar una sola página de un anexo",
+              "Tener que pagar favores a tramitadores para que revisen si el expediente sigue en trámite"
+          ]
+      },
+      {
+          "id": 23,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "archetypeName": "Abog. Gustavo Prado Reátegui",
+          "name": "Abog. Gustavo Prado Reátegui",
+          "role": "Auditor de Cumplimiento Normativo y Archivos (Control Institucional)",
+          "demographics": "46 años, Lima; Abogado especialista en Derecho Informático y Cero Papel",
+          "age": 46,
+          "techTechSavviness": "Avanzado (Normas ISO 27001, Ley de Gobierno Digital, firma digital con DNIe)",
+          "quote": "En el papel físico es imposible saber quién arrancó una hoja o cambió una fecha. El expediente electrónico garantiza inmutabilidad y certeza legal.",
+          "bio": "Audita los procedimientos administrativos sancionadores y la custodia documental en el marco del Sistema Nacional de Archivos y la PCM.",
+          "goals": [
+              "Asegurar que el 100% de los expedientes cuenten con firma digital bajo la infraestructura oficial PKI",
+              "Establecer la línea de tiempo inalterable (logs de auditoría) en cada actuación administrativa",
+              "Garantizar la interoperabilidad documental con el Poder Judicial y la Contraloría"
+          ],
+          "frustrations": [
+              "Foliaciones dobles corregidas con típex blanco en expedientes antiguos bajo auditoría",
+              "Pérdida de comprobantes originales durante el traslado físico entre gerencias",
+              "Resistencia al cambio de funcionarios que insisten en imprimir documentos firmados digitalmente"
+          ]
+      },
+      {
+          "id": 24,
+          "projectId": 4,
+          "projectCode": "PIIP-2026-IN0004",
+          "archetypeName": "Ing. Renzo Alarcón Zúñiga",
+          "name": "Ing. Renzo Alarcón Zúñiga",
+          "role": "Arquitecto de Transformación Digital y Cloud ECM (Oficina de TI)",
+          "demographics": "35 años, Lima; Ingeniero de Sistemas, certificado en AWS Cloud y Alfresco ECM",
+          "age": 35,
+          "techTechSavviness": "Avanzado (Desarrollo cloud, contenedores Docker, microservicios, seguridad API)",
+          "quote": "Digitalizar no es escanear papeles y guardarlos en un Google Drive; es rediseñar los flujos de trabajo con metadatos estructurados y firma digital.",
+          "bio": "Lidera la implementación de la arquitectura de gestión documental digital de AGROIDEAS. Diseña los repositorios en la nube del Estado peruano.",
+          "goals": [
+              "Desplegar un gestor documental nativo cloud con capacidad para 50 millones de folios seguros",
+              "Integrar el expediente digital con la PIDE (Plataforma de Interoperabilidad del Estado)",
+              "Lograr que el 90% de los trámites se inicien y culminen de forma digital sin una sola hoja física"
+          ],
+          "frustrations": [
+              "Discos de red locales saturados de copias de seguridad no estructuradas",
+              "Limitaciones de ancho de banda en agencias zonales para sincronizar archivos pesados",
+              "Falta de capacitación en los equipos administrativos sobre buenas prácticas de nombramiento digital"
+          ]
+      },
+      {
+          "id": 25,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "archetypeName": "Econ. Julio César Barreto",
+          "name": "Econ. Julio César Barreto",
+          "role": "Analista de Riesgo Operativo y Metas Físicas (UPP Sede Central)",
+          "demographics": "40 años, Lima; Economista con Maestría en Gestión del Riesgo y Finanzas Públicas",
+          "age": 40,
+          "techTechSavviness": "Avanzado (Modelos econométricos, R, Python, tableros de semaforización)",
+          "quote": "Nos enteramos de que una cooperativa cayó en insolvencia cuando el banco ya les cerró las cuentas. Necesitamos predecir el riesgo meses antes.",
+          "bio": "Elabora las matrices de riesgo del portafolio institucional de incentivos. Diseña indicadores predictivos de estrés financiero y climático.",
+          "goals": [
+              "Desplegar un modelo predictivo que identifique planes de negocio en riesgo antes de los desembolsos",
+              "Cruzar los datos de ejecución con alertas climáticas de SENAMHI y reportes de la SBS",
+              "Emitir alertas tempranas automáticas dirigidas a los comités de gerencia de las unidades de línea"
+          ],
+          "frustrations": [
+              "Tener que enterarse de las paralizaciones de proyectos por noticias en medios regionales",
+              "Datos de avance físico desactualizados que impiden alimentar los modelos estadísticos",
+              "Falta de protocolos estandarizados de rescate o reestructuración técnica para convenios en crisis"
+          ]
+      },
+      {
+          "id": 26,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "archetypeName": "Ing. Mónica Delgado Rivas",
+          "name": "Ing. Mónica Delgado Rivas",
+          "role": "Coordinadora de Acompañamiento Técnico Zonal (UR San Martín)",
+          "demographics": "44 años, Tarapoto, San Martín; Ingeniera Agrónoma con maestría en Extensión Rural",
+          "age": 44,
+          "techTechSavviness": "Intermedio (Manejo de tablets de campo, WhatsApp empresarial, GPS)",
+          "quote": "Si una plaga ataca o el río rompe la carretera, los agricultores deben tener una forma inmediata de alertarnos para activar el plan de contingencia.",
+          "bio": "Supervisa el avance de más de 40 planes de negocio de cacao, café y palma aceitera en la selva alta. Coordina brigadas de emergencia agronómica.",
+          "goals": [
+              "Disponer de un canal móvil de reporte urgente de eventos adversos (plagas, inundaciones, desvíos)",
+              "Acelerar las adendas de prórroga justificadas por eventos de fuerza mayor comprobados",
+              "Evitar que proyectos con gran potencial productivo queden truncos por falta de auxilio oportuno"
+          ],
+          "frustrations": [
+              "Lentitud de los trámites en sede central para aprobar modificaciones al cronograma de metas",
+              "Productores que callan los problemas por miedo a que el programa les retire el incentivo",
+              "Falta de recursos logísticos para acudir inmediatamente a inspeccionar zonas de desastre"
+          ]
+      },
+      {
+          "id": 27,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "archetypeName": "Don Segundo Huamán Díaz",
+          "name": "Don Segundo Huamán Díaz",
+          "role": "Presidente de Cooperativa Cacaotera en Cuenca Inundable (Tocache, San Martín)",
+          "demographics": "52 años, Tocache; Productor cacaotero con 25 años en la cuenca del Huallaga",
+          "age": 52,
+          "techTechSavviness": "Básico (Manejo de celular básico y WhatsApp en el centro poblado)",
+          "quote": "El río se llevó los secadores solares de cacao que compramos con el incentivo. Avisamos por carta pero la respuesta demoró tres meses.",
+          "bio": "Líder de una cooperativa de 60 agricultores ex cacaoteros tradicionales. Gestiona un plan de negocio de adopción de secadores y módulos de fermentación.",
+          "goals": [
+              "Contar con un botón de alerta de emergencia agroclimática que geolocalice el daño al instante",
+              "Recibir asesoría técnica especializada para reubicar la infraestructura en zonas seguras",
+              "Evitar penalidades o resoluciones de contrato cuando los daños son provocados por el clima"
+          ],
+          "frustrations": [
+              "Pérdida de la inversión asociativa por desastres naturales imprevistos",
+              "Exigencia de trámites formales notariales en momentos de extrema emergencia comunitaria",
+              "Desánimo de los socios que amenazan con abandonar el proyecto si el Estado no responde"
+          ]
+      },
+      {
+          "id": 28,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "archetypeName": "Lic. Ricardo Santillán Vega",
+          "name": "Lic. Ricardo Santillán Vega",
+          "role": "Especialista en Adquisiciones de Maquinaria y Equipos (Unidad de Negocios)",
+          "demographics": "39 años, Lima; Licenciado en Administración y especialista en Compras Públicas",
+          "age": 39,
+          "techTechSavviness": "Avanzado (Monitoreo de mercados, cotizaciones internacionales, comercio exterior)",
+          "quote": "El mayor riesgo es que el proveedor del tractor quiebre o demore la importación 8 meses tras recibir el adelanto de la cooperativa.",
+          "bio": "Evalúa y supervisa los procesos de compra de maquinaria y bienes de capital de las organizaciones beneficiarias. Analiza solvencia de proveedores.",
+          "goals": [
+              "Crear un registro de proveedores homologados con semáforo de cumplimiento comercial",
+              "Monitorear las fluctuaciones del tipo de cambio del dólar y su impacto en las cotizaciones",
+              "Implementar contratos estandarizados con pólizas de caución que protejan los fondos del plan"
+          ],
+          "frustrations": [
+              "Proveedores informales que entregan equipos agrícolas sin servicio técnico ni repuestos",
+              "Conflictos entre directivos y casas comerciales que derivan en arbitrajes que duran años",
+              "Falta de alertas tempranas sobre empresas proveedoras con cobranza coactiva en SUNAT"
+          ]
+      },
+      {
+          "id": 29,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "archetypeName": "Ing. David Holguín Meier",
+          "name": "Ing. David Holguín Meier",
+          "role": "Gerente de Empresa Proveedora de Sistemas de Riego Tecnificado",
+          "demographics": "47 años, Lima; Ingeniero Mecánico y Empresario Agrícola",
+          "age": 47,
+          "techTechSavviness": "Avanzado (Importaciones, software de diseño hidráulico WaterCAD, ERP)",
+          "quote": "A veces importamos las electrobombas pero la cooperativa no tiene listo el reservorio porque se demoró su trámite en el ministerio.",
+          "bio": "Suministra equipos de riego por goteo y aspersión a cooperativas agrarias en la costa y sierra. Brinda capacitación técnica en instalación.",
+          "goals": [
+              "Sincronizar el calendario de importación y entrega con los desembolsos efectivos de AGROIDEAS",
+              "Contar con actas de recepción técnica digitales firmadas in situ para liberar pagos en 48 horas",
+              "Afianzar relaciones comerciales transparentes con las organizaciones de productores"
+          ],
+          "frustrations": [
+              "Capital inmovilizado en almacenes por retrasos burocráticos de los comités de recepción",
+              "Falta de previsibilidad en las fechas de pago que afecta el flujo de caja de la empresa",
+              "Cambios imprevistos de especificaciones técnicas a mitad de la ejecución de la obra"
+          ]
+      },
+      {
+          "id": 30,
+          "projectId": 5,
+          "projectCode": "PIIP-2026-IN0005",
+          "archetypeName": "Dra. María Elena Bustamante",
+          "name": "Dra. María Elena Bustamante",
+          "role": "Directora de la Unidad de Seguimiento y Evaluación - USE (Sede Central)",
+          "demographics": "48 años, Lima; Economista con Doctorado en Políticas Públicas",
+          "age": 48,
+          "techTechSavviness": "Avanzado (Gestión estratégica de datos, dashboards ejecutivos, analítica de impacto)",
+          "quote": "Un buen sistema de alerta temprana no solo evita que los proyectos fracasen, sino que protege la reputación institucional de todo el programa.",
+          "bio": "Lidera la formulación y seguimiento del marco de resultados de AGROIDEAS. Rinde cuentas periódicamente ante el Despacho Ministerial y el MEF.",
+          "goals": [
+              "Contar con un panel de mando integral que muestre el mapa de calor de riesgos a nivel nacional",
+              "Demostrar ante el MEF la eficiencia del gasto público mediante la reducción de proyectos fallidos",
+              "Institucionalizar la cultura de prevención de riesgos en todas las unidades orgánicas del programa"
+          ],
+          "frustrations": [
+              "Recibir reportes de situación cuando los problemas ya se convirtieron en escándalos públicos",
+              "Falta de interoperabilidad entre los sistemas de monitoreo técnico y las plataformas contables",
+              "Resistencia interna a clasificar proyectos con semáforo rojo por temor a sanciones administrativas"
+          ]
+      },
+      {
+          "id": 31,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "archetypeName": "Lic. Álvaro Paredes Quiroga",
+          "name": "Lic. Álvaro Paredes Quiroga",
+          "role": "Especialista de Fiscalización Posterior y Calidad (UPP)",
+          "demographics": "39 años, Lima; Licenciado en Administración con especialización en Auditoría Forense",
+          "age": 39,
+          "techTechSavviness": "Avanzado (Minería de datos, software analítico antifraude, cruces masivos)",
+          "quote": "Revisar el 100% de los expedientes al azar es ineficiente y desgastante. La fiscalización debe dirigirse donde el algoritmo señale anomalías.",
+          "bio": "Responsable de ejecutar la fiscalización posterior según la Ley 27444. Aplica cruces masivos contra RENIEC, SUNAT y SUNARP.",
+          "goals": [
+              "Aprobar una directiva institucional de fiscalización posterior con enfoque de gestión de riesgos",
+              "Detectar redes de malos consultores que presentan padrones de socios falsificados",
+              "Automatizar el cálculo de scoring de riesgo para seleccionar muestras inteligentes de control"
+          ],
+          "frustrations": [
+              "Perder semanas revisando expedientes intachables mientras casos de fraude pasan inadvertidos",
+              "Falta de presupuesto para comisiones de campo sorpresivas en zonas remotas",
+              "Carencia de herramientas automatizadas para cotejar identidades de directivos inhabilitados"
+          ]
+      },
+      {
+          "id": 32,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "archetypeName": "Ing. Néstor Ccolque Huarhua",
+          "name": "Ing. Néstor Ccolque Huarhua",
+          "role": "Coordinador de Inspecciones Técnicas y Fiscalización (UR Junín)",
+          "demographics": "43 años, Huancayo; Ingeniero Agrónomo con experiencia en control interno",
+          "age": 43,
+          "techTechSavviness": "Intermedio (Cámara georreferenciada, tablet, verificación de linderos)",
+          "quote": "La fiscalización posterior en el campo no debe ser intimidante; debe orientar a los directivos para que corrijan sus libros contables.",
+          "bio": "Ejecuta las visitas in situ de fiscalización posterior en Junín, Pasco y Huancavelica. Verifica la existencia de parcelas y maquinaria cofinanciada.",
+          "goals": [
+              "Contar con una lista de verificación transparente conocida de antemano por las organizaciones",
+              "Cerrar las actas de fiscalización in situ en formato digital con firma del presidente comunal",
+              "Diferenciar entre errores formales de aprendizaje contable y actos con dolo o simulación"
+          ],
+          "frustrations": [
+              "El temor de los comuneros que ocultan información creyendo que la fiscalización busca despojarlos de sus bienes",
+              "Productores que no conservan los comprobantes de pago de combustible de hace dos años",
+              "Requerimientos de información emitidos desde Lima con plazos perentorios imposibles de cumplir en el campo"
+          ]
+      },
+      {
+          "id": 33,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "archetypeName": "Don Daniel Paucarcaja",
+          "name": "Don Daniel Paucarcaja",
+          "role": "Dirigente de Cooperativa Fiscalizada Muestralmente (Chanchamayo)",
+          "demographics": "51 años, Chanchamayo; Productor de cítricos y jengibre orgánico",
+          "age": 51,
+          "techTechSavviness": "Básico (Manejo de llamadas y coordinación verbal con el contador comunal)",
+          "quote": "Nosotros no tenemos nada que esconder, pero nos piden facturas electrónicas impresas con sellos que la misma SUNAT ya no emite en papel.",
+          "bio": "Presidente de una cooperativa de 40 productores de kion (jengibre) que fue seleccionada aleatoriamente en la muestra anual de fiscalización posterior.",
+          "goals": [
+              "Demostrar que los fondos del incentivo se invirtieron al 100% en la planta de lavado y empaque",
+              "Obtener el informe de conformidad de fiscalización posterior para quedar habilitados a futuros fondos",
+              "Capacitar al tesorero comunal en la custodia de documentos según los estándares del Estado"
+          ],
+          "frustrations": [
+              "Costo imprevisto de contratar a un contador privado para armar la carpeta requerida por los inspectores",
+              "Pérdida de jornadas de trabajo en el campo para atender a las comisiones fiscalizadoras",
+              "Rumores en la asamblea comunal de que los directivos cometieron faltas graves cuando se trata de una fiscalización ordinaria"
+          ]
+      },
+      {
+          "id": 34,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "archetypeName": "Dr. Luis Alberto Noriega",
+          "name": "Dr. Luis Alberto Noriega",
+          "role": "Abogado Instructor de Procedimientos Sancionadores (UAJ Sede Lima)",
+          "demographics": "45 años, Lima; Abogado especialista en Procedimiento Administrativo Sancionador",
+          "age": 45,
+          "techTechSavviness": "Intermedio (Manejo de expedientes sancionadores digitales, jurisprudencia del TCA)",
+          "quote": "Si el acta de fiscalización no garantiza el debido proceso y la tipicidad, los sancionados van al Poder Judicial y el Estado pierde los juicios.",
+          "bio": "Instruye y resuelve los expedientes de presunta infracción detectados en la fiscalización posterior. Determina sanciones de inhabilitación o devolución de fondos.",
+          "goals": [
+              "Contar con actas de fiscalización con pruebas sólidas, fotografías con metadatos y cadena de custodia",
+              "Aplicar una tabla de graduación de sanciones proporcional al daño real ocasionado",
+              "Evitar la prescripción o caducidad de los procedimientos sancionadores mediante alertas de plazos"
+          ],
+          "frustrations": [
+              "Informes de fiscalización con defectos formales que vulneran el derecho de defensa del administrado",
+              "Dificultad para recuperar los montos cofinanciados cuando la cooperativa ya no tiene patrimonio ejecutable",
+              "Falta de tipificación clara de faltas leves, graves y muy graves en la normativa actual"
+          ]
+      },
+      {
+          "id": 35,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "archetypeName": "Mag. César Samanez Flores",
+          "name": "Mag. César Samanez Flores",
+          "role": "Auditor de Cumplimiento de Metas y Compromisos Ex Post (Control Interno)",
+          "demographics": "49 años, Lima; Contador Público y Magíster en Auditoría Gubernamental",
+          "age": 49,
+          "techTechSavviness": "Avanzado (Auditoría de desempeño, seguimiento de sostenibilidad de inversiones)",
+          "quote": "El objetivo de la fiscalización posterior no es sancionar, sino comprobar si los incentivos lograron que la cooperativa sea autosostenible tres años después.",
+          "bio": "Realiza evaluaciones de sostenibilidad ex post a planes de negocio que culminaron sus desembolsos hace 1, 2 o 3 años. Verifica el uso continuado de la tecnología.",
+          "goals": [
+              "Constatar que la maquinaria cofinanciada continúe operativa y en propiedad de la organización",
+              "Medir el incremento en los ingresos netos de las familias beneficiarias a mediano plazo",
+              "Identificar buenas prácticas de gestión asociativa para replicarlas en futuros proyectos"
+          ],
+          "frustrations": [
+              "Cooperativas que se disuelven poco después de recibir el último desembolso del incentivo",
+              "Maquinaria moderna abandonada o subutilizada por falta de técnicos de mantenimiento en la zona",
+              "Dificultad para contactar a directivos que ya culminaron su periodo y no dejaron libros de actas"
+          ]
+      },
+      {
+          "id": 36,
+          "projectId": 6,
+          "projectCode": "PIIP-2026-IN0006",
+          "archetypeName": "Ing. Claudia Méndez Villegas",
+          "name": "Ing. Claudia Méndez Villegas",
+          "role": "Científica de Datos y Analista de Inteligencia Antifraude (UPP)",
+          "demographics": "31 años, Lima; Ingeniera Estadística e Informática, especialista en Machine Learning",
+          "age": 31,
+          "techTechSavviness": "Avanzado (Python, Neo4j para grafos de relaciones, algoritmos de clustering)",
+          "quote": "El análisis de redes nos muestra patrones de consultores que copian planes idénticos para cooperativas fantasma en distintas provincias.",
+          "bio": "Construye algoritmos de detección de colusión y plagio en las solicitudes de planes de negocio. Analiza grafos de relaciones entre directivos y proveedores.",
+          "goals": [
+              "Desplegar un motor de reglas antifraude en el SEL v2.0 que alerte similitudes textuales superiores al 70%",
+              "Cruzar los padrones de socios postulantes contra las planillas de trabajadores públicos para evitar incompatibilidades",
+              "Automatizar el cálculo de la probabilidad de riesgo para la selección de la muestra de fiscalización"
+          ],
+          "frustrations": [
+              "Bases de datos históricas no estructuradas con registros en texto libre difíciles de minar",
+              "Falta de acceso en tiempo real a las bases de datos de antecedentes penales e inteligencia financiera",
+              "Escepticismo de algunos evaluadores tradicionales que desconfían de los algoritmos de analítica"
+          ]
+      },
+      {
+          "id": 37,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "archetypeName": "Ing. José Fernando Barturen Torres",
+          "name": "Ing. José Fernando Barturen Torres",
+          "role": "Coordinador Técnico Regional CTR (Sede Central Lima)",
+          "demographics": "46 años, Lima; Ingeniero Agrónomo con 15 años liderando operaciones regionales",
+          "age": 46,
+          "techTechSavviness": "Avanzado (Sistemas GIS, teledetección satelital, gestión de expedientes territoriales)",
+          "quote": "La georreferenciación satelital obligatoria es el único filtro efectivo para eliminar la duplicidad de parcelas y evitar que se aprueben proyectos superpuestos.",
+          "bio": "Supervisa los dictámenes de elegibilidad técnica en las 16 regiones. Diseña el protocolo de inspección de campo mediante herramientas geodésicas modernas.",
+          "goals": [
+              "Implementar el Sistema Digital de Elegibilidad con Georreferenciación (SDEG) en todo el país",
+              "Eliminar al 100% las solicitudes con parcelas duplicadas o ubicadas en áreas naturales protegidas",
+              "Agilizar la emisión del certificado de elegibilidad técnica de 30 días a 7 días hábiles"
+          ],
+          "frustrations": [
+              "Planos dibujados a mano alzada sin coordenadas UTM válidas que ingresan por mesa de partes",
+              "Expedientes que aprueban elegibilidad pero que al momento de la siembra carecen de acceso a fuentes de agua",
+              "Falta de equipos móviles adecuados en las unidades desconcentradas para capturar polígonos GPS"
+          ]
+      },
+      {
+          "id": 38,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "archetypeName": "Ing. Carmen Salazar Huanca",
+          "name": "Ing. Carmen Salazar Huanca",
+          "role": "Evaluadora Agrónoma de Campo (Unidad Regional Áncash)",
+          "demographics": "38 años, Huaraz, Áncash; Ingeniera Agrónoma, 10 años evaluando parcelas andinas",
+          "age": 38,
+          "techTechSavviness": "Intermedio (Manejo de GPS Garmin, aplicaciones de geolocalización, QGIS básico)",
+          "quote": "Caminar 4 horas cerro arriba bajo la lluvia para verificar un lindero y que el celular se quede sin batería es muy duro. Necesitamos una app offline.",
+          "bio": "Recorre las comunidades del Callejón de Huaylas y Conchucos evaluando solicitudes de elegibilidad. Mide áreas, pendientes y analiza la aptitud de los suelos.",
+          "goals": [
+              "Disponer de una app móvil que capture el polígono de la parcela sin necesidad de conexión a internet",
+              "Subir fotos de las parcelas con marca de agua inalterable de fecha, hora y coordenadas GPS",
+              "Sincronizar automáticamente los datos con el servidor central al llegar al hotel en la ciudad"
+          ],
+          "frustrations": [
+              "Llenar actas de campo en papel bajo la lluvia que luego se rompen o manchan con barro",
+              "Tener que dedicar las noches a tipear coordenadas manualmente en hojas de cálculo",
+              "Discusiones sobre linderos entre comuneros cuando no existen hitos catastrales visibles"
+          ]
+      },
+      {
+          "id": 39,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "archetypeName": "Don Braulio Condori Mayta",
+          "name": "Don Braulio Condori Mayta",
+          "role": "Productor Agrario con Parcelas Andinas Dispersas (Panao, Huánuco)",
+          "demographics": "57 años, Huánuco; Productor de papa y cereales andinos, Quechua / Español",
+          "age": 57,
+          "techTechSavviness": "Básico (Manejo de teléfono celular sencillo para coordinaciones familiares)",
+          "quote": "Tengo tres parcelas chiquitas: una arriba para papa nativa, otra en la falda para maíz y otra abajo para habas. Quiero que el sistema registre las tres.",
+          "bio": "Agricultor tradicional que practica el control vertical de pisos ecológicos para mitigar riesgos climáticos. Postula con su asociación al incentivo tecnológico.",
+          "goals": [
+              "Que AGROIDEAS reconozca sus parcelas discontinuas como una sola unidad productiva familiar",
+              "Obtener el certificado de elegibilidad sin que le exijan un plano catastral costoso de ingeniero privado",
+              "Acceder a semillas de calidad y motocultores para tecnificar sus pequeñas parcelas de altura"
+          ],
+          "frustrations": [
+              "Evaluadores que quieren descalificarlo porque sus terrenos no forman un solo predio continuo",
+              "Cobro excesivo de técnicos privados que cobran hasta S/. 2,000 por levantar planos topográficos",
+              "Demora de varios meses para saber si la visita de campo resultó aprobada o con observaciones"
+          ]
+      },
+      {
+          "id": 40,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "archetypeName": "Ing. Hernán Vidal Obregón",
+          "name": "Ing. Hernán Vidal Obregón",
+          "role": "Especialista en Teledetección y GIS (Oficina de TI / CTR)",
+          "demographics": "33 años, Lima; Geógrafo e Ingeniero de Sistemas, especialista en Imágenes Satelitales",
+          "age": 33,
+          "techTechSavviness": "Avanzado (Google Earth Engine, ArcGIS Pro, imágenes Sentinel-2 y PlanetScope)",
+          "quote": "Con imágenes satelitales multiespectrales podemos validar el índice de vigor vegetal NDVI y comprobar si la parcela realmente estuvo cultivada los últimos tres años.",
+          "bio": "Diseña las capas espaciales del geovisor institucional de AGROIDEAS. Desarrolla algoritmos de clasificación de cobertura agrícola mediante satélite.",
+          "goals": [
+              "Integrar el catálogo de imágenes satelitales gratuitas Copernicus para validación remota de cultivos",
+              "Automatizar el cruce de polígonos postulantes contra las capas de áreas naturales protegidas de SERNANP",
+              "Capacitar a los evaluadores zonales en la captura de polígonos vectoriales estandarizados WGS84"
+          ],
+          "frustrations": [
+              "Archivos Shapefile o KML enviados por consultores con coordenadas mal proyectadas en el océano",
+              "Lentitud de los servidores para procesar capas vectoriales pesadas en horas punta",
+              "Falta de catastro rural oficial actualizado en la mayoría de comunidades campesinas del país"
+          ]
+      },
+      {
+          "id": 41,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "archetypeName": "Sra. Gregoria Mendoza Quispe",
+          "name": "Sra. Gregoria Mendoza Quispe",
+          "role": "Líder de Comité de Productoras de Berries en Terrazas (Caraz, Áncash)",
+          "demographics": "42 años, Caraz; Técnica agropecuaria y productora de arándanos y fresas",
+          "age": 42,
+          "techTechSavviness": "Intermedio (Manejo de smartphone, redes sociales para venta y sistemas de riego automatizado)",
+          "quote": "Nuestros invernaderos están en terrazas andinas de alta densidad. El sistema no debe medir solo hectáreas de tierra, sino tecnología y rendimiento.",
+          "bio": "Lidera un comité de 18 mujeres productoras de berries de exportación. Producen fruta de alto valor comercial en pequeñas superficies tecnificadas.",
+          "goals": [
+              "Demostrar que su pequeña superficie tecnificada es más rentable que un fundo extenso tradicional",
+              "Acreditar la elegibilidad de sus parcelas familiares sin depender de la titularidad de sus cónyuges",
+              "Acceder al incentivo para adquirir una cámara de frío solar para el acopio de la fruta fresca"
+          ],
+          "frustrations": [
+              "Criterios de evaluación antiguos que exigen un número mínimo de hectáreas diseñado para cultivos extensivos",
+              "Dificultades para registrar terrazas agrícolas andinas en polígonos satelitales estándar",
+              "Falta de asesoría técnica previa para subsanar observaciones de delimitación predial"
+          ]
+      },
+      {
+          "id": 42,
+          "projectId": 7,
+          "projectCode": "PIIP-2026-IN0007",
+          "archetypeName": "Ing. Samuel Rivera Zevallos",
+          "name": "Ing. Samuel Rivera Zevallos",
+          "role": "Verificador Técnico Hidrológico Zonal (UR Cusco - Valle Sagrado)",
+          "demographics": "47 años, Cusco; Ingeniero Agrónomo especialista en Recursos Hídricos y Riego",
+          "age": 47,
+          "techTechSavviness": "Intermedio (Manejo de aforadores de caudal, GPS submétrico, cartas del ANA)",
+          "quote": "Lo primero que verifico antes de ver la tierra es la fuente de agua. Si no hay licencia del ANA o caudal garantizado en estiaje, el plan de negocio es inviable.",
+          "bio": "Inspecciona las tomas de captación, manantiales comunales y canales de regadío de los proyectos postulantes. Evalúa la disponibilidad hídrica en época seca.",
+          "goals": [
+              "Interoperar el sistema de elegibilidad con la base de licencias de uso de agua de la Autoridad Nacional del Agua",
+              "Georreferenciar las fuentes hídricas y canales principales en la ficha digital de inspección",
+              "Prevenir conflictos comunales por el agua antes de que se apruebe el cofinanciamiento del plan"
+          ],
+          "frustrations": [
+              "Organizaciones que aseguran tener agua suficiente pero cuyo caudal disminuye drásticamente en agosto",
+              "Comunidades que usan canales rústicos de tierra donde se pierde más del 60% del agua por infiltración",
+              "Demoras de la ANA para emitir las resoluciones de asignación de agua de riego"
+          ]
+      },
+      {
+          "id": 43,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "archetypeName": "Ing. Carlos Enrique Bazán",
+          "name": "Ing. Carlos Enrique Bazán",
+          "role": "Arquitecto de Software y Sistemas Distribuidos (Oficina de TI)",
+          "demographics": "41 años, Lima; Ingeniero de Software, especialista en Cloud Native y Kubernetes",
+          "age": 41,
+          "techTechSavviness": "Avanzado (Arquitectura de microservicios, bases distribuidas, DevOps, seguridad API)",
+          "quote": "El SEL v1 es un monolito antiguo en un servidor local que se satura con 50 usuarios concurrentes. Debemos migrar a microservicios elásticos en la nube.",
+          "bio": "Lidera la ingeniería del nuevo SEL v2.0. Diseña una plataforma escalable capaz de soportar picos de más de 5,000 postulantes concurrentes sin caídas.",
+          "goals": [
+              "Desplegar la arquitectura SEL v2.0 en la nube del Estado con 99.9% de disponibilidad garantizada",
+              "Implementar autoguardado continuo (autosave) para que ningún usuario pierda datos al llenar formularios",
+              "Reducir los tiempos de carga de pantalla a menos de 1.5 segundos en conexiones de internet móvil"
+          ],
+          "frustrations": [
+              "Caídas del servidor antiguo durante las horas de cierre de convocatorias nacionales",
+              "Código heredado sin pruebas unitarias que hace muy riesgoso implementar cambios rápidos",
+              "Trámites largos y engorrosos para contratar servicios de infraestructura cloud mediante licitación pública"
+          ]
+      },
+      {
+          "id": 44,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "archetypeName": "Lic. Gabriel Soto Benavides",
+          "name": "Lic. Gabriel Soto Benavides",
+          "role": "Líder de Mesa de Ayuda y Soporte a Usuarios Externos (OTI)",
+          "demographics": "33 años, Lima; Licenciado en Sistemas e Informática, especialista en UX y Atención al Usuario",
+          "age": 33,
+          "techTechSavviness": "Avanzado (Gestión de tickets en Jira/Zendesk, soporte remoto, análisis de incidentes)",
+          "quote": "El 80% de las quejas son de productores que no pueden subir sus archivos porque pesan 21 MB y el límite es 20. El sistema debe comprimir automáticamente.",
+          "bio": "Coordina el equipo de soporte que atiende a los dirigentes y consultores postulantes por teléfono, correo institucional y chat de WhatsApp.",
+          "goals": [
+              "Integrar un módulo de compresión automática de PDFs e imágenes dentro del propio navegador",
+              "Implementar autenticación única mediante Clave Única de la PCM / DNI electrónico",
+              "Disponer de un chatbot interactivo que resuelva las dudas frecuentes de navegación 24/7"
+          ],
+          "frustrations": [
+              "Llamadas de productores angustiados a la medianoche del día de cierre porque el formulario no envía",
+              "Mensajes de error crípticos del sistema que confunden al usuario en vez de indicarle qué campo corregir",
+              "Sobrecarga del personal de soporte atendiendo reseteos manuales de contraseñas olvidadas"
+          ]
+      },
+      {
+          "id": 45,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "archetypeName": "Don Faustino Rimarachín",
+          "name": "Don Faustino Rimarachín",
+          "role": "Directivo de Asociación Arrocera Concurrente en Ventana de Cierre (Ferreñafe)",
+          "demographics": "53 años, Ferreñafe, Lambayeque; Secundaria completa, Productor arrocero",
+          "age": 53,
+          "techTechSavviness": "Básico (Paga a un locutorio o cabina de internet para que un técnico le suba los archivos)",
+          "quote": "Llevo 4 horas en la cabina intentando enviar la postulación y cada vez que doy clic la página se queda en blanco. No es justo perder por la máquina.",
+          "bio": "Presidente de una asociación de 40 pequeños arroceros del valle de Chancay-Lambayeque. Busca acceder a una secadora de arroz para no malvender su cosecha.",
+          "goals": [
+              "Completar la postulación al incentivo sin sufrir fallas de conexión o congelamiento de pantallas",
+              "Obtener un comprobante electrónico con sello de tiempo que certifique la presentación formal de su solicitud",
+              "Llenar el formulario por partes durante la semana sin riesgo de que se borren sus avances"
+          ],
+          "frustrations": [
+              "Pérdida de la postulación anual por caídas técnicas del servidor en el último día de plazo",
+              "Pagar S/. 15 la hora en cabinas privadas de internet que no logran subir los archivos pesados",
+              "Sensación de frustración e impotencia frente a plataformas digitales que no contemplan la realidad rural"
+          ]
+      },
+      {
+          "id": 46,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "archetypeName": "Ing. Lorena Valdivia Ponce",
+          "name": "Ing. Lorena Valdivia Ponce",
+          "role": "Evaluadora de Negocios en Convocatorias Masivas (Sede Central)",
+          "demographics": "36 años, Lima; Economista Agraria con especialización en Finanzas",
+          "age": 36,
+          "techTechSavviness": "Avanzado (Manejo de ERPs, análisis financiero en Excel, plataformas web evaluativas)",
+          "quote": "Tengo que calificar 50 planes en dos semanas y el sistema demora 40 segundos en abrir cada anexo. La lentitud del software me agota.",
+          "bio": "Evalúa los planes de negocio durante las convocatorias nacionales masivas. Revisa matrices de ponderación, flujos de caja y cálculos de rentabilidad TIR/VAN.",
+          "goals": [
+              "Contar con una interfaz moderna y ultrarrápida tipo SPA (Single Page Application)",
+              "Visualizar documentos en vista previa inmediata sin necesidad de descargarlos a su computadora",
+              "Guardar borradores de observaciones técnicas de forma automática sin riesgo de cierre de sesión inesperado"
+          ],
+          "frustrations": [
+              "Sesiones de trabajo que expiran tras 10 minutos de inactividad borrando comentarios largos no guardados",
+              "Tener que abrir múltiples pestañas del navegador que saturan la memoria RAM de su máquina",
+              "Falta de filtros avanzados para ordenar expedientes por región, cadena productiva o estado de avance"
+          ]
+      },
+      {
+          "id": 47,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "archetypeName": "Ing. Sergio Poma Gamarra",
+          "name": "Ing. Sergio Poma Gamarra",
+          "role": "Oficial de Seguridad de la Información CISO (AGROIDEAS)",
+          "demographics": "44 años, Lima; Ingeniero Informático, certificado CISM y CISSP",
+          "age": 44,
+          "techTechSavviness": "Avanzado (Seguridad perimetral, ethical hacking, cifrado de datos, ISO 27001)",
+          "quote": "La modernización a la nube debe blindar la plataforma contra ciberataques y garantizar la estricta confidencialidad de los datos de los agricultores.",
+          "bio": "Responsable de la seguridad digital de la infraestructura de AGROIDEAS. Audita vulnerabilidades OWASP y gestiona políticas de cifrado y contingencias.",
+          "goals": [
+              "Implementar autenticación multifactor (MFA/2FA) para todos los evaluadores y administradores del sistema",
+              "Asegurar el cifrado de datos en reposo y en tránsito mediante protocolos criptográficos modernos (TLS 1.3)",
+              "Superar con éxito las auditorías de seguridad digital de la Secretaría de Gobierno y Transformación Digital"
+          ],
+          "frustrations": [
+              "Usuarios que comparten contraseñas o las anotan en papeles visibles en oficinas zonales",
+              "Intentos continuos de inyección SQL y fuerza bruta provenientes de redes externas no autorizadas",
+              "Resistencia de algunos funcionarios a utilizar mecanismos de doble factor de autenticación"
+          ]
+      },
+      {
+          "id": 48,
+          "projectId": 8,
+          "projectCode": "PIIP-2026-IN0008",
+          "archetypeName": "Eco. Roberto Carranza Ugarte",
+          "name": "Eco. Roberto Carranza Ugarte",
+          "role": "Director de la Unidad de Administración (Sede Central Lima)",
+          "demographics": "52 años, Lima; Economista con Maestría en Administración y Finanzas Públicas",
+          "age": 52,
+          "techTechSavviness": "Intermedio (Gestión presupuestal, planeamiento estratégico, toma de decisiones con BI)",
+          "quote": "Invertir en la nueva arquitectura del SEL v2.0 no es un gasto en servidores; es la única garantía de que los incentivos lleguen a tiempo al campo.",
+          "bio": "Supervisa la ejecución de los recursos operativos de la entidad. Lidera el Comité de Gobierno y Transformación Digital de AGROIDEAS.",
+          "goals": [
+              "Lograr la migración integral al SEL v2.0 dentro del cronograma y presupuesto asignado",
+              "Reducir en un 40% los costos recurrentes de mantenimiento de servidores físicos obsoletos",
+              "Posicionar a AGROIDEAS como un referente de modernización digital en el sector agropecuario peruano"
+          ],
+          "frustrations": [
+              "Quejas de los gremios agrarios nacionales ante la prensa por fallas en las plataformas virtuales del ministerio",
+              "Trámites lentos en la compra de servicios de nube debido a observaciones del sistema de contrataciones",
+              "Brechas presupuestales para financiar licencias de software y capacitación continua del equipo de TI"
+          ]
+      },
+      {
+          "id": 49,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "archetypeName": "Lic. Mariana Gómez Tello",
+          "name": "Lic. Mariana Gómez Tello",
+          "role": "Especialista de Recursos Humanos y Control de Asistencia (Sede Central)",
+          "demographics": "37 años, Lima; Licenciada en Relaciones Industriales y Gestión del Talento",
+          "age": 37,
+          "techTechSavviness": "Intermedio (Manejo de sistemas de planillas, Excel avanzado, legislación laboral pública)",
+          "quote": "Controlar las vacaciones de más de 350 trabajadores en 16 regiones con papeletas en papel y un Excel gigante es una fuente diaria de errores.",
+          "bio": "Administra el rol vacacional institucional, calcula días truncos y atiende solicitudes bajo los regímenes CAS (D.L. 1057), 728 y Ley SERVIR.",
+          "goals": [
+              "Implementar un módulo web de autoservicio donde cada trabajador gestione sus solicitudes y vea su saldo real",
+              "Automatizar el cálculo de descansos físicos evitando traslapes en áreas críticas",
+              "Eliminar al 100% las papeletas impresas mediante la integración de firma digital"
+          ],
+          "frustrations": [
+              "Papeletas de solicitud que se extravían en los despachos de los jefes de unidad",
+              "Discusiones con colaboradores que afirman tener más días de descanso de los que figuran en el registro manual",
+              "El riesgo constante de incurrir en indemnizaciones por vacaciones no gozadas dentro del año reglamentario"
+          ]
+      },
+      {
+          "id": 50,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "archetypeName": "Ing. Hugo Benítez Valenzuela",
+          "name": "Ing. Hugo Benítez Valenzuela",
+          "role": "Especialista de Campo en Unidad Regional Fronteriza (Madre de Dios)",
+          "demographics": "40 años, Puerto Maldonado; Ingeniero Forestal, labora en comisiones de campo continuas",
+          "age": 40,
+          "techTechSavviness": "Intermedio (Smartphone, correo institucional, apps de mensajería)",
+          "quote": "Para pedir tres días de descanso tengo que imprimir un formato, pedir visto bueno a mi jefe zonal, escanearlo, mandarlo por correo a Lima y esperar dos semanas.",
+          "bio": "Pasa semanas internado en comunidades nativas de Tambopata y Tahuamanu evaluando planes de castaña y bionegocios. Desea planificar sus descansos con previsión.",
+          "goals": [
+              "Solicitar sus días de vacaciones desde el celular en tres clics con confirmación inmediata",
+              "Conocer su récord vacacional devengado y días compensatorios por comisiones acumuladas",
+              "Poder coordinar sus vuelos a su ciudad natal con pasajes comprados con anticipación"
+          ],
+          "frustrations": [
+              "Lentitud de la sede central para aprobar solicitudes de descanso urgente",
+              "Sensación de aislamiento y trato desigual respecto a los trabajadores de la sede central",
+              "Perder días de descanso acumulados por vencimiento de los plazos administrativos"
+          ]
+      },
+      {
+          "id": 51,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "archetypeName": "Dr. Jorge Lévano Zamudio",
+          "name": "Dr. Jorge Lévano Zamudio",
+          "role": "Jefe de Unidad Orgánica y Aprobador de Turnos (UPDC)",
+          "demographics": "48 años, Lima; Máster en Gestión Pública y Desarrollo Rural",
+          "age": 48,
+          "techTechSavviness": "Intermedio (Manejo de sistemas de gestión documental, tableros de avance)",
+          "quote": "Necesito ver la disponibilidad de todo mi equipo en un calendario visual para no dejar desabastecidas las capacitaciones de campo en meses pico.",
+          "bio": "Dirige un equipo de 28 profesionales que recorren el país brindando talleres y asistencia técnica. Debe equilibrar los derechos laborales con las metas del POI.",
+          "goals": [
+              "Disponer de un calendario compartido tipo Gantt que muestre las ausencias programadas del equipo",
+              "Aprobar o reprogramar solicitudes de descanso con alertas de traslape en puestos críticos",
+              "Cumplir las metas operativas de capacitación sin sobrecargar a los especialistas que quedan en turno"
+          ],
+          "frustrations": [
+              "Descubrir a última hora que dos evaluadores clave pidieron vacaciones en la misma semana de cierre",
+              "Tener que firmar decenas de formatos físicos que congestionan su despacho",
+              "Tensiones internas en el equipo cuando se debe rechazar una solicitud por falta de cobertura"
+          ]
+      },
+      {
+          "id": 52,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "archetypeName": "Sra. Rocío Flores Saldaña",
+          "name": "Sra. Rocío Flores Saldaña",
+          "role": "Servidora Administrativa Bajo Régimen CAS (Sede Central Lima)",
+          "demographics": "35 años, Lima; Asistente Administrativa con 7 años en la institución",
+          "age": 35,
+          "techTechSavviness": "Intermedio (Ofimática, trámite documentario, sistemas internos)",
+          "quote": "Nunca sé exactamente cuántos días de vacaciones me quedan. Cada vez que pregunto a Recursos Humanos me dicen una cifra distinta al mes anterior.",
+          "bio": "Apoya las coordinaciones logísticas y trámites administrativos de la Dirección Ejecutiva. Desea programar sus vacaciones familiares de forma transparente.",
+          "goals": [
+              "Acceder a su portal del empleado para consultar su historial de vacaciones tomadas y saldo pendiente",
+              "Fraccionar sus descansos vacacionales en periodos cortos según lo permitido por el D.L. 1405",
+              "Recibir notificaciones por correo o app cuando su jefe apruebe o apruebe parcialmente su solicitud"
+          ],
+          "frustrations": [
+              "Falta de transparencia en el saldo de días compensatorios por trabajo en sobretiempo",
+              "Memorandos de Recursos Humanos que obligan a salir de vacaciones de forma imprevista para no generar indemnización",
+              "Demoras en la regularización de papeletas por descansos médicos o emergencias familiares"
+          ]
+      },
+      {
+          "id": 53,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "archetypeName": "Dra. Andrea Villacorta Ríos",
+          "name": "Dra. Andrea Villacorta Ríos",
+          "role": "Médica Ocupacional y Especialista en Bienestar Laboral (RRHH)",
+          "demographics": "42 años, Lima; Médico Cirujano especialista en Medicina Ocupacional",
+          "age": 42,
+          "techTechSavviness": "Intermedio (Sistemas de historias clínicas, validación de descansos Essalud)",
+          "quote": "El descanso vacacional no es un premio; es una necesidad biológica y mental indispensable para evitar el síndrome de burnout en trabajadores de campo.",
+          "bio": "Monitorea la salud integral y el clima ocupacional de los colaboradores de AGROIDEAS. Valida descansos médicos y propone pausas activas.",
+          "goals": [
+              "Alertar tempranamente a las jefaturas cuando un trabajador acumula más de 11 meses continuos de labor sin descanso",
+              "Digitalizar la recepción y validación de certificados médicos de incapacidad temporal (CITT)",
+              "Promover un equilibrio saludable entre la alta exigencia laboral y la vida personal del personal"
+          ],
+          "frustrations": [
+              "Especialistas con agotamiento crónico que postergan sus vacaciones por la presión de cumplir metas",
+              "Dificultades para verificar la autenticidad de certificados médicos emitidos en provincias remotas",
+              "Falta de datos integrados que correlacionen el ausentismo laboral con la falta de descansos oportunos"
+          ]
+      },
+      {
+          "id": 54,
+          "projectId": 9,
+          "projectCode": "PIIP-2026-IN0009",
+          "archetypeName": "Mag. Pilar Bustamante Prado",
+          "name": "Mag. Pilar Bustamante Prado",
+          "role": "Directora de Administración y Gestión del Empleo (Sede Central)",
+          "demographics": "50 años, Lima; Magíster en Gestión Pública y Recursos Humanos por la Universidad del Pacífico",
+          "age": 50,
+          "techTechSavviness": "Intermedio (Gestión de personal en el Estado, normativas de SERVIR, cuadros de puestos)",
+          "quote": "La automatización del rol de vacaciones blindará a la institución contra contingencias fiscales y multas de SUNAFIL, mejorando el clima laboral.",
+          "bio": "Lidera la política de recursos humanos del programa. Rinde cuentas del cumplimiento de las directivas de SERVIR sobre descanso físico vacacional.",
+          "goals": [
+              "Alcanzar el 100% de cumplimiento del rol anual de vacaciones institucional sin pagos indemnizatorios",
+              "Implementar el legajo digital y el autoservicio de personal en toda la estructura desconcentrada",
+              "Fortalecer el compromiso y la motivación de los servidores públicos de AGROIDEAS"
+          ],
+          "frustrations": [
+              "Pasivos laborales acumulados por vacaciones no gozadas heredadas de ejercicios fiscales anteriores",
+              "Sobrecarga de trabajo en el área de planillas cuadrando días de descuento manual a fin de mes",
+              "Conflictos entre trabajadores y directores que escalan innecesariamente al Tribunal de SERVIR"
+          ]
+      },
+      {
+          "id": 55,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "archetypeName": "Lic. Patricia Alva Corrales",
+          "name": "Lic. Patricia Alva Corrales",
+          "role": "Responsable de Notificaciones y Actos Administrativos (Trámite Documentario)",
+          "demographics": "41 años, Lima; Licenciada en Administración con especialización en Derecho Administrativo",
+          "age": 41,
+          "techTechSavviness": "Intermedio (Manejo de sistemas de correspondencia, firma digital, casillas electrónicas)",
+          "quote": "Enviar un oficio a una cooperativa de la sierra por mensajería postal demora 25 días en llegar y otros 20 en retornar el cargo firmado. Es insostenible.",
+          "bio": "Supervisa el diligenciamiento de todas las notificaciones oficiales: observaciones, resoluciones de elegibilidad, desembolsos y sanciones.",
+          "goals": [
+              "Desplegar la Casilla Electrónica Institucional con valor legal conforme al TUO de la LPAG",
+              "Reducir el tiempo de notificación de 45 días a menos de 60 segundos de forma automatizada",
+              "Ahorrar más de S/. 350,000 anuales en contratación de couriers privados de mensajería postal"
+          ],
+          "frustrations": [
+              "Sobres de notificación devueltos por el correo postal con sellos de 'dirección inubicable'",
+              "Cargos de notificación extraviados que provocan la nulidad de procedimientos administrativos",
+              "Reclamos de evaluadores que no pueden continuar los trámites porque no se sabe si el usuario fue notificado"
+          ]
+      },
+      {
+          "id": 56,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "archetypeName": "Don Juan Cancio Ticona",
+          "name": "Don Juan Cancio Ticona",
+          "role": "Presidente de Cooperativa de Quinua Orgánica (Ayaviri, Puno)",
+          "demographics": "56 años, Melgar, Puno; Secundaria incompleta, Productor alpaquero y de quinua",
+          "age": 56,
+          "techTechSavviness": "Básico (Manejo de celular para llamadas; su hija le revisa los mensajes y correos)",
+          "quote": "Nunca nos llegó la carta de observaciones de AGROIDEAS. Nos enteramos de que nuestro expediente fue archivado por abandono cuando fuimos a la ciudad.",
+          "bio": "Presidente de una cooperativa de 48 socios comunales en el altiplano puneño. Ha formulado un plan de negocio para la compra de una seleccionadora óptica de quinua.",
+          "goals": [
+              "Recibir las notificaciones y observaciones de su trámite directamente por alerta de WhatsApp y SMS en su celular",
+              "Tener la certeza de qué documentos faltan subsanar sin depender del cartero postal",
+              "Asegurar que su expediente no sea archivado por vencimiento de plazos que nunca conoció"
+          ],
+          "frustrations": [
+              "Perder un año entero de trabajo asociativo por una carta que se traspapeló en la agencia de correo",
+              "Tener que viajar 4 horas a Juliaca o Puno solo para averiguar si hay alguna carta dirigida a su cooperativa",
+              "Sensación de indefensión frente a resoluciones de rechazo emitidas a sus espaldas"
+          ]
+      },
+      {
+          "id": 57,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "archetypeName": "Sr. Teodoro Melgar Rojas",
+          "name": "Sr. Teodoro Melgar Rojas",
+          "role": "Notificador Postal Motorizado Regional (Contratista de Courier)",
+          "demographics": "38 años, Cusco; Conductor y mensajero rural con 10 años repartiendo correspondencia",
+          "age": 38,
+          "techTechSavviness": "Intermedio (Manejo de GPS en smartphone, app de captura de firmas del courier)",
+          "quote": "En el campo la dirección dice 'Sector Huayllapampa sin número frente al cerro'. Busco a la persona durante horas y muchas veces está trabajando en la chacra alta.",
+          "bio": "Recorre trochas carrozables y comunidades campesinas en motocicleta entregando notificaciones judiciales y administrativas del Estado.",
+          "goals": [
+              "Que las entidades identifiquen con precisión las coordenadas de los domicilios comunales",
+              "Reducir las entregas fallidas mediante alertas telefónicas previas coordinadas con el destinatario",
+              "Realizar sus rutas de entrega de manera segura sin exponerse a accidentes en caminos de herradura"
+          ],
+          "frustrations": [
+              "Llegar a viviendas rurales deshabitadas durante el día porque las familias están en la cosecha",
+              "Rechazo de los cargos de notificación por parte del programa cuando el firmante usa su huella digital",
+              "Riesgo de caídas en motocicleta y deterioro de los sobres por lluvias torrenciales andinas"
+          ]
+      },
+      {
+          "id": 58,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "archetypeName": "Abog. Renzo Cavassa Miró",
+          "name": "Abog. Renzo Cavassa Miró",
+          "role": "Asesor Legal Litigante de Organizaciones Agrarias (Cusco)",
+          "demographics": "43 años, Cusco; Abogado litigante en Derecho Administrativo y Constitucional",
+          "age": 43,
+          "techTechSavviness": "Intermedio (Manejo de casilla judicial Sinoe, mesa de partes electrónica de ministerios)",
+          "quote": "Si la notificación física tiene vicios de forma en el cargo, interpongo recurso de nulidad y tiro abajo la resolución de descalificación.",
+          "bio": "Defiende a cooperativas agrarias y comunidades campesinas frente a resoluciones sancionadoras o denegatorias de fondos públicos.",
+          "goals": [
+              "Contar con una casilla electrónica oficial con sellado de tiempo que determine los plazos procesales con certeza",
+              "Recibir las resoluciones completas con sus informes técnicos adjuntos en formato digital",
+              "Evitar litigios innecesarios cuando el procedimiento de notificación es limpio y transparente"
+          ],
+          "frustrations": [
+              "Cargos de notificación física ilegibles donde no se indica la hora de entrega ni el documento del receptor",
+              "Pérdida de tiempo en trámites judiciales para demostrar que la carta postal nunca fue entregada válidamente",
+              "Falta de un buzón digital unificado donde revisar todos los expedientes patrocinados"
+          ]
+      },
+      {
+          "id": 59,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "archetypeName": "Ing. Mauricio Peralta Salas",
+          "name": "Ing. Mauricio Peralta Salas",
+          "role": "Especialista de Casillas Digitales y Plataforma Nacional (PCM / AGROIDEAS)",
+          "demographics": "36 años, Lima; Ingeniero Informático, especialista en Gobierno Digital y Servicios Ciudadanos",
+          "age": 36,
+          "techTechSavviness": "Avanzado (Interoperabilidad SOAP/REST, arquitectura de casillas electrónicas, seguridad)",
+          "quote": "La Casilla Electrónica debe integrarse con la Casilla Única del Estado de la PCM para que el productor reciba sus alertas en una sola bandeja ciudadana.",
+          "bio": "Lidera la integración técnica entre los sistemas de AGROIDEAS y los servicios transversales de gobierno digital promovidos por la PCM.",
+          "goals": [
+              "Lograr la interoperabilidad plena entre el SEL v2.0 y la Casilla Electrónica Nacional",
+              "Implementar alertas automáticas multicanal (correo electrónico, SMS y WhatsApp verificado)",
+              "Garantizar el acuse de recibo y la constancia de lectura electrónica con certificación criptográfica"
+          ],
+          "frustrations": [
+              "Resistencia cultural de usuarios que desconfían del valor legal de las notificaciones digitales",
+              "Intermitencias en los servicios web de interoperabilidad interinstitucional",
+              "Falta de capacitación a los dirigentes rurales sobre cómo abrir y revisar su casilla electrónica"
+          ]
+      },
+      {
+          "id": 60,
+          "projectId": 10,
+          "projectCode": "PIIP-2026-IN0010",
+          "archetypeName": "Dr. Javier Coronado Barreda",
+          "name": "Dr. Javier Coronado Barreda",
+          "role": "Secretario General de la Dirección Ejecutiva de AGROIDEAS",
+          "demographics": "54 años, Lima; Abogado y Magíster en Gestión Pública, 18 años en el sector agrario",
+          "age": 54,
+          "techTechSavviness": "Intermedio (Firma digital de resoluciones, gestión de comités directivos, SIPA)",
+          "quote": "La casilla electrónica blindará jurídicamente todas las resoluciones directorales y acortará en más del 60% el ciclo de vida de los incentivos.",
+          "bio": "Supervisa la legalidad de los actos administrativos emitidos por la Dirección Ejecutiva. Refrenda convenios de cofinanciamiento y resoluciones de otorgamiento.",
+          "goals": [
+              "Asegurar que todas las resoluciones queden firmes y consentidas en los plazos estrictos de ley",
+              "Eliminar las paralizaciones de proyectos causadas por demoras en notificaciones formales",
+              "Optimizar los costos operativos de la institución mediante la transformación digital integral"
+          ],
+          "frustrations": [
+              "Demandas y recursos administrativos por indebida notificación que paralizan los desembolsos",
+              "Despachos ejecutivos saturados esperando que los mensajeros postales devuelvan los cargos de entrega",
+              "Retraso en la ejecución presupuestal institucional debido a los tiempos muertos del correo tradicional"
+          ]
+      },
+      {
+          "id": 61,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "archetypeName": "C.P.C. Manuel Odría Benavides",
+          "name": "C.P.C. Manuel Odría Benavides",
+          "role": "Contador General de Cooperativa Agraria Beneficiaria (Pichanaki, Junín)",
+          "demographics": "46 años, Pichanaki; Contador Público Colegiado, especialista en tributación agraria",
+          "age": 46,
+          "techTechSavviness": "Intermedio (Sistemas contables Concar, portal SUNAT Clave SOL, Excel avanzado)",
+          "quote": "Cada fin de mes armo archivadores con 300 facturas pegadas en papel, sello cada comprobante y viajo a Lima a entregarlos en ventanilla.",
+          "bio": "Lleva la contabilidad de dos cooperativas cafetaleras beneficiarias de planes de adopción de tecnología. Es responsable de elaborar las rendiciones mensuales.",
+          "goals": [
+              "Cargar las facturas electrónicas directamente en formato XML/PDF al portal de AGROIDEAS",
+              "Obtener validación automática instantánea de comprobantes de pago ante SUNAT",
+              "Acelerar la aprobación de rendiciones para que la cooperativa no sufra corte de liquidez"
+          ],
+          "frustrations": [
+              "Rechazo de rendiciones enteras por un error mecanográfico en el RUC de un comprobante menor",
+              "Tener que viajar 10 horas en bus a Lima solo para sustentar una carpeta de comprobantes físicos",
+              "Demoras de hasta 60 días para que la Unidad de Reconversión emita el informe de visto bueno contable"
+          ]
+      },
+      {
+          "id": 62,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "archetypeName": "Lic. Evelyn Cornejo Farfán",
+          "name": "Lic. Evelyn Cornejo Farfán",
+          "role": "Especialista de Liquidación Financiera y Rendiciones (URIE Sede Central)",
+          "demographics": "35 años, Lima; Licenciada en Contabilidad y Auditoría Gubernamental",
+          "age": 35,
+          "techTechSavviness": "Avanzado (Cruces masivos de facturación electrónica, macros Excel, conciliaciones)",
+          "quote": "Paso 8 horas al día digitando números de factura en una hoja de cálculo para verificar si coinciden con los cheques. Es trabajo de robot.",
+          "bio": "Revisa y liquida las rendiciones de cuentas de cientos de planes de negocio a nivel nacional. Emite los pliegos de observaciones financieras.",
+          "goals": [
+              "Implementar un bot de conciliación que cruce el extracto bancario con las facturas XML en segundos",
+              "Verificar automáticamente la condición de 'habido' y RUC activo del proveedor en SUNAT",
+              "Dedicar su tiempo profesional al análisis de valor del gasto en vez de la digitación manual de comprobantes"
+          ],
+          "frustrations": [
+              "Rimeros de archivadores sobre su escritorio con miles de comprobantes impresos de baja calidad",
+              "Riesgo de que se filtren facturas clonadas o emitidas por empresas de fachada por falta de cruce automático",
+              "Presión constante de las unidades de línea para aprobar desembolsos sin haber revisado los sustentos"
+          ]
+      },
+      {
+          "id": 63,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "archetypeName": "Don Crisóstomo Huaccachi",
+          "name": "Don Crisóstomo Huaccachi",
+          "role": "Tesorero Comunal no Bancarizado de Asociación Agraria (Andahuaylas)",
+          "demographics": "58 años, Apurímac; Primaria completa, Productor de maíz y tubérculos andinos",
+          "age": 58,
+          "techTechSavviness": "Básico (Lleva las cuentas comunales en un cuaderno rayado y usa dinero en efectivo)",
+          "quote": "En el campo pagamos los jornales de cosecha en mano propia con recibo manual. El programa nos exige boleta electrónica que nadie emite en la chacra.",
+          "bio": "Custodia la caja chica comunal y administra los pagos a los peones en las faenas agrícolas comunitarias (ayni). Es reconocido por su honradez comunitaria.",
+          "goals": [
+              "Que AGROIDEAS admita declaraciones juradas colectivas con firma y huella para pago de jornales rurales",
+              "Aprender a utilizar la billetera digital comunal o cuenta básica del Banco de la Nación sin intermediarios",
+              "Pagar oportunamente a los peones sin temor a que el gasto sea desconocido por el auditor del Estado"
+          ],
+          "frustrations": [
+              "Tener que viajar 3 horas a la ciudad para pagar comisiones bancarias por transferencias mínimas",
+              "Que le observen recibos de mano de obra local porque el trabajador rural no tiene RUC ni boleta",
+              "Miedo a ser acusado de malversación de fondos por sus propios vecinos si la rendición es rechazada"
+          ]
+      },
+      {
+          "id": 64,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "archetypeName": "Econ. Andrés Vilca Paredes",
+          "name": "Econ. Andrés Vilca Paredes",
+          "role": "Funcionario de la Unidad de Negocios y Validador de Desembolsos (Sede Central)",
+          "demographics": "44 años, Lima; Economista con Maestría en Gestión de Proyectos de Inversión",
+          "age": 44,
+          "techTechSavviness": "Avanzado (Flujos financieros de proyectos, SIAF-SP, tableros de liquidez)",
+          "quote": "El esquema de desembolsos tipo 'todo o nada' castiga a las organizaciones; debemos permitir liquidaciones modulares continuas.",
+          "bio": "Autoriza las transferencias bancarias a las cuentas mancomunadas de los convenios de cofinanciamiento tras verificar los informes técnicos y contables.",
+          "goals": [
+              "Implementar un esquema de rendición modular continua con liberaciones proporcionales de fondos",
+              "Evitar la paralización de obras agrícolas por observaciones contables subsanables",
+              "Optimizar la curva de ejecución presupuestal institucional a lo largo de todo el año fiscal"
+          ],
+          "frustrations": [
+              "Convenios con ejecución física al 100% que no pueden cerrar liquidación por demoras en rendiciones",
+              "El 'efecto embudo' en los meses de noviembre y diciembre cuando se acumulan miles de liquidaciones",
+              "Quejas de los productores y proveedores por la retención prolongada de pagos justificados"
+          ]
+      },
+      {
+          "id": 65,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "archetypeName": "Mag. Emilio Carpio Zevallos",
+          "name": "Mag. Emilio Carpio Zevallos",
+          "role": "Auditor Financiero Externo de Convenios de Adopción (Sociedad de Auditoría)",
+          "demographics": "52 años, Arequipa; Contador Público y Auditor Financiero Internacional",
+          "age": 52,
+          "techTechSavviness": "Avanzado (Normas NIA, software de muestreo estadístico ACL/IDEA, auditoría forense)",
+          "quote": "La rendición digital de cuentas debe vincular de forma inalterable tres elementos: la factura electrónica SUNAT, el débito bancario y el acta de almacén.",
+          "bio": "Audita los estados financieros y las rendiciones de cuentas de los convenios suscritos por AGROIDEAS con fondos del tesoro público y cooperación técnica.",
+          "goals": [
+              "Verificar la trazabilidad integral de 3 vías en cada gasto ejecutado con fondos públicos",
+              "Emitir dictámenes de auditoría financiera limpios sin salvedades por falta de sustento documental",
+              "Promover la bancarización y la formalización contable en las organizaciones agrarias del país"
+          ],
+          "frustrations": [
+              "Inconsistencias entre las fechas de emisión de comprobantes y la salida de bienes del inventario",
+              "Facturas con conceptos genéricos que impiden comprobar si el insumo correspondió a la partida autorizada",
+              "Falta de pistas de auditoría digital inmutables que certifiquen quién aprobó cada desembolso"
+          ]
+      },
+      {
+          "id": 66,
+          "projectId": 11,
+          "projectCode": "PIIP-2026-IN0011",
+          "archetypeName": "Ing. Pedro Pablo Arana",
+          "name": "Ing. Pedro Pablo Arana",
+          "role": "Especialista en Integración con Servicios Web SUNAT (Oficina de TI)",
+          "demographics": "34 años, Lima; Ingeniero de Sistemas especialista en APIs REST y Arquitectura de Integración",
+          "age": 34,
+          "techTechSavviness": "Avanzado (Desarrollo de servicios web, integración con SUNAT/RENIEC/Banco de la Nación)",
+          "quote": "Con la API de SUNAT podemos validar en microsegundos si una factura está activa, si el proveedor es habido y si el RUC coincide con la cotización.",
+          "bio": "Desarrolla los conectores entre el módulo de rendición de cuentas del SEL y las plataformas de interoperabilidad del Estado peruano.",
+          "goals": [
+              "Incorporar un lector de código QR en la app móvil que capture y autollene la rendición en segundos",
+              "Automatizar el rechazo inmediato de comprobantes cancelados o pertenecientes a proveedores no habidos",
+              "Asegurar una alta disponibilidad de los servicios de consulta aun en días de alta congestión tributaria"
+          ],
+          "frustrations": [
+              "Caídas temporales de los servicios web externos de SUNAT durante los cierres mensuales de impuestos",
+              "Cambios en los esquemas XML de comprobantes electrónicos implementados sin suficiente anticipación",
+              "Falta de recursos de hardware para procesar millones de consultas en lotes durante los picos de rendición"
+          ]
+      },
+      {
+          "id": 67,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "archetypeName": "Lic. Walter Albarracín Cruz",
+          "name": "Lic. Walter Albarracín Cruz",
+          "role": "Periodista de Investigación Agraria Regional (Cajamarca - Lambayeque)",
+          "demographics": "45 años, Cajamarca; Licenciado en Periodismo y Miembro de la Red de Periodismo de Datos",
+          "age": 45,
+          "techTechSavviness": "Intermedio (Manejo de herramientas de visualización, análisis de datos en Excel, web)",
+          "quote": "Para saber qué cooperativas ganaron los incentivos en mi provincia tengo que pedir acceso a la información y esperar 10 días. Debe ser público y en línea.",
+          "bio": "Investiga la inversión pública en el sector rural y publica reportajes sobre el impacto de los proyectos agropecuarios en el norte del país.",
+          "goals": [
+              "Acceder a un portal interactivo con mapa temático que muestre montos, beneficiarios y avances por distrito",
+              "Descargar bases de datos abiertas en formato CSV/Excel para investigaciones periodísticas y académicas",
+              "Fiscalizar el uso equitativo de los fondos públicos evitando el direccionamiento político"
+          ],
+          "frustrations": [
+              "Recibir documentos en PDF escaneados borrosos donde no se puede buscar texto ni extraer cifras",
+              "Portales de transparencia estándar donde solo hay resoluciones en texto plano sin mapas ni gráficos",
+              "Demoras injustificadas en la entrega de información sobre convenios liquidados y en ejecución"
+          ]
+      },
+      {
+          "id": 68,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "archetypeName": "Don Nicanor Ruiz Paredes",
+          "name": "Don Nicanor Ruiz Paredes",
+          "role": "Pequeño Productor no Asociado Interesado en Convocatorias (Otuzco, La Libertad)",
+          "demographics": "51 años, Otuzco, La Libertad; Primaria completa, Productor de papa y hortalizas",
+          "age": 51,
+          "techTechSavviness": "Básico (Manejo de WhatsApp básico en celular de gama baja)",
+          "quote": "Veo que mis vecinos de la cooperativa compraron un tractor con apoyo de AGROIDEAS, pero no sé cómo postular ni cuánto dinero pone el gobierno.",
+          "bio": "Agricultor individual que cultiva 2 hectáreas. Desea asociarse con otros productores de su caserío para postular a un incentivo de tecnificación.",
+          "goals": [
+              "Consultar desde su celular de forma fácil y clara qué requisitos necesita para formar una organización",
+              "Usar un simulador en línea que le diga si califica a un incentivo respondiendo 4 preguntas sencillas",
+              "Conocer las fechas exactas de las convocatorias para no dejarse engañar por tramitadores falsos"
+          ],
+          "frustrations": [
+              "Páginas web del Estado con lenguaje técnico y rebuscado que solo entienden los ingenieros",
+              "Tramitadores inescrupulosos en las plazas que cobran miles de soles prometiendo 'contactos en el ministerio'",
+              "Falta de canales de orientación directa y transparente para pequeños productores no agremiados"
+          ]
+      },
+      {
+          "id": 69,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "archetypeName": "Abog. Sofía Montenegro Vela",
+          "name": "Abog. Sofía Montenegro Vela",
+          "role": "Oficial de Integridad y Acceso a la Información Pública (AGROIDEAS)",
+          "demographics": "41 años, Lima; Abogada especialista en Integridad Pública y Ética Gubernamental",
+          "age": 41,
+          "techTechSavviness": "Avanzado (Gestión del portal de transparencia estándar, buzones de denuncia seguros)",
+          "quote": "La mejor vacuna contra la corrupción y las sospechas de favoritismo es poner todos los datos a la luz pública de forma transparente y proactiva.",
+          "bio": "Gestiona el canal de denuncias de actos de corrupción y atiende las solicitudes ciudadanas bajo la Ley de Transparencia (Ley 27806).",
+          "goals": [
+              "Desplegar el Portal de Transparencia Interactivo con actualización automatizada diaria",
+              "Reducir las solicitudes de acceso a la información en un 70% gracias a la publicación proactiva de datos",
+              "Elevar el índice de confianza ciudadana en la gestión transparente de los fondos de AGROIDEAS"
+          ],
+          "frustrations": [
+              "Tener que solicitar información manualmente a cada unidad operativa para responder a los ciudadanos",
+              "Denuncias anónimas maliciosas que congestionan la gestión por falta de datos públicos verificables",
+              "Sistemas cerrados que no permiten exportar datos abiertos conforme a los estándares de la PCM"
+          ]
+      },
+      {
+          "id": 70,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "archetypeName": "Lic. Rodrigo Peñaloza Castro",
+          "name": "Lic. Rodrigo Peñaloza Castro",
+          "role": "Especialista de Comunicaciones y Prensa Institucional (Sede Central)",
+          "demographics": "37 años, Lima; Comunicador Social y Productor Multimedia",
+          "age": 37,
+          "techTechSavviness": "Avanzado (Producción audiovisual, redes sociales, diseño web interactivo, storytelling)",
+          "quote": "Queremos mostrar los rostros y las historias de vida de las familias que salieron de la pobreza gracias al incentivo, no solo números en una tabla.",
+          "bio": "Produce notas de prensa, documentales cortos de casos de éxito y contenidos para las redes sociales oficiales de AGROIDEAS y MIDAGRI.",
+          "goals": [
+              "Integrar galerías interactivas con fotos de 'antes y después' e historias de éxito geolocalizadas",
+              "Crear contenidos visuales accesibles para que los jóvenes rurales conozcan las oportunidades del agro",
+              "Medir el impacto de la comunicación institucional mediante métricas de interacción ciudadana"
+          ],
+          "frustrations": [
+              "Plataforma institucional estática en Gob.pe con limitaciones para incrustar dashboards interactivos",
+              "Falta de material fotográfico de alta calidad actualizado de los proyectos de zonas remotas",
+              "Dificultades para comunicar temas técnicos complejos en formatos sencillos y atractivos"
+          ]
+      },
+      {
+          "id": 71,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "archetypeName": "Ing. Gladys Farfán Hurtado",
+          "name": "Ing. Gladys Farfán Hurtado",
+          "role": "Analista de Inteligencia de Negocios y Visualización (UPP)",
+          "demographics": "34 años, Lima; Ingeniera de Sistemas con especialización en Big Data y Business Intelligence",
+          "age": 34,
+          "techTechSavviness": "Avanzado (PowerBI, Tableau, SQL Server, Python, integración de APIs de datos abiertos)",
+          "quote": "Convertimos millones de registros de convenios en mapas interactivos donde cualquier persona puede filtrar por su distrito o cadena productiva.",
+          "bio": "Diseña y mantiene los tableros analíticos institucionales. Desarrolla visualizaciones dinámicas de ejecución presupuestal y metas del portafolio.",
+          "goals": [
+              "Publicar tableros de control interactivos con filtros por departamento, provincia, cultivo y año fiscal",
+              "Integrar el portal con la plataforma nacional de datos abiertos de la Presidencia del Consejo de Ministros",
+              "Brindar a los alcaldes y gobernadores regionales información precisa para articular inversiones agrarias"
+          ],
+          "frustrations": [
+              "Bases de datos heredadas con nombres de cooperativas mal digitados que requieren limpieza manual",
+              "Falta de cultura de datos abiertos en algunos mandos medios que consideran la información como privada",
+              "Demoras en la actualización de los servidores que alimentan los tableros interactivos"
+          ]
+      },
+      {
+          "id": 72,
+          "projectId": 12,
+          "projectCode": "PIIP-2026-IN0012",
+          "archetypeName": "Don Santos Saavedra Vásquez",
+          "name": "Don Santos Saavedra Vásquez",
+          "role": "Dirigente de Federación Nacional Campesina (CNA / CCP - Lima)",
+          "demographics": "59 años, Cajamarca; Dirigente agrario nacional con 30 años de trayectoria gremial",
+          "age": 59,
+          "techTechSavviness": "Intermedio (Consulta noticias en internet, redes sociales y plataformas de gestión pública)",
+          "quote": "Las organizaciones agrarias de base tenemos el derecho constitucional de vigilar si los fondos públicos llegan a la agricultura familiar o a intermediarios.",
+          "bio": "Representa a gremios campesinos en comisiones consultivas con el Ejecutivo. Promueve el control social y la asignación justa de presupuestos agrarios.",
+          "goals": [
+              "Monitorear la distribución territorial de los incentivos para evitar la concentración en pocas regiones",
+              "Verificar qué porcentaje de los fondos beneficia directamente a comunidades campesinas y pueblos indígenas",
+              "Contar con información verificable para fundamentar propuestas gremiales en mesas de diálogo técnico"
+          ],
+          "frustrations": [
+              "Opacidad en los criterios de priorización de planes de negocio durante los comités directivos",
+              "Dificultad para acceder a información desagregada por género, edad y tipo de cadena productiva",
+              "Promesas de inversión ministerial que no se reflejan en obras tangibles en las parcelas comunales"
+          ]
+      },
+      {
+          "id": 73,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "archetypeName": "Lideresa Nelyda Entsakua Tsamajain",
+          "name": "Lideresa Nelyda Entsakua Tsamajain",
+          "role": "Presidenta de Asociación de Productoras Indígenas Awajún (Condorcanqui, Amazonas)",
+          "demographics": "44 años, Río Cenepa, Amazonas; Lideresa originaria de la Nación Awajún, Bilingüe",
+          "age": 44,
+          "techTechSavviness": "Básico (Manejo de celular básico y WhatsApp en viajes a Nieva o Bagua)",
+          "quote": "Nosotras protegemos el bosque y cultivamos cacao nativo y vainilla. Necesitamos que las capacitaciones y bases del concurso respeten nuestra lengua y cultura.",
+          "bio": "Encabeza una asociación de 32 mujeres indígenas que procesan pasta de cacao y artesanías forestales sostenibles. Promueve la autonomía económica femenina en su cuenca.",
+          "goals": [
+              "Lograr que el programa reconozca la tenencia comunal de tierras sin exigir títulos individuales",
+              "Adquirir maquinaria solar para secado y tostado de cacao en su propia comunidad nativa",
+              "Generar ingresos propios para la educación y salud de sus hijos sin destruir el bosque ancestral"
+          ],
+          "frustrations": [
+              "Bases de concurso redactadas en lenguaje técnico formal sin traducción a lenguas originarias",
+              "Machismo en la comunidad que cuestiona la capacidad de las mujeres para administrar fondos públicos",
+              "Dificultades de transporte fluvial para trasladar los expedientes y los productos al mercado provincial"
+          ]
+      },
+      {
+          "id": 74,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "archetypeName": "Lic. Gladys Cárdenas Yupanqui",
+          "name": "Lic. Gladys Cárdenas Yupanqui",
+          "role": "Facilitadora de Género e Interculturalidad en Territorio (UPDC / URIE)",
+          "demographics": "39 años, Ayacucho; Socióloga especialista en Enfoque de Género y Desarrollo Rural",
+          "age": 39,
+          "techTechSavviness": "Avanzado (Metodologías participativas de educación popular, diseño de materiales lúdicos)",
+          "quote": "No basta con darles un presupuesto; hay que fortalecer la autoestima, el liderazgo y la capacidad de negociación de las productoras en sus parcelas.",
+          "bio": "Brinda asistencia técnica territorial a las organizaciones de mujeres postulantes a la estrategia EEMRI en la sierra sur y selva central.",
+          "goals": [
+              "Diseñar talleres con metodologías lúdicas y horarios flexibles que permitan el cuidado de los hijos",
+              "Capacitar a las productoras en costos, contabilidad básica y técnicas de negociación asociativa",
+              "Garantizar que los comités de evaluación valoren el impacto social y comunitario de los emprendimientos femeninos"
+          ],
+          "frustrations": [
+              "Sobrecarga de trabajo de cuidado no remunerado que limita el tiempo de las mujeres para capacitarse",
+              "Carencia de espacios seguros de guardería o cuidado infantil durante los talleres presenciales",
+              "Criterios de elegibilidad rígidos que no se adaptan a organizaciones de mujeres en etapa formativa"
+          ]
+      },
+      {
+          "id": 75,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "archetypeName": "Srta. Wendy Shahuano Mori",
+          "name": "Srta. Wendy Shahuano Mori",
+          "role": "Joven Artesana y Productora Agroforestal Bilingüe (Atalaya, Ucayali)",
+          "demographics": "24 años, Atalaya, Ucayali; Productora shipibo-konibo y técnica en enfermería",
+          "age": 24,
+          "techTechSavviness": "Avanzado (Redes sociales, TikTok, diseño gráfico básico en Canva, apps móviles)",
+          "quote": "Combinamos nuestras plantas medicinales y tintes naturales con redes sociales para vender a todo el Perú y al mundo. Solo necesitamos apoyo para mejorar el empaque.",
+          "bio": "Emprendedora joven que lidera un comité de biohuertos y productos cosméticos naturales en su comunidad. Combina conocimientos ancestrales con marketing digital.",
+          "goals": [
+              "Obtener el cofinanciamiento de AGROIDEAS para comprar una máquina extractora de aceites esenciales",
+              "Registrar la marca colectiva de su asociación de mujeres en Indecopi",
+              "Crear oportunidades de trabajo en su comunidad para evitar que las jóvenes migren a la servidumbre urbana"
+          ],
+          "frustrations": [
+              "Intermediarios comerciales que compran sus productos a precios irrisorios y los revenden a precios altos en Lima",
+              "Falta de conectividad a internet estable en su comunidad para gestionar tiendas virtuales",
+              "Falta de acceso al crédito bancario formal por no contar con bienes a su nombre para presentar garantías"
+          ]
+      },
+      {
+          "id": 76,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "archetypeName": "Dra. Karina Villena Zuloaga",
+          "name": "Dra. Karina Villena Zuloaga",
+          "role": "Especialista Zonal de Elegibilidad con Criterio de Género (UR Cusco)",
+          "demographics": "42 años, Cusco; Abogada y Socióloga, especialista en Derechos de las Mujeres",
+          "age": 42,
+          "techTechSavviness": "Intermedio (Manejo de sistemas de evaluación técnica, enfoque de género en políticas públicas)",
+          "quote": "La directiva EEMRI debe flexibilizar los requisitos de personería jurídica; muchos grupos de mujeres están formalizándose y no deben quedar fuera.",
+          "bio": "Evalúa y asesora los expedientes de la Estrategia Mujer Rural e Indígena en Cusco, Puno y Apurímac. Realiza visitas de verificación en territorio.",
+          "goals": [
+              "Otorgar puntaje adicional objetivo a proyectos liderados efectivamente por mujeres en cargos directivos",
+              "Brindar asesoría técnica legal previa gratuita a organizaciones de mujeres campesinas",
+              "Alcanzar las metas de cobertura institucional fijadas en la Política Nacional de Igualdad de Género"
+          ],
+          "frustrations": [
+              "Pliegos de observaciones emitidos por evaluadores tradicionales que descalifican planes por formalidades menores",
+              "Plazos de convocatoria demasiado breves para comunidades andinas y amazónicas aisladas",
+              "Organizaciones fachada donde se colocan nombres de mujeres en la directiva pero las decisiones las toman terceros"
+          ]
+      },
+      {
+          "id": 77,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "archetypeName": "Doña Asunta Quispe Choque",
+          "name": "Doña Asunta Quispe Choque",
+          "role": "Líder de Red de Productoras de Camélidos de Alta Montaña (Castrovirreyna, Huancavelica)",
+          "demographics": "57 años, Huancavelica (4,400 m.s.n.m.); Alpaquera tradicional, Quechua Chanka",
+          "age": 57,
+          "techTechSavviness": "Básico (No utiliza computadoras; escucha radio comunal y llamadas en celular simple)",
+          "quote": "Pasteamos alpacas con el frío y las heladas. Este incentivo nos permitirá tener cobertizos para las crías y máquinas para esquilar la fibra sin lastimar al animal.",
+          "bio": "Presidenta de una asociación de 25 mujeres criadoras de alpacas y vicuñas en la puna huancavelicana. Es experta en selección de fibra por finura y teñido natural.",
+          "goals": [
+              "Construir cobertizos térmicos para reducir la mortalidad de crías de alpaca durante las heladas de invierno",
+              "Adquirir máquinas de esquila mecánica para duplicar el rendimiento y calidad del vellón de fibra",
+              "Vender la fibra seleccionada directamente a la industria textil sin depender de rescatistas intermediarios"
+          ],
+          "frustrations": [
+              "Pérdida de más del 30% de sus animales en temporadas de nevadas extremas por falta de infraestructura",
+              "Dolor crónico en articulaciones por realizar la esquila manual con tijeras de lata oxidadas",
+              "El bajo precio que pagan los intermediarios en las ferias comunales por falta de poder de negociación"
+          ]
+      },
+      {
+          "id": 78,
+          "projectId": 13,
+          "projectCode": "PIIP-2026-IN0013",
+          "archetypeName": "Jorge Augusto Amaya Castillo / Dirección Ejecutiva",
+          "name": "Jorge Augusto Amaya Castillo / Dirección Ejecutiva",
+          "role": "Director Ejecutivo y Promotor Institucional de la Estrategia EEMRI",
+          "demographics": "55 años, Lima; Director Ejecutivo de AGROIDEAS, especialista en Políticas Agrarias",
+          "age": 55,
+          "techTechSavviness": "Avanzado (Dirección estratégica de políticas públicas, gestión ante MEF y Congreso)",
+          "quote": "La Estrategia Mujer Rural no es un programa asistencial; es una inversión productiva en las mejores administradoras del desarrollo agrario del Perú.",
+          "bio": "Lidera la implementación de la Estrategia de Emprendimiento de la Mujer Rural e Indígena. Gestiona presupuestos y alianzas interinstitucionales para su expansión.",
+          "goals": [
+              "Institucionalizar de forma permanente la estrategia EEMRI dentro del presupuesto por resultados de AGROIDEAS",
+              "Garantizar que más de 5,000 productoras rurales e indígenas accedan a planes de negocio cofinanciados",
+              "Demostrar el impacto socioeconómico directo en la reducción de la pobreza rural y la desnutrición infantil"
+          ],
+          "frustrations": [
+              "Brechas presupuestales para atender la inmensa demanda de organizaciones de mujeres que postulan anualmente",
+              "Inestabilidad política o cambios ministeriales que interrumpen los programas de apoyo a la mujer campesina",
+              "Resistencias burocráticas en sectores conservadores que priorizan modelos tradicionales de intervención"
+          ]
+      }
   ],
   "insights": [
     {
