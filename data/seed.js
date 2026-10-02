@@ -17,7 +17,7 @@
  */
 
 const PIIP_SEED_DATA = {
-  "_schemaVersion": 10,
+  "_schemaVersion": 11,
   "_source": "Fichas de Iniciativa de Innovación Pública AGROIDEAS IN0001-IN0013 (2026)",
   "_generated": "2026-10-01",
   "users": [

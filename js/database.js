@@ -99,14 +99,14 @@ function initDatabase() {
         }
         if (initialState.empathyMaps) {
             initialState.empathyMaps.forEach(seedMap => {
-                const exists = db.empathyMaps.some(m => (seedMap.id && m.id === seedMap.id) || (m.projectId === seedMap.projectId && m.userProfile === seedMap.userProfile));
-                if (!exists) {
-                    db.empathyMaps.push(seedMap);
+                const idx = db.empathyMaps.findIndex(m => (seedMap.id && m.id === seedMap.id) || (m.projectId === seedMap.projectId && m.userProfile === seedMap.userProfile));
+                if (idx === -1) {
+                    db.empathyMaps.push({ ...seedMap });
                 } else {
-                    const idx = db.empathyMaps.findIndex(m => (seedMap.id && m.id === seedMap.id) || (m.projectId === seedMap.projectId && m.userProfile === seedMap.userProfile));
-                    if (idx !== -1 && !db.empathyMaps[idx].id && seedMap.id) {
-                        db.empathyMaps[idx].id = seedMap.id;
-                    }
+                    db.empathyMaps[idx] = { ...seedMap, ...db.empathyMaps[idx] };
+                    if (!db.empathyMaps[idx].hears) db.empathyMaps[idx].hears = seedMap.hears;
+                    if (!db.empathyMaps[idx].sees) db.empathyMaps[idx].sees = seedMap.sees;
+                    if (!db.empathyMaps[idx].feels) db.empathyMaps[idx].feels = seedMap.feels;
                 }
             });
         }
@@ -772,6 +772,30 @@ function precargarEjemploMapaEmpatia(projectIdentifier = 'active') {
     else proj = obtenerProyectoPorCodigo(projectIdentifier);
 
     if (!proj) return null;
+
+    const db = getDB();
+    if (!db.empathyMaps) db.empathyMaps = [];
+
+    // Si existen semillas en initialState para este proyecto, cargarlas todas
+    if (initialState && initialState.empathyMaps && initialState.empathyMaps.length > 0) {
+        let addedCount = 0;
+        initialState.empathyMaps.forEach(seedMap => {
+            if (seedMap.projectCode === proj.code || seedMap.projectId === proj.id) {
+                const idx = db.empathyMaps.findIndex(m => m.id === seedMap.id || (m.projectId === seedMap.projectId && m.userProfile === seedMap.userProfile));
+                if (idx === -1) {
+                    db.empathyMaps.push({ ...seedMap });
+                    addedCount++;
+                } else {
+                    db.empathyMaps[idx] = { ...seedMap, ...db.empathyMaps[idx] };
+                    addedCount++;
+                }
+            }
+        });
+        if (addedCount > 0) {
+            saveDB(db);
+            return db.empathyMaps.filter(m => m.projectCode === proj.code || m.projectId === proj.id);
+        }
+    }
 
     const ejemplo = {
         userProfile: `Presidente o Directivo de Organización Agraria vinculada a "${proj.title}"`,

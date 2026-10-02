@@ -548,9 +548,15 @@ function initApp() {
             if (unitEl) unitEl.textContent = activeProj.responsible || 'AGROIDEAS';
         }
 
-        const allMaps = typeof obtenerMapasEmpatia === 'function' 
+        let allMaps = typeof obtenerMapasEmpatia === 'function' 
             ? obtenerMapasEmpatia('active') 
             : (typeof obtenerMapaEmpatia === 'function' ? [obtenerMapaEmpatia('active')].filter(Boolean) : []);
+
+        // Si no hay mapas cargados pero existen semillas, precargar automáticamente para la iniciativa activa
+        if (allMaps.length === 0 && typeof precargarEjemploMapaEmpatia === 'function') {
+            precargarEjemploMapaEmpatia('active');
+            allMaps = typeof obtenerMapasEmpatia === 'function' ? obtenerMapasEmpatia('active') : [];
+        }
 
         if (canvasCountBadge) {
             canvasCountBadge.textContent = `${allMaps.length} Arquetipo${allMaps.length === 1 ? '' : 's'}`;
@@ -664,6 +670,78 @@ function initApp() {
             document.getElementById('canvas-pain').textContent = 'Sin registrar';
             document.getElementById('canvas-gain').textContent = 'Sin registrar';
             if (canvasProfileBadge) canvasProfileBadge.textContent = 'Arquetipo: General';
+        }
+
+        // Renderizar la matriz de síntesis comparativa de todos los arquetipos
+        const matrixContainer = document.getElementById('empathy-archetypes-matrix');
+        const matrixCountBadge = document.getElementById('matrix-count-badge');
+        if (matrixCountBadge) {
+            matrixCountBadge.textContent = `${allMaps.length} perfile${allMaps.length === 1 ? 'l' : 's'} documentado${allMaps.length === 1 ? '' : 's'}`;
+        }
+
+        if (matrixContainer) {
+            if (allMaps.length === 0) {
+                matrixContainer.innerHTML = `
+                    <div class="col-span-full text-center py-6 text-slate-400 italic text-xs bg-slate-50 rounded-lg border border-dashed border-slate-200">
+                        No hay arquetipos para mostrar en la matriz comparativa. Usa el formulario para agregar uno o pulsa "Precargar Ejemplo".
+                    </div>
+                `;
+            } else {
+                matrixContainer.innerHTML = allMaps.map((item, index) => {
+                    const isSelected = data && String(data.id) === String(item.id);
+                    return `
+                        <div class="p-3.5 rounded-lg border transition-all ${isSelected ? 'bg-emerald-50/70 border-emerald-300 ring-1 ring-emerald-400/50 shadow-xs' : 'bg-white border-slate-200 hover:border-slate-300 shadow-2xs'} flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-start justify-between gap-2 mb-2 pb-2 border-b border-slate-100">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-5 h-5 rounded-full flex items-center justify-center text-3xs font-bold ${isSelected ? 'bg-emerald-700 text-white' : 'bg-slate-100 text-slate-700 border border-slate-200'}">
+                                            ${index + 1}
+                                        </span>
+                                        <h5 class="text-xs font-bold text-slate-800 leading-snug">${item.userProfile || 'Arquetipo ' + (index + 1)}</h5>
+                                    </div>
+                                    <button type="button" 
+                                            class="btn-select-empathy text-3xs font-bold py-1 px-2.5 rounded-full transition-all shrink-0 ${isSelected ? 'bg-emerald-700 text-white shadow-2xs' : 'bg-slate-100 text-slate-700 hover:bg-emerald-100 hover:text-emerald-800 border border-slate-200'}" 
+                                            data-id="${item.id}">
+                                        ${isSelected ? '✓ En Lienzo' : 'Cargar en Lienzo'}
+                                    </button>
+                                </div>
+                                
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-2xs mt-2">
+                                    <div class="space-y-1">
+                                        <p class="text-slate-600 line-clamp-2"><strong class="text-emerald-950 font-semibold">Dice:</strong> <span class="italic text-slate-700">${item.says || 'Sin registrar'}</span></p>
+                                        <p class="text-slate-600 line-clamp-2"><strong class="text-emerald-950 font-semibold">Piensa:</strong> <span class="italic text-slate-700">${item.thinks || 'Sin registrar'}</span></p>
+                                    </div>
+                                    <div class="space-y-1.5">
+                                        <div class="text-amber-900 bg-amber-50/80 p-1.5 rounded border border-amber-200/80">
+                                            <span class="font-bold flex items-center gap-1 text-3xs uppercase tracking-wider text-amber-800">
+                                                <i data-lucide="alert-triangle" class="w-3 h-3 text-amber-600"></i> Dolor Principal
+                                            </span>
+                                            <p class="text-2xs text-amber-950 line-clamp-2 mt-0.5">${item.pains || 'Sin registrar'}</p>
+                                        </div>
+                                        <div class="text-emerald-950 bg-emerald-50/80 p-1.5 rounded border border-emerald-250">
+                                            <span class="font-bold flex items-center gap-1 text-3xs uppercase tracking-wider text-emerald-800">
+                                                <i data-lucide="trending-up" class="w-3 h-3 text-emerald-600"></i> Ganancia Clave
+                                            </span>
+                                            <p class="text-2xs text-emerald-950 line-clamp-2 mt-0.5">${item.gains || 'Sin registrar'}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                matrixContainer.querySelectorAll('.btn-select-empathy').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const id = e.currentTarget.getAttribute('data-id');
+                        renderEmpathyMap(id);
+                        const canvasBadge = document.getElementById('canvas-profile-badge');
+                        if (canvasBadge) {
+                            canvasBadge.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        }
+                    });
+                });
+            }
         }
 
         if (typeof lucide !== 'undefined') lucide.createIcons();
