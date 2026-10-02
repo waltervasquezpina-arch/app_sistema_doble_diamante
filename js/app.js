@@ -397,7 +397,11 @@ function initApp() {
             observerInput.value = activeProj.contact || 'Especialista en Innovación';
         }
 
-        const list = typeof obtenerObservacionesAEIOU === 'function' ? obtenerObservacionesAEIOU('active') : [];
+        let list = typeof obtenerObservacionesAEIOU === 'function' ? obtenerObservacionesAEIOU('active') : [];
+        if (list.length === 0 && typeof precargarEjemploAEIOU === 'function') {
+            precargarEjemploAEIOU('active');
+            list = typeof obtenerObservacionesAEIOU === 'function' ? obtenerObservacionesAEIOU('active') : [];
+        }
         if (aeiouCounterBadge) {
             aeiouCounterBadge.textContent = `${list.length} ${list.length === 1 ? 'hallazgo' : 'hallazgos'}`;
         }
@@ -1227,7 +1231,14 @@ function initApp() {
     function renderInsightsGrid() {
         if (!insightsGrid) return;
         insightsGrid.innerHTML = '';
-        const allInsights = typeof obtenerInsights === 'function' ? obtenerInsights('active') : [];
+        let allInsights = typeof obtenerInsights === 'function' ? obtenerInsights('active') : [];
+
+        // Auto-precargar semillas si no existen registros para el proyecto activo
+        if (allInsights.length === 0 && typeof precargarEjemploInsight === 'function') {
+            precargarEjemploInsight('active');
+            allInsights = typeof obtenerInsights === 'function' ? obtenerInsights('active') : [];
+            populateClusterFilter();
+        }
 
         const countEl = document.getElementById('count-insights');
         if (countEl) {
@@ -1497,7 +1508,13 @@ function initApp() {
     function renderDesafiosTable() {
         if (!desafiosTableEl || typeof $ === 'undefined') return;
 
-        const currentData = typeof obtenerDesafios === 'function' ? obtenerDesafios('active') : [];
+        let currentData = typeof obtenerDesafios === 'function' ? obtenerDesafios('active') : [];
+
+        // Auto-precargar semillas si no existen registros para el proyecto activo
+        if (currentData.length === 0 && typeof precargarEjemploDesafio === 'function') {
+            precargarEjemploDesafio('active');
+            currentData = typeof obtenerDesafios === 'function' ? obtenerDesafios('active') : [];
+        }
 
         const countEl = document.getElementById('count-desafios');
         if (countEl) {
@@ -1732,7 +1749,14 @@ function initApp() {
             colNorm.innerHTML = '';
             colCap.innerHTML = '';
 
-            const ideas = typeof obtenerBrainstormings === 'function' ? obtenerBrainstormings('active') : [];
+            let ideas = typeof obtenerBrainstormings === 'function' ? obtenerBrainstormings('active') : [];
+
+            // Auto-precargar semillas si no existen registros para el proyecto activo
+            if (ideas.length === 0 && typeof precargarEjemploBrainstorming === 'function') {
+                precargarEjemploBrainstorming('active');
+                ideas = typeof obtenerBrainstormings === 'function' ? obtenerBrainstormings('active') : [];
+            }
+
             const desafiosList = typeof obtenerDesafios === 'function' ? obtenerDesafios('all') : [];
 
             let countTech = 0, countProc = 0, countNorm = 0, countCap = 0;
@@ -2094,7 +2118,13 @@ function initApp() {
         function renderIdeasTable() {
             if (!ideasTableEl) return;
 
-            const list = typeof obtenerIdeas === 'function' ? obtenerIdeas('active') : [];
+            let list = typeof obtenerIdeas === 'function' ? obtenerIdeas('active') : [];
+
+            // Auto-precargar semillas si no existen registros para el proyecto activo
+            if (list.length === 0 && typeof precargarEjemploMatriz === 'function') {
+                precargarEjemploMatriz('active');
+                list = typeof obtenerIdeas === 'function' ? obtenerIdeas('active') : [];
+            }
 
             if ($.fn.DataTable.isDataTable('#ideasTable')) {
                 $('#ideasTable').DataTable().destroy();

@@ -74,9 +74,14 @@ function initDatabase() {
         // 3. Normalizar colección AEIOU con projectCode y metadatos
         if (!db.aeiou) db.aeiou = [];
         initialState.aeiou.forEach(seedAeiou => {
-            const exists = db.aeiou.some(a => a.id === seedAeiou.id);
-            if (!exists) {
-                db.aeiou.push(seedAeiou);
+            const idx = db.aeiou.findIndex(a => 
+                (seedAeiou.id && a.id === seedAeiou.id && a.projectCode === seedAeiou.projectCode) ||
+                (a.projectCode === seedAeiou.projectCode && a.activity === seedAeiou.activity)
+            );
+            if (idx === -1) {
+                db.aeiou.push({ ...seedAeiou });
+            } else {
+                db.aeiou[idx] = { ...seedAeiou, ...db.aeiou[idx] };
             }
         });
         db.aeiou.forEach(a => {
@@ -161,8 +166,12 @@ function initDatabase() {
         if (!db.insights) db.insights = [];
         if (initialState.insights) {
             initialState.insights.forEach(seedIns => {
-                const exists = db.insights.some(i => i.id === seedIns.id);
-                if (!exists) db.insights.push(seedIns);
+                const existingIdx = db.insights.findIndex(i => i.id === seedIns.id);
+                if (existingIdx === -1) {
+                    db.insights.push({ ...seedIns });
+                } else {
+                    db.insights[existingIdx] = { ...seedIns, ...db.insights[existingIdx] };
+                }
             });
         }
         db.insights.forEach(i => {
@@ -184,8 +193,12 @@ function initDatabase() {
         if (!db.desafios) db.desafios = [];
         if (initialState.desafios) {
             initialState.desafios.forEach(seedDes => {
-                const exists = db.desafios.some(d => d.id === seedDes.id);
-                if (!exists) db.desafios.push(seedDes);
+                const existingIdx = db.desafios.findIndex(d => d.id === seedDes.id);
+                if (existingIdx === -1) {
+                    db.desafios.push({ ...seedDes });
+                } else {
+                    db.desafios[existingIdx] = { ...seedDes, ...db.desafios[existingIdx] };
+                }
             });
         }
         db.desafios.forEach(d => {
@@ -213,6 +226,16 @@ function initDatabase() {
         if (!Array.isArray(db.brainstorming) || db.brainstorming.length === 0) {
             db.brainstorming = JSON.parse(JSON.stringify(initialState.brainstorming || []));
         } else {
+            if (initialState.brainstorming) {
+                initialState.brainstorming.forEach(seedBrain => {
+                    const existingIdx = db.brainstorming.findIndex(b => b.id === seedBrain.id);
+                    if (existingIdx === -1) {
+                        db.brainstorming.push({ ...seedBrain });
+                    } else {
+                        db.brainstorming[existingIdx] = { ...seedBrain, ...db.brainstorming[existingIdx] };
+                    }
+                });
+            }
             db.brainstorming.forEach(b => {
                 if (!b.projectCode && b.projectId) {
                     const proj = db.projects.find(p => p.id === b.projectId);
@@ -230,6 +253,16 @@ function initDatabase() {
         if (!Array.isArray(db.ideas) || db.ideas.length === 0) {
             db.ideas = JSON.parse(JSON.stringify(initialState.ideas || []));
         } else {
+            if (initialState.ideas) {
+                initialState.ideas.forEach(seedIdea => {
+                    const existingIdx = db.ideas.findIndex(i => i.id === seedIdea.id);
+                    if (existingIdx === -1) {
+                        db.ideas.push({ ...seedIdea });
+                    } else {
+                        db.ideas[existingIdx] = { ...seedIdea, ...db.ideas[existingIdx] };
+                    }
+                });
+            }
             db.ideas.forEach(i => {
                 if (!i.projectCode && i.projectId) {
                     const proj = db.projects.find(p => p.id === i.projectId);
@@ -613,8 +646,8 @@ function precargarEjemploAEIOU(projectIdentifier = 'active') {
 
         if (addedCount > 0) {
             saveDB(db);
-            return db.aeiou.filter(o => o.projectCode === proj.code || o.projectId === proj.id);
         }
+        return db.aeiou.filter(o => o.projectCode === proj.code || o.projectId === proj.id);
     }
 
     // Fallback: plantilla individual si no hay semillas específicas
@@ -1164,6 +1197,30 @@ function precargarEjemploInsight(projectIdentifier = 'active') {
 
     if (!proj) return null;
 
+    const db = getDB();
+    if (!db.insights) db.insights = [];
+
+    // Si existen semillas en initialState para este proyecto, cargarlas todas
+    if (initialState && initialState.insights && initialState.insights.length > 0) {
+        let addedCount = 0;
+        initialState.insights.forEach(seedIns => {
+            if (seedIns.projectCode === proj.code || seedIns.projectId === proj.id) {
+                const idx = db.insights.findIndex(i => i.id === seedIns.id || (i.projectId === seedIns.projectId && i.findingTitle === seedIns.findingTitle));
+                if (idx === -1) {
+                    db.insights.push({ ...seedIns });
+                    addedCount++;
+                } else {
+                    db.insights[idx] = { ...seedIns, ...db.insights[idx] };
+                    addedCount++;
+                }
+            }
+        });
+        if (addedCount > 0) {
+            saveDB(db);
+            return db.insights.filter(i => i.projectCode === proj.code || i.projectId === proj.id);
+        }
+    }
+
     const ejemplo = {
         projectId: proj.id,
         projectCode: proj.code,
@@ -1280,6 +1337,30 @@ function precargarEjemploDesafio(projectIdentifier = 'active') {
     else proj = obtenerProyectoPorCodigo(projectIdentifier);
 
     if (!proj) return null;
+
+    const db = getDB();
+    if (!db.desafios) db.desafios = [];
+
+    // Si existen semillas en initialState para este proyecto, cargarlas todas
+    if (initialState && initialState.desafios && initialState.desafios.length > 0) {
+        let addedCount = 0;
+        initialState.desafios.forEach(seedDes => {
+            if (seedDes.projectCode === proj.code || seedDes.projectId === proj.id) {
+                const idx = db.desafios.findIndex(d => d.id === seedDes.id || (d.projectId === seedDes.projectId && d.hmwStatement === seedDes.hmwStatement));
+                if (idx === -1) {
+                    db.desafios.push({ ...seedDes });
+                    addedCount++;
+                } else {
+                    db.desafios[idx] = { ...seedDes, ...db.desafios[idx] };
+                    addedCount++;
+                }
+            }
+        });
+        if (addedCount > 0) {
+            saveDB(db);
+            return db.desafios.filter(d => d.projectCode === proj.code || d.projectId === proj.id);
+        }
+    }
 
     const insights = obtenerInsights(proj.code);
     const relatedInsightId = insights.length ? insights[0].id : 1;
@@ -1398,6 +1479,30 @@ function precargarEjemploBrainstorming(projectIdentifier = 'active') {
 
     const desafios = obtenerDesafios(proj.code);
     const desafioId = desafios.length ? desafios[0].id : null;
+
+    const db = getDB();
+    if (!db.brainstorming) db.brainstorming = [];
+
+    // Si existen semillas en initialState para este proyecto, cargarlas todas
+    if (initialState && initialState.brainstorming && initialState.brainstorming.length > 0) {
+        let addedCount = 0;
+        initialState.brainstorming.forEach(seedBrain => {
+            if (seedBrain.projectCode === proj.code || seedBrain.projectId === proj.id) {
+                const idx = db.brainstorming.findIndex(b => b.id === seedBrain.id || (b.projectId === seedBrain.projectId && b.ideaTitle === seedBrain.ideaTitle));
+                if (idx === -1) {
+                    db.brainstorming.push({ ...seedBrain });
+                    addedCount++;
+                } else {
+                    db.brainstorming[idx] = { ...seedBrain, ...db.brainstorming[idx] };
+                    addedCount++;
+                }
+            }
+        });
+        if (addedCount > 0) {
+            saveDB(db);
+            return db.brainstorming.filter(b => b.projectCode === proj.code || b.projectId === proj.id);
+        }
+    }
 
     const grounded = (initialState.brainstorming || []).find(b => b.projectCode === proj.code || b.projectId === proj.id);
 
@@ -1534,6 +1639,30 @@ function precargarEjemploMatriz(projectIdentifier = 'active') {
     else proj = obtenerProyectoPorCodigo(projectIdentifier);
 
     if (!proj) return null;
+
+    const db = getDB();
+    if (!db.ideas) db.ideas = [];
+
+    // Si existen semillas en initialState para este proyecto, cargarlas todas
+    if (initialState && initialState.ideas && initialState.ideas.length > 0) {
+        let addedCount = 0;
+        initialState.ideas.forEach(seedIdea => {
+            if (seedIdea.projectCode === proj.code || seedIdea.projectId === proj.id) {
+                const idx = db.ideas.findIndex(i => i.id === seedIdea.id || (i.projectId === seedIdea.projectId && i.ideaTitle === seedIdea.ideaTitle));
+                if (idx === -1) {
+                    db.ideas.push({ ...seedIdea });
+                    addedCount++;
+                } else {
+                    db.ideas[idx] = { ...seedIdea, ...db.ideas[idx] };
+                    addedCount++;
+                }
+            }
+        });
+        if (addedCount > 0) {
+            saveDB(db);
+            return db.ideas.filter(i => i.projectCode === proj.code || i.projectId === proj.id);
+        }
+    }
 
     const ideasH07 = obtenerBrainstormings(proj.code);
     const ideaRef = ideasH07.length ? ideasH07[0] : null;
