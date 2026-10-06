@@ -26,22 +26,26 @@ Este proyecto se ha desarrollado siguiendo un enfoque **Vanilla / Frontend-Only*
 
 Para el desarrollador institucional o líder técnico de AGROIDEAS que asumirá la implementación del servidor, el código fuente está organizado de manera semántica:
 
-*   `index.html`: Dashboard principal y portafolio consolidado de proyectos.
-*   `01-observacion.html` a `11-matriz-riesgos.html`: Módulos específicos correspondientes a las distintas herramientas metodológicas.
-*   `js/database.js`: Capa de datos del cliente (CRUD hacia localStorage). Simula las transacciones y relaciones de entidades.
-*   `js/app.js`: Lógica de la interfaz, eventos del DOM, manejo de Datatables y coordinación visual.
-*   `js/layout.js`: Controlador que inyecta componentes globales como el menú lateral (Sidebar).
-*   `data/seed.js`: Base de datos de prueba pre-cargada para facilitar la evaluación de la herramienta.
-*   `doc/`: Carpeta de documentación técnica profunda.
+*   `index.html`: Dashboard principal y portafolio consolidado con 13 iniciativas oficiales.
+*   `fase1/`: Módulos de la Fase 1 Descubrir (`01-observacion.html`, `02-mapa-empatia.html`, `03-encuestas.html`).
+*   `fase2/`: Módulos de la Fase 2 Definir (`04-ficha-persona.html`, `05-grupos-focales.html`, `06-definicion-desafio.html`).
+*   `fase3/`: Módulos de la Fase 3 Idear (`07-lluvia-ideas.html`, `08-matriz-priorizacion.html`, `09-prototipado-rapido.html`).
+*   `fase4/`: Módulos de la Fase 4 Entregar (`10-plan-accion.html`, `11-matriz-riesgos.html`).
+*   `js/database.js`: Capa Mock ORM Local-First (CRUD y migraciones hacia `localStorage`).
+*   `js/app.js`: Controlador maestro de la interfaz, eventos del DOM, DataTables y asistentes interactivos.
+*   `js/layout.js`: Gestor dinámico del Sidebar global, Breadcrumb metodológico y carga secuencial de dependencias.
+*   `data/seed.js`: Base de datos semilla oficial precargada con las 13 iniciativas institucionales de AGROIDEAS.
+*   `doc/`: Carpeta de documentación técnica profunda y documento orientador maestro.
 
 ## 📚 Documentación Técnica Detallada
 
-Para comprender la arquitectura lógica, la relación de los datos y los flujos, consulte los siguientes archivos en la carpeta `/doc/`:
+Para comprender la arquitectura lógica, la relación de los datos y los flujos, consulte los archivos en la carpeta `/doc/`:
 
-1.  [`01_Objetivo_Metodologia.md`](./doc/01_Objetivo_Metodologia.md): Descripción de los enfoques metodológicos.
+0.  [`00_DOCUMENTO_ORIENTADOR_SISTEMA_PIIP.md`](./doc/00_DOCUMENTO_ORIENTADOR_SISTEMA_PIIP.md): **Documento Orientador Maestro integral del aplicativo.**
+1.  [`01_Objetivo_Metodologia.md`](./doc/01_Objetivo_Metodologia.md): Descripción de los enfoques metodológicos y las 11 herramientas.
 2.  [`02_Arquitectura_Stack.md`](./doc/02_Arquitectura_Stack.md): Análisis detallado de la infraestructura front-end actual y ruta hacia el backend.
-3.  [`03_Diccionario_Datos.md`](./doc/03_Diccionario_Datos.md): Esquema de entidades, relaciones y almacenamiento en localStorage.
-4.  [`04_Flujos_Eventos.md`](./doc/04_Flujos_Eventos.md): Ciclo de vida de la aplicación y flujos de usuario principales.
+3.  [`03_Diccionario_Datos.md`](./doc/03_Diccionario_Datos.md): Esquema completo de entidades, relaciones y almacenamiento en `localStorage`.
+4.  [`04_Flujos_Eventos.md`](./doc/04_Flujos_Eventos.md): Ciclo de vida de la aplicación, secuencia de arranque y flujos de usuario principales.
 
 ## ⚙️ Instrucciones de Despliegue (Local)
 

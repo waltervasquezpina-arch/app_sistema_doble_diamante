@@ -2,32 +2,115 @@
 
 ## 2.1 Visión Arquitectónica (Prototipo Actual vs. Producción)
 
-Actualmente, el **Prototipo PIIP** funciona bajo una arquitectura **Client-Side Rendering (CSR)** pura, orientada a la validación rápida (Mock Architecture). Toda la capa de persistencia se inyecta en el navegador (Local Storage), lo cual permite una interacción de cero latencia, pero carece de centralización real de datos institucionales.
+Actualmente, el **Prototipo PIIP** opera bajo una arquitectura **Client-Side Rendering (CSR) / Multipage Application (MPA)** puramente desacoplada del servidor, orientada a la validación rápida y pedagógica (*Mock Architecture Local-First*). Toda la capa de persistencia reside en el navegador (`localStorage`), garantizando cero latencia, portabilidad inmediata y funcionamiento sin requerir servidores de backend en etapas tempranas.
 
-La visión a futuro (Paso a Producción) exige migrar este diseño a una arquitectura cliente-servidor tradicional o Serverless, donde `js/database.js` sea reemplazado por llamadas asíncronas (`fetch` / `axios`) a una API RESTful o GraphQL.
+### Ruta hacia Producción Institucional (Arquitectura Objetivo)
+Para el pase a producción en la infraestructura oficial de AGROIDEAS:
+1. Reemplazar la capa `js/database.js` por llamadas asíncronas (`fetch` / `axios`) consumiendo una **API RESTful o GraphQL**.
+2. Migrar la persistencia hacia un motor de base de datos relacional institucional (PostgreSQL o MySQL) con integridad referencial estricta.
+3. Integrar autenticación corporativa mediante el **Directorio Activo institucional / OAuth2** bajo el modelo de control de acceso basado en roles (**RBAC**).
+4. Compilar Tailwind CSS estáticamente (`npm run build`) para eliminar el CDN en tiempo de ejecución.
 
-## 2.2 Stack Tecnológico Frontend (Capa de Presentación)
+---
 
-*   **HTML5 Semántico:** Múltiples Entry Points (Multipage Application - MPA) agrupados por herramientas (ej. `01-observacion.html`).
-*   **Tailwind CSS (v3.x / CDN):** Framework utilitario de CSS.
-    *   *Nota Técnica para Producción:* El uso actual mediante `<script src="https://cdn.tailwindcss.com"></script>` está reservado estrictamente para desarrollo/prototipado. El Oficial de Desarrollo de AGROIDEAS **deberá** integrar Tailwind mediante Node.js/PostCSS (`npm install tailwindcss`) y generar un bundle de CSS estático para eliminar el warning en consola y optimizar los tiempos de carga en producción.
-*   **JavaScript (ES6+):** Uso de Vanilla JS para la lógica de negocio del frontend. Sin frameworks reactivos (React/Vue/Angular) para facilitar el mantenimiento por desarrolladores con perfiles tradicionales de Backend/Fullstack.
-*   **jQuery y DataTables.js:** Librerías estándar adoptadas para el manejo avanzado de tablas de datos, debido a su robustez en paginación, filtros y ordenamiento del portafolio.
-*   **Lucide Icons:** Conjunto de iconografía vectorial ligera. Se inicializan globalmente vía `lucide.createIcons()`.
+## 2.2 Estructura Física del Proyecto
 
-## 2.3 Estructura de Componentes JS
+La estructura de archivos organiza semánticamente las herramientas por las fases del Doble Diamante:
 
-El código está modularizado (dentro de los límites de una arquitectura sin empaquetador) en los siguientes núcleos:
+```plaintext
+App_Sistema_Doble_Diamante/
+├── index.html                  # Dashboard principal y Portafolio Institucional (13 proyectos)
+├── css/
+│   └── style.css               # Estilos complementarios y personalizaciones BEM
+├── fase1/                      # Fase 1: Descubrir (Divergencia - Problema)
+│   ├── 01-observacion.html     # Herramienta 1: Observación AEIOU
+│   ├── 02-mapa-empatia.html    # Herramienta 2: Mapa de Empatía
+│   └── 03-encuestas.html       # Herramienta 3: Encuestas de Campo
+├── fase2/                      # Fase 2: Definir (Convergencia - Problema)
+│   ├── 04-ficha-persona.html   # Herramienta 4: Ficha de Persona / Arquetipos
+│   ├── 05-grupos-focales.html  # Herramienta 5: Muro de Hallazgos (Research Wall)
+│   ├── 05-muro-hallazgos.html  # Herramienta 5: Alias idéntico
+│   └── 06-definicion-desafio.html # Herramienta 6: Desafío HMW (con Mad-Libs)
+├── fase3/                      # Fase 3: Idear (Divergencia - Solución)
+│   ├── 07-lluvia-ideas.html    # Herramienta 7: Lluvia de Ideas y Crazy 8's
+│   ├── 08-matriz-priorizacion.html # Herramienta 8: Matriz de Priorización multicriterio
+│   └── 09-prototipado-rapido.html  # Herramienta 9: Prototipado Rápido y Storyboard
+├── fase4/                      # Fase 4: Entregar (Convergencia - Solución)
+│   ├── 10-plan-accion.html     # Herramienta 10: Plan de Acción y Roadmap
+│   └── 11-matriz-riesgos.html  # Herramienta 11: Matriz de Riesgos y Testeo
+├── js/
+│   ├── layout.js               # Inyección transversal de Sidebar, Breadcrumb y CDNs
+│   ├── database.js             # Mock ORM, migraciones de esquema y CRUD en LocalStorage
+│   └── app.js                  # Controlador maestro, DataTables, eventos y asistentes IA
+├── data/
+│   ├── seed.js                 # Base de datos semilla oficial (13 iniciativas y 11 herramientas)
+│   ├── piip_01_completo_h01_a_h11.json ... piip_13_... # Datos brutos estructurados
+│   └── raw_fichas.json         # Extracción cruda institucional
+├── scripts/
+│   ├── generate_seed.py        # Generador automático de seed.js
+│   ├── extract_fichas.py       # Extractor de datos desde fichas oficiales
+│   └── fix_seo.py              # Script utilitario de metadatos
+└── doc/                        # Documentación técnica del sistema
+```
 
-1.  **`js/layout.js`:** Componente transversal. Evalúa el DOM al cargar e inyecta dinámicamente la barra de navegación lateral (Sidebar). Se encarga de la lógica de menús colapsables y la iluminación (active state) del enlace correspondiente a la URL actual.
-2.  **`js/database.js`:** Capa de abstracción de datos (Mock ORM). Todas las funciones expuestas simulan un CRUD asíncrono sincrónico hacia el `localStorage`.
-    *   Implementa funciones relacionales como `guardarObservacion()` que exigen un `projectId` válido.
-    *   Gestiona el "Proyecto Activo" de la sesión del usuario.
-3.  **`data/seed.js`:** Script de inicialización (Seeders). Pre-puebla el `localStorage` con proyectos falsos (Mock Data) si detecta que la base de datos local está vacía, para permitir una experiencia de demostración inmediata.
-4.  **`js/app.js`:** Controlador Maestro. Maneja los selectores del DOM, inicialización de DataTables, validaciones de formularios HTML, formateo de fechas y delegación de eventos (`onClick`, `onSubmit`).
+---
 
-## 2.4 Patrón de Estado: "Proyecto Activo"
+## 2.3 Pila Tecnológica Frontend
 
-Dado que el aplicativo requiere el uso de casi una docena de herramientas sobre un mismo proyecto, se implementó el patrón de estado **Global Active Entity**.
-En el `localStorage`, existe una clave `active_project_id`.
-Cada vez que un usuario ingresa a una herramienta (ej. Mapa de Empatía) e intenta crear un registro, el frontend inyecta automáticamente este `active_project_id` en el Payload del nuevo registro. Esto garantiza la integridad referencial sin tener que pasar parámetros constantes por la URL.
+* **HTML5 Semántico Multipage:** Separación modular en archivos HTML independientes por herramienta, simplificando la mantenibilidad y navegación sin sobrecargar memoria.
+* **Tailwind CSS (v3.x / CDN):** Sistema utilitario de estilos para interfaces limpias, accesibles y responsivas.
+* **JavaScript Puro (Vanilla ES6+):** Código nativo sin dependencia de frameworks pesados (React/Angular/Vue), reduciendo la curva de aprendizaje y facilitando su adopción por equipos institucionales.
+* **jQuery (v3.7.0) y DataTables.js (v1.13.6):** Motor de visualización para tablas dinámicas, paginación, filtros multicriterio y exportación de datos.
+* **Lucide Icons:** Iconografía vectorial moderna inyectada dinámicamente (`lucide.createIcons()`).
+
+---
+
+## 2.4 Arquitectura de Módulos JavaScript
+
+El ciclo de ejecución en el cliente sigue una separación de responsabilidades clara:
+
+```mermaid
+graph TD
+    HTML[Carga de HTML] --> Layout[js/layout.js]
+    Layout --> DynamicCDNs[Inyecta Tailwind, jQuery, DataTables, Lucide]
+    Layout --> InjectDOM[Inyecta Sidebar + Breadcrumb]
+    DynamicCDNs --> Seed[data/seed.js]
+    Seed --> DB[js/database.js - initDatabase & migraciones]
+    Layout --> EventReady[Dispara evento layout-ready]
+    EventReady --> App[js/app.js - Inicializa DataTables y Controladores]
+```
+
+1. **`js/layout.js` (Layout Manager & Asset Loader):**
+   * Detecta la profundidad de la URL (`prefix: './'` o `'../'`).
+   * Carga asíncrona y secuencial de librerías externas (Tailwind, jQuery, DataTables, Lucide) y estilos locales.
+   * Inyecta en el DOM el **Sidebar de navegación global** con indicación de herramienta activa y badge del proyecto activo.
+   * Inyecta el **Breadcrumb metodológico** con el estado de avance en las 4 fases.
+   * Dispara el evento personalizado `layout-ready` para coordinar la inicialización segura de los controladores.
+
+2. **`data/seed.js` (Base de Datos Semilla):**
+   * Declara el objeto global `PIIP_SEED_DATA`.
+   * Contiene la información oficial de las 13 iniciativas de innovación (`PIIP-2026-IN0001` a `IN0013`) y datos de ejemplo para las 11 herramientas.
+   * Define la versión de esquema (`_schemaVersion: 18`).
+
+3. **`js/database.js` (Capa de Abstracción de Datos / Mock ORM):**
+   * Almacena todo el estado relacional en una única clave de `localStorage`: `piip_agroideas_db`.
+   * Valida la carga previa de `seed.js` y ejecuta `initDatabase()` con **migración automática de esquema** sin destruir datos existentes.
+   * Expone funciones de lectura, guardado, actualización y eliminación para las 11 herramientas.
+   * Implementa **funciones de precarga contextual** (`precargarEjemploAEIOU`, `precargarEjemploMatriz`, etc.) que asocian datos al proyecto activo.
+   * Gestiona el estado de `active_project_id`.
+
+4. **`js/app.js` (Controlador General):**
+   * Escucha la carga del DOM y el evento `layout-ready`.
+   * Inicializa instancias de DataTables con renderizadores personalizados (ej. chips de fase D1, D2, I3, E4).
+   * Administra la apertura y cambio de pestañas del **Modal de Ficha Técnica Consolidada**.
+   * Controla asistentes interactivos: Asistente Mad-Libs (H06), Temporizador Crazy 8's y Votación (H07), Semáforos de severidad de riesgo (H11) y Asistente IA Mock para Prototipos (H09).
+
+---
+
+## 2.5 Patrón de Estado: "Entidad Global Activa"
+
+El sistema resuelve la coherencia de datos a través de una clave de estado persistente: `active_project_id`.
+* Al pulsar **"Trabajar"** en el Dashboard, se invoca `establecerProyectoActivoId(id)`.
+* En cada página de herramienta, las consultas ejecutan un filtro automático:
+  `registros.filter(r => r.projectId === obtenerProyectoActivoId() || projectCodesMatch(r.projectCode, activeProj.code))`.
+* Al registrar un nuevo formulario, el payload hereda automáticamente el ID y código del proyecto activo, garantizando la integridad referencial.
