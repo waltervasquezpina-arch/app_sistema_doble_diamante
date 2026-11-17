@@ -373,6 +373,50 @@ function initDatabase() {
             });
         }
 
+        // 12. Migración NT-GIP SGP-PCM (v19): Custodios, Estado de Flujo, Buzón Etapa 1, Evaluaciones Etapa 3 y Auditoría
+        if (!db.custodians) {
+            db.custodians = JSON.parse(JSON.stringify(initialState.custodians || {
+                titular: { name: 'Alex Dario Abad Escalante', email: 'modernizacion1@agroideas.gob.pe', role: 'Titular - Unidad de Modernización (UPP)', unit: 'Unidad de Planeamiento y Presupuesto (UPP)' },
+                suplente: { name: 'Especialista de Modernización PCC', email: 'modernizacion2@agroideas.gob.pe', role: 'Suplente - Unidad de Modernización (UPP)', unit: 'Unidad de Planeamiento y Presupuesto (UPP)' }
+            }));
+        }
+
+        if (!Array.isArray(db.iniciativasPostuladas)) {
+            db.iniciativasPostuladas = JSON.parse(JSON.stringify(initialState.iniciativasPostuladas || []));
+        } else if (initialState.iniciativasPostuladas) {
+            initialState.iniciativasPostuladas.forEach(seedInic => {
+                if (!db.iniciativasPostuladas.some(x => x.id === seedInic.id)) {
+                    db.iniciativasPostuladas.push({ ...seedInic });
+                }
+            });
+        }
+
+        if (!Array.isArray(db.evaluations)) {
+            db.evaluations = JSON.parse(JSON.stringify(initialState.evaluations || []));
+        } else if (initialState.evaluations) {
+            initialState.evaluations.forEach(seedEval => {
+                if (!db.evaluations.some(x => x.id === seedEval.id)) {
+                    db.evaluations.push({ ...seedEval });
+                }
+            });
+        }
+
+        if (!Array.isArray(db.auditLog)) {
+            db.auditLog = JSON.parse(JSON.stringify(initialState.auditLog || []));
+        }
+
+        db.projects.forEach(p => {
+            if (!p.workflowState) {
+                if (p.phases && p.phases.entregar === 'completed') {
+                    p.workflowState = 'Evaluada';
+                } else {
+                    p.workflowState = 'En Ejecución';
+                }
+            }
+            if (!p.custodioTitular) p.custodioTitular = 'Alex Dario Abad Escalante (Titular UPP)';
+            if (!p.custodioSuplente) p.custodioSuplente = 'Especialista de Modernización PCC (Suplente UPP)';
+        });
+
         db._schemaVersion = SCHEMA_VERSION;
         localStorage.setItem(DB_KEY, JSON.stringify(db));
         console.log(`[PIIP DB] Actualización a v${SCHEMA_VERSION} completada con éxito. Registros de usuario conservados.`);
@@ -397,6 +441,24 @@ function resetDatabase() {
     console.log('[PIIP DB] Base de datos restablecida a estado semilla inicial.');
 }
 
+// Helper: Generar automáticamente el siguiente código oficial correlativo PIIP (ej. PIIP-2026-IN0014)
+function generarSiguienteCodigoPIIP() {
+    const db = getDB();
+    const projects = (db && db.projects) ? db.projects : [];
+    let maxNum = 13;
+    projects.forEach(p => {
+        const match = String(p.code || '').match(/IN(\d+)/i);
+        if (match && match[1]) {
+            const num = parseInt(match[1], 10);
+            if (!isNaN(num) && num > maxNum) {
+                maxNum = num;
+            }
+        }
+    });
+    const nextNum = String(maxNum + 1).padStart(4, '0');
+    return `PIIP-2026-IN${nextNum}`;
+}
+
 
 // ==========================================================================
 // Métodos CRUD por Módulo / Herramienta
@@ -404,12 +466,19 @@ function resetDatabase() {
 
 // Proyectos y Trazabilidad de Fases
 function obtenerProyectos() {
-    return getDB().projects;
+    const projects = getDB().projects || [];
+    return projects.map(p => ({
+        ...p,
+        workflowState: p.workflowState || 'En Ejecución',
+        custodioTitular: p.custodioTitular || 'Alex Dario Abad Escalante (Titular UPP)',
+        custodioSuplente: p.custodioSuplente || 'Especialista de Modernización PCC (Suplente UPP)'
+    }));
 }
 
 function guardarProyecto(proyecto) {
     const db = getDB();
-    const newId = db.projects.length ? db.projects[db.projects.length - 1].id + 1 : 1;
+    const newId = db.projects.length ? Math.max(...db.projects.map(p => p.id || 0)) + 1 : 1;
+    const autoCode = (proyecto.code && String(proyecto.code).trim() !== '') ? String(proyecto.code).trim() : generarSiguienteCodigoPIIP();
     
     // Determinar estado legible inicial en base a fases
     let status = 'Fase 1: Descubrir';
@@ -421,12 +490,15 @@ function guardarProyecto(proyecto) {
     
     const newProject = { 
         id: newId, 
-        code: proyecto.code,
+        code: autoCode,
         title: proyecto.title,
         status: status,
+        workflowState: proyecto.workflowState || 'Admitida al PIIP',
+        custodioTitular: proyecto.custodioTitular || 'Alex Dario Abad Escalante (Titular UPP)',
+        custodioSuplente: proyecto.custodioSuplente || 'Especialista de Modernización PCC (Suplente UPP)',
         responsible: proyecto.responsible,
         contact: proyecto.contact,
-        date: proyecto.date,
+        date: proyecto.date || new Date().toISOString().split('T')[0],
         phases: phases
     };
     db.projects.push(newProject);
@@ -447,9 +519,10 @@ function actualizarProyecto(projectId, proyecto) {
 
         db.projects[idx] = { 
             ...db.projects[idx], 
-            code: proyecto.code,
+            code: proyecto.code || db.projects[idx].code,
             title: proyecto.title,
             status: status,
+            workflowState: proyecto.workflowState || db.projects[idx].workflowState || 'En Ejecución',
             responsible: proyecto.responsible,
             contact: proyecto.contact,
             date: proyecto.date,
@@ -2042,6 +2115,207 @@ function precargarEjemploRiesgo(projectIdentifier = 'active') {
     };
 
     return guardarRiesgo(ejemplo);
+}
+
+// ==========================================================================
+// ETAPA 1 (NT-GIP): Presentación de Iniciativas y Lluvia de Ideas Temprana
+// ==========================================================================
+
+function obtenerIniciativasPostuladas() {
+    const db = getDB();
+    return db.iniciativasPostuladas || [];
+}
+
+function guardarIniciativaPostulada(data) {
+    const db = getDB();
+    if (!db.iniciativasPostuladas) db.iniciativasPostuladas = [];
+
+    const newId = db.iniciativasPostuladas.length
+        ? Math.max(...db.iniciativasPostuladas.map(i => i.id || 100)) + 1
+        : 101;
+
+    const sesion = typeof obtenerPerfilActivo === 'function' ? obtenerPerfilActivo() : null;
+
+    const nueva = {
+        id: newId,
+        title: data.title || 'Iniciativa sin título',
+        proposingUnit: data.proposingUnit || (sesion ? sesion.unidad : 'Unidad Orgánica AGROIDEAS'),
+        proposerName: data.proposerName || (sesion ? sesion.nombre : 'Servidor Público AGROIDEAS'),
+        problemStatement: data.problemStatement || '',
+        targetBeneficiaries: data.targetBeneficiaries || '',
+        earlyIdeas: Array.isArray(data.earlyIdeas) ? data.earlyIdeas : [],
+        dateSubmitted: data.dateSubmitted || new Date().toISOString().split('T')[0],
+        workflowState: 'Postulada',
+        assignedPiipCode: null,
+        dictamenNotes: 'Pendiente de evaluación de admisibilidad por Titular/Suplente de la Unidad de Modernización.',
+        reviewedBy: null
+    };
+
+    db.iniciativasPostuladas.unshift(nueva);
+    saveDB(db);
+
+    registrarEventoAuditoria(
+        'POSTULACION_ETAPA1',
+        `Nueva iniciativa presentada en Etapa 1: "${nueva.title}" (${nueva.proposingUnit})`,
+        nueva.proposerName,
+        sesion ? sesion.rol : 'equipo_proyecto'
+    );
+
+    return nueva;
+}
+
+function agregarIdeaTempranaAIniciativa(iniciativaId, ideaTexto) {
+    const db = getDB();
+    if (!db.iniciativasPostuladas) return null;
+    const idx = db.iniciativasPostuladas.findIndex(i => i.id === parseInt(iniciativaId, 10));
+    if (idx === -1) return null;
+    if (!Array.isArray(db.iniciativasPostuladas[idx].earlyIdeas)) {
+        db.iniciativasPostuladas[idx].earlyIdeas = [];
+    }
+    db.iniciativasPostuladas[idx].earlyIdeas.push(ideaTexto);
+    saveDB(db);
+    return db.iniciativasPostuladas[idx];
+}
+
+function precargarEjemploEtapa1(projectIdentifier = 'active') {
+    const activeProj = projectIdentifier === 'active'
+        ? obtenerProyectoActivo()
+        : (typeof projectIdentifier === 'number' ? obtenerProyectoPorId(projectIdentifier) : obtenerProyectoPorCodigo(projectIdentifier));
+
+    const seedList = initialState.iniciativasPostuladas || [];
+    if (activeProj) {
+        const match = seedList.find(i =>
+            i.projectId === activeProj.id ||
+            (i.assignedPiipCode && projectCodesMatch(i.assignedPiipCode, activeProj.code))
+        );
+        if (match) return JSON.parse(JSON.stringify(match));
+    }
+    const pendingMatch = seedList.find(i => i.id === 103) || seedList[0];
+    return pendingMatch ? JSON.parse(JSON.stringify(pendingMatch)) : null;
+}
+
+// ==========================================================================
+// ETAPA 3 (NT-GIP): Evaluación de Proyectos, Valor Público y Cierre SGP-PCM
+// ==========================================================================
+
+function precargarEjemploEvaluacion(projectIdentifier = 'active') {
+    const activeProj = projectIdentifier === 'active'
+        ? obtenerProyectoActivo()
+        : (typeof projectIdentifier === 'number' ? obtenerProyectoPorId(projectIdentifier) : obtenerProyectoPorCodigo(projectIdentifier));
+
+    const seedEvals = initialState.evaluations || [];
+    if (activeProj) {
+        const match = seedEvals.find(e =>
+            e.projectId === activeProj.id ||
+            projectCodesMatch(e.projectCode, activeProj.code)
+        );
+        if (match) return JSON.parse(JSON.stringify(match));
+    }
+    return seedEvals[0] ? JSON.parse(JSON.stringify(seedEvals[0])) : null;
+}
+
+function obtenerEvaluacionesProyecto(projectFilter = 'ALL') {
+    const db = getDB();
+    const evals = db.evaluations || [];
+    if (projectFilter === 'ALL' || !projectFilter) return evals;
+
+    let proj = null;
+    if (projectFilter === 'active') proj = obtenerProyectoActivo();
+    else if (typeof projectFilter === 'number') proj = obtenerProyectoPorId(projectFilter);
+    else proj = obtenerProyectoPorCodigo(projectFilter);
+
+    if (!proj) return evals;
+    return evals.filter(e => e.projectId === proj.id || projectCodesMatch(e.projectCode, proj.code));
+}
+
+function guardarEvaluacionProyecto(evalData) {
+    const db = getDB();
+    if (!db.evaluations) db.evaluations = [];
+
+    const activeProj = obtenerProyectoActivo();
+    const projectId = evalData.projectId ? parseInt(evalData.projectId, 10) : (activeProj ? activeProj.id : 1);
+    const proj = obtenerProyectoPorId(projectId) || activeProj;
+    const projectCode = proj ? proj.code : 'PIIP-2026-IN0001';
+    const sesion = typeof obtenerPerfilActivo === 'function' ? obtenerPerfilActivo() : null;
+
+    const existingIdx = db.evaluations.findIndex(e => e.projectId === projectId || e.projectCode === projectCode);
+    const nextId = db.evaluations.length ? Math.max(...db.evaluations.map(e => e.id || 0)) + 1 : 1;
+
+    const record = {
+        id: existingIdx !== -1 ? db.evaluations[existingIdx].id : nextId,
+        projectId: projectId,
+        projectCode: projectCode,
+        evaluationStage: evalData.evaluationStage || 'Evaluación de Resultados / Valor Público (NT-GIP)',
+        timeReductionPct: Number(evalData.timeReductionPct || 0),
+        beneficiarySatisfactionPct: Number(evalData.beneficiarySatisfactionPct || 0),
+        coverageReached: evalData.coverageReached || '',
+        publicValueSummary: evalData.publicValueSummary || '',
+        lessonsLearned: evalData.lessonsLearned || '',
+        scalabilityStatus: evalData.scalabilityStatus || 'Escalable a Nivel Nacional',
+        sgpReportStatus: evalData.sgpReportStatus || 'Validado para Reporte SGP-PCM',
+        evaluatedBy: evalData.evaluatedBy || (sesion ? `${sesion.nombre} (${sesion.etiquetaRol})` : 'Unidad de Modernización'),
+        evaluationDate: evalData.evaluationDate || new Date().toISOString().split('T')[0]
+    };
+
+    if (existingIdx !== -1) {
+        db.evaluations[existingIdx] = record;
+    } else {
+        db.evaluations.push(record);
+    }
+
+    // Marcar estado de flujo del proyecto si corresponde
+    const projIdx = (db.projects || []).findIndex(p => p.id === projectId);
+    if (projIdx !== -1 && record.sgpReportStatus === 'Validado para Reporte SGP-PCM') {
+        db.projects[projIdx].workflowState = 'Evaluada';
+    }
+
+    saveDB(db);
+
+    registrarEventoAuditoria(
+        'EVALUACION_ETAPA3',
+        `Evaluación de impacto y lecciones aprendidas registrada para ${projectCode}`,
+        record.evaluatedBy,
+        sesion ? sesion.rol : 'modernizacion_titular'
+    );
+
+    return record;
+}
+
+// ==========================================================================
+// CUSTODIA Y BITÁCORA DE AUDITORÍA (BACK-END / GOBERNANZA NT-GIP)
+// ==========================================================================
+
+function obtenerCustodiosModernizacion() {
+    const db = getDB();
+    return db.custodians || {
+        titular: { name: 'Alex Dario Abad Escalante', email: 'modernizacion1@agroideas.gob.pe', role: 'Titular - Unidad de Modernización (UPP)', unit: 'Unidad de Planeamiento y Presupuesto (UPP)' },
+        suplente: { name: 'Especialista de Modernización PCC', email: 'modernizacion2@agroideas.gob.pe', role: 'Suplente - Unidad de Modernización (UPP)', unit: 'Unidad de Planeamiento y Presupuesto (UPP)' }
+    };
+}
+
+function obtenerHistorialAuditoria() {
+    const db = getDB();
+    return db.auditLog || [];
+}
+
+function registrarEventoAuditoria(action, detail, userName, role) {
+    const db = getDB();
+    if (!db) return;
+    if (!Array.isArray(db.auditLog)) db.auditLog = [];
+    const newId = db.auditLog.length ? Math.max(...db.auditLog.map(a => a.id || 0)) + 1 : 1;
+    db.auditLog.unshift({
+        id: newId,
+        timestamp: new Date().toISOString(),
+        action: action,
+        detail: detail,
+        user: userName || 'Usuario del Sistema',
+        role: role || 'equipo_proyecto'
+    });
+    // Conservar últimos 100 eventos
+    if (db.auditLog.length > 100) {
+        db.auditLog = db.auditLog.slice(0, 100);
+    }
+    saveDB(db);
 }
 
 // Inicializar al importar

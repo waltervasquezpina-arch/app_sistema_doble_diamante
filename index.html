@@ -17,20 +17,72 @@
         
         <!-- Vista del Dashboard (Portafolio Institucional) -->
         <div id="view-dashboard" class="block">
-            <header class="mb-8 flex items-center justify-between flex-wrap gap-4">
-            <div>
-                <h2 class="text-2xl font-bold text-slate-800">Portafolio Institucional de Innovación (PIIP)</h2>
-                <p class="text-slate-600">Listado consolidado de iniciativas y proyectos de innovación.</p>
+            <header class="mb-6 flex items-center justify-between flex-wrap gap-4">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-emerald-800 text-white px-2 py-0.5">NT-GIP N° 003-2025-PCM-SGP</span>
+                        <span class="text-[10px] font-bold uppercase tracking-wider bg-slate-200 text-slate-700 px-2 py-0.5">Alcances SGP-PCM</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-800">Portafolio Institucional de Innovación Pública (PIIP)</h2>
+                    <p class="text-sm text-slate-600">Gestión articulada en las 3 etapas normativas: Presentación de Iniciativas, Ejecución (Doble Diamante) y Evaluación.</p>
+                </div>
+                <div class="flex items-center gap-2 flex-wrap">
+                    <a href="login.html" class="btn btn-secondary text-xs flex items-center gap-1.5 font-bold border-slate-300 text-slate-800" title="Abrir pantalla de Login formal por perfiles">
+                        <i data-lucide="key-round" class="w-4 h-4 text-emerald-700"></i> Login / Cambiar Perfil
+                    </a>
+                    <button id="btn-create-project" data-permiso-requerido="crear_proyecto_oficial" class="btn btn-primary text-xs flex items-center gap-1.5 font-bold" title="Registrar un nuevo proyecto oficial con código correlativo automático">
+                        <i data-lucide="plus-circle" class="w-4 h-4"></i> Registrar Nueva Iniciativa Oficial
+                    </button>
+                    <button id="btn-reset-db" data-permiso-requerido="resetear_semillas_qa" class="btn btn-secondary text-xs flex items-center gap-1.5 border border-amber-300 text-amber-800 hover:bg-amber-50" title="Reinicia los datos semilla para pruebas">
+                        <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Recargar Datos Semilla (QA)
+                    </button>
+                </div>
+            </header>
+
+            <!-- Segmentación de las 3 Etapas NT-GIP + Custodia Unidad de Modernización -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <a href="iniciativas/presentacion.html" class="bg-white border border-slate-200 border-l-4 border-l-amber-500 p-4 hover:border-amber-500 transition-colors block">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-amber-700">Etapa 1 • NT-GIP</span>
+                        <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-800 mt-1">Presentación de Iniciativas</h3>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Comprensión del problema y lluvia de ideas temprana antes de admisión.</p>
+                </a>
+
+                <a href="fase1/01-observacion.html" class="bg-white border border-slate-200 border-l-4 border-l-emerald-600 p-4 hover:border-emerald-600 transition-colors block">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700">Etapa 2 • NT-GIP</span>
+                        <i data-lucide="layers" class="w-4 h-4 text-emerald-600"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-800 mt-1">Ejecución de Proyectos</h3>
+                    <p class="text-[11px] text-slate-500 mt-0.5">11 Herramientas del Doble Diamante (Descubrir, Definir, Idear, Entregar).</p>
+                </a>
+
+                <a href="evaluacion/cierre.html" class="bg-white border border-slate-200 border-l-4 border-l-blue-600 p-4 hover:border-blue-600 transition-colors block">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-blue-700">Etapa 3 • NT-GIP</span>
+                        <i data-lucide="award" class="w-4 h-4 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-800 mt-1">Evaluación y Cierre</h3>
+                    <p class="text-[11px] text-slate-500 mt-0.5">Valor público, lecciones aprendidas y paquete de reporte a SGP-PCM.</p>
+                </a>
+
+                <div class="bg-slate-900 text-white p-4 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400">Custodia Unidad Modernización</span>
+                            <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                        </div>
+                        <p class="text-[11px] text-slate-200 mt-1"><strong>Titular:</strong> Alex D. Abad Escalante</p>
+                        <p class="text-[11px] text-slate-300"><strong>Suplente:</strong> Esp. Modernización PCC</p>
+                    </div>
+                    <div class="pt-2 mt-2 border-t border-slate-800 flex items-center justify-between text-[10px] text-slate-400">
+                        <span>Salvaguarda Activa</span>
+                        <span class="font-mono text-emerald-400">UPP - AGROIDEAS</span>
+                    </div>
+                </div>
             </div>
-            <div class="flex items-center gap-2">
-                <button id="btn-create-project" class="btn btn-primary text-xs flex items-center gap-1.5 font-bold" title="Registrar un nuevo proyecto">
-                    <i data-lucide="plus-circle" class="w-4 h-4"></i> Registrar Nueva Iniciativa
-                </button>
-                <button id="btn-reset-db" class="btn btn-secondary text-xs flex items-center gap-1.5 border border-amber-300 text-amber-800 hover:bg-amber-50" title="Reinicia los datos semilla para pruebas">
-                    <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i> Recargar Datos Semilla (QA)
-                </button>
-            </div>
-        </header>
             
             <div class="card">
                 <table id="projectsTable" class="w-full text-left border-collapse">
@@ -38,7 +90,8 @@
                         <tr>
                             <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Código</th>
                             <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Título del Proyecto</th>
-                            <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Trazabilidad de Fase (Doble Diamante)</th>
+                            <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Estado NT-GIP</th>
+                            <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Trazabilidad (Doble Diamante)</th>
                             <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Responsable</th>
                             <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Fecha Registro</th>
                             <th class="border-b border-slate-200 py-3 px-4 font-semibold text-slate-700">Acciones</th>
@@ -208,10 +261,18 @@
                     <label class="form__label font-bold text-slate-700" for="proj-title">Título del Proyecto</label>
                     <input type="text" id="proj-title" class="form__input text-xs" placeholder="Ej. Plataforma Digital de..." required>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="form__group">
-                        <label class="form__label font-bold text-slate-700" for="proj-code">Código de Ficha</label>
-                        <input type="text" id="proj-code" class="form__input text-xs" placeholder="Ej. PIIP-2026-IN0013" required>
+                        <label class="form__label font-bold text-slate-700" for="proj-code">Código PIIP (Correlativo Auto)</label>
+                        <input type="text" id="proj-code" class="form__input text-xs font-mono font-bold bg-emerald-50 text-emerald-900" placeholder="PIIP-2026-IN0014" readonly required>
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label font-bold text-slate-700" for="proj-workflow-state">Estado de Flujo NT-GIP</label>
+                        <select id="proj-workflow-state" class="form__input text-xs font-bold" required>
+                            <option value="Admitida al PIIP">Admitida al PIIP</option>
+                            <option value="En Ejecución">En Ejecución</option>
+                            <option value="Evaluada">Evaluada</option>
+                        </select>
                     </div>
                     <div class="form__group">
                         <label class="form__label font-bold text-slate-700" for="proj-date">Fecha de Registro</label>

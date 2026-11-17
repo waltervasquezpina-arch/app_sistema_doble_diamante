@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etapa 3: Evaluación y Reporte SGP-PCM - AGROIDEAS PIIP</title>
+    <meta name="description" content="Etapa 3 NT-GIP: Evaluación de Impacto, Valor Público, Lecciones Aprendidas y Reporte a la SGP-PCM - AGROIDEAS PIIP.">
+    <!-- Script de Inyección de Layout -->
+    <script src="../js/layout.js"></script>
+</head>
+<body class="bg-slate-100 flex h-screen overflow-hidden text-slate-800">
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <header class="mb-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-blue-800 bg-blue-100 border border-blue-300 px-2.5 py-0.5 inline-block mb-1">
+                        Etapa 3 • Norma Técnica N° 003-2025-PCM-SGP (NT-GIP)
+                    </span>
+                    <h2 class="text-2xl font-bold text-slate-800">Evaluación de Proyectos, Valor Público y Reporte SGP-PCM</h2>
+                    <p class="text-sm text-slate-600">Medición de resultados, sistematización de lecciones aprendidas, trazabilidad de auditoría y exportación al Portafolio Nacional.</p>
+                </div>
+                <div class="flex items-center gap-2 flex-wrap">
+                    <button type="button" id="btn-preload-evaluacion" class="btn btn-secondary text-xs font-bold flex items-center gap-1.5 border border-amber-300 text-amber-800 hover:bg-amber-50">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i> Precargar Evaluación del Proyecto Activo
+                    </button>
+                    <button type="button" id="btn-export-sgp-json" data-permiso-requerido="exportar_reporte_sgp" data-guard-mode="disable" class="btn btn-primary text-xs font-bold flex items-center gap-1.5">
+                        <i data-lucide="download" class="w-4 h-4"></i> Exportar Paquete Oficial SGP-PCM (JSON)
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Barra de Contexto de Iniciativa Activa -->
+        <div class="bg-white border border-slate-200 p-4 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-emerald-900 text-white flex items-center justify-center font-bold">
+                    <i data-lucide="award" class="w-5 h-5"></i>
+                </div>
+                <div>
+                    <span class="text-[10px] uppercase tracking-wider text-slate-500 font-bold block">Proyecto Activo en Evaluación:</span>
+                    <h3 id="eval-active-project-title" class="text-sm font-bold text-slate-800">Cargando proyecto...</h3>
+                    <div class="flex items-center gap-2 mt-0.5">
+                        <span id="eval-active-project-code" class="text-2xs font-mono font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 border border-emerald-200">PIIP-2026-IN0001</span>
+                        <span id="eval-active-project-unit" class="text-2xs text-slate-500">Unidad Orgánica</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <label for="eval-project-selector" class="text-xs font-bold text-slate-600">Cambiar Proyecto:</label>
+                <select id="eval-project-selector" class="form__input text-xs w-64 font-semibold"></select>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- COLUMNA IZQUIERDA (6 cols): FORMULARIO DE EVALUACIÓN DE VALOR PÚBLICO (ETAPA 3) -->
+            <div class="lg:col-span-6 space-y-6">
+                <div class="card">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
+                        <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wider flex items-center gap-2">
+                            <i data-lucide="bar-chart-3" class="w-4 h-4 text-emerald-700"></i> Registro de Evaluación y Valor Público
+                        </h3>
+                        <span id="eval-role-lock-badge" class="text-[10px] font-bold px-2 py-0.5 bg-emerald-100 text-emerald-800">Custodia Unidad de Modernización</span>
+                    </div>
+
+                    <form id="form-etapa3-evaluacion" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="form__group mb-0">
+                                <label class="form__label text-xs font-bold text-slate-700" for="eval-stage">Tipo de Evaluación (NT-GIP)</label>
+                                <select id="eval-stage" class="form__input text-xs" required>
+                                    <option value="Evaluación de Piloto / Intermedia (NT-GIP)">Evaluación de Piloto / Intermedia</option>
+                                    <option value="Evaluación de Resultados / Valor Público (NT-GIP)">Evaluación Ex-Post de Resultados e Impacto</option>
+                                    <option value="Evaluación de Escalabilidad Institucional">Evaluación de Escalabilidad Institucional</option>
+                                </select>
+                            </div>
+                            <div class="form__group mb-0">
+                                <label class="form__label text-xs font-bold text-slate-700" for="eval-scalability">Nivel de Escalabilidad / Madurez</label>
+                                <select id="eval-scalability" class="form__input text-xs" required>
+                                    <option value="Escalable a Nivel Nacional">Escalable a Nivel Nacional (Transferible a otras Entidades)</option>
+                                    <option value="En Proceso de Institucionalización">En Proceso de Institucionalización en AGROIDEAS</option>
+                                    <option value="Piloto Validado con Ajustes Menores">Piloto Validado con Ajustes Menores</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-slate-50 p-3 border border-slate-200">
+                            <div class="form__group mb-0">
+                                <label class="form__label text-xs font-bold text-slate-700" for="eval-time-reduction">
+                                    % Reducción de Tiempos / Reprocesos
+                                </label>
+                                <input type="number" id="eval-time-reduction" min="0" max="100" class="form__input text-xs font-bold text-emerald-800" placeholder="Ej. 45" required>
+                            </div>
+                            <div class="form__group mb-0">
+                                <label class="form__label text-xs font-bold text-slate-700" for="eval-satisfaction">
+                                    % Satisfacción de Productores / Usuarios
+                                </label>
+                                <input type="number" id="eval-satisfaction" min="0" max="100" class="form__input text-xs font-bold text-blue-800" placeholder="Ej. 90" required>
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label text-xs font-bold text-slate-700" for="eval-coverage">
+                                Alcance y Cobertura Lograda en la Validación
+                            </label>
+                            <input type="text" id="eval-coverage" class="form__input text-xs" placeholder="Ej. 15 Organizaciones Agrarias y 420 productores beneficiados" required>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label text-xs font-bold text-slate-700" for="eval-public-value">
+                                Síntesis de Valor Público Generado (Evidencia Cuantitativa y Cualitativa)
+                            </label>
+                            <textarea id="eval-public-value" rows="3" class="form__input text-xs" placeholder="Describa los beneficios tangibles obtenidos para los ciudadanos agrarios y para la eficiencia operativa de la entidad..." required></textarea>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label text-xs font-bold text-slate-700" for="eval-lessons">
+                                Lecciones Aprendidas y Recomendaciones de Sostenibilidad
+                            </label>
+                            <textarea id="eval-lessons" rows="3" class="form__input text-xs" placeholder="¿Qué aprendizajes dejó la implementación de este proyecto y qué condiciones garantizan su continuidad?" required></textarea>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label text-xs font-bold text-slate-700" for="eval-sgp-status">Estado de Reporte ante SGP-PCM</label>
+                            <select id="eval-sgp-status" class="form__input text-xs font-bold" required>
+                                <option value="Validado para Reporte SGP-PCM">Validado Oficialmente para Reporte SGP-PCM (Marca Proyecto como Evaluado)</option>
+                                <option value="En Revisión por Unidad de Modernización">En Revisión por Unidad de Modernización</option>
+                            </select>
+                        </div>
+
+                        <div class="pt-3 border-t border-slate-200 flex justify-end">
+                            <button type="submit" id="btn-submit-evaluacion" data-permiso-requerido="registrar_evaluacion_etapa3" data-guard-mode="disable" class="btn btn-primary text-xs font-bold uppercase tracking-wider w-full py-2.5 flex items-center justify-center gap-2">
+                                <i data-lucide="save" class="w-4 h-4"></i> Guardar Evaluación y Actualizar Estado PIIP
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA (6 cols): CONSOLIDADO DE EVALUACIONES + BITÁCORA DE AUDITORÍA (BACK-END) -->
+            <div class="lg:col-span-6 space-y-6">
+                
+                <!-- Ficha de Evaluación Registrada -->
+                <div class="card">
+                    <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wider border-b border-slate-200 pb-3 mb-4 flex items-center gap-2">
+                        <i data-lucide="check-square" class="w-4 h-4 text-blue-700"></i> Evaluaciones Oficiales del Portafolio
+                    </h3>
+                    <div id="evaluations-list-container" class="space-y-3 max-h-80 overflow-y-auto">
+                        <!-- Dinámico -->
+                    </div>
+                </div>
+
+                <!-- Bitácora de Salvaguarda y Trazabilidad (Titular / Suplente Modernización) -->
+                <div class="card">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
+                        <div>
+                            <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wider flex items-center gap-2">
+                                <i data-lucide="history" class="w-4 h-4 text-emerald-700"></i> Bitácora de Salvaguarda Institucional (Back-end)
+                            </h3>
+                            <p class="text-[11px] text-slate-500 mt-0.5">Registro inmutable de acciones ejecutadas por el Titular, Suplente y Equipos.</p>
+                        </div>
+                        <span class="text-[10px] font-mono bg-slate-900 text-emerald-400 px-2 py-0.5 font-bold">Audit Log</span>
+                    </div>
+                    <div id="audit-log-container" class="space-y-2 max-h-72 overflow-y-auto text-xs">
+                        <!-- Dinámico -->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Scripts de Datos y Lógica -->
+    <script src="../data/seed.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/app.js"></script>
+    <script>
+        (function() {
+            function actualizarContextoProyectoEvaluacion() {
+                const activeProj = typeof obtenerProyectoActivo === 'function' ? obtenerProyectoActivo() : null;
+                if (!activeProj) return;
+
+                document.getElementById('eval-active-project-title').textContent = activeProj.title;
+                document.getElementById('eval-active-project-code').textContent = activeProj.code;
+                document.getElementById('eval-active-project-unit').textContent = activeProj.responsible;
+
+                const selector = document.getElementById('eval-project-selector');
+                if (selector && typeof obtenerProyectos === 'function') {
+                    const projs = obtenerProyectos();
+                    selector.innerHTML = projs.map(p =>
+                        `<option value="${p.id}" ${p.id === activeProj.id ? 'selected' : ''}>${p.code} - ${p.title}</option>`
+                    ).join('');
+                }
+
+                // Cargar datos existentes de evaluación si los tiene
+                const evals = typeof obtenerEvaluacionesProyecto === 'function' ? obtenerEvaluacionesProyecto(activeProj.id) : [];
+                if (evals.length > 0) {
+                    const ev = evals[0];
+                    document.getElementById('eval-stage').value = ev.evaluationStage || 'Evaluación de Resultados / Valor Público (NT-GIP)';
+                    document.getElementById('eval-scalability').value = ev.scalabilityStatus || 'Escalable a Nivel Nacional';
+                    document.getElementById('eval-time-reduction').value = ev.timeReductionPct ?? 40;
+                    document.getElementById('eval-satisfaction').value = ev.beneficiarySatisfactionPct ?? 88;
+                    document.getElementById('eval-coverage').value = ev.coverageReached || '';
+                    document.getElementById('eval-public-value').value = ev.publicValueSummary || '';
+                    document.getElementById('eval-lessons').value = ev.lessonsLearned || '';
+                    document.getElementById('eval-sgp-status').value = ev.sgpReportStatus || 'Validado para Reporte SGP-PCM';
+                } else {
+                    document.getElementById('form-etapa3-evaluacion').reset();
+                }
+            }
+
+            function renderEvaluacionesList() {
+                const container = document.getElementById('evaluations-list-container');
+                if (!container || typeof obtenerEvaluacionesProyecto !== 'function') return;
+                const list = obtenerEvaluacionesProyecto('ALL');
+                if (list.length === 0) {
+                    container.innerHTML = '<p class="text-xs text-slate-400 italic">No hay evaluaciones registradas aún.</p>';
+                    return;
+                }
+                container.innerHTML = list.map(ev => `
+                    <div class="p-3.5 border border-slate-200 bg-slate-50/70 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="font-mono font-bold text-xs text-emerald-900 bg-emerald-100 px-2 py-0.5 border border-emerald-300">${ev.projectCode}</span>
+                            <span class="text-[10px] font-bold uppercase px-2 py-0.5 bg-blue-100 text-blue-800 border border-blue-200">${ev.scalabilityStatus}</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 text-xs bg-white p-2 border border-slate-200">
+                            <div>
+                                <span class="text-[10px] text-slate-400 block uppercase font-bold">Optimización Tiempos</span>
+                                <span class="text-sm font-bold text-emerald-700">-${ev.timeReductionPct}%</span>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-slate-400 block uppercase font-bold">Satisfacción Ciudadana</span>
+                                <span class="text-sm font-bold text-blue-700">${ev.beneficiarySatisfactionPct}%</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-700"><strong>Valor Público:</strong> ${ev.publicValueSummary}</p>
+                        <p class="text-[11px] text-slate-600 italic"><strong>Lección Aprendida:</strong> "${ev.lessonsLearned}"</p>
+                        <div class="text-[10px] text-slate-400 flex items-center justify-between pt-1 border-t border-slate-200">
+                            <span>Evaluador: ${ev.evaluatedBy}</span>
+                            <span>Fecha: ${ev.evaluationDate}</span>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            function renderBitacoraAuditoria() {
+                const container = document.getElementById('audit-log-container');
+                if (!container || typeof obtenerHistorialAuditoria !== 'function') return;
+                const logs = obtenerHistorialAuditoria();
+                container.innerHTML = logs.map(log => {
+                    const fecha = new Date(log.timestamp).toLocaleString('es-PE');
+                    return `
+                        <div class="p-2.5 bg-slate-50 border border-slate-200 border-l-4 border-l-emerald-700 flex flex-col gap-0.5">
+                            <div class="flex items-center justify-between">
+                                <span class="font-mono font-bold text-[10px] text-emerald-800">${log.action}</span>
+                                <span class="text-[10px] text-slate-400">${fecha}</span>
+                            </div>
+                            <p class="text-xs text-slate-700 font-medium">${log.detail}</p>
+                            <span class="text-[10px] text-slate-500">Operador: <strong>${log.user}</strong> (${log.role})</span>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            function initEtapa3Page() {
+                actualizarContextoProyectoEvaluacion();
+                renderEvaluacionesList();
+                renderBitacoraAuditoria();
+
+                if (typeof window.aplicarGuardsUI === 'function') {
+                    window.aplicarGuardsUI();
+                }
+
+                const selector = document.getElementById('eval-project-selector');
+                if (selector) {
+                    selector.addEventListener('change', () => {
+                        establecerProyectoActivoId(parseInt(selector.value, 10));
+                        actualizarContextoProyectoEvaluacion();
+                    });
+                }
+
+                const btnPreload = document.getElementById('btn-preload-evaluacion');
+                if (btnPreload) {
+                    btnPreload.addEventListener('click', () => {
+                        const seed = typeof precargarEjemploEvaluacion === 'function' ? precargarEjemploEvaluacion('active') : null;
+                        if (seed) {
+                            document.getElementById('eval-stage').value = seed.evaluationStage || 'Evaluación de Resultados / Valor Público (NT-GIP)';
+                            document.getElementById('eval-scalability').value = seed.scalabilityStatus || 'Escalable a Nivel Nacional';
+                            document.getElementById('eval-time-reduction').value = seed.timeReductionPct ?? 48;
+                            document.getElementById('eval-satisfaction').value = seed.beneficiarySatisfactionPct ?? 92;
+                            document.getElementById('eval-coverage').value = seed.coverageReached || '';
+                            document.getElementById('eval-public-value').value = seed.publicValueSummary || '';
+                            document.getElementById('eval-lessons').value = seed.lessonsLearned || '';
+                            document.getElementById('eval-sgp-status').value = seed.sgpReportStatus || 'Validado para Reporte SGP-PCM';
+                        }
+                    });
+                }
+
+                const formEval = document.getElementById('form-etapa3-evaluacion');
+                if (formEval) {
+                    formEval.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        if (typeof tienePermiso === 'function' && !tienePermiso('registrar_evaluacion_etapa3')) {
+                            alert('Acceso restringido: Solo el Titular o Suplente de la Unidad de Modernización puede certificar la evaluación oficial en el PIIP.');
+                            return;
+                        }
+                        const activeProj = obtenerProyectoActivo();
+                        guardarEvaluacionProyecto({
+                            projectId: activeProj ? activeProj.id : 1,
+                            evaluationStage: document.getElementById('eval-stage').value,
+                            scalabilityStatus: document.getElementById('eval-scalability').value,
+                            timeReductionPct: document.getElementById('eval-time-reduction').value,
+                            beneficiarySatisfactionPct: document.getElementById('eval-satisfaction').value,
+                            coverageReached: document.getElementById('eval-coverage').value.trim(),
+                            publicValueSummary: document.getElementById('eval-public-value').value.trim(),
+                            lessonsLearned: document.getElementById('eval-lessons').value.trim(),
+                            sgpReportStatus: document.getElementById('eval-sgp-status').value
+                        });
+                        renderEvaluacionesList();
+                        renderBitacoraAuditoria();
+                        alert('✔ Evaluación oficial guardada en Etapa 3 y registrada en la Bitácora de Salvaguarda Institucional.');
+                    });
+                }
+
+                const btnExport = document.getElementById('btn-export-sgp-json');
+                if (btnExport) {
+                    btnExport.addEventListener('click', () => {
+                        if (typeof tienePermiso === 'function' && !tienePermiso('exportar_reporte_sgp')) {
+                            alert('Solo la Unidad de Modernización puede exportar el paquete oficial para SGP-PCM.');
+                            return;
+                        }
+                        const db = getDB();
+                        const payload = {
+                            entidad: 'Programa de Compensaciones para la Competitividad - AGROIDEAS (MIDAGRI)',
+                            normaTecnica: 'NT-GIP N° 003-2025-PCM-SGP',
+                            fechaExportacion: new Date().toISOString(),
+                            custodiosModernizacion: obtenerCustodiosModernizacion(),
+                            resumenPortafolio: {
+                                totalProyectosOficiales: (db.projects || []).length,
+                                totalIniciativasEtapa1: (db.iniciativasPostuladas || []).length,
+                                totalEvaluacionesEtapa3: (db.evaluations || []).length
+                            },
+                            proyectosPIIP: db.projects || [],
+                            iniciativasEtapa1: db.iniciativasPostuladas || [],
+                            evaluacionesEtapa3: db.evaluations || [],
+                            bitacoraAuditoria: (db.auditLog || []).slice(0, 30)
+                        };
+                        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `Reporte_Oficial_PIIP_AGROIDEAS_SGP_PCM_${new Date().toISOString().split('T')[0]}.json`;
+                        a.click();
+                        URL.revokeObjectURL(url);
+                    });
+                }
+            }
+
+            if (window.layoutReady) {
+                initEtapa3Page();
+            } else {
+                document.addEventListener('layout-ready', initEtapa3Page);
+            }
+        })();
+    </script>
+</body>
+</html>
+

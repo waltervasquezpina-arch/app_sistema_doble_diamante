@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etapa 1: Presentación de Iniciativas - AGROIDEAS PIIP</title>
+    <meta name="description" content="Etapa 1 NT-GIP: Presentación de Iniciativas, Comprensión del Problema y Lluvia de Ideas Temprana - AGROIDEAS PIIP.">
+    <!-- Script de Inyección de Layout -->
+    <script src="../js/layout.js"></script>
+</head>
+<body class="bg-slate-100 flex h-screen overflow-hidden text-slate-800">
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 overflow-y-auto p-8">
+        
+        <header class="mb-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 border border-amber-300 px-2.5 py-0.5 inline-block mb-1">
+                        Etapa 1 • Norma Técnica N° 003-2025-PCM-SGP (NT-GIP)
+                    </span>
+                    <h2 class="text-2xl font-bold text-slate-800">Presentación de Iniciativas y Comprensión del Problema</h2>
+                    <p class="text-sm text-slate-600">Espacio institucional para formular problemas públicos, realizar lluvia de ideas preliminar y postular iniciativas al PIIP.</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button type="button" id="btn-preload-etapa1" class="btn btn-secondary text-xs font-bold flex items-center gap-1.5 border border-amber-300 text-amber-800 hover:bg-amber-50">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i> Precargar Ejemplo de Postulación
+                    </button>
+                </div>
+            </div>
+
+            <!-- Panel de Salvaguarda Institucional: Titular y Suplente Unidad de Modernización -->
+            <div class="mt-5 bg-white border border-slate-200 p-4 grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+                <div class="lg:col-span-5 border-b lg:border-b-0 lg:border-r border-slate-200 pb-3 lg:pb-0 lg:pr-4">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-emerald-800 flex items-center gap-1.5">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-emerald-700"></i> Salvaguarda y Flujo de Registro (SGP-PCM)
+                    </h3>
+                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                        Conforme a la NT-GIP, todo servidor o equipo puede postular iniciativas en esta etapa. La admisión oficial al <strong>Portafolio Institucional (PIIP)</strong> está a cargo del Titular y Suplente de la Unidad de Modernización.
+                    </p>
+                </div>
+                <div class="lg:col-span-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                    <div class="p-2.5 bg-emerald-50 border border-emerald-200">
+                        <span class="text-[9px] font-bold uppercase tracking-wider text-emerald-700 block">Responsable Titular (UPP)</span>
+                        <p class="font-bold text-slate-800 mt-0.5">Alex Dario Abad Escalante</p>
+                        <p class="text-[10px] text-slate-500 font-mono">modernizacion1@agroideas.gob.pe</p>
+                    </div>
+                    <div class="p-2.5 bg-teal-50 border border-teal-200">
+                        <span class="text-[9px] font-bold uppercase tracking-wider text-teal-700 block">Responsable Suplente (UPP)</span>
+                        <p class="font-bold text-slate-800 mt-0.5">Especialista Modernización PCC</p>
+                        <p class="text-[10px] text-slate-500 font-mono">modernizacion2@agroideas.gob.pe</p>
+                    </div>
+                </div>
+                <div class="lg:col-span-3 bg-slate-900 text-white p-3 flex flex-col justify-between">
+                    <span class="text-[9px] uppercase tracking-wider text-slate-400 font-bold">Próximo Código Correlativo Automático:</span>
+                    <div class="flex items-center justify-between mt-1">
+                        <span id="next-correlative-code-badge" class="text-sm font-mono font-bold text-emerald-400">PIIP-2026-IN0014</span>
+                        <span class="text-[9px] bg-emerald-900 text-emerald-200 px-1.5 py-0.5 font-bold uppercase">Auto-Asignable</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- COLUMNA IZQUIERDA (5 cols): FORMULARIO DE COMPRENSIÓN DEL PROBLEMA + LLUVIA DE IDEAS TEMPRANA -->
+            <div class="lg:col-span-5 space-y-6">
+                <div class="card">
+                    <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
+                        <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wider flex items-center gap-2">
+                            <i data-lucide="file-plus-2" class="w-4 h-4 text-emerald-700"></i> 1. Formulación del Problema e Iniciativa
+                        </h3>
+                        <span class="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 font-bold">Abierto a Servidores</span>
+                    </div>
+
+                    <form id="form-etapa1-iniciativa" class="space-y-4">
+                        <div class="form__group">
+                            <label class="form__label text-xs font-bold text-slate-700" for="etapa1-title">
+                                Título Preliminar de la Iniciativa
+                            </label>
+                            <input type="text" id="etapa1-title" class="form__input text-xs" placeholder="Ej. Sistema de Alerta Agrometeorológica por SMS para Cooperativas" required>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <div class="form__group mb-0">
+                                <label class="form__label text-xs font-bold text-slate-700" for="etapa1-unit">Unidad Orgánica Proponente</label>
+                                <select id="etapa1-unit" class="form__input text-xs" required>
+                                    <option value="Unidad de Promoción y Desarrollo de Capacidades (UPDC)">UPDC</option>
+                                    <option value="Unidad de Negocios (UN) - AGROIDEAS">Unidad de Negocios (UN)</option>
+                                    <option value="Unidad de Planeamiento y Presupuesto (UPP)">UPP</option>
+                                    <option value="Coordinación Técnica Regional (CTR)">Coordinación Regional (CTR)</option>
+                                    <option value="Unidad de Asesoría Jurídica (UAJ)">Asesoría Jurídica (UAJ)</option>
+                                    <option value="Unidad de Administración (UA)">Administración (UA)</option>
+                                </select>
+                            </div>
+                            <div class="form__group mb-0">
+                                <label class="form__label text-xs font-bold text-slate-700" for="etapa1-proposer">Servidor / Equipo Proponente</label>
+                                <input type="text" id="etapa1-proposer" class="form__input text-xs" placeholder="Nombre y cargo del servidor" required>
+                            </div>
+                        </div>
+
+                        <!-- Asistente guiado para fortalecer la comprensión del problema -->
+                        <div class="bg-slate-50 border border-slate-200 p-3 space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1">
+                                    <i data-lucide="help-circle" class="w-3.5 h-3.5 text-emerald-700"></i> Guía de Comprensión del Problema Público
+                                </span>
+                                <button type="button" id="btn-estructurar-problema" class="text-[10px] font-bold text-emerald-700 hover:underline">
+                                    Autoredactar Síntesis
+                                </button>
+                            </div>
+                            <div class="grid grid-cols-1 gap-2">
+                                <input type="text" id="helper-afectados" class="form__input text-xs py-1" placeholder="¿Quiénes son los afectados? (Ej. Productores de café en selva central)">
+                                <input type="text" id="helper-dolor" class="form__input text-xs py-1" placeholder="¿Qué dificultad enfrentan? (Ej. Demora en validación de requisitos técnicos)">
+                                <input type="text" id="helper-impacto" class="form__input text-xs py-1" placeholder="¿Qué consecuencia genera? (Ej. Pérdida de campaña agrícola y deserción)">
+                            </div>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label text-xs font-bold text-slate-700" for="etapa1-problem">
+                                Descripción y Comprensión del Problema Público
+                            </label>
+                            <textarea id="etapa1-problem" rows="3" class="form__input text-xs" placeholder="Describa el problema público identificado, sus causas principales y cómo afecta a los ciudadanos o servidores..." required></textarea>
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label text-xs font-bold text-slate-700" for="etapa1-beneficiaries">
+                                Ciudadanos / Usuarios Beneficiarios Objetivo
+                            </label>
+                            <input type="text" id="etapa1-beneficiaries" class="form__input text-xs" placeholder="Ej. 320 Organizaciones Agrarias y especialistas de seguimiento regional" required>
+                        </div>
+
+                        <!-- Módulo de Lluvia de Ideas Temprana (Requerimiento explícito SGP-PCM) -->
+                        <div class="border-t border-slate-200 pt-4">
+                            <label class="form__label text-xs font-bold text-amber-800 uppercase tracking-wider flex items-center gap-1.5">
+                                <i data-lucide="lightbulb" class="w-4 h-4 text-amber-600"></i> 2. Lluvia de Ideas Inicial (Aproximación a la Solución)
+                            </label>
+                            <p class="text-[11px] text-slate-500 mb-2">
+                                Agregue ideas preliminares que ayuden a explorar posibles soluciones antes de pasar a la ejecución formal del proyecto.
+                            </p>
+                            <div class="flex gap-2 mb-3">
+                                <input type="text" id="etapa1-new-idea-input" class="form__input text-xs flex-1" placeholder="Escriba una idea preliminar y presione Agregar...">
+                                <button type="button" id="btn-add-early-idea" class="btn btn-secondary text-xs font-bold px-3 border-amber-400 text-amber-900 bg-amber-50 hover:bg-amber-100">
+                                    + Agregar Idea
+                                </button>
+                            </div>
+                            <div id="etapa1-early-ideas-list" class="space-y-1.5 max-h-40 overflow-y-auto">
+                                <!-- Ideas agregadas dinámicamente -->
+                            </div>
+                        </div>
+
+                        <div class="pt-3 border-t border-slate-200 flex justify-end">
+                            <button type="submit" class="btn btn-primary text-xs font-bold uppercase tracking-wider w-full py-2.5 flex items-center justify-center gap-2">
+                                <i data-lucide="send" class="w-4 h-4"></i> Registrar Iniciativa en Etapa 1
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- COLUMNA DERECHA (7 cols): BANDEJA DE INICIATIVAS PRESENTADAS Y FLUJO DE ADMISIÓN -->
+            <div class="lg:col-span-7 space-y-6">
+                <div class="card">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3 mb-4">
+                        <div>
+                            <h3 class="text-sm font-bold text-slate-800 uppercase tracking-wider flex items-center gap-2">
+                                <i data-lucide="inbox" class="w-4 h-4 text-emerald-700"></i> Bandeja de Iniciativas Postuladas y Dictamen de Admisión
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-0.5">
+                                Flujo interno articulado con la Unidad de Modernización (Titular y Suplente).
+                            </p>
+                        </div>
+                        <span id="etapa1-counter-badge" class="text-xs font-bold bg-slate-800 text-white px-2.5 py-1">0 Iniciativas</span>
+                    </div>
+
+                    <div id="etapa1-iniciativas-container" class="space-y-4">
+                        <!-- Renderizado dinámico -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Modal de Dictamen de Admisión al PIIP (Exclusivo Titular/Suplente Modernización) -->
+    <div id="dictamenEtapa1Modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white border-2 border-slate-900 shadow-2xl max-w-lg w-full overflow-hidden">
+            <div class="px-6 py-4 bg-slate-900 text-white flex items-center justify-between">
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-400 block">Flujo Interno Unidad de Modernización</span>
+                    <h3 class="text-base font-bold">Dictamen de Admisibilidad al PIIP Oficial</h3>
+                </div>
+                <button type="button" id="closeDictamenModalBtn" class="text-slate-400 hover:text-white">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <form id="form-dictamen-etapa1" class="p-6 space-y-4">
+                <input type="hidden" id="dictamen-iniciativa-id">
+                <div class="p-3 bg-slate-50 border border-slate-200 text-xs">
+                    <span class="text-[10px] font-bold uppercase text-slate-400 block">Iniciativa Evaluada:</span>
+                    <p id="dictamen-iniciativa-title" class="font-bold text-slate-800 mt-0.5"></p>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label text-xs font-bold text-slate-700" for="dictamen-decision">Decisión de la Unidad de Modernización</label>
+                    <select id="dictamen-decision" class="form__input text-xs font-bold" required>
+                        <option value="Admitida al PIIP">Admitir Oficialmente al PIIP (Asignar Código Automático y Pasar a Ejecución)</option>
+                        <option value="En Evaluación">Mantener En Evaluación Metodológica</option>
+                        <option value="Observada">Observar para Reformulación del Problema</option>
+                    </select>
+                </div>
+
+                <div id="dictamen-code-preview-box" class="p-3 bg-emerald-50 border border-emerald-200 text-xs flex items-center justify-between">
+                    <span class="font-semibold text-emerald-900">Código Oficial Correlativo a Asignar:</span>
+                    <span id="dictamen-auto-code" class="font-mono font-bold text-emerald-800 bg-white px-2 py-0.5 border border-emerald-300">PIIP-2026-IN0014</span>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label text-xs font-bold text-slate-700" for="dictamen-notes">Sustento Técnico / Observaciones de Modernización</label>
+                    <textarea id="dictamen-notes" rows="3" class="form__input text-xs" placeholder="Ingrese las recomendaciones metodológicas o sustento de admisión..." required></textarea>
+                </div>
+
+                <div class="flex items-center justify-end gap-2 pt-3 border-t border-slate-200">
+                    <button type="button" id="cancelDictamenModalBtn" class="btn btn-secondary text-xs font-bold uppercase px-4 py-2">Cancelar</button>
+                    <button type="submit" class="btn btn-primary text-xs font-bold uppercase px-5 py-2 flex items-center gap-1.5">
+                        <i data-lucide="check-circle" class="w-4 h-4"></i> Confirmar y Salvaguardar Registro
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts de Datos y Lógica -->
+    <script src="../data/seed.js"></script>
+    <script src="../js/database.js"></script>
+    <script src="../js/app.js"></script>
+    <script>
+        (function() {
+            let currentEarlyIdeas = [
+                'Implementar fichas digitales de diagnóstico rápido con validación en campo',
+                'Integrar notificaciones automáticas por WhatsApp para directivos de cooperativas'
+            ];
+
+            function renderEarlyIdeasDraft() {
+                const listEl = document.getElementById('etapa1-early-ideas-list');
+                if (!listEl) return;
+                if (currentEarlyIdeas.length === 0) {
+                    listEl.innerHTML = '<p class="text-2xs text-slate-400 italic">No se han añadido ideas preliminares aún.</p>';
+                    return;
+                }
+                listEl.innerHTML = currentEarlyIdeas.map((idea, idx) => `
+                    <div class="flex items-center justify-between gap-2 p-2 bg-amber-50/80 border border-amber-200 border-l-4 border-l-amber-500 text-xs">
+                        <span class="text-amber-950 font-medium">${idx + 1}. ${idea}</span>
+                        <button type="button" data-remove-idx="${idx}" class="btn-remove-draft-idea text-slate-400 hover:text-red-600 font-bold px-1">&times;</button>
+                    </div>
+                `).join('');
+
+                listEl.querySelectorAll('.btn-remove-draft-idea').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const i = parseInt(btn.getAttribute('data-remove-idx'), 10);
+                        currentEarlyIdeas.splice(i, 1);
+                        renderEarlyIdeasDraft();
+                    });
+                });
+            }
+
+            function actualizarBadgeSiguienteCodigo() {
+                if (typeof generarSiguienteCodigoPIIP === 'function') {
+                    const nextCode = generarSiguienteCodigoPIIP();
+                    const badge = document.getElementById('next-correlative-code-badge');
+                    const modalCode = document.getElementById('dictamen-auto-code');
+                    if (badge) badge.textContent = nextCode;
+                    if (modalCode) modalCode.textContent = nextCode;
+                }
+            }
+
+            function renderBandejaIniciativas() {
+                const container = document.getElementById('etapa1-iniciativas-container');
+                const counter = document.getElementById('etapa1-counter-badge');
+                if (!container || typeof obtenerIniciativasPostuladas !== 'function') return;
+
+                const list = obtenerIniciativasPostuladas();
+                if (counter) counter.textContent = `${list.length} Iniciativas`;
+                actualizarBadgeSiguienteCodigo();
+
+                const puedeDictaminar = typeof esUnidadModernizacion === 'function' ? esUnidadModernizacion() : false;
+
+                if (list.length === 0) {
+                    container.innerHTML = '<p class="text-xs text-slate-500 italic p-4">No hay iniciativas postuladas aún.</p>';
+                    return;
+                }
+
+                container.innerHTML = list.map(item => {
+                    const badgeHtml = typeof obtenerBadgeEstadoFlujoHTML === 'function'
+                        ? obtenerBadgeEstadoFlujoHTML(item.workflowState)
+                        : `<span class="px-2 py-0.5 border text-2xs font-bold">${item.workflowState}</span>`;
+
+                    const ideasHtml = (item.earlyIdeas || []).map(idTxt =>
+                        `<li class="p-2 bg-amber-50 border border-amber-200 text-amber-950 text-xs flex items-start gap-1.5">
+                            <span class="text-amber-600 font-bold">•</span>
+                            <span>${idTxt}</span>
+                        </li>`
+                    ).join('');
+
+                    return `
+                        <div class="border border-slate-200 bg-white p-4 space-y-3 hover:border-slate-300 transition-colors">
+                            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 border-b border-slate-100 pb-2.5">
+                                <div>
+                                    <div class="flex items-center gap-2 flex-wrap">
+                                        ${badgeHtml}
+                                        ${item.assignedPiipCode ? `<span class="text-xs font-mono font-bold bg-emerald-900 text-white px-2 py-0.5">${item.assignedPiipCode}</span>` : ''}
+                                        <span class="text-[11px] text-slate-400 font-mono">Postulada: ${item.dateSubmitted}</span>
+                                    </div>
+                                    <h4 class="text-sm font-bold text-slate-800 mt-1.5">${item.title}</h4>
+                                    <p class="text-xs text-slate-500 font-medium">${item.proposingUnit} — <span class="text-slate-700">${item.proposerName}</span></p>
+                                </div>
+                            </div>
+
+                            <div class="bg-slate-50 p-3 border border-slate-150 text-xs space-y-1">
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block">Comprensión y Formulación del Problema:</span>
+                                <p class="text-slate-700 leading-relaxed">${item.problemStatement}</p>
+                                ${item.targetBeneficiaries ? `<p class="text-[11px] text-emerald-800 font-semibold pt-1">Beneficiarios Objetivo: ${item.targetBeneficiaries}</p>` : ''}
+                            </div>
+
+                            <div>
+                                <div class="flex items-center justify-between mb-1.5">
+                                    <span class="text-[10px] font-bold uppercase tracking-wider text-amber-800">Lluvia de Ideas Asociada (${(item.earlyIdeas || []).length}):</span>
+                                </div>
+                                <ul class="grid grid-cols-1 gap-1.5 mb-2">
+                                    ${ideasHtml}
+                                </ul>
+                                <div class="flex gap-2 mt-2">
+                                    <input type="text" id="quick-idea-input-${item.id}" class="form__input text-xs py-1 flex-1" placeholder="Sumar nueva idea a esta iniciativa...">
+                                    <button type="button" data-inic-id="${item.id}" class="btn-append-early-idea btn btn-secondary text-xs py-1 px-2.5 font-bold">
+                                        + Sumar Idea
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="pt-2.5 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+                                <div class="text-[11px] text-slate-500">
+                                    <strong>Seguimiento Modernización:</strong> ${item.dictamenNotes || 'Pendiente de revisión'}
+                                    ${item.reviewedBy ? `<span class="block text-[10px] text-emerald-700 font-semibold">Revisado por: ${item.reviewedBy}</span>` : ''}
+                                </div>
+                                <div class="shrink-0">
+                                    ${puedeDictaminar && item.workflowState !== 'Admitida al PIIP' ? `
+                                        <button type="button" data-dictamen-id="${item.id}" class="btn-open-dictamen btn btn-primary text-xs py-1.5 px-3 font-bold flex items-center gap-1.5">
+                                            <i data-lucide="gavel" class="w-3.5 h-3.5"></i> Emitir Dictamen / Admitir al PIIP
+                                        </button>
+                                    ` : ''}
+                                    ${!puedeDictaminar && item.workflowState !== 'Admitida al PIIP' ? `
+                                        <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-1 border border-slate-200 font-semibold inline-block">
+                                            🔒 Admisión reservada a Titular/Suplente de Modernización
+                                        </span>
+                                    ` : ''}
+                                    ${item.workflowState === 'Admitida al PIIP' ? `
+                                        <a href="../index.html" class="btn btn-secondary text-xs py-1 px-2.5 font-bold text-emerald-800 border-emerald-300 bg-emerald-50">
+                                            Ver en Portafolio PIIP (${item.assignedPiipCode}) →
+                                        </a>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                if (window.lucide) lucide.createIcons();
+
+                // Eventos para sumar ideas tempranas a iniciativas existentes
+                container.querySelectorAll('.btn-append-early-idea').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = parseInt(btn.getAttribute('data-inic-id'), 10);
+                        const input = document.getElementById(`quick-idea-input-${id}`);
+                        if (input && input.value.trim() !== '') {
+                            agregarIdeaTempranaAIniciativa(id, input.value.trim());
+                            input.value = '';
+                            renderBandejaIniciativas();
+                        }
+                    });
+                });
+
+                // Eventos para abrir el modal de Dictamen (Titular/Suplente)
+                container.querySelectorAll('.btn-open-dictamen').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const id = parseInt(btn.getAttribute('data-dictamen-id'), 10);
+                        const item = obtenerIniciativasPostuladas().find(x => x.id === id);
+                        if (!item) return;
+                        document.getElementById('dictamen-iniciativa-id').value = item.id;
+                        document.getElementById('dictamen-iniciativa-title').textContent = item.title;
+                        document.getElementById('dictamen-notes').value = `Iniciativa alineada a los objetivos institucionales de AGROIDEAS y a la NT-GIP. Se aprueba su admisión e inicio de la Etapa 2 (Ejecución).`;
+                        actualizarBadgeSiguienteCodigo();
+                        document.getElementById('dictamenEtapa1Modal').classList.remove('hidden');
+                    });
+                });
+            }
+
+            function initEtapa1Page() {
+                const sesion = typeof obtenerPerfilActivo === 'function' ? obtenerPerfilActivo() : null;
+                const proposerInput = document.getElementById('etapa1-proposer');
+                if (proposerInput && sesion && !proposerInput.value) {
+                    proposerInput.value = `${sesion.nombre} (${sesion.cargo})`;
+                }
+
+                renderEarlyIdeasDraft();
+                renderBandejaIniciativas();
+
+                // Botón de autoredacción del problema
+                const btnEstructurar = document.getElementById('btn-estructurar-problema');
+                if (btnEstructurar) {
+                    btnEstructurar.addEventListener('click', () => {
+                        const af = document.getElementById('helper-afectados').value.trim() || 'las organizaciones agrarias beneficiarias';
+                        const dol = document.getElementById('helper-dolor').value.trim() || 'tiempos prolongados y reprocesos en la gestión documental';
+                        const imp = document.getElementById('helper-impacto').value.trim() || 'retrasos en la ejecución de los planes de negocio y menor competitividad';
+                        document.getElementById('etapa1-problem').value = `Actualmente, ${af} enfrentan ${dol}, lo cual genera como consecuencia directa ${imp}. Se requiere una intervención innovadora centrada en el usuario para resolver esta brecha de servicio público.`;
+                    });
+                }
+
+                // Botón agregar idea preliminar al borrador
+                const btnAddIdea = document.getElementById('btn-add-early-idea');
+                const inputNewIdea = document.getElementById('etapa1-new-idea-input');
+                if (btnAddIdea && inputNewIdea) {
+                    btnAddIdea.addEventListener('click', () => {
+                        if (inputNewIdea.value.trim() !== '') {
+                            currentEarlyIdeas.push(inputNewIdea.value.trim());
+                            inputNewIdea.value = '';
+                            renderEarlyIdeasDraft();
+                        }
+                    });
+                }
+
+                // Botón precargar ejemplo de postulación contextual al proyecto activo o semilla oficial
+                const btnPreload = document.getElementById('btn-preload-etapa1');
+                if (btnPreload) {
+                    btnPreload.addEventListener('click', () => {
+                        const seed = typeof precargarEjemploEtapa1 === 'function' ? precargarEjemploEtapa1('active') : null;
+                        if (seed) {
+                            document.getElementById('etapa1-title').value = seed.title || '';
+                            document.getElementById('etapa1-unit').value = seed.proposingUnit || 'Coordinación Técnica Regional (CTR)';
+                            document.getElementById('etapa1-proposer').value = seed.proposerName || '';
+                            document.getElementById('helper-afectados').value = seed.targetBeneficiaries || 'Organizaciones agrarias postulantes y beneficiarias';
+                            document.getElementById('helper-dolor').value = 'Demoras operativas y barreras en la gestión del servicio público';
+                            document.getElementById('helper-impacto').value = 'Afectación en los plazos de atención y ejecución de los planes de negocio';
+                            document.getElementById('etapa1-problem').value = seed.problemStatement || '';
+                            document.getElementById('etapa1-beneficiaries').value = seed.targetBeneficiaries || '';
+                            currentEarlyIdeas = Array.isArray(seed.earlyIdeas) ? [...seed.earlyIdeas] : [];
+                            renderEarlyIdeasDraft();
+                        }
+                    });
+                }
+
+                // Submit nueva iniciativa Etapa 1
+                const formInic = document.getElementById('form-etapa1-iniciativa');
+                if (formInic) {
+                    formInic.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        const nueva = guardarIniciativaPostulada({
+                            title: document.getElementById('etapa1-title').value.trim(),
+                            proposingUnit: document.getElementById('etapa1-unit').value,
+                            proposerName: document.getElementById('etapa1-proposer').value.trim(),
+                            problemStatement: document.getElementById('etapa1-problem').value.trim(),
+                            targetBeneficiaries: document.getElementById('etapa1-beneficiaries').value.trim(),
+                            earlyIdeas: [...currentEarlyIdeas]
+                        });
+                        formInic.reset();
+                        currentEarlyIdeas = [];
+                        renderEarlyIdeasDraft();
+                        renderBandejaIniciativas();
+                        alert(`✔ Iniciativa "${nueva.title}" registrada en Etapa 1 (Estado: Postulada).\n\nAhora el Titular o Suplente de la Unidad de Modernización puede revisarla y admitirla al PIIP oficial.`);
+                    });
+                }
+
+                // Modal de Dictamen
+                const dictamenModal = document.getElementById('dictamenEtapa1Modal');
+                const closeDictamen = () => dictamenModal.classList.add('hidden');
+                const btnCloseD = document.getElementById('closeDictamenModalBtn');
+                const btnCancelD = document.getElementById('cancelDictamenModalBtn');
+                if (btnCloseD) btnCloseD.addEventListener('click', closeDictamen);
+                if (btnCancelD) btnCancelD.addEventListener('click', closeDictamen);
+
+                const selectDecision = document.getElementById('dictamen-decision');
+                const codePreviewBox = document.getElementById('dictamen-code-preview-box');
+                if (selectDecision && codePreviewBox) {
+                    selectDecision.addEventListener('change', () => {
+                        if (selectDecision.value === 'Admitida al PIIP') {
+                            codePreviewBox.classList.remove('hidden');
+                        } else {
+                            codePreviewBox.classList.add('hidden');
+                        }
+                    });
+                }
+
+                const formDictamen = document.getElementById('form-dictamen-etapa1');
+                if (formDictamen) {
+                    formDictamen.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        try {
+                            const id = document.getElementById('dictamen-iniciativa-id').value;
+                            const decision = document.getElementById('dictamen-decision').value;
+                            const notes = document.getElementById('dictamen-notes').value.trim();
+                            const res = dictaminarIniciativaEtapa1(id, decision, notes);
+                            closeDictamen();
+                            renderBandejaIniciativas();
+                            if (res.codigoAsignado) {
+                                establecerProyectoActivoId(res.proyecto.id);
+                                alert(`✔ DICTAMEN OFICIALIZADO POR MODERNIZACIÓN:\n\nLa iniciativa ha sido admitida al Portafolio Institucional con el código correlativo automático: ${res.codigoAsignado}.\n\nSus ideas tempranas han sido migradas automáticamente a la Fase 3 (Idear).`);
+                            } else {
+                                alert(`✔ Estado de la iniciativa actualizado a: ${res.estado}`);
+                            }
+                        } catch (err) {
+                            alert(err.message);
+                        }
+                    });
+                }
+            }
+
+            if (window.layoutReady) {
+                initEtapa1Page();
+            } else {
+                document.addEventListener('layout-ready', initEtapa1Page);
+            }
+        })();
+    </script>
+</body>
+</html>
+

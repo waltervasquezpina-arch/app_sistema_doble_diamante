@@ -40,6 +40,16 @@ function initApp() {
                     }
                 },
                 { data: 'title' },
+                {
+                    data: 'workflowState',
+                    defaultContent: 'En Ejecución',
+                    render: function (data) {
+                        if (typeof window.obtenerBadgeEstadoFlujoHTML === 'function') {
+                            return window.obtenerBadgeEstadoFlujoHTML(data || 'En Ejecución');
+                        }
+                        return `<span class="px-2 py-0.5 border text-[10px] font-bold uppercase">${data || 'En Ejecución'}</span>`;
+                    }
+                },
                 { 
                     data: 'phases',
                     render: function (data, type, row) {
@@ -108,17 +118,30 @@ function initApp() {
                     render: function (data, type, row) {
                         const activeId = obtenerProyectoActivoId();
                         const isActive = row.id === activeId;
-                        return `
-                            <div class="flex flex-wrap gap-1.5 text-2xs">
+                        const puedeEditar = typeof window.tienePermiso === 'function' ? window.tienePermiso('editar_proyecto_oficial') : true;
+                        const puedeEliminar = typeof window.tienePermiso === 'function' ? window.tienePermiso('eliminar_proyecto_oficial') : true;
+
+                        let actionsHtml = `
+                            <div class="flex flex-wrap gap-1.5 text-2xs items-center">
                                 <button class="btn-view-project text-emerald-700 hover:text-emerald-950 font-bold hover:underline" data-id="${row.id}">Ficha</button>
                                 <span class="text-slate-300">|</span>
                                 <button class="btn-select-project ${isActive ? 'text-slate-400 cursor-not-allowed font-medium' : 'text-blue-700 hover:text-blue-900 font-bold hover:underline'}" data-id="${row.id}" ${isActive ? 'disabled' : ''}>Trabajar</button>
+                        `;
+
+                        if (puedeEditar) {
+                            actionsHtml += `
                                 <span class="text-slate-300">|</span>
                                 <button class="btn-edit-project text-amber-700 hover:text-amber-950 font-bold hover:underline" data-id="${row.id}">Editar</button>
+                            `;
+                        }
+                        if (puedeEliminar) {
+                            actionsHtml += `
                                 <span class="text-slate-300">|</span>
                                 <button class="btn-delete-project text-red-700 hover:text-red-950 font-bold hover:underline" data-id="${row.id}">Eliminar</button>
-                            </div>
-                        `;
+                            `;
+                        }
+                        actionsHtml += `</div>`;
+                        return actionsHtml;
                     }
                 }
             ],
@@ -215,13 +238,19 @@ function initApp() {
 
         // Evento click en "Editar" proyecto
         $('#projectsTable').on('click', '.btn-edit-project', function() {
+            if (typeof window.tienePermiso === 'function' && !window.tienePermiso('editar_proyecto_oficial')) {
+                alert('Acceso restringido: Solo el Titular o Suplente de la Unidad de Modernización puede editar registros del Portafolio Institucional.');
+                return;
+            }
             const projectId = parseInt($(this).attr('data-id'));
             const project = obtenerProyectos().find(p => p.id === projectId);
             if (project) {
                 editingProjectId = projectId;
-                document.getElementById('formModalTitle').textContent = 'Editar Proyecto de Innovación';
+                document.getElementById('formModalTitle').textContent = 'Editar Proyecto de Innovación (Custodia Modernización)';
                 document.getElementById('proj-title').value = project.title;
                 document.getElementById('proj-code').value = project.code;
+                const wfEl = document.getElementById('proj-workflow-state');
+                if (wfEl) wfEl.value = project.workflowState || 'En Ejecución';
                 document.getElementById('proj-date').value = project.date;
                 document.getElementById('proj-responsible').value = project.responsible;
                 document.getElementById('proj-contact').value = project.contact;
@@ -238,11 +267,19 @@ function initApp() {
 
         // Evento click en "Eliminar" proyecto
         $('#projectsTable').on('click', '.btn-delete-project', function() {
+            if (typeof window.tienePermiso === 'function' && !window.tienePermiso('eliminar_proyecto_oficial')) {
+                alert('Acceso restringido: Solo el Titular de la Unidad de Modernización puede eliminar registros del Portafolio Institucional.');
+                return;
+            }
             const projectId = parseInt($(this).attr('data-id'));
             const project = obtenerProyectos().find(p => p.id === projectId);
             if (project) {
                 if (confirm(`¿Está seguro de que desea eliminar el proyecto "${project.title}"?\n\nEsta acción NO eliminará sus datos relacionados pero ya no serán accesibles en el portafolio.`)) {
                     eliminarProyecto(projectId);
+                    if (typeof registrarEventoAuditoria === 'function') {
+                        const sesion = typeof obtenerPerfilActivo === 'function' ? obtenerPerfilActivo() : null;
+                        registrarEventoAuditoria('ELIMINACION_PROYECTO_PIIP', `Proyecto eliminado del PIIP: ${project.code} - ${project.title}`, sesion ? sesion.nombre : 'Titular Modernización', sesion ? sesion.rol : 'modernizacion_titular');
+                    }
                     if (obtenerProyectoActivoId() === projectId) {
                         establecerProyectoActivoId(1);
                     }
@@ -253,13 +290,21 @@ function initApp() {
             }
         });
 
-        // Abrir modal de creación
+        // Abrir modal de creación (Generación automática correlativa de código PIIP)
         const btnCreateProject = document.getElementById('btn-create-project');
         if (btnCreateProject) {
             btnCreateProject.addEventListener('click', () => {
+                if (typeof window.tienePermiso === 'function' && !window.tienePermiso('crear_proyecto_oficial')) {
+                    alert('Acceso restringido: Solo el Titular o Suplente de la Unidad de Modernización puede registrar proyectos directos en el PIIP.');
+                    return;
+                }
                 editingProjectId = null;
-                document.getElementById('formModalTitle').textContent = 'Registrar Proyecto de Innovación';
+                document.getElementById('formModalTitle').textContent = 'Registrar Nueva Iniciativa Oficial en el PIIP';
                 formProject.reset();
+                const autoCode = typeof generarSiguienteCodigoPIIP === 'function' ? generarSiguienteCodigoPIIP() : 'PIIP-2026-IN0014';
+                document.getElementById('proj-code').value = autoCode;
+                const wfEl = document.getElementById('proj-workflow-state');
+                if (wfEl) wfEl.value = 'Admitida al PIIP';
                 document.getElementById('proj-date').value = new Date().toISOString().split('T')[0];
                 document.getElementById('phase-descubrir').value = 'active';
                 document.getElementById('phase-definir').value = 'pending';
@@ -282,9 +327,11 @@ function initApp() {
         if (formProject) {
             formProject.addEventListener('submit', (e) => {
                 e.preventDefault();
+                const wfEl = document.getElementById('proj-workflow-state');
                 const projectData = {
                     title: document.getElementById('proj-title').value,
                     code: document.getElementById('proj-code').value,
+                    workflowState: wfEl ? wfEl.value : 'Admitida al PIIP',
                     date: document.getElementById('proj-date').value,
                     responsible: document.getElementById('proj-responsible').value,
                     contact: document.getElementById('proj-contact').value,
@@ -296,13 +343,21 @@ function initApp() {
                     }
                 };
 
+                const sesion = typeof obtenerPerfilActivo === 'function' ? obtenerPerfilActivo() : null;
+
                 if (editingProjectId !== null) {
                     actualizarProyecto(editingProjectId, projectData);
-                    alert('Proyecto actualizado correctamente.');
+                    if (typeof registrarEventoAuditoria === 'function') {
+                        registrarEventoAuditoria('ACTUALIZACION_PROYECTO_PIIP', `Proyecto actualizado en el PIIP: ${projectData.code} (${projectData.workflowState})`, sesion ? sesion.nombre : 'Modernización', sesion ? sesion.rol : 'modernizacion_titular');
+                    }
+                    alert('Proyecto actualizado y salvaguardado correctamente.');
                 } else {
                     const newProj = guardarProyecto(projectData);
                     establecerProyectoActivoId(newProj.id);
-                    alert('Proyecto registrado e iniciado como activo.');
+                    if (typeof registrarEventoAuditoria === 'function') {
+                        registrarEventoAuditoria('REGISTRO_OFICIAL_PIIP', `Nueva iniciativa oficial registrada con código correlativo automático ${newProj.code}: "${newProj.title}"`, sesion ? sesion.nombre : 'Modernización', sesion ? sesion.rol : 'modernizacion_titular');
+                    }
+                    alert(`✔ Proyecto registrado en el PIIP con código correlativo automático: ${newProj.code}`);
                 }
 
                 hideFormModal();

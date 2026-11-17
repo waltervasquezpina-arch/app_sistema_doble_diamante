@@ -12,9 +12,549 @@
  */
 
 const PIIP_SEED_DATA = {
-  "_schemaVersion": 18,
-  "_source": "Fichas de Iniciativa de Innovación Pública AGROIDEAS IN0001-IN0013 (2026)",
-  "_generated": "2026-10-02",
+  "_schemaVersion": 20,
+  "_source": "Fichas de Iniciativa de Innovación Pública AGROIDEAS IN0001-IN0013 (2026) - Armonizado NT-GIP SGP-PCM",
+  "_generated": "2026-11-12",
+  "custodians": {
+    "titular": {
+      "name": "Alex Dario Abad Escalante",
+      "email": "modernizacion1@agroideas.gob.pe",
+      "role": "Titular - Unidad de Modernización (UPP)",
+      "unit": "Unidad de Planeamiento y Presupuesto (UPP)"
+    },
+    "suplente": {
+      "name": "Especialista de Modernización PCC",
+      "email": "modernizacion2@agroideas.gob.pe",
+      "role": "Suplente - Unidad de Modernización (UPP)",
+      "unit": "Unidad de Planeamiento y Presupuesto (UPP)"
+    }
+  },
+  "iniciativasPostuladas": [
+    {
+      "id": 101,
+      "title": "Asistente de Voz Offline en Quechua para Rendición de Cuentas de Planes de Negocio",
+      "proposingUnit": "Coordinación Técnica Regional (CTR)",
+      "proposerName": "Especialista de Seguimiento Regional - CTR Cusco",
+      "problemStatement": "Los socios y tesoreros de organizaciones agrarias altoandinas presentan errores frecuentes en el llenado físico de formatos de rendición de gastos por barreras idiomáticas y complejidad contable, generando retrasos de hasta 45 días en el segundo desembolso.",
+      "targetBeneficiaries": "Organizaciones Agrarias de zonas rurales quechua-hablantes (Cusco, Apurímac, Ayacucho, Puno).",
+      "earlyIdeas": [
+        "Guía interactiva por audio en quechua desde aplicativo móvil sin internet",
+        "Reconocimiento fotográfico (OCR) de boletas y facturas con validación automática",
+        "Plantillas simplificadas por colores según rubro del Plan de Negocio"
+      ],
+      "dateSubmitted": "2026-11-05",
+      "workflowState": "Postulada",
+      "assignedPiipCode": null,
+      "dictamenNotes": "Pendiente de evaluación de admisibilidad por Titular/Suplente de Modernización.",
+      "reviewedBy": null
+    },
+    {
+      "id": 102,
+      "title": "Repositorio Inteligente de Proveedores Agrarios Verificados para Adquisiciones de OA",
+      "proposingUnit": "Unidad de Administración (UA)",
+      "proposerName": "Analista de Adquisiciones y Contrataciones - UA",
+      "problemStatement": "Las Organizaciones Agrarias demoran en promedio 60 días buscando cotizaciones válidas de maquinaria e insumos especializados en sus regiones, y en ocasiones contratan proveedores con incumplimientos previos.",
+      "targetBeneficiaries": "Más de 450 Organizaciones Agrarias en etapa de ejecución de adquisiciones.",
+      "earlyIdeas": [
+        "Catálogo digital de proveedores con historial de cumplimiento y alertas SUNAT",
+        "Módulo de solicitud de cotización en 1 clic para directivos agrarios",
+        "Calificación colaborativa de proveedores por parte de las propias cooperativas"
+      ],
+      "dateSubmitted": "2026-11-08",
+      "workflowState": "En Evaluación",
+      "assignedPiipCode": null,
+      "dictamenNotes": "En revisión metodológica del problema público con el equipo de la Unidad de Administración.",
+      "reviewedBy": "Especialista de Modernización PCC (Suplente)"
+    },
+    {
+      "id": 103,
+      "title": "Plataforma de Validación Satelital de Predios Agrícolas para Elegibilidad Rápida",
+      "proposingUnit": "Coordinación Técnica Regional (CTR)",
+      "proposerName": "Especialista GIS y Geomática - CTR Amazonas",
+      "problemStatement": "Los productores agrarios de zonas alejadas en proceso de elegibilidad enfrentan demoras de hasta 30 días en las inspecciones presenciales de constatación de predios por factores climáticos y geográficos, generando desfase con su calendario agrícola.",
+      "targetBeneficiaries": "Más de 600 organizaciones agrarias postulantes a nivel nacional.",
+      "earlyIdeas": [
+        "Cruzar polígonos georreferenciados con imágenes satelitales Sentinel-2 de acceso libre",
+        "Aplicativo móvil para que el propio productor tome fotos con marca de agua GPS verificada offline",
+        "Mesa de ayuda virtual sincrónica con especialistas regionales de CTR"
+      ],
+      "dateSubmitted": "2026-11-10",
+      "workflowState": "Postulada",
+      "assignedPiipCode": null,
+      "dictamenNotes": "Pendiente de evaluación de admisibilidad por Titular/Suplente de Modernización.",
+      "reviewedBy": null
+    },
+    {
+      "id": 1,
+      "projectId": 1,
+      "title": "Plataforma Formativa Blended Learning para Organizaciones Agrarias",
+      "proposingUnit": "Unidad de Promoción y Desarrollo de Capacidades (UPDC)",
+      "proposerName": "Especialista en Capacitación Agraria - UPDC",
+      "problemStatement": "Alta deserción (más del 60%) de productores y directivos agrarios en las sesiones virtuales sincrónicas de fortalecimiento de capacidades debido a la baja conectividad rural y contenidos extensos poco adaptados al campo.",
+      "targetBeneficiaries": "4,290 agricultores organizados y directivos de cooperativas agrarias a nivel nacional.",
+      "earlyIdeas": [
+        "Micro-cápsulas de aprendizaje descargables por WhatsApp y PWA offline",
+        "Guías de audio bilingües (español/quechua/aimara) para repaso en parcela",
+        "Talleres presenciales cortos apoyados con kits multimedia sin internet"
+      ],
+      "dateSubmitted": "2026-01-10",
+      "workflowState": "Admitida al PIIP",
+      "assignedPiipCode": "PIIP-2026-IN0001",
+      "dictamenNotes": "Admitida oficialmente al PIIP. Problema público validado con evidencia estadística de UPDC.",
+      "reviewedBy": "Alex Dario Abad Escalante (Titular Modernización)"
+    },
+    {
+      "id": 2,
+      "projectId": 2,
+      "title": "Sistema Digital de Monitoreo de Planes de Negocio",
+      "proposingUnit": "Unidad de Negocios (UN) - AGROIDEAS",
+      "proposerName": "Fernando Ademir Loayza Choque - Unidad de Negocios",
+      "problemStatement": "El levantamiento de actas de monitoreo de Planes de Negocio en campo se realiza en formatos físicos de papel que luego deben transcribirse en oficina, ocasionando demoras de 14 días y pérdida de trazabilidad fotográfica.",
+      "targetBeneficiaries": "Especialistas de seguimiento de Unidades Regionales y más de 500 Organizaciones Agrarias activas.",
+      "earlyIdeas": [
+        "Formulario móvil offline con captura automática de coordenadas GPS y fotos selladas",
+        "Tablero de control en tiempo real de avance físico-financiero de planes de negocio",
+        "Firma digital biométrica o por PIN en acta de visita de campo"
+      ],
+      "dateSubmitted": "2026-01-28",
+      "workflowState": "Admitida al PIIP",
+      "assignedPiipCode": "PIIP-2026-IN0002",
+      "dictamenNotes": "Admitida oficialmente al PIIP. Prioridad alta para transformación digital operativa.",
+      "reviewedBy": "Alex Dario Abad Escalante (Titular Modernización)"
+    },
+    {
+      "id": 3,
+      "projectId": 3,
+      "title": "Base de Datos Dinámica de Criterios Legales para Unidades Regionales",
+      "proposingUnit": "Unidad de Asesoría Jurídica (UAJ)",
+      "proposerName": "Especialista Legal Senior - UAJ",
+      "problemStatement": "Dispersión de criterios de interpretación legal entre las sedes regionales al calificar la titularidad de tierras y estatutos de cooperativas, provocando consultas reiterativas a la sede central y cuellos de botella.",
+      "targetBeneficiaries": "Abogados y evaluadores de las Unidades Regionales y organizaciones agrarias postulantes.",
+      "earlyIdeas": [
+        "Buscador inteligente de precedentes y opiniones legales vinculantes de UAJ",
+        "Árbol de decisión interactivo para validación rápida de saneamiento físico-legal",
+        "Plantillas automatizadas de informes legales estandarizados"
+      ],
+      "dateSubmitted": "2026-02-05",
+      "workflowState": "Admitida al PIIP",
+      "assignedPiipCode": "PIIP-2026-IN0003",
+      "dictamenNotes": "Admitida oficialmente al PIIP para unificar predictibilidad jurídica.",
+      "reviewedBy": "Alex Dario Abad Escalante (Titular Modernización)"
+    },
+    {
+      "id": 4,
+      "projectId": 4,
+      "title": "Lineamientos para la Digitalización Integral de Expedientes de Incentivos",
+      "proposingUnit": "Unidad de Planeamiento y Presupuesto (UPP)",
+      "proposerName": "Alex Dario Abad Escalante - UPP",
+      "problemStatement": "Excesivo volumen de expedientes físicos (más de 400 folios por organización agraria) trasladados por courier desde regiones a Lima, generando altos costos logísticos y riesgo de deterioro documental.",
+      "targetBeneficiaries": "Organizaciones Agrarias postulantes, Unidades Regionales y archivo central de AGROIDEAS.",
+      "earlyIdeas": [
+        "Expediente electrónico único con foliación automática y validación en origen",
+        "Validador de documentos legibles mediante visión artificial al momento de carga",
+        "Interoperabilidad directa con RENIEC, SUNARP y SUNAT para eliminar copias físicas"
+      ],
+      "dateSubmitted": "2026-02-12",
+      "workflowState": "Admitida al PIIP",
+      "assignedPiipCode": "PIIP-2026-IN0004",
+      "dictamenNotes": "Admitida oficialmente al PIIP bajo custodia de UPP.",
+      "reviewedBy": "Especialista de Modernización PCC (Suplente)"
+    },
+    {
+      "id": 5,
+      "projectId": 5,
+      "title": "Sistema de Alerta Temprana para Riesgos en Ejecución de Incentivos (SAT-INCENTIVOS)",
+      "proposingUnit": "Unidad de Planeamiento y Presupuesto (UPP) / USE",
+      "proposerName": "Especialista en Monitoreo y Riesgos - UPP/USE",
+      "problemStatement": "Detección tardía de desviaciones críticas en la ejecución de convenios (conflictos internos en la cooperativa, alza de precios de insumos o eventos climáticos), cuando el convenio ya está próximo a vencer.",
+      "targetBeneficiaries": "Unidades operativas (UN, UPDC, USE) y organizaciones agrarias con convenios vigentes.",
+      "earlyIdeas": [
+        "Semáforo predictivo de riesgo por organización agraria según velocidad de desembolso",
+        "Canal de alerta temprana reportada por el propio presidente de la organización",
+        "Protocolo automatizado de acompañamiento preventivo ante alertas rojas"
+      ],
+      "dateSubmitted": "2026-02-14",
+      "workflowState": "Admitida al PIIP",
+      "assignedPiipCode": "PIIP-2026-IN0005",
+      "dictamenNotes": "Admitida oficialmente al PIIP para salvaguardar inversiones públicas agrarias.",
+      "reviewedBy": "Alex Dario Abad Escalante (Titular Modernización)"
+    },
+    {
+      "id": 6,
+      "projectId": 6,
+      "title": "Directiva para Fiscalización Posterior Basada en Riesgos",
+      "proposingUnit": "Unidad de Planeamiento y Presupuesto (UPP)",
+      "proposerName": "Analista de Control y Fiscalización - UPP",
+      "problemStatement": "El muestreo aleatorio tradicional en la fiscalización posterior no prioriza los expedientes con mayor exposición a inconsistencias documentales o de precios de mercado.",
+      "targetBeneficiaries": "Equipo de fiscalización posterior, Alta Dirección y ciudadanía.",
+      "earlyIdeas": [
+        "Matriz algorítmica de puntuación de riesgo para selección inteligente de muestra",
+        "Cruce masivo de comprobantes y proveedores recurrentes entre regiones",
+        "Tablero de trazabilidad de hallazgos y medidas correctivas"
+      ],
+      "dateSubmitted": "2026-02-20",
+      "workflowState": "Admitida al PIIP",
+      "assignedPiipCode": "PIIP-2026-IN0006",
+      "dictamenNotes": "Admitida oficialmente al PIIP en articulación con integridad pública.",
+      "reviewedBy": "Alex Dario Abad Escalante (Titular Modernización)"
+    },
+    {
+      "id": 7,
+      "projectId": 7,
+      "title": "Sistema Digital de Evaluación de Elegibilidad con Georreferenciación (SDEG)",
+      "proposingUnit": "Dirección Ejecutiva - Coordinación Técnica Regional (CTR)",
+      "proposerName": "José Fernando Barturen Torres - CTR",
+      "problemStatement": "La verificación de predios y socios durante la etapa de Elegibilidad carece de georreferenciación estandarizada en tiempo real, dificultando validar superposiciones con zonas protegidas o padrones previos.",
+      "targetBeneficiaries": "Coordinación Técnica Regional, evaluadores de campo y productores postulantes.",
+      "earlyIdeas": [
+        "Captura de polígonos y puntos GPS offline desde celular del evaluador regional",
+        "Contraste automático con capas catastrales de MIDAGRI y SERNANP",
+        "Generación automática del mapa de ubicación anexo al informe de elegibilidad"
+      ],
+      "dateSubmitted": "2026-02-26",
+      "workflowState": "Admitida al PIIP",
+      "assignedPiipCode": "PIIP-2026-IN0007",
+      "dictamenNotes": "Admitida oficialmente al PIIP con alto potencial de escalamiento nacional.",
+      "reviewedBy": "Alex Dario Abad Escalante (Titular Modernización)"
+    },
+    {
+      "id": 8,
+      "projectId": 8,
+      "title": "Nueva Arquitectura e Infraestructura del Sistema en Línea SEL v2.0",
+      "proposingUnit": "Unidad de Administración (UA) - TI / Sistemas e Informática",
+      "proposerName": "Ing. Víctor Hugo Morales - Arquitecto de Software Senior UA-TI",
+      "problemStatement": "El Sistema en Línea (SEL) actual presenta lentitud en horas punta de postulación y rigidez monolítica que dificulta integrar nuevos módulos móviles y firmas digitales.",
+      "targetBeneficiaries": "Todos los usuarios externos (Organizaciones Agrarias) e internos de AGROIDEAS.",
+      "earlyIdeas": [
+        "Arquitectura modular basada en microservicios y APIs REST estandarizadas",
+        "Interfaz responsiva centrada en la experiencia del productor rural",
+        "Bandeja única de estado de trámite con notificaciones proactivas"
+      ],
+      "dateSubmitted": "2026-03-05",
+      "workflowState": "Admitida al PIIP",
+      "assignedPiipCode": "PIIP-2026-IN0008",
+      "dictamenNotes": "Admitida oficialmente al PIIP como columna vertebral tecnológica.",
+      "reviewedBy": "Alex Dario Abad Escalante (Titular Modernización)"
+    },
+    {
+      "id": 9,
+      "projectId": 9,
+      "title": "Plataforma Digital de Gestión y Programación de Vacaciones del Personal (VAC-DIGITAL)",
+      "proposingUnit": "Unidad de Administración - Recursos Humanos (UA-RRHH)",
+      "proposerName": "Especialista en Gestión de Recursos Humanos - UA",
+      "problemStatement": "Gestión manual mediante memorandos y hojas de cálculo para programar y reprogramar vacaciones de servidores en Lima y 12 regiones, generando desactualización de saldos vacacionales.",
+      "targetBeneficiaries": "Más de 220 servidores públicos y jefes de unidad de AGROIDEAS.",
+      "earlyIdeas": [
+        "Autoservicio web para solicitud y aprobación digital de vacaciones en 2 clics",
+        "Calendario compartido por unidad para evitar cruce de ausencias en etapas críticas",
+        "Alertas automáticas de programación obligatoria según normativa SERVIR"
+      ],
+      "dateSubmitted": "2026-03-11",
+      "workflowState": "Admitida al PIIP",
+      "assignedPiipCode": "PIIP-2026-IN0009",
+      "dictamenNotes": "Admitida oficialmente al PIIP en categoría de gestión interna eficiente.",
+      "reviewedBy": "Especialista de Modernización PCC (Suplente)"
+    },
+    {
+      "id": 10,
+      "projectId": 10,
+      "title": "Implementación de Casilla Electrónica para Notificaciones Institucionales (SINO-AGROIDEAS)",
+      "proposingUnit": "Unidad de Planeamiento y Presupuesto (UPP) / UA",
+      "proposerName": "Especialista en Trámite Documentario y Notificaciones - UPP/UA",
+      "problemStatement": "Las notificaciones físicas de cartas y resoluciones a organizaciones agrarias en zonas rurales tardan entre 10 y 25 días hábiles en llegar y confirmar recepción.",
+      "targetBeneficiaries": "Organizaciones Agrarias postulantes y beneficiarias a nivel nacional.",
+      "earlyIdeas": [
+        "Casilla electrónica institucional con alerta simultánea por SMS y WhatsApp",
+        "Constancia automática de acuse de recibo con sello de tiempo",
+        "Modo de lectura ligera para celulares con plan de datos básico"
+      ],
+      "dateSubmitted": "2026-03-16",
+      "workflowState": "Admitida al PIIP",
+      "assignedPiipCode": "PIIP-2026-IN0010",
+      "dictamenNotes": "Admitida oficialmente al PIIP para celeridad administrativa.",
+      "reviewedBy": "Alex Dario Abad Escalante (Titular Modernización)"
+    },
+    {
+      "id": 11,
+      "projectId": 11,
+      "title": "Automatización del Proceso de Rendición de Cuentas de Organizaciones Agrarias",
+      "proposingUnit": "Unidad de Reconversión e Intervenciones Especiales (URIE)",
+      "proposerName": "Sergio Antonio Haro Muñoz - URIE",
+      "problemStatement": "La revisión manual de cientos de facturas, boletas y declaraciones juradas en cada rendición de cuentas consume hasta 20 días hábiles por expediente y presenta alta tasa de observaciones subsanables.",
+      "targetBeneficiaries": "Organizaciones Agrarias en ejecución de incentivos y analistas financieros de URIE/UN.",
+      "earlyIdeas": [
+        "Validación automática de RUC y estado de comprobantes mediante consulta API SUNAT",
+        "Pre-validador digital que avisa al directivo agrario si falta un requisito antes de enviar",
+        "Generación automática de anexos contables de liquidación"
+      ],
+      "dateSubmitted": "2026-03-27",
+      "workflowState": "Admitida al PIIP",
+      "assignedPiipCode": "PIIP-2026-IN0011",
+      "dictamenNotes": "Admitida oficialmente al PIIP para agilizar desembolsos agrarios.",
+      "reviewedBy": "Alex Dario Abad Escalante (Titular Modernización)"
+    },
+    {
+      "id": 12,
+      "projectId": 12,
+      "title": "Portal de Transparencia Interactivo para Beneficiarios del Programa AGROIDEAS",
+      "proposingUnit": "Unidad de Reconversión e Intervenciones Especiales (URIE) / UPP",
+      "proposerName": "Sergio Antonio Haro Muñoz - URIE",
+      "problemStatement": "Los ciudadanos y organizaciones agrarias no cuentan con un visor público amigable donde consultar el estado de avance de los incentivos aprobados por región, cadena productiva y monto desembolsado.",
+      "targetBeneficiaries": "Productores agrarios, gremios, gobiernos regionales y ciudadanía en general.",
+      "earlyIdeas": [
+        "Mapa interactivo nacional con filtros por departamento, cultivo y etapa del incentivo",
+        "Buscador público de estado de expediente mediante RUC de la organización",
+        "Descarga de datos abiertos en formatos reutilizables (CSV/JSON)"
+      ],
+      "dateSubmitted": "2026-04-02",
+      "workflowState": "Admitida al PIIP",
+      "assignedPiipCode": "PIIP-2026-IN0012",
+      "dictamenNotes": "Admitida oficialmente al PIIP por su aporte a datos abiertos y transparencia.",
+      "reviewedBy": "Alex Dario Abad Escalante (Titular Modernización)"
+    },
+    {
+      "id": 13,
+      "projectId": 13,
+      "title": "Innovación en la ejecución y acceso a la Estrategia de Emprendimiento de la Mujer Rural e Indígena (EEMRI-DIGITAL)",
+      "proposingUnit": "Dirección Ejecutiva (DE) / URIE / UPDC",
+      "proposerName": "Lic. Rosa María Quispe Valenzuela - Coordinadora Nacional EEMRI",
+      "problemStatement": "Las organizaciones de mujeres rurales e indígenas enfrentan barreras adicionales de brecha digital, carga de cuidado familiar y trámites presenciales complejos para postular y ejecutar subvenciones EEMRI.",
+      "targetBeneficiaries": "Más de 350 Organizaciones de Mujeres Rurales e Indígenas a nivel nacional.",
+      "earlyIdeas": [
+        "Ventanilla digital asistida con acompañamiento de promotoras comunitarias bilingües",
+        "Formatos simplificados con guías visuales paso a paso adaptadas culturalmente",
+        "Red de mentoría entre lideresas agrarias con emprendimientos exitosos"
+      ],
+      "dateSubmitted": "2026-09-20",
+      "workflowState": "Admitida al PIIP",
+      "assignedPiipCode": "PIIP-2026-IN0013",
+      "dictamenNotes": "Admitida oficialmente al PIIP con enfoque prioritario de inclusión e interculturalidad.",
+      "reviewedBy": "Alex Dario Abad Escalante (Titular Modernización)"
+    }
+  ],
+  "evaluations": [
+    {
+      "id": 1,
+      "projectId": 1,
+      "projectCode": "PIIP-2026-IN0001",
+      "evaluationStage": "Evaluación de Piloto / Intermedia (NT-GIP)",
+      "timeReductionPct": 42,
+      "beneficiarySatisfactionPct": 88,
+      "coverageReached": "12 Organizaciones Agrarias piloto (340 productores capacitados en modalidades blended)",
+      "publicValueSummary": "Reducción del tiempo de inducción en gestión empresarial agraria y aumento del 35% en la tasa de aprobación de evaluaciones técnicas de los planes de negocio.",
+      "lessonsLearned": "El contenido en micro-cápsulas descargables por WhatsApp tuvo 3 veces mayor retención que los módulos web extensos debido a la intermitencia de conectividad rural.",
+      "scalabilityStatus": "Escalable a Nivel Nacional",
+      "sgpReportStatus": "Validado para Reporte SGP-PCM",
+      "evaluatedBy": "Alex Dario Abad Escalante (Titular Modernización)",
+      "evaluationDate": "2026-11-01"
+    },
+    {
+      "id": 2,
+      "projectId": 2,
+      "projectCode": "PIIP-2026-IN0002",
+      "evaluationStage": "Evaluación de Prototipo Funcional (NT-GIP)",
+      "timeReductionPct": 50,
+      "beneficiarySatisfactionPct": 91,
+      "coverageReached": "8 Unidades Regionales y 25 Planes de Negocio monitoreados digitalmente",
+      "publicValueSummary": "Disminución de tiempos de consolidación de informes técnicos de campo de 14 días a 7 días hábiles con trazabilidad georreferenciada e evidencia fotográfica.",
+      "lessonsLearned": "Es indispensable mantener el modo de captura offline con sincronización diferida para los especialistas que visitan cuencas sin cobertura móvil.",
+      "scalabilityStatus": "En Proceso de Institucionalización",
+      "sgpReportStatus": "Validado para Reporte SGP-PCM",
+      "evaluatedBy": "Alex Dario Abad Escalante (Titular Modernización)",
+      "evaluationDate": "2026-11-02"
+    },
+    {
+      "id": 3,
+      "projectId": 3,
+      "projectCode": "PIIP-2026-IN0003",
+      "evaluationStage": "Evaluación de Prototipo Funcional (NT-GIP)",
+      "timeReductionPct": 38,
+      "beneficiarySatisfactionPct": 89,
+      "coverageReached": "12 Unidades Regionales y equipo legal de UAJ conectados al repositorio de criterios",
+      "publicValueSummary": "Estandarización de criterios de calificación legal de titularidad y personería jurídica, reduciendo en 38% las consultas reiterativas a sede central.",
+      "lessonsLearned": "Las fichas resumen con casos prácticos reales de cooperativas resultaron más efectivas para los evaluadores de campo que la transcripción literal de normas.",
+      "scalabilityStatus": "Escalable a Nivel Nacional",
+      "sgpReportStatus": "Validado para Reporte SGP-PCM",
+      "evaluatedBy": "Alex Dario Abad Escalante (Titular Modernización)",
+      "evaluationDate": "2026-11-03"
+    },
+    {
+      "id": 4,
+      "projectId": 4,
+      "projectCode": "PIIP-2026-IN0004",
+      "evaluationStage": "Evaluación de Piloto / Intermedia (NT-GIP)",
+      "timeReductionPct": 55,
+      "beneficiarySatisfactionPct": 93,
+      "coverageReached": "45 expedientes de incentivos digitalizados en origen en 5 sedes regionales",
+      "publicValueSummary": "Ahorro del 55% en tiempos de traslado documental y eliminación de costos de courier físico para las organizaciones agrarias postulantes.",
+      "lessonsLearned": "Incluir una lista de chequeo interactiva previa al escaneo redujo en 70% el rechazo de archivos PDF por baja legibilidad o falta de firmas.",
+      "scalabilityStatus": "En Proceso de Institucionalización",
+      "sgpReportStatus": "Validado para Reporte SGP-PCM",
+      "evaluatedBy": "Especialista de Modernización PCC (Suplente)",
+      "evaluationDate": "2026-11-04"
+    },
+    {
+      "id": 5,
+      "projectId": 5,
+      "projectCode": "PIIP-2026-IN0005",
+      "evaluationStage": "Evaluación de Piloto / Intermedia (NT-GIP)",
+      "timeReductionPct": 45,
+      "beneficiarySatisfactionPct": 87,
+      "coverageReached": "60 convenios de Planes de Negocio monitoreados con el semáforo preventivo SAT",
+      "publicValueSummary": "Identificación temprana de 14 convenios en riesgo de retraso crítico, logrando destrabar sus adquisiciones al menos 60 días antes de su vencimiento.",
+      "lessonsLearned": "Las alertas automáticas deben ir acompañadas de una sesión breve de asistencia técnica con la junta directiva de la organización agraria para ser efectivas.",
+      "scalabilityStatus": "Escalable a Nivel Nacional",
+      "sgpReportStatus": "Validado para Reporte SGP-PCM",
+      "evaluatedBy": "Alex Dario Abad Escalante (Titular Modernización)",
+      "evaluationDate": "2026-11-05"
+    },
+    {
+      "id": 6,
+      "projectId": 6,
+      "projectCode": "PIIP-2026-IN0006",
+      "evaluationStage": "Evaluación de Resultados / Valor Público (NT-GIP)",
+      "timeReductionPct": 40,
+      "beneficiarySatisfactionPct": 90,
+      "coverageReached": "Muestra anual de fiscalización posterior optimizada sobre 120 expedientes priorizados",
+      "publicValueSummary": "Incremento en la efectividad de detección de inconsistencias documentales y reducción del 40% en horas-hombre dedicadas a revisión de expedientes de bajo riesgo.",
+      "lessonsLearned": "La integración de alertas de proveedores recurrentes entre distintas regiones permitió focalizar la auditoría donde realmente existía riesgo operativo.",
+      "scalabilityStatus": "En Proceso de Institucionalización",
+      "sgpReportStatus": "Validado para Reporte SGP-PCM",
+      "evaluatedBy": "Alex Dario Abad Escalante (Titular Modernización)",
+      "evaluationDate": "2026-11-06"
+    },
+    {
+      "id": 7,
+      "projectId": 7,
+      "projectCode": "PIIP-2026-IN0007",
+      "evaluationStage": "Evaluación de Piloto / Intermedia (NT-GIP)",
+      "timeReductionPct": 48,
+      "beneficiarySatisfactionPct": 92,
+      "coverageReached": "18 Organizaciones Agrarias evaluadas con georreferenciación de predios en CTR",
+      "publicValueSummary": "Reducción del 48% en el tiempo de emisión de informes técnicos de elegibilidad y validación inmediata de no superposición con áreas naturales protegidas.",
+      "lessonsLearned": "Precargar las capas cartográficas base en los dispositivos móviles antes de salir a campo garantiza precisión aun sin señal de internet en ceja de selva y sierra.",
+      "scalabilityStatus": "Escalable a Nivel Nacional",
+      "sgpReportStatus": "Validado para Reporte SGP-PCM",
+      "evaluatedBy": "Alex Dario Abad Escalante (Titular Modernización)",
+      "evaluationDate": "2026-11-07"
+    },
+    {
+      "id": 8,
+      "projectId": 8,
+      "projectCode": "PIIP-2026-IN0008",
+      "evaluationStage": "Evaluación de Prototipo Funcional (NT-GIP)",
+      "timeReductionPct": 60,
+      "beneficiarySatisfactionPct": 94,
+      "coverageReached": "Pruebas de carga con 500 usuarios concurrentes y 6 módulos interoperables en SEL v2.0",
+      "publicValueSummary": "Reducción del 60% en los tiempos de respuesta de carga de documentos y disponibilidad continua 24/7 para las organizaciones agrarias de todo el país.",
+      "lessonsLearned": "El diseño desacoplado mediante APIs permitió conectar el módulo de notificaciones y el de rendición de cuentas sin detener la operación del sistema principal.",
+      "scalabilityStatus": "En Proceso de Institucionalización",
+      "sgpReportStatus": "Validado para Reporte SGP-PCM",
+      "evaluatedBy": "Alex Dario Abad Escalante (Titular Modernización)",
+      "evaluationDate": "2026-11-08"
+    },
+    {
+      "id": 9,
+      "projectId": 9,
+      "projectCode": "PIIP-2026-IN0009",
+      "evaluationStage": "Evaluación de Resultados / Valor Público (NT-GIP)",
+      "timeReductionPct": 70,
+      "beneficiarySatisfactionPct": 95,
+      "coverageReached": "220 servidores públicos de sede central y Unidades Regionales utilizando VAC-DIGITAL",
+      "publicValueSummary": "Disminución del 70% en el tiempo administrativo de programación y reprogramación de vacaciones, eliminando el flujo de memorandos físicos en papel.",
+      "lessonsLearned": "La visualización compartida del calendario de turnos por unidad evitó cuellos de botella en las etapas de cierre trimestral de desembolsos.",
+      "scalabilityStatus": "En Proceso de Institucionalización",
+      "sgpReportStatus": "Validado para Reporte SGP-PCM",
+      "evaluatedBy": "Especialista de Modernización PCC (Suplente)",
+      "evaluationDate": "2026-11-09"
+    },
+    {
+      "id": 10,
+      "projectId": 10,
+      "projectCode": "PIIP-2026-IN0010",
+      "evaluationStage": "Evaluación de Piloto / Intermedia (NT-GIP)",
+      "timeReductionPct": 75,
+      "beneficiarySatisfactionPct": 90,
+      "coverageReached": "85 Organizaciones Agrarias notificadas electrónicamente con alerta SMS/WhatsApp",
+      "publicValueSummary": "Reducción del plazo de notificación administrativa de 15 días hábiles promedio a menos de 24 horas con acuse de recibo digital auditable.",
+      "lessonsLearned": "El aviso complementario por SMS y WhatsApp indicando que revisen su casilla electrónica elevó la tasa de lectura en las primeras 48 horas del 35% al 88%.",
+      "scalabilityStatus": "Escalable a Nivel Nacional",
+      "sgpReportStatus": "Validado para Reporte SGP-PCM",
+      "evaluatedBy": "Alex Dario Abad Escalante (Titular Modernización)",
+      "evaluationDate": "2026-11-10"
+    },
+    {
+      "id": 11,
+      "projectId": 11,
+      "projectCode": "PIIP-2026-IN0011",
+      "evaluationStage": "Evaluación de Piloto / Intermedia (NT-GIP)",
+      "timeReductionPct": 52,
+      "beneficiarySatisfactionPct": 91,
+      "coverageReached": "30 Organizaciones Agrarias realizando rendición de cuentas asistida y pre-validada",
+      "publicValueSummary": "Reducción del 52% en los tiempos de revisión financiera de rendiciones de cuentas y disminución a la mitad de las devoluciones de expedientes por errores formales.",
+      "lessonsLearned": "La validación automática del estado del RUC y condición de habido del proveedor antes de guardar el gasto evitó el 90% de las observaciones recurrentes.",
+      "scalabilityStatus": "Escalable a Nivel Nacional",
+      "sgpReportStatus": "Validado para Reporte SGP-PCM",
+      "evaluatedBy": "Alex Dario Abad Escalante (Titular Modernización)",
+      "evaluationDate": "2026-11-10"
+    },
+    {
+      "id": 12,
+      "projectId": 12,
+      "projectCode": "PIIP-2026-IN0012",
+      "evaluationStage": "Evaluación de Prototipo Funcional (NT-GIP)",
+      "timeReductionPct": 65,
+      "beneficiarySatisfactionPct": 93,
+      "coverageReached": "Portal público con datos georreferenciados de 24 departamentos y cadenas productivas",
+      "publicValueSummary": "Acceso ciudadano inmediato y transparente al estado de inversiones y desembolsos agrarios, reduciendo solicitudes de acceso a la información pública repetitivas.",
+      "lessonsLearned": "Los dirigentes agrarios valoran especialmente poder consultar con su número de RUC en qué etapa exacta se encuentra su expediente sin necesidad de viajar a la sede regional.",
+      "scalabilityStatus": "Escalable a Nivel Nacional",
+      "sgpReportStatus": "Validado para Reporte SGP-PCM",
+      "evaluatedBy": "Alex Dario Abad Escalante (Titular Modernización)",
+      "evaluationDate": "2026-11-11"
+    },
+    {
+      "id": 13,
+      "projectId": 13,
+      "projectCode": "PIIP-2026-IN0013",
+      "evaluationStage": "Evaluación de Piloto / Intermedia (NT-GIP)",
+      "timeReductionPct": 46,
+      "beneficiarySatisfactionPct": 96,
+      "coverageReached": "22 Organizaciones de Mujeres Rurales e Indígenas (EEMRI) en 6 regiones priorizadas",
+      "publicValueSummary": "Mayor inclusión y autonomía de lideresas agrarias en la formulación y ejecución de sus emprendimientos, reduciendo en 46% las barreras administrativas de acceso.",
+      "lessonsLearned": "El enfoque intercultural con guías visuales y acompañamiento de promotoras comunitarias en lengua originaria fue determinante para lograr 96% de satisfacción.",
+      "scalabilityStatus": "Escalable a Nivel Nacional",
+      "sgpReportStatus": "Validado para Reporte SGP-PCM",
+      "evaluatedBy": "Alex Dario Abad Escalante (Titular Modernización)",
+      "evaluationDate": "2026-11-12"
+    }
+  ],
+  "auditLog": [
+    {
+      "id": 1,
+      "timestamp": "2026-11-10T09:30:00.000Z",
+      "action": "OFICIALIZACION_PORTAFOLIO",
+      "detail": "Verificación de las 13 iniciativas oficiales del PIIP AGROIDEAS (IN0001 a IN0013) conforme a la NT-GIP N° 003-2025-PCM-SGP.",
+      "user": "Alex Dario Abad Escalante",
+      "role": "modernizacion_titular"
+    },
+    {
+      "id": 2,
+      "timestamp": "2026-11-11T15:15:00.000Z",
+      "action": "DESIGNACION_CUSTODIOS",
+      "detail": "Asignación de Titular (modernizacion1@agroideas.gob.pe) y Suplente (modernizacion2@agroideas.gob.pe) en la Unidad de Modernización.",
+      "user": "Alex Dario Abad Escalante",
+      "role": "modernizacion_titular"
+    },
+    {
+      "id": 3,
+      "timestamp": "2026-11-12T10:00:00.000Z",
+      "action": "CARGA_SEMILLAS_ETAPAS_1_Y_3",
+      "detail": "Sincronización de fichas semilla de Etapa 1 (Presentación de Iniciativas) y Etapa 3 (Evaluación de Valor Público) para los 13 proyectos oficiales IN0001-IN0013.",
+      "user": "Alex Dario Abad Escalante",
+      "role": "modernizacion_titular"
+    }
+  ],
   "users": [
     {
       "id": 1,
